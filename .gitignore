@@ -1,3 +1,7 @@
 # ignores following folders
 .vs/
 Debug/
+
+
+# sublime text
+*.sublime-workspace
