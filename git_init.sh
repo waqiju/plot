@@ -1,0 +1,1 @@
+git update-index --assume-unchanged sublime_project/plot3d.sublime-project
