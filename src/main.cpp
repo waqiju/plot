@@ -1,7 +1,7 @@
-#include <glad/glad.h>
+ï»¿#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
-#include <default_shader.h>
+#include <shader.h>
 
 
 void processInput(GLFWwindow* window);
@@ -23,7 +23,7 @@ int main()
 		return -1;
 	}
 	glfwMakeContextCurrent(window);
-	// ¼àÌı´°¿Úsize¸Ä±ä
+	// ç›‘å¬çª—å£sizeæ”¹å˜
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 	// glad
@@ -34,41 +34,7 @@ int main()
 	}
 
 	// shader
-	// vertex shader
-	int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
-	glCompileShader(vertexShader);
-	int success;
-	char infoLog[512];
-	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
-	if (!success)
-	{
-		glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-		std::cout << "Vertex shader compilation failed!\n" << infoLog << std::endl;
-	}
-	// fragment shader
-	int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-	glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
-	glCompileShader(fragmentShader);
-	glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
-	if (!success)
-	{
-		glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
-		std::cout << "Fragment shader compilation failed!\n" << infoLog << std::endl;
-	}
-	// link
-	int shaderProgram = glCreateProgram();
-	glAttachShader(shaderProgram, vertexShader);
-	glAttachShader(shaderProgram, fragmentShader);
-	glLinkProgram(shaderProgram);
-	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
-	if (!success)
-	{
-		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-		std::cout << "Shader program linking failed!\n" << infoLog << std::endl;
-	}
-	glDeleteShader(vertexShader);
-	glDeleteShader(fragmentShader);
+	Shader shader("src/shader/triangle.vs", "src/shader/triangle.fs");
 	
 	// vao
 	float vertices[] = {
@@ -103,7 +69,7 @@ int main()
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		
-		glUseProgram(shaderProgram);
+		shader.Use();
 		glBindVertexArray(VAO);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
