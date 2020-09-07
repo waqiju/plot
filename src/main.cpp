@@ -2,7 +2,9 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include "shader.h"
+#include "material.h"
 #include "mesh.h"
+#include "mesh_renderer.h"
 
 
 void processInput(GLFWwindow* window);
@@ -36,6 +38,7 @@ int main()
 
 	// shader
 	Shader shader("src/shader/triangle.vs", "src/shader/triangle.fs");
+	Material material(&shader);
 	
 	// vao
 	float vertices[] = {
@@ -52,6 +55,11 @@ int main()
 	mesh.SetVertices(vertices, sizeof(vertices));
 	mesh.SetIndices(indices, sizeof(indices), MeshTopology::Triangles);
 	mesh.CheckOrUpload();
+	// renderer
+	MeshRenderer renderer;
+	renderer.material = &material;
+	renderer.mesh = &mesh;
+
 
 	// main loop
 	while (!glfwWindowShouldClose(window))
@@ -60,9 +68,7 @@ int main()
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		
-		shader.Use();
-		glBindVertexArray(mesh.VAO());
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		renderer.Render();
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();

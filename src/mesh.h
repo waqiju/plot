@@ -1,3 +1,4 @@
+#pragma once
 #include <vector>
 
 
@@ -7,7 +8,7 @@ enum class MeshTopology
     Quads,
     Lines,
     LineStrip,
-    Point,
+    Points,
 };
 
 
@@ -29,6 +30,28 @@ public:
     unsigned int VAO()
     {
         return m_VAO;
+    }
+    GLenum TopologyToGLenum()
+    {
+        switch (m_Topology)
+        {
+        case MeshTopology::Triangles:
+            return GL_TRIANGLES;
+        case MeshTopology::Quads:
+            return GL_QUADS;
+        case MeshTopology::Lines:
+            return GL_LINES;
+        case MeshTopology::LineStrip:
+            return GL_LINE_STRIP;
+        case MeshTopology::Points:
+            return GL_POINTS;
+        default:
+            return GL_TRIANGLES;
+        }
+    }
+    unsigned int IndicesCount()
+    {
+        return m_Indices.size();
     }
 private:
     void UploadMeshData();

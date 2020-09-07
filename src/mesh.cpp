@@ -20,6 +20,7 @@ void Mesh::CheckOrUpload()
 	if (m_HasChanged)
 	{
 		UploadMeshData();
+		m_HasChanged = false;
 	}
 	assert(m_VAO != 0);
 }
