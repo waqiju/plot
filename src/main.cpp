@@ -5,6 +5,7 @@
 #include "material.h"
 #include "mesh.h"
 #include "mesh_renderer.h"
+#include "entity/entity.h"
 
 
 void processInput(GLFWwindow* window);
@@ -56,9 +57,10 @@ int main()
 	mesh.SetIndices(indices, sizeof(indices), MeshTopology::Triangles);
 	mesh.CheckOrUpload();
 	// renderer
-	MeshRenderer renderer;
-	renderer.material = &material;
-	renderer.mesh = &mesh;
+	Entity entity;
+	MeshRenderer* renderer = entity.AddComponent<MeshRenderer>();
+	renderer->material = &material;
+	renderer->mesh = &mesh;
 
 
 	// main loop
@@ -68,7 +70,7 @@ int main()
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		
-		renderer.Render();
+		renderer->Render();
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();

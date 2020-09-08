@@ -130,7 +130,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application.cpp" />
+    <ClCompile Include="src\entity\component.cpp" />
+    <ClCompile Include="src\entity\entity.cpp" />
     <ClCompile Include="src\entity\world.cpp" />
+    <ClCompile Include="src\entity\world_object.cpp" />
     <ClCompile Include="src\glad.c" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\material.cpp" />
@@ -141,7 +144,10 @@
   <ItemGroup>
     <ClInclude Include="src\application.h" />
     <ClInclude Include="src\default_shader.h" />
+    <ClInclude Include="src\entity\component.h" />
+    <ClInclude Include="src\entity\entity.h" />
     <ClInclude Include="src\entity\world.h" />
+    <ClInclude Include="src\entity\world_object.h" />
     <ClInclude Include="src\material.h" />
     <ClInclude Include="src\mesh.h" />
     <ClInclude Include="src\mesh_renderer.h" />

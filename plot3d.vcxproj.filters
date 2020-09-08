@@ -39,6 +39,15 @@
     <ClCompile Include="src\mesh_renderer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\entity\world_object.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entity\entity.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entity\component.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\default_shader.h">
@@ -60,6 +69,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\mesh_renderer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\world_object.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\component.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\entity.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

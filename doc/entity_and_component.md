@@ -100,7 +100,7 @@ Entity
 
 Component
 {
-    Entity()  () -> entity
+    OnwerEntity()  () -> entity
     Enabled()  (status) -> ()
     Enable()  status -> ()
 }

@@ -2,6 +2,11 @@
 #include <glad/glad.h>
 #include "mesh_renderer.h"
 
+MeshRenderer::MeshRenderer(Entity* owner) : Component(owner)
+{
+	name = "MeshRenderer";
+}
+
 void MeshRenderer::Render()
 {
 	assert(material != NULL);
