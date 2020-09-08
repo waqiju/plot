@@ -55,7 +55,6 @@ int main()
 	Mesh mesh;
 	mesh.SetVertices(vertices, sizeof(vertices));
 	mesh.SetIndices(indices, sizeof(indices), MeshTopology::Triangles);
-	mesh.CheckOrUpload();
 	// renderer
 	Entity entity;
 	MeshRenderer* renderer = entity.AddComponent<MeshRenderer>();
