@@ -58,7 +58,7 @@ private:
 private:
     bool m_HasChanged = false;
     unsigned int m_VAO = 0;
-    MeshTopology m_Topology;
+    MeshTopology m_Topology = MeshTopology::Triangles;
 
     std::vector<float> m_Vertices;
     std::vector<unsigned int> m_Indices;

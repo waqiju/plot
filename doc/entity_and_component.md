@@ -79,6 +79,8 @@ World
     rootCount
     GetRootEntities()
     CreateEntity()  () -> entity
+    AttachEntity()  (entity) ->
+    GetComponentsInEnities()  <type> -> components_list
 }
 
 WorldObject
@@ -93,6 +95,7 @@ Entity
 {
     Actived()
     SetActive()
+    OnwerWorld()
     AddComponent()  <type> -> component
     GetComponent()  <type> -> component
     GetComponentsInChildren()  <type> -> component_list

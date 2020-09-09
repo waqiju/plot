@@ -1,13 +1,25 @@
-#include "world.h"
+#include "entity/world.h"
+#include "entity/entity.h"
 
-World* World::ActiveWorld = NULL;
+World* World::m_ActiveWorld = NULL;
 
-void World::CreateOneAsAcitve()
+
+World* World::ActiveWorld()
 {
-	if (ActiveWorld != NULL)
-	{
-		delete(ActiveWorld);
-	}
+    if (m_ActiveWorld == NULL)
+    {
+        m_ActiveWorld = new World();
+    }
 
-	ActiveWorld = new World();
+    return m_ActiveWorld;
+}
+
+Entity* World::CreateEntity()
+{
+	return new Entity(this);
+}
+
+void World::AttachEntity(Entity* entity)
+{
+    m_EntityList.push_back(entity);
 }

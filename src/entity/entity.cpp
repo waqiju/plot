@@ -1,11 +1,28 @@
-#include "entity.h"
+#include "entity/entity.h"
+#include "entity/world.h"
 
-bool Entity::Actived()
+
+Entity::Entity() : Entity(World::ActiveWorld())
 {
-    return m_Actived;
+}
+
+Entity::Entity(World* onwerWorld)
+{
+    m_OnwerWorld = onwerWorld;
+    onwerWorld->AttachEntity(this);
+}
+
+bool Entity::Active()
+{
+    return m_Active;
+}
+
+World* Entity::OnwerWorld()
+{
+    return m_OnwerWorld;
 }
 
 void Entity::SetActive(bool status)
 {
-    m_Actived = status;
+    m_Active = status;
 }
