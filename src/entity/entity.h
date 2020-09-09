@@ -13,7 +13,7 @@ class World;
 class Entity : public WorldObject
 {
 public:
-    Entity();
+    // Entity();
     Entity(World* onwerWorld);
 
     bool Active();

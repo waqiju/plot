@@ -145,9 +145,12 @@
     <ClInclude Include="src\application.h" />
     <ClInclude Include="src\default_shader.h" />
     <ClInclude Include="src\entity\component.h" />
+    <ClInclude Include="src\entity\ec.h" />
     <ClInclude Include="src\entity\entity.h" />
+    <ClInclude Include="src\entity\transform.h" />
     <ClInclude Include="src\entity\world.h" />
     <ClInclude Include="src\entity\world_object.h" />
+    <ClInclude Include="src\geometry\vector3.h" />
     <ClInclude Include="src\material.h" />
     <ClInclude Include="src\mesh.h" />
     <ClInclude Include="src\mesh_renderer.h" />

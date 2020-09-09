@@ -5,8 +5,7 @@
 #include "material.h"
 #include "mesh.h"
 #include "mesh_renderer.h"
-#include "entity/entity.h"
-#include "entity/world.h"
+#include "entity/ec.h"
 
 
 void processInput(GLFWwindow* window);

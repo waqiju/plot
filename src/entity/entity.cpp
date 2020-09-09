@@ -2,9 +2,8 @@
 #include "entity/world.h"
 
 
-Entity::Entity() : Entity(World::ActiveWorld())
-{
-}
+// Entity::Entity() : Entity(World::ActiveWorld())
+// {}
 
 Entity::Entity(World* onwerWorld)
 {

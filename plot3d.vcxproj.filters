@@ -80,5 +80,14 @@
     <ClInclude Include="src\entity\entity.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\geometry\vector3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\transform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\ec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
