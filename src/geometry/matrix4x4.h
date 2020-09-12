@@ -11,8 +11,10 @@ public:
 	static Matrix4x4 TRS(Vector3 translate, Quaternion rotation, Vector3 scale);
     static Matrix4x4 Rotate(Quaternion q);
     static Matrix4x4 LookAt(Vector3 from, Vector3 to, Vector3 up);
+    static Matrix4x4 Perspective(float fov, float aspect, float zNear, float zFar);
 
 	Matrix4x4();
+    Matrix4x4(float x);
     Matrix4x4(float a1, float a2, float a3, float a4,
         float b1, float b2, float b3, float b4,
         float c1, float c2, float c3, float c4,

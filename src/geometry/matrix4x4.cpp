@@ -1,4 +1,6 @@
 #include <cassert>
+#include <cmath>
+#include <limits>
 #include "matrix4x4.h"
 
 
@@ -67,18 +69,34 @@ Matrix4x4 Matrix4x4::LookAt(Vector3 from, Vector3 to, Vector3 up)
     return result;
 }
 
+
+Matrix4x4 Matrix4x4::Perspective(float fov, float aspect, float zNear, float zFar)
+{
+    assert(abs(aspect - std::numeric_limits<float>::epsilon()) > 0);
+
+    float tanHalfFov = tan(fov / 2);
+
+    Matrix4x4 result(0);
+    result[0][0] = static_cast<float>(1) / (aspect * tanHalfFov);
+    result[1][1] = static_cast<float>(1) / (tanHalfFov);
+    result[2][2] = zFar / (zNear - zFar);
+    result[2][3] = -static_cast<float>(1);
+    result[3][2] = -(zFar * zNear) / (zFar - zNear);
+    return result;
+}
+
 Matrix4x4::Matrix4x4()
 {
     (*this) = Matrix4x4::identity;
 }
 
-Matrix4x4::Matrix4x4(float a1, float a2, float a3, float a4, float b1, float b2, float b3, float b4, float c1, float c2, float c3, float c4, float d1, float d2, float d3, float d4)
-{
-    m_Value[0] = Vector4(a1, a2, a3, a4);
-    m_Value[1] = Vector4(b1, b2, b3, b4);
-    m_Value[2] = Vector4(c1, c2, c3, c4);
-    m_Value[3] = Vector4(d1, d2, d3, d4);
-}
+Matrix4x4::Matrix4x4(float x) :
+    m_Value{Vector4(x, 0, 0, 0), Vector4(0, x, 0, 0), Vector4(0, 0, x, 0), Vector4(0, 0, 0, x)}
+{}
+
+Matrix4x4::Matrix4x4(float a1, float a2, float a3, float a4, float b1, float b2, float b3, float b4, float c1, float c2, float c3, float c4, float d1, float d2, float d3, float d4):
+    m_Value{Vector4(a1, a2, a3, a4), Vector4(b1, b2, b3, b4), Vector4(c1, c2, c3, c4), Vector4(d1, d2, d3, d4)}
+{}
 
 Matrix4x4::Matrix4x4(Vector3 translate, Quaternion rotation, Vector3 scale)
 {

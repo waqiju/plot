@@ -139,9 +139,8 @@ value [4] -> vector4
 
 ## assimp 中的 matrix4x4 实现
 
-matrix4x4.h
 
 Matrix4x4::Rotate()
-
-
-Matrix4x4::TRS()  代码实现，参考 matrix4x4.inl
+Matrix4x4::TRS()  代码实现，参考 assimp/matrix4x4.inl
+Matrix4x4::Look()  代码实现，参考 glm/matrix_transform.inl
+Matrix4x4::Perspective()  代码实现，参考 glm/matrix_clip_space.inl
