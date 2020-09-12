@@ -10,6 +10,7 @@ public:
     static Matrix4x4 identity;
 	static Matrix4x4 TRS(Vector3 translate, Quaternion rotation, Vector3 scale);
     static Matrix4x4 Rotate(Quaternion q);
+    static Matrix4x4 LookAt(Vector3 from, Vector3 to, Vector3 up);
 
 	Matrix4x4();
     Matrix4x4(float a1, float a2, float a3, float a4,

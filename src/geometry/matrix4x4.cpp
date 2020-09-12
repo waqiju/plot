@@ -45,6 +45,28 @@ Matrix4x4 Matrix4x4::Rotate(Quaternion q)
     return matrix;
 }
 
+Matrix4x4 Matrix4x4::LookAt(Vector3 from, Vector3 to, Vector3 up)
+{
+    Vector3 const f(Vector3::Normalize(to - from));
+    Vector3 const s(Vector3::Normalize(Vector3::Cross(up, f)));
+    Vector3 const u(Vector3::Cross(f, s));
+
+    Matrix4x4 result;
+    result[0][0] = s.x;
+    result[1][0] = s.y;
+    result[2][0] = s.z;
+    result[0][1] = u.x;
+    result[1][1] = u.y;
+    result[2][1] = u.z;
+    result[0][2] = f.x;
+    result[1][2] = f.y;
+    result[2][2] = f.z;
+    result[3][0] = -Vector3::Dot(s, from);
+    result[3][1] = -Vector3::Dot(u, from);
+    result[3][2] = -Vector3::Dot(f, from);
+    return result;
+}
+
 Matrix4x4::Matrix4x4()
 {
     (*this) = Matrix4x4::identity;
