@@ -60,6 +60,8 @@ int main()
 	MeshRenderer* renderer = entity->AddComponent<MeshRenderer>();
 	renderer->material = &material;
 	renderer->mesh = &mesh;
+	// transform
+	entity->AddComponent<Transform>();
 
 
 	// main loop
