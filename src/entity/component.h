@@ -11,6 +11,9 @@ public:
     Entity* OnwerEntity();
     bool Enabled();
 
+    template<typename T> T* AddComponent() { return OnwerEntity()->template AddComponent<T>(); }
+    template<typename T> T* GetComponent() { return OnwerEntity()->template GetComponent<T>(); }
+
 private:
     void Enable(bool status);
 

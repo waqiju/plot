@@ -1,5 +1,6 @@
 #include "entity/world.h"
 #include "entity/entity.h"
+#include "entity/transform.h"
 
 World* World::m_ActiveWorld = NULL;
 
@@ -16,10 +17,13 @@ World* World::ActiveWorld()
 
 Entity* World::CreateEntity()
 {
-	return new Entity(this);
+    Entity* entity = new Entity(this);
+    entity->AddComponent<Transform>();
+    m_EntityList.push_back(entity);
+	return entity;
 }
 
-void World::AttachEntity(Entity* entity)
-{
-    m_EntityList.push_back(entity);
-}
+// void World::AttachEntity(Entity* entity)
+// {
+//     m_EntityList.push_back(entity);
+// }

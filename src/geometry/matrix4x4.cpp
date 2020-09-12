@@ -109,4 +109,36 @@ Vector4& Matrix4x4::operator[](size_t i)
     return m_Value[i];
 }
 
+Vector4 const& Matrix4x4::operator[](size_t i) const
+{
+    assert(i >= 0 && i < Length());
+    return m_Value[i];
+}
+
+Matrix4x4& Matrix4x4::operator*=(Matrix4x4 const& m)
+{
+    return (*this = *this * m);
+}
+
 Matrix4x4 Matrix4x4::identity = Matrix4x4(1, 0, 0, 0, /* 0 */ 0, 1, 0, 0, /* 1 */ 0, 0, 1, 0, /* 2 */ 0, 0, 0, 1);
+
+
+Matrix4x4 operator*(Matrix4x4 const& lhs, Matrix4x4 const& rhs)
+{
+    Vector4 const& SrcA0 = lhs[0];
+    Vector4 const& SrcA1 = lhs[1];
+    Vector4 const& SrcA2 = lhs[2];
+    Vector4 const& SrcA3 = lhs[3];
+
+    Vector4 const& SrcB0 = rhs[0];
+    Vector4 const& SrcB1 = rhs[1];
+    Vector4 const& SrcB2 = rhs[2];
+    Vector4 const& SrcB3 = rhs[3];
+
+    Matrix4x4 result;
+    result[0] = SrcA0 * SrcB0[0] + SrcA1 * SrcB0[1] + SrcA2 * SrcB0[2] + SrcA3 * SrcB0[3];
+    result[1] = SrcA0 * SrcB1[0] + SrcA1 * SrcB1[1] + SrcA2 * SrcB1[2] + SrcA3 * SrcB1[3];
+    result[2] = SrcA0 * SrcB2[0] + SrcA1 * SrcB2[1] + SrcA2 * SrcB2[2] + SrcA3 * SrcB2[3];
+    result[3] = SrcA0 * SrcB3[0] + SrcA1 * SrcB3[1] + SrcA2 * SrcB3[2] + SrcA3 * SrcB3[3];
+    return result;
+}

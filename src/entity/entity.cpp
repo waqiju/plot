@@ -8,7 +8,6 @@
 Entity::Entity(World* onwerWorld)
 {
     m_OnwerWorld = onwerWorld;
-    onwerWorld->AttachEntity(this);
 }
 
 bool Entity::Active()

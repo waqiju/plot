@@ -48,6 +48,21 @@
     <ClCompile Include="src\entity\component.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\geometry\vector3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\geometry\matrix4x4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\geometry\quaternion.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\geometry\vector4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\camera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\default_shader.h">
@@ -87,6 +102,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\entity\ec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\geometry\vector4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\geometry\matrix4x4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\camera.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

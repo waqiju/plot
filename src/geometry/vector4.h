@@ -14,6 +14,11 @@ public:
 	float Magnitude();
     void Normalize();
 
-	size_t Length() { return 4; }
+	constexpr static size_t Length() { return 4; }
 	float& operator[](size_t i);
+    float const& operator[](size_t i) const;
 };
+
+Vector4 operator+(Vector4 lhs, Vector4 rhs);
+Vector4 operator-(Vector4 lhs, Vector4 rhs);
+Vector4 operator*(Vector4 v, float scalar);

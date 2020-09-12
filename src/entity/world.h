@@ -9,7 +9,7 @@ class World
 public:
     static World* ActiveWorld();
     Entity* CreateEntity();
-    void AttachEntity(Entity* entity);
+    // void AttachEntity(Entity* entity);
     template<typename T> std::vector<T*> GetComponentsInEnities();
 
 private:

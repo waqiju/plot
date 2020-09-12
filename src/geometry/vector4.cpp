@@ -39,3 +39,34 @@ float& Vector4::operator[](size_t i)
 		return w;
 	}
 }
+
+float const& Vector4::operator[](size_t i) const
+{
+	assert(i >= 0 && i < Length());
+	switch (i)
+	{
+	case 0:
+		return x;
+	case 1:
+		return y;
+	case 2:
+		return z;
+	case 3:
+		return w;
+	}
+}
+
+Vector4 operator+(Vector4 lhs, Vector4 rhs)
+{
+    return Vector4(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z, lhs.w + rhs.w);
+}
+
+Vector4 operator-(Vector4 lhs, Vector4 rhs)
+{
+    return Vector4(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z, lhs.w - rhs.w);
+}
+
+Vector4 operator*(Vector4 v, float scalar)
+{
+    return Vector4(v.x * scalar, v.y * scalar, v.z * scalar, v.w * scalar);
+}

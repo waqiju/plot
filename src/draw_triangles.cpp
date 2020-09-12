@@ -5,17 +5,14 @@
 #include "material.h"
 #include "mesh.h"
 #include "mesh_renderer.h"
-#include "camera.h"
 #include "entity/ec.h"
-#include "geometry/geometry.h"
 
 
 void processInput(GLFWwindow* window);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-Camera* CreateCamera();
 
 
-int main()
+int main_1()
 {
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -39,9 +36,6 @@ int main()
 		std::cout << "Failed to intialize GLAD" << std::endl;
 		return -1;
 	}
-
-	// camera
-	Camera* camera = CreateCamera();
 
 	// shader
 	Shader shader("src/shader/triangle.vs", "src/shader/triangle.fs");
@@ -67,13 +61,6 @@ int main()
 	renderer->material = &material;
 	renderer->mesh = &mesh;
 
-	// mvp
-	Matrix4x4 modelMatrix = entity->GetComponent<Transform>()->WorldToLocalMatrix();
-	Matrix4x4 viewMatrix = Matrix4x4::LookAt(camera->GetComponent<Transform>()->LocalPosition(), 
-		entity->GetComponent<Transform>()->LocalPosition(), 
-		Vector3(0, 1, 0));
-	Matrix4x4 projectMatrix = camera->ProjectionMatrix();
-	Matrix4x4 mvp = modelMatrix * viewMatrix * projectMatrix;
 
 	// main loop
 	while (!glfwWindowShouldClose(window))
@@ -107,14 +94,4 @@ void processInput(GLFWwindow* window)
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
 	glViewport(0, 0, width, height);
-}
-
-Camera* CreateCamera()
-{
-	Entity* entity = World::ActiveWorld()->CreateEntity();
-	Transform* transform = entity->GetComponent<Transform>();
-	transform->SetLocalPosition(Vector3(0, 0, 3));
-	Camera* camera = entity->AddComponent<Camera>();
-
-	return camera;
 }

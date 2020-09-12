@@ -7,6 +7,7 @@
 class Matrix4x4
 {
 public:
+    static constexpr  size_t Length() { return 4; }
     static Matrix4x4 identity;
 	static Matrix4x4 TRS(Vector3 translate, Quaternion rotation, Vector3 scale);
     static Matrix4x4 Rotate(Quaternion q);
@@ -21,11 +22,12 @@ public:
         float d1, float d2, float d3, float d4);
     Matrix4x4(Vector3 position, Quaternion rotation, Vector3 scale);
 
-    size_t Length() {return 4;}
     Vector4& operator[](size_t i);
+    Vector4 const& operator[](size_t i) const;
+    Matrix4x4& operator*=(Matrix4x4 const& m);
 
 private:
     Vector4 m_Value[4];
-	// Matrix4x4() :Vector3(0, 0, 0) {}
-	// Matrix4x4(float inX, float inY, float inZ) : x(inX), y(inY), z(inZ) {}
 };
+
+Matrix4x4 operator*(Matrix4x4 const& lhs, Matrix4x4 const& rhs);
