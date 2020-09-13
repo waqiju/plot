@@ -116,5 +116,14 @@
     <ClInclude Include="src\material_property_block.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\geometry\mathf.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\geometry\geometry.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\geometry\quaternion.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

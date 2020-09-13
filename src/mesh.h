@@ -31,6 +31,14 @@ public:
     {
         return m_VAO;
     }
+    unsigned int EBO()
+    {
+        return m_EBO;
+    }
+    unsigned int VertexCount()
+    {
+        return m_Vertices.size() / 3;
+    }
     GLenum TopologyToGLenum()
     {
         switch (m_Topology)
@@ -58,6 +66,7 @@ private:
 private:
     bool m_HasChanged = false;
     unsigned int m_VAO = 0;
+    unsigned int m_EBO = 0;
     MeshTopology m_Topology = MeshTopology::Triangles;
 
     std::vector<float> m_Vertices;

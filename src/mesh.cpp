@@ -32,10 +32,9 @@ void Mesh::UploadMeshData()
 		// TODO release previous resource
 	}
 
-	unsigned int VBO, EBO;
+	unsigned int VBO;
 	glGenVertexArrays(1, &m_VAO);
 	glGenBuffers(1, &VBO);
-	glGenBuffers(1, &EBO);
 	// position
 	glBindVertexArray(m_VAO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -43,8 +42,12 @@ void Mesh::UploadMeshData()
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	// indices
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_Indices.size() * sizeof(unsigned int), &m_Indices[0], GL_STATIC_DRAW);
+	if (m_Indices.size() > 0)
+	{
+		glGenBuffers(1, &m_EBO);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_Indices.size() * sizeof(unsigned int), &m_Indices[0], GL_STATIC_DRAW);
+	}
 	// clean
 	glBindVertexArray(0);
 }

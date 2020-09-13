@@ -9,49 +9,59 @@ Matrix4x4 Matrix4x4::TRS(Vector3 position, Quaternion rotation, Vector3 scale)
     Matrix4x4 m = Rotate(rotation);
 
     m[0][0] = m[0][0] * scale.x;
-    m[0][1] = m[0][1] * scale.x;
-    m[0][2] = m[0][2] * scale.x;
-    m[0][3] = position.x;
-
     m[1][0] = m[1][0] * scale.x;
-    m[1][1] = m[1][1] * scale.x;
-    m[1][2] = m[1][2] * scale.x;
-    m[1][3] = position.y;
-
     m[2][0] = m[2][0] * scale.x;
+    m[3][0] = position.x;
+
+    m[0][1] = m[0][1] * scale.x;
+    m[1][1] = m[1][1] * scale.x;
     m[2][1] = m[2][1] * scale.x;
+    m[3][1] = position.y;
+
+    m[0][2] = m[0][2] * scale.x;
+    m[1][2] = m[1][2] * scale.x;
     m[2][2] = m[2][2] * scale.x;
-    m[2][3] = position.y;
+    m[3][2] = position.z;
 
     // m[3] is (0, 0, 0, 1), it set by Rotate. So skip it
     return m;
 }
 
+Matrix4x4 Matrix4x4::Translate(Vector3 position)
+{
+    Matrix4x4 result;
+    result[3][0] = position.x;
+    result[3][1] = position.y;
+    result[3][2] = position.z;
+
+    return result;
+}
+
 Matrix4x4 Matrix4x4::Rotate(Quaternion q)
 {
-    Matrix4x4 matrix;
+    Matrix4x4 result;
     float& x = q.x;
     float& y = q.y;
     float& z = q.z;
     float& w = q.w;
-    matrix[0][0] = 1.0f - 2.0f * (y * y + z * z);
-    matrix[0][1] = 2.0f * (x * y - z * w);
-    matrix[0][2] = 2.0f * (x * z + y * w);
-    matrix[1][0] = 2.0f * (x * y + z * w);
-    matrix[1][1] = 1.0f - 2.0f * (x * x + z * z);
-    matrix[1][2] = 2.0f * (y * z - x * w);
-    matrix[2][0] = 2.0f * (x * z - y * w);
-    matrix[2][1] = 2.0f * (y * z + x * w);
-    matrix[2][2] = 1.0f - 2.0f * (x * x + y * y);
+    result[0][0] = 1.0f - 2.0f * (y * y + z * z);
+    result[0][1] = 2.0f * (x * y - z * w);
+    result[0][2] = 2.0f * (x * z + y * w);
+    result[1][0] = 2.0f * (x * y + z * w);
+    result[1][1] = 1.0f - 2.0f * (x * x + z * z);
+    result[1][2] = 2.0f * (y * z - x * w);
+    result[2][0] = 2.0f * (x * z - y * w);
+    result[2][1] = 2.0f * (y * z + x * w);
+    result[2][2] = 1.0f - 2.0f * (x * x + y * y);
 
-    return matrix;
+    return result;
 }
 
 Matrix4x4 Matrix4x4::LookAt(Vector3 from, Vector3 to, Vector3 up)
 {
     Vector3 const f(Vector3::Normalize(to - from));
-    Vector3 const s(Vector3::Normalize(Vector3::Cross(up, f)));
-    Vector3 const u(Vector3::Cross(f, s));
+    Vector3 const s(Vector3::Normalize(Vector3::Cross(f, up)));
+    Vector3 const u(Vector3::Cross(s, f));
 
     Matrix4x4 result;
     result[0][0] = s.x;
@@ -60,12 +70,12 @@ Matrix4x4 Matrix4x4::LookAt(Vector3 from, Vector3 to, Vector3 up)
     result[0][1] = u.x;
     result[1][1] = u.y;
     result[2][1] = u.z;
-    result[0][2] = f.x;
-    result[1][2] = f.y;
-    result[2][2] = f.z;
-    result[3][0] = -Vector3::Dot(s, from);
-    result[3][1] = -Vector3::Dot(u, from);
-    result[3][2] = -Vector3::Dot(f, from);
+    result[0][2] =-f.x;
+    result[1][2] =-f.y;
+    result[2][2] =-f.z;
+    result[3][0] =-Vector3::Dot(s, from);
+    result[3][1] =-Vector3::Dot(u, from);
+    result[3][2] =Vector3::Dot(f, from);
     return result;
 }
 
@@ -79,9 +89,35 @@ Matrix4x4 Matrix4x4::Perspective(float fov, float aspect, float zNear, float zFa
     Matrix4x4 result(0);
     result[0][0] = static_cast<float>(1) / (aspect * tanHalfFov);
     result[1][1] = static_cast<float>(1) / (tanHalfFov);
-    result[2][2] = zFar / (zNear - zFar);
-    result[2][3] = -static_cast<float>(1);
-    result[3][2] = -(zFar * zNear) / (zFar - zNear);
+    result[2][2] = - (zFar + zNear) / (zFar - zNear);
+    result[2][3] = - static_cast<float>(1);
+    result[3][2] = - (static_cast<float>(2) * zFar * zNear) / (zFar - zNear);
+    
+    return result;
+}
+
+Matrix4x4 Matrix4x4::AngleAxis(float angle, Vector3 axis)
+{
+    float const a = angle;
+    float const c = cos(a);
+    float const s = sin(a);
+
+    axis = Vector3::Normalize(axis);
+    Vector3 temp(axis * (1 - c));
+
+    Matrix4x4 result;
+    result[0][0] = c + temp[0] * axis[0];
+    result[0][1] = temp[0] * axis[1] + s * axis[2];
+    result[0][2] = temp[0] * axis[2] - s * axis[1];
+
+    result[1][0] = temp[1] * axis[0] - s * axis[2];
+    result[1][1] = c + temp[1] * axis[1];
+    result[1][2] = temp[1] * axis[2] + s * axis[0];
+
+    result[2][0] = temp[2] * axis[0] + s * axis[1];
+    result[2][1] = temp[2] * axis[1] - s * axis[0];
+    result[2][2] = c + temp[2] * axis[2];
+
     return result;
 }
 

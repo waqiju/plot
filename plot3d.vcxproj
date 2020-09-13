@@ -156,7 +156,10 @@
     <ClInclude Include="src\entity\transform.h" />
     <ClInclude Include="src\entity\world.h" />
     <ClInclude Include="src\entity\world_object.h" />
+    <ClInclude Include="src\geometry\geometry.h" />
+    <ClInclude Include="src\geometry\mathf.h" />
     <ClInclude Include="src\geometry\matrix4x4.h" />
+    <ClInclude Include="src\geometry\quaternion.h" />
     <ClInclude Include="src\geometry\vector3.h" />
     <ClInclude Include="src\geometry\vector4.h" />
     <ClInclude Include="src\material.h" />

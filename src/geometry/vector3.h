@@ -1,4 +1,5 @@
 #pragma once
+#include <glm/glm.hpp>
 
 
 class Vector3
@@ -14,6 +15,7 @@ public:
 	float x, y, z;
 	Vector3() :Vector3(0, 0, 0) {}
 	Vector3(float inX, float inY, float inZ) : x(inX), y(inY), z(inZ) {}
+	explicit Vector3(glm::vec3 vec) { (*this) = *(reinterpret_cast<Vector3*>(&vec)); }
 
 	float Magnitude();
     void Normalize();

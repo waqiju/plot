@@ -38,13 +38,13 @@ public:
 
     Matrix4x4 WorldToLocalMatrix() 
     {
-        // TODO hierarchy
-        return Matrix4x4::TRS(m_LocalPosition, m_LocalRotation, m_LocalScale);
+        // TODO 
+        return Matrix4x4();
     };
     Matrix4x4 LocalToWorldMatrix() 
     {
-        // TODO 
-        return Matrix4x4();
+        // TODO hierarchy
+        return Matrix4x4::TRS(m_LocalPosition, m_LocalRotation, m_LocalScale);
     };
 
 private:
