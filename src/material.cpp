@@ -10,5 +10,6 @@ Material::Material(Shader* shader)
 void Material::Use()
 {
 	assert(m_Shader != NULL);
+	m_Block.Apply(m_Shader->ID);
 	m_Shader->Use();
 }

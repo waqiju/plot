@@ -4,6 +4,7 @@
 class Vector3
 {
 public:
+	static size_t const Length() { return 3; }
 	static Vector3 zero;
 	static Vector3 one;
     static Vector3 Normalize(Vector3 value);
@@ -17,8 +18,8 @@ public:
 	float Magnitude();
     void Normalize();
 
-    size_t Length() { return 3; }
     float& operator[](size_t i);
+	const float& operator[](size_t i) const;
 };
 
 Vector3 operator+(Vector3 lhs, Vector3 rhs);

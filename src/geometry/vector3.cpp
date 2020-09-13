@@ -70,6 +70,20 @@ float& Vector3::operator[](size_t i)
     }
 }
 
+const float& Vector3::operator[](size_t i) const
+{
+    assert(i >= 0 && i < Length());
+    switch (i)
+    {
+    case 0:
+        return x;
+    case 1:
+        return y;
+    case 2:
+        return z;
+    }
+}
+
 Vector3 operator+(Vector3 lhs, Vector3 rhs)
 {
     return Vector3(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z);

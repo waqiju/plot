@@ -44,7 +44,7 @@ int main()
 	Camera* camera = CreateCamera();
 
 	// shader
-	Shader shader("src/shader/triangle.vs", "src/shader/triangle.fs");
+	Shader shader("src/shader/color.vs", "src/shader/color.fs");
 	Material material(&shader);
 	
 	// vao
@@ -73,7 +73,10 @@ int main()
 		entity->GetComponent<Transform>()->LocalPosition(), 
 		Vector3(0, 1, 0));
 	Matrix4x4 projectMatrix = camera->ProjectionMatrix();
-	Matrix4x4 mvp = modelMatrix * viewMatrix * projectMatrix;
+	Matrix4x4 mvp = projectMatrix * viewMatrix * modelMatrix;
+
+	renderer->material->SetMatrix("MVP", mvp);
+	renderer->material->SetVector3("Color", Vector3(1, 1, 1));
 
 	// main loop
 	while (!glfwWindowShouldClose(window))

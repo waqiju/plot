@@ -160,6 +160,7 @@
     <ClInclude Include="src\geometry\vector3.h" />
     <ClInclude Include="src\geometry\vector4.h" />
     <ClInclude Include="src\material.h" />
+    <ClInclude Include="src\material_property_block.h" />
     <ClInclude Include="src\mesh.h" />
     <ClInclude Include="src\mesh_renderer.h" />
     <ClInclude Include="src\shader.h" />
