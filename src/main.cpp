@@ -143,18 +143,6 @@ int main()
 		float camZ = cos(glfwGetTime()) * radius;
 		Matrix4x4 viewMatrix = Matrix4x4::LookAt(Vector3(camX, 0.0f, camZ), Vector3::zero, Vector3(0.0f, 1.0f, 0.0f));
 
-  //      for (unsigned int i = 0; i < 10; i++)
-  //      {
-		//	float radian = 20.0f * i * Mathf::Deg2Rad;
-		//	Quaternion q = Quaternion::AngleAxis(radian, Vector3(1.0f, 0.3f, 0.5f));
-		//	Matrix4x4 modelMatrix = Matrix4x4::TRS(Vector3(cubePositions[i]), q, Vector3::one);
-		//	Matrix4x4 MVP = projectionMatrix * viewMatrix * modelMatrix;
-		//	for (MeshRenderer* renderer : World::ActiveWorld()->GetComponentsInEnities<MeshRenderer>())
-		//	{
-	 //           renderer->material->SetMatrix("MVP", MVP);
-		//		renderer->Render();
-		//	}
-		//}
 		for (MeshRenderer* renderer : World::ActiveWorld()->GetComponentsInEnities<MeshRenderer>())
 		{
 			Matrix4x4 modelMatrix = renderer->GetComponent<Transform>()->LocalToWorldMatrix();

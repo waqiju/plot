@@ -45,13 +45,13 @@ Matrix4x4 Matrix4x4::Rotate(Quaternion q)
     float& z = q.z;
     float& w = q.w;
     result[0][0] = 1.0f - 2.0f * (y * y + z * z);
-    result[0][1] = 2.0f * (x * y - z * w);
-    result[0][2] = 2.0f * (x * z + y * w);
-    result[1][0] = 2.0f * (x * y + z * w);
+    result[1][0] = 2.0f * (x * y - z * w);
+    result[2][0] = 2.0f * (x * z + y * w);
+    result[0][1] = 2.0f * (x * y + z * w);
     result[1][1] = 1.0f - 2.0f * (x * x + z * z);
-    result[1][2] = 2.0f * (y * z - x * w);
-    result[2][0] = 2.0f * (x * z - y * w);
-    result[2][1] = 2.0f * (y * z + x * w);
+    result[2][1] = 2.0f * (y * z - x * w);
+    result[0][2] = 2.0f * (x * z - y * w);
+    result[1][2] = 2.0f * (y * z + x * w);
     result[2][2] = 1.0f - 2.0f * (x * x + y * y);
 
     return result;
