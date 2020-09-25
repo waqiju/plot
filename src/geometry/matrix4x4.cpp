@@ -57,9 +57,31 @@ Matrix4x4 Matrix4x4::Rotate(Quaternion q)
     return result;
 }
 
-Matrix4x4 Matrix4x4::LookAt(Vector3 from, Vector3 to, Vector3 up)
+Matrix4x4 Matrix4x4::LookAt(Vector3 eye, Vector3 center, Vector3 up)
 {
-    Vector3 const f(Vector3::Normalize(to - from));
+    Vector3 const f(Vector3::Normalize(center - eye));
+    Vector3 const s(Vector3::Normalize(Vector3::Cross(up, f)));
+    Vector3 const u(Vector3::Cross(f, s));
+
+    Matrix4x4 result;
+    result[0][0] = s.x;
+    result[1][0] = s.y;
+    result[2][0] = s.z;
+    result[0][1] = u.x;
+    result[1][1] = u.y;
+    result[2][1] = u.z;
+    result[0][2] = f.x;
+    result[1][2] = f.y;
+    result[2][2] = f.z;
+    result[3][0] =-Vector3::Dot(s, eye);
+    result[3][1] =-Vector3::Dot(u, eye);
+    result[3][2] =-Vector3::Dot(f, eye);
+    return result;
+}
+
+Matrix4x4 Matrix4x4::LookAtRH(Vector3 eye, Vector3 center, Vector3 up)
+{
+    Vector3 const f(Vector3::Normalize(center - eye));
     Vector3 const s(Vector3::Normalize(Vector3::Cross(f, up)));
     Vector3 const u(Vector3::Cross(s, f));
 
@@ -73,14 +95,30 @@ Matrix4x4 Matrix4x4::LookAt(Vector3 from, Vector3 to, Vector3 up)
     result[0][2] =-f.x;
     result[1][2] =-f.y;
     result[2][2] =-f.z;
-    result[3][0] =-Vector3::Dot(s, from);
-    result[3][1] =-Vector3::Dot(u, from);
-    result[3][2] =Vector3::Dot(f, from);
+    result[3][0] =-Vector3::Dot(s, eye);
+    result[3][1] =-Vector3::Dot(u, eye);
+    result[3][2] =Vector3::Dot(f, eye);
     return result;
 }
 
-
+// 对应 glm 的 perspectiveLH_NO
 Matrix4x4 Matrix4x4::Perspective(float fov, float aspect, float zNear, float zFar)
+{
+    assert(abs(aspect - std::numeric_limits<float>::epsilon()) > static_cast<float>(0));
+
+    float const tanHalfFovy = tan(fov / static_cast<float>(2));
+
+    Matrix4x4 Result(static_cast<float>(0));
+    Result[0][0] = static_cast<float>(1) / (aspect * tanHalfFovy);
+    Result[1][1] = static_cast<float>(1) / (tanHalfFovy);
+    Result[2][2] = (zFar + zNear) / (zFar - zNear);
+    Result[2][3] = static_cast<float>(1);
+    Result[3][2] = - (static_cast<float>(2) * zFar * zNear) / (zFar - zNear);
+    return Result;
+}
+
+// 对应 glm 的 perspectiveRH_NO
+Matrix4x4 Matrix4x4::PerspectiveRH(float fov, float aspect, float zNear, float zFar)
 {
     assert(abs(aspect - std::numeric_limits<float>::epsilon()) > 0);
 
