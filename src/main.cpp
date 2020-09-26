@@ -141,12 +141,19 @@ int main()
 		float radius = 10.0f;
 		float camX = sin(glfwGetTime()) * radius;
 		float camZ = cos(glfwGetTime()) * radius;
-		// Matrix4x4 viewMatrix = Matrix4x4::LookAt(Vector3(camX, 0.0f, camZ), Vector3::zero, Vector3(0.0f, 1.0f, 0.0f));
+		 Matrix4x4 viewMatrix_1 = Matrix4x4::LookAt(Vector3(camX, 0.0f, camZ), Vector3::zero, Vector3(0.0f, 1.0f, 0.0f));
 
-		Quaternion r = Quaternion::LookAt(-Vector3(camX, 0.0f, camZ), Vector3(0.0f, 1.0f, 0.0f));
-		camera->GetComponent<Transform>()->SetLocalRotation(r);
+		Quaternion r1 = Quaternion::LookAt(-Vector3(camX, 0.0f, camZ), Vector3(0.0f, 1.0f, 0.0f));
+		camera->GetComponent<Transform>()->SetLocalRotation(r1);
 		camera->GetComponent<Transform>()->SetLocalPosition(Vector3(camX, 0.0f, camZ));
-		Matrix4x4 viewMatrix = camera->WorldToCameraMatrix();
+		Matrix4x4 viewMatrix_2 = camera->WorldToCameraMatrix();
+
+        Transform* cameraTransform = camera->GetComponent<Transform>();
+		Quaternion r = Quaternion::AngleAxis(glfwGetTime(), Vector3(0, 1, 0));
+        cameraTransform->SetLocalRotation(r);
+        Vector3 p = -cameraTransform->Forward() * 10;
+        camera->GetComponent<Transform>()->SetLocalPosition(p);
+        Matrix4x4 viewMatrix = camera->WorldToCameraMatrix();
 
 		for (MeshRenderer* renderer : World::ActiveWorld()->GetComponentsInEnities<MeshRenderer>())
 		{
