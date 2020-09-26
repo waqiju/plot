@@ -7,6 +7,11 @@ Vector4 Vector4::zero = Vector4(0, 0, 0, 0);
 Vector4 Vector4::one = Vector4(1, 1, 1, 1);
 
 
+float Vector4::Length()
+{
+	return sqrt(x * x + y * y + z * z + w * w);
+}
+
 float Vector4::Magnitude()
 {
 	return sqrt(x * x + y * y + z * z + w * w);
@@ -26,7 +31,7 @@ void Vector4::Normalize()
 
 float& Vector4::operator[](size_t i)
 {
-	assert(i >= 0 && i < Length());
+	assert(i >= 0 && i < ComponentSize());
 	switch (i)
 	{
 	case 0:
@@ -42,7 +47,7 @@ float& Vector4::operator[](size_t i)
 
 float const& Vector4::operator[](size_t i) const
 {
-	assert(i >= 0 && i < Length());
+	assert(i >= 0 && i < ComponentSize());
 	switch (i)
 	{
 	case 0:

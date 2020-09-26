@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #include "vector3.h"
 #include "vector4.h"
 #include "quaternion.h"
@@ -25,12 +26,19 @@ public:
         float b1, float b2, float b3, float b4,
         float c1, float c2, float c3, float c4,
         float d1, float d2, float d3, float d4);
+    Matrix4x4(Vector4 column1, Vector4 column2, Vector4 column3, Vector4 column4);
     Matrix4x4(Vector3 position, Quaternion rotation, Vector3 scale);
     explicit Matrix4x4(glm::mat4x4 m) { (*this) = *(reinterpret_cast<Matrix4x4*>(&m)); };
 
     Vector4& operator[](size_t i);
     Vector4 const& operator[](size_t i) const;
     Matrix4x4& operator*=(Matrix4x4 const& m);
+
+    Matrix4x4 Transpose() const;
+    float Determinant() const;
+    void Decompose(Vector3& position, Quaternion& rotation, Vector3& scaling) const;
+
+    std::string ToString() const;
 
 private:
     Vector4 m_Value[4];

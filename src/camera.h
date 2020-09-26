@@ -9,6 +9,7 @@ class Camera : public Component
 {
 public:
     Camera(Entity* owner);
+    Matrix4x4 WorldToCameraMatrix();
     Matrix4x4 ProjectionMatrix();
 
     float fieldOfView;

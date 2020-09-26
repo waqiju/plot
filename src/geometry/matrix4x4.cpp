@@ -1,6 +1,7 @@
 #include <cassert>
 #include <cmath>
 #include <limits>
+#include <sstream>
 #include "matrix4x4.h"
 
 
@@ -172,6 +173,11 @@ Matrix4x4::Matrix4x4(float a1, float a2, float a3, float a4, float b1, float b2,
     m_Value{Vector4(a1, a2, a3, a4), Vector4(b1, b2, b3, b4), Vector4(c1, c2, c3, c4), Vector4(d1, d2, d3, d4)}
 {}
 
+Matrix4x4::Matrix4x4(Vector4 column1, Vector4 column2, Vector4 column3, Vector4 column4):
+    m_Value{column1, column2, column3, column4}
+{}
+
+
 Matrix4x4::Matrix4x4(Vector3 translate, Quaternion rotation, Vector3 scale)
 {
 	(*this) = TRS(translate, rotation, scale);
@@ -192,6 +198,112 @@ Vector4 const& Matrix4x4::operator[](size_t i) const
 Matrix4x4& Matrix4x4::operator*=(Matrix4x4 const& m)
 {
     return (*this = *this * m);
+}
+
+Matrix4x4 Matrix4x4::Transpose() const
+{
+    Matrix4x4 result;
+    result[0][0] = m_Value[0][0];
+    result[0][1] = m_Value[1][0];
+    result[0][2] = m_Value[2][0];
+    result[0][3] = m_Value[3][0];
+
+    result[1][0] = m_Value[0][1];
+    result[1][1] = m_Value[1][1];
+    result[1][2] = m_Value[2][1];
+    result[1][3] = m_Value[3][1];
+
+    result[2][0] = m_Value[0][2];
+    result[2][1] = m_Value[1][2];
+    result[2][2] = m_Value[2][2];
+    result[2][3] = m_Value[3][2];
+
+    result[3][0] = m_Value[0][3];
+    result[3][1] = m_Value[1][3];
+    result[3][2] = m_Value[2][3];
+    result[3][3] = m_Value[3][3];
+    return result;
+}
+
+float Matrix4x4::Determinant() const
+{
+    float SubFactor00 = m_Value[2][2] * m_Value[3][3] - m_Value[3][2] * m_Value[2][3];
+    float SubFactor01 = m_Value[2][1] * m_Value[3][3] - m_Value[3][1] * m_Value[2][3];
+    float SubFactor02 = m_Value[2][1] * m_Value[3][2] - m_Value[3][1] * m_Value[2][2];
+    float SubFactor03 = m_Value[2][0] * m_Value[3][3] - m_Value[3][0] * m_Value[2][3];
+    float SubFactor04 = m_Value[2][0] * m_Value[3][2] - m_Value[3][0] * m_Value[2][2];
+    float SubFactor05 = m_Value[2][0] * m_Value[3][1] - m_Value[3][0] * m_Value[2][1];
+
+    Vector4 DetCof(
+        + (m_Value[1][1] * SubFactor00 - m_Value[1][2] * SubFactor01 + m_Value[1][3] * SubFactor02),
+        - (m_Value[1][0] * SubFactor00 - m_Value[1][2] * SubFactor03 + m_Value[1][3] * SubFactor04),
+        + (m_Value[1][0] * SubFactor01 - m_Value[1][1] * SubFactor03 + m_Value[1][3] * SubFactor05),
+        - (m_Value[1][0] * SubFactor02 - m_Value[1][1] * SubFactor04 + m_Value[1][2] * SubFactor05));
+
+    return
+        m_Value[0][0] * DetCof[0] + m_Value[0][1] * DetCof[1] +
+        m_Value[0][2] * DetCof[2] + m_Value[0][3] * DetCof[3];
+}
+
+void Matrix4x4::Decompose(Vector3& position, Quaternion& rotation, Vector3& scaling) const
+{
+    // translation
+    position.x = m_Value[3][0];
+    position.y = m_Value[3][1];
+    position.z = m_Value[3][2];
+
+    // columns
+    Vector3 columns[3] = {
+        Vector3(m_Value[0][0], m_Value[0][1], m_Value[0][2]),
+        Vector3(m_Value[1][0], m_Value[1][1], m_Value[1][2]),
+        Vector3(m_Value[2][0], m_Value[2][1], m_Value[2][2]),
+    };
+
+    // scaling
+    scaling.x = columns[0].Length();
+    scaling.y = columns[1].Length();
+    scaling.z = columns[2].Length();
+
+    if (Determinant() < 0)
+    {
+        scaling.x = -scaling.x;
+        scaling.y = -scaling.y;
+        scaling.z = -scaling.z;
+    }
+
+    // rotation
+    if(scaling.x)
+    {
+        columns[0] = columns[0] / scaling.x;
+    }
+    if(scaling.y)
+    {
+        columns[1] = columns[1] / scaling.y;
+    }
+    if(scaling.z)
+    {
+        columns[2] = columns[2] / scaling.z;
+    }
+
+    Matrix4x4 rotationMatrix = Matrix4x4(
+        Vector4(columns[0], 0),
+        Vector4(columns[1], 0),
+        Vector4(columns[2], 0),
+        Vector4());
+    rotation = Quaternion::CastMatrixToQuaternion(rotationMatrix);
+}
+
+std::string Matrix4x4::ToString() const
+{
+    std::stringstream stream;
+    Vector3 t, s, e;
+    Quaternion r;
+    Decompose(t, r, s);
+    e = r.EulerAngles();
+    stream << "T[" << t.x << ", " << t.y << ", " << t.z << "], "
+        << "R[" << e.x << ", " << e.y << ", " << e.z << "], "
+        << "S[" << s.x << ", " << s.y << ", " << s.z << "]";
+    return stream.str();
 }
 
 Matrix4x4 Matrix4x4::identity = Matrix4x4(1, 0, 0, 0, /* 0 */ 0, 1, 0, 0, /* 1 */ 0, 0, 1, 0, /* 2 */ 0, 0, 0, 1);

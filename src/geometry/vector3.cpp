@@ -39,9 +39,14 @@ Vector3 Vector3::Cross(Vector3 lhs, Vector3 rhs)
     return result;
 }
 
-float Vector3::Magnitude()
+float Vector3::Length()
 {
 	return sqrt(x * x + y * y + z * z);
+}
+
+float Vector3::Magnitude()
+{
+    return sqrt(x * x + y * y + z * z);
 }
 
 void Vector3::Normalize()
@@ -58,7 +63,7 @@ void Vector3::Normalize()
 
 float& Vector3::operator[](size_t i)
 {
-    assert(i >= 0 && i < Length());
+    assert(i >= 0 && i < ComponentSize());
     switch (i)
     {
     case 0:
@@ -72,7 +77,7 @@ float& Vector3::operator[](size_t i)
 
 const float& Vector3::operator[](size_t i) const
 {
-    assert(i >= 0 && i < Length());
+    assert(i >= 0 && i < ComponentSize());
     switch (i)
     {
     case 0:
@@ -82,6 +87,11 @@ const float& Vector3::operator[](size_t i) const
     case 2:
         return z;
     }
+}
+
+Vector3 Vector3::operator-() const
+{
+    return Vector3(-x, -y, -z);
 }
 
 Vector3 operator+(Vector3 lhs, Vector3 rhs)
@@ -99,3 +109,7 @@ Vector3 operator*(Vector3 v, float scalar)
     return Vector3(v.x * scalar, v.y * scalar, v.z * scalar);
 }
 
+Vector3 operator/(Vector3 v, float scalar)
+{
+    return Vector3(v.x / scalar, v.y / scalar, v.z / scalar);
+}

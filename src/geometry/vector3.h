@@ -5,7 +5,7 @@
 class Vector3
 {
 public:
-	static size_t const Length() { return 3; }
+	static size_t const ComponentSize() { return 3; }
 	static Vector3 zero;
 	static Vector3 one;
     static Vector3 Normalize(Vector3 value);
@@ -17,13 +17,16 @@ public:
 	Vector3(float inX, float inY, float inZ) : x(inX), y(inY), z(inZ) {}
 	explicit Vector3(glm::vec3 vec) { (*this) = *(reinterpret_cast<Vector3*>(&vec)); }
 
-	float Magnitude();
+	float Length();
+    float Magnitude();
     void Normalize();
 
     float& operator[](size_t i);
 	const float& operator[](size_t i) const;
+    Vector3 operator-() const;
 };
 
 Vector3 operator+(Vector3 lhs, Vector3 rhs);
 Vector3 operator-(Vector3 lhs, Vector3 rhs);
 Vector3 operator*(Vector3 v, float scalar);
+Vector3 operator/(Vector3 v, float scalar);

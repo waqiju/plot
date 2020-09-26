@@ -52,11 +52,32 @@ x, y, z
 x, y, z, w
 常量, identity
 运算
-构造函数, Euler()  
 {
-    (vector3) -> ()
-    (x, y, z) -> ()
+    Quaternion * Quaternion
+    Quaternion * Vector, 四元数 * 点
+    Dot, 这个有啥用
+    Normalize()
+    Inverse()
+    eulerAngles
 }
+构造函数
+
+旋转相关的公共方法
+构造
+{
+    Euler()  (x, y, z) -> quaternion
+    Euler()  (euler: Vector3) -> quaternion
+    AxisAngle()  (axis: Vector3, angle: float) -> quaternion
+    LookRotation()  (forward, upwards) -> quaternion
+    FromToRotation()  (fromDirection, toDirection) -> quaternion
+}
+插值
+{
+    Lerp()  (a, b, t) -> quaternion
+    SLerp()  (a, b, t) -> quaternion
+    RotateTowards  (from, to , maxDegreesDelta) -> quaternion
+}
+
 
 
 ## Matrix4x4

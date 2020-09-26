@@ -141,7 +141,12 @@ int main()
 		float radius = 10.0f;
 		float camX = sin(glfwGetTime()) * radius;
 		float camZ = cos(glfwGetTime()) * radius;
-		Matrix4x4 viewMatrix = Matrix4x4::LookAt(Vector3(camX, 0.0f, camZ), Vector3::zero, Vector3(0.0f, 1.0f, 0.0f));
+		// Matrix4x4 viewMatrix = Matrix4x4::LookAt(Vector3(camX, 0.0f, camZ), Vector3::zero, Vector3(0.0f, 1.0f, 0.0f));
+
+		Quaternion r = Quaternion::LookAt(-Vector3(camX, 0.0f, camZ), Vector3(0.0f, 1.0f, 0.0f));
+		camera->GetComponent<Transform>()->SetLocalRotation(r);
+		camera->GetComponent<Transform>()->SetLocalPosition(Vector3(camX, 0.0f, camZ));
+		Matrix4x4 viewMatrix = camera->WorldToCameraMatrix();
 
 		for (MeshRenderer* renderer : World::ActiveWorld()->GetComponentsInEnities<MeshRenderer>())
 		{
