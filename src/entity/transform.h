@@ -38,6 +38,11 @@ public:
         m_IsTrsDirty = true;
     };
     void SetTrsMatrix(const Matrix4x4& inMatrix);
+
+    void SetParent(Transform* parent);
+    size_t ChildCount() { return m_Children.size(); }
+    Transform* GetChild(size_t index) { return m_Children[index]; }
+
     void Flush(bool includeChildren=true, bool force=false);
 
     Matrix4x4 WorldToLocalMatrix() 

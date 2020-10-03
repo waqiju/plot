@@ -1,9 +1,27 @@
 #include "transform.h"
+#include <algorithm>
+
 
 void Transform::SetTrsMatrix(const Matrix4x4& inMatrix)
 {
 	inMatrix.Decompose(m_LocalPosition, m_LocalRotation, m_LocalScale);
 	m_IsTrsDirty = true;
+}
+
+void Transform::SetParent(Transform* parent)
+{
+	if (m_Parent != NULL)
+	{
+		std::vector<Transform*>& list = m_Parent->m_Children;
+		auto iterator = std::find(list.begin(), list.end(), this);
+		if (iterator != list.end())
+		{
+			list.erase(iterator);
+		}
+	}
+
+	m_Parent = parent;
+	parent->m_Children.push_back(this);
 }
 
 void Transform::Flush(bool includeChildren, bool force)

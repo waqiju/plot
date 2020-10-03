@@ -96,13 +96,13 @@ int main()
 	Mesh mesh;
 	mesh.SetVertices(vertices, sizeof(vertices)/sizeof(vertices[0]));
 	// renderer
-	std::vector<MeshRenderer*> renderers;
-    std::vector<Matrix4x4> matrixList;
+    Entity* rendererRoot = World::ActiveWorld()->CreateEntity();
+    rendererRoot->name = "RendererRoot";
 	for (int i = 0; i < 10; ++i)
 	{
 		Entity* entity = World::ActiveWorld()->CreateEntity();
+		entity->GetComponent<Transform>()->SetParent(rendererRoot->GetComponent<Transform>());
 		MeshRenderer* renderer = entity->AddComponent<MeshRenderer>();
-		renderers.push_back(renderer);
 		renderer->material = &material;
 		renderer->mesh = &mesh;
 
@@ -111,8 +111,6 @@ int main()
 		float radian = 20.0f * i * Mathf::Deg2Rad;
 		Quaternion q = Quaternion::AngleAxis(radian, Vector3(1.0f, 0.3f, 0.5f));
 		tr->SetLocalRotation(q);
-		tr->Flush(false, false);
-        matrixList.push_back(tr->LocalToWorldMatrix());
 	}
 
 	// main loop
@@ -121,15 +119,8 @@ int main()
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		for (int i = 0; i < 10; ++i)
-		{
-			MeshRenderer* renderer = renderers[i];
-			Quaternion r = Quaternion::AngleAxis(glfwGetTime(), Vector3(0, 1, 0));
-			Transform* transform = renderer->GetComponent<Transform>();
-
-			Matrix4x4 newMatrix = Matrix4x4::Rotate(r) * matrixList[i];
-			transform->SetTrsMatrix(newMatrix);
-		}
+        Quaternion r = Quaternion::AngleAxis(glfwGetTime(), Vector3(0, 1, 0));
+        rendererRoot->GetComponent<Transform>()->SetLocalRotation(r);
 		World::ActiveWorld()->FlushTransform();
 
 		Matrix4x4 viewMatrix = camera->WorldToCameraMatrix();
