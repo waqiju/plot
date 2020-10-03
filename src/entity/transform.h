@@ -35,6 +35,7 @@ public:
         m_LocalScale = inLocalScale;
         m_HasChanged = true;
     };
+    void SetTrsMatrix(const Matrix4x4& inMatrix);
 
     Matrix4x4 WorldToLocalMatrix() 
     {
