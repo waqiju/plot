@@ -12,30 +12,33 @@ public:
         m_LocalPosition = Vector3::zero;
         m_LocalRotation = Quaternion::identity;
         m_LocalScale = Vector3::one;
-
-        m_HasChanged = true;
+        m_IsTrsDirty = true;
+        // Hierarchy
+        m_Parent = NULL;
+        m_Children.clear();
     }
     Vector3 LocalPosition() { return m_LocalPosition; }
     Quaternion LocalRotation() { return m_LocalRotation; }
     Vector3 LocalScale() { return m_LocalScale; }
-    bool HasChanged() { return m_HasChanged; }
+    bool HasChanged() { return m_IsTrsDirty; }
 
     void SetLocalPosition(const Vector3& inLocalPosition) 
     { 
         m_LocalPosition = inLocalPosition;
-        m_HasChanged = true;
+        m_IsTrsDirty = true;
     };
     void SetLocalRotation(const Quaternion& inLocalRotation) 
     { 
         m_LocalRotation = inLocalRotation;
-        m_HasChanged = true;
+        m_IsTrsDirty = true;
     };
     void SetLocalScale(const Vector3& inLocalScale)
     { 
         m_LocalScale = inLocalScale;
-        m_HasChanged = true;
+        m_IsTrsDirty = true;
     };
     void SetTrsMatrix(const Matrix4x4& inMatrix);
+    void Flush(bool includeChildren=true, bool force=false);
 
     Matrix4x4 WorldToLocalMatrix() 
     {
@@ -44,8 +47,7 @@ public:
     };
     Matrix4x4 LocalToWorldMatrix() 
     {
-        // TODO hierarchy
-        return Matrix4x4::TRS(m_LocalPosition, m_LocalRotation, m_LocalScale);
+        return m_LocalToWorld;
     };
 
     Vector3 Right()
@@ -67,9 +69,14 @@ public:
     };
 
 private:
+    // TRS
 	Vector3 m_LocalPosition;
 	Quaternion m_LocalRotation;
 	Vector3 m_LocalScale;
+    Matrix4x4 m_LocalToWorld;
+    // Hierarchy
+    Transform* m_Parent;
+    std::vector<Transform*> m_Children;    
 
-    bool m_HasChanged;
+    bool m_IsTrsDirty;
 };

@@ -111,6 +111,7 @@ int main()
 		float radian = 20.0f * i * Mathf::Deg2Rad;
 		Quaternion q = Quaternion::AngleAxis(radian, Vector3(1.0f, 0.3f, 0.5f));
 		tr->SetLocalRotation(q);
+		tr->Flush(false, false);
         matrixList.push_back(tr->LocalToWorldMatrix());
 	}
 
@@ -120,11 +121,6 @@ int main()
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		//Transform* cameraTransform = camera->GetComponent<Transform>();
-		//Quaternion r = Quaternion::AngleAxis(glfwGetTime(), Vector3(0, 1, 0));
-		//cameraTransform->SetLocalRotation(r);
-		//Vector3 p = -cameraTransform->Forward() * 10;
-		//camera->GetComponent<Transform>()->SetLocalPosition(p);
 		for (int i = 0; i < 10; ++i)
 		{
 			MeshRenderer* renderer = renderers[i];
@@ -134,10 +130,11 @@ int main()
 			Matrix4x4 newMatrix = Matrix4x4::Rotate(r) * matrixList[i];
 			transform->SetTrsMatrix(newMatrix);
 		}
+		World::ActiveWorld()->FlushTransform();
 
 		Matrix4x4 viewMatrix = camera->WorldToCameraMatrix();
 		Matrix4x4 projectionMatrix = camera->ProjectionMatrix();
-		for (MeshRenderer* renderer : World::ActiveWorld()->GetComponentsInEnities<MeshRenderer>())
+		for (MeshRenderer* renderer : World::ActiveWorld()->GetComponentsInRootEnities<MeshRenderer>())
 		{
 			Matrix4x4 modelMatrix = renderer->GetComponent<Transform>()->LocalToWorldMatrix();
 			Matrix4x4 MVP = projectionMatrix * viewMatrix * modelMatrix;
@@ -162,7 +159,7 @@ void processInput(GLFWwindow* window)
 void WindowSizeChangedHandler(Window* window, int width, int height)
 {
 	glViewport(0, 0, width, height);
-	for (auto camera : World::ActiveWorld()->GetComponentsInEnities<Camera>())
+	for (auto camera : World::ActiveWorld()->GetComponentsInRootEnities<Camera>())
 	{
 		camera->aspect = (float)width / height;
 	}

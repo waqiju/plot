@@ -10,7 +10,8 @@ public:
     static World* ActiveWorld();
     Entity* CreateEntity();
     // void AttachEntity(Entity* entity);
-    template<typename T> std::vector<T*> GetComponentsInEnities();
+    template<typename T> std::vector<T*> GetComponentsInRootEnities();
+	void FlushTransform();
 
 private:
     static World* m_ActiveWorld;
@@ -19,7 +20,7 @@ private:
 
 
 template<typename T> 
-std::vector<T*> World::GetComponentsInEnities()
+std::vector<T*> World::GetComponentsInRootEnities()
 {
 	std::vector<T*> componentList;
 	for (Entity* entity : m_EntityList)

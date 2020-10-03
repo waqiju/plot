@@ -23,6 +23,14 @@ Entity* World::CreateEntity()
 	return entity;
 }
 
+void World::FlushTransform()
+{
+    for (auto transform : GetComponentsInRootEnities<Transform>())
+    {
+        transform->Flush();
+    }
+}
+
 // void World::AttachEntity(Entity* entity)
 // {
 //     m_EntityList.push_back(entity);
