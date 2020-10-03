@@ -22,7 +22,7 @@ const unsigned int SCREEN_WIDTH = 800;
 const unsigned int SCREEN_HEIGT = 600;
 
 
-int main()
+int main_2()
 {
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
