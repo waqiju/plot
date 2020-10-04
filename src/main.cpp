@@ -10,12 +10,13 @@
 #include "window.h"
 #include "entity/ec.h"
 #include "geometry/geometry.h"
+#include "application/application.h"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
 
-void processInput(GLFWwindow* window);
+void ProcessInput();
 void WindowSizeChangedHandler(Window* window, int width, int height);
 Camera* CreateCamera();
 
@@ -115,11 +116,11 @@ int main()
 
 	// main loop
 	window->FrameLoop([&] {
-		processInput(window->RawGLFWwindow());
+		ProcessInput();
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        Quaternion r = Quaternion::AngleAxis(glfwGetTime(), Vector3(0, 1, 0));
+        Quaternion r = Quaternion::AngleAxis((float)glfwGetTime(), Vector3(0, 1, 0));
         rendererRoot->GetComponent<Transform>()->SetLocalRotation(r);
 		World::ActiveWorld()->FlushTransform();
 
@@ -138,14 +139,21 @@ int main()
 	return 0;
 }
 
-void processInput(GLFWwindow* window)
+void ProcessInput()
 {
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-	{
-		glfwSetWindowShouldClose(window, true);
-	}
+    if (Input::GetKey(GLFW_KEY_UP))
+    {
+        std::cout<<"up"<<std::endl;
+        auto tr = Application::MainCamera()->GetComponent<Transform>();
+        tr->SetLocalPosition(tr->LocalPosition() + Vector3(0, 1 * Time::DeltaTime(), 0));
+    }
+    if (Input::GetKey(GLFW_KEY_DOWN))
+    {
+        std::cout<<"down"<<std::endl;
+        auto tr = Application::MainCamera()->GetComponent<Transform>();
+        tr->SetLocalPosition(tr->LocalPosition() + Vector3(0, -1 * Time::DeltaTime(), 0));
+    }
 }
-
 
 void WindowSizeChangedHandler(Window* window, int width, int height)
 {
@@ -164,6 +172,8 @@ Camera* CreateCamera()
 	Camera* camera = entity->AddComponent<Camera>();
 	camera->fieldOfView = 45.0f * Mathf::Deg2Rad;
 	camera->aspect = (float)SCREEN_WIDTH / SCREEN_HEIGT;
+	// 设置为主相机
+	Application::SetMainCamera(camera);
 
 	return camera;
 }

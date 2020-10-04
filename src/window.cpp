@@ -1,4 +1,5 @@
 ﻿#include "window.h"
+#include "application/application.h"
 #include <iostream>
 
 bool Window::s_GlfwInitialized = false;
@@ -33,6 +34,8 @@ Window* Window::CreateWindow(std::string title, unsigned int width, unsigned int
     s_GLFWwindowToWindow[glfwWindow] = window;
     // buffer size callback
     glfwSetFramebufferSizeCallback(glfwWindow, Window::FramebufferSizeCallback);
+    // application
+    Application::SetMainWindow(window);
 
     return window;
 }
@@ -60,10 +63,12 @@ void Window::FrameLoop(std::function<void()> onUpdated)
     // main loop
     while (!glfwWindowShouldClose(m_GLFWwindow))
     {
+        Application::OnFrameBegin();
         onUpdated();
 
         glfwSwapBuffers(m_GLFWwindow);
         glfwPollEvents();
+        Application::OnFrameEnd();
     }
 }
 

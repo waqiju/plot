@@ -1,0 +1,26 @@
+#pragma once
+#include <string>
+#include <application/input.h>
+#include <application/time.h>
+
+
+class Window;
+class Camera;
+
+
+class Application
+{
+public:
+	static std::string ProjectPath;
+    static Window* MainWindow() { return m_MainWindow; }
+    static void SetMainWindow(Window* window) { m_MainWindow = window; }
+    static Camera* MainCamera() { return m_MainCamera; }
+    static void SetMainCamera(Camera* camera) { m_MainCamera = camera; }
+
+    static void OnFrameBegin();
+    static void OnFrameEnd();
+
+private:
+    static Window* m_MainWindow;
+    static Camera* m_MainCamera;
+};
