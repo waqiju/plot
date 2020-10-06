@@ -21,7 +21,7 @@ void MeshRenderer::Render()
     }
     else
     {
-        glDrawArrays(GL_TRIANGLES, 0, mesh->VertexCount());
+        glDrawArrays(mesh->TopologyToGLenum(), 0, mesh->VertexCount());
     }
 	glBindVertexArray(0);
 }

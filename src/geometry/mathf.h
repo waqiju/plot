@@ -25,4 +25,12 @@ public:
     {
         return ::std::min(std::max(x, minValue), maxValue);
     }
+    static int Ceil(float x)
+    {
+        return static_cast<int>(std::ceil(x));
+    }
+    static int Floor(float x)
+    {
+        return static_cast<int>(std::floor(x));
+    }
 };

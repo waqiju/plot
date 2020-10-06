@@ -2,12 +2,14 @@
 #include <string>
 #include <vector>
 #include "glad/glad.h"
+#include "graphic/color.h"
 #include "geometry/geometry.h"
 
 
 enum class PropertyKind
 {
     Float,
+    Color,
     Vector3,
     Matrix4x4,
 };
@@ -21,6 +23,7 @@ class MaterialPropertyBlock
         PropertyKind kind;
         union Value {
             float floatValue;
+            Color colorValue;
             Vector3 vector3Value;
             Matrix4x4 matrix4x4Value;
 
@@ -40,6 +43,14 @@ public:
         p.name = name;
         p.kind = PropertyKind::Vector3;
         p.value.floatValue = value;
+        m_PropertyList.push_back(p);
+    }
+    void SetColor(const std::string& name, Color value)
+    {
+        Property p;
+        p.name = name;
+        p.kind = PropertyKind::Color;
+        p.value.colorValue = value;
         m_PropertyList.push_back(p);
     }
     void SetVector3(const std::string& name, Vector3 value)
@@ -78,11 +89,12 @@ private:
         {
         case PropertyKind::Float:
             glUniform1f(location, property.value.floatValue);
+        case PropertyKind::Color:
+            glUniform4fv(location, 1, &property.value.colorValue.r);
         case PropertyKind::Vector3:
             glUniform3fv(location, 1, &property.value.vector3Value[0]);
         case PropertyKind::Matrix4x4:
             glUniformMatrix4fv(location, 1, GL_FALSE, &property.value.matrix4x4Value[0][0]);
-
         }
     }
 };

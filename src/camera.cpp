@@ -29,6 +29,11 @@ Matrix4x4 Camera::ProjectionMatrix()
     return Matrix4x4::Perspective(fieldOfView, aspect, nearClipPlane, farClipPlane);
 }
 
+Matrix4x4 Camera::ViewProjectMatrix()
+{
+    return ProjectionMatrix() * WorldToCameraMatrix();
+}
+
 Vector3 Camera::ScreenToViewportPoint(Vector3 position)
 {
     Vector3 result;

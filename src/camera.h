@@ -11,6 +11,7 @@ public:
     Camera(Entity* owner);
     Matrix4x4 WorldToCameraMatrix();
     Matrix4x4 ProjectionMatrix();
+    Matrix4x4 ViewProjectMatrix();
 
     // point coordicate convert
     Vector3 ViewportToWorldPoint(Vector3 position);

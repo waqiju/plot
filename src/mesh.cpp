@@ -8,6 +8,19 @@ void Mesh::SetVertices(std::vector<float> vertices)
 	m_HasChanged = true;
 }
 
+void Mesh::SetVertices(std::vector<Vector3> vertices)
+{
+	m_Vertices.clear();
+	for (const Vector3& v : vertices)
+	{
+		m_Vertices.push_back(v.x);
+		m_Vertices.push_back(v.y);
+		m_Vertices.push_back(v.z);
+	}
+
+	m_HasChanged = true;
+}
+
 void Mesh::SetIndices(std::vector<unsigned int> indices, MeshTopology topology)
 {
 	m_Indices = indices;

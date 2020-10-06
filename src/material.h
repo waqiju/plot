@@ -2,6 +2,7 @@
 #include <string>
 #include "shader.h"
 #include "geometry/geometry.h"
+#include "graphic/color.h"
 #include "material_property_block.h"
 
 
@@ -14,6 +15,10 @@ public:
     void SetFloat(const std::string& name, float value)
     {
         m_Block.SetFloat(name, value);
+    }
+    void SetColor(const std::string& name, Color value)
+    {
+        m_Block.SetColor(name, value);
     }
     void SetVector3(const std::string& name, Vector3 value)
     {

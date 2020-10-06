@@ -1,5 +1,8 @@
-#pragma once
+﻿#pragma once
 #include <vector>
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+#include "geometry/geometry.h"
 
 
 enum class MeshTopology
@@ -15,16 +18,18 @@ enum class MeshTopology
 class Mesh {
 public:
     void SetVertices(std::vector<float> vertices);
-    void SetIndices(std::vector<unsigned int> indices, MeshTopology topology);
-
+    void SetVertices(std::vector<Vector3> vertices);
     void SetVertices(float vertices[], size_t length)
     {
         SetVertices(std::vector<float>(vertices, vertices + length));
-    };
+    }
+
+    void SetIndices(std::vector<unsigned int> indices, MeshTopology topology);
     void SetIndices(unsigned int indices[], size_t length, MeshTopology topology)
     {
         SetIndices(std::vector<unsigned int>(indices, indices + length), topology);
-    };
+    }
+    void SetTopology(MeshTopology topology) { m_Topology = topology; }
     void CheckOrUpload();
 
     unsigned int VAO()
