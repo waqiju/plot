@@ -9,7 +9,8 @@ class Window
 {
 public:
     static Window* CreateWindow(std::string title, unsigned int width = 800, unsigned int height = 600);
-    static void FramebufferSizeCallback(GLFWwindow* window, int width, int height);
+    static void FramebufferSizeCallback(GLFWwindow* glfwWindow, int width, int height);
+    static void MouseScrollCallback(GLFWwindow* glfwWindow, double xoffset, double yoffset);
     static void InitializeGlfw();
 
     Window(GLFWwindow* glfwWindow);
@@ -17,8 +18,10 @@ public:
     void Close();
     GLFWwindow* RawGLFWwindow() { return m_GLFWwindow; }
 
-    // int width, int height
+    // window, width, height
     std::function<void(Window*, int, int)> onWindowSizeChanged = NULL;
+    // Window* window, double xoffset, double yoffset
+    std::function<void(Window*, double, double)> onMouseScrollChanged = NULL;
 
 private:
     static std::map<GLFWwindow*, Window*> s_GLFWwindowToWindow;

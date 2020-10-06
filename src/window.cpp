@@ -34,6 +34,8 @@ Window* Window::CreateWindow(std::string title, unsigned int width, unsigned int
     s_GLFWwindowToWindow[glfwWindow] = window;
     // buffer size callback
     glfwSetFramebufferSizeCallback(glfwWindow, Window::FramebufferSizeCallback);
+    // mouse scroll changed
+    glfwSetScrollCallback(glfwWindow, Window::MouseScrollCallback);
     // application
     Application::SetMainWindow(window);
 
@@ -47,6 +49,15 @@ void Window::FramebufferSizeCallback(GLFWwindow* glfwWindow, int width, int heig
         return;
 
     window->onWindowSizeChanged(window, width, height);
+}
+
+void Window::MouseScrollCallback(GLFWwindow* glfwWindow, double xoffset, double yoffset)
+{
+    Window* window = s_GLFWwindowToWindow[glfwWindow];
+    if (window == NULL || !window->onMouseScrollChanged)
+        return;
+
+    window->onMouseScrollChanged(window, xoffset, yoffset);
 }
 
 void Window::InitializeGlfw()
@@ -63,11 +74,11 @@ void Window::FrameLoop(std::function<void()> onUpdated)
     // main loop
     while (!glfwWindowShouldClose(m_GLFWwindow))
     {
+        glfwPollEvents();
         Application::OnFrameBegin();
         onUpdated();
 
         glfwSwapBuffers(m_GLFWwindow);
-        glfwPollEvents();
         Application::OnFrameEnd();
     }
 }

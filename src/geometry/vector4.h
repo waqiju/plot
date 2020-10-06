@@ -25,3 +25,4 @@ public:
 Vector4 operator+(Vector4 lhs, Vector4 rhs);
 Vector4 operator-(Vector4 lhs, Vector4 rhs);
 Vector4 operator*(Vector4 v, float scalar);
+Vector4 operator*(Vector4 v1, Vector4 v2);

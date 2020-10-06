@@ -1,6 +1,7 @@
 #include "vector3.h"
 #include <cmath>
 #include <cassert>
+#include <sstream>
 
 
 Vector3 Vector3::zero = Vector3(0, 0, 0);
@@ -94,6 +95,21 @@ Vector3 Vector3::operator-() const
     return Vector3(-x, -y, -z);
 }
 
+Vector3& Vector3::operator+=(const Vector3& v)
+{
+    this->x += v.x;
+    this->y += v.y;
+    this->z += v.z;
+    return *this;
+}
+
+std::string Vector3::ToString()
+{
+    std::stringstream ss;
+    ss << "(" << x << ", " << y << ", " << z << ")";
+    return ss.str();
+}
+
 Vector3 operator+(Vector3 lhs, Vector3 rhs)
 {
     return Vector3(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z);
@@ -112,4 +128,16 @@ Vector3 operator*(Vector3 v, float scalar)
 Vector3 operator/(Vector3 v, float scalar)
 {
     return Vector3(v.x / scalar, v.y / scalar, v.z / scalar);
+}
+
+bool operator==(Vector3 lhs, Vector3 rhs)
+{
+    return lhs.x == rhs.x
+        && lhs.y == rhs.y
+        && lhs.z == rhs.z;
+}
+
+bool operator!=(Vector3 lhs, Vector3 rhs)
+{
+    return !(lhs == rhs);
 }

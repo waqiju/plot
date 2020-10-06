@@ -35,8 +35,11 @@ public:
     Matrix4x4& operator*=(Matrix4x4 const& m);
 
     Matrix4x4 Transpose() const;
+    Matrix4x4 Inverse() const;
     float Determinant() const;
     void Decompose(Vector3& position, Quaternion& rotation, Vector3& scaling) const;
+
+    Vector3 MultiplyPoint(Vector3 v) const;
 
     std::string ToString() const;
 
@@ -45,3 +48,4 @@ private:
 };
 
 Matrix4x4 operator*(Matrix4x4 const& lhs, Matrix4x4 const& rhs);
+Vector4 operator*(Matrix4x4 const& m, Vector4 const& v);

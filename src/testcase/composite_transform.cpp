@@ -18,15 +18,16 @@
 
 void ProcessInput();
 void WindowSizeChangedHandler(Window* window, int width, int height);
-void MouseScrollHandler(Window* window, double xoffset, double yoffset);
 Camera* CreateCamera();
 
+const unsigned int SCREEN_WIDTH = 800;
+const unsigned int SCREEN_HEIGT = 600;
 
-int main()
+
+int main_3()
 {
-	Window* window = Window::CreateWindow("Chimera", Application::screenWidth, Application::screenHeight);
+	Window* window = Window::CreateWindow("Chimera", SCREEN_WIDTH, SCREEN_HEIGT);
 	window->onWindowSizeChanged = WindowSizeChangedHandler;
-    window->onMouseScrollChanged = MouseScrollHandler;
 
 	// camera
 	Camera* camera = CreateCamera();
@@ -140,47 +141,17 @@ int main()
 
 void ProcessInput()
 {
-    // 键盘移动
-    Vector3 direction = Vector3::zero;
     if (Input::GetKey(GLFW_KEY_UP))
     {
-        direction += Vector3(0, 1, 0);
+        std::cout<<"up"<<std::endl;
+        auto tr = Application::MainCamera()->GetComponent<Transform>();
+        tr->SetLocalPosition(tr->LocalPosition() + Vector3(0, 1 * Time::DeltaTime(), 0));
     }
     if (Input::GetKey(GLFW_KEY_DOWN))
     {
-        direction += Vector3(0, -1, 0);
-    }
-    if (Input::GetKey(GLFW_KEY_LEFT))
-    {
-        direction += Vector3(-1, 0, 0);
-    }
-    if (Input::GetKey(GLFW_KEY_RIGHT))
-    {
-        direction += Vector3(1, 0, 0);
-    }
-    if (direction != Vector3::zero)
-    {
+        std::cout<<"down"<<std::endl;
         auto tr = Application::MainCamera()->GetComponent<Transform>();
-        tr->SetLocalPosition(tr->LocalPosition() + direction * Time::DeltaTime());
-    }
-    // 鼠标移动
-    // TODO 用 ScreenPointToRay 实现是更通用的策略，直接 ScreenToViewport 是近截面
-    static Vector3 panStartWorldPosition;
-    static Vector3 panStartCameraPosition;
-    if (Input::GetMouseButtonDown(GLFW_MOUSE_BUTTON_1))
-    {
-        std::cout << "mouse down" << std::endl;
-        Vector3 mousePosition = Input::MousePosition();
-        panStartWorldPosition = Application::MainCamera()->ScreenToWorldPoint(mousePosition);
-        panStartCameraPosition = Application::MainCamera()->GetComponent<Transform>()->LocalPosition();
-    }
-    if (Input::GetMouseButton(GLFW_MOUSE_BUTTON_1))
-    {
-        std::cout << "mouse press" << std::endl;
-        Vector3 mousePosition = Input::MousePosition();
-        Vector3 worldPosition = Application::MainCamera()->ScreenToWorldPoint(mousePosition);
-        Vector3 panWorldDistance = worldPosition - panStartWorldPosition;
-        Application::MainCamera()->GetComponent<Transform>()->SetLocalPosition(panStartCameraPosition - panWorldDistance);
+        tr->SetLocalPosition(tr->LocalPosition() + Vector3(0, -1 * Time::DeltaTime(), 0));
     }
 }
 
@@ -189,17 +160,8 @@ void WindowSizeChangedHandler(Window* window, int width, int height)
 	glViewport(0, 0, width, height);
 	for (auto camera : World::ActiveWorld()->GetComponentsInRootEnities<Camera>())
 	{
-        Application::screenWidth = width;
-        Application::screenHeight = height;
 		camera->aspect = (float)width / height;
 	}
-}
-
-void MouseScrollHandler(Window* window, double xoffset, double yoffset)
-{
-    // 鼠标滚轮 zoom
-    auto tr = Application::MainCamera()->GetComponent<Transform>();
-    tr->SetLocalPosition(tr->LocalPosition() + tr->Forward() * yoffset);
 }
 
 Camera* CreateCamera()
@@ -209,9 +171,7 @@ Camera* CreateCamera()
 	transform->SetLocalPosition(Vector3(0, 0, -10));
 	Camera* camera = entity->AddComponent<Camera>();
 	camera->fieldOfView = 45.0f * Mathf::Deg2Rad;
-	camera->aspect = (float)Application::screenWidth / Application::screenHeight;
-    camera->nearClipPlane = 5;
-    camera->farClipPlane = 15;
+	camera->aspect = (float)SCREEN_WIDTH / SCREEN_HEIGT;
 	// 设置为主相机
 	Application::SetMainCamera(camera);
 

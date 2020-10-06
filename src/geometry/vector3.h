@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #include <glm/glm.hpp>
 
 
@@ -24,9 +25,14 @@ public:
     float& operator[](size_t i);
 	const float& operator[](size_t i) const;
     Vector3 operator-() const;
+	Vector3& operator+=(const Vector3& v);
+
+    std::string ToString();
 };
 
 Vector3 operator+(Vector3 lhs, Vector3 rhs);
 Vector3 operator-(Vector3 lhs, Vector3 rhs);
 Vector3 operator*(Vector3 v, float scalar);
 Vector3 operator/(Vector3 v, float scalar);
+bool operator==(Vector3 lhs, Vector3 rhs);
+bool operator!=(Vector3 lhs, Vector3 rhs);

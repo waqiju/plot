@@ -11,7 +11,13 @@ class Camera;
 class Application
 {
 public:
-	static std::string ProjectPath;
+    static std::string ProjectPath;
+    // 屏幕宽高
+    static const unsigned int kDefaultScreenWidth = 800;
+    static const unsigned int kDefaultScreenHeight = 600;
+    static unsigned int screenWidth;
+    static unsigned int screenHeight;
+
     static Window* MainWindow() { return m_MainWindow; }
     static void SetMainWindow(Window* window) { m_MainWindow = window; }
     static Camera* MainCamera() { return m_MainCamera; }
