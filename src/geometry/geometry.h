@@ -2,3 +2,6 @@
 #include "quaternion.h"
 #include "matrix4x4.h"
 #include "mathf.h"
+#include "ray.h"
+#include "plane.h"
+#include "physics.h"

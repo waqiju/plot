@@ -155,7 +155,7 @@ int main_2()
         camera->GetComponent<Transform>()->SetLocalPosition(p);
         Matrix4x4 viewMatrix = camera->WorldToCameraMatrix();
 
-		for (MeshRenderer* renderer : World::ActiveWorld()->GetComponentsInEnities<MeshRenderer>())
+		for (MeshRenderer* renderer : World::ActiveWorld()->GetComponentsInRootEnities<MeshRenderer>())
 		{
 			Matrix4x4 modelMatrix = renderer->GetComponent<Transform>()->LocalToWorldMatrix();
 			Matrix4x4 MVP = projectionMatrix * viewMatrix * modelMatrix;

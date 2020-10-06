@@ -103,7 +103,7 @@ Vector3& Vector3::operator+=(const Vector3& v)
     return *this;
 }
 
-std::string Vector3::ToString()
+std::string Vector3::ToString() const
 {
     std::stringstream ss;
     ss << "(" << x << ", " << y << ", " << z << ")";

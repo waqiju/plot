@@ -27,7 +27,7 @@ public:
     Vector3 operator-() const;
 	Vector3& operator+=(const Vector3& v);
 
-    std::string ToString();
+    std::string ToString() const;
 };
 
 Vector3 operator+(Vector3 lhs, Vector3 rhs);

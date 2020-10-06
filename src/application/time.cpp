@@ -13,7 +13,7 @@ void Time::OnFrameBegin()
 {
     ++s_FrameCount;
 
-    float nowTime = glfwGetTime();
+    float nowTime = static_cast<float>(glfwGetTime());
     s_DeltaTime = nowTime - s_NowTime;
     s_NowTime = nowTime;
 }

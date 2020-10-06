@@ -1,4 +1,4 @@
-#include <assert.h>
+ï»¿#include <assert.h>
 #include <glad/glad.h>
 #include "geometry/geometry.h"
 #include "application/application.h"
@@ -34,9 +34,27 @@ Vector3 Camera::ScreenToViewportPoint(Vector3 position)
     Vector3 result;
     result.x = position.x / Application::screenWidth * 2 - 1;
     result.y = position.y / Application::screenHeight * 2 - 1;
-    // OpenGL z µÄ·¶Î§ [0, 1]
+    // OpenGL z çš„èŒƒå›´ [0, 1]
     result.z = position.z * 2 - 1;
     return result;
+}
+
+Ray Camera::ViewportPointToRay(Vector3 pos)
+{
+    Vector3 cameraPos = this->GetComponent<Transform>()->Position();
+    Vector3 sendPos = ViewportToWorldPoint(pos);
+    Vector3 direction = Vector3::Normalize(sendPos - cameraPos);
+
+    return Ray(cameraPos, direction);
+}
+
+Ray Camera::ScreenPointToRay(Vector3 pos)
+{
+    Vector3 cameraPos = this->GetComponent<Transform>()->Position();
+    Vector3 sendPos = ScreenToWorldPoint(pos);
+    Vector3 direction = Vector3::Normalize(sendPos - cameraPos);
+
+    return Ray(cameraPos, direction);
 }
 
 Vector3 Camera::ViewportToWorldPoint(Vector3 position)
@@ -46,7 +64,7 @@ Vector3 Camera::ViewportToWorldPoint(Vector3 position)
     return result;
 }
 
-// ·µ»ØµÄÊÇ½ü½ØÃæµÄµã
+// è¿”å›çš„æ˜¯è¿‘æˆªé¢çš„ç‚¹
 Vector3 Camera::ScreenToWorldPoint(Vector3 position)
 {
     Vector3 result = ScreenToViewportPoint(position);

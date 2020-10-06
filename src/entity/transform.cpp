@@ -5,7 +5,7 @@
 void Transform::SetTrsMatrix(const Matrix4x4& inMatrix)
 {
 	inMatrix.Decompose(m_LocalPosition, m_LocalRotation, m_LocalScale);
-	m_IsTrsDirty = true;
+	MarkAsDirty();
 }
 
 void Transform::SetParent(Transform* parent)
@@ -46,4 +46,10 @@ void Transform::Flush(bool includeChildren, bool force)
 			child->Flush(includeChildren, force);
 		}
 	}
+}
+
+void Transform::MarkAsDirty(bool flush)
+{
+	m_IsTrsDirty = true;
+	Flush(true, true);
 }

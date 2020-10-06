@@ -69,7 +69,7 @@ int main_1()
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		
-		for (MeshRenderer* renderer : World::ActiveWorld()->GetComponentsInEnities<MeshRenderer>())
+		for (MeshRenderer* renderer : World::ActiveWorld()->GetComponentsInRootEnities<MeshRenderer>())
 		{
 			renderer->Render();
 		}

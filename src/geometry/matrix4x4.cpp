@@ -352,6 +352,11 @@ void Matrix4x4::Decompose(Vector3& position, Quaternion& rotation, Vector3& scal
     rotation = Quaternion::CastMatrixToQuaternion(rotationMatrix);
 }
 
+Vector3 Matrix4x4::DecomposePosition() const
+{
+    return Vector3(m_Value[3][0], m_Value[3][1], m_Value[3][2]);
+}
+
 Vector3 Matrix4x4::MultiplyPoint(Vector3 v) const
 {
     Vector4 result = (*this) * Vector4(v.x, v.y, v.z, 1);

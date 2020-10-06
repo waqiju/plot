@@ -12,12 +12,13 @@ public:
         m_LocalPosition = Vector3::zero;
         m_LocalRotation = Quaternion::identity;
         m_LocalScale = Vector3::one;
-        m_IsTrsDirty = true;
+        MarkAsDirty();
         // Hierarchy
         m_Parent = NULL;
         m_Children.clear();
     }
     Vector3 LocalPosition() { return m_LocalPosition; }
+    Vector3 Position() { return m_LocalToWorld.DecomposePosition(); }
     Quaternion LocalRotation() { return m_LocalRotation; }
     Vector3 LocalScale() { return m_LocalScale; }
     bool HasChanged() { return m_IsTrsDirty; }
@@ -25,17 +26,17 @@ public:
     void SetLocalPosition(const Vector3& inLocalPosition) 
     { 
         m_LocalPosition = inLocalPosition;
-        m_IsTrsDirty = true;
+        MarkAsDirty();
     };
     void SetLocalRotation(const Quaternion& inLocalRotation) 
     { 
         m_LocalRotation = inLocalRotation;
-        m_IsTrsDirty = true;
+        MarkAsDirty();
     };
     void SetLocalScale(const Vector3& inLocalScale)
     { 
         m_LocalScale = inLocalScale;
-        m_IsTrsDirty = true;
+        MarkAsDirty();
     };
     void SetTrsMatrix(const Matrix4x4& inMatrix);
 
@@ -44,6 +45,7 @@ public:
     Transform* GetChild(size_t index) { return m_Children[index]; }
 
     void Flush(bool includeChildren=true, bool force=false);
+    void MarkAsDirty(bool flush=true);
 
     Matrix4x4 WorldToLocalMatrix() 
     {
