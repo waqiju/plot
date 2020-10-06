@@ -17,6 +17,8 @@ enum class MeshTopology
 
 class Mesh {
 public:
+    Mesh();
+
     void SetVertices(std::vector<float> vertices);
     void SetVertices(std::vector<Vector3> vertices);
     void SetVertices(float vertices[], size_t length)
@@ -71,6 +73,7 @@ private:
 private:
     bool m_HasChanged = false;
     unsigned int m_VAO = 0;
+    unsigned int m_VboPosition = 0;
     unsigned int m_EBO = 0;
     MeshTopology m_Topology = MeshTopology::Triangles;
 

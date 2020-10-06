@@ -2,6 +2,12 @@
 #include <glad/glad.h>
 #include "mesh.h"
 
+Mesh::Mesh()
+{
+	glGenVertexArrays(1, &m_VAO);
+	glGenBuffers(1, &m_VboPosition);
+}
+
 void Mesh::SetVertices(std::vector<float> vertices)
 {
 	m_Vertices = vertices;
@@ -45,19 +51,22 @@ void Mesh::UploadMeshData()
 		// TODO release previous resource
 	}
 
-	unsigned int VBO;
-	glGenVertexArrays(1, &m_VAO);
-	glGenBuffers(1, &VBO);
+	// unsigned int VBO;
+	// glGenVertexArrays(1, &m_VAO);
+	// glGenBuffers(1, &VBO);
 	// position
 	glBindVertexArray(m_VAO);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBindBuffer(GL_ARRAY_BUFFER, m_VboPosition);
 	glBufferData(GL_ARRAY_BUFFER, m_Vertices.size() * sizeof(float), &m_Vertices[0], GL_STATIC_DRAW);
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 	// indices
 	if (m_Indices.size() > 0)
 	{
-		glGenBuffers(1, &m_EBO);
+		if (m_EBO == 0)
+		{
+			glGenBuffers(1, &m_EBO);
+		}
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_Indices.size() * sizeof(unsigned int), &m_Indices[0], GL_STATIC_DRAW);
 	}
