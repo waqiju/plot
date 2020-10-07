@@ -18,7 +18,7 @@ public:
     static const unsigned int kDefaultScreenHeight = 600;
     static unsigned int screenWidth;
     static unsigned int screenHeight;
-    static Vector2 ScreenSize() { return Vector2(screenWidth, screenHeight); }
+    static Vector2 ScreenSize() { return Vector2( static_cast<float>(screenWidth), static_cast<float>(screenHeight)); }
 
     static Window* MainWindow() { return m_MainWindow; }
     static void SetMainWindow(Window* window) { m_MainWindow = window; }

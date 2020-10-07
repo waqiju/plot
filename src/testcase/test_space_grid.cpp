@@ -21,7 +21,7 @@ int main()
     window->onWindowSizeChanged = WindowSizeChangedHandler;
     CreateCamera();
     // render setup
-    glEnable(GL_DEPTH_TEST);
+    // glEnable(GL_DEPTH_TEST);
 
     g_SpaceGrid = new SpaceGrid(Application::MainCamera());
 

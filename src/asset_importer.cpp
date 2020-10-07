@@ -1,6 +1,29 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <glad/glad.h>
 #include "asset_importer.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
+
+
+Texture2D* AssetImporter::LoadTexture2D(const std::string& texturePath, bool alpha)
+{
+    // create texture object
+    Texture2D* texture = new Texture2D();
+    if (alpha)
+    {
+        texture->internalFormat = GL_RGBA;
+        texture->imageFormat = GL_RGBA;
+    }
+    // load image
+    int width, height, nrChannels;
+    unsigned char* data = stbi_load(texturePath.c_str(), &width, &height, &nrChannels, 0);
+    // now generate texture
+    texture->Generate(width, height, data);
+    // and finally free image data
+    stbi_image_free(data);
+    return texture;
+}
+
 
 
 #define FOURCC_DXT1 0x31545844 // Equivalent to "DXT1" in ASCII

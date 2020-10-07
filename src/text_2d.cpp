@@ -16,7 +16,9 @@ Material* Text2D::m_Material;
 void Text2D::Initialize()
 {
     glGenVertexArrays(1, &m_VAO);
-    m_TextureID = AssetImporter::LoadDDS("art/Holstein.DDS");
+    // m_TextureID = AssetImporter::LoadDDS("art/Holstein.DDS");
+    Texture2D* texture = AssetImporter::LoadTexture2D("art/consolas.png", true);
+    m_TextureID = texture->id;
     glGenBuffers(1, &m_VertexBufferID);
     glGenBuffers(1, &m_UVBufferID);
 
@@ -46,16 +48,17 @@ void Text2D::DrawInViewport(std::string text, float x, float y, int fontSize)
         Initialize();
     }
 
-    float fontWidthInPixel = 2.0f / Application::screenWidth * fontSize;
-    float fontHeightInPixel = 2.0f / Application::screenHeight * fontSize;
+    float fontWidthInViewport = 2.0f / Application::screenWidth * fontSize;
+    float characterSpacing = fontWidthInViewport * 0.6f;
+    float fontHeightInViewport = 2.0f / Application::screenHeight * fontSize;
     std::vector<Vector2> vertices;
     std::vector<Vector2> uvs;
     for (size_t i = 0; i < text.length(); ++i)
     {
-        Vector2 vertexUpLeft = Vector2(x + i * fontWidthInPixel, y + fontHeightInPixel);
-        Vector2 vertexUpRight = Vector2(x + i * fontWidthInPixel + fontWidthInPixel, y + fontHeightInPixel);
-        Vector2 vertexDownRight = Vector2(x + i * fontWidthInPixel + fontWidthInPixel, y);
-        Vector2 vertexDownLeft = Vector2(x + i * fontWidthInPixel, y);
+        Vector2 vertexUpLeft = Vector2(x + i * characterSpacing, y + fontHeightInViewport);
+        Vector2 vertexUpRight = Vector2(x + i * characterSpacing + fontWidthInViewport, y + fontHeightInViewport);
+        Vector2 vertexDownRight = Vector2(x + i * characterSpacing + fontWidthInViewport, y);
+        Vector2 vertexDownLeft = Vector2(x + i * characterSpacing, y);
 
         vertices.push_back(vertexUpLeft);
         vertices.push_back(vertexUpRight);
