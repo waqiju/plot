@@ -46,15 +46,6 @@ void Mesh::CheckOrUpload()
 
 void Mesh::UploadMeshData()
 {
-	if (m_VAO != 0)
-	{
-		// TODO release previous resource
-	}
-
-	// unsigned int VBO;
-	// glGenVertexArrays(1, &m_VAO);
-	// glGenBuffers(1, &VBO);
-	// position
 	glBindVertexArray(m_VAO);
 	glBindBuffer(GL_ARRAY_BUFFER, m_VboPosition);
 	glBufferData(GL_ARRAY_BUFFER, m_Vertices.size() * sizeof(float), &m_Vertices[0], GL_STATIC_DRAW);

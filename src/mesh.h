@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include <vector>
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include "gl_headers.h"
 #include "geometry/geometry.h"
 
 

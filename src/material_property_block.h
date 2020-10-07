@@ -12,6 +12,7 @@ enum class PropertyKind
     Color,
     Vector3,
     Matrix4x4,
+    Texture,
 };
 
 
@@ -21,15 +22,13 @@ class MaterialPropertyBlock
     {
         std::string name;
         PropertyKind kind;
-        union Value {
-            float floatValue;
-            Color colorValue;
-            Vector3 vector3Value;
-            Matrix4x4 matrix4x4Value;
 
-            Value() {}
-            ~Value() {}
-        } value;
+        // maybe union can help save memory, but it's a little
+        unsigned int uintValue;
+        float floatValue;
+        Color colorValue;
+        Vector3 vector3Value;
+        Matrix4x4 matrix4x4Value;
     };
 public:
 
@@ -42,7 +41,7 @@ public:
         Property p;
         p.name = name;
         p.kind = PropertyKind::Vector3;
-        p.value.floatValue = value;
+        p.floatValue = value;
         m_PropertyList.push_back(p);
     }
     void SetColor(const std::string& name, Color value)
@@ -50,7 +49,7 @@ public:
         Property p;
         p.name = name;
         p.kind = PropertyKind::Color;
-        p.value.colorValue = value;
+        p.colorValue = value;
         m_PropertyList.push_back(p);
     }
     void SetVector3(const std::string& name, Vector3 value)
@@ -58,7 +57,7 @@ public:
         Property p;
         p.name = name;
         p.kind = PropertyKind::Vector3;
-        p.value.vector3Value = value;
+        p.vector3Value = value;
         m_PropertyList.push_back(p);
     }
     void SetMatrix(const std::string& name, Matrix4x4 value)
@@ -66,35 +65,24 @@ public:
         Property p;
         p.name = name;
         p.kind = PropertyKind::Matrix4x4;
-        p.value.matrix4x4Value = value;
+        p.matrix4x4Value = value;
+        m_PropertyList.push_back(p);
+    }
+    void SetTexture(const std::string& name, GLuint textureID)
+    {
+        Property p;
+        p.name = name;
+        p.kind = PropertyKind::Texture;
+        p.uintValue = textureID;
         m_PropertyList.push_back(p);
     }
 
-    void Apply(unsigned int programID)
-    {
-        for (const Property& property : m_PropertyList)
-        {
-            ApplyOneProperty(programID, property);
-        }
-    }
+    void Apply(unsigned int programID);
 
 private:
+    static const unsigned int kGLTextureNumber[10];
     std::vector<Property> m_PropertyList;
+    int m_TextureOrder;
 
-    void ApplyOneProperty(unsigned int programID, const Property& property)
-    {
-        GLint location = glGetUniformLocation(programID, property.name.c_str());
-
-        switch (property.kind)
-        {
-        case PropertyKind::Float:
-            glUniform1f(location, property.value.floatValue);
-        case PropertyKind::Color:
-            glUniform4fv(location, 1, &property.value.colorValue.r);
-        case PropertyKind::Vector3:
-            glUniform3fv(location, 1, &property.value.vector3Value[0]);
-        case PropertyKind::Matrix4x4:
-            glUniformMatrix4fv(location, 1, GL_FALSE, &property.value.matrix4x4Value[0][0]);
-        }
-    }
+    void ApplyOneProperty(unsigned int programID, const Property& property);
 };

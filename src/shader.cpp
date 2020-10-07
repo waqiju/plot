@@ -7,6 +7,9 @@
 
 Shader::Shader(const char* vertexPath, const char* fragmentPath)
 {
+    m_VertexPath = vertexPath;
+    m_FragmentPath = fragmentPath;
+
     // read file
     std::string vertexCode;
     std::string fragmentCode;

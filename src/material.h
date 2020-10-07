@@ -28,6 +28,16 @@ public:
     {
         m_Block.SetMatrix(name, value);
     }
+    void SetTexture(const std::string& name, GLuint textureID)
+    {
+        m_Block.SetTexture(name, textureID);
+    }
+
+    unsigned int ShaderID()
+    {
+        return m_Shader->ID;
+    }
+
 private:
     Shader* m_Shader = NULL;
     MaterialPropertyBlock m_Block;

@@ -7,11 +7,13 @@ class Shader
 {
 public:
     unsigned int ID;
-    Shader(const char* vertexpath, const char* fragmentPath);
+    Shader(const char* vertexPath, const char* fragmentPath);
 
     void Use();
 
 private:
+    std::string m_VertexPath, m_FragmentPath;
+
     void CheckCompileErrors(GLuint shaderID, std::string errorHint);
     void CheckLinkErrors(GLuint programID, std::string errorHint);
 };

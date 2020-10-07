@@ -1,6 +1,5 @@
 #include "time.h"
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include "gl_headers.h"
 #include "window.h"
 #include "application/application.h"
 

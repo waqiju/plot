@@ -1,5 +1,4 @@
-﻿#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+﻿#include "gl_headers.h"
 #include <iostream>
 #include "camera.h"
 #include "window.h"

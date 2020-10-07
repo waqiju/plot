@@ -3,6 +3,7 @@
 #include "graphic/graphic.h"
 #include "mesh_renderer.h"
 #include <vector>
+#include "text_2d.h"
 
 
 SpaceGrid::SpaceGrid(Camera* camera)
@@ -62,4 +63,7 @@ void SpaceGrid::Render()
     Matrix4x4 mvp = m_Camera->ViewProjectMatrix() * m_Entity->GetComponent<Transform>()->LocalToWorldMatrix();
     renderer->material->SetMatrix("MVP", mvp);
     renderer->Render();
+
+    // label
+    Text2D::DrawInScreen("1234ABCD", 100, 100, 50);
 }
