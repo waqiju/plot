@@ -1,11 +1,14 @@
 #pragma once
 #include "material.h"
+#include "geometry/geometry.h"
 
 
 class Text2D
 {
 public:
     static void Initialize();
+    static void DrawInWorld(std::string text, Vector3 position, int fontSize);
+    static void DrawInViewport(std::string text, float x, float y, int fontSize);
     static void DrawInScreen(std::string text, int x, int y, int fontSize);
 
 private:

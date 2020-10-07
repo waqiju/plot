@@ -3,7 +3,7 @@
 #include "gl_headers.h"
 #include "application/application.h"
 #include <vector>
-
+#include "camera.h"
 
 
 unsigned int Text2D::m_VAO = 0;
@@ -22,25 +22,40 @@ void Text2D::Initialize()
 
     Shader* shader = new Shader("src/shader/text_2d.vs", "src/shader/text_2d.fs");
     m_Material = new Material(shader);
-    m_Material->SetTexture("myTextureSampler", m_TextureID);
+    m_Material->SetTexture("FontTextureSampler", m_TextureID);
+    m_Material->SetColor("ColorTint", Color::white);
 }
 
 void Text2D::DrawInScreen(std::string text, int x, int y, int fontSize)
+{
+    Vector2 screenSize = Application::ScreenSize();
+    Vector2 viewportPosition = Vector2(x, y) / screenSize * 2.0f - 1.0f;
+    DrawInViewport(text, viewportPosition.x, viewportPosition.y, fontSize);
+}
+
+void Text2D::DrawInWorld(std::string text, Vector3 position, int fontSize)
+{
+    Vector3 viewportPosition = Application::MainCamera()->ViewProjectMatrix().MultiplyPoint(position);
+    DrawInViewport(text, viewportPosition.x, viewportPosition.y, fontSize);
+}
+
+void Text2D::DrawInViewport(std::string text, float x, float y, int fontSize)
 {
     if (m_VAO == 0)
     {
         Initialize();
     }
 
-    Vector2 screenSize = Application::ScreenSize();
+    float fontWidthInPixel = 2.0f / Application::screenWidth * fontSize;
+    float fontHeightInPixel = 2.0f / Application::screenHeight * fontSize;
     std::vector<Vector2> vertices;
     std::vector<Vector2> uvs;
     for (size_t i = 0; i < text.length(); ++i)
     {
-        Vector2 vertexUpLeft = Vector2(x + i * fontSize, y + fontSize) / screenSize * 2.0f - 1.0f;
-        Vector2 vertexUpRight = Vector2(x + i * fontSize + fontSize, y + fontSize) / screenSize * 2.0f - 1.0f;
-        Vector2 vertexDownRight = Vector2(x + i * fontSize + fontSize, y) / screenSize * 2.0f - 1.0f;
-        Vector2 vertexDownLeft = Vector2(x + i * fontSize, y) / screenSize * 2.0f - 1.0f;
+        Vector2 vertexUpLeft = Vector2(x + i * fontWidthInPixel, y + fontHeightInPixel);
+        Vector2 vertexUpRight = Vector2(x + i * fontWidthInPixel + fontWidthInPixel, y + fontHeightInPixel);
+        Vector2 vertexDownRight = Vector2(x + i * fontWidthInPixel + fontWidthInPixel, y);
+        Vector2 vertexDownLeft = Vector2(x + i * fontWidthInPixel, y);
 
         vertices.push_back(vertexUpLeft);
         vertices.push_back(vertexUpRight);

@@ -65,5 +65,6 @@ void SpaceGrid::Render()
     renderer->Render();
 
     // label
-    Text2D::DrawInScreen("1234ABCD", 100, 100, 50);
+    Text2D::DrawInScreen("1234ABCD", 100, 0, 50);
+    Text2D::DrawInWorld("1234ABCD", Vector3::zero, 50);
 }
