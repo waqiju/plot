@@ -6,6 +6,8 @@
 class Plane
 {
 public:
+    static Plane XyPlane;
+
     Plane(Vector3 inPoint, Vector3 inNormal) : point(inPoint), normal(inNormal) {};
     std::string ToString() const;
 

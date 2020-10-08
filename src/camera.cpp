@@ -38,7 +38,8 @@ Vector3 Camera::ScreenToViewportPoint(Vector3 position)
 {
     Vector3 result;
     result.x = position.x / Application::screenWidth * 2 - 1;
-    result.y = position.y / Application::screenHeight * 2 - 1;
+    // 窗口的左上角是原点
+    result.y = -(position.y / Application::screenHeight * 2 - 1);
     // OpenGL z 的范围 [0, 1]
     result.z = position.z * 2 - 1;
     return result;

@@ -3,6 +3,7 @@
 #include "application/application.h"
 #include "camera.h"
 #include <iostream>
+#include "geometry/geometry.h"
 
 
 namespace UiHelper
@@ -52,22 +53,25 @@ namespace UiHelper
         }
         // 鼠标移动
         // TODO 用 ScreenPointToRay 实现是更通用的策略，直接 ScreenToViewport 是近截面
-        static Vector3 panStartWorldPosition;
-        static Vector3 panStartCameraPosition;
+        static Vector3 lastWorldPosition;
         if (Input::GetMouseButtonDown(GLFW_MOUSE_BUTTON_1))
         {
-            std::cout << "mouse down" << std::endl;
             Vector3 mousePosition = Input::MousePosition();
-            panStartWorldPosition = Application::MainCamera()->ScreenToWorldPoint(mousePosition);
-            panStartCameraPosition = Application::MainCamera()->GetComponent<Transform>()->LocalPosition();
+            Ray ray = Application::MainCamera()->ScreenPointToRay(mousePosition);
+            Physics::Raycast(ray, Plane::XyPlane, lastWorldPosition);
         }
         if (Input::GetMouseButton(GLFW_MOUSE_BUTTON_1))
         {
-            std::cout << "mouse press" << std::endl;
             Vector3 mousePosition = Input::MousePosition();
-            Vector3 worldPosition = Application::MainCamera()->ScreenToWorldPoint(mousePosition);
-            Vector3 panWorldDistance = worldPosition - panStartWorldPosition;
-            Application::MainCamera()->GetComponent<Transform>()->SetLocalPosition(panStartCameraPosition - panWorldDistance);
+            Ray ray = Application::MainCamera()->ScreenPointToRay(mousePosition);
+            Vector3 worldPosition;
+            Physics::Raycast(ray, Plane::XyPlane, worldPosition);
+            Vector3 panWorldDistance = worldPosition - lastWorldPosition;
+            Vector3 nowPosition = Application::MainCamera()->GetComponent<Transform>()->LocalPosition();
+            Application::MainCamera()->GetComponent<Transform>()->SetLocalPosition(nowPosition - panWorldDistance);
+            // Important, must update lastWorldPosition after change camera transform
+            ray = Application::MainCamera()->ScreenPointToRay(mousePosition);
+            Physics::Raycast(ray, Plane::XyPlane, lastWorldPosition);
         }
     }
 }
