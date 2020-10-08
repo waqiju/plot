@@ -45,3 +45,18 @@ void MaterialPropertyBlock::ApplyOneProperty(unsigned int programID, const Prope
         ++m_TextureOrder;
     }
 }
+
+
+MaterialPropertyBlock::Property& MaterialPropertyBlock::FindOrAdd(std::string name)
+{        
+    auto itor = std::find_if(m_PropertyList.begin(), m_PropertyList.end(), [&](Property item) { return item.name == name; });
+    if (itor != m_PropertyList.end())
+    {
+        return *itor;
+    }
+    else
+    {
+        m_PropertyList.push_back(Property());
+        return *(m_PropertyList.end() - 1);
+    }
+}

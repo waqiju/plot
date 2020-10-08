@@ -38,43 +38,38 @@ public:
     }
     void SetFloat(const std::string& name, float value)
     {
-        Property p;
+        Property& p = FindOrAdd(name);
         p.name = name;
         p.kind = PropertyKind::Vector3;
         p.floatValue = value;
-        m_PropertyList.push_back(p);
     }
     void SetColor(const std::string& name, Color value)
     {
-        Property p;
+        Property& p = FindOrAdd(name);
         p.name = name;
         p.kind = PropertyKind::Color;
         p.colorValue = value;
-        m_PropertyList.push_back(p);
     }
     void SetVector3(const std::string& name, Vector3 value)
     {
-        Property p;
+        Property& p = FindOrAdd(name);
         p.name = name;
         p.kind = PropertyKind::Vector3;
         p.vector3Value = value;
-        m_PropertyList.push_back(p);
     }
     void SetMatrix(const std::string& name, Matrix4x4 value)
     {
-        Property p;
+        Property& p = FindOrAdd(name);
         p.name = name;
         p.kind = PropertyKind::Matrix4x4;
         p.matrix4x4Value = value;
-        m_PropertyList.push_back(p);
     }
     void SetTexture(const std::string& name, GLuint textureID)
     {
-        Property p;
+        Property& p = FindOrAdd(name);
         p.name = name;
         p.kind = PropertyKind::Texture;
         p.uintValue = textureID;
-        m_PropertyList.push_back(p);
     }
 
     void Apply(unsigned int programID);
@@ -84,5 +79,6 @@ private:
     std::vector<Property> m_PropertyList;
     int m_TextureOrder;
 
+    Property& FindOrAdd(std::string name);
     void ApplyOneProperty(unsigned int programID, const Property& property);
 };
