@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <glad/glad.h>
+#include "entity/ec.h"
 #include "mesh_renderer.h"
 
 MeshRenderer::MeshRenderer(Entity* owner) : Component(owner)
@@ -13,6 +14,12 @@ void MeshRenderer::Render()
 	assert(mesh != NULL);
 
 	mesh->CheckOrUpload();
+    // ÉèÖÃ MVP ¾ØÕó
+    if (camera != NULL)
+    {
+        Matrix4x4 mvp = camera->ViewProjectMatrix() * this->GetComponent<Transform>()->LocalToWorldMatrix();
+        material->SetMatrix("MVP", mvp);
+    }
 	material->Use();
 	glBindVertexArray(mesh->VAO());
     if (mesh->EBO() != 0)

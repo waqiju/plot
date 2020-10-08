@@ -21,6 +21,7 @@ public:
 
     template<typename T> T* AddComponent();
     template<typename T> T* GetComponent();
+    template<typename T> T* GetOrAddComponent();
 
 private:
     void SetActive(bool status);
@@ -57,4 +58,15 @@ T* Entity::GetComponent()
     }
 
     return NULL;
+}
+
+template<typename T>
+T* Entity::GetOrAddComponent()
+{
+    T* component = this->template GetComponent<T>();
+    if (component == NULL)
+    {
+        component = this->template AddComponent<T>();
+    }
+    return component;
 }

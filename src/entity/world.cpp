@@ -2,17 +2,29 @@
 #include "entity/entity.h"
 #include "entity/transform.h"
 
-World* World::m_ActiveWorld = NULL;
+World* World::s_ActiveWorld = NULL;
+Entity* World::s_OriginEntity = NULL;
 
 
 World* World::ActiveWorld()
 {
-    if (m_ActiveWorld == NULL)
+    if (s_ActiveWorld == NULL)
     {
-        m_ActiveWorld = new World();
+        s_ActiveWorld = new World();
     }
 
-    return m_ActiveWorld;
+    return s_ActiveWorld;
+}
+
+Entity* World::OriginEntity()
+{
+    if (s_OriginEntity == NULL)
+    {
+        // 位于原点
+        s_OriginEntity = ActiveWorld()->CreateEntity();
+    }
+
+    return s_OriginEntity;
 }
 
 Entity* World::CreateEntity()

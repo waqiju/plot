@@ -8,6 +8,26 @@ Mesh::Mesh()
 	glGenBuffers(1, &m_VboPosition);
 }
 
+Mesh::~Mesh()
+{
+	if (m_VAO)
+	{
+		glDeleteVertexArrays(1, &m_VAO);
+	}
+	if (m_VboPosition)
+	{
+		glDeleteBuffers(1, &m_VboPosition);
+	}
+	if (m_VboColor)
+	{
+		glDeleteBuffers(1, &m_VboColor);
+	}
+	if (m_EBO)
+	{
+		glDeleteBuffers(1, &m_EBO);
+	}
+}
+
 void Mesh::SetVertices(std::vector<float> vertices)
 {
 	m_Vertices = vertices;

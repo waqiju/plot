@@ -10,6 +10,7 @@ class Material
 {
 public:
     Material(Shader* shader);
+    ~Material();
     void Use();
 
     void SetFloat(const std::string& name, float value)

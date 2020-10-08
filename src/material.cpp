@@ -7,6 +7,14 @@ Material::Material(Shader* shader)
 	m_Shader = shader;
 }
 
+Material::~Material()
+{
+    //if (m_Shader)
+    //{
+    //    delete m_Shader;
+    //}
+}
+
 void Material::Use()
 {
 	assert(m_Shader != NULL);

@@ -17,7 +17,7 @@ void Text2D::Initialize()
 {
     glGenVertexArrays(1, &m_VAO);
     Texture2D* texture = AssetImporter::LoadTexture2D("art/consolas.png", true);
-    m_TextureID = texture->id;
+    m_TextureID = texture->ID;
     glGenBuffers(1, &m_VertexBufferID);
     glGenBuffers(1, &m_UVBufferID);
 

@@ -18,6 +18,7 @@ enum class MeshTopology
 class Mesh {
 public:
     Mesh();
+    ~Mesh();
 
     void SetVertices(std::vector<float> vertices);
     void SetVertices(std::vector<Vector3> vertices);

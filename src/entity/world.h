@@ -8,13 +8,14 @@ class World
 {
 public:
     static World* ActiveWorld();
+    static Entity* OriginEntity();
     Entity* CreateEntity();
-    // void AttachEntity(Entity* entity);
     template<typename T> std::vector<T*> GetComponentsInRootEnities();
 	void FlushTransform();
 
 private:
-    static World* m_ActiveWorld;
+    static World* s_ActiveWorld;
+    static Entity* s_OriginEntity;
     std::vector<Entity*> m_EntityList;
 };
 

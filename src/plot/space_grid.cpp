@@ -116,11 +116,10 @@ void SpaceGrid::Render()
     m_Mesh->SetColors(colors);
 
     auto renderer = m_Entity->GetComponent<MeshRenderer>();
-    Matrix4x4 mvp = m_Camera->ViewProjectMatrix() * m_Entity->GetComponent<Transform>()->LocalToWorldMatrix();
-    renderer->material->SetMatrix("MVP", mvp);
     // 渲染
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    renderer->camera = m_Camera;
     renderer->Render();
     glDisable(GL_BLEND);
 

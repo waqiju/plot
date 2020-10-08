@@ -7,8 +7,8 @@ class Vector3
 {
 public:
 	static size_t const ComponentSize() { return 3; }
-	static Vector3 zero;
-	static Vector3 one;
+	static const Vector3 zero;
+	static const Vector3 one;
     static Vector3 Normalize(Vector3 value);
     static Vector3 Abs(Vector3 value);
 	static float Dot(Vector3 lhs, Vector3 rhs);
