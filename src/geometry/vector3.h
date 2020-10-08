@@ -10,6 +10,7 @@ public:
 	static Vector3 zero;
 	static Vector3 one;
     static Vector3 Normalize(Vector3 value);
+    static Vector3 Abs(Vector3 value);
 	static float Dot(Vector3 lhs, Vector3 rhs);
     static Vector3 Cross(Vector3 lhs, Vector3 rhs);
 

@@ -52,13 +52,13 @@ namespace UiHelper
             tr->SetLocalPosition(tr->LocalPosition() + direction * Time::DeltaTime());
         }
         // 鼠标移动
-        // TODO 用 ScreenPointToRay 实现是更通用的策略，直接 ScreenToViewport 是近截面
         static Vector3 lastWorldPosition;
         if (Input::GetMouseButtonDown(GLFW_MOUSE_BUTTON_1))
         {
             Vector3 mousePosition = Input::MousePosition();
             Ray ray = Application::MainCamera()->ScreenPointToRay(mousePosition);
             Physics::Raycast(ray, Plane::XyPlane, lastWorldPosition);
+            std::cout << "Mouse Down, " << mousePosition.ToString() << " , " << lastWorldPosition.ToString() << std::endl;
         }
         if (Input::GetMouseButton(GLFW_MOUSE_BUTTON_1))
         {

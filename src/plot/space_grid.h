@@ -18,4 +18,6 @@ private:
     Vector3 m_RightTop;
     Entity* m_Entity;
     Mesh* m_Mesh;
+
+    void CalculateInterval(int pixel, float& intervalX, float& intervalY);
 };

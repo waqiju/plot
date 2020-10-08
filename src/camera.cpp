@@ -45,6 +45,17 @@ Vector3 Camera::ScreenToViewportPoint(Vector3 position)
     return result;
 }
 
+Vector3 Camera::ViewportToScreenPoint(Vector3 position)
+{
+    Vector3 result;
+    result.x = (position.x + 1) * 0.5 * Application::screenWidth;
+    // 窗口的左上角是原点
+    result.y = (-position.y + 1) * 0.5 * Application::screenHeight;
+    // OpenGL z 的范围 [0, 1]
+    result.z = (position.z + 1) * 0.5;
+    return result;
+}
+
 Ray Camera::ViewportPointToRay(Vector3 pos)
 {
     Vector3 cameraPos = this->GetComponent<Transform>()->Position();

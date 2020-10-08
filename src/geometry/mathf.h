@@ -13,11 +13,15 @@ public:
     {
         return ::std::numeric_limits<float>::epsilon();
     }
-    static float IsZero(float x)
+    static bool IsZero(float x)
     {
         return Equal(x, 0, Epsilon());
     }
-    static float Equal(float x, float y, float maxULP)
+    static bool Equal(float x, float y)
+    {
+        return ::std::abs(x - y) <= Epsilon();
+    }
+    static bool Equal(float x, float y, float maxULP)
     {
         return ::std::abs(x - y) <= maxULP;
     }
@@ -32,5 +36,28 @@ public:
     static int Floor(float x)
     {
         return static_cast<int>(std::floor(x));
+    }
+    static float ToCeilUnit(float x, float unit, float maxULP)
+    {
+        int multiply = static_cast<int>(x / unit);
+        float x1 = unit * multiply;
+        if (Equal(x, x1, maxULP))
+            return x1;
+        return x1 + unit;
+    }
+    static float ToFloorUnit(float x, float unit, float maxULP)
+    {
+        int multiply = static_cast<int>(x / unit);
+        float x1 = unit * multiply;
+        if (Equal(x, x1, maxULP))
+            return x1;
+        return x1 - unit;
+    }
+    static float ToNearUnit(float x, float unit, float maxULP)
+    {
+        if (x > 0)
+            return ToCeilUnit(x, unit, maxULP);
+        else
+            return ToFloorUnit(x, unit, maxULP);
     }
 };

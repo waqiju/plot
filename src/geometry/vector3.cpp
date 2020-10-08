@@ -25,6 +25,11 @@ Vector3 Vector3::Normalize(Vector3 value)
     return result;
 }
 
+Vector3 Vector3::Abs(Vector3 value)
+{
+    return Vector3(std::abs(value.x), std::abs(value.y), std::abs(value.z));
+}
+
 float Vector3::Dot(Vector3 lhs, Vector3 rhs)
 {
     return lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z;
