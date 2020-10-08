@@ -16,7 +16,6 @@ Material* Text2D::m_Material;
 void Text2D::Initialize()
 {
     glGenVertexArrays(1, &m_VAO);
-    // m_TextureID = AssetImporter::LoadDDS("art/Holstein.DDS");
     Texture2D* texture = AssetImporter::LoadTexture2D("art/consolas.png", true);
     m_TextureID = texture->id;
     glGenBuffers(1, &m_VertexBufferID);

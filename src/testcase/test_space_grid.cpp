@@ -6,11 +6,11 @@
 #include "geometry/geometry.h"
 #include "application/application.h"
 #include "plot/space_grid.h"
+#include "ui_helper.h"
 
 
 Camera* CreateCamera();
 void OnFrameUpdate();
-void WindowSizeChangedHandler(Window* window, int width, int height);
 
 SpaceGrid* g_SpaceGrid;
 
@@ -18,7 +18,8 @@ SpaceGrid* g_SpaceGrid;
 int main()
 {
     Window* window = Window::CreateWindow("Chimera", Application::screenWidth, Application::screenHeight);
-    window->onWindowSizeChanged = WindowSizeChangedHandler;
+    window->onWindowSizeChanged = UiHelper::WindowSizeChangedHandler;
+    window->onMouseScrollChanged = UiHelper::MouseScrollHandler;
     CreateCamera();
     // render setup
     // glEnable(GL_DEPTH_TEST);
@@ -32,6 +33,7 @@ int main()
 
 void OnFrameUpdate()
 {
+    UiHelper::ProcessPan();
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -46,21 +48,10 @@ Camera* CreateCamera()
     Camera* camera = entity->AddComponent<Camera>();
     camera->fieldOfView = 45.0f * Mathf::Deg2Rad;
     camera->aspect = (float)Application::screenWidth / Application::screenHeight;
-    camera->nearClipPlane = 5;
-    camera->farClipPlane = 15;
+    camera->nearClipPlane = 0.1;
+    camera->farClipPlane = 1000;
     // 设置为主相机
     Application::SetMainCamera(camera);
 
     return camera;
-}
-
-void WindowSizeChangedHandler(Window* window, int width, int height)
-{
-    glViewport(0, 0, width, height);
-    for (auto camera : World::ActiveWorld()->GetComponentsInRootEnities<Camera>())
-    {
-        Application::screenWidth = width;
-        Application::screenHeight = height;
-        camera->aspect = (float)width / height;
-    }
 }

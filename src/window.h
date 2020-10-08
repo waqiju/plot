@@ -1,3 +1,4 @@
+#pragma once
 #include "gl_headers.h"
 #include <string>
 #include <map>
