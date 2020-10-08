@@ -87,9 +87,6 @@
     <ClCompile Include="src\plot\space_grid.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\testcase\test_space_grid.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\asset_importer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -103,6 +100,21 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui_helper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\camera_helper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\plot\rectangle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\testcase\test_rectangle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\resource\resource_manager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -210,6 +222,18 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="vendor\include\stb_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui_helper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\camera_helper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plot\rectangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\resource\resource_manager.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

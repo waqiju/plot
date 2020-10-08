@@ -134,6 +134,7 @@
     <ClCompile Include="src\application\time.cpp" />
     <ClCompile Include="src\asset_importer.cpp" />
     <ClCompile Include="src\camera.cpp" />
+    <ClCompile Include="src\camera_helper.cpp" />
     <ClCompile Include="src\entity\component.cpp" />
     <ClCompile Include="src\entity\entity.cpp" />
     <ClCompile Include="src\entity\transform.cpp" />
@@ -153,11 +154,14 @@
     <ClCompile Include="src\material_property_block.cpp" />
     <ClCompile Include="src\mesh.cpp" />
     <ClCompile Include="src\mesh_renderer.cpp" />
+    <ClCompile Include="src\plot\rectangle.cpp" />
     <ClCompile Include="src\plot\space_grid.cpp" />
+    <ClCompile Include="src\resource\resource_manager.cpp" />
     <ClCompile Include="src\shader.cpp" />
-    <ClCompile Include="src\testcase\test_space_grid.cpp" />
+    <ClCompile Include="src\testcase\test_rectangle.cpp" />
     <ClCompile Include="src\texture.cpp" />
     <ClCompile Include="src\text_2d.cpp" />
+    <ClCompile Include="src\ui_helper.cpp" />
     <ClCompile Include="src\window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +170,7 @@
     <ClInclude Include="src\application\time.h" />
     <ClInclude Include="src\asset_importer.h" />
     <ClInclude Include="src\camera.h" />
+    <ClInclude Include="src\camera_helper.h" />
     <ClInclude Include="src\default_shader.h" />
     <ClInclude Include="src\entity\component.h" />
     <ClInclude Include="src\entity\ec.h" />
@@ -190,10 +195,13 @@
     <ClInclude Include="src\material_property_block.h" />
     <ClInclude Include="src\mesh.h" />
     <ClInclude Include="src\mesh_renderer.h" />
+    <ClInclude Include="src\plot\rectangle.h" />
     <ClInclude Include="src\plot\space_grid.h" />
+    <ClInclude Include="src\resource\resource_manager.h" />
     <ClInclude Include="src\shader.h" />
     <ClInclude Include="src\texture.h" />
     <ClInclude Include="src\text_2d.h" />
+    <ClInclude Include="src\ui_helper.h" />
     <ClInclude Include="src\window.h" />
     <ClInclude Include="vendor\include\stb_image.h" />
   </ItemGroup>
