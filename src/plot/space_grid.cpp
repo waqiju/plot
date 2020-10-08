@@ -5,6 +5,7 @@
 #include <vector>
 #include "text_2d.h"
 #include <iostream>
+#include <sstream>
 
 
 SpaceGrid::SpaceGrid(Camera* camera)
@@ -45,6 +46,7 @@ void SpaceGrid::Render()
         return;
     }
     // vertics colors
+    static Color gradeZeroColor = Color(1, 1, 1, 0.75);
     static Color gradeOneColor = Color(1, 1, 1, 0.4);
     static Color gradeTwoColor = Color(1, 1, 1, 0.15);
     static Color gradeThreeColor = Color(1, 1, 1, 0.05);
@@ -63,7 +65,12 @@ void SpaceGrid::Render()
     {
         vertices.push_back(Vector3(static_cast<float>(i), static_cast<float>(y0), 0));
         vertices.push_back(Vector3(static_cast<float>(i), static_cast<float>(y1), 0));
-        if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalX * 4, maxUlpX), maxUlpX))
+        if (Mathf::Equal(i, 0, maxUlpX))
+        {
+            colors.push_back(gradeZeroColor);
+            colors.push_back(gradeZeroColor);
+        }
+        else if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalX * 4, maxUlpX), maxUlpX))
         {
             colors.push_back(gradeOneColor);
             colors.push_back(gradeOneColor);
@@ -84,7 +91,12 @@ void SpaceGrid::Render()
     {
         vertices.push_back(Vector3(static_cast<float>(x0), static_cast<float>(i), 0));
         vertices.push_back(Vector3(static_cast<float>(x1), static_cast<float>(i), 0));
-        if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalY * 4, maxUlpY), maxUlpY))
+        if (Mathf::Equal(i, 0, maxUlpY))
+        {
+            colors.push_back(gradeZeroColor);
+            colors.push_back(gradeZeroColor);
+        }
+        else if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalY * 4, maxUlpY), maxUlpY))
         {
             colors.push_back(gradeOneColor);
             colors.push_back(gradeOneColor);
@@ -113,13 +125,30 @@ void SpaceGrid::Render()
     glDisable(GL_BLEND);
 
     // label
-    for (int i = x0; i <= x1; ++i)
+    std::stringstream stream;
+    stream.precision(3);
+    stream.unsetf(std::ios::showpoint);
+    for (float i = x0; i <= x1; i+=intervalX)
     {
-        Text2D::DrawInWorld(std::to_string(i), Vector3(i, 0, 0), 50);
+        if (Mathf::Equal(i, 0, maxUlpX))
+            i = 0;
+        if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalY * 4, maxUlpX), maxUlpX))
+        {
+            stream.str("");
+            stream << i;
+            Text2D::DrawInWorld(stream.str(), Vector3(i, m_LeftBottom.y, 0), 18);
+        }
     }
-    for (int i = y0; i <= y1; ++i)
+    for (float i = y0; i <= y1; i+=intervalY)
     {
-        Text2D::DrawInWorld(std::to_string(i), Vector3(0, i, 0), 50);
+        if (Mathf::Equal(i, 0, maxUlpY))
+            i = 0;
+        if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalY * 4, maxUlpY), maxUlpY))
+        {
+            stream.str("");
+            stream << i;
+            Text2D::DrawInWorld(stream.str(), Vector3(m_LeftBottom.x, i, 0), 18);
+        }
     }
 }
 
