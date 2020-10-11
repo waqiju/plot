@@ -44,6 +44,8 @@ void OnFrameUpdate()
     g_SpaceGrid->Render();
     auto rectangleList = World::ActiveWorld()->GetComponentsInRootEnities<Rectangle>();
     Rectangle::BatchRender(rectangleList);
+    auto segmentList = World::ActiveWorld()->GetComponentsInRootEnities<Segment>();
+    Segment::BatchRender(segmentList);
 }
 
 void GenerateRandomRectangle()
@@ -66,5 +68,10 @@ void GenerateRandomRectangle()
         Vector3 left = Vector3(x - 0.45, y - height / 2, 0);
         Vector3 right = Vector3(x + 0.45, y + height / 2, 0);
         Rectangle::Create(g_PlotRoot, left, right, Color::white);
+        // segment
+        if (x > 0)
+        {
+            Segment::Create(g_PlotRoot, Vector3(x-1, yList[x-1], 0), Vector3(x, yList[x], 0), Color::red);
+        }
     }
 }
