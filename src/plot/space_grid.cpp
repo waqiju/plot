@@ -7,6 +7,8 @@
 #include <iostream>
 #include <sstream>
 
+const float SpaceGrid::s_Ticks[18] = { 1000, 500.0, 100.0, 50.0, 10.0, 5.0, 1.0, 0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001, 5e-05, 1e-05, 5e-06 };
+
 
 SpaceGrid::SpaceGrid(Camera* camera)
 {
@@ -30,8 +32,14 @@ SpaceGrid::SpaceGrid(Camera* camera)
 void SpaceGrid::Render()
 {
     // interval
-    float intervalX, intervalY;
-    CalculateInterval(10, intervalX, intervalY);
+    int tickGradeX, tickGradeY;
+    CalculateInterval(10, tickGradeX, tickGradeY);
+    float intervalX = GetTick(tickGradeX);
+    float intervalY = GetTick(tickGradeY);
+    float intervalXMinus1 = GetTick(tickGradeX-1);
+    float intervalXMinus2 = GetTick(tickGradeX-2);
+    float intervalYMinus1 = GetTick(tickGradeY-1);
+    float intervalYMinus2 = GetTick(tickGradeY-2);
 
     // grid plane, normal(0, 0, -1)
     Plane plane = Plane(Vector3::zero, Vector3(0, 0, -1));
@@ -70,12 +78,12 @@ void SpaceGrid::Render()
             colors.push_back(gradeZeroColor);
             colors.push_back(gradeZeroColor);
         }
-        else if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalX * 4, maxUlpX), maxUlpX))
+        else if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalXMinus2, maxUlpX), maxUlpX))
         {
             colors.push_back(gradeOneColor);
             colors.push_back(gradeOneColor);
         }
-        else if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalX * 2, maxUlpX), maxUlpX))
+        else if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalXMinus1, maxUlpX), maxUlpX))
         {
             colors.push_back(gradeTwoColor);
             colors.push_back(gradeTwoColor);
@@ -96,12 +104,12 @@ void SpaceGrid::Render()
             colors.push_back(gradeZeroColor);
             colors.push_back(gradeZeroColor);
         }
-        else if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalY * 4, maxUlpY), maxUlpY))
+        else if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalYMinus2, maxUlpY), maxUlpY))
         {
             colors.push_back(gradeOneColor);
             colors.push_back(gradeOneColor);
         }
-        else if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalY * 2, maxUlpY), maxUlpY))
+        else if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalYMinus1, maxUlpY), maxUlpY))
         {
             colors.push_back(gradeTwoColor);
             colors.push_back(gradeTwoColor);
@@ -131,7 +139,7 @@ void SpaceGrid::Render()
     {
         if (Mathf::Equal(i, 0, maxUlpX))
             i = 0;
-        if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalY * 4, maxUlpX), maxUlpX))
+        if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalXMinus1, maxUlpX), maxUlpX))
         {
             stream.str("");
             stream << i;
@@ -142,7 +150,7 @@ void SpaceGrid::Render()
     {
         if (Mathf::Equal(i, 0, maxUlpY))
             i = 0;
-        if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalY * 4, maxUlpY), maxUlpY))
+        if (Mathf::Equal(i, Mathf::ToNearUnit(i, intervalYMinus1, maxUlpY), maxUlpY))
         {
             stream.str("");
             stream << i;
@@ -152,29 +160,35 @@ void SpaceGrid::Render()
 }
 
 
-void SpaceGrid::CalculateInterval(int pixel, float& intervalX, float& intervalY)
+void SpaceGrid::CalculateInterval(int pixel, int& tickGradeX, int& tickGradeY)
 {
-    Vector3 v0(1000, 1000, 0);
+    Vector3 v0;
     auto matrix = m_Camera->ViewProjectMatrix();
     Vector3 zeroInScreen = m_Camera->ViewportToScreenPoint(matrix.MultiplyPoint(Vector3::zero));
 
-    Vector3 nowGrade = v0;
-    for (int i = 0; i < 1000; ++i)
+    tickGradeX = tickGradeY = 0;
+    for (size_t i = 0; i < sizeof(s_Ticks); ++i)
     {
+        v0.x = v0.y = s_Ticks[i];
+
         Vector3 v1 = m_Camera->ViewportToScreenPoint(matrix.MultiplyPoint(v0));
         Vector3 distance = Vector3::Abs(v1 - zeroInScreen);
         if (distance.x < pixel && distance.y < pixel)
             return;
 
         if (distance.x >= pixel)
-            intervalX = v0.x;
+            tickGradeX = i;
         if (distance.y >= pixel)
-            intervalY = v0.y;
-        // 下降
-        if (i % 2 == 0)
-            v0 = nowGrade * 0.5;
-        else
-            nowGrade = v0 = nowGrade * 0.1;
+            tickGradeY = i;
     }
-    intervalX = intervalY = 1;
+}
+
+float SpaceGrid::GetTick(int index)
+{
+    if (index < 0)
+        index = 0;
+    if (index > sizeof(s_Ticks))
+        index = sizeof(s_Ticks) - 1;
+
+    return s_Ticks[index];
 }

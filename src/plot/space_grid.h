@@ -8,10 +8,13 @@
 class SpaceGrid
 {
 public:
+
     SpaceGrid(Camera* camera);
     void Render();
 
 private:
+    static const float s_Ticks[18];
+
     Camera* m_Camera;
     // 世界坐标下的相机左下角和右上角
     Vector3 m_LeftBottom;
@@ -19,5 +22,6 @@ private:
     Entity* m_Entity;
     Mesh* m_Mesh;
 
-    void CalculateInterval(int pixel, float& intervalX, float& intervalY);
+    void CalculateInterval(int pixel, int& tickGradeX, int& tickGradeY);
+    float GetTick(int index);
 };
