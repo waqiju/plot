@@ -144,6 +144,7 @@
     <ClCompile Include="src\geometry\physics.cpp" />
     <ClCompile Include="src\geometry\plane.cpp" />
     <ClCompile Include="src\geometry\quaternion.cpp" />
+    <ClCompile Include="src\geometry\random.cpp" />
     <ClCompile Include="src\geometry\ray.cpp" />
     <ClCompile Include="src\geometry\vector2.cpp" />
     <ClCompile Include="src\geometry\vector3.cpp" />
@@ -155,6 +156,7 @@
     <ClCompile Include="src\mesh.cpp" />
     <ClCompile Include="src\mesh_renderer.cpp" />
     <ClCompile Include="src\plot\rectangle.cpp" />
+    <ClCompile Include="src\plot\segment.cpp" />
     <ClCompile Include="src\plot\space_grid.cpp" />
     <ClCompile Include="src\resource\resource_manager.cpp" />
     <ClCompile Include="src\shader.cpp" />
@@ -184,6 +186,7 @@
     <ClInclude Include="src\geometry\physics.h" />
     <ClInclude Include="src\geometry\plane.h" />
     <ClInclude Include="src\geometry\quaternion.h" />
+    <ClInclude Include="src\geometry\random.h" />
     <ClInclude Include="src\geometry\ray.h" />
     <ClInclude Include="src\geometry\vector2.h" />
     <ClInclude Include="src\geometry\vector3.h" />
@@ -196,6 +199,7 @@
     <ClInclude Include="src\mesh.h" />
     <ClInclude Include="src\mesh_renderer.h" />
     <ClInclude Include="src\plot\rectangle.h" />
+    <ClInclude Include="src\plot\segment.h" />
     <ClInclude Include="src\plot\space_grid.h" />
     <ClInclude Include="src\resource\resource_manager.h" />
     <ClInclude Include="src\shader.h" />
