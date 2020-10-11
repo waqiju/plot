@@ -75,6 +75,11 @@ public:
         return Vector3::Normalize(Vector3(m[2][0], m[2][1], m[2][2]));
     };
 
+    const std::vector<Transform*>& Children()
+    {
+        return m_Children;
+    }
+
 private:
     // TRS
 	Vector3 m_LocalPosition;

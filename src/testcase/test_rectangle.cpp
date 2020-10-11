@@ -13,7 +13,6 @@ void OnFrameUpdate();
 
 SpaceGrid* g_SpaceGrid;
 Transform* g_PlotRoot;
-Rectangle* g_Rectangle;
 
 
 int main()
@@ -28,7 +27,8 @@ int main()
     auto plotRootEntity = World::ActiveWorld()->CreateEntity();
     plotRootEntity->name = "PlotRoot";
     g_PlotRoot = plotRootEntity->GetComponent<Transform>();
-    g_Rectangle = Rectangle::Create(g_PlotRoot, Vector3::zero, Vector3(1, 1, 0), Color::white);
+    Rectangle::Create(g_PlotRoot, Vector3::zero, Vector3(1, 1, 0), Color::white);
+    Rectangle::Create(g_PlotRoot, Vector3(1, 1, 0), Vector3(2, 2, 0), Color::white);
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();
@@ -42,5 +42,8 @@ void OnFrameUpdate()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     g_SpaceGrid->Render();
-    g_Rectangle->Render();
+    for (auto rectangle : World::ActiveWorld()->GetComponentsInRootEnities<Rectangle>())
+    {
+        rectangle->Render();
+    }
 }

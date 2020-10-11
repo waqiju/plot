@@ -4,6 +4,7 @@
 #include <typeinfo>
 #include <cassert>
 #include "entity/world_object.h"
+#include "entity/transform.h"
 
 
 class Component;
@@ -22,6 +23,8 @@ public:
     template<typename T> T* AddComponent();
     template<typename T> T* GetComponent();
     template<typename T> T* GetOrAddComponent();
+    template<typename T> std::vector<T*> GetComponentsInChildren();
+    template<typename T> void GetComponentsInChildren(std::vector<T*>& componentList);
 
 private:
     void SetActive(bool status);
@@ -69,4 +72,30 @@ T* Entity::GetOrAddComponent()
         component = this->template AddComponent<T>();
     }
     return component;
+}
+
+template<typename T>
+std::vector<T*> Entity::GetComponentsInChildren()
+{
+    std::vector<T*> componentList;
+    this->template GetComponentsInChildren<T>(componentList);
+    return componentList;
+}
+
+template<typename T> 
+void Entity::GetComponentsInChildren(std::vector<T*>& componentList)
+{
+    T* component = this->template GetComponent<T>();
+    if (component != NULL)
+    {
+        componentList.push_back(component);
+    }
+
+    Transform* thisTransform = this->template GetComponent<Transform>();
+    if (thisTransform == NULL)
+        return;
+    for (Transform* child: thisTransform->Children())
+    {
+        child->GetComponentsInChildren<T>(componentList);
+    }
 }

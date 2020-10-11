@@ -11,6 +11,7 @@ public:
     static Entity* OriginEntity();
     Entity* CreateEntity();
     template<typename T> std::vector<T*> GetComponentsInRootEnities();
+    template<typename T> std::vector<T*> GetComponentsInAllEnities();
 	void FlushTransform();
 
 private:
@@ -26,7 +27,6 @@ std::vector<T*> World::GetComponentsInRootEnities()
 	std::vector<T*> componentList;
 	for (Entity* entity : m_EntityList)
 	{
-		// TODO use GetComponentsInChilid
 		T* component = entity->template GetComponent<T>();
 		if (component != NULL)
 		{
@@ -34,4 +34,15 @@ std::vector<T*> World::GetComponentsInRootEnities()
 		}
 	}
 	return componentList;
+}
+
+template<typename T> 
+std::vector<T*> World::GetComponentsInAllEnities()
+{
+    std::vector<T*> componentList;
+    for (Entity* entity : m_EntityList)
+    {
+        entity->template GetComponentsInChildren<T>(componentList);
+    }
+    return componentList;
 }
