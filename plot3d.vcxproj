@@ -80,10 +80,11 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;libprotobufd.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>msvcrt.lib</IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
@@ -155,12 +156,18 @@
     <ClCompile Include="src\material_property_block.cpp" />
     <ClCompile Include="src\mesh.cpp" />
     <ClCompile Include="src\mesh_renderer.cpp" />
+    <ClCompile Include="src\pb\common.pb.cc" />
+    <ClCompile Include="src\pb\message.pb.cc" />
+    <ClCompile Include="src\pb\monitor.pb.cc" />
+    <ClCompile Include="src\pb\prophet.pb.cc" />
+    <ClCompile Include="src\pb\trade.pb.cc" />
+    <ClCompile Include="src\pb\xueqiu.pb.cc" />
     <ClCompile Include="src\plot\rectangle.cpp" />
     <ClCompile Include="src\plot\segment.cpp" />
     <ClCompile Include="src\plot\space_grid.cpp" />
     <ClCompile Include="src\resource\resource_manager.cpp" />
     <ClCompile Include="src\shader.cpp" />
-    <ClCompile Include="src\testcase\test_rectangle.cpp" />
+    <ClCompile Include="src\testcase\test_protobuf.cpp" />
     <ClCompile Include="src\texture.cpp" />
     <ClCompile Include="src\text_2d.cpp" />
     <ClCompile Include="src\ui_helper.cpp" />
@@ -198,6 +205,12 @@
     <ClInclude Include="src\material_property_block.h" />
     <ClInclude Include="src\mesh.h" />
     <ClInclude Include="src\mesh_renderer.h" />
+    <ClInclude Include="src\pb\common.pb.h" />
+    <ClInclude Include="src\pb\message.pb.h" />
+    <ClInclude Include="src\pb\monitor.pb.h" />
+    <ClInclude Include="src\pb\prophet.pb.h" />
+    <ClInclude Include="src\pb\trade.pb.h" />
+    <ClInclude Include="src\pb\xueqiu.pb.h" />
     <ClInclude Include="src\plot\rectangle.h" />
     <ClInclude Include="src\plot\segment.h" />
     <ClInclude Include="src\plot\space_grid.h" />
