@@ -61,3 +61,28 @@ void Rectangle::Render()
     renderer->camera = Application::MainCamera();
     renderer->Render();
 }
+
+void Rectangle::BatchRender(std::vector<Rectangle*> rectangleList)
+{
+    // mesh
+    std::vector<Vector3> vertices;
+    std::vector<Color> colors;
+    for (Rectangle* item:rectangleList)
+    {
+        item->GenerateMesh(vertices, colors);
+    }
+    Mesh mesh;
+    mesh.SetVertices(vertices);
+    mesh.SetColors(colors);
+    // material
+    auto shader = ResourceManager::LoadShader("src/shader/color_vertex.vs", "src/shader/color_vertex.fs", "", "color_vertex");
+    Material material = Material(shader);
+    material.SetColor("ColorTint", Color::white);
+    // renderer
+    auto renderer = World::OriginEntity()->GetOrAddComponent<MeshRenderer>();
+    renderer->mesh = &mesh;
+    renderer->material = &material;
+    renderer->camera = Application::MainCamera();
+    renderer->Render();
+
+}

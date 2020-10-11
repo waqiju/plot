@@ -10,6 +10,7 @@
 
 
 void OnFrameUpdate();
+void GenerateRandomRectangle();
 
 SpaceGrid* g_SpaceGrid;
 Transform* g_PlotRoot;
@@ -27,8 +28,7 @@ int main()
     auto plotRootEntity = World::ActiveWorld()->CreateEntity();
     plotRootEntity->name = "PlotRoot";
     g_PlotRoot = plotRootEntity->GetComponent<Transform>();
-    Rectangle::Create(g_PlotRoot, Vector3::zero, Vector3(1, 1, 0), Color::white);
-    Rectangle::Create(g_PlotRoot, Vector3(1, 1, 0), Vector3(2, 2, 0), Color::white);
+    GenerateRandomRectangle();
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();
@@ -42,8 +42,29 @@ void OnFrameUpdate()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     g_SpaceGrid->Render();
-    for (auto rectangle : World::ActiveWorld()->GetComponentsInRootEnities<Rectangle>())
+    auto rectangleList = World::ActiveWorld()->GetComponentsInRootEnities<Rectangle>();
+    Rectangle::BatchRender(rectangleList);
+}
+
+void GenerateRandomRectangle()
+{
+    std::vector<float> yList;
+    for (int x = 0; x <= 20; ++x)
     {
-        rectangle->Render();
+        float y;
+        if (x == 0)
+        {
+            y = Random::Range(10, 15);
+        }
+        else
+        {
+            y = yList[x-1] + Random::Range(-3, 3);
+        }
+        yList.push_back(y);
+        float height = Random::Range(0.1, 5);
+
+        Vector3 left = Vector3(x - 0.45, y - height / 2, 0);
+        Vector3 right = Vector3(x + 0.45, y + height / 2, 0);
+        Rectangle::Create(g_PlotRoot, left, right, Color::white);
     }
 }

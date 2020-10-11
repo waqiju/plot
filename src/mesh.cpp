@@ -85,7 +85,7 @@ void Mesh::UploadMeshData()
 			glGenBuffers(1, &m_VboColor);
 		}
 		glBindBuffer(GL_ARRAY_BUFFER, m_VboColor);
-		glBufferData(GL_ARRAY_BUFFER, m_Vertices.size() * sizeof(Color), &m_Colors[0], GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, m_Colors.size() * sizeof(Color), &m_Colors[0], GL_STATIC_DRAW);
 		glEnableVertexAttribArray(1);
 		glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Color), (void*)0);
 	}
