@@ -10,7 +10,7 @@ class StockGlyph : public Component
 {
 public:
     static StockGlyph* Create(Transform* parent, float x, const KChart& chart);
-    static void BatchRender(std::vector<StockGlyph*> stockGlyph);
+    static void BatchRender(std::vector<StockGlyph*>& stockGlyph);
 
     StockGlyph(Entity* owner): Component(owner) {}
 

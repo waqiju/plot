@@ -94,8 +94,64 @@ void StockGlyph::RenderSegment()
     renderer->Render();
 }
 
-void StockGlyph::BatchRender(std::vector<StockGlyph*> stockGlyphList)
+void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
 {
-    // TODO
+    // rectangle
+    {
+        // mesh
+        std::vector<Vector3> vertices;
+        std::vector<Color> colors;
+        for (auto sg:stockGlyphList)
+        {
+            float x = sg->x;
+            auto& chart = sg->chart;
+            float min = Mathf::Min(chart.open(), chart.close());
+            float max = Mathf::Max(chart.open(), chart.close());
+            Vector3 v0 = Vector3(x - 0.45, min, 0);
+            Vector3 v1 = Vector3(x + 0.45, max, 0);
+            Rectangle::GenerateMesh(v0, v1, sg->color, vertices, colors);
+        }
+        Mesh mesh;
+        mesh.SetVertices(vertices);
+        mesh.SetColors(colors);
+        // material
+        auto shader = ResourceManager::LoadShader("src/shader/color_vertex.vs", "src/shader/color_vertex.fs", "", "color_vertex");
+        Material material = Material(shader);
+        material.SetColor("ColorTint", Color::white);
+        // renderer
+        auto renderer = World::OriginEntity()->GetOrAddComponent<MeshRenderer>();
+        renderer->mesh = &mesh;
+        renderer->material = &material;
+        renderer->camera = Application::MainCamera();
+        renderer->Render();
+    }
 
+    // segment
+    {
+        // mesh
+        std::vector<Vector3> vertices;
+        std::vector<Color> colors;
+        for (auto sg:stockGlyphList)
+        {
+            float x = sg->x;
+            auto& chart = sg->chart;
+            Vector3 v0 = Vector3(x, chart.low(), 0);
+            Vector3 v1 = Vector3(x, chart.high(), 0);
+            chimera::Segment::GenerateMesh(v0, v1, sg->color, vertices, colors);
+        }
+        Mesh mesh;
+        mesh.SetTopology(MeshTopology::Lines);
+        mesh.SetVertices(vertices);
+        mesh.SetColors(colors);
+        // material
+        auto shader = ResourceManager::LoadShader("src/shader/color_vertex.vs", "src/shader/color_vertex.fs", "", "color_vertex");
+        Material material = Material(shader);
+        material.SetColor("ColorTint", Color::white);
+        // renderer
+        auto renderer = World::OriginEntity()->GetOrAddComponent<MeshRenderer>();
+        renderer->mesh = &mesh;
+        renderer->material = &material;
+        renderer->camera = Application::MainCamera();
+        renderer->Render();
+    }
 }

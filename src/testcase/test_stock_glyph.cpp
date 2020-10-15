@@ -44,10 +44,7 @@ void OnFrameUpdate()
 
     g_SpaceGrid->Render();
     auto sgList = World::ActiveWorld()->GetComponentsInRootEnities<StockGlyph>();
-    for (auto sg : sgList)
-    {
-        sg->Render();
-    }
+    StockGlyph::BatchRender(sgList);
 }
 
 void GenerateRandomStockGlyph()
