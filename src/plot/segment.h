@@ -12,6 +12,7 @@ class Segment : public Component
 {
 public:
     static Segment* Create(Transform* parent, const Vector3& v1, const Vector3& v2, const Color& color);
+    static void GenerateMesh(const Vector3& inLeftBottom, const Vector3& inRightTop, const Color& inColor, std::vector<Vector3>& vertices, std::vector<Color>& colors);
     static void BatchRender(std::vector<Segment*> segmentList);
 
     Segment(Entity* owner): Component(owner) {}

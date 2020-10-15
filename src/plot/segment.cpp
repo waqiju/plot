@@ -21,12 +21,18 @@ Segment* Segment::Create(Transform* parent, const Vector3& v1, const Vector3& v2
     return segment;
 }
 
+void Segment::GenerateMesh(const Vector3& inLeftBottom, const Vector3& inRightTop, const Color& inColor, std::vector<Vector3>& vertices, std::vector<Color>& colors)
+{
+    vertices.push_back(inLeftBottom);
+    vertices.push_back(inRightTop);
+    colors.push_back(inColor);
+    colors.push_back(inColor);
+}
+
+
 void Segment::GenerateMesh(std::vector<Vector3>& vertices, std::vector<Color>& colors)
 {
-	vertices.push_back(leftBottom);
-	vertices.push_back(rightTop);
-    colors.push_back(color);
-    colors.push_back(color);
+    GenerateMesh(leftBottom, rightTop, color, vertices, colors);
 }
 
 void Segment::Render()

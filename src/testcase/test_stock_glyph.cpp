@@ -43,8 +43,11 @@ void OnFrameUpdate()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     g_SpaceGrid->Render();
-    auto rectangleList = World::ActiveWorld()->GetComponentsInRootEnities<Rectangle>();
-    Rectangle::BatchRender(rectangleList);
+    auto sgList = World::ActiveWorld()->GetComponentsInRootEnities<StockGlyph>();
+    for (auto sg : sgList)
+    {
+        sg->Render();
+    }
 }
 
 void GenerateRandomStockGlyph()
@@ -62,7 +65,7 @@ void GenerateRandomStockGlyph()
         {
             close = chartList[x-1].close() + Random::Range(-2, 2.2);
         }
-        float open = close * (0.97, 1.03) + Random::Range(-1, 1);
+        float open = close * Random::Range(0.97, 1.03) + Random::Range(-1, 1);
         float max = Mathf::Max(open, close);
         float min = Mathf::Min(open, close);
         float high = max * Random::Range(1.001, 1.02);
@@ -73,6 +76,6 @@ void GenerateRandomStockGlyph()
         chart.set_low(low);
         chartList.push_back(chart);
 
-        StockGlyph::Create(g_PlotRoot, chart);
+        StockGlyph::Create(g_PlotRoot, x, chart);
     }
 }

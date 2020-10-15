@@ -4,20 +4,22 @@
 #include "resource/resource_manager.h"
 #include "mesh_renderer.h"
 #include "application/application.h"
+#include "plot/plot.h"
 
 
-StockGlyph* StockGlyph::Create(Transform* parent, const KChart& chart)
+StockGlyph* StockGlyph::Create(Transform* parent, float x, const KChart& chart)
 {
     auto entity = World::ActiveWorld()->CreateEntity();
     auto stockGlyph = entity->AddComponent<StockGlyph>();
-    stockGlyph->Reset(chart);
+    stockGlyph->Reset(x, chart);
 
     entity->GetComponent<Transform>()->SetParent(parent);
     return stockGlyph;
 }
 
-void StockGlyph::Reset(KChart inKChart)
+void StockGlyph::Reset(float inX, const KChart& inKChart)
 {
+    x = inX;
     chart = inKChart;
     // color
     if (chart.open() == chart.close())
@@ -33,15 +35,51 @@ void StockGlyph::Reset(KChart inKChart)
         color = Color::green;
     }
     // leftBottom, rightTop
+    leftBottom = Vector3(x, chart.low(), 0);
+    rightTop = Vector3(x, chart.high(), 0);
 }
 
 void StockGlyph::Render()
 {
+    RenderRectangle();
+    RenderSegment();
+}
+
+void StockGlyph::RenderRectangle()
+{
     // mesh
     std::vector<Vector3> vertices;
     std::vector<Color> colors;
-    GenerateMesh(vertices, colors);
+    float min = Mathf::Min(chart.open(), chart.close());
+    float max = Mathf::Max(chart.open(), chart.close());
+    Vector3 v0 = Vector3(x - 0.45, min, 0);
+    Vector3 v1 = Vector3(x + 0.45, max, 0);
+    Rectangle::GenerateMesh(v0, v1, color, vertices, colors);
     Mesh mesh;
+    mesh.SetVertices(vertices);
+    mesh.SetColors(colors);
+    // material
+    auto shader = ResourceManager::LoadShader("src/shader/color_vertex.vs", "src/shader/color_vertex.fs", "", "color_vertex");
+    Material material = Material(shader);
+    material.SetColor("ColorTint", Color::white);
+    // renderer
+    auto renderer = World::OriginEntity()->GetOrAddComponent<MeshRenderer>();
+    renderer->mesh = &mesh;
+    renderer->material = &material;
+    renderer->camera = Application::MainCamera();
+    renderer->Render();
+}
+
+void StockGlyph::RenderSegment()
+{
+    // mesh
+    std::vector<Vector3> vertices;
+    std::vector<Color> colors;
+    Vector3 v0 = Vector3(x, chart.low(), 0);
+    Vector3 v1 = Vector3(x, chart.high(), 0);
+    chimera::Segment::GenerateMesh(v0, v1, color, vertices, colors);
+    Mesh mesh;
+    mesh.SetTopology(MeshTopology::Lines);
     mesh.SetVertices(vertices);
     mesh.SetColors(colors);
     // material
