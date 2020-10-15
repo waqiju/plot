@@ -56,15 +56,12 @@ struct TableStruct_pb_2fmessage_2eproto {
   static const ::PROTOBUF_NAMESPACE_ID::uint32 offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fmessage_2eproto;
-namespace pb {
 class Message;
 class MessageDefaultTypeInternal;
 extern MessageDefaultTypeInternal _Message_default_instance_;
-}  // namespace pb
 PROTOBUF_NAMESPACE_OPEN
-template<> ::pb::Message* Arena::CreateMaybeMessage<::pb::Message>(Arena*);
+template<> ::Message* Arena::CreateMaybeMessage<::Message>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
-namespace pb {
 
 enum MESSAGE_TYPE : int {
   MESSAGE_TYPE_INVALID = 0,
@@ -94,7 +91,7 @@ inline bool MESSAGE_TYPE_Parse(
 // ===================================================================
 
 class Message PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.Message) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Message) */ {
  public:
   inline Message() : Message(nullptr) {}
   virtual ~Message();
@@ -183,7 +180,7 @@ class Message PROTOBUF_FINAL :
   void InternalSwap(Message* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.Message";
+    return "Message";
   }
   protected:
   explicit Message(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -259,16 +256,16 @@ class Message PROTOBUF_FINAL :
   std::string* _internal_mutable_text();
   public:
 
-  // .pb.MESSAGE_TYPE message_type = 3;
+  // .MESSAGE_TYPE message_type = 3;
   void clear_message_type();
-  ::pb::MESSAGE_TYPE message_type() const;
-  void set_message_type(::pb::MESSAGE_TYPE value);
+  ::MESSAGE_TYPE message_type() const;
+  void set_message_type(::MESSAGE_TYPE value);
   private:
-  ::pb::MESSAGE_TYPE _internal_message_type() const;
-  void _internal_set_message_type(::pb::MESSAGE_TYPE value);
+  ::MESSAGE_TYPE _internal_message_type() const;
+  void _internal_set_message_type(::MESSAGE_TYPE value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.Message)
+  // @@protoc_insertion_point(class_scope:Message)
  private:
   class _Internal;
 
@@ -298,15 +295,15 @@ inline void Message::clear_from_name() {
   from_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& Message::from_name() const {
-  // @@protoc_insertion_point(field_get:pb.Message.from_name)
+  // @@protoc_insertion_point(field_get:Message.from_name)
   return _internal_from_name();
 }
 inline void Message::set_from_name(const std::string& value) {
   _internal_set_from_name(value);
-  // @@protoc_insertion_point(field_set:pb.Message.from_name)
+  // @@protoc_insertion_point(field_set:Message.from_name)
 }
 inline std::string* Message::mutable_from_name() {
-  // @@protoc_insertion_point(field_mutable:pb.Message.from_name)
+  // @@protoc_insertion_point(field_mutable:Message.from_name)
   return _internal_mutable_from_name();
 }
 inline const std::string& Message::_internal_from_name() const {
@@ -320,28 +317,28 @@ inline void Message::set_from_name(std::string&& value) {
   
   from_name_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.Message.from_name)
+  // @@protoc_insertion_point(field_set_rvalue:Message.from_name)
 }
 inline void Message::set_from_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   from_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.Message.from_name)
+  // @@protoc_insertion_point(field_set_char:Message.from_name)
 }
 inline void Message::set_from_name(const char* value,
     size_t size) {
   
   from_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.Message.from_name)
+  // @@protoc_insertion_point(field_set_pointer:Message.from_name)
 }
 inline std::string* Message::_internal_mutable_from_name() {
   
   return from_name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* Message::release_from_name() {
-  // @@protoc_insertion_point(field_release:pb.Message.from_name)
+  // @@protoc_insertion_point(field_release:Message.from_name)
   return from_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void Message::set_allocated_from_name(std::string* from_name) {
@@ -352,7 +349,7 @@ inline void Message::set_allocated_from_name(std::string* from_name) {
   }
   from_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from_name,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.Message.from_name)
+  // @@protoc_insertion_point(field_set_allocated:Message.from_name)
 }
 
 // string to_name = 2;
@@ -360,15 +357,15 @@ inline void Message::clear_to_name() {
   to_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& Message::to_name() const {
-  // @@protoc_insertion_point(field_get:pb.Message.to_name)
+  // @@protoc_insertion_point(field_get:Message.to_name)
   return _internal_to_name();
 }
 inline void Message::set_to_name(const std::string& value) {
   _internal_set_to_name(value);
-  // @@protoc_insertion_point(field_set:pb.Message.to_name)
+  // @@protoc_insertion_point(field_set:Message.to_name)
 }
 inline std::string* Message::mutable_to_name() {
-  // @@protoc_insertion_point(field_mutable:pb.Message.to_name)
+  // @@protoc_insertion_point(field_mutable:Message.to_name)
   return _internal_mutable_to_name();
 }
 inline const std::string& Message::_internal_to_name() const {
@@ -382,28 +379,28 @@ inline void Message::set_to_name(std::string&& value) {
   
   to_name_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.Message.to_name)
+  // @@protoc_insertion_point(field_set_rvalue:Message.to_name)
 }
 inline void Message::set_to_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   to_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.Message.to_name)
+  // @@protoc_insertion_point(field_set_char:Message.to_name)
 }
 inline void Message::set_to_name(const char* value,
     size_t size) {
   
   to_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.Message.to_name)
+  // @@protoc_insertion_point(field_set_pointer:Message.to_name)
 }
 inline std::string* Message::_internal_mutable_to_name() {
   
   return to_name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* Message::release_to_name() {
-  // @@protoc_insertion_point(field_release:pb.Message.to_name)
+  // @@protoc_insertion_point(field_release:Message.to_name)
   return to_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void Message::set_allocated_to_name(std::string* to_name) {
@@ -414,27 +411,27 @@ inline void Message::set_allocated_to_name(std::string* to_name) {
   }
   to_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), to_name,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.Message.to_name)
+  // @@protoc_insertion_point(field_set_allocated:Message.to_name)
 }
 
-// .pb.MESSAGE_TYPE message_type = 3;
+// .MESSAGE_TYPE message_type = 3;
 inline void Message::clear_message_type() {
   message_type_ = 0;
 }
-inline ::pb::MESSAGE_TYPE Message::_internal_message_type() const {
-  return static_cast< ::pb::MESSAGE_TYPE >(message_type_);
+inline ::MESSAGE_TYPE Message::_internal_message_type() const {
+  return static_cast< ::MESSAGE_TYPE >(message_type_);
 }
-inline ::pb::MESSAGE_TYPE Message::message_type() const {
-  // @@protoc_insertion_point(field_get:pb.Message.message_type)
+inline ::MESSAGE_TYPE Message::message_type() const {
+  // @@protoc_insertion_point(field_get:Message.message_type)
   return _internal_message_type();
 }
-inline void Message::_internal_set_message_type(::pb::MESSAGE_TYPE value) {
+inline void Message::_internal_set_message_type(::MESSAGE_TYPE value) {
   
   message_type_ = value;
 }
-inline void Message::set_message_type(::pb::MESSAGE_TYPE value) {
+inline void Message::set_message_type(::MESSAGE_TYPE value) {
   _internal_set_message_type(value);
-  // @@protoc_insertion_point(field_set:pb.Message.message_type)
+  // @@protoc_insertion_point(field_set:Message.message_type)
 }
 
 // string text = 4;
@@ -442,15 +439,15 @@ inline void Message::clear_text() {
   text_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& Message::text() const {
-  // @@protoc_insertion_point(field_get:pb.Message.text)
+  // @@protoc_insertion_point(field_get:Message.text)
   return _internal_text();
 }
 inline void Message::set_text(const std::string& value) {
   _internal_set_text(value);
-  // @@protoc_insertion_point(field_set:pb.Message.text)
+  // @@protoc_insertion_point(field_set:Message.text)
 }
 inline std::string* Message::mutable_text() {
-  // @@protoc_insertion_point(field_mutable:pb.Message.text)
+  // @@protoc_insertion_point(field_mutable:Message.text)
   return _internal_mutable_text();
 }
 inline const std::string& Message::_internal_text() const {
@@ -464,28 +461,28 @@ inline void Message::set_text(std::string&& value) {
   
   text_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.Message.text)
+  // @@protoc_insertion_point(field_set_rvalue:Message.text)
 }
 inline void Message::set_text(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   text_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.Message.text)
+  // @@protoc_insertion_point(field_set_char:Message.text)
 }
 inline void Message::set_text(const char* value,
     size_t size) {
   
   text_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.Message.text)
+  // @@protoc_insertion_point(field_set_pointer:Message.text)
 }
 inline std::string* Message::_internal_mutable_text() {
   
   return text_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* Message::release_text() {
-  // @@protoc_insertion_point(field_release:pb.Message.text)
+  // @@protoc_insertion_point(field_release:Message.text)
   return text_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void Message::set_allocated_text(std::string* text) {
@@ -496,7 +493,7 @@ inline void Message::set_allocated_text(std::string* text) {
   }
   text_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), text,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.Message.text)
+  // @@protoc_insertion_point(field_set_allocated:Message.text)
 }
 
 #ifdef __GNUC__
@@ -505,14 +502,13 @@ inline void Message::set_allocated_text(std::string* text) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace pb
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::pb::MESSAGE_TYPE> : ::std::true_type {};
+template <> struct is_proto_enum< ::MESSAGE_TYPE> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::pb::MESSAGE_TYPE>() {
-  return ::pb::MESSAGE_TYPE_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::MESSAGE_TYPE>() {
+  return ::MESSAGE_TYPE_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

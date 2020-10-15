@@ -55,19 +55,16 @@ struct TableStruct_pb_2fcommon_2eproto {
   static const ::PROTOBUF_NAMESPACE_ID::uint32 offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fcommon_2eproto;
-namespace pb {
 class BaseResp;
 class BaseRespDefaultTypeInternal;
 extern BaseRespDefaultTypeInternal _BaseResp_default_instance_;
 class ResultInfo;
 class ResultInfoDefaultTypeInternal;
 extern ResultInfoDefaultTypeInternal _ResultInfo_default_instance_;
-}  // namespace pb
 PROTOBUF_NAMESPACE_OPEN
-template<> ::pb::BaseResp* Arena::CreateMaybeMessage<::pb::BaseResp>(Arena*);
-template<> ::pb::ResultInfo* Arena::CreateMaybeMessage<::pb::ResultInfo>(Arena*);
+template<> ::BaseResp* Arena::CreateMaybeMessage<::BaseResp>(Arena*);
+template<> ::ResultInfo* Arena::CreateMaybeMessage<::ResultInfo>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
-namespace pb {
 
 enum ERROR_CODE : int {
   ERROR_CODE_SUCCESS = 0,
@@ -190,7 +187,7 @@ inline bool MARKET_TYPE_Parse(
 // ===================================================================
 
 class BaseResp PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.BaseResp) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:BaseResp) */ {
  public:
   inline BaseResp() : BaseResp(nullptr) {}
   virtual ~BaseResp();
@@ -279,7 +276,7 @@ class BaseResp PROTOBUF_FINAL :
   void InternalSwap(BaseResp* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.BaseResp";
+    return "BaseResp";
   }
   protected:
   explicit BaseResp(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -340,7 +337,7 @@ class BaseResp PROTOBUF_FINAL :
   void _internal_set_success(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.BaseResp)
+  // @@protoc_insertion_point(class_scope:BaseResp)
  private:
   class _Internal;
 
@@ -356,7 +353,7 @@ class BaseResp PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class ResultInfo PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.ResultInfo) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:ResultInfo) */ {
  public:
   inline ResultInfo() : ResultInfo(nullptr) {}
   virtual ~ResultInfo();
@@ -445,7 +442,7 @@ class ResultInfo PROTOBUF_FINAL :
   void InternalSwap(ResultInfo* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.ResultInfo";
+    return "ResultInfo";
   }
   protected:
   explicit ResultInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -496,7 +493,7 @@ class ResultInfo PROTOBUF_FINAL :
   void _internal_set_error_code(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.ResultInfo)
+  // @@protoc_insertion_point(class_scope:ResultInfo)
  private:
   class _Internal;
 
@@ -527,7 +524,7 @@ inline bool BaseResp::_internal_success() const {
   return success_;
 }
 inline bool BaseResp::success() const {
-  // @@protoc_insertion_point(field_get:pb.BaseResp.success)
+  // @@protoc_insertion_point(field_get:BaseResp.success)
   return _internal_success();
 }
 inline void BaseResp::_internal_set_success(bool value) {
@@ -536,7 +533,7 @@ inline void BaseResp::_internal_set_success(bool value) {
 }
 inline void BaseResp::set_success(bool value) {
   _internal_set_success(value);
-  // @@protoc_insertion_point(field_set:pb.BaseResp.success)
+  // @@protoc_insertion_point(field_set:BaseResp.success)
 }
 
 // int64 errorCode = 2;
@@ -547,7 +544,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int64 BaseResp::_internal_errorcode() const {
   return errorcode_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int64 BaseResp::errorcode() const {
-  // @@protoc_insertion_point(field_get:pb.BaseResp.errorCode)
+  // @@protoc_insertion_point(field_get:BaseResp.errorCode)
   return _internal_errorcode();
 }
 inline void BaseResp::_internal_set_errorcode(::PROTOBUF_NAMESPACE_ID::int64 value) {
@@ -556,7 +553,7 @@ inline void BaseResp::_internal_set_errorcode(::PROTOBUF_NAMESPACE_ID::int64 val
 }
 inline void BaseResp::set_errorcode(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_errorcode(value);
-  // @@protoc_insertion_point(field_set:pb.BaseResp.errorCode)
+  // @@protoc_insertion_point(field_set:BaseResp.errorCode)
 }
 
 // string errorMsg = 3;
@@ -564,15 +561,15 @@ inline void BaseResp::clear_errormsg() {
   errormsg_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& BaseResp::errormsg() const {
-  // @@protoc_insertion_point(field_get:pb.BaseResp.errorMsg)
+  // @@protoc_insertion_point(field_get:BaseResp.errorMsg)
   return _internal_errormsg();
 }
 inline void BaseResp::set_errormsg(const std::string& value) {
   _internal_set_errormsg(value);
-  // @@protoc_insertion_point(field_set:pb.BaseResp.errorMsg)
+  // @@protoc_insertion_point(field_set:BaseResp.errorMsg)
 }
 inline std::string* BaseResp::mutable_errormsg() {
-  // @@protoc_insertion_point(field_mutable:pb.BaseResp.errorMsg)
+  // @@protoc_insertion_point(field_mutable:BaseResp.errorMsg)
   return _internal_mutable_errormsg();
 }
 inline const std::string& BaseResp::_internal_errormsg() const {
@@ -586,28 +583,28 @@ inline void BaseResp::set_errormsg(std::string&& value) {
   
   errormsg_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.BaseResp.errorMsg)
+  // @@protoc_insertion_point(field_set_rvalue:BaseResp.errorMsg)
 }
 inline void BaseResp::set_errormsg(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   errormsg_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.BaseResp.errorMsg)
+  // @@protoc_insertion_point(field_set_char:BaseResp.errorMsg)
 }
 inline void BaseResp::set_errormsg(const char* value,
     size_t size) {
   
   errormsg_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.BaseResp.errorMsg)
+  // @@protoc_insertion_point(field_set_pointer:BaseResp.errorMsg)
 }
 inline std::string* BaseResp::_internal_mutable_errormsg() {
   
   return errormsg_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* BaseResp::release_errormsg() {
-  // @@protoc_insertion_point(field_release:pb.BaseResp.errorMsg)
+  // @@protoc_insertion_point(field_release:BaseResp.errorMsg)
   return errormsg_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void BaseResp::set_allocated_errormsg(std::string* errormsg) {
@@ -618,7 +615,7 @@ inline void BaseResp::set_allocated_errormsg(std::string* errormsg) {
   }
   errormsg_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), errormsg,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.BaseResp.errorMsg)
+  // @@protoc_insertion_point(field_set_allocated:BaseResp.errorMsg)
 }
 
 // -------------------------------------------------------------------
@@ -633,7 +630,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int64 ResultInfo::_internal_error_code() const {
   return error_code_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int64 ResultInfo::error_code() const {
-  // @@protoc_insertion_point(field_get:pb.ResultInfo.error_code)
+  // @@protoc_insertion_point(field_get:ResultInfo.error_code)
   return _internal_error_code();
 }
 inline void ResultInfo::_internal_set_error_code(::PROTOBUF_NAMESPACE_ID::int64 value) {
@@ -642,7 +639,7 @@ inline void ResultInfo::_internal_set_error_code(::PROTOBUF_NAMESPACE_ID::int64 
 }
 inline void ResultInfo::set_error_code(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_error_code(value);
-  // @@protoc_insertion_point(field_set:pb.ResultInfo.error_code)
+  // @@protoc_insertion_point(field_set:ResultInfo.error_code)
 }
 
 // string error_message = 2;
@@ -650,15 +647,15 @@ inline void ResultInfo::clear_error_message() {
   error_message_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& ResultInfo::error_message() const {
-  // @@protoc_insertion_point(field_get:pb.ResultInfo.error_message)
+  // @@protoc_insertion_point(field_get:ResultInfo.error_message)
   return _internal_error_message();
 }
 inline void ResultInfo::set_error_message(const std::string& value) {
   _internal_set_error_message(value);
-  // @@protoc_insertion_point(field_set:pb.ResultInfo.error_message)
+  // @@protoc_insertion_point(field_set:ResultInfo.error_message)
 }
 inline std::string* ResultInfo::mutable_error_message() {
-  // @@protoc_insertion_point(field_mutable:pb.ResultInfo.error_message)
+  // @@protoc_insertion_point(field_mutable:ResultInfo.error_message)
   return _internal_mutable_error_message();
 }
 inline const std::string& ResultInfo::_internal_error_message() const {
@@ -672,28 +669,28 @@ inline void ResultInfo::set_error_message(std::string&& value) {
   
   error_message_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.ResultInfo.error_message)
+  // @@protoc_insertion_point(field_set_rvalue:ResultInfo.error_message)
 }
 inline void ResultInfo::set_error_message(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   error_message_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.ResultInfo.error_message)
+  // @@protoc_insertion_point(field_set_char:ResultInfo.error_message)
 }
 inline void ResultInfo::set_error_message(const char* value,
     size_t size) {
   
   error_message_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.ResultInfo.error_message)
+  // @@protoc_insertion_point(field_set_pointer:ResultInfo.error_message)
 }
 inline std::string* ResultInfo::_internal_mutable_error_message() {
   
   return error_message_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* ResultInfo::release_error_message() {
-  // @@protoc_insertion_point(field_release:pb.ResultInfo.error_message)
+  // @@protoc_insertion_point(field_release:ResultInfo.error_message)
   return error_message_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void ResultInfo::set_allocated_error_message(std::string* error_message) {
@@ -704,7 +701,7 @@ inline void ResultInfo::set_allocated_error_message(std::string* error_message) 
   }
   error_message_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error_message,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.ResultInfo.error_message)
+  // @@protoc_insertion_point(field_set_allocated:ResultInfo.error_message)
 }
 
 #ifdef __GNUC__
@@ -715,29 +712,28 @@ inline void ResultInfo::set_allocated_error_message(std::string* error_message) 
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace pb
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::pb::ERROR_CODE> : ::std::true_type {};
+template <> struct is_proto_enum< ::ERROR_CODE> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::pb::ERROR_CODE>() {
-  return ::pb::ERROR_CODE_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::ERROR_CODE>() {
+  return ::ERROR_CODE_descriptor();
 }
-template <> struct is_proto_enum< ::pb::ErrorCode> : ::std::true_type {};
+template <> struct is_proto_enum< ::ErrorCode> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::pb::ErrorCode>() {
-  return ::pb::ErrorCode_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::ErrorCode>() {
+  return ::ErrorCode_descriptor();
 }
-template <> struct is_proto_enum< ::pb::PORT_DEFINE> : ::std::true_type {};
+template <> struct is_proto_enum< ::PORT_DEFINE> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::pb::PORT_DEFINE>() {
-  return ::pb::PORT_DEFINE_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::PORT_DEFINE>() {
+  return ::PORT_DEFINE_descriptor();
 }
-template <> struct is_proto_enum< ::pb::MARKET_TYPE> : ::std::true_type {};
+template <> struct is_proto_enum< ::MARKET_TYPE> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::pb::MARKET_TYPE>() {
-  return ::pb::MARKET_TYPE_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::MARKET_TYPE>() {
+  return ::MARKET_TYPE_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

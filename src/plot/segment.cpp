@@ -6,6 +6,9 @@
 #include "application/application.h"
 
 
+namespace chimera
+{
+
 Segment* Segment::Create(Transform* parent, const Vector3& v1, const Vector3& v2, const Color& color)
 {
     auto entity = World::ActiveWorld()->CreateEntity();
@@ -73,3 +76,5 @@ void Segment::BatchRender(std::vector<Segment*> segmentList)
     renderer->Render();
 
 }
+
+} // chimera

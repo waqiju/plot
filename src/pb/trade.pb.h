@@ -56,7 +56,6 @@ struct TableStruct_pb_2ftrade_2eproto {
   static const ::PROTOBUF_NAMESPACE_ID::uint32 offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2ftrade_2eproto;
-namespace pb {
 class OrderInfo;
 class OrderInfoDefaultTypeInternal;
 extern OrderInfoDefaultTypeInternal _OrderInfo_default_instance_;
@@ -78,17 +77,15 @@ extern ThsStockOrderRequestDefaultTypeInternal _ThsStockOrderRequest_default_ins
 class ThsStockOrderResponse;
 class ThsStockOrderResponseDefaultTypeInternal;
 extern ThsStockOrderResponseDefaultTypeInternal _ThsStockOrderResponse_default_instance_;
-}  // namespace pb
 PROTOBUF_NAMESPACE_OPEN
-template<> ::pb::OrderInfo* Arena::CreateMaybeMessage<::pb::OrderInfo>(Arena*);
-template<> ::pb::OrderStatus* Arena::CreateMaybeMessage<::pb::OrderStatus>(Arena*);
-template<> ::pb::PositionInfo* Arena::CreateMaybeMessage<::pb::PositionInfo>(Arena*);
-template<> ::pb::PositionRequest* Arena::CreateMaybeMessage<::pb::PositionRequest>(Arena*);
-template<> ::pb::PositionResponse* Arena::CreateMaybeMessage<::pb::PositionResponse>(Arena*);
-template<> ::pb::ThsStockOrderRequest* Arena::CreateMaybeMessage<::pb::ThsStockOrderRequest>(Arena*);
-template<> ::pb::ThsStockOrderResponse* Arena::CreateMaybeMessage<::pb::ThsStockOrderResponse>(Arena*);
+template<> ::OrderInfo* Arena::CreateMaybeMessage<::OrderInfo>(Arena*);
+template<> ::OrderStatus* Arena::CreateMaybeMessage<::OrderStatus>(Arena*);
+template<> ::PositionInfo* Arena::CreateMaybeMessage<::PositionInfo>(Arena*);
+template<> ::PositionRequest* Arena::CreateMaybeMessage<::PositionRequest>(Arena*);
+template<> ::PositionResponse* Arena::CreateMaybeMessage<::PositionResponse>(Arena*);
+template<> ::ThsStockOrderRequest* Arena::CreateMaybeMessage<::ThsStockOrderRequest>(Arena*);
+template<> ::ThsStockOrderResponse* Arena::CreateMaybeMessage<::ThsStockOrderResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
-namespace pb {
 
 enum OrderStatusKind : int {
   ORDER_STATUS_NOT_FOUND = 0,
@@ -144,7 +141,7 @@ inline bool OrderActionKind_Parse(
 // ===================================================================
 
 class ThsStockOrderRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.ThsStockOrderRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:ThsStockOrderRequest) */ {
  public:
   inline ThsStockOrderRequest() : ThsStockOrderRequest(nullptr) {}
   virtual ~ThsStockOrderRequest();
@@ -233,7 +230,7 @@ class ThsStockOrderRequest PROTOBUF_FINAL :
   void InternalSwap(ThsStockOrderRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.ThsStockOrderRequest";
+    return "ThsStockOrderRequest";
   }
   protected:
   explicit ThsStockOrderRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -346,16 +343,16 @@ class ThsStockOrderRequest PROTOBUF_FINAL :
   void _internal_set_amount(double value);
   public:
 
-  // .pb.OrderActionKind action = 2;
+  // .OrderActionKind action = 2;
   void clear_action();
-  ::pb::OrderActionKind action() const;
-  void set_action(::pb::OrderActionKind value);
+  ::OrderActionKind action() const;
+  void set_action(::OrderActionKind value);
   private:
-  ::pb::OrderActionKind _internal_action() const;
-  void _internal_set_action(::pb::OrderActionKind value);
+  ::OrderActionKind _internal_action() const;
+  void _internal_set_action(::OrderActionKind value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.ThsStockOrderRequest)
+  // @@protoc_insertion_point(class_scope:ThsStockOrderRequest)
  private:
   class _Internal;
 
@@ -375,7 +372,7 @@ class ThsStockOrderRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class ThsStockOrderResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.ThsStockOrderResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:ThsStockOrderResponse) */ {
  public:
   inline ThsStockOrderResponse() : ThsStockOrderResponse(nullptr) {}
   virtual ~ThsStockOrderResponse();
@@ -464,7 +461,7 @@ class ThsStockOrderResponse PROTOBUF_FINAL :
   void InternalSwap(ThsStockOrderResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.ThsStockOrderResponse";
+    return "ThsStockOrderResponse";
   }
   protected:
   explicit ThsStockOrderResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -506,25 +503,25 @@ class ThsStockOrderResponse PROTOBUF_FINAL :
   std::string* _internal_mutable_order_id();
   public:
 
-  // .pb.BaseResp baseResp = 1;
+  // .BaseResp baseResp = 1;
   bool has_baseresp() const;
   private:
   bool _internal_has_baseresp() const;
   public:
   void clear_baseresp();
-  const ::pb::BaseResp& baseresp() const;
-  ::pb::BaseResp* release_baseresp();
-  ::pb::BaseResp* mutable_baseresp();
-  void set_allocated_baseresp(::pb::BaseResp* baseresp);
+  const ::BaseResp& baseresp() const;
+  ::BaseResp* release_baseresp();
+  ::BaseResp* mutable_baseresp();
+  void set_allocated_baseresp(::BaseResp* baseresp);
   private:
-  const ::pb::BaseResp& _internal_baseresp() const;
-  ::pb::BaseResp* _internal_mutable_baseresp();
+  const ::BaseResp& _internal_baseresp() const;
+  ::BaseResp* _internal_mutable_baseresp();
   public:
   void unsafe_arena_set_allocated_baseresp(
-      ::pb::BaseResp* baseresp);
-  ::pb::BaseResp* unsafe_arena_release_baseresp();
+      ::BaseResp* baseresp);
+  ::BaseResp* unsafe_arena_release_baseresp();
 
-  // @@protoc_insertion_point(class_scope:pb.ThsStockOrderResponse)
+  // @@protoc_insertion_point(class_scope:ThsStockOrderResponse)
  private:
   class _Internal;
 
@@ -532,14 +529,14 @@ class ThsStockOrderResponse PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr order_id_;
-  ::pb::BaseResp* baseresp_;
+  ::BaseResp* baseresp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pb_2ftrade_2eproto;
 };
 // -------------------------------------------------------------------
 
 class OrderInfo PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.OrderInfo) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:OrderInfo) */ {
  public:
   inline OrderInfo() : OrderInfo(nullptr) {}
   virtual ~OrderInfo();
@@ -628,7 +625,7 @@ class OrderInfo PROTOBUF_FINAL :
   void InternalSwap(OrderInfo* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.OrderInfo";
+    return "OrderInfo";
   }
   protected:
   explicit OrderInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -669,7 +666,7 @@ class OrderInfo PROTOBUF_FINAL :
   std::string* _internal_mutable_order_id();
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.OrderInfo)
+  // @@protoc_insertion_point(class_scope:OrderInfo)
  private:
   class _Internal;
 
@@ -683,7 +680,7 @@ class OrderInfo PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class OrderStatus PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.OrderStatus) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:OrderStatus) */ {
  public:
   inline OrderStatus() : OrderStatus(nullptr) {}
   virtual ~OrderStatus();
@@ -772,7 +769,7 @@ class OrderStatus PROTOBUF_FINAL :
   void InternalSwap(OrderStatus* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.OrderStatus";
+    return "OrderStatus";
   }
   protected:
   explicit OrderStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -797,16 +794,16 @@ class OrderStatus PROTOBUF_FINAL :
   enum : int {
     kStatusFieldNumber = 1,
   };
-  // .pb.OrderStatusKind status = 1;
+  // .OrderStatusKind status = 1;
   void clear_status();
-  ::pb::OrderStatusKind status() const;
-  void set_status(::pb::OrderStatusKind value);
+  ::OrderStatusKind status() const;
+  void set_status(::OrderStatusKind value);
   private:
-  ::pb::OrderStatusKind _internal_status() const;
-  void _internal_set_status(::pb::OrderStatusKind value);
+  ::OrderStatusKind _internal_status() const;
+  void _internal_set_status(::OrderStatusKind value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.OrderStatus)
+  // @@protoc_insertion_point(class_scope:OrderStatus)
  private:
   class _Internal;
 
@@ -820,7 +817,7 @@ class OrderStatus PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class PositionInfo PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.PositionInfo) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:PositionInfo) */ {
  public:
   inline PositionInfo() : PositionInfo(nullptr) {}
   virtual ~PositionInfo();
@@ -909,7 +906,7 @@ class PositionInfo PROTOBUF_FINAL :
   void InternalSwap(PositionInfo* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.PositionInfo";
+    return "PositionInfo";
   }
   protected:
   explicit PositionInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -997,7 +994,7 @@ class PositionInfo PROTOBUF_FINAL :
   void _internal_set_cost(double value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.PositionInfo)
+  // @@protoc_insertion_point(class_scope:PositionInfo)
  private:
   class _Internal;
 
@@ -1015,7 +1012,7 @@ class PositionInfo PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class PositionRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.PositionRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:PositionRequest) */ {
  public:
   inline PositionRequest() : PositionRequest(nullptr) {}
   virtual ~PositionRequest();
@@ -1104,7 +1101,7 @@ class PositionRequest PROTOBUF_FINAL :
   void InternalSwap(PositionRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.PositionRequest";
+    return "PositionRequest";
   }
   protected:
   explicit PositionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1162,7 +1159,7 @@ class PositionRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_portfolio_code();
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.PositionRequest)
+  // @@protoc_insertion_point(class_scope:PositionRequest)
  private:
   class _Internal;
 
@@ -1177,7 +1174,7 @@ class PositionRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class PositionResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.PositionResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:PositionResponse) */ {
  public:
   inline PositionResponse() : PositionResponse(nullptr) {}
   virtual ~PositionResponse();
@@ -1266,7 +1263,7 @@ class PositionResponse PROTOBUF_FINAL :
   void InternalSwap(PositionResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.PositionResponse";
+    return "PositionResponse";
   }
   protected:
   explicit PositionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1294,41 +1291,41 @@ class PositionResponse PROTOBUF_FINAL :
     kCashFieldNumber = 3,
     kNetValueFieldNumber = 4,
   };
-  // repeated .pb.PositionInfo position_list = 2;
+  // repeated .PositionInfo position_list = 2;
   int position_list_size() const;
   private:
   int _internal_position_list_size() const;
   public:
   void clear_position_list();
-  ::pb::PositionInfo* mutable_position_list(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::PositionInfo >*
+  ::PositionInfo* mutable_position_list(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::PositionInfo >*
       mutable_position_list();
   private:
-  const ::pb::PositionInfo& _internal_position_list(int index) const;
-  ::pb::PositionInfo* _internal_add_position_list();
+  const ::PositionInfo& _internal_position_list(int index) const;
+  ::PositionInfo* _internal_add_position_list();
   public:
-  const ::pb::PositionInfo& position_list(int index) const;
-  ::pb::PositionInfo* add_position_list();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::PositionInfo >&
+  const ::PositionInfo& position_list(int index) const;
+  ::PositionInfo* add_position_list();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::PositionInfo >&
       position_list() const;
 
-  // .pb.ResultInfo result = 1;
+  // .ResultInfo result = 1;
   bool has_result() const;
   private:
   bool _internal_has_result() const;
   public:
   void clear_result();
-  const ::pb::ResultInfo& result() const;
-  ::pb::ResultInfo* release_result();
-  ::pb::ResultInfo* mutable_result();
-  void set_allocated_result(::pb::ResultInfo* result);
+  const ::ResultInfo& result() const;
+  ::ResultInfo* release_result();
+  ::ResultInfo* mutable_result();
+  void set_allocated_result(::ResultInfo* result);
   private:
-  const ::pb::ResultInfo& _internal_result() const;
-  ::pb::ResultInfo* _internal_mutable_result();
+  const ::ResultInfo& _internal_result() const;
+  ::ResultInfo* _internal_mutable_result();
   public:
   void unsafe_arena_set_allocated_result(
-      ::pb::ResultInfo* result);
-  ::pb::ResultInfo* unsafe_arena_release_result();
+      ::ResultInfo* result);
+  ::ResultInfo* unsafe_arena_release_result();
 
   // double cash = 3;
   void clear_cash();
@@ -1348,15 +1345,15 @@ class PositionResponse PROTOBUF_FINAL :
   void _internal_set_net_value(double value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.PositionResponse)
+  // @@protoc_insertion_point(class_scope:PositionResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::PositionInfo > position_list_;
-  ::pb::ResultInfo* result_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::PositionInfo > position_list_;
+  ::ResultInfo* result_;
   double cash_;
   double net_value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1378,15 +1375,15 @@ inline void ThsStockOrderRequest::clear_auth() {
   auth_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& ThsStockOrderRequest::auth() const {
-  // @@protoc_insertion_point(field_get:pb.ThsStockOrderRequest.auth)
+  // @@protoc_insertion_point(field_get:ThsStockOrderRequest.auth)
   return _internal_auth();
 }
 inline void ThsStockOrderRequest::set_auth(const std::string& value) {
   _internal_set_auth(value);
-  // @@protoc_insertion_point(field_set:pb.ThsStockOrderRequest.auth)
+  // @@protoc_insertion_point(field_set:ThsStockOrderRequest.auth)
 }
 inline std::string* ThsStockOrderRequest::mutable_auth() {
-  // @@protoc_insertion_point(field_mutable:pb.ThsStockOrderRequest.auth)
+  // @@protoc_insertion_point(field_mutable:ThsStockOrderRequest.auth)
   return _internal_mutable_auth();
 }
 inline const std::string& ThsStockOrderRequest::_internal_auth() const {
@@ -1400,28 +1397,28 @@ inline void ThsStockOrderRequest::set_auth(std::string&& value) {
   
   auth_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.ThsStockOrderRequest.auth)
+  // @@protoc_insertion_point(field_set_rvalue:ThsStockOrderRequest.auth)
 }
 inline void ThsStockOrderRequest::set_auth(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   auth_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.ThsStockOrderRequest.auth)
+  // @@protoc_insertion_point(field_set_char:ThsStockOrderRequest.auth)
 }
 inline void ThsStockOrderRequest::set_auth(const char* value,
     size_t size) {
   
   auth_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.ThsStockOrderRequest.auth)
+  // @@protoc_insertion_point(field_set_pointer:ThsStockOrderRequest.auth)
 }
 inline std::string* ThsStockOrderRequest::_internal_mutable_auth() {
   
   return auth_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* ThsStockOrderRequest::release_auth() {
-  // @@protoc_insertion_point(field_release:pb.ThsStockOrderRequest.auth)
+  // @@protoc_insertion_point(field_release:ThsStockOrderRequest.auth)
   return auth_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void ThsStockOrderRequest::set_allocated_auth(std::string* auth) {
@@ -1432,27 +1429,27 @@ inline void ThsStockOrderRequest::set_allocated_auth(std::string* auth) {
   }
   auth_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), auth,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.ThsStockOrderRequest.auth)
+  // @@protoc_insertion_point(field_set_allocated:ThsStockOrderRequest.auth)
 }
 
-// .pb.OrderActionKind action = 2;
+// .OrderActionKind action = 2;
 inline void ThsStockOrderRequest::clear_action() {
   action_ = 0;
 }
-inline ::pb::OrderActionKind ThsStockOrderRequest::_internal_action() const {
-  return static_cast< ::pb::OrderActionKind >(action_);
+inline ::OrderActionKind ThsStockOrderRequest::_internal_action() const {
+  return static_cast< ::OrderActionKind >(action_);
 }
-inline ::pb::OrderActionKind ThsStockOrderRequest::action() const {
-  // @@protoc_insertion_point(field_get:pb.ThsStockOrderRequest.action)
+inline ::OrderActionKind ThsStockOrderRequest::action() const {
+  // @@protoc_insertion_point(field_get:ThsStockOrderRequest.action)
   return _internal_action();
 }
-inline void ThsStockOrderRequest::_internal_set_action(::pb::OrderActionKind value) {
+inline void ThsStockOrderRequest::_internal_set_action(::OrderActionKind value) {
   
   action_ = value;
 }
-inline void ThsStockOrderRequest::set_action(::pb::OrderActionKind value) {
+inline void ThsStockOrderRequest::set_action(::OrderActionKind value) {
   _internal_set_action(value);
-  // @@protoc_insertion_point(field_set:pb.ThsStockOrderRequest.action)
+  // @@protoc_insertion_point(field_set:ThsStockOrderRequest.action)
 }
 
 // string stock_code = 3;
@@ -1460,15 +1457,15 @@ inline void ThsStockOrderRequest::clear_stock_code() {
   stock_code_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& ThsStockOrderRequest::stock_code() const {
-  // @@protoc_insertion_point(field_get:pb.ThsStockOrderRequest.stock_code)
+  // @@protoc_insertion_point(field_get:ThsStockOrderRequest.stock_code)
   return _internal_stock_code();
 }
 inline void ThsStockOrderRequest::set_stock_code(const std::string& value) {
   _internal_set_stock_code(value);
-  // @@protoc_insertion_point(field_set:pb.ThsStockOrderRequest.stock_code)
+  // @@protoc_insertion_point(field_set:ThsStockOrderRequest.stock_code)
 }
 inline std::string* ThsStockOrderRequest::mutable_stock_code() {
-  // @@protoc_insertion_point(field_mutable:pb.ThsStockOrderRequest.stock_code)
+  // @@protoc_insertion_point(field_mutable:ThsStockOrderRequest.stock_code)
   return _internal_mutable_stock_code();
 }
 inline const std::string& ThsStockOrderRequest::_internal_stock_code() const {
@@ -1482,28 +1479,28 @@ inline void ThsStockOrderRequest::set_stock_code(std::string&& value) {
   
   stock_code_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.ThsStockOrderRequest.stock_code)
+  // @@protoc_insertion_point(field_set_rvalue:ThsStockOrderRequest.stock_code)
 }
 inline void ThsStockOrderRequest::set_stock_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   stock_code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.ThsStockOrderRequest.stock_code)
+  // @@protoc_insertion_point(field_set_char:ThsStockOrderRequest.stock_code)
 }
 inline void ThsStockOrderRequest::set_stock_code(const char* value,
     size_t size) {
   
   stock_code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.ThsStockOrderRequest.stock_code)
+  // @@protoc_insertion_point(field_set_pointer:ThsStockOrderRequest.stock_code)
 }
 inline std::string* ThsStockOrderRequest::_internal_mutable_stock_code() {
   
   return stock_code_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* ThsStockOrderRequest::release_stock_code() {
-  // @@protoc_insertion_point(field_release:pb.ThsStockOrderRequest.stock_code)
+  // @@protoc_insertion_point(field_release:ThsStockOrderRequest.stock_code)
   return stock_code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void ThsStockOrderRequest::set_allocated_stock_code(std::string* stock_code) {
@@ -1514,7 +1511,7 @@ inline void ThsStockOrderRequest::set_allocated_stock_code(std::string* stock_co
   }
   stock_code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), stock_code,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.ThsStockOrderRequest.stock_code)
+  // @@protoc_insertion_point(field_set_allocated:ThsStockOrderRequest.stock_code)
 }
 
 // double price = 4;
@@ -1525,7 +1522,7 @@ inline double ThsStockOrderRequest::_internal_price() const {
   return price_;
 }
 inline double ThsStockOrderRequest::price() const {
-  // @@protoc_insertion_point(field_get:pb.ThsStockOrderRequest.price)
+  // @@protoc_insertion_point(field_get:ThsStockOrderRequest.price)
   return _internal_price();
 }
 inline void ThsStockOrderRequest::_internal_set_price(double value) {
@@ -1534,7 +1531,7 @@ inline void ThsStockOrderRequest::_internal_set_price(double value) {
 }
 inline void ThsStockOrderRequest::set_price(double value) {
   _internal_set_price(value);
-  // @@protoc_insertion_point(field_set:pb.ThsStockOrderRequest.price)
+  // @@protoc_insertion_point(field_set:ThsStockOrderRequest.price)
 }
 
 // double amount = 5;
@@ -1545,7 +1542,7 @@ inline double ThsStockOrderRequest::_internal_amount() const {
   return amount_;
 }
 inline double ThsStockOrderRequest::amount() const {
-  // @@protoc_insertion_point(field_get:pb.ThsStockOrderRequest.amount)
+  // @@protoc_insertion_point(field_get:ThsStockOrderRequest.amount)
   return _internal_amount();
 }
 inline void ThsStockOrderRequest::_internal_set_amount(double value) {
@@ -1554,7 +1551,7 @@ inline void ThsStockOrderRequest::_internal_set_amount(double value) {
 }
 inline void ThsStockOrderRequest::set_amount(double value) {
   _internal_set_amount(value);
-  // @@protoc_insertion_point(field_set:pb.ThsStockOrderRequest.amount)
+  // @@protoc_insertion_point(field_set:ThsStockOrderRequest.amount)
 }
 
 // string options = 6;
@@ -1562,15 +1559,15 @@ inline void ThsStockOrderRequest::clear_options() {
   options_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& ThsStockOrderRequest::options() const {
-  // @@protoc_insertion_point(field_get:pb.ThsStockOrderRequest.options)
+  // @@protoc_insertion_point(field_get:ThsStockOrderRequest.options)
   return _internal_options();
 }
 inline void ThsStockOrderRequest::set_options(const std::string& value) {
   _internal_set_options(value);
-  // @@protoc_insertion_point(field_set:pb.ThsStockOrderRequest.options)
+  // @@protoc_insertion_point(field_set:ThsStockOrderRequest.options)
 }
 inline std::string* ThsStockOrderRequest::mutable_options() {
-  // @@protoc_insertion_point(field_mutable:pb.ThsStockOrderRequest.options)
+  // @@protoc_insertion_point(field_mutable:ThsStockOrderRequest.options)
   return _internal_mutable_options();
 }
 inline const std::string& ThsStockOrderRequest::_internal_options() const {
@@ -1584,28 +1581,28 @@ inline void ThsStockOrderRequest::set_options(std::string&& value) {
   
   options_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.ThsStockOrderRequest.options)
+  // @@protoc_insertion_point(field_set_rvalue:ThsStockOrderRequest.options)
 }
 inline void ThsStockOrderRequest::set_options(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   options_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.ThsStockOrderRequest.options)
+  // @@protoc_insertion_point(field_set_char:ThsStockOrderRequest.options)
 }
 inline void ThsStockOrderRequest::set_options(const char* value,
     size_t size) {
   
   options_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.ThsStockOrderRequest.options)
+  // @@protoc_insertion_point(field_set_pointer:ThsStockOrderRequest.options)
 }
 inline std::string* ThsStockOrderRequest::_internal_mutable_options() {
   
   return options_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* ThsStockOrderRequest::release_options() {
-  // @@protoc_insertion_point(field_release:pb.ThsStockOrderRequest.options)
+  // @@protoc_insertion_point(field_release:ThsStockOrderRequest.options)
   return options_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void ThsStockOrderRequest::set_allocated_options(std::string* options) {
@@ -1616,7 +1613,7 @@ inline void ThsStockOrderRequest::set_allocated_options(std::string* options) {
   }
   options_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), options,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.ThsStockOrderRequest.options)
+  // @@protoc_insertion_point(field_set_allocated:ThsStockOrderRequest.options)
 }
 
 // string portfolio_code = 7;
@@ -1624,15 +1621,15 @@ inline void ThsStockOrderRequest::clear_portfolio_code() {
   portfolio_code_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& ThsStockOrderRequest::portfolio_code() const {
-  // @@protoc_insertion_point(field_get:pb.ThsStockOrderRequest.portfolio_code)
+  // @@protoc_insertion_point(field_get:ThsStockOrderRequest.portfolio_code)
   return _internal_portfolio_code();
 }
 inline void ThsStockOrderRequest::set_portfolio_code(const std::string& value) {
   _internal_set_portfolio_code(value);
-  // @@protoc_insertion_point(field_set:pb.ThsStockOrderRequest.portfolio_code)
+  // @@protoc_insertion_point(field_set:ThsStockOrderRequest.portfolio_code)
 }
 inline std::string* ThsStockOrderRequest::mutable_portfolio_code() {
-  // @@protoc_insertion_point(field_mutable:pb.ThsStockOrderRequest.portfolio_code)
+  // @@protoc_insertion_point(field_mutable:ThsStockOrderRequest.portfolio_code)
   return _internal_mutable_portfolio_code();
 }
 inline const std::string& ThsStockOrderRequest::_internal_portfolio_code() const {
@@ -1646,28 +1643,28 @@ inline void ThsStockOrderRequest::set_portfolio_code(std::string&& value) {
   
   portfolio_code_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.ThsStockOrderRequest.portfolio_code)
+  // @@protoc_insertion_point(field_set_rvalue:ThsStockOrderRequest.portfolio_code)
 }
 inline void ThsStockOrderRequest::set_portfolio_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   portfolio_code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.ThsStockOrderRequest.portfolio_code)
+  // @@protoc_insertion_point(field_set_char:ThsStockOrderRequest.portfolio_code)
 }
 inline void ThsStockOrderRequest::set_portfolio_code(const char* value,
     size_t size) {
   
   portfolio_code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.ThsStockOrderRequest.portfolio_code)
+  // @@protoc_insertion_point(field_set_pointer:ThsStockOrderRequest.portfolio_code)
 }
 inline std::string* ThsStockOrderRequest::_internal_mutable_portfolio_code() {
   
   return portfolio_code_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* ThsStockOrderRequest::release_portfolio_code() {
-  // @@protoc_insertion_point(field_release:pb.ThsStockOrderRequest.portfolio_code)
+  // @@protoc_insertion_point(field_release:ThsStockOrderRequest.portfolio_code)
   return portfolio_code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void ThsStockOrderRequest::set_allocated_portfolio_code(std::string* portfolio_code) {
@@ -1678,31 +1675,31 @@ inline void ThsStockOrderRequest::set_allocated_portfolio_code(std::string* port
   }
   portfolio_code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), portfolio_code,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.ThsStockOrderRequest.portfolio_code)
+  // @@protoc_insertion_point(field_set_allocated:ThsStockOrderRequest.portfolio_code)
 }
 
 // -------------------------------------------------------------------
 
 // ThsStockOrderResponse
 
-// .pb.BaseResp baseResp = 1;
+// .BaseResp baseResp = 1;
 inline bool ThsStockOrderResponse::_internal_has_baseresp() const {
   return this != internal_default_instance() && baseresp_ != nullptr;
 }
 inline bool ThsStockOrderResponse::has_baseresp() const {
   return _internal_has_baseresp();
 }
-inline const ::pb::BaseResp& ThsStockOrderResponse::_internal_baseresp() const {
-  const ::pb::BaseResp* p = baseresp_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::pb::BaseResp*>(
-      &::pb::_BaseResp_default_instance_);
+inline const ::BaseResp& ThsStockOrderResponse::_internal_baseresp() const {
+  const ::BaseResp* p = baseresp_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::BaseResp*>(
+      &::_BaseResp_default_instance_);
 }
-inline const ::pb::BaseResp& ThsStockOrderResponse::baseresp() const {
-  // @@protoc_insertion_point(field_get:pb.ThsStockOrderResponse.baseResp)
+inline const ::BaseResp& ThsStockOrderResponse::baseresp() const {
+  // @@protoc_insertion_point(field_get:ThsStockOrderResponse.baseResp)
   return _internal_baseresp();
 }
 inline void ThsStockOrderResponse::unsafe_arena_set_allocated_baseresp(
-    ::pb::BaseResp* baseresp) {
+    ::BaseResp* baseresp) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(baseresp_);
   }
@@ -1712,37 +1709,37 @@ inline void ThsStockOrderResponse::unsafe_arena_set_allocated_baseresp(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.ThsStockOrderResponse.baseResp)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:ThsStockOrderResponse.baseResp)
 }
-inline ::pb::BaseResp* ThsStockOrderResponse::release_baseresp() {
+inline ::BaseResp* ThsStockOrderResponse::release_baseresp() {
   
-  ::pb::BaseResp* temp = baseresp_;
+  ::BaseResp* temp = baseresp_;
   baseresp_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::pb::BaseResp* ThsStockOrderResponse::unsafe_arena_release_baseresp() {
-  // @@protoc_insertion_point(field_release:pb.ThsStockOrderResponse.baseResp)
+inline ::BaseResp* ThsStockOrderResponse::unsafe_arena_release_baseresp() {
+  // @@protoc_insertion_point(field_release:ThsStockOrderResponse.baseResp)
   
-  ::pb::BaseResp* temp = baseresp_;
+  ::BaseResp* temp = baseresp_;
   baseresp_ = nullptr;
   return temp;
 }
-inline ::pb::BaseResp* ThsStockOrderResponse::_internal_mutable_baseresp() {
+inline ::BaseResp* ThsStockOrderResponse::_internal_mutable_baseresp() {
   
   if (baseresp_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pb::BaseResp>(GetArena());
+    auto* p = CreateMaybeMessage<::BaseResp>(GetArena());
     baseresp_ = p;
   }
   return baseresp_;
 }
-inline ::pb::BaseResp* ThsStockOrderResponse::mutable_baseresp() {
-  // @@protoc_insertion_point(field_mutable:pb.ThsStockOrderResponse.baseResp)
+inline ::BaseResp* ThsStockOrderResponse::mutable_baseresp() {
+  // @@protoc_insertion_point(field_mutable:ThsStockOrderResponse.baseResp)
   return _internal_mutable_baseresp();
 }
-inline void ThsStockOrderResponse::set_allocated_baseresp(::pb::BaseResp* baseresp) {
+inline void ThsStockOrderResponse::set_allocated_baseresp(::BaseResp* baseresp) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(baseresp_);
@@ -1759,7 +1756,7 @@ inline void ThsStockOrderResponse::set_allocated_baseresp(::pb::BaseResp* basere
     
   }
   baseresp_ = baseresp;
-  // @@protoc_insertion_point(field_set_allocated:pb.ThsStockOrderResponse.baseResp)
+  // @@protoc_insertion_point(field_set_allocated:ThsStockOrderResponse.baseResp)
 }
 
 // string order_id = 2;
@@ -1767,15 +1764,15 @@ inline void ThsStockOrderResponse::clear_order_id() {
   order_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& ThsStockOrderResponse::order_id() const {
-  // @@protoc_insertion_point(field_get:pb.ThsStockOrderResponse.order_id)
+  // @@protoc_insertion_point(field_get:ThsStockOrderResponse.order_id)
   return _internal_order_id();
 }
 inline void ThsStockOrderResponse::set_order_id(const std::string& value) {
   _internal_set_order_id(value);
-  // @@protoc_insertion_point(field_set:pb.ThsStockOrderResponse.order_id)
+  // @@protoc_insertion_point(field_set:ThsStockOrderResponse.order_id)
 }
 inline std::string* ThsStockOrderResponse::mutable_order_id() {
-  // @@protoc_insertion_point(field_mutable:pb.ThsStockOrderResponse.order_id)
+  // @@protoc_insertion_point(field_mutable:ThsStockOrderResponse.order_id)
   return _internal_mutable_order_id();
 }
 inline const std::string& ThsStockOrderResponse::_internal_order_id() const {
@@ -1789,28 +1786,28 @@ inline void ThsStockOrderResponse::set_order_id(std::string&& value) {
   
   order_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.ThsStockOrderResponse.order_id)
+  // @@protoc_insertion_point(field_set_rvalue:ThsStockOrderResponse.order_id)
 }
 inline void ThsStockOrderResponse::set_order_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   order_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.ThsStockOrderResponse.order_id)
+  // @@protoc_insertion_point(field_set_char:ThsStockOrderResponse.order_id)
 }
 inline void ThsStockOrderResponse::set_order_id(const char* value,
     size_t size) {
   
   order_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.ThsStockOrderResponse.order_id)
+  // @@protoc_insertion_point(field_set_pointer:ThsStockOrderResponse.order_id)
 }
 inline std::string* ThsStockOrderResponse::_internal_mutable_order_id() {
   
   return order_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* ThsStockOrderResponse::release_order_id() {
-  // @@protoc_insertion_point(field_release:pb.ThsStockOrderResponse.order_id)
+  // @@protoc_insertion_point(field_release:ThsStockOrderResponse.order_id)
   return order_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void ThsStockOrderResponse::set_allocated_order_id(std::string* order_id) {
@@ -1821,7 +1818,7 @@ inline void ThsStockOrderResponse::set_allocated_order_id(std::string* order_id)
   }
   order_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), order_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.ThsStockOrderResponse.order_id)
+  // @@protoc_insertion_point(field_set_allocated:ThsStockOrderResponse.order_id)
 }
 
 // -------------------------------------------------------------------
@@ -1833,15 +1830,15 @@ inline void OrderInfo::clear_order_id() {
   order_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& OrderInfo::order_id() const {
-  // @@protoc_insertion_point(field_get:pb.OrderInfo.order_id)
+  // @@protoc_insertion_point(field_get:OrderInfo.order_id)
   return _internal_order_id();
 }
 inline void OrderInfo::set_order_id(const std::string& value) {
   _internal_set_order_id(value);
-  // @@protoc_insertion_point(field_set:pb.OrderInfo.order_id)
+  // @@protoc_insertion_point(field_set:OrderInfo.order_id)
 }
 inline std::string* OrderInfo::mutable_order_id() {
-  // @@protoc_insertion_point(field_mutable:pb.OrderInfo.order_id)
+  // @@protoc_insertion_point(field_mutable:OrderInfo.order_id)
   return _internal_mutable_order_id();
 }
 inline const std::string& OrderInfo::_internal_order_id() const {
@@ -1855,28 +1852,28 @@ inline void OrderInfo::set_order_id(std::string&& value) {
   
   order_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.OrderInfo.order_id)
+  // @@protoc_insertion_point(field_set_rvalue:OrderInfo.order_id)
 }
 inline void OrderInfo::set_order_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   order_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.OrderInfo.order_id)
+  // @@protoc_insertion_point(field_set_char:OrderInfo.order_id)
 }
 inline void OrderInfo::set_order_id(const char* value,
     size_t size) {
   
   order_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.OrderInfo.order_id)
+  // @@protoc_insertion_point(field_set_pointer:OrderInfo.order_id)
 }
 inline std::string* OrderInfo::_internal_mutable_order_id() {
   
   return order_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* OrderInfo::release_order_id() {
-  // @@protoc_insertion_point(field_release:pb.OrderInfo.order_id)
+  // @@protoc_insertion_point(field_release:OrderInfo.order_id)
   return order_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void OrderInfo::set_allocated_order_id(std::string* order_id) {
@@ -1887,31 +1884,31 @@ inline void OrderInfo::set_allocated_order_id(std::string* order_id) {
   }
   order_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), order_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.OrderInfo.order_id)
+  // @@protoc_insertion_point(field_set_allocated:OrderInfo.order_id)
 }
 
 // -------------------------------------------------------------------
 
 // OrderStatus
 
-// .pb.OrderStatusKind status = 1;
+// .OrderStatusKind status = 1;
 inline void OrderStatus::clear_status() {
   status_ = 0;
 }
-inline ::pb::OrderStatusKind OrderStatus::_internal_status() const {
-  return static_cast< ::pb::OrderStatusKind >(status_);
+inline ::OrderStatusKind OrderStatus::_internal_status() const {
+  return static_cast< ::OrderStatusKind >(status_);
 }
-inline ::pb::OrderStatusKind OrderStatus::status() const {
-  // @@protoc_insertion_point(field_get:pb.OrderStatus.status)
+inline ::OrderStatusKind OrderStatus::status() const {
+  // @@protoc_insertion_point(field_get:OrderStatus.status)
   return _internal_status();
 }
-inline void OrderStatus::_internal_set_status(::pb::OrderStatusKind value) {
+inline void OrderStatus::_internal_set_status(::OrderStatusKind value) {
   
   status_ = value;
 }
-inline void OrderStatus::set_status(::pb::OrderStatusKind value) {
+inline void OrderStatus::set_status(::OrderStatusKind value) {
   _internal_set_status(value);
-  // @@protoc_insertion_point(field_set:pb.OrderStatus.status)
+  // @@protoc_insertion_point(field_set:OrderStatus.status)
 }
 
 // -------------------------------------------------------------------
@@ -1923,15 +1920,15 @@ inline void PositionInfo::clear_code() {
   code_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& PositionInfo::code() const {
-  // @@protoc_insertion_point(field_get:pb.PositionInfo.code)
+  // @@protoc_insertion_point(field_get:PositionInfo.code)
   return _internal_code();
 }
 inline void PositionInfo::set_code(const std::string& value) {
   _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:pb.PositionInfo.code)
+  // @@protoc_insertion_point(field_set:PositionInfo.code)
 }
 inline std::string* PositionInfo::mutable_code() {
-  // @@protoc_insertion_point(field_mutable:pb.PositionInfo.code)
+  // @@protoc_insertion_point(field_mutable:PositionInfo.code)
   return _internal_mutable_code();
 }
 inline const std::string& PositionInfo::_internal_code() const {
@@ -1945,28 +1942,28 @@ inline void PositionInfo::set_code(std::string&& value) {
   
   code_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.PositionInfo.code)
+  // @@protoc_insertion_point(field_set_rvalue:PositionInfo.code)
 }
 inline void PositionInfo::set_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.PositionInfo.code)
+  // @@protoc_insertion_point(field_set_char:PositionInfo.code)
 }
 inline void PositionInfo::set_code(const char* value,
     size_t size) {
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.PositionInfo.code)
+  // @@protoc_insertion_point(field_set_pointer:PositionInfo.code)
 }
 inline std::string* PositionInfo::_internal_mutable_code() {
   
   return code_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* PositionInfo::release_code() {
-  // @@protoc_insertion_point(field_release:pb.PositionInfo.code)
+  // @@protoc_insertion_point(field_release:PositionInfo.code)
   return code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void PositionInfo::set_allocated_code(std::string* code) {
@@ -1977,7 +1974,7 @@ inline void PositionInfo::set_allocated_code(std::string* code) {
   }
   code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), code,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.PositionInfo.code)
+  // @@protoc_insertion_point(field_set_allocated:PositionInfo.code)
 }
 
 // string name = 2;
@@ -1985,15 +1982,15 @@ inline void PositionInfo::clear_name() {
   name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& PositionInfo::name() const {
-  // @@protoc_insertion_point(field_get:pb.PositionInfo.name)
+  // @@protoc_insertion_point(field_get:PositionInfo.name)
   return _internal_name();
 }
 inline void PositionInfo::set_name(const std::string& value) {
   _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:pb.PositionInfo.name)
+  // @@protoc_insertion_point(field_set:PositionInfo.name)
 }
 inline std::string* PositionInfo::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:pb.PositionInfo.name)
+  // @@protoc_insertion_point(field_mutable:PositionInfo.name)
   return _internal_mutable_name();
 }
 inline const std::string& PositionInfo::_internal_name() const {
@@ -2007,28 +2004,28 @@ inline void PositionInfo::set_name(std::string&& value) {
   
   name_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.PositionInfo.name)
+  // @@protoc_insertion_point(field_set_rvalue:PositionInfo.name)
 }
 inline void PositionInfo::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.PositionInfo.name)
+  // @@protoc_insertion_point(field_set_char:PositionInfo.name)
 }
 inline void PositionInfo::set_name(const char* value,
     size_t size) {
   
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.PositionInfo.name)
+  // @@protoc_insertion_point(field_set_pointer:PositionInfo.name)
 }
 inline std::string* PositionInfo::_internal_mutable_name() {
   
   return name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* PositionInfo::release_name() {
-  // @@protoc_insertion_point(field_release:pb.PositionInfo.name)
+  // @@protoc_insertion_point(field_release:PositionInfo.name)
   return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void PositionInfo::set_allocated_name(std::string* name) {
@@ -2039,7 +2036,7 @@ inline void PositionInfo::set_allocated_name(std::string* name) {
   }
   name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.PositionInfo.name)
+  // @@protoc_insertion_point(field_set_allocated:PositionInfo.name)
 }
 
 // double balance = 3;
@@ -2050,7 +2047,7 @@ inline double PositionInfo::_internal_balance() const {
   return balance_;
 }
 inline double PositionInfo::balance() const {
-  // @@protoc_insertion_point(field_get:pb.PositionInfo.balance)
+  // @@protoc_insertion_point(field_get:PositionInfo.balance)
   return _internal_balance();
 }
 inline void PositionInfo::_internal_set_balance(double value) {
@@ -2059,7 +2056,7 @@ inline void PositionInfo::_internal_set_balance(double value) {
 }
 inline void PositionInfo::set_balance(double value) {
   _internal_set_balance(value);
-  // @@protoc_insertion_point(field_set:pb.PositionInfo.balance)
+  // @@protoc_insertion_point(field_set:PositionInfo.balance)
 }
 
 // double free_balance = 4;
@@ -2070,7 +2067,7 @@ inline double PositionInfo::_internal_free_balance() const {
   return free_balance_;
 }
 inline double PositionInfo::free_balance() const {
-  // @@protoc_insertion_point(field_get:pb.PositionInfo.free_balance)
+  // @@protoc_insertion_point(field_get:PositionInfo.free_balance)
   return _internal_free_balance();
 }
 inline void PositionInfo::_internal_set_free_balance(double value) {
@@ -2079,7 +2076,7 @@ inline void PositionInfo::_internal_set_free_balance(double value) {
 }
 inline void PositionInfo::set_free_balance(double value) {
   _internal_set_free_balance(value);
-  // @@protoc_insertion_point(field_set:pb.PositionInfo.free_balance)
+  // @@protoc_insertion_point(field_set:PositionInfo.free_balance)
 }
 
 // double cost = 5;
@@ -2090,7 +2087,7 @@ inline double PositionInfo::_internal_cost() const {
   return cost_;
 }
 inline double PositionInfo::cost() const {
-  // @@protoc_insertion_point(field_get:pb.PositionInfo.cost)
+  // @@protoc_insertion_point(field_get:PositionInfo.cost)
   return _internal_cost();
 }
 inline void PositionInfo::_internal_set_cost(double value) {
@@ -2099,7 +2096,7 @@ inline void PositionInfo::_internal_set_cost(double value) {
 }
 inline void PositionInfo::set_cost(double value) {
   _internal_set_cost(value);
-  // @@protoc_insertion_point(field_set:pb.PositionInfo.cost)
+  // @@protoc_insertion_point(field_set:PositionInfo.cost)
 }
 
 // -------------------------------------------------------------------
@@ -2111,15 +2108,15 @@ inline void PositionRequest::clear_auth() {
   auth_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& PositionRequest::auth() const {
-  // @@protoc_insertion_point(field_get:pb.PositionRequest.auth)
+  // @@protoc_insertion_point(field_get:PositionRequest.auth)
   return _internal_auth();
 }
 inline void PositionRequest::set_auth(const std::string& value) {
   _internal_set_auth(value);
-  // @@protoc_insertion_point(field_set:pb.PositionRequest.auth)
+  // @@protoc_insertion_point(field_set:PositionRequest.auth)
 }
 inline std::string* PositionRequest::mutable_auth() {
-  // @@protoc_insertion_point(field_mutable:pb.PositionRequest.auth)
+  // @@protoc_insertion_point(field_mutable:PositionRequest.auth)
   return _internal_mutable_auth();
 }
 inline const std::string& PositionRequest::_internal_auth() const {
@@ -2133,28 +2130,28 @@ inline void PositionRequest::set_auth(std::string&& value) {
   
   auth_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.PositionRequest.auth)
+  // @@protoc_insertion_point(field_set_rvalue:PositionRequest.auth)
 }
 inline void PositionRequest::set_auth(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   auth_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.PositionRequest.auth)
+  // @@protoc_insertion_point(field_set_char:PositionRequest.auth)
 }
 inline void PositionRequest::set_auth(const char* value,
     size_t size) {
   
   auth_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.PositionRequest.auth)
+  // @@protoc_insertion_point(field_set_pointer:PositionRequest.auth)
 }
 inline std::string* PositionRequest::_internal_mutable_auth() {
   
   return auth_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* PositionRequest::release_auth() {
-  // @@protoc_insertion_point(field_release:pb.PositionRequest.auth)
+  // @@protoc_insertion_point(field_release:PositionRequest.auth)
   return auth_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void PositionRequest::set_allocated_auth(std::string* auth) {
@@ -2165,7 +2162,7 @@ inline void PositionRequest::set_allocated_auth(std::string* auth) {
   }
   auth_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), auth,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.PositionRequest.auth)
+  // @@protoc_insertion_point(field_set_allocated:PositionRequest.auth)
 }
 
 // string portfolio_code = 2;
@@ -2173,15 +2170,15 @@ inline void PositionRequest::clear_portfolio_code() {
   portfolio_code_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& PositionRequest::portfolio_code() const {
-  // @@protoc_insertion_point(field_get:pb.PositionRequest.portfolio_code)
+  // @@protoc_insertion_point(field_get:PositionRequest.portfolio_code)
   return _internal_portfolio_code();
 }
 inline void PositionRequest::set_portfolio_code(const std::string& value) {
   _internal_set_portfolio_code(value);
-  // @@protoc_insertion_point(field_set:pb.PositionRequest.portfolio_code)
+  // @@protoc_insertion_point(field_set:PositionRequest.portfolio_code)
 }
 inline std::string* PositionRequest::mutable_portfolio_code() {
-  // @@protoc_insertion_point(field_mutable:pb.PositionRequest.portfolio_code)
+  // @@protoc_insertion_point(field_mutable:PositionRequest.portfolio_code)
   return _internal_mutable_portfolio_code();
 }
 inline const std::string& PositionRequest::_internal_portfolio_code() const {
@@ -2195,28 +2192,28 @@ inline void PositionRequest::set_portfolio_code(std::string&& value) {
   
   portfolio_code_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.PositionRequest.portfolio_code)
+  // @@protoc_insertion_point(field_set_rvalue:PositionRequest.portfolio_code)
 }
 inline void PositionRequest::set_portfolio_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   portfolio_code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.PositionRequest.portfolio_code)
+  // @@protoc_insertion_point(field_set_char:PositionRequest.portfolio_code)
 }
 inline void PositionRequest::set_portfolio_code(const char* value,
     size_t size) {
   
   portfolio_code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.PositionRequest.portfolio_code)
+  // @@protoc_insertion_point(field_set_pointer:PositionRequest.portfolio_code)
 }
 inline std::string* PositionRequest::_internal_mutable_portfolio_code() {
   
   return portfolio_code_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* PositionRequest::release_portfolio_code() {
-  // @@protoc_insertion_point(field_release:pb.PositionRequest.portfolio_code)
+  // @@protoc_insertion_point(field_release:PositionRequest.portfolio_code)
   return portfolio_code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void PositionRequest::set_allocated_portfolio_code(std::string* portfolio_code) {
@@ -2227,31 +2224,31 @@ inline void PositionRequest::set_allocated_portfolio_code(std::string* portfolio
   }
   portfolio_code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), portfolio_code,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.PositionRequest.portfolio_code)
+  // @@protoc_insertion_point(field_set_allocated:PositionRequest.portfolio_code)
 }
 
 // -------------------------------------------------------------------
 
 // PositionResponse
 
-// .pb.ResultInfo result = 1;
+// .ResultInfo result = 1;
 inline bool PositionResponse::_internal_has_result() const {
   return this != internal_default_instance() && result_ != nullptr;
 }
 inline bool PositionResponse::has_result() const {
   return _internal_has_result();
 }
-inline const ::pb::ResultInfo& PositionResponse::_internal_result() const {
-  const ::pb::ResultInfo* p = result_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::pb::ResultInfo*>(
-      &::pb::_ResultInfo_default_instance_);
+inline const ::ResultInfo& PositionResponse::_internal_result() const {
+  const ::ResultInfo* p = result_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::ResultInfo*>(
+      &::_ResultInfo_default_instance_);
 }
-inline const ::pb::ResultInfo& PositionResponse::result() const {
-  // @@protoc_insertion_point(field_get:pb.PositionResponse.result)
+inline const ::ResultInfo& PositionResponse::result() const {
+  // @@protoc_insertion_point(field_get:PositionResponse.result)
   return _internal_result();
 }
 inline void PositionResponse::unsafe_arena_set_allocated_result(
-    ::pb::ResultInfo* result) {
+    ::ResultInfo* result) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(result_);
   }
@@ -2261,37 +2258,37 @@ inline void PositionResponse::unsafe_arena_set_allocated_result(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.PositionResponse.result)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:PositionResponse.result)
 }
-inline ::pb::ResultInfo* PositionResponse::release_result() {
+inline ::ResultInfo* PositionResponse::release_result() {
   
-  ::pb::ResultInfo* temp = result_;
+  ::ResultInfo* temp = result_;
   result_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::pb::ResultInfo* PositionResponse::unsafe_arena_release_result() {
-  // @@protoc_insertion_point(field_release:pb.PositionResponse.result)
+inline ::ResultInfo* PositionResponse::unsafe_arena_release_result() {
+  // @@protoc_insertion_point(field_release:PositionResponse.result)
   
-  ::pb::ResultInfo* temp = result_;
+  ::ResultInfo* temp = result_;
   result_ = nullptr;
   return temp;
 }
-inline ::pb::ResultInfo* PositionResponse::_internal_mutable_result() {
+inline ::ResultInfo* PositionResponse::_internal_mutable_result() {
   
   if (result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pb::ResultInfo>(GetArena());
+    auto* p = CreateMaybeMessage<::ResultInfo>(GetArena());
     result_ = p;
   }
   return result_;
 }
-inline ::pb::ResultInfo* PositionResponse::mutable_result() {
-  // @@protoc_insertion_point(field_mutable:pb.PositionResponse.result)
+inline ::ResultInfo* PositionResponse::mutable_result() {
+  // @@protoc_insertion_point(field_mutable:PositionResponse.result)
   return _internal_mutable_result();
 }
-inline void PositionResponse::set_allocated_result(::pb::ResultInfo* result) {
+inline void PositionResponse::set_allocated_result(::ResultInfo* result) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(result_);
@@ -2308,10 +2305,10 @@ inline void PositionResponse::set_allocated_result(::pb::ResultInfo* result) {
     
   }
   result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:pb.PositionResponse.result)
+  // @@protoc_insertion_point(field_set_allocated:PositionResponse.result)
 }
 
-// repeated .pb.PositionInfo position_list = 2;
+// repeated .PositionInfo position_list = 2;
 inline int PositionResponse::_internal_position_list_size() const {
   return position_list_.size();
 }
@@ -2321,32 +2318,32 @@ inline int PositionResponse::position_list_size() const {
 inline void PositionResponse::clear_position_list() {
   position_list_.Clear();
 }
-inline ::pb::PositionInfo* PositionResponse::mutable_position_list(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.PositionResponse.position_list)
+inline ::PositionInfo* PositionResponse::mutable_position_list(int index) {
+  // @@protoc_insertion_point(field_mutable:PositionResponse.position_list)
   return position_list_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::PositionInfo >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::PositionInfo >*
 PositionResponse::mutable_position_list() {
-  // @@protoc_insertion_point(field_mutable_list:pb.PositionResponse.position_list)
+  // @@protoc_insertion_point(field_mutable_list:PositionResponse.position_list)
   return &position_list_;
 }
-inline const ::pb::PositionInfo& PositionResponse::_internal_position_list(int index) const {
+inline const ::PositionInfo& PositionResponse::_internal_position_list(int index) const {
   return position_list_.Get(index);
 }
-inline const ::pb::PositionInfo& PositionResponse::position_list(int index) const {
-  // @@protoc_insertion_point(field_get:pb.PositionResponse.position_list)
+inline const ::PositionInfo& PositionResponse::position_list(int index) const {
+  // @@protoc_insertion_point(field_get:PositionResponse.position_list)
   return _internal_position_list(index);
 }
-inline ::pb::PositionInfo* PositionResponse::_internal_add_position_list() {
+inline ::PositionInfo* PositionResponse::_internal_add_position_list() {
   return position_list_.Add();
 }
-inline ::pb::PositionInfo* PositionResponse::add_position_list() {
-  // @@protoc_insertion_point(field_add:pb.PositionResponse.position_list)
+inline ::PositionInfo* PositionResponse::add_position_list() {
+  // @@protoc_insertion_point(field_add:PositionResponse.position_list)
   return _internal_add_position_list();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::PositionInfo >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::PositionInfo >&
 PositionResponse::position_list() const {
-  // @@protoc_insertion_point(field_list:pb.PositionResponse.position_list)
+  // @@protoc_insertion_point(field_list:PositionResponse.position_list)
   return position_list_;
 }
 
@@ -2358,7 +2355,7 @@ inline double PositionResponse::_internal_cash() const {
   return cash_;
 }
 inline double PositionResponse::cash() const {
-  // @@protoc_insertion_point(field_get:pb.PositionResponse.cash)
+  // @@protoc_insertion_point(field_get:PositionResponse.cash)
   return _internal_cash();
 }
 inline void PositionResponse::_internal_set_cash(double value) {
@@ -2367,7 +2364,7 @@ inline void PositionResponse::_internal_set_cash(double value) {
 }
 inline void PositionResponse::set_cash(double value) {
   _internal_set_cash(value);
-  // @@protoc_insertion_point(field_set:pb.PositionResponse.cash)
+  // @@protoc_insertion_point(field_set:PositionResponse.cash)
 }
 
 // double net_value = 4;
@@ -2378,7 +2375,7 @@ inline double PositionResponse::_internal_net_value() const {
   return net_value_;
 }
 inline double PositionResponse::net_value() const {
-  // @@protoc_insertion_point(field_get:pb.PositionResponse.net_value)
+  // @@protoc_insertion_point(field_get:PositionResponse.net_value)
   return _internal_net_value();
 }
 inline void PositionResponse::_internal_set_net_value(double value) {
@@ -2387,7 +2384,7 @@ inline void PositionResponse::_internal_set_net_value(double value) {
 }
 inline void PositionResponse::set_net_value(double value) {
   _internal_set_net_value(value);
-  // @@protoc_insertion_point(field_set:pb.PositionResponse.net_value)
+  // @@protoc_insertion_point(field_set:PositionResponse.net_value)
 }
 
 #ifdef __GNUC__
@@ -2408,19 +2405,18 @@ inline void PositionResponse::set_net_value(double value) {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace pb
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::pb::OrderStatusKind> : ::std::true_type {};
+template <> struct is_proto_enum< ::OrderStatusKind> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::pb::OrderStatusKind>() {
-  return ::pb::OrderStatusKind_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::OrderStatusKind>() {
+  return ::OrderStatusKind_descriptor();
 }
-template <> struct is_proto_enum< ::pb::OrderActionKind> : ::std::true_type {};
+template <> struct is_proto_enum< ::OrderActionKind> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::pb::OrderActionKind>() {
-  return ::pb::OrderActionKind_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::OrderActionKind>() {
+  return ::OrderActionKind_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

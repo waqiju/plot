@@ -72,6 +72,10 @@ void Mesh::CheckOrUpload()
 
 void Mesh::UploadMeshData()
 {
+	// 非法数据保护
+	if (m_Vertices.size() == 0)
+		return;
+
 	glBindVertexArray(m_VAO);
 	glBindBuffer(GL_ARRAY_BUFFER, m_VboPosition);
 	glBufferData(GL_ARRAY_BUFFER, m_Vertices.size() * sizeof(float), &m_Vertices[0], GL_STATIC_DRAW);

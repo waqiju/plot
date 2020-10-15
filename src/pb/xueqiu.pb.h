@@ -54,24 +54,21 @@ struct TableStruct_pb_2fxueqiu_2eproto {
   static const ::PROTOBUF_NAMESPACE_ID::uint32 offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fxueqiu_2eproto;
-namespace pb {
 class PortfolioInfo;
 class PortfolioInfoDefaultTypeInternal;
 extern PortfolioInfoDefaultTypeInternal _PortfolioInfo_default_instance_;
 class PortfolioInfoList;
 class PortfolioInfoListDefaultTypeInternal;
 extern PortfolioInfoListDefaultTypeInternal _PortfolioInfoList_default_instance_;
-}  // namespace pb
 PROTOBUF_NAMESPACE_OPEN
-template<> ::pb::PortfolioInfo* Arena::CreateMaybeMessage<::pb::PortfolioInfo>(Arena*);
-template<> ::pb::PortfolioInfoList* Arena::CreateMaybeMessage<::pb::PortfolioInfoList>(Arena*);
+template<> ::PortfolioInfo* Arena::CreateMaybeMessage<::PortfolioInfo>(Arena*);
+template<> ::PortfolioInfoList* Arena::CreateMaybeMessage<::PortfolioInfoList>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
-namespace pb {
 
 // ===================================================================
 
 class PortfolioInfo PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.PortfolioInfo) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:PortfolioInfo) */ {
  public:
   inline PortfolioInfo() : PortfolioInfo(nullptr) {}
   virtual ~PortfolioInfo();
@@ -160,7 +157,7 @@ class PortfolioInfo PROTOBUF_FINAL :
   void InternalSwap(PortfolioInfo* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.PortfolioInfo";
+    return "PortfolioInfo";
   }
   protected:
   explicit PortfolioInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -454,7 +451,7 @@ class PortfolioInfo PROTOBUF_FINAL :
   void _internal_set_monthly_gain(float value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.PortfolioInfo)
+  // @@protoc_insertion_point(class_scope:PortfolioInfo)
  private:
   class _Internal;
 
@@ -487,7 +484,7 @@ class PortfolioInfo PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class PortfolioInfoList PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.PortfolioInfoList) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:PortfolioInfoList) */ {
  public:
   inline PortfolioInfoList() : PortfolioInfoList(nullptr) {}
   virtual ~PortfolioInfoList();
@@ -576,7 +573,7 @@ class PortfolioInfoList PROTOBUF_FINAL :
   void InternalSwap(PortfolioInfoList* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.PortfolioInfoList";
+    return "PortfolioInfoList";
   }
   protected:
   explicit PortfolioInfoList(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -601,32 +598,32 @@ class PortfolioInfoList PROTOBUF_FINAL :
   enum : int {
     kPortfolioListFieldNumber = 1,
   };
-  // repeated .pb.PortfolioInfo portfolio_list = 1;
+  // repeated .PortfolioInfo portfolio_list = 1;
   int portfolio_list_size() const;
   private:
   int _internal_portfolio_list_size() const;
   public:
   void clear_portfolio_list();
-  ::pb::PortfolioInfo* mutable_portfolio_list(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::PortfolioInfo >*
+  ::PortfolioInfo* mutable_portfolio_list(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::PortfolioInfo >*
       mutable_portfolio_list();
   private:
-  const ::pb::PortfolioInfo& _internal_portfolio_list(int index) const;
-  ::pb::PortfolioInfo* _internal_add_portfolio_list();
+  const ::PortfolioInfo& _internal_portfolio_list(int index) const;
+  ::PortfolioInfo* _internal_add_portfolio_list();
   public:
-  const ::pb::PortfolioInfo& portfolio_list(int index) const;
-  ::pb::PortfolioInfo* add_portfolio_list();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::PortfolioInfo >&
+  const ::PortfolioInfo& portfolio_list(int index) const;
+  ::PortfolioInfo* add_portfolio_list();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::PortfolioInfo >&
       portfolio_list() const;
 
-  // @@protoc_insertion_point(class_scope:pb.PortfolioInfoList)
+  // @@protoc_insertion_point(class_scope:PortfolioInfoList)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::PortfolioInfo > portfolio_list_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::PortfolioInfo > portfolio_list_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pb_2fxueqiu_2eproto;
 };
@@ -649,7 +646,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int64 PortfolioInfo::_internal_id() const {
   return id_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int64 PortfolioInfo::id() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.id)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.id)
   return _internal_id();
 }
 inline void PortfolioInfo::_internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
@@ -658,7 +655,7 @@ inline void PortfolioInfo::_internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value
 }
 inline void PortfolioInfo::set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.id)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.id)
 }
 
 // string code = 2;
@@ -666,15 +663,15 @@ inline void PortfolioInfo::clear_code() {
   code_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& PortfolioInfo::code() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.code)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.code)
   return _internal_code();
 }
 inline void PortfolioInfo::set_code(const std::string& value) {
   _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.code)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.code)
 }
 inline std::string* PortfolioInfo::mutable_code() {
-  // @@protoc_insertion_point(field_mutable:pb.PortfolioInfo.code)
+  // @@protoc_insertion_point(field_mutable:PortfolioInfo.code)
   return _internal_mutable_code();
 }
 inline const std::string& PortfolioInfo::_internal_code() const {
@@ -688,28 +685,28 @@ inline void PortfolioInfo::set_code(std::string&& value) {
   
   code_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.PortfolioInfo.code)
+  // @@protoc_insertion_point(field_set_rvalue:PortfolioInfo.code)
 }
 inline void PortfolioInfo::set_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.PortfolioInfo.code)
+  // @@protoc_insertion_point(field_set_char:PortfolioInfo.code)
 }
 inline void PortfolioInfo::set_code(const char* value,
     size_t size) {
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.PortfolioInfo.code)
+  // @@protoc_insertion_point(field_set_pointer:PortfolioInfo.code)
 }
 inline std::string* PortfolioInfo::_internal_mutable_code() {
   
   return code_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* PortfolioInfo::release_code() {
-  // @@protoc_insertion_point(field_release:pb.PortfolioInfo.code)
+  // @@protoc_insertion_point(field_release:PortfolioInfo.code)
   return code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void PortfolioInfo::set_allocated_code(std::string* code) {
@@ -720,7 +717,7 @@ inline void PortfolioInfo::set_allocated_code(std::string* code) {
   }
   code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), code,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.PortfolioInfo.code)
+  // @@protoc_insertion_point(field_set_allocated:PortfolioInfo.code)
 }
 
 // string last_touch_date = 3;
@@ -728,15 +725,15 @@ inline void PortfolioInfo::clear_last_touch_date() {
   last_touch_date_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& PortfolioInfo::last_touch_date() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.last_touch_date)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.last_touch_date)
   return _internal_last_touch_date();
 }
 inline void PortfolioInfo::set_last_touch_date(const std::string& value) {
   _internal_set_last_touch_date(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.last_touch_date)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.last_touch_date)
 }
 inline std::string* PortfolioInfo::mutable_last_touch_date() {
-  // @@protoc_insertion_point(field_mutable:pb.PortfolioInfo.last_touch_date)
+  // @@protoc_insertion_point(field_mutable:PortfolioInfo.last_touch_date)
   return _internal_mutable_last_touch_date();
 }
 inline const std::string& PortfolioInfo::_internal_last_touch_date() const {
@@ -750,28 +747,28 @@ inline void PortfolioInfo::set_last_touch_date(std::string&& value) {
   
   last_touch_date_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.PortfolioInfo.last_touch_date)
+  // @@protoc_insertion_point(field_set_rvalue:PortfolioInfo.last_touch_date)
 }
 inline void PortfolioInfo::set_last_touch_date(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   last_touch_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.PortfolioInfo.last_touch_date)
+  // @@protoc_insertion_point(field_set_char:PortfolioInfo.last_touch_date)
 }
 inline void PortfolioInfo::set_last_touch_date(const char* value,
     size_t size) {
   
   last_touch_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.PortfolioInfo.last_touch_date)
+  // @@protoc_insertion_point(field_set_pointer:PortfolioInfo.last_touch_date)
 }
 inline std::string* PortfolioInfo::_internal_mutable_last_touch_date() {
   
   return last_touch_date_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* PortfolioInfo::release_last_touch_date() {
-  // @@protoc_insertion_point(field_release:pb.PortfolioInfo.last_touch_date)
+  // @@protoc_insertion_point(field_release:PortfolioInfo.last_touch_date)
   return last_touch_date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void PortfolioInfo::set_allocated_last_touch_date(std::string* last_touch_date) {
@@ -782,7 +779,7 @@ inline void PortfolioInfo::set_allocated_last_touch_date(std::string* last_touch
   }
   last_touch_date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), last_touch_date,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.PortfolioInfo.last_touch_date)
+  // @@protoc_insertion_point(field_set_allocated:PortfolioInfo.last_touch_date)
 }
 
 // string tags = 4;
@@ -790,15 +787,15 @@ inline void PortfolioInfo::clear_tags() {
   tags_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& PortfolioInfo::tags() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.tags)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.tags)
   return _internal_tags();
 }
 inline void PortfolioInfo::set_tags(const std::string& value) {
   _internal_set_tags(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.tags)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.tags)
 }
 inline std::string* PortfolioInfo::mutable_tags() {
-  // @@protoc_insertion_point(field_mutable:pb.PortfolioInfo.tags)
+  // @@protoc_insertion_point(field_mutable:PortfolioInfo.tags)
   return _internal_mutable_tags();
 }
 inline const std::string& PortfolioInfo::_internal_tags() const {
@@ -812,28 +809,28 @@ inline void PortfolioInfo::set_tags(std::string&& value) {
   
   tags_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.PortfolioInfo.tags)
+  // @@protoc_insertion_point(field_set_rvalue:PortfolioInfo.tags)
 }
 inline void PortfolioInfo::set_tags(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   tags_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.PortfolioInfo.tags)
+  // @@protoc_insertion_point(field_set_char:PortfolioInfo.tags)
 }
 inline void PortfolioInfo::set_tags(const char* value,
     size_t size) {
   
   tags_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.PortfolioInfo.tags)
+  // @@protoc_insertion_point(field_set_pointer:PortfolioInfo.tags)
 }
 inline std::string* PortfolioInfo::_internal_mutable_tags() {
   
   return tags_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* PortfolioInfo::release_tags() {
-  // @@protoc_insertion_point(field_release:pb.PortfolioInfo.tags)
+  // @@protoc_insertion_point(field_release:PortfolioInfo.tags)
   return tags_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void PortfolioInfo::set_allocated_tags(std::string* tags) {
@@ -844,7 +841,7 @@ inline void PortfolioInfo::set_allocated_tags(std::string* tags) {
   }
   tags_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), tags,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.PortfolioInfo.tags)
+  // @@protoc_insertion_point(field_set_allocated:PortfolioInfo.tags)
 }
 
 // bool actived = 5;
@@ -855,7 +852,7 @@ inline bool PortfolioInfo::_internal_actived() const {
   return actived_;
 }
 inline bool PortfolioInfo::actived() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.actived)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.actived)
   return _internal_actived();
 }
 inline void PortfolioInfo::_internal_set_actived(bool value) {
@@ -864,7 +861,7 @@ inline void PortfolioInfo::_internal_set_actived(bool value) {
 }
 inline void PortfolioInfo::set_actived(bool value) {
   _internal_set_actived(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.actived)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.actived)
 }
 
 // bool in_blacklist = 6;
@@ -875,7 +872,7 @@ inline bool PortfolioInfo::_internal_in_blacklist() const {
   return in_blacklist_;
 }
 inline bool PortfolioInfo::in_blacklist() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.in_blacklist)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.in_blacklist)
   return _internal_in_blacklist();
 }
 inline void PortfolioInfo::_internal_set_in_blacklist(bool value) {
@@ -884,7 +881,7 @@ inline void PortfolioInfo::_internal_set_in_blacklist(bool value) {
 }
 inline void PortfolioInfo::set_in_blacklist(bool value) {
   _internal_set_in_blacklist(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.in_blacklist)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.in_blacklist)
 }
 
 // string market_kind = 7;
@@ -892,15 +889,15 @@ inline void PortfolioInfo::clear_market_kind() {
   market_kind_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& PortfolioInfo::market_kind() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.market_kind)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.market_kind)
   return _internal_market_kind();
 }
 inline void PortfolioInfo::set_market_kind(const std::string& value) {
   _internal_set_market_kind(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.market_kind)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.market_kind)
 }
 inline std::string* PortfolioInfo::mutable_market_kind() {
-  // @@protoc_insertion_point(field_mutable:pb.PortfolioInfo.market_kind)
+  // @@protoc_insertion_point(field_mutable:PortfolioInfo.market_kind)
   return _internal_mutable_market_kind();
 }
 inline const std::string& PortfolioInfo::_internal_market_kind() const {
@@ -914,28 +911,28 @@ inline void PortfolioInfo::set_market_kind(std::string&& value) {
   
   market_kind_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.PortfolioInfo.market_kind)
+  // @@protoc_insertion_point(field_set_rvalue:PortfolioInfo.market_kind)
 }
 inline void PortfolioInfo::set_market_kind(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   market_kind_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.PortfolioInfo.market_kind)
+  // @@protoc_insertion_point(field_set_char:PortfolioInfo.market_kind)
 }
 inline void PortfolioInfo::set_market_kind(const char* value,
     size_t size) {
   
   market_kind_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.PortfolioInfo.market_kind)
+  // @@protoc_insertion_point(field_set_pointer:PortfolioInfo.market_kind)
 }
 inline std::string* PortfolioInfo::_internal_mutable_market_kind() {
   
   return market_kind_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* PortfolioInfo::release_market_kind() {
-  // @@protoc_insertion_point(field_release:pb.PortfolioInfo.market_kind)
+  // @@protoc_insertion_point(field_release:PortfolioInfo.market_kind)
   return market_kind_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void PortfolioInfo::set_allocated_market_kind(std::string* market_kind) {
@@ -946,7 +943,7 @@ inline void PortfolioInfo::set_allocated_market_kind(std::string* market_kind) {
   }
   market_kind_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), market_kind,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.PortfolioInfo.market_kind)
+  // @@protoc_insertion_point(field_set_allocated:PortfolioInfo.market_kind)
 }
 
 // string name = 8;
@@ -954,15 +951,15 @@ inline void PortfolioInfo::clear_name() {
   name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& PortfolioInfo::name() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.name)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.name)
   return _internal_name();
 }
 inline void PortfolioInfo::set_name(const std::string& value) {
   _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.name)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.name)
 }
 inline std::string* PortfolioInfo::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:pb.PortfolioInfo.name)
+  // @@protoc_insertion_point(field_mutable:PortfolioInfo.name)
   return _internal_mutable_name();
 }
 inline const std::string& PortfolioInfo::_internal_name() const {
@@ -976,28 +973,28 @@ inline void PortfolioInfo::set_name(std::string&& value) {
   
   name_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.PortfolioInfo.name)
+  // @@protoc_insertion_point(field_set_rvalue:PortfolioInfo.name)
 }
 inline void PortfolioInfo::set_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.PortfolioInfo.name)
+  // @@protoc_insertion_point(field_set_char:PortfolioInfo.name)
 }
 inline void PortfolioInfo::set_name(const char* value,
     size_t size) {
   
   name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.PortfolioInfo.name)
+  // @@protoc_insertion_point(field_set_pointer:PortfolioInfo.name)
 }
 inline std::string* PortfolioInfo::_internal_mutable_name() {
   
   return name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* PortfolioInfo::release_name() {
-  // @@protoc_insertion_point(field_release:pb.PortfolioInfo.name)
+  // @@protoc_insertion_point(field_release:PortfolioInfo.name)
   return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void PortfolioInfo::set_allocated_name(std::string* name) {
@@ -1008,7 +1005,7 @@ inline void PortfolioInfo::set_allocated_name(std::string* name) {
   }
   name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.PortfolioInfo.name)
+  // @@protoc_insertion_point(field_set_allocated:PortfolioInfo.name)
 }
 
 // string author_name = 9;
@@ -1016,15 +1013,15 @@ inline void PortfolioInfo::clear_author_name() {
   author_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& PortfolioInfo::author_name() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.author_name)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.author_name)
   return _internal_author_name();
 }
 inline void PortfolioInfo::set_author_name(const std::string& value) {
   _internal_set_author_name(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.author_name)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.author_name)
 }
 inline std::string* PortfolioInfo::mutable_author_name() {
-  // @@protoc_insertion_point(field_mutable:pb.PortfolioInfo.author_name)
+  // @@protoc_insertion_point(field_mutable:PortfolioInfo.author_name)
   return _internal_mutable_author_name();
 }
 inline const std::string& PortfolioInfo::_internal_author_name() const {
@@ -1038,28 +1035,28 @@ inline void PortfolioInfo::set_author_name(std::string&& value) {
   
   author_name_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.PortfolioInfo.author_name)
+  // @@protoc_insertion_point(field_set_rvalue:PortfolioInfo.author_name)
 }
 inline void PortfolioInfo::set_author_name(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   author_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.PortfolioInfo.author_name)
+  // @@protoc_insertion_point(field_set_char:PortfolioInfo.author_name)
 }
 inline void PortfolioInfo::set_author_name(const char* value,
     size_t size) {
   
   author_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.PortfolioInfo.author_name)
+  // @@protoc_insertion_point(field_set_pointer:PortfolioInfo.author_name)
 }
 inline std::string* PortfolioInfo::_internal_mutable_author_name() {
   
   return author_name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* PortfolioInfo::release_author_name() {
-  // @@protoc_insertion_point(field_release:pb.PortfolioInfo.author_name)
+  // @@protoc_insertion_point(field_release:PortfolioInfo.author_name)
   return author_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void PortfolioInfo::set_allocated_author_name(std::string* author_name) {
@@ -1070,7 +1067,7 @@ inline void PortfolioInfo::set_allocated_author_name(std::string* author_name) {
   }
   author_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), author_name,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.PortfolioInfo.author_name)
+  // @@protoc_insertion_point(field_set_allocated:PortfolioInfo.author_name)
 }
 
 // string last_rebalacing_date = 10;
@@ -1078,15 +1075,15 @@ inline void PortfolioInfo::clear_last_rebalacing_date() {
   last_rebalacing_date_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& PortfolioInfo::last_rebalacing_date() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.last_rebalacing_date)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.last_rebalacing_date)
   return _internal_last_rebalacing_date();
 }
 inline void PortfolioInfo::set_last_rebalacing_date(const std::string& value) {
   _internal_set_last_rebalacing_date(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.last_rebalacing_date)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.last_rebalacing_date)
 }
 inline std::string* PortfolioInfo::mutable_last_rebalacing_date() {
-  // @@protoc_insertion_point(field_mutable:pb.PortfolioInfo.last_rebalacing_date)
+  // @@protoc_insertion_point(field_mutable:PortfolioInfo.last_rebalacing_date)
   return _internal_mutable_last_rebalacing_date();
 }
 inline const std::string& PortfolioInfo::_internal_last_rebalacing_date() const {
@@ -1100,28 +1097,28 @@ inline void PortfolioInfo::set_last_rebalacing_date(std::string&& value) {
   
   last_rebalacing_date_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.PortfolioInfo.last_rebalacing_date)
+  // @@protoc_insertion_point(field_set_rvalue:PortfolioInfo.last_rebalacing_date)
 }
 inline void PortfolioInfo::set_last_rebalacing_date(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   last_rebalacing_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.PortfolioInfo.last_rebalacing_date)
+  // @@protoc_insertion_point(field_set_char:PortfolioInfo.last_rebalacing_date)
 }
 inline void PortfolioInfo::set_last_rebalacing_date(const char* value,
     size_t size) {
   
   last_rebalacing_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.PortfolioInfo.last_rebalacing_date)
+  // @@protoc_insertion_point(field_set_pointer:PortfolioInfo.last_rebalacing_date)
 }
 inline std::string* PortfolioInfo::_internal_mutable_last_rebalacing_date() {
   
   return last_rebalacing_date_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* PortfolioInfo::release_last_rebalacing_date() {
-  // @@protoc_insertion_point(field_release:pb.PortfolioInfo.last_rebalacing_date)
+  // @@protoc_insertion_point(field_release:PortfolioInfo.last_rebalacing_date)
   return last_rebalacing_date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void PortfolioInfo::set_allocated_last_rebalacing_date(std::string* last_rebalacing_date) {
@@ -1132,7 +1129,7 @@ inline void PortfolioInfo::set_allocated_last_rebalacing_date(std::string* last_
   }
   last_rebalacing_date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), last_rebalacing_date,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.PortfolioInfo.last_rebalacing_date)
+  // @@protoc_insertion_point(field_set_allocated:PortfolioInfo.last_rebalacing_date)
 }
 
 // int32 times_of_404 = 11;
@@ -1143,7 +1140,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 PortfolioInfo::_internal_times_of_404() co
   return times_of_404_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 PortfolioInfo::times_of_404() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.times_of_404)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.times_of_404)
   return _internal_times_of_404();
 }
 inline void PortfolioInfo::_internal_set_times_of_404(::PROTOBUF_NAMESPACE_ID::int32 value) {
@@ -1152,7 +1149,7 @@ inline void PortfolioInfo::_internal_set_times_of_404(::PROTOBUF_NAMESPACE_ID::i
 }
 inline void PortfolioInfo::set_times_of_404(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_times_of_404(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.times_of_404)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.times_of_404)
 }
 
 // float net_value = 101;
@@ -1163,7 +1160,7 @@ inline float PortfolioInfo::_internal_net_value() const {
   return net_value_;
 }
 inline float PortfolioInfo::net_value() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.net_value)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.net_value)
   return _internal_net_value();
 }
 inline void PortfolioInfo::_internal_set_net_value(float value) {
@@ -1172,7 +1169,7 @@ inline void PortfolioInfo::_internal_set_net_value(float value) {
 }
 inline void PortfolioInfo::set_net_value(float value) {
   _internal_set_net_value(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.net_value)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.net_value)
 }
 
 // string created_date = 102;
@@ -1180,15 +1177,15 @@ inline void PortfolioInfo::clear_created_date() {
   created_date_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& PortfolioInfo::created_date() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.created_date)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.created_date)
   return _internal_created_date();
 }
 inline void PortfolioInfo::set_created_date(const std::string& value) {
   _internal_set_created_date(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.created_date)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.created_date)
 }
 inline std::string* PortfolioInfo::mutable_created_date() {
-  // @@protoc_insertion_point(field_mutable:pb.PortfolioInfo.created_date)
+  // @@protoc_insertion_point(field_mutable:PortfolioInfo.created_date)
   return _internal_mutable_created_date();
 }
 inline const std::string& PortfolioInfo::_internal_created_date() const {
@@ -1202,28 +1199,28 @@ inline void PortfolioInfo::set_created_date(std::string&& value) {
   
   created_date_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.PortfolioInfo.created_date)
+  // @@protoc_insertion_point(field_set_rvalue:PortfolioInfo.created_date)
 }
 inline void PortfolioInfo::set_created_date(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   created_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.PortfolioInfo.created_date)
+  // @@protoc_insertion_point(field_set_char:PortfolioInfo.created_date)
 }
 inline void PortfolioInfo::set_created_date(const char* value,
     size_t size) {
   
   created_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.PortfolioInfo.created_date)
+  // @@protoc_insertion_point(field_set_pointer:PortfolioInfo.created_date)
 }
 inline std::string* PortfolioInfo::_internal_mutable_created_date() {
   
   return created_date_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* PortfolioInfo::release_created_date() {
-  // @@protoc_insertion_point(field_release:pb.PortfolioInfo.created_date)
+  // @@protoc_insertion_point(field_release:PortfolioInfo.created_date)
   return created_date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void PortfolioInfo::set_allocated_created_date(std::string* created_date) {
@@ -1234,7 +1231,7 @@ inline void PortfolioInfo::set_allocated_created_date(std::string* created_date)
   }
   created_date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), created_date,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.PortfolioInfo.created_date)
+  // @@protoc_insertion_point(field_set_allocated:PortfolioInfo.created_date)
 }
 
 // float max_draw = 103;
@@ -1245,7 +1242,7 @@ inline float PortfolioInfo::_internal_max_draw() const {
   return max_draw_;
 }
 inline float PortfolioInfo::max_draw() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.max_draw)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.max_draw)
   return _internal_max_draw();
 }
 inline void PortfolioInfo::_internal_set_max_draw(float value) {
@@ -1254,7 +1251,7 @@ inline void PortfolioInfo::_internal_set_max_draw(float value) {
 }
 inline void PortfolioInfo::set_max_draw(float value) {
   _internal_set_max_draw(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.max_draw)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.max_draw)
 }
 
 // int32 follower_count = 104;
@@ -1265,7 +1262,7 @@ inline ::PROTOBUF_NAMESPACE_ID::int32 PortfolioInfo::_internal_follower_count() 
   return follower_count_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::int32 PortfolioInfo::follower_count() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.follower_count)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.follower_count)
   return _internal_follower_count();
 }
 inline void PortfolioInfo::_internal_set_follower_count(::PROTOBUF_NAMESPACE_ID::int32 value) {
@@ -1274,7 +1271,7 @@ inline void PortfolioInfo::_internal_set_follower_count(::PROTOBUF_NAMESPACE_ID:
 }
 inline void PortfolioInfo::set_follower_count(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_follower_count(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.follower_count)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.follower_count)
 }
 
 // float turnover_90 = 105;
@@ -1285,7 +1282,7 @@ inline float PortfolioInfo::_internal_turnover_90() const {
   return turnover_90_;
 }
 inline float PortfolioInfo::turnover_90() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.turnover_90)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.turnover_90)
   return _internal_turnover_90();
 }
 inline void PortfolioInfo::_internal_set_turnover_90(float value) {
@@ -1294,7 +1291,7 @@ inline void PortfolioInfo::_internal_set_turnover_90(float value) {
 }
 inline void PortfolioInfo::set_turnover_90(float value) {
   _internal_set_turnover_90(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.turnover_90)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.turnover_90)
 }
 
 // float turnover_360 = 106;
@@ -1305,7 +1302,7 @@ inline float PortfolioInfo::_internal_turnover_360() const {
   return turnover_360_;
 }
 inline float PortfolioInfo::turnover_360() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.turnover_360)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.turnover_360)
   return _internal_turnover_360();
 }
 inline void PortfolioInfo::_internal_set_turnover_360(float value) {
@@ -1314,7 +1311,7 @@ inline void PortfolioInfo::_internal_set_turnover_360(float value) {
 }
 inline void PortfolioInfo::set_turnover_360(float value) {
   _internal_set_turnover_360(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.turnover_360)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.turnover_360)
 }
 
 // float monthly_gain = 107;
@@ -1325,7 +1322,7 @@ inline float PortfolioInfo::_internal_monthly_gain() const {
   return monthly_gain_;
 }
 inline float PortfolioInfo::monthly_gain() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.monthly_gain)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.monthly_gain)
   return _internal_monthly_gain();
 }
 inline void PortfolioInfo::_internal_set_monthly_gain(float value) {
@@ -1334,7 +1331,7 @@ inline void PortfolioInfo::_internal_set_monthly_gain(float value) {
 }
 inline void PortfolioInfo::set_monthly_gain(float value) {
   _internal_set_monthly_gain(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.monthly_gain)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.monthly_gain)
 }
 
 // bytes zipped_zh_html = 1001;
@@ -1342,15 +1339,15 @@ inline void PortfolioInfo::clear_zipped_zh_html() {
   zipped_zh_html_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& PortfolioInfo::zipped_zh_html() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.zipped_zh_html)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.zipped_zh_html)
   return _internal_zipped_zh_html();
 }
 inline void PortfolioInfo::set_zipped_zh_html(const std::string& value) {
   _internal_set_zipped_zh_html(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.zipped_zh_html)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.zipped_zh_html)
 }
 inline std::string* PortfolioInfo::mutable_zipped_zh_html() {
-  // @@protoc_insertion_point(field_mutable:pb.PortfolioInfo.zipped_zh_html)
+  // @@protoc_insertion_point(field_mutable:PortfolioInfo.zipped_zh_html)
   return _internal_mutable_zipped_zh_html();
 }
 inline const std::string& PortfolioInfo::_internal_zipped_zh_html() const {
@@ -1364,28 +1361,28 @@ inline void PortfolioInfo::set_zipped_zh_html(std::string&& value) {
   
   zipped_zh_html_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.PortfolioInfo.zipped_zh_html)
+  // @@protoc_insertion_point(field_set_rvalue:PortfolioInfo.zipped_zh_html)
 }
 inline void PortfolioInfo::set_zipped_zh_html(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   zipped_zh_html_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.PortfolioInfo.zipped_zh_html)
+  // @@protoc_insertion_point(field_set_char:PortfolioInfo.zipped_zh_html)
 }
 inline void PortfolioInfo::set_zipped_zh_html(const void* value,
     size_t size) {
   
   zipped_zh_html_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.PortfolioInfo.zipped_zh_html)
+  // @@protoc_insertion_point(field_set_pointer:PortfolioInfo.zipped_zh_html)
 }
 inline std::string* PortfolioInfo::_internal_mutable_zipped_zh_html() {
   
   return zipped_zh_html_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* PortfolioInfo::release_zipped_zh_html() {
-  // @@protoc_insertion_point(field_release:pb.PortfolioInfo.zipped_zh_html)
+  // @@protoc_insertion_point(field_release:PortfolioInfo.zipped_zh_html)
   return zipped_zh_html_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void PortfolioInfo::set_allocated_zipped_zh_html(std::string* zipped_zh_html) {
@@ -1396,7 +1393,7 @@ inline void PortfolioInfo::set_allocated_zipped_zh_html(std::string* zipped_zh_h
   }
   zipped_zh_html_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), zipped_zh_html,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.PortfolioInfo.zipped_zh_html)
+  // @@protoc_insertion_point(field_set_allocated:PortfolioInfo.zipped_zh_html)
 }
 
 // bytes zipped_nav_json = 1002;
@@ -1404,15 +1401,15 @@ inline void PortfolioInfo::clear_zipped_nav_json() {
   zipped_nav_json_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& PortfolioInfo::zipped_nav_json() const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfo.zipped_nav_json)
+  // @@protoc_insertion_point(field_get:PortfolioInfo.zipped_nav_json)
   return _internal_zipped_nav_json();
 }
 inline void PortfolioInfo::set_zipped_nav_json(const std::string& value) {
   _internal_set_zipped_nav_json(value);
-  // @@protoc_insertion_point(field_set:pb.PortfolioInfo.zipped_nav_json)
+  // @@protoc_insertion_point(field_set:PortfolioInfo.zipped_nav_json)
 }
 inline std::string* PortfolioInfo::mutable_zipped_nav_json() {
-  // @@protoc_insertion_point(field_mutable:pb.PortfolioInfo.zipped_nav_json)
+  // @@protoc_insertion_point(field_mutable:PortfolioInfo.zipped_nav_json)
   return _internal_mutable_zipped_nav_json();
 }
 inline const std::string& PortfolioInfo::_internal_zipped_nav_json() const {
@@ -1426,28 +1423,28 @@ inline void PortfolioInfo::set_zipped_nav_json(std::string&& value) {
   
   zipped_nav_json_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.PortfolioInfo.zipped_nav_json)
+  // @@protoc_insertion_point(field_set_rvalue:PortfolioInfo.zipped_nav_json)
 }
 inline void PortfolioInfo::set_zipped_nav_json(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   zipped_nav_json_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.PortfolioInfo.zipped_nav_json)
+  // @@protoc_insertion_point(field_set_char:PortfolioInfo.zipped_nav_json)
 }
 inline void PortfolioInfo::set_zipped_nav_json(const void* value,
     size_t size) {
   
   zipped_nav_json_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.PortfolioInfo.zipped_nav_json)
+  // @@protoc_insertion_point(field_set_pointer:PortfolioInfo.zipped_nav_json)
 }
 inline std::string* PortfolioInfo::_internal_mutable_zipped_nav_json() {
   
   return zipped_nav_json_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* PortfolioInfo::release_zipped_nav_json() {
-  // @@protoc_insertion_point(field_release:pb.PortfolioInfo.zipped_nav_json)
+  // @@protoc_insertion_point(field_release:PortfolioInfo.zipped_nav_json)
   return zipped_nav_json_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void PortfolioInfo::set_allocated_zipped_nav_json(std::string* zipped_nav_json) {
@@ -1458,14 +1455,14 @@ inline void PortfolioInfo::set_allocated_zipped_nav_json(std::string* zipped_nav
   }
   zipped_nav_json_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), zipped_nav_json,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.PortfolioInfo.zipped_nav_json)
+  // @@protoc_insertion_point(field_set_allocated:PortfolioInfo.zipped_nav_json)
 }
 
 // -------------------------------------------------------------------
 
 // PortfolioInfoList
 
-// repeated .pb.PortfolioInfo portfolio_list = 1;
+// repeated .PortfolioInfo portfolio_list = 1;
 inline int PortfolioInfoList::_internal_portfolio_list_size() const {
   return portfolio_list_.size();
 }
@@ -1475,32 +1472,32 @@ inline int PortfolioInfoList::portfolio_list_size() const {
 inline void PortfolioInfoList::clear_portfolio_list() {
   portfolio_list_.Clear();
 }
-inline ::pb::PortfolioInfo* PortfolioInfoList::mutable_portfolio_list(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.PortfolioInfoList.portfolio_list)
+inline ::PortfolioInfo* PortfolioInfoList::mutable_portfolio_list(int index) {
+  // @@protoc_insertion_point(field_mutable:PortfolioInfoList.portfolio_list)
   return portfolio_list_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::PortfolioInfo >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::PortfolioInfo >*
 PortfolioInfoList::mutable_portfolio_list() {
-  // @@protoc_insertion_point(field_mutable_list:pb.PortfolioInfoList.portfolio_list)
+  // @@protoc_insertion_point(field_mutable_list:PortfolioInfoList.portfolio_list)
   return &portfolio_list_;
 }
-inline const ::pb::PortfolioInfo& PortfolioInfoList::_internal_portfolio_list(int index) const {
+inline const ::PortfolioInfo& PortfolioInfoList::_internal_portfolio_list(int index) const {
   return portfolio_list_.Get(index);
 }
-inline const ::pb::PortfolioInfo& PortfolioInfoList::portfolio_list(int index) const {
-  // @@protoc_insertion_point(field_get:pb.PortfolioInfoList.portfolio_list)
+inline const ::PortfolioInfo& PortfolioInfoList::portfolio_list(int index) const {
+  // @@protoc_insertion_point(field_get:PortfolioInfoList.portfolio_list)
   return _internal_portfolio_list(index);
 }
-inline ::pb::PortfolioInfo* PortfolioInfoList::_internal_add_portfolio_list() {
+inline ::PortfolioInfo* PortfolioInfoList::_internal_add_portfolio_list() {
   return portfolio_list_.Add();
 }
-inline ::pb::PortfolioInfo* PortfolioInfoList::add_portfolio_list() {
-  // @@protoc_insertion_point(field_add:pb.PortfolioInfoList.portfolio_list)
+inline ::PortfolioInfo* PortfolioInfoList::add_portfolio_list() {
+  // @@protoc_insertion_point(field_add:PortfolioInfoList.portfolio_list)
   return _internal_add_portfolio_list();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::PortfolioInfo >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::PortfolioInfo >&
 PortfolioInfoList::portfolio_list() const {
-  // @@protoc_insertion_point(field_list:pb.PortfolioInfoList.portfolio_list)
+  // @@protoc_insertion_point(field_list:PortfolioInfoList.portfolio_list)
   return portfolio_list_;
 }
 
@@ -1512,7 +1509,6 @@ PortfolioInfoList::portfolio_list() const {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace pb
 
 // @@protoc_insertion_point(global_scope)
 

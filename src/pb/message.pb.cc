@@ -14,21 +14,19 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-namespace pb {
 class MessageDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Message> _instance;
 } _Message_default_instance_;
-}  // namespace pb
 static void InitDefaultsscc_info_Message_pb_2fmessage_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_Message_default_instance_;
-    new (ptr) ::pb::Message();
+    void* ptr = &::_Message_default_instance_;
+    new (ptr) ::Message();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::Message::InitAsDefaultInstance();
+  ::Message::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Message_pb_2fmessage_2eproto =
@@ -40,31 +38,31 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pb_2fmessage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::Message, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::Message, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::Message, from_name_),
-  PROTOBUF_FIELD_OFFSET(::pb::Message, to_name_),
-  PROTOBUF_FIELD_OFFSET(::pb::Message, message_type_),
-  PROTOBUF_FIELD_OFFSET(::pb::Message, text_),
+  PROTOBUF_FIELD_OFFSET(::Message, from_name_),
+  PROTOBUF_FIELD_OFFSET(::Message, to_name_),
+  PROTOBUF_FIELD_OFFSET(::Message, message_type_),
+  PROTOBUF_FIELD_OFFSET(::Message, text_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::pb::Message)},
+  { 0, -1, sizeof(::Message)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_Message_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_Message_default_instance_),
 };
 
 const char descriptor_table_protodef_pb_2fmessage_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\020pb/message.proto\022\002pb\032\017pb/common.proto\""
-  "c\n\007Message\022\021\n\tfrom_name\030\001 \001(\t\022\017\n\007to_name"
-  "\030\002 \001(\t\022&\n\014message_type\030\003 \001(\0162\020.pb.MESSAG"
-  "E_TYPE\022\014\n\004text\030\004 \001(\t*\?\n\014MESSAGE_TYPE\022\030\n\024"
-  "MESSAGE_TYPE_INVALID\020\000\022\025\n\021MESSAGE_TYPE_T"
-  "EXT\020\00127\n\tMessenger\022*\n\013SendMessage\022\013.pb.M"
-  "essage\032\016.pb.ResultInfob\006proto3"
+  "\n\020pb/message.proto\032\017pb/common.proto\"`\n\007M"
+  "essage\022\021\n\tfrom_name\030\001 \001(\t\022\017\n\007to_name\030\002 \001"
+  "(\t\022#\n\014message_type\030\003 \001(\0162\r.MESSAGE_TYPE\022"
+  "\014\n\004text\030\004 \001(\t*\?\n\014MESSAGE_TYPE\022\030\n\024MESSAGE"
+  "_TYPE_INVALID\020\000\022\025\n\021MESSAGE_TYPE_TEXT\020\00121"
+  "\n\tMessenger\022$\n\013SendMessage\022\010.Message\032\013.R"
+  "esultInfob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pb_2fmessage_2eproto_deps[1] = {
   &::descriptor_table_pb_2fcommon_2eproto,
@@ -74,7 +72,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pb_
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pb_2fmessage_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fmessage_2eproto = {
-  false, false, descriptor_table_protodef_pb_2fmessage_2eproto, "pb/message.proto", 270,
+  false, false, descriptor_table_protodef_pb_2fmessage_2eproto, "pb/message.proto", 257,
   &descriptor_table_pb_2fmessage_2eproto_once, descriptor_table_pb_2fmessage_2eproto_sccs, descriptor_table_pb_2fmessage_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_pb_2fmessage_2eproto::offsets,
   file_level_metadata_pb_2fmessage_2eproto, 1, file_level_enum_descriptors_pb_2fmessage_2eproto, file_level_service_descriptors_pb_2fmessage_2eproto,
@@ -82,7 +80,6 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fm
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_pb_2fmessage_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_pb_2fmessage_2eproto)), true);
-namespace pb {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MESSAGE_TYPE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pb_2fmessage_2eproto);
   return file_level_enum_descriptors_pb_2fmessage_2eproto[0];
@@ -110,7 +107,7 @@ Message::Message(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:pb.Message)
+  // @@protoc_insertion_point(arena_constructor:Message)
 }
 Message::Message(const Message& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -131,7 +128,7 @@ Message::Message(const Message& from)
       GetArena());
   }
   message_type_ = from.message_type_;
-  // @@protoc_insertion_point(copy_constructor:pb.Message)
+  // @@protoc_insertion_point(copy_constructor:Message)
 }
 
 void Message::SharedCtor() {
@@ -143,7 +140,7 @@ void Message::SharedCtor() {
 }
 
 Message::~Message() {
-  // @@protoc_insertion_point(destructor:pb.Message)
+  // @@protoc_insertion_point(destructor:Message)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -171,7 +168,7 @@ const Message& Message::default_instance() {
 
 
 void Message::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.Message)
+// @@protoc_insertion_point(message_clear_start:Message)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -196,7 +193,7 @@ const char* Message::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_from_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.Message.from_name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "Message.from_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -205,16 +202,16 @@ const char* Message::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_to_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.Message.to_name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "Message.to_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .pb.MESSAGE_TYPE message_type = 3;
+      // .MESSAGE_TYPE message_type = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_message_type(static_cast<::pb::MESSAGE_TYPE>(val));
+          _internal_set_message_type(static_cast<::MESSAGE_TYPE>(val));
         } else goto handle_unusual;
         continue;
       // string text = 4;
@@ -222,7 +219,7 @@ const char* Message::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_text();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.Message.text"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "Message.text"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -250,7 +247,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* Message::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.Message)
+  // @@protoc_insertion_point(serialize_to_array_start:Message)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -259,7 +256,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_from_name().data(), static_cast<int>(this->_internal_from_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.Message.from_name");
+      "Message.from_name");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_from_name(), target);
   }
@@ -269,12 +266,12 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_to_name().data(), static_cast<int>(this->_internal_to_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.Message.to_name");
+      "Message.to_name");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_to_name(), target);
   }
 
-  // .pb.MESSAGE_TYPE message_type = 3;
+  // .MESSAGE_TYPE message_type = 3;
   if (this->message_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -286,7 +283,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_text().data(), static_cast<int>(this->_internal_text().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.Message.text");
+      "Message.text");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_text(), target);
   }
@@ -295,12 +292,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.Message)
+  // @@protoc_insertion_point(serialize_to_array_end:Message)
   return target;
 }
 
 size_t Message::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.Message)
+// @@protoc_insertion_point(message_byte_size_start:Message)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -328,7 +325,7 @@ size_t Message::ByteSizeLong() const {
         this->_internal_text());
   }
 
-  // .pb.MESSAGE_TYPE message_type = 3;
+  // .MESSAGE_TYPE message_type = 3;
   if (this->message_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_message_type());
@@ -344,22 +341,22 @@ size_t Message::ByteSizeLong() const {
 }
 
 void Message::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.Message)
+// @@protoc_insertion_point(generalized_merge_from_start:Message)
   GOOGLE_DCHECK_NE(&from, this);
   const Message* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Message>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.Message)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Message)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.Message)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:Message)
     MergeFrom(*source);
   }
 }
 
 void Message::MergeFrom(const Message& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.Message)
+// @@protoc_insertion_point(class_specific_merge_from_start:Message)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -380,14 +377,14 @@ void Message::MergeFrom(const Message& from) {
 }
 
 void Message::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.Message)
+// @@protoc_insertion_point(generalized_copy_from_start:Message)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Message::CopyFrom(const Message& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.Message)
+// @@protoc_insertion_point(class_specific_copy_from_start:Message)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -412,10 +409,9 @@ void Message::InternalSwap(Message* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace pb
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::pb::Message* Arena::CreateMaybeMessage< ::pb::Message >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::Message >(arena);
+template<> PROTOBUF_NOINLINE ::Message* Arena::CreateMaybeMessage< ::Message >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::Message >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

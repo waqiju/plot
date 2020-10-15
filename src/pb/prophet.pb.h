@@ -55,7 +55,6 @@ struct TableStruct_pb_2fprophet_2eproto {
   static const ::PROTOBUF_NAMESPACE_ID::uint32 offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fprophet_2eproto;
-namespace pb {
 class DailyMinute;
 class DailyMinuteDefaultTypeInternal;
 extern DailyMinuteDefaultTypeInternal _DailyMinute_default_instance_;
@@ -83,24 +82,22 @@ extern StockDateIntervalDefaultTypeInternal _StockDateInterval_default_instance_
 class TrueRange;
 class TrueRangeDefaultTypeInternal;
 extern TrueRangeDefaultTypeInternal _TrueRange_default_instance_;
-}  // namespace pb
 PROTOBUF_NAMESPACE_OPEN
-template<> ::pb::DailyMinute* Arena::CreateMaybeMessage<::pb::DailyMinute>(Arena*);
-template<> ::pb::FetchIndicatorResponse* Arena::CreateMaybeMessage<::pb::FetchIndicatorResponse>(Arena*);
-template<> ::pb::IndicatorSet* Arena::CreateMaybeMessage<::pb::IndicatorSet>(Arena*);
-template<> ::pb::KChart* Arena::CreateMaybeMessage<::pb::KChart>(Arena*);
-template<> ::pb::LiveSet* Arena::CreateMaybeMessage<::pb::LiveSet>(Arena*);
-template<> ::pb::MA* Arena::CreateMaybeMessage<::pb::MA>(Arena*);
-template<> ::pb::Segment* Arena::CreateMaybeMessage<::pb::Segment>(Arena*);
-template<> ::pb::StockDateInterval* Arena::CreateMaybeMessage<::pb::StockDateInterval>(Arena*);
-template<> ::pb::TrueRange* Arena::CreateMaybeMessage<::pb::TrueRange>(Arena*);
+template<> ::DailyMinute* Arena::CreateMaybeMessage<::DailyMinute>(Arena*);
+template<> ::FetchIndicatorResponse* Arena::CreateMaybeMessage<::FetchIndicatorResponse>(Arena*);
+template<> ::IndicatorSet* Arena::CreateMaybeMessage<::IndicatorSet>(Arena*);
+template<> ::KChart* Arena::CreateMaybeMessage<::KChart>(Arena*);
+template<> ::LiveSet* Arena::CreateMaybeMessage<::LiveSet>(Arena*);
+template<> ::MA* Arena::CreateMaybeMessage<::MA>(Arena*);
+template<> ::Segment* Arena::CreateMaybeMessage<::Segment>(Arena*);
+template<> ::StockDateInterval* Arena::CreateMaybeMessage<::StockDateInterval>(Arena*);
+template<> ::TrueRange* Arena::CreateMaybeMessage<::TrueRange>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
-namespace pb {
 
 // ===================================================================
 
 class StockDateInterval PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.StockDateInterval) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:StockDateInterval) */ {
  public:
   inline StockDateInterval() : StockDateInterval(nullptr) {}
   virtual ~StockDateInterval();
@@ -189,7 +186,7 @@ class StockDateInterval PROTOBUF_FINAL :
   void InternalSwap(StockDateInterval* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.StockDateInterval";
+    return "StockDateInterval";
   }
   protected:
   explicit StockDateInterval(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -250,7 +247,7 @@ class StockDateInterval PROTOBUF_FINAL :
   void _internal_set_end(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.StockDateInterval)
+  // @@protoc_insertion_point(class_scope:StockDateInterval)
  private:
   class _Internal;
 
@@ -266,7 +263,7 @@ class StockDateInterval PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class IndicatorSet PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.IndicatorSet) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:IndicatorSet) */ {
  public:
   inline IndicatorSet() : IndicatorSet(nullptr) {}
   virtual ~IndicatorSet();
@@ -355,7 +352,7 @@ class IndicatorSet PROTOBUF_FINAL :
   void InternalSwap(IndicatorSet* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.IndicatorSet";
+    return "IndicatorSet";
   }
   protected:
   explicit IndicatorSet(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -411,130 +408,130 @@ class IndicatorSet PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
       mutable_date_list();
 
-  // repeated .pb.KChart daily_list = 4;
+  // repeated .KChart daily_list = 4;
   int daily_list_size() const;
   private:
   int _internal_daily_list_size() const;
   public:
   void clear_daily_list();
-  ::pb::KChart* mutable_daily_list(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart >*
+  ::KChart* mutable_daily_list(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart >*
       mutable_daily_list();
   private:
-  const ::pb::KChart& _internal_daily_list(int index) const;
-  ::pb::KChart* _internal_add_daily_list();
+  const ::KChart& _internal_daily_list(int index) const;
+  ::KChart* _internal_add_daily_list();
   public:
-  const ::pb::KChart& daily_list(int index) const;
-  ::pb::KChart* add_daily_list();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart >&
+  const ::KChart& daily_list(int index) const;
+  ::KChart* add_daily_list();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart >&
       daily_list() const;
 
-  // repeated .pb.MA daily_ma_list = 5;
+  // repeated .MA daily_ma_list = 5;
   int daily_ma_list_size() const;
   private:
   int _internal_daily_ma_list_size() const;
   public:
   void clear_daily_ma_list();
-  ::pb::MA* mutable_daily_ma_list(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::MA >*
+  ::MA* mutable_daily_ma_list(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MA >*
       mutable_daily_ma_list();
   private:
-  const ::pb::MA& _internal_daily_ma_list(int index) const;
-  ::pb::MA* _internal_add_daily_ma_list();
+  const ::MA& _internal_daily_ma_list(int index) const;
+  ::MA* _internal_add_daily_ma_list();
   public:
-  const ::pb::MA& daily_ma_list(int index) const;
-  ::pb::MA* add_daily_ma_list();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::MA >&
+  const ::MA& daily_ma_list(int index) const;
+  ::MA* add_daily_ma_list();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MA >&
       daily_ma_list() const;
 
-  // repeated .pb.KChart weekly_list = 6;
+  // repeated .KChart weekly_list = 6;
   int weekly_list_size() const;
   private:
   int _internal_weekly_list_size() const;
   public:
   void clear_weekly_list();
-  ::pb::KChart* mutable_weekly_list(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart >*
+  ::KChart* mutable_weekly_list(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart >*
       mutable_weekly_list();
   private:
-  const ::pb::KChart& _internal_weekly_list(int index) const;
-  ::pb::KChart* _internal_add_weekly_list();
+  const ::KChart& _internal_weekly_list(int index) const;
+  ::KChart* _internal_add_weekly_list();
   public:
-  const ::pb::KChart& weekly_list(int index) const;
-  ::pb::KChart* add_weekly_list();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart >&
+  const ::KChart& weekly_list(int index) const;
+  ::KChart* add_weekly_list();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart >&
       weekly_list() const;
 
-  // repeated .pb.MA weekly_ma_list = 7;
+  // repeated .MA weekly_ma_list = 7;
   int weekly_ma_list_size() const;
   private:
   int _internal_weekly_ma_list_size() const;
   public:
   void clear_weekly_ma_list();
-  ::pb::MA* mutable_weekly_ma_list(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::MA >*
+  ::MA* mutable_weekly_ma_list(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MA >*
       mutable_weekly_ma_list();
   private:
-  const ::pb::MA& _internal_weekly_ma_list(int index) const;
-  ::pb::MA* _internal_add_weekly_ma_list();
+  const ::MA& _internal_weekly_ma_list(int index) const;
+  ::MA* _internal_add_weekly_ma_list();
   public:
-  const ::pb::MA& weekly_ma_list(int index) const;
-  ::pb::MA* add_weekly_ma_list();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::MA >&
+  const ::MA& weekly_ma_list(int index) const;
+  ::MA* add_weekly_ma_list();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MA >&
       weekly_ma_list() const;
 
-  // repeated .pb.TrueRange true_range_list = 8;
+  // repeated .TrueRange true_range_list = 8;
   int true_range_list_size() const;
   private:
   int _internal_true_range_list_size() const;
   public:
   void clear_true_range_list();
-  ::pb::TrueRange* mutable_true_range_list(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::TrueRange >*
+  ::TrueRange* mutable_true_range_list(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::TrueRange >*
       mutable_true_range_list();
   private:
-  const ::pb::TrueRange& _internal_true_range_list(int index) const;
-  ::pb::TrueRange* _internal_add_true_range_list();
+  const ::TrueRange& _internal_true_range_list(int index) const;
+  ::TrueRange* _internal_add_true_range_list();
   public:
-  const ::pb::TrueRange& true_range_list(int index) const;
-  ::pb::TrueRange* add_true_range_list();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::TrueRange >&
+  const ::TrueRange& true_range_list(int index) const;
+  ::TrueRange* add_true_range_list();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::TrueRange >&
       true_range_list() const;
 
-  // repeated .pb.Segment segment_list = 9;
+  // repeated .Segment segment_list = 9;
   int segment_list_size() const;
   private:
   int _internal_segment_list_size() const;
   public:
   void clear_segment_list();
-  ::pb::Segment* mutable_segment_list(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Segment >*
+  ::Segment* mutable_segment_list(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Segment >*
       mutable_segment_list();
   private:
-  const ::pb::Segment& _internal_segment_list(int index) const;
-  ::pb::Segment* _internal_add_segment_list();
+  const ::Segment& _internal_segment_list(int index) const;
+  ::Segment* _internal_add_segment_list();
   public:
-  const ::pb::Segment& segment_list(int index) const;
-  ::pb::Segment* add_segment_list();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Segment >&
+  const ::Segment& segment_list(int index) const;
+  ::Segment* add_segment_list();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Segment >&
       segment_list() const;
 
-  // repeated .pb.DailyMinute daily_minute_list = 10;
+  // repeated .DailyMinute daily_minute_list = 10;
   int daily_minute_list_size() const;
   private:
   int _internal_daily_minute_list_size() const;
   public:
   void clear_daily_minute_list();
-  ::pb::DailyMinute* mutable_daily_minute_list(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::DailyMinute >*
+  ::DailyMinute* mutable_daily_minute_list(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::DailyMinute >*
       mutable_daily_minute_list();
   private:
-  const ::pb::DailyMinute& _internal_daily_minute_list(int index) const;
-  ::pb::DailyMinute* _internal_add_daily_minute_list();
+  const ::DailyMinute& _internal_daily_minute_list(int index) const;
+  ::DailyMinute* _internal_add_daily_minute_list();
   public:
-  const ::pb::DailyMinute& daily_minute_list(int index) const;
-  ::pb::DailyMinute* add_daily_minute_list();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::DailyMinute >&
+  const ::DailyMinute& daily_minute_list(int index) const;
+  ::DailyMinute* add_daily_minute_list();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::DailyMinute >&
       daily_minute_list() const;
 
   // uint64 timestamp = 1;
@@ -555,7 +552,7 @@ class IndicatorSet PROTOBUF_FINAL :
   void _internal_set_version(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.IndicatorSet)
+  // @@protoc_insertion_point(class_scope:IndicatorSet)
  private:
   class _Internal;
 
@@ -564,13 +561,13 @@ class IndicatorSet PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 > date_list_;
   mutable std::atomic<int> _date_list_cached_byte_size_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart > daily_list_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::MA > daily_ma_list_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart > weekly_list_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::MA > weekly_ma_list_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::TrueRange > true_range_list_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Segment > segment_list_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::DailyMinute > daily_minute_list_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart > daily_list_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MA > daily_ma_list_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart > weekly_list_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MA > weekly_ma_list_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::TrueRange > true_range_list_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Segment > segment_list_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::DailyMinute > daily_minute_list_;
   ::PROTOBUF_NAMESPACE_ID::uint64 timestamp_;
   ::PROTOBUF_NAMESPACE_ID::uint64 version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -579,7 +576,7 @@ class IndicatorSet PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class FetchIndicatorResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.FetchIndicatorResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:FetchIndicatorResponse) */ {
  public:
   inline FetchIndicatorResponse() : FetchIndicatorResponse(nullptr) {}
   virtual ~FetchIndicatorResponse();
@@ -668,7 +665,7 @@ class FetchIndicatorResponse PROTOBUF_FINAL :
   void InternalSwap(FetchIndicatorResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.FetchIndicatorResponse";
+    return "FetchIndicatorResponse";
   }
   protected:
   explicit FetchIndicatorResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -694,58 +691,58 @@ class FetchIndicatorResponse PROTOBUF_FINAL :
     kResultFieldNumber = 1,
     kIndicatorSetFieldNumber = 2,
   };
-  // .pb.ResultInfo result = 1;
+  // .ResultInfo result = 1;
   bool has_result() const;
   private:
   bool _internal_has_result() const;
   public:
   void clear_result();
-  const ::pb::ResultInfo& result() const;
-  ::pb::ResultInfo* release_result();
-  ::pb::ResultInfo* mutable_result();
-  void set_allocated_result(::pb::ResultInfo* result);
+  const ::ResultInfo& result() const;
+  ::ResultInfo* release_result();
+  ::ResultInfo* mutable_result();
+  void set_allocated_result(::ResultInfo* result);
   private:
-  const ::pb::ResultInfo& _internal_result() const;
-  ::pb::ResultInfo* _internal_mutable_result();
+  const ::ResultInfo& _internal_result() const;
+  ::ResultInfo* _internal_mutable_result();
   public:
   void unsafe_arena_set_allocated_result(
-      ::pb::ResultInfo* result);
-  ::pb::ResultInfo* unsafe_arena_release_result();
+      ::ResultInfo* result);
+  ::ResultInfo* unsafe_arena_release_result();
 
-  // .pb.IndicatorSet indicator_set = 2;
+  // .IndicatorSet indicator_set = 2;
   bool has_indicator_set() const;
   private:
   bool _internal_has_indicator_set() const;
   public:
   void clear_indicator_set();
-  const ::pb::IndicatorSet& indicator_set() const;
-  ::pb::IndicatorSet* release_indicator_set();
-  ::pb::IndicatorSet* mutable_indicator_set();
-  void set_allocated_indicator_set(::pb::IndicatorSet* indicator_set);
+  const ::IndicatorSet& indicator_set() const;
+  ::IndicatorSet* release_indicator_set();
+  ::IndicatorSet* mutable_indicator_set();
+  void set_allocated_indicator_set(::IndicatorSet* indicator_set);
   private:
-  const ::pb::IndicatorSet& _internal_indicator_set() const;
-  ::pb::IndicatorSet* _internal_mutable_indicator_set();
+  const ::IndicatorSet& _internal_indicator_set() const;
+  ::IndicatorSet* _internal_mutable_indicator_set();
   public:
   void unsafe_arena_set_allocated_indicator_set(
-      ::pb::IndicatorSet* indicator_set);
-  ::pb::IndicatorSet* unsafe_arena_release_indicator_set();
+      ::IndicatorSet* indicator_set);
+  ::IndicatorSet* unsafe_arena_release_indicator_set();
 
-  // @@protoc_insertion_point(class_scope:pb.FetchIndicatorResponse)
+  // @@protoc_insertion_point(class_scope:FetchIndicatorResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::pb::ResultInfo* result_;
-  ::pb::IndicatorSet* indicator_set_;
+  ::ResultInfo* result_;
+  ::IndicatorSet* indicator_set_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pb_2fprophet_2eproto;
 };
 // -------------------------------------------------------------------
 
 class LiveSet PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.LiveSet) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:LiveSet) */ {
  public:
   inline LiveSet() : LiveSet(nullptr) {}
   virtual ~LiveSet();
@@ -834,7 +831,7 @@ class LiveSet PROTOBUF_FINAL :
   void InternalSwap(LiveSet* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.LiveSet";
+    return "LiveSet";
   }
   protected:
   explicit LiveSet(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -861,23 +858,23 @@ class LiveSet PROTOBUF_FINAL :
     kTimestampFieldNumber = 1,
     kVersionFieldNumber = 2,
   };
-  // .pb.KChart daily = 3;
+  // .KChart daily = 3;
   bool has_daily() const;
   private:
   bool _internal_has_daily() const;
   public:
   void clear_daily();
-  const ::pb::KChart& daily() const;
-  ::pb::KChart* release_daily();
-  ::pb::KChart* mutable_daily();
-  void set_allocated_daily(::pb::KChart* daily);
+  const ::KChart& daily() const;
+  ::KChart* release_daily();
+  ::KChart* mutable_daily();
+  void set_allocated_daily(::KChart* daily);
   private:
-  const ::pb::KChart& _internal_daily() const;
-  ::pb::KChart* _internal_mutable_daily();
+  const ::KChart& _internal_daily() const;
+  ::KChart* _internal_mutable_daily();
   public:
   void unsafe_arena_set_allocated_daily(
-      ::pb::KChart* daily);
-  ::pb::KChart* unsafe_arena_release_daily();
+      ::KChart* daily);
+  ::KChart* unsafe_arena_release_daily();
 
   // uint64 timestamp = 1;
   void clear_timestamp();
@@ -897,14 +894,14 @@ class LiveSet PROTOBUF_FINAL :
   void _internal_set_version(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.LiveSet)
+  // @@protoc_insertion_point(class_scope:LiveSet)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::pb::KChart* daily_;
+  ::KChart* daily_;
   ::PROTOBUF_NAMESPACE_ID::uint64 timestamp_;
   ::PROTOBUF_NAMESPACE_ID::uint64 version_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -913,7 +910,7 @@ class LiveSet PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class KChart PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.KChart) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:KChart) */ {
  public:
   inline KChart() : KChart(nullptr) {}
   virtual ~KChart();
@@ -1002,7 +999,7 @@ class KChart PROTOBUF_FINAL :
   void InternalSwap(KChart* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.KChart";
+    return "KChart";
   }
   protected:
   explicit KChart(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1197,7 +1194,7 @@ class KChart PROTOBUF_FINAL :
   void _internal_set_adjust_factor(double value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.KChart)
+  // @@protoc_insertion_point(class_scope:KChart)
  private:
   class _Internal;
 
@@ -1225,7 +1222,7 @@ class KChart PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class MA PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.MA) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:MA) */ {
  public:
   inline MA() : MA(nullptr) {}
   virtual ~MA();
@@ -1314,7 +1311,7 @@ class MA PROTOBUF_FINAL :
   void InternalSwap(MA* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.MA";
+    return "MA";
   }
   protected:
   explicit MA(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1422,7 +1419,7 @@ class MA PROTOBUF_FINAL :
   void _internal_set_last_60(double value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.MA)
+  // @@protoc_insertion_point(class_scope:MA)
  private:
   class _Internal;
 
@@ -1442,7 +1439,7 @@ class MA PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class TrueRange PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.TrueRange) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:TrueRange) */ {
  public:
   inline TrueRange() : TrueRange(nullptr) {}
   virtual ~TrueRange();
@@ -1531,7 +1528,7 @@ class TrueRange PROTOBUF_FINAL :
   void InternalSwap(TrueRange* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.TrueRange";
+    return "TrueRange";
   }
   protected:
   explicit TrueRange(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1629,7 +1626,7 @@ class TrueRange PROTOBUF_FINAL :
   void _internal_set_gentle_60(double value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.TrueRange)
+  // @@protoc_insertion_point(class_scope:TrueRange)
  private:
   class _Internal;
 
@@ -1648,7 +1645,7 @@ class TrueRange PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class Segment PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.Segment) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Segment) */ {
  public:
   inline Segment() : Segment(nullptr) {}
   virtual ~Segment();
@@ -1737,7 +1734,7 @@ class Segment PROTOBUF_FINAL :
   void InternalSwap(Segment* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.Segment";
+    return "Segment";
   }
   protected:
   explicit Segment(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1886,7 +1883,7 @@ class Segment PROTOBUF_FINAL :
   void _internal_set_high(double value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.Segment)
+  // @@protoc_insertion_point(class_scope:Segment)
  private:
   class _Internal;
 
@@ -1908,7 +1905,7 @@ class Segment PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class DailyMinute PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.DailyMinute) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:DailyMinute) */ {
  public:
   inline DailyMinute() : DailyMinute(nullptr) {}
   virtual ~DailyMinute();
@@ -1997,7 +1994,7 @@ class DailyMinute PROTOBUF_FINAL :
   void InternalSwap(DailyMinute* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.DailyMinute";
+    return "DailyMinute";
   }
   protected:
   explicit DailyMinute(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -2024,22 +2021,22 @@ class DailyMinute PROTOBUF_FINAL :
     kCodeFieldNumber = 1,
     kDateFieldNumber = 2,
   };
-  // repeated .pb.KChart minute_list = 3;
+  // repeated .KChart minute_list = 3;
   int minute_list_size() const;
   private:
   int _internal_minute_list_size() const;
   public:
   void clear_minute_list();
-  ::pb::KChart* mutable_minute_list(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart >*
+  ::KChart* mutable_minute_list(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart >*
       mutable_minute_list();
   private:
-  const ::pb::KChart& _internal_minute_list(int index) const;
-  ::pb::KChart* _internal_add_minute_list();
+  const ::KChart& _internal_minute_list(int index) const;
+  ::KChart* _internal_add_minute_list();
   public:
-  const ::pb::KChart& minute_list(int index) const;
-  ::pb::KChart* add_minute_list();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart >&
+  const ::KChart& minute_list(int index) const;
+  ::KChart* add_minute_list();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart >&
       minute_list() const;
 
   // string code = 1;
@@ -2074,14 +2071,14 @@ class DailyMinute PROTOBUF_FINAL :
   std::string* _internal_mutable_date();
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.DailyMinute)
+  // @@protoc_insertion_point(class_scope:DailyMinute)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart > minute_list_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart > minute_list_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr code_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr date_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -2103,15 +2100,15 @@ inline void StockDateInterval::clear_code() {
   code_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& StockDateInterval::code() const {
-  // @@protoc_insertion_point(field_get:pb.StockDateInterval.code)
+  // @@protoc_insertion_point(field_get:StockDateInterval.code)
   return _internal_code();
 }
 inline void StockDateInterval::set_code(const std::string& value) {
   _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:pb.StockDateInterval.code)
+  // @@protoc_insertion_point(field_set:StockDateInterval.code)
 }
 inline std::string* StockDateInterval::mutable_code() {
-  // @@protoc_insertion_point(field_mutable:pb.StockDateInterval.code)
+  // @@protoc_insertion_point(field_mutable:StockDateInterval.code)
   return _internal_mutable_code();
 }
 inline const std::string& StockDateInterval::_internal_code() const {
@@ -2125,28 +2122,28 @@ inline void StockDateInterval::set_code(std::string&& value) {
   
   code_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.StockDateInterval.code)
+  // @@protoc_insertion_point(field_set_rvalue:StockDateInterval.code)
 }
 inline void StockDateInterval::set_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.StockDateInterval.code)
+  // @@protoc_insertion_point(field_set_char:StockDateInterval.code)
 }
 inline void StockDateInterval::set_code(const char* value,
     size_t size) {
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.StockDateInterval.code)
+  // @@protoc_insertion_point(field_set_pointer:StockDateInterval.code)
 }
 inline std::string* StockDateInterval::_internal_mutable_code() {
   
   return code_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* StockDateInterval::release_code() {
-  // @@protoc_insertion_point(field_release:pb.StockDateInterval.code)
+  // @@protoc_insertion_point(field_release:StockDateInterval.code)
   return code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void StockDateInterval::set_allocated_code(std::string* code) {
@@ -2157,7 +2154,7 @@ inline void StockDateInterval::set_allocated_code(std::string* code) {
   }
   code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), code,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.StockDateInterval.code)
+  // @@protoc_insertion_point(field_set_allocated:StockDateInterval.code)
 }
 
 // uint32 start = 2;
@@ -2168,7 +2165,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 StockDateInterval::_internal_start() cons
   return start_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 StockDateInterval::start() const {
-  // @@protoc_insertion_point(field_get:pb.StockDateInterval.start)
+  // @@protoc_insertion_point(field_get:StockDateInterval.start)
   return _internal_start();
 }
 inline void StockDateInterval::_internal_set_start(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2177,7 +2174,7 @@ inline void StockDateInterval::_internal_set_start(::PROTOBUF_NAMESPACE_ID::uint
 }
 inline void StockDateInterval::set_start(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_start(value);
-  // @@protoc_insertion_point(field_set:pb.StockDateInterval.start)
+  // @@protoc_insertion_point(field_set:StockDateInterval.start)
 }
 
 // uint32 end = 3;
@@ -2188,7 +2185,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 StockDateInterval::_internal_end() const 
   return end_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 StockDateInterval::end() const {
-  // @@protoc_insertion_point(field_get:pb.StockDateInterval.end)
+  // @@protoc_insertion_point(field_get:StockDateInterval.end)
   return _internal_end();
 }
 inline void StockDateInterval::_internal_set_end(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -2197,7 +2194,7 @@ inline void StockDateInterval::_internal_set_end(::PROTOBUF_NAMESPACE_ID::uint32
 }
 inline void StockDateInterval::set_end(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_end(value);
-  // @@protoc_insertion_point(field_set:pb.StockDateInterval.end)
+  // @@protoc_insertion_point(field_set:StockDateInterval.end)
 }
 
 // -------------------------------------------------------------------
@@ -2212,7 +2209,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint64 IndicatorSet::_internal_timestamp() const
   return timestamp_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint64 IndicatorSet::timestamp() const {
-  // @@protoc_insertion_point(field_get:pb.IndicatorSet.timestamp)
+  // @@protoc_insertion_point(field_get:IndicatorSet.timestamp)
   return _internal_timestamp();
 }
 inline void IndicatorSet::_internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
@@ -2221,7 +2218,7 @@ inline void IndicatorSet::_internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::uint6
 }
 inline void IndicatorSet::set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:pb.IndicatorSet.timestamp)
+  // @@protoc_insertion_point(field_set:IndicatorSet.timestamp)
 }
 
 // uint64 version = 2;
@@ -2232,7 +2229,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint64 IndicatorSet::_internal_version() const {
   return version_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint64 IndicatorSet::version() const {
-  // @@protoc_insertion_point(field_get:pb.IndicatorSet.version)
+  // @@protoc_insertion_point(field_get:IndicatorSet.version)
   return _internal_version();
 }
 inline void IndicatorSet::_internal_set_version(::PROTOBUF_NAMESPACE_ID::uint64 value) {
@@ -2241,7 +2238,7 @@ inline void IndicatorSet::_internal_set_version(::PROTOBUF_NAMESPACE_ID::uint64 
 }
 inline void IndicatorSet::set_version(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_version(value);
-  // @@protoc_insertion_point(field_set:pb.IndicatorSet.version)
+  // @@protoc_insertion_point(field_set:IndicatorSet.version)
 }
 
 // repeated uint32 date_list = 3;
@@ -2258,19 +2255,19 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 IndicatorSet::_internal_date_list(int ind
   return date_list_.Get(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 IndicatorSet::date_list(int index) const {
-  // @@protoc_insertion_point(field_get:pb.IndicatorSet.date_list)
+  // @@protoc_insertion_point(field_get:IndicatorSet.date_list)
   return _internal_date_list(index);
 }
 inline void IndicatorSet::set_date_list(int index, ::PROTOBUF_NAMESPACE_ID::uint32 value) {
   date_list_.Set(index, value);
-  // @@protoc_insertion_point(field_set:pb.IndicatorSet.date_list)
+  // @@protoc_insertion_point(field_set:IndicatorSet.date_list)
 }
 inline void IndicatorSet::_internal_add_date_list(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   date_list_.Add(value);
 }
 inline void IndicatorSet::add_date_list(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_add_date_list(value);
-  // @@protoc_insertion_point(field_add:pb.IndicatorSet.date_list)
+  // @@protoc_insertion_point(field_add:IndicatorSet.date_list)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
 IndicatorSet::_internal_date_list() const {
@@ -2278,7 +2275,7 @@ IndicatorSet::_internal_date_list() const {
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >&
 IndicatorSet::date_list() const {
-  // @@protoc_insertion_point(field_list:pb.IndicatorSet.date_list)
+  // @@protoc_insertion_point(field_list:IndicatorSet.date_list)
   return _internal_date_list();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
@@ -2287,11 +2284,11 @@ IndicatorSet::_internal_mutable_date_list() {
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::uint32 >*
 IndicatorSet::mutable_date_list() {
-  // @@protoc_insertion_point(field_mutable_list:pb.IndicatorSet.date_list)
+  // @@protoc_insertion_point(field_mutable_list:IndicatorSet.date_list)
   return _internal_mutable_date_list();
 }
 
-// repeated .pb.KChart daily_list = 4;
+// repeated .KChart daily_list = 4;
 inline int IndicatorSet::_internal_daily_list_size() const {
   return daily_list_.size();
 }
@@ -2301,36 +2298,36 @@ inline int IndicatorSet::daily_list_size() const {
 inline void IndicatorSet::clear_daily_list() {
   daily_list_.Clear();
 }
-inline ::pb::KChart* IndicatorSet::mutable_daily_list(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.IndicatorSet.daily_list)
+inline ::KChart* IndicatorSet::mutable_daily_list(int index) {
+  // @@protoc_insertion_point(field_mutable:IndicatorSet.daily_list)
   return daily_list_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart >*
 IndicatorSet::mutable_daily_list() {
-  // @@protoc_insertion_point(field_mutable_list:pb.IndicatorSet.daily_list)
+  // @@protoc_insertion_point(field_mutable_list:IndicatorSet.daily_list)
   return &daily_list_;
 }
-inline const ::pb::KChart& IndicatorSet::_internal_daily_list(int index) const {
+inline const ::KChart& IndicatorSet::_internal_daily_list(int index) const {
   return daily_list_.Get(index);
 }
-inline const ::pb::KChart& IndicatorSet::daily_list(int index) const {
-  // @@protoc_insertion_point(field_get:pb.IndicatorSet.daily_list)
+inline const ::KChart& IndicatorSet::daily_list(int index) const {
+  // @@protoc_insertion_point(field_get:IndicatorSet.daily_list)
   return _internal_daily_list(index);
 }
-inline ::pb::KChart* IndicatorSet::_internal_add_daily_list() {
+inline ::KChart* IndicatorSet::_internal_add_daily_list() {
   return daily_list_.Add();
 }
-inline ::pb::KChart* IndicatorSet::add_daily_list() {
-  // @@protoc_insertion_point(field_add:pb.IndicatorSet.daily_list)
+inline ::KChart* IndicatorSet::add_daily_list() {
+  // @@protoc_insertion_point(field_add:IndicatorSet.daily_list)
   return _internal_add_daily_list();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart >&
 IndicatorSet::daily_list() const {
-  // @@protoc_insertion_point(field_list:pb.IndicatorSet.daily_list)
+  // @@protoc_insertion_point(field_list:IndicatorSet.daily_list)
   return daily_list_;
 }
 
-// repeated .pb.MA daily_ma_list = 5;
+// repeated .MA daily_ma_list = 5;
 inline int IndicatorSet::_internal_daily_ma_list_size() const {
   return daily_ma_list_.size();
 }
@@ -2340,36 +2337,36 @@ inline int IndicatorSet::daily_ma_list_size() const {
 inline void IndicatorSet::clear_daily_ma_list() {
   daily_ma_list_.Clear();
 }
-inline ::pb::MA* IndicatorSet::mutable_daily_ma_list(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.IndicatorSet.daily_ma_list)
+inline ::MA* IndicatorSet::mutable_daily_ma_list(int index) {
+  // @@protoc_insertion_point(field_mutable:IndicatorSet.daily_ma_list)
   return daily_ma_list_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::MA >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MA >*
 IndicatorSet::mutable_daily_ma_list() {
-  // @@protoc_insertion_point(field_mutable_list:pb.IndicatorSet.daily_ma_list)
+  // @@protoc_insertion_point(field_mutable_list:IndicatorSet.daily_ma_list)
   return &daily_ma_list_;
 }
-inline const ::pb::MA& IndicatorSet::_internal_daily_ma_list(int index) const {
+inline const ::MA& IndicatorSet::_internal_daily_ma_list(int index) const {
   return daily_ma_list_.Get(index);
 }
-inline const ::pb::MA& IndicatorSet::daily_ma_list(int index) const {
-  // @@protoc_insertion_point(field_get:pb.IndicatorSet.daily_ma_list)
+inline const ::MA& IndicatorSet::daily_ma_list(int index) const {
+  // @@protoc_insertion_point(field_get:IndicatorSet.daily_ma_list)
   return _internal_daily_ma_list(index);
 }
-inline ::pb::MA* IndicatorSet::_internal_add_daily_ma_list() {
+inline ::MA* IndicatorSet::_internal_add_daily_ma_list() {
   return daily_ma_list_.Add();
 }
-inline ::pb::MA* IndicatorSet::add_daily_ma_list() {
-  // @@protoc_insertion_point(field_add:pb.IndicatorSet.daily_ma_list)
+inline ::MA* IndicatorSet::add_daily_ma_list() {
+  // @@protoc_insertion_point(field_add:IndicatorSet.daily_ma_list)
   return _internal_add_daily_ma_list();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::MA >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MA >&
 IndicatorSet::daily_ma_list() const {
-  // @@protoc_insertion_point(field_list:pb.IndicatorSet.daily_ma_list)
+  // @@protoc_insertion_point(field_list:IndicatorSet.daily_ma_list)
   return daily_ma_list_;
 }
 
-// repeated .pb.KChart weekly_list = 6;
+// repeated .KChart weekly_list = 6;
 inline int IndicatorSet::_internal_weekly_list_size() const {
   return weekly_list_.size();
 }
@@ -2379,36 +2376,36 @@ inline int IndicatorSet::weekly_list_size() const {
 inline void IndicatorSet::clear_weekly_list() {
   weekly_list_.Clear();
 }
-inline ::pb::KChart* IndicatorSet::mutable_weekly_list(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.IndicatorSet.weekly_list)
+inline ::KChart* IndicatorSet::mutable_weekly_list(int index) {
+  // @@protoc_insertion_point(field_mutable:IndicatorSet.weekly_list)
   return weekly_list_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart >*
 IndicatorSet::mutable_weekly_list() {
-  // @@protoc_insertion_point(field_mutable_list:pb.IndicatorSet.weekly_list)
+  // @@protoc_insertion_point(field_mutable_list:IndicatorSet.weekly_list)
   return &weekly_list_;
 }
-inline const ::pb::KChart& IndicatorSet::_internal_weekly_list(int index) const {
+inline const ::KChart& IndicatorSet::_internal_weekly_list(int index) const {
   return weekly_list_.Get(index);
 }
-inline const ::pb::KChart& IndicatorSet::weekly_list(int index) const {
-  // @@protoc_insertion_point(field_get:pb.IndicatorSet.weekly_list)
+inline const ::KChart& IndicatorSet::weekly_list(int index) const {
+  // @@protoc_insertion_point(field_get:IndicatorSet.weekly_list)
   return _internal_weekly_list(index);
 }
-inline ::pb::KChart* IndicatorSet::_internal_add_weekly_list() {
+inline ::KChart* IndicatorSet::_internal_add_weekly_list() {
   return weekly_list_.Add();
 }
-inline ::pb::KChart* IndicatorSet::add_weekly_list() {
-  // @@protoc_insertion_point(field_add:pb.IndicatorSet.weekly_list)
+inline ::KChart* IndicatorSet::add_weekly_list() {
+  // @@protoc_insertion_point(field_add:IndicatorSet.weekly_list)
   return _internal_add_weekly_list();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart >&
 IndicatorSet::weekly_list() const {
-  // @@protoc_insertion_point(field_list:pb.IndicatorSet.weekly_list)
+  // @@protoc_insertion_point(field_list:IndicatorSet.weekly_list)
   return weekly_list_;
 }
 
-// repeated .pb.MA weekly_ma_list = 7;
+// repeated .MA weekly_ma_list = 7;
 inline int IndicatorSet::_internal_weekly_ma_list_size() const {
   return weekly_ma_list_.size();
 }
@@ -2418,36 +2415,36 @@ inline int IndicatorSet::weekly_ma_list_size() const {
 inline void IndicatorSet::clear_weekly_ma_list() {
   weekly_ma_list_.Clear();
 }
-inline ::pb::MA* IndicatorSet::mutable_weekly_ma_list(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.IndicatorSet.weekly_ma_list)
+inline ::MA* IndicatorSet::mutable_weekly_ma_list(int index) {
+  // @@protoc_insertion_point(field_mutable:IndicatorSet.weekly_ma_list)
   return weekly_ma_list_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::MA >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MA >*
 IndicatorSet::mutable_weekly_ma_list() {
-  // @@protoc_insertion_point(field_mutable_list:pb.IndicatorSet.weekly_ma_list)
+  // @@protoc_insertion_point(field_mutable_list:IndicatorSet.weekly_ma_list)
   return &weekly_ma_list_;
 }
-inline const ::pb::MA& IndicatorSet::_internal_weekly_ma_list(int index) const {
+inline const ::MA& IndicatorSet::_internal_weekly_ma_list(int index) const {
   return weekly_ma_list_.Get(index);
 }
-inline const ::pb::MA& IndicatorSet::weekly_ma_list(int index) const {
-  // @@protoc_insertion_point(field_get:pb.IndicatorSet.weekly_ma_list)
+inline const ::MA& IndicatorSet::weekly_ma_list(int index) const {
+  // @@protoc_insertion_point(field_get:IndicatorSet.weekly_ma_list)
   return _internal_weekly_ma_list(index);
 }
-inline ::pb::MA* IndicatorSet::_internal_add_weekly_ma_list() {
+inline ::MA* IndicatorSet::_internal_add_weekly_ma_list() {
   return weekly_ma_list_.Add();
 }
-inline ::pb::MA* IndicatorSet::add_weekly_ma_list() {
-  // @@protoc_insertion_point(field_add:pb.IndicatorSet.weekly_ma_list)
+inline ::MA* IndicatorSet::add_weekly_ma_list() {
+  // @@protoc_insertion_point(field_add:IndicatorSet.weekly_ma_list)
   return _internal_add_weekly_ma_list();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::MA >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MA >&
 IndicatorSet::weekly_ma_list() const {
-  // @@protoc_insertion_point(field_list:pb.IndicatorSet.weekly_ma_list)
+  // @@protoc_insertion_point(field_list:IndicatorSet.weekly_ma_list)
   return weekly_ma_list_;
 }
 
-// repeated .pb.TrueRange true_range_list = 8;
+// repeated .TrueRange true_range_list = 8;
 inline int IndicatorSet::_internal_true_range_list_size() const {
   return true_range_list_.size();
 }
@@ -2457,36 +2454,36 @@ inline int IndicatorSet::true_range_list_size() const {
 inline void IndicatorSet::clear_true_range_list() {
   true_range_list_.Clear();
 }
-inline ::pb::TrueRange* IndicatorSet::mutable_true_range_list(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.IndicatorSet.true_range_list)
+inline ::TrueRange* IndicatorSet::mutable_true_range_list(int index) {
+  // @@protoc_insertion_point(field_mutable:IndicatorSet.true_range_list)
   return true_range_list_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::TrueRange >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::TrueRange >*
 IndicatorSet::mutable_true_range_list() {
-  // @@protoc_insertion_point(field_mutable_list:pb.IndicatorSet.true_range_list)
+  // @@protoc_insertion_point(field_mutable_list:IndicatorSet.true_range_list)
   return &true_range_list_;
 }
-inline const ::pb::TrueRange& IndicatorSet::_internal_true_range_list(int index) const {
+inline const ::TrueRange& IndicatorSet::_internal_true_range_list(int index) const {
   return true_range_list_.Get(index);
 }
-inline const ::pb::TrueRange& IndicatorSet::true_range_list(int index) const {
-  // @@protoc_insertion_point(field_get:pb.IndicatorSet.true_range_list)
+inline const ::TrueRange& IndicatorSet::true_range_list(int index) const {
+  // @@protoc_insertion_point(field_get:IndicatorSet.true_range_list)
   return _internal_true_range_list(index);
 }
-inline ::pb::TrueRange* IndicatorSet::_internal_add_true_range_list() {
+inline ::TrueRange* IndicatorSet::_internal_add_true_range_list() {
   return true_range_list_.Add();
 }
-inline ::pb::TrueRange* IndicatorSet::add_true_range_list() {
-  // @@protoc_insertion_point(field_add:pb.IndicatorSet.true_range_list)
+inline ::TrueRange* IndicatorSet::add_true_range_list() {
+  // @@protoc_insertion_point(field_add:IndicatorSet.true_range_list)
   return _internal_add_true_range_list();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::TrueRange >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::TrueRange >&
 IndicatorSet::true_range_list() const {
-  // @@protoc_insertion_point(field_list:pb.IndicatorSet.true_range_list)
+  // @@protoc_insertion_point(field_list:IndicatorSet.true_range_list)
   return true_range_list_;
 }
 
-// repeated .pb.Segment segment_list = 9;
+// repeated .Segment segment_list = 9;
 inline int IndicatorSet::_internal_segment_list_size() const {
   return segment_list_.size();
 }
@@ -2496,36 +2493,36 @@ inline int IndicatorSet::segment_list_size() const {
 inline void IndicatorSet::clear_segment_list() {
   segment_list_.Clear();
 }
-inline ::pb::Segment* IndicatorSet::mutable_segment_list(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.IndicatorSet.segment_list)
+inline ::Segment* IndicatorSet::mutable_segment_list(int index) {
+  // @@protoc_insertion_point(field_mutable:IndicatorSet.segment_list)
   return segment_list_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Segment >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Segment >*
 IndicatorSet::mutable_segment_list() {
-  // @@protoc_insertion_point(field_mutable_list:pb.IndicatorSet.segment_list)
+  // @@protoc_insertion_point(field_mutable_list:IndicatorSet.segment_list)
   return &segment_list_;
 }
-inline const ::pb::Segment& IndicatorSet::_internal_segment_list(int index) const {
+inline const ::Segment& IndicatorSet::_internal_segment_list(int index) const {
   return segment_list_.Get(index);
 }
-inline const ::pb::Segment& IndicatorSet::segment_list(int index) const {
-  // @@protoc_insertion_point(field_get:pb.IndicatorSet.segment_list)
+inline const ::Segment& IndicatorSet::segment_list(int index) const {
+  // @@protoc_insertion_point(field_get:IndicatorSet.segment_list)
   return _internal_segment_list(index);
 }
-inline ::pb::Segment* IndicatorSet::_internal_add_segment_list() {
+inline ::Segment* IndicatorSet::_internal_add_segment_list() {
   return segment_list_.Add();
 }
-inline ::pb::Segment* IndicatorSet::add_segment_list() {
-  // @@protoc_insertion_point(field_add:pb.IndicatorSet.segment_list)
+inline ::Segment* IndicatorSet::add_segment_list() {
+  // @@protoc_insertion_point(field_add:IndicatorSet.segment_list)
   return _internal_add_segment_list();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Segment >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Segment >&
 IndicatorSet::segment_list() const {
-  // @@protoc_insertion_point(field_list:pb.IndicatorSet.segment_list)
+  // @@protoc_insertion_point(field_list:IndicatorSet.segment_list)
   return segment_list_;
 }
 
-// repeated .pb.DailyMinute daily_minute_list = 10;
+// repeated .DailyMinute daily_minute_list = 10;
 inline int IndicatorSet::_internal_daily_minute_list_size() const {
   return daily_minute_list_.size();
 }
@@ -2535,32 +2532,32 @@ inline int IndicatorSet::daily_minute_list_size() const {
 inline void IndicatorSet::clear_daily_minute_list() {
   daily_minute_list_.Clear();
 }
-inline ::pb::DailyMinute* IndicatorSet::mutable_daily_minute_list(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.IndicatorSet.daily_minute_list)
+inline ::DailyMinute* IndicatorSet::mutable_daily_minute_list(int index) {
+  // @@protoc_insertion_point(field_mutable:IndicatorSet.daily_minute_list)
   return daily_minute_list_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::DailyMinute >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::DailyMinute >*
 IndicatorSet::mutable_daily_minute_list() {
-  // @@protoc_insertion_point(field_mutable_list:pb.IndicatorSet.daily_minute_list)
+  // @@protoc_insertion_point(field_mutable_list:IndicatorSet.daily_minute_list)
   return &daily_minute_list_;
 }
-inline const ::pb::DailyMinute& IndicatorSet::_internal_daily_minute_list(int index) const {
+inline const ::DailyMinute& IndicatorSet::_internal_daily_minute_list(int index) const {
   return daily_minute_list_.Get(index);
 }
-inline const ::pb::DailyMinute& IndicatorSet::daily_minute_list(int index) const {
-  // @@protoc_insertion_point(field_get:pb.IndicatorSet.daily_minute_list)
+inline const ::DailyMinute& IndicatorSet::daily_minute_list(int index) const {
+  // @@protoc_insertion_point(field_get:IndicatorSet.daily_minute_list)
   return _internal_daily_minute_list(index);
 }
-inline ::pb::DailyMinute* IndicatorSet::_internal_add_daily_minute_list() {
+inline ::DailyMinute* IndicatorSet::_internal_add_daily_minute_list() {
   return daily_minute_list_.Add();
 }
-inline ::pb::DailyMinute* IndicatorSet::add_daily_minute_list() {
-  // @@protoc_insertion_point(field_add:pb.IndicatorSet.daily_minute_list)
+inline ::DailyMinute* IndicatorSet::add_daily_minute_list() {
+  // @@protoc_insertion_point(field_add:IndicatorSet.daily_minute_list)
   return _internal_add_daily_minute_list();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::DailyMinute >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::DailyMinute >&
 IndicatorSet::daily_minute_list() const {
-  // @@protoc_insertion_point(field_list:pb.IndicatorSet.daily_minute_list)
+  // @@protoc_insertion_point(field_list:IndicatorSet.daily_minute_list)
   return daily_minute_list_;
 }
 
@@ -2568,24 +2565,24 @@ IndicatorSet::daily_minute_list() const {
 
 // FetchIndicatorResponse
 
-// .pb.ResultInfo result = 1;
+// .ResultInfo result = 1;
 inline bool FetchIndicatorResponse::_internal_has_result() const {
   return this != internal_default_instance() && result_ != nullptr;
 }
 inline bool FetchIndicatorResponse::has_result() const {
   return _internal_has_result();
 }
-inline const ::pb::ResultInfo& FetchIndicatorResponse::_internal_result() const {
-  const ::pb::ResultInfo* p = result_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::pb::ResultInfo*>(
-      &::pb::_ResultInfo_default_instance_);
+inline const ::ResultInfo& FetchIndicatorResponse::_internal_result() const {
+  const ::ResultInfo* p = result_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::ResultInfo*>(
+      &::_ResultInfo_default_instance_);
 }
-inline const ::pb::ResultInfo& FetchIndicatorResponse::result() const {
-  // @@protoc_insertion_point(field_get:pb.FetchIndicatorResponse.result)
+inline const ::ResultInfo& FetchIndicatorResponse::result() const {
+  // @@protoc_insertion_point(field_get:FetchIndicatorResponse.result)
   return _internal_result();
 }
 inline void FetchIndicatorResponse::unsafe_arena_set_allocated_result(
-    ::pb::ResultInfo* result) {
+    ::ResultInfo* result) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(result_);
   }
@@ -2595,37 +2592,37 @@ inline void FetchIndicatorResponse::unsafe_arena_set_allocated_result(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.FetchIndicatorResponse.result)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:FetchIndicatorResponse.result)
 }
-inline ::pb::ResultInfo* FetchIndicatorResponse::release_result() {
+inline ::ResultInfo* FetchIndicatorResponse::release_result() {
   
-  ::pb::ResultInfo* temp = result_;
+  ::ResultInfo* temp = result_;
   result_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::pb::ResultInfo* FetchIndicatorResponse::unsafe_arena_release_result() {
-  // @@protoc_insertion_point(field_release:pb.FetchIndicatorResponse.result)
+inline ::ResultInfo* FetchIndicatorResponse::unsafe_arena_release_result() {
+  // @@protoc_insertion_point(field_release:FetchIndicatorResponse.result)
   
-  ::pb::ResultInfo* temp = result_;
+  ::ResultInfo* temp = result_;
   result_ = nullptr;
   return temp;
 }
-inline ::pb::ResultInfo* FetchIndicatorResponse::_internal_mutable_result() {
+inline ::ResultInfo* FetchIndicatorResponse::_internal_mutable_result() {
   
   if (result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pb::ResultInfo>(GetArena());
+    auto* p = CreateMaybeMessage<::ResultInfo>(GetArena());
     result_ = p;
   }
   return result_;
 }
-inline ::pb::ResultInfo* FetchIndicatorResponse::mutable_result() {
-  // @@protoc_insertion_point(field_mutable:pb.FetchIndicatorResponse.result)
+inline ::ResultInfo* FetchIndicatorResponse::mutable_result() {
+  // @@protoc_insertion_point(field_mutable:FetchIndicatorResponse.result)
   return _internal_mutable_result();
 }
-inline void FetchIndicatorResponse::set_allocated_result(::pb::ResultInfo* result) {
+inline void FetchIndicatorResponse::set_allocated_result(::ResultInfo* result) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(result_);
@@ -2642,10 +2639,10 @@ inline void FetchIndicatorResponse::set_allocated_result(::pb::ResultInfo* resul
     
   }
   result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:pb.FetchIndicatorResponse.result)
+  // @@protoc_insertion_point(field_set_allocated:FetchIndicatorResponse.result)
 }
 
-// .pb.IndicatorSet indicator_set = 2;
+// .IndicatorSet indicator_set = 2;
 inline bool FetchIndicatorResponse::_internal_has_indicator_set() const {
   return this != internal_default_instance() && indicator_set_ != nullptr;
 }
@@ -2658,17 +2655,17 @@ inline void FetchIndicatorResponse::clear_indicator_set() {
   }
   indicator_set_ = nullptr;
 }
-inline const ::pb::IndicatorSet& FetchIndicatorResponse::_internal_indicator_set() const {
-  const ::pb::IndicatorSet* p = indicator_set_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::pb::IndicatorSet*>(
-      &::pb::_IndicatorSet_default_instance_);
+inline const ::IndicatorSet& FetchIndicatorResponse::_internal_indicator_set() const {
+  const ::IndicatorSet* p = indicator_set_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::IndicatorSet*>(
+      &::_IndicatorSet_default_instance_);
 }
-inline const ::pb::IndicatorSet& FetchIndicatorResponse::indicator_set() const {
-  // @@protoc_insertion_point(field_get:pb.FetchIndicatorResponse.indicator_set)
+inline const ::IndicatorSet& FetchIndicatorResponse::indicator_set() const {
+  // @@protoc_insertion_point(field_get:FetchIndicatorResponse.indicator_set)
   return _internal_indicator_set();
 }
 inline void FetchIndicatorResponse::unsafe_arena_set_allocated_indicator_set(
-    ::pb::IndicatorSet* indicator_set) {
+    ::IndicatorSet* indicator_set) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(indicator_set_);
   }
@@ -2678,37 +2675,37 @@ inline void FetchIndicatorResponse::unsafe_arena_set_allocated_indicator_set(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.FetchIndicatorResponse.indicator_set)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:FetchIndicatorResponse.indicator_set)
 }
-inline ::pb::IndicatorSet* FetchIndicatorResponse::release_indicator_set() {
+inline ::IndicatorSet* FetchIndicatorResponse::release_indicator_set() {
   
-  ::pb::IndicatorSet* temp = indicator_set_;
+  ::IndicatorSet* temp = indicator_set_;
   indicator_set_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::pb::IndicatorSet* FetchIndicatorResponse::unsafe_arena_release_indicator_set() {
-  // @@protoc_insertion_point(field_release:pb.FetchIndicatorResponse.indicator_set)
+inline ::IndicatorSet* FetchIndicatorResponse::unsafe_arena_release_indicator_set() {
+  // @@protoc_insertion_point(field_release:FetchIndicatorResponse.indicator_set)
   
-  ::pb::IndicatorSet* temp = indicator_set_;
+  ::IndicatorSet* temp = indicator_set_;
   indicator_set_ = nullptr;
   return temp;
 }
-inline ::pb::IndicatorSet* FetchIndicatorResponse::_internal_mutable_indicator_set() {
+inline ::IndicatorSet* FetchIndicatorResponse::_internal_mutable_indicator_set() {
   
   if (indicator_set_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pb::IndicatorSet>(GetArena());
+    auto* p = CreateMaybeMessage<::IndicatorSet>(GetArena());
     indicator_set_ = p;
   }
   return indicator_set_;
 }
-inline ::pb::IndicatorSet* FetchIndicatorResponse::mutable_indicator_set() {
-  // @@protoc_insertion_point(field_mutable:pb.FetchIndicatorResponse.indicator_set)
+inline ::IndicatorSet* FetchIndicatorResponse::mutable_indicator_set() {
+  // @@protoc_insertion_point(field_mutable:FetchIndicatorResponse.indicator_set)
   return _internal_mutable_indicator_set();
 }
-inline void FetchIndicatorResponse::set_allocated_indicator_set(::pb::IndicatorSet* indicator_set) {
+inline void FetchIndicatorResponse::set_allocated_indicator_set(::IndicatorSet* indicator_set) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete indicator_set_;
@@ -2725,7 +2722,7 @@ inline void FetchIndicatorResponse::set_allocated_indicator_set(::pb::IndicatorS
     
   }
   indicator_set_ = indicator_set;
-  // @@protoc_insertion_point(field_set_allocated:pb.FetchIndicatorResponse.indicator_set)
+  // @@protoc_insertion_point(field_set_allocated:FetchIndicatorResponse.indicator_set)
 }
 
 // -------------------------------------------------------------------
@@ -2740,7 +2737,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint64 LiveSet::_internal_timestamp() const {
   return timestamp_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint64 LiveSet::timestamp() const {
-  // @@protoc_insertion_point(field_get:pb.LiveSet.timestamp)
+  // @@protoc_insertion_point(field_get:LiveSet.timestamp)
   return _internal_timestamp();
 }
 inline void LiveSet::_internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
@@ -2749,7 +2746,7 @@ inline void LiveSet::_internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 val
 }
 inline void LiveSet::set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:pb.LiveSet.timestamp)
+  // @@protoc_insertion_point(field_set:LiveSet.timestamp)
 }
 
 // uint64 version = 2;
@@ -2760,7 +2757,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint64 LiveSet::_internal_version() const {
   return version_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint64 LiveSet::version() const {
-  // @@protoc_insertion_point(field_get:pb.LiveSet.version)
+  // @@protoc_insertion_point(field_get:LiveSet.version)
   return _internal_version();
 }
 inline void LiveSet::_internal_set_version(::PROTOBUF_NAMESPACE_ID::uint64 value) {
@@ -2769,10 +2766,10 @@ inline void LiveSet::_internal_set_version(::PROTOBUF_NAMESPACE_ID::uint64 value
 }
 inline void LiveSet::set_version(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_version(value);
-  // @@protoc_insertion_point(field_set:pb.LiveSet.version)
+  // @@protoc_insertion_point(field_set:LiveSet.version)
 }
 
-// .pb.KChart daily = 3;
+// .KChart daily = 3;
 inline bool LiveSet::_internal_has_daily() const {
   return this != internal_default_instance() && daily_ != nullptr;
 }
@@ -2785,17 +2782,17 @@ inline void LiveSet::clear_daily() {
   }
   daily_ = nullptr;
 }
-inline const ::pb::KChart& LiveSet::_internal_daily() const {
-  const ::pb::KChart* p = daily_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::pb::KChart*>(
-      &::pb::_KChart_default_instance_);
+inline const ::KChart& LiveSet::_internal_daily() const {
+  const ::KChart* p = daily_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::KChart*>(
+      &::_KChart_default_instance_);
 }
-inline const ::pb::KChart& LiveSet::daily() const {
-  // @@protoc_insertion_point(field_get:pb.LiveSet.daily)
+inline const ::KChart& LiveSet::daily() const {
+  // @@protoc_insertion_point(field_get:LiveSet.daily)
   return _internal_daily();
 }
 inline void LiveSet::unsafe_arena_set_allocated_daily(
-    ::pb::KChart* daily) {
+    ::KChart* daily) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(daily_);
   }
@@ -2805,37 +2802,37 @@ inline void LiveSet::unsafe_arena_set_allocated_daily(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.LiveSet.daily)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:LiveSet.daily)
 }
-inline ::pb::KChart* LiveSet::release_daily() {
+inline ::KChart* LiveSet::release_daily() {
   
-  ::pb::KChart* temp = daily_;
+  ::KChart* temp = daily_;
   daily_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::pb::KChart* LiveSet::unsafe_arena_release_daily() {
-  // @@protoc_insertion_point(field_release:pb.LiveSet.daily)
+inline ::KChart* LiveSet::unsafe_arena_release_daily() {
+  // @@protoc_insertion_point(field_release:LiveSet.daily)
   
-  ::pb::KChart* temp = daily_;
+  ::KChart* temp = daily_;
   daily_ = nullptr;
   return temp;
 }
-inline ::pb::KChart* LiveSet::_internal_mutable_daily() {
+inline ::KChart* LiveSet::_internal_mutable_daily() {
   
   if (daily_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pb::KChart>(GetArena());
+    auto* p = CreateMaybeMessage<::KChart>(GetArena());
     daily_ = p;
   }
   return daily_;
 }
-inline ::pb::KChart* LiveSet::mutable_daily() {
-  // @@protoc_insertion_point(field_mutable:pb.LiveSet.daily)
+inline ::KChart* LiveSet::mutable_daily() {
+  // @@protoc_insertion_point(field_mutable:LiveSet.daily)
   return _internal_mutable_daily();
 }
-inline void LiveSet::set_allocated_daily(::pb::KChart* daily) {
+inline void LiveSet::set_allocated_daily(::KChart* daily) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete daily_;
@@ -2852,7 +2849,7 @@ inline void LiveSet::set_allocated_daily(::pb::KChart* daily) {
     
   }
   daily_ = daily;
-  // @@protoc_insertion_point(field_set_allocated:pb.LiveSet.daily)
+  // @@protoc_insertion_point(field_set_allocated:LiveSet.daily)
 }
 
 // -------------------------------------------------------------------
@@ -2864,15 +2861,15 @@ inline void KChart::clear_code() {
   code_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& KChart::code() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.code)
+  // @@protoc_insertion_point(field_get:KChart.code)
   return _internal_code();
 }
 inline void KChart::set_code(const std::string& value) {
   _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.code)
+  // @@protoc_insertion_point(field_set:KChart.code)
 }
 inline std::string* KChart::mutable_code() {
-  // @@protoc_insertion_point(field_mutable:pb.KChart.code)
+  // @@protoc_insertion_point(field_mutable:KChart.code)
   return _internal_mutable_code();
 }
 inline const std::string& KChart::_internal_code() const {
@@ -2886,28 +2883,28 @@ inline void KChart::set_code(std::string&& value) {
   
   code_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.KChart.code)
+  // @@protoc_insertion_point(field_set_rvalue:KChart.code)
 }
 inline void KChart::set_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.KChart.code)
+  // @@protoc_insertion_point(field_set_char:KChart.code)
 }
 inline void KChart::set_code(const char* value,
     size_t size) {
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.KChart.code)
+  // @@protoc_insertion_point(field_set_pointer:KChart.code)
 }
 inline std::string* KChart::_internal_mutable_code() {
   
   return code_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* KChart::release_code() {
-  // @@protoc_insertion_point(field_release:pb.KChart.code)
+  // @@protoc_insertion_point(field_release:KChart.code)
   return code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void KChart::set_allocated_code(std::string* code) {
@@ -2918,7 +2915,7 @@ inline void KChart::set_allocated_code(std::string* code) {
   }
   code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), code,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.KChart.code)
+  // @@protoc_insertion_point(field_set_allocated:KChart.code)
 }
 
 // string date = 2;
@@ -2926,15 +2923,15 @@ inline void KChart::clear_date() {
   date_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& KChart::date() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.date)
+  // @@protoc_insertion_point(field_get:KChart.date)
   return _internal_date();
 }
 inline void KChart::set_date(const std::string& value) {
   _internal_set_date(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.date)
+  // @@protoc_insertion_point(field_set:KChart.date)
 }
 inline std::string* KChart::mutable_date() {
-  // @@protoc_insertion_point(field_mutable:pb.KChart.date)
+  // @@protoc_insertion_point(field_mutable:KChart.date)
   return _internal_mutable_date();
 }
 inline const std::string& KChart::_internal_date() const {
@@ -2948,28 +2945,28 @@ inline void KChart::set_date(std::string&& value) {
   
   date_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.KChart.date)
+  // @@protoc_insertion_point(field_set_rvalue:KChart.date)
 }
 inline void KChart::set_date(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.KChart.date)
+  // @@protoc_insertion_point(field_set_char:KChart.date)
 }
 inline void KChart::set_date(const char* value,
     size_t size) {
   
   date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.KChart.date)
+  // @@protoc_insertion_point(field_set_pointer:KChart.date)
 }
 inline std::string* KChart::_internal_mutable_date() {
   
   return date_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* KChart::release_date() {
-  // @@protoc_insertion_point(field_release:pb.KChart.date)
+  // @@protoc_insertion_point(field_release:KChart.date)
   return date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void KChart::set_allocated_date(std::string* date) {
@@ -2980,7 +2977,7 @@ inline void KChart::set_allocated_date(std::string* date) {
   }
   date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), date,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.KChart.date)
+  // @@protoc_insertion_point(field_set_allocated:KChart.date)
 }
 
 // string time = 3;
@@ -2988,15 +2985,15 @@ inline void KChart::clear_time() {
   time_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& KChart::time() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.time)
+  // @@protoc_insertion_point(field_get:KChart.time)
   return _internal_time();
 }
 inline void KChart::set_time(const std::string& value) {
   _internal_set_time(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.time)
+  // @@protoc_insertion_point(field_set:KChart.time)
 }
 inline std::string* KChart::mutable_time() {
-  // @@protoc_insertion_point(field_mutable:pb.KChart.time)
+  // @@protoc_insertion_point(field_mutable:KChart.time)
   return _internal_mutable_time();
 }
 inline const std::string& KChart::_internal_time() const {
@@ -3010,28 +3007,28 @@ inline void KChart::set_time(std::string&& value) {
   
   time_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.KChart.time)
+  // @@protoc_insertion_point(field_set_rvalue:KChart.time)
 }
 inline void KChart::set_time(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   time_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.KChart.time)
+  // @@protoc_insertion_point(field_set_char:KChart.time)
 }
 inline void KChart::set_time(const char* value,
     size_t size) {
   
   time_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.KChart.time)
+  // @@protoc_insertion_point(field_set_pointer:KChart.time)
 }
 inline std::string* KChart::_internal_mutable_time() {
   
   return time_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* KChart::release_time() {
-  // @@protoc_insertion_point(field_release:pb.KChart.time)
+  // @@protoc_insertion_point(field_release:KChart.time)
   return time_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void KChart::set_allocated_time(std::string* time) {
@@ -3042,7 +3039,7 @@ inline void KChart::set_allocated_time(std::string* time) {
   }
   time_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), time,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.KChart.time)
+  // @@protoc_insertion_point(field_set_allocated:KChart.time)
 }
 
 // double open = 4;
@@ -3053,7 +3050,7 @@ inline double KChart::_internal_open() const {
   return open_;
 }
 inline double KChart::open() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.open)
+  // @@protoc_insertion_point(field_get:KChart.open)
   return _internal_open();
 }
 inline void KChart::_internal_set_open(double value) {
@@ -3062,7 +3059,7 @@ inline void KChart::_internal_set_open(double value) {
 }
 inline void KChart::set_open(double value) {
   _internal_set_open(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.open)
+  // @@protoc_insertion_point(field_set:KChart.open)
 }
 
 // double high = 5;
@@ -3073,7 +3070,7 @@ inline double KChart::_internal_high() const {
   return high_;
 }
 inline double KChart::high() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.high)
+  // @@protoc_insertion_point(field_get:KChart.high)
   return _internal_high();
 }
 inline void KChart::_internal_set_high(double value) {
@@ -3082,7 +3079,7 @@ inline void KChart::_internal_set_high(double value) {
 }
 inline void KChart::set_high(double value) {
   _internal_set_high(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.high)
+  // @@protoc_insertion_point(field_set:KChart.high)
 }
 
 // double low = 6;
@@ -3093,7 +3090,7 @@ inline double KChart::_internal_low() const {
   return low_;
 }
 inline double KChart::low() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.low)
+  // @@protoc_insertion_point(field_get:KChart.low)
   return _internal_low();
 }
 inline void KChart::_internal_set_low(double value) {
@@ -3102,7 +3099,7 @@ inline void KChart::_internal_set_low(double value) {
 }
 inline void KChart::set_low(double value) {
   _internal_set_low(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.low)
+  // @@protoc_insertion_point(field_set:KChart.low)
 }
 
 // double close = 7;
@@ -3113,7 +3110,7 @@ inline double KChart::_internal_close() const {
   return close_;
 }
 inline double KChart::close() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.close)
+  // @@protoc_insertion_point(field_get:KChart.close)
   return _internal_close();
 }
 inline void KChart::_internal_set_close(double value) {
@@ -3122,7 +3119,7 @@ inline void KChart::_internal_set_close(double value) {
 }
 inline void KChart::set_close(double value) {
   _internal_set_close(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.close)
+  // @@protoc_insertion_point(field_set:KChart.close)
 }
 
 // double change = 8;
@@ -3133,7 +3130,7 @@ inline double KChart::_internal_change() const {
   return change_;
 }
 inline double KChart::change() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.change)
+  // @@protoc_insertion_point(field_get:KChart.change)
   return _internal_change();
 }
 inline void KChart::_internal_set_change(double value) {
@@ -3142,7 +3139,7 @@ inline void KChart::_internal_set_change(double value) {
 }
 inline void KChart::set_change(double value) {
   _internal_set_change(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.change)
+  // @@protoc_insertion_point(field_set:KChart.change)
 }
 
 // double vol = 9;
@@ -3153,7 +3150,7 @@ inline double KChart::_internal_vol() const {
   return vol_;
 }
 inline double KChart::vol() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.vol)
+  // @@protoc_insertion_point(field_get:KChart.vol)
   return _internal_vol();
 }
 inline void KChart::_internal_set_vol(double value) {
@@ -3162,7 +3159,7 @@ inline void KChart::_internal_set_vol(double value) {
 }
 inline void KChart::set_vol(double value) {
   _internal_set_vol(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.vol)
+  // @@protoc_insertion_point(field_set:KChart.vol)
 }
 
 // double amount = 10;
@@ -3173,7 +3170,7 @@ inline double KChart::_internal_amount() const {
   return amount_;
 }
 inline double KChart::amount() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.amount)
+  // @@protoc_insertion_point(field_get:KChart.amount)
   return _internal_amount();
 }
 inline void KChart::_internal_set_amount(double value) {
@@ -3182,7 +3179,7 @@ inline void KChart::_internal_set_amount(double value) {
 }
 inline void KChart::set_amount(double value) {
   _internal_set_amount(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.amount)
+  // @@protoc_insertion_point(field_set:KChart.amount)
 }
 
 // double original_open = 11;
@@ -3193,7 +3190,7 @@ inline double KChart::_internal_original_open() const {
   return original_open_;
 }
 inline double KChart::original_open() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.original_open)
+  // @@protoc_insertion_point(field_get:KChart.original_open)
   return _internal_original_open();
 }
 inline void KChart::_internal_set_original_open(double value) {
@@ -3202,7 +3199,7 @@ inline void KChart::_internal_set_original_open(double value) {
 }
 inline void KChart::set_original_open(double value) {
   _internal_set_original_open(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.original_open)
+  // @@protoc_insertion_point(field_set:KChart.original_open)
 }
 
 // double original_high = 12;
@@ -3213,7 +3210,7 @@ inline double KChart::_internal_original_high() const {
   return original_high_;
 }
 inline double KChart::original_high() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.original_high)
+  // @@protoc_insertion_point(field_get:KChart.original_high)
   return _internal_original_high();
 }
 inline void KChart::_internal_set_original_high(double value) {
@@ -3222,7 +3219,7 @@ inline void KChart::_internal_set_original_high(double value) {
 }
 inline void KChart::set_original_high(double value) {
   _internal_set_original_high(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.original_high)
+  // @@protoc_insertion_point(field_set:KChart.original_high)
 }
 
 // double original_low = 13;
@@ -3233,7 +3230,7 @@ inline double KChart::_internal_original_low() const {
   return original_low_;
 }
 inline double KChart::original_low() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.original_low)
+  // @@protoc_insertion_point(field_get:KChart.original_low)
   return _internal_original_low();
 }
 inline void KChart::_internal_set_original_low(double value) {
@@ -3242,7 +3239,7 @@ inline void KChart::_internal_set_original_low(double value) {
 }
 inline void KChart::set_original_low(double value) {
   _internal_set_original_low(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.original_low)
+  // @@protoc_insertion_point(field_set:KChart.original_low)
 }
 
 // double original_close = 14;
@@ -3253,7 +3250,7 @@ inline double KChart::_internal_original_close() const {
   return original_close_;
 }
 inline double KChart::original_close() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.original_close)
+  // @@protoc_insertion_point(field_get:KChart.original_close)
   return _internal_original_close();
 }
 inline void KChart::_internal_set_original_close(double value) {
@@ -3262,7 +3259,7 @@ inline void KChart::_internal_set_original_close(double value) {
 }
 inline void KChart::set_original_close(double value) {
   _internal_set_original_close(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.original_close)
+  // @@protoc_insertion_point(field_set:KChart.original_close)
 }
 
 // double adjust_factor = 15;
@@ -3273,7 +3270,7 @@ inline double KChart::_internal_adjust_factor() const {
   return adjust_factor_;
 }
 inline double KChart::adjust_factor() const {
-  // @@protoc_insertion_point(field_get:pb.KChart.adjust_factor)
+  // @@protoc_insertion_point(field_get:KChart.adjust_factor)
   return _internal_adjust_factor();
 }
 inline void KChart::_internal_set_adjust_factor(double value) {
@@ -3282,7 +3279,7 @@ inline void KChart::_internal_set_adjust_factor(double value) {
 }
 inline void KChart::set_adjust_factor(double value) {
   _internal_set_adjust_factor(value);
-  // @@protoc_insertion_point(field_set:pb.KChart.adjust_factor)
+  // @@protoc_insertion_point(field_set:KChart.adjust_factor)
 }
 
 // -------------------------------------------------------------------
@@ -3294,15 +3291,15 @@ inline void MA::clear_code() {
   code_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& MA::code() const {
-  // @@protoc_insertion_point(field_get:pb.MA.code)
+  // @@protoc_insertion_point(field_get:MA.code)
   return _internal_code();
 }
 inline void MA::set_code(const std::string& value) {
   _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:pb.MA.code)
+  // @@protoc_insertion_point(field_set:MA.code)
 }
 inline std::string* MA::mutable_code() {
-  // @@protoc_insertion_point(field_mutable:pb.MA.code)
+  // @@protoc_insertion_point(field_mutable:MA.code)
   return _internal_mutable_code();
 }
 inline const std::string& MA::_internal_code() const {
@@ -3316,28 +3313,28 @@ inline void MA::set_code(std::string&& value) {
   
   code_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.MA.code)
+  // @@protoc_insertion_point(field_set_rvalue:MA.code)
 }
 inline void MA::set_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.MA.code)
+  // @@protoc_insertion_point(field_set_char:MA.code)
 }
 inline void MA::set_code(const char* value,
     size_t size) {
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.MA.code)
+  // @@protoc_insertion_point(field_set_pointer:MA.code)
 }
 inline std::string* MA::_internal_mutable_code() {
   
   return code_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* MA::release_code() {
-  // @@protoc_insertion_point(field_release:pb.MA.code)
+  // @@protoc_insertion_point(field_release:MA.code)
   return code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void MA::set_allocated_code(std::string* code) {
@@ -3348,7 +3345,7 @@ inline void MA::set_allocated_code(std::string* code) {
   }
   code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), code,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.MA.code)
+  // @@protoc_insertion_point(field_set_allocated:MA.code)
 }
 
 // string date = 2;
@@ -3356,15 +3353,15 @@ inline void MA::clear_date() {
   date_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& MA::date() const {
-  // @@protoc_insertion_point(field_get:pb.MA.date)
+  // @@protoc_insertion_point(field_get:MA.date)
   return _internal_date();
 }
 inline void MA::set_date(const std::string& value) {
   _internal_set_date(value);
-  // @@protoc_insertion_point(field_set:pb.MA.date)
+  // @@protoc_insertion_point(field_set:MA.date)
 }
 inline std::string* MA::mutable_date() {
-  // @@protoc_insertion_point(field_mutable:pb.MA.date)
+  // @@protoc_insertion_point(field_mutable:MA.date)
   return _internal_mutable_date();
 }
 inline const std::string& MA::_internal_date() const {
@@ -3378,28 +3375,28 @@ inline void MA::set_date(std::string&& value) {
   
   date_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.MA.date)
+  // @@protoc_insertion_point(field_set_rvalue:MA.date)
 }
 inline void MA::set_date(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.MA.date)
+  // @@protoc_insertion_point(field_set_char:MA.date)
 }
 inline void MA::set_date(const char* value,
     size_t size) {
   
   date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.MA.date)
+  // @@protoc_insertion_point(field_set_pointer:MA.date)
 }
 inline std::string* MA::_internal_mutable_date() {
   
   return date_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* MA::release_date() {
-  // @@protoc_insertion_point(field_release:pb.MA.date)
+  // @@protoc_insertion_point(field_release:MA.date)
   return date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void MA::set_allocated_date(std::string* date) {
@@ -3410,7 +3407,7 @@ inline void MA::set_allocated_date(std::string* date) {
   }
   date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), date,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.MA.date)
+  // @@protoc_insertion_point(field_set_allocated:MA.date)
 }
 
 // double last_1 = 3;
@@ -3421,7 +3418,7 @@ inline double MA::_internal_last_1() const {
   return last_1_;
 }
 inline double MA::last_1() const {
-  // @@protoc_insertion_point(field_get:pb.MA.last_1)
+  // @@protoc_insertion_point(field_get:MA.last_1)
   return _internal_last_1();
 }
 inline void MA::_internal_set_last_1(double value) {
@@ -3430,7 +3427,7 @@ inline void MA::_internal_set_last_1(double value) {
 }
 inline void MA::set_last_1(double value) {
   _internal_set_last_1(value);
-  // @@protoc_insertion_point(field_set:pb.MA.last_1)
+  // @@protoc_insertion_point(field_set:MA.last_1)
 }
 
 // double last_5 = 4;
@@ -3441,7 +3438,7 @@ inline double MA::_internal_last_5() const {
   return last_5_;
 }
 inline double MA::last_5() const {
-  // @@protoc_insertion_point(field_get:pb.MA.last_5)
+  // @@protoc_insertion_point(field_get:MA.last_5)
   return _internal_last_5();
 }
 inline void MA::_internal_set_last_5(double value) {
@@ -3450,7 +3447,7 @@ inline void MA::_internal_set_last_5(double value) {
 }
 inline void MA::set_last_5(double value) {
   _internal_set_last_5(value);
-  // @@protoc_insertion_point(field_set:pb.MA.last_5)
+  // @@protoc_insertion_point(field_set:MA.last_5)
 }
 
 // double last_10 = 5;
@@ -3461,7 +3458,7 @@ inline double MA::_internal_last_10() const {
   return last_10_;
 }
 inline double MA::last_10() const {
-  // @@protoc_insertion_point(field_get:pb.MA.last_10)
+  // @@protoc_insertion_point(field_get:MA.last_10)
   return _internal_last_10();
 }
 inline void MA::_internal_set_last_10(double value) {
@@ -3470,7 +3467,7 @@ inline void MA::_internal_set_last_10(double value) {
 }
 inline void MA::set_last_10(double value) {
   _internal_set_last_10(value);
-  // @@protoc_insertion_point(field_set:pb.MA.last_10)
+  // @@protoc_insertion_point(field_set:MA.last_10)
 }
 
 // double last_20 = 6;
@@ -3481,7 +3478,7 @@ inline double MA::_internal_last_20() const {
   return last_20_;
 }
 inline double MA::last_20() const {
-  // @@protoc_insertion_point(field_get:pb.MA.last_20)
+  // @@protoc_insertion_point(field_get:MA.last_20)
   return _internal_last_20();
 }
 inline void MA::_internal_set_last_20(double value) {
@@ -3490,7 +3487,7 @@ inline void MA::_internal_set_last_20(double value) {
 }
 inline void MA::set_last_20(double value) {
   _internal_set_last_20(value);
-  // @@protoc_insertion_point(field_set:pb.MA.last_20)
+  // @@protoc_insertion_point(field_set:MA.last_20)
 }
 
 // double last_60 = 7;
@@ -3501,7 +3498,7 @@ inline double MA::_internal_last_60() const {
   return last_60_;
 }
 inline double MA::last_60() const {
-  // @@protoc_insertion_point(field_get:pb.MA.last_60)
+  // @@protoc_insertion_point(field_get:MA.last_60)
   return _internal_last_60();
 }
 inline void MA::_internal_set_last_60(double value) {
@@ -3510,7 +3507,7 @@ inline void MA::_internal_set_last_60(double value) {
 }
 inline void MA::set_last_60(double value) {
   _internal_set_last_60(value);
-  // @@protoc_insertion_point(field_set:pb.MA.last_60)
+  // @@protoc_insertion_point(field_set:MA.last_60)
 }
 
 // -------------------------------------------------------------------
@@ -3522,15 +3519,15 @@ inline void TrueRange::clear_code() {
   code_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& TrueRange::code() const {
-  // @@protoc_insertion_point(field_get:pb.TrueRange.code)
+  // @@protoc_insertion_point(field_get:TrueRange.code)
   return _internal_code();
 }
 inline void TrueRange::set_code(const std::string& value) {
   _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:pb.TrueRange.code)
+  // @@protoc_insertion_point(field_set:TrueRange.code)
 }
 inline std::string* TrueRange::mutable_code() {
-  // @@protoc_insertion_point(field_mutable:pb.TrueRange.code)
+  // @@protoc_insertion_point(field_mutable:TrueRange.code)
   return _internal_mutable_code();
 }
 inline const std::string& TrueRange::_internal_code() const {
@@ -3544,28 +3541,28 @@ inline void TrueRange::set_code(std::string&& value) {
   
   code_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.TrueRange.code)
+  // @@protoc_insertion_point(field_set_rvalue:TrueRange.code)
 }
 inline void TrueRange::set_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.TrueRange.code)
+  // @@protoc_insertion_point(field_set_char:TrueRange.code)
 }
 inline void TrueRange::set_code(const char* value,
     size_t size) {
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.TrueRange.code)
+  // @@protoc_insertion_point(field_set_pointer:TrueRange.code)
 }
 inline std::string* TrueRange::_internal_mutable_code() {
   
   return code_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* TrueRange::release_code() {
-  // @@protoc_insertion_point(field_release:pb.TrueRange.code)
+  // @@protoc_insertion_point(field_release:TrueRange.code)
   return code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void TrueRange::set_allocated_code(std::string* code) {
@@ -3576,7 +3573,7 @@ inline void TrueRange::set_allocated_code(std::string* code) {
   }
   code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), code,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.TrueRange.code)
+  // @@protoc_insertion_point(field_set_allocated:TrueRange.code)
 }
 
 // string date = 2;
@@ -3584,15 +3581,15 @@ inline void TrueRange::clear_date() {
   date_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& TrueRange::date() const {
-  // @@protoc_insertion_point(field_get:pb.TrueRange.date)
+  // @@protoc_insertion_point(field_get:TrueRange.date)
   return _internal_date();
 }
 inline void TrueRange::set_date(const std::string& value) {
   _internal_set_date(value);
-  // @@protoc_insertion_point(field_set:pb.TrueRange.date)
+  // @@protoc_insertion_point(field_set:TrueRange.date)
 }
 inline std::string* TrueRange::mutable_date() {
-  // @@protoc_insertion_point(field_mutable:pb.TrueRange.date)
+  // @@protoc_insertion_point(field_mutable:TrueRange.date)
   return _internal_mutable_date();
 }
 inline const std::string& TrueRange::_internal_date() const {
@@ -3606,28 +3603,28 @@ inline void TrueRange::set_date(std::string&& value) {
   
   date_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.TrueRange.date)
+  // @@protoc_insertion_point(field_set_rvalue:TrueRange.date)
 }
 inline void TrueRange::set_date(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.TrueRange.date)
+  // @@protoc_insertion_point(field_set_char:TrueRange.date)
 }
 inline void TrueRange::set_date(const char* value,
     size_t size) {
   
   date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.TrueRange.date)
+  // @@protoc_insertion_point(field_set_pointer:TrueRange.date)
 }
 inline std::string* TrueRange::_internal_mutable_date() {
   
   return date_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* TrueRange::release_date() {
-  // @@protoc_insertion_point(field_release:pb.TrueRange.date)
+  // @@protoc_insertion_point(field_release:TrueRange.date)
   return date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void TrueRange::set_allocated_date(std::string* date) {
@@ -3638,7 +3635,7 @@ inline void TrueRange::set_allocated_date(std::string* date) {
   }
   date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), date,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.TrueRange.date)
+  // @@protoc_insertion_point(field_set_allocated:TrueRange.date)
 }
 
 // double range = 3;
@@ -3649,7 +3646,7 @@ inline double TrueRange::_internal_range() const {
   return range_;
 }
 inline double TrueRange::range() const {
-  // @@protoc_insertion_point(field_get:pb.TrueRange.range)
+  // @@protoc_insertion_point(field_get:TrueRange.range)
   return _internal_range();
 }
 inline void TrueRange::_internal_set_range(double value) {
@@ -3658,7 +3655,7 @@ inline void TrueRange::_internal_set_range(double value) {
 }
 inline void TrueRange::set_range(double value) {
   _internal_set_range(value);
-  // @@protoc_insertion_point(field_set:pb.TrueRange.range)
+  // @@protoc_insertion_point(field_set:TrueRange.range)
 }
 
 // double average = 4;
@@ -3669,7 +3666,7 @@ inline double TrueRange::_internal_average() const {
   return average_;
 }
 inline double TrueRange::average() const {
-  // @@protoc_insertion_point(field_get:pb.TrueRange.average)
+  // @@protoc_insertion_point(field_get:TrueRange.average)
   return _internal_average();
 }
 inline void TrueRange::_internal_set_average(double value) {
@@ -3678,7 +3675,7 @@ inline void TrueRange::_internal_set_average(double value) {
 }
 inline void TrueRange::set_average(double value) {
   _internal_set_average(value);
-  // @@protoc_insertion_point(field_set:pb.TrueRange.average)
+  // @@protoc_insertion_point(field_set:TrueRange.average)
 }
 
 // double gentle = 5;
@@ -3689,7 +3686,7 @@ inline double TrueRange::_internal_gentle() const {
   return gentle_;
 }
 inline double TrueRange::gentle() const {
-  // @@protoc_insertion_point(field_get:pb.TrueRange.gentle)
+  // @@protoc_insertion_point(field_get:TrueRange.gentle)
   return _internal_gentle();
 }
 inline void TrueRange::_internal_set_gentle(double value) {
@@ -3698,7 +3695,7 @@ inline void TrueRange::_internal_set_gentle(double value) {
 }
 inline void TrueRange::set_gentle(double value) {
   _internal_set_gentle(value);
-  // @@protoc_insertion_point(field_set:pb.TrueRange.gentle)
+  // @@protoc_insertion_point(field_set:TrueRange.gentle)
 }
 
 // double gentle_60 = 6;
@@ -3709,7 +3706,7 @@ inline double TrueRange::_internal_gentle_60() const {
   return gentle_60_;
 }
 inline double TrueRange::gentle_60() const {
-  // @@protoc_insertion_point(field_get:pb.TrueRange.gentle_60)
+  // @@protoc_insertion_point(field_get:TrueRange.gentle_60)
   return _internal_gentle_60();
 }
 inline void TrueRange::_internal_set_gentle_60(double value) {
@@ -3718,7 +3715,7 @@ inline void TrueRange::_internal_set_gentle_60(double value) {
 }
 inline void TrueRange::set_gentle_60(double value) {
   _internal_set_gentle_60(value);
-  // @@protoc_insertion_point(field_set:pb.TrueRange.gentle_60)
+  // @@protoc_insertion_point(field_set:TrueRange.gentle_60)
 }
 
 // -------------------------------------------------------------------
@@ -3730,15 +3727,15 @@ inline void Segment::clear_code() {
   code_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& Segment::code() const {
-  // @@protoc_insertion_point(field_get:pb.Segment.code)
+  // @@protoc_insertion_point(field_get:Segment.code)
   return _internal_code();
 }
 inline void Segment::set_code(const std::string& value) {
   _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:pb.Segment.code)
+  // @@protoc_insertion_point(field_set:Segment.code)
 }
 inline std::string* Segment::mutable_code() {
-  // @@protoc_insertion_point(field_mutable:pb.Segment.code)
+  // @@protoc_insertion_point(field_mutable:Segment.code)
   return _internal_mutable_code();
 }
 inline const std::string& Segment::_internal_code() const {
@@ -3752,28 +3749,28 @@ inline void Segment::set_code(std::string&& value) {
   
   code_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.Segment.code)
+  // @@protoc_insertion_point(field_set_rvalue:Segment.code)
 }
 inline void Segment::set_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.Segment.code)
+  // @@protoc_insertion_point(field_set_char:Segment.code)
 }
 inline void Segment::set_code(const char* value,
     size_t size) {
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.Segment.code)
+  // @@protoc_insertion_point(field_set_pointer:Segment.code)
 }
 inline std::string* Segment::_internal_mutable_code() {
   
   return code_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* Segment::release_code() {
-  // @@protoc_insertion_point(field_release:pb.Segment.code)
+  // @@protoc_insertion_point(field_release:Segment.code)
   return code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void Segment::set_allocated_code(std::string* code) {
@@ -3784,7 +3781,7 @@ inline void Segment::set_allocated_code(std::string* code) {
   }
   code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), code,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.Segment.code)
+  // @@protoc_insertion_point(field_set_allocated:Segment.code)
 }
 
 // string date = 2;
@@ -3792,15 +3789,15 @@ inline void Segment::clear_date() {
   date_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& Segment::date() const {
-  // @@protoc_insertion_point(field_get:pb.Segment.date)
+  // @@protoc_insertion_point(field_get:Segment.date)
   return _internal_date();
 }
 inline void Segment::set_date(const std::string& value) {
   _internal_set_date(value);
-  // @@protoc_insertion_point(field_set:pb.Segment.date)
+  // @@protoc_insertion_point(field_set:Segment.date)
 }
 inline std::string* Segment::mutable_date() {
-  // @@protoc_insertion_point(field_mutable:pb.Segment.date)
+  // @@protoc_insertion_point(field_mutable:Segment.date)
   return _internal_mutable_date();
 }
 inline const std::string& Segment::_internal_date() const {
@@ -3814,28 +3811,28 @@ inline void Segment::set_date(std::string&& value) {
   
   date_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.Segment.date)
+  // @@protoc_insertion_point(field_set_rvalue:Segment.date)
 }
 inline void Segment::set_date(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.Segment.date)
+  // @@protoc_insertion_point(field_set_char:Segment.date)
 }
 inline void Segment::set_date(const char* value,
     size_t size) {
   
   date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.Segment.date)
+  // @@protoc_insertion_point(field_set_pointer:Segment.date)
 }
 inline std::string* Segment::_internal_mutable_date() {
   
   return date_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* Segment::release_date() {
-  // @@protoc_insertion_point(field_release:pb.Segment.date)
+  // @@protoc_insertion_point(field_release:Segment.date)
   return date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void Segment::set_allocated_date(std::string* date) {
@@ -3846,7 +3843,7 @@ inline void Segment::set_allocated_date(std::string* date) {
   }
   date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), date,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.Segment.date)
+  // @@protoc_insertion_point(field_set_allocated:Segment.date)
 }
 
 // double direction = 3;
@@ -3857,7 +3854,7 @@ inline double Segment::_internal_direction() const {
   return direction_;
 }
 inline double Segment::direction() const {
-  // @@protoc_insertion_point(field_get:pb.Segment.direction)
+  // @@protoc_insertion_point(field_get:Segment.direction)
   return _internal_direction();
 }
 inline void Segment::_internal_set_direction(double value) {
@@ -3866,7 +3863,7 @@ inline void Segment::_internal_set_direction(double value) {
 }
 inline void Segment::set_direction(double value) {
   _internal_set_direction(value);
-  // @@protoc_insertion_point(field_set:pb.Segment.direction)
+  // @@protoc_insertion_point(field_set:Segment.direction)
 }
 
 // string start_date = 4;
@@ -3874,15 +3871,15 @@ inline void Segment::clear_start_date() {
   start_date_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& Segment::start_date() const {
-  // @@protoc_insertion_point(field_get:pb.Segment.start_date)
+  // @@protoc_insertion_point(field_get:Segment.start_date)
   return _internal_start_date();
 }
 inline void Segment::set_start_date(const std::string& value) {
   _internal_set_start_date(value);
-  // @@protoc_insertion_point(field_set:pb.Segment.start_date)
+  // @@protoc_insertion_point(field_set:Segment.start_date)
 }
 inline std::string* Segment::mutable_start_date() {
-  // @@protoc_insertion_point(field_mutable:pb.Segment.start_date)
+  // @@protoc_insertion_point(field_mutable:Segment.start_date)
   return _internal_mutable_start_date();
 }
 inline const std::string& Segment::_internal_start_date() const {
@@ -3896,28 +3893,28 @@ inline void Segment::set_start_date(std::string&& value) {
   
   start_date_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.Segment.start_date)
+  // @@protoc_insertion_point(field_set_rvalue:Segment.start_date)
 }
 inline void Segment::set_start_date(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   start_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.Segment.start_date)
+  // @@protoc_insertion_point(field_set_char:Segment.start_date)
 }
 inline void Segment::set_start_date(const char* value,
     size_t size) {
   
   start_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.Segment.start_date)
+  // @@protoc_insertion_point(field_set_pointer:Segment.start_date)
 }
 inline std::string* Segment::_internal_mutable_start_date() {
   
   return start_date_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* Segment::release_start_date() {
-  // @@protoc_insertion_point(field_release:pb.Segment.start_date)
+  // @@protoc_insertion_point(field_release:Segment.start_date)
   return start_date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void Segment::set_allocated_start_date(std::string* start_date) {
@@ -3928,7 +3925,7 @@ inline void Segment::set_allocated_start_date(std::string* start_date) {
   }
   start_date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), start_date,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.Segment.start_date)
+  // @@protoc_insertion_point(field_set_allocated:Segment.start_date)
 }
 
 // double gentle_range = 5;
@@ -3939,7 +3936,7 @@ inline double Segment::_internal_gentle_range() const {
   return gentle_range_;
 }
 inline double Segment::gentle_range() const {
-  // @@protoc_insertion_point(field_get:pb.Segment.gentle_range)
+  // @@protoc_insertion_point(field_get:Segment.gentle_range)
   return _internal_gentle_range();
 }
 inline void Segment::_internal_set_gentle_range(double value) {
@@ -3948,7 +3945,7 @@ inline void Segment::_internal_set_gentle_range(double value) {
 }
 inline void Segment::set_gentle_range(double value) {
   _internal_set_gentle_range(value);
-  // @@protoc_insertion_point(field_set:pb.Segment.gentle_range)
+  // @@protoc_insertion_point(field_set:Segment.gentle_range)
 }
 
 // double low = 6;
@@ -3959,7 +3956,7 @@ inline double Segment::_internal_low() const {
   return low_;
 }
 inline double Segment::low() const {
-  // @@protoc_insertion_point(field_get:pb.Segment.low)
+  // @@protoc_insertion_point(field_get:Segment.low)
   return _internal_low();
 }
 inline void Segment::_internal_set_low(double value) {
@@ -3968,7 +3965,7 @@ inline void Segment::_internal_set_low(double value) {
 }
 inline void Segment::set_low(double value) {
   _internal_set_low(value);
-  // @@protoc_insertion_point(field_set:pb.Segment.low)
+  // @@protoc_insertion_point(field_set:Segment.low)
 }
 
 // string low_date = 7;
@@ -3976,15 +3973,15 @@ inline void Segment::clear_low_date() {
   low_date_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& Segment::low_date() const {
-  // @@protoc_insertion_point(field_get:pb.Segment.low_date)
+  // @@protoc_insertion_point(field_get:Segment.low_date)
   return _internal_low_date();
 }
 inline void Segment::set_low_date(const std::string& value) {
   _internal_set_low_date(value);
-  // @@protoc_insertion_point(field_set:pb.Segment.low_date)
+  // @@protoc_insertion_point(field_set:Segment.low_date)
 }
 inline std::string* Segment::mutable_low_date() {
-  // @@protoc_insertion_point(field_mutable:pb.Segment.low_date)
+  // @@protoc_insertion_point(field_mutable:Segment.low_date)
   return _internal_mutable_low_date();
 }
 inline const std::string& Segment::_internal_low_date() const {
@@ -3998,28 +3995,28 @@ inline void Segment::set_low_date(std::string&& value) {
   
   low_date_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.Segment.low_date)
+  // @@protoc_insertion_point(field_set_rvalue:Segment.low_date)
 }
 inline void Segment::set_low_date(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   low_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.Segment.low_date)
+  // @@protoc_insertion_point(field_set_char:Segment.low_date)
 }
 inline void Segment::set_low_date(const char* value,
     size_t size) {
   
   low_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.Segment.low_date)
+  // @@protoc_insertion_point(field_set_pointer:Segment.low_date)
 }
 inline std::string* Segment::_internal_mutable_low_date() {
   
   return low_date_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* Segment::release_low_date() {
-  // @@protoc_insertion_point(field_release:pb.Segment.low_date)
+  // @@protoc_insertion_point(field_release:Segment.low_date)
   return low_date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void Segment::set_allocated_low_date(std::string* low_date) {
@@ -4030,7 +4027,7 @@ inline void Segment::set_allocated_low_date(std::string* low_date) {
   }
   low_date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), low_date,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.Segment.low_date)
+  // @@protoc_insertion_point(field_set_allocated:Segment.low_date)
 }
 
 // double high = 8;
@@ -4041,7 +4038,7 @@ inline double Segment::_internal_high() const {
   return high_;
 }
 inline double Segment::high() const {
-  // @@protoc_insertion_point(field_get:pb.Segment.high)
+  // @@protoc_insertion_point(field_get:Segment.high)
   return _internal_high();
 }
 inline void Segment::_internal_set_high(double value) {
@@ -4050,7 +4047,7 @@ inline void Segment::_internal_set_high(double value) {
 }
 inline void Segment::set_high(double value) {
   _internal_set_high(value);
-  // @@protoc_insertion_point(field_set:pb.Segment.high)
+  // @@protoc_insertion_point(field_set:Segment.high)
 }
 
 // string high_date = 9;
@@ -4058,15 +4055,15 @@ inline void Segment::clear_high_date() {
   high_date_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& Segment::high_date() const {
-  // @@protoc_insertion_point(field_get:pb.Segment.high_date)
+  // @@protoc_insertion_point(field_get:Segment.high_date)
   return _internal_high_date();
 }
 inline void Segment::set_high_date(const std::string& value) {
   _internal_set_high_date(value);
-  // @@protoc_insertion_point(field_set:pb.Segment.high_date)
+  // @@protoc_insertion_point(field_set:Segment.high_date)
 }
 inline std::string* Segment::mutable_high_date() {
-  // @@protoc_insertion_point(field_mutable:pb.Segment.high_date)
+  // @@protoc_insertion_point(field_mutable:Segment.high_date)
   return _internal_mutable_high_date();
 }
 inline const std::string& Segment::_internal_high_date() const {
@@ -4080,28 +4077,28 @@ inline void Segment::set_high_date(std::string&& value) {
   
   high_date_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.Segment.high_date)
+  // @@protoc_insertion_point(field_set_rvalue:Segment.high_date)
 }
 inline void Segment::set_high_date(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   high_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.Segment.high_date)
+  // @@protoc_insertion_point(field_set_char:Segment.high_date)
 }
 inline void Segment::set_high_date(const char* value,
     size_t size) {
   
   high_date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.Segment.high_date)
+  // @@protoc_insertion_point(field_set_pointer:Segment.high_date)
 }
 inline std::string* Segment::_internal_mutable_high_date() {
   
   return high_date_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* Segment::release_high_date() {
-  // @@protoc_insertion_point(field_release:pb.Segment.high_date)
+  // @@protoc_insertion_point(field_release:Segment.high_date)
   return high_date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void Segment::set_allocated_high_date(std::string* high_date) {
@@ -4112,7 +4109,7 @@ inline void Segment::set_allocated_high_date(std::string* high_date) {
   }
   high_date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), high_date,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.Segment.high_date)
+  // @@protoc_insertion_point(field_set_allocated:Segment.high_date)
 }
 
 // -------------------------------------------------------------------
@@ -4124,15 +4121,15 @@ inline void DailyMinute::clear_code() {
   code_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& DailyMinute::code() const {
-  // @@protoc_insertion_point(field_get:pb.DailyMinute.code)
+  // @@protoc_insertion_point(field_get:DailyMinute.code)
   return _internal_code();
 }
 inline void DailyMinute::set_code(const std::string& value) {
   _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:pb.DailyMinute.code)
+  // @@protoc_insertion_point(field_set:DailyMinute.code)
 }
 inline std::string* DailyMinute::mutable_code() {
-  // @@protoc_insertion_point(field_mutable:pb.DailyMinute.code)
+  // @@protoc_insertion_point(field_mutable:DailyMinute.code)
   return _internal_mutable_code();
 }
 inline const std::string& DailyMinute::_internal_code() const {
@@ -4146,28 +4143,28 @@ inline void DailyMinute::set_code(std::string&& value) {
   
   code_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.DailyMinute.code)
+  // @@protoc_insertion_point(field_set_rvalue:DailyMinute.code)
 }
 inline void DailyMinute::set_code(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.DailyMinute.code)
+  // @@protoc_insertion_point(field_set_char:DailyMinute.code)
 }
 inline void DailyMinute::set_code(const char* value,
     size_t size) {
   
   code_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.DailyMinute.code)
+  // @@protoc_insertion_point(field_set_pointer:DailyMinute.code)
 }
 inline std::string* DailyMinute::_internal_mutable_code() {
   
   return code_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* DailyMinute::release_code() {
-  // @@protoc_insertion_point(field_release:pb.DailyMinute.code)
+  // @@protoc_insertion_point(field_release:DailyMinute.code)
   return code_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void DailyMinute::set_allocated_code(std::string* code) {
@@ -4178,7 +4175,7 @@ inline void DailyMinute::set_allocated_code(std::string* code) {
   }
   code_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), code,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.DailyMinute.code)
+  // @@protoc_insertion_point(field_set_allocated:DailyMinute.code)
 }
 
 // string date = 2;
@@ -4186,15 +4183,15 @@ inline void DailyMinute::clear_date() {
   date_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& DailyMinute::date() const {
-  // @@protoc_insertion_point(field_get:pb.DailyMinute.date)
+  // @@protoc_insertion_point(field_get:DailyMinute.date)
   return _internal_date();
 }
 inline void DailyMinute::set_date(const std::string& value) {
   _internal_set_date(value);
-  // @@protoc_insertion_point(field_set:pb.DailyMinute.date)
+  // @@protoc_insertion_point(field_set:DailyMinute.date)
 }
 inline std::string* DailyMinute::mutable_date() {
-  // @@protoc_insertion_point(field_mutable:pb.DailyMinute.date)
+  // @@protoc_insertion_point(field_mutable:DailyMinute.date)
   return _internal_mutable_date();
 }
 inline const std::string& DailyMinute::_internal_date() const {
@@ -4208,28 +4205,28 @@ inline void DailyMinute::set_date(std::string&& value) {
   
   date_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.DailyMinute.date)
+  // @@protoc_insertion_point(field_set_rvalue:DailyMinute.date)
 }
 inline void DailyMinute::set_date(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.DailyMinute.date)
+  // @@protoc_insertion_point(field_set_char:DailyMinute.date)
 }
 inline void DailyMinute::set_date(const char* value,
     size_t size) {
   
   date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.DailyMinute.date)
+  // @@protoc_insertion_point(field_set_pointer:DailyMinute.date)
 }
 inline std::string* DailyMinute::_internal_mutable_date() {
   
   return date_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* DailyMinute::release_date() {
-  // @@protoc_insertion_point(field_release:pb.DailyMinute.date)
+  // @@protoc_insertion_point(field_release:DailyMinute.date)
   return date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void DailyMinute::set_allocated_date(std::string* date) {
@@ -4240,10 +4237,10 @@ inline void DailyMinute::set_allocated_date(std::string* date) {
   }
   date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), date,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.DailyMinute.date)
+  // @@protoc_insertion_point(field_set_allocated:DailyMinute.date)
 }
 
-// repeated .pb.KChart minute_list = 3;
+// repeated .KChart minute_list = 3;
 inline int DailyMinute::_internal_minute_list_size() const {
   return minute_list_.size();
 }
@@ -4253,32 +4250,32 @@ inline int DailyMinute::minute_list_size() const {
 inline void DailyMinute::clear_minute_list() {
   minute_list_.Clear();
 }
-inline ::pb::KChart* DailyMinute::mutable_minute_list(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.DailyMinute.minute_list)
+inline ::KChart* DailyMinute::mutable_minute_list(int index) {
+  // @@protoc_insertion_point(field_mutable:DailyMinute.minute_list)
   return minute_list_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart >*
 DailyMinute::mutable_minute_list() {
-  // @@protoc_insertion_point(field_mutable_list:pb.DailyMinute.minute_list)
+  // @@protoc_insertion_point(field_mutable_list:DailyMinute.minute_list)
   return &minute_list_;
 }
-inline const ::pb::KChart& DailyMinute::_internal_minute_list(int index) const {
+inline const ::KChart& DailyMinute::_internal_minute_list(int index) const {
   return minute_list_.Get(index);
 }
-inline const ::pb::KChart& DailyMinute::minute_list(int index) const {
-  // @@protoc_insertion_point(field_get:pb.DailyMinute.minute_list)
+inline const ::KChart& DailyMinute::minute_list(int index) const {
+  // @@protoc_insertion_point(field_get:DailyMinute.minute_list)
   return _internal_minute_list(index);
 }
-inline ::pb::KChart* DailyMinute::_internal_add_minute_list() {
+inline ::KChart* DailyMinute::_internal_add_minute_list() {
   return minute_list_.Add();
 }
-inline ::pb::KChart* DailyMinute::add_minute_list() {
-  // @@protoc_insertion_point(field_add:pb.DailyMinute.minute_list)
+inline ::KChart* DailyMinute::add_minute_list() {
+  // @@protoc_insertion_point(field_add:DailyMinute.minute_list)
   return _internal_add_minute_list();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::KChart >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::KChart >&
 DailyMinute::minute_list() const {
-  // @@protoc_insertion_point(field_list:pb.DailyMinute.minute_list)
+  // @@protoc_insertion_point(field_list:DailyMinute.minute_list)
   return minute_list_;
 }
 
@@ -4304,7 +4301,6 @@ DailyMinute::minute_list() const {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace pb
 
 // @@protoc_insertion_point(global_scope)
 

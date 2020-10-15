@@ -1,11 +1,16 @@
 #include <iostream>
 #include "pb/prophet.pb.h"
+#include "plot/segment.h"
 
+using namespace chimera;
 
 int main()
 {
-    pb::KChart kChart;
+    KChart kChart;
     kChart.set_open(1.3);
+
+    ::Segment seg;
+    chimera::Segment seg2(NULL);
 
     std::cout << kChart.open() << std::endl;
 

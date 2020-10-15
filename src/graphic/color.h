@@ -11,6 +11,7 @@ public:
     static const Color red;
     static const Color green;
     static const Color blue;
+    static const Color grey;
 
     Color() : r(1), g(1), b(1), a(1) {}
     Color(float inR, float inG, float inB) : r(inR), g(inG), b(inB), a(1.0f) {}

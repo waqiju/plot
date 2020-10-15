@@ -165,9 +165,10 @@
     <ClCompile Include="src\plot\rectangle.cpp" />
     <ClCompile Include="src\plot\segment.cpp" />
     <ClCompile Include="src\plot\space_grid.cpp" />
+    <ClCompile Include="src\plot\stock_glyph.cpp" />
     <ClCompile Include="src\resource\resource_manager.cpp" />
     <ClCompile Include="src\shader.cpp" />
-    <ClCompile Include="src\testcase\test_protobuf.cpp" />
+    <ClCompile Include="src\testcase\test_stock_glyph.cpp" />
     <ClCompile Include="src\texture.cpp" />
     <ClCompile Include="src\text_2d.cpp" />
     <ClCompile Include="src\ui_helper.cpp" />
@@ -214,6 +215,7 @@
     <ClInclude Include="src\plot\rectangle.h" />
     <ClInclude Include="src\plot\segment.h" />
     <ClInclude Include="src\plot\space_grid.h" />
+    <ClInclude Include="src\plot\stock_glyph.h" />
     <ClInclude Include="src\resource\resource_manager.h" />
     <ClInclude Include="src\shader.h" />
     <ClInclude Include="src\texture.h" />

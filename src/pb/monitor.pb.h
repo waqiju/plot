@@ -56,7 +56,6 @@ struct TableStruct_pb_2fmonitor_2eproto {
   static const ::PROTOBUF_NAMESPACE_ID::uint32 offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fmonitor_2eproto;
-namespace pb {
 class CreditStockList;
 class CreditStockListDefaultTypeInternal;
 extern CreditStockListDefaultTypeInternal _CreditStockList_default_instance_;
@@ -78,17 +77,15 @@ extern TradeDayRequestDefaultTypeInternal _TradeDayRequest_default_instance_;
 class TradeDayResponse;
 class TradeDayResponseDefaultTypeInternal;
 extern TradeDayResponseDefaultTypeInternal _TradeDayResponse_default_instance_;
-}  // namespace pb
 PROTOBUF_NAMESPACE_OPEN
-template<> ::pb::CreditStockList* Arena::CreateMaybeMessage<::pb::CreditStockList>(Arena*);
-template<> ::pb::CreditStockListRequest* Arena::CreateMaybeMessage<::pb::CreditStockListRequest>(Arena*);
-template<> ::pb::HeardbeatRequest* Arena::CreateMaybeMessage<::pb::HeardbeatRequest>(Arena*);
-template<> ::pb::HeardbeatResponse* Arena::CreateMaybeMessage<::pb::HeardbeatResponse>(Arena*);
-template<> ::pb::ServiceInfo* Arena::CreateMaybeMessage<::pb::ServiceInfo>(Arena*);
-template<> ::pb::TradeDayRequest* Arena::CreateMaybeMessage<::pb::TradeDayRequest>(Arena*);
-template<> ::pb::TradeDayResponse* Arena::CreateMaybeMessage<::pb::TradeDayResponse>(Arena*);
+template<> ::CreditStockList* Arena::CreateMaybeMessage<::CreditStockList>(Arena*);
+template<> ::CreditStockListRequest* Arena::CreateMaybeMessage<::CreditStockListRequest>(Arena*);
+template<> ::HeardbeatRequest* Arena::CreateMaybeMessage<::HeardbeatRequest>(Arena*);
+template<> ::HeardbeatResponse* Arena::CreateMaybeMessage<::HeardbeatResponse>(Arena*);
+template<> ::ServiceInfo* Arena::CreateMaybeMessage<::ServiceInfo>(Arena*);
+template<> ::TradeDayRequest* Arena::CreateMaybeMessage<::TradeDayRequest>(Arena*);
+template<> ::TradeDayResponse* Arena::CreateMaybeMessage<::TradeDayResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
-namespace pb {
 
 enum SERVICE_NAME : int {
   SERVICE_NAME_NONE = 0,
@@ -160,7 +157,7 @@ inline bool ALIVE_TIME_Parse(
 // ===================================================================
 
 class ServiceInfo PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.ServiceInfo) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:ServiceInfo) */ {
  public:
   inline ServiceInfo() : ServiceInfo(nullptr) {}
   virtual ~ServiceInfo();
@@ -249,7 +246,7 @@ class ServiceInfo PROTOBUF_FINAL :
   void InternalSwap(ServiceInfo* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.ServiceInfo";
+    return "ServiceInfo";
   }
   protected:
   explicit ServiceInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -292,25 +289,25 @@ class ServiceInfo PROTOBUF_FINAL :
   std::string* _internal_mutable_address();
   public:
 
-  // .pb.SERVICE_NAME name = 1;
+  // .SERVICE_NAME name = 1;
   void clear_name();
-  ::pb::SERVICE_NAME name() const;
-  void set_name(::pb::SERVICE_NAME value);
+  ::SERVICE_NAME name() const;
+  void set_name(::SERVICE_NAME value);
   private:
-  ::pb::SERVICE_NAME _internal_name() const;
-  void _internal_set_name(::pb::SERVICE_NAME value);
+  ::SERVICE_NAME _internal_name() const;
+  void _internal_set_name(::SERVICE_NAME value);
   public:
 
-  // .pb.ALIVE_TIME alive_time = 3;
+  // .ALIVE_TIME alive_time = 3;
   void clear_alive_time();
-  ::pb::ALIVE_TIME alive_time() const;
-  void set_alive_time(::pb::ALIVE_TIME value);
+  ::ALIVE_TIME alive_time() const;
+  void set_alive_time(::ALIVE_TIME value);
   private:
-  ::pb::ALIVE_TIME _internal_alive_time() const;
-  void _internal_set_alive_time(::pb::ALIVE_TIME value);
+  ::ALIVE_TIME _internal_alive_time() const;
+  void _internal_set_alive_time(::ALIVE_TIME value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.ServiceInfo)
+  // @@protoc_insertion_point(class_scope:ServiceInfo)
  private:
   class _Internal;
 
@@ -326,7 +323,7 @@ class ServiceInfo PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class HeardbeatRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.HeardbeatRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:HeardbeatRequest) */ {
  public:
   inline HeardbeatRequest() : HeardbeatRequest(nullptr) {}
   virtual ~HeardbeatRequest();
@@ -415,7 +412,7 @@ class HeardbeatRequest PROTOBUF_FINAL :
   void InternalSwap(HeardbeatRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.HeardbeatRequest";
+    return "HeardbeatRequest";
   }
   protected:
   explicit HeardbeatRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -449,7 +446,7 @@ class HeardbeatRequest PROTOBUF_FINAL :
   void _internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.HeardbeatRequest)
+  // @@protoc_insertion_point(class_scope:HeardbeatRequest)
  private:
   class _Internal;
 
@@ -463,7 +460,7 @@ class HeardbeatRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class HeardbeatResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.HeardbeatResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:HeardbeatResponse) */ {
  public:
   inline HeardbeatResponse() : HeardbeatResponse(nullptr) {}
   virtual ~HeardbeatResponse();
@@ -552,7 +549,7 @@ class HeardbeatResponse PROTOBUF_FINAL :
   void InternalSwap(HeardbeatResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.HeardbeatResponse";
+    return "HeardbeatResponse";
   }
   protected:
   explicit HeardbeatResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -586,7 +583,7 @@ class HeardbeatResponse PROTOBUF_FINAL :
   void _internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.HeardbeatResponse)
+  // @@protoc_insertion_point(class_scope:HeardbeatResponse)
  private:
   class _Internal;
 
@@ -600,7 +597,7 @@ class HeardbeatResponse PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class TradeDayRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.TradeDayRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:TradeDayRequest) */ {
  public:
   inline TradeDayRequest() : TradeDayRequest(nullptr) {}
   virtual ~TradeDayRequest();
@@ -689,7 +686,7 @@ class TradeDayRequest PROTOBUF_FINAL :
   void InternalSwap(TradeDayRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.TradeDayRequest";
+    return "TradeDayRequest";
   }
   protected:
   explicit TradeDayRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -731,16 +728,16 @@ class TradeDayRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_date();
   public:
 
-  // .pb.MARKET_TYPE market_type = 2;
+  // .MARKET_TYPE market_type = 2;
   void clear_market_type();
-  ::pb::MARKET_TYPE market_type() const;
-  void set_market_type(::pb::MARKET_TYPE value);
+  ::MARKET_TYPE market_type() const;
+  void set_market_type(::MARKET_TYPE value);
   private:
-  ::pb::MARKET_TYPE _internal_market_type() const;
-  void _internal_set_market_type(::pb::MARKET_TYPE value);
+  ::MARKET_TYPE _internal_market_type() const;
+  void _internal_set_market_type(::MARKET_TYPE value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.TradeDayRequest)
+  // @@protoc_insertion_point(class_scope:TradeDayRequest)
  private:
   class _Internal;
 
@@ -755,7 +752,7 @@ class TradeDayRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class TradeDayResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.TradeDayResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:TradeDayResponse) */ {
  public:
   inline TradeDayResponse() : TradeDayResponse(nullptr) {}
   virtual ~TradeDayResponse();
@@ -844,7 +841,7 @@ class TradeDayResponse PROTOBUF_FINAL :
   void InternalSwap(TradeDayResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.TradeDayResponse";
+    return "TradeDayResponse";
   }
   protected:
   explicit TradeDayResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -870,23 +867,23 @@ class TradeDayResponse PROTOBUF_FINAL :
     kResultFieldNumber = 1,
     kIsTradeDayFieldNumber = 2,
   };
-  // .pb.ResultInfo result = 1;
+  // .ResultInfo result = 1;
   bool has_result() const;
   private:
   bool _internal_has_result() const;
   public:
   void clear_result();
-  const ::pb::ResultInfo& result() const;
-  ::pb::ResultInfo* release_result();
-  ::pb::ResultInfo* mutable_result();
-  void set_allocated_result(::pb::ResultInfo* result);
+  const ::ResultInfo& result() const;
+  ::ResultInfo* release_result();
+  ::ResultInfo* mutable_result();
+  void set_allocated_result(::ResultInfo* result);
   private:
-  const ::pb::ResultInfo& _internal_result() const;
-  ::pb::ResultInfo* _internal_mutable_result();
+  const ::ResultInfo& _internal_result() const;
+  ::ResultInfo* _internal_mutable_result();
   public:
   void unsafe_arena_set_allocated_result(
-      ::pb::ResultInfo* result);
-  ::pb::ResultInfo* unsafe_arena_release_result();
+      ::ResultInfo* result);
+  ::ResultInfo* unsafe_arena_release_result();
 
   // bool is_trade_day = 2;
   void clear_is_trade_day();
@@ -897,14 +894,14 @@ class TradeDayResponse PROTOBUF_FINAL :
   void _internal_set_is_trade_day(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:pb.TradeDayResponse)
+  // @@protoc_insertion_point(class_scope:TradeDayResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::pb::ResultInfo* result_;
+  ::ResultInfo* result_;
   bool is_trade_day_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pb_2fmonitor_2eproto;
@@ -912,7 +909,7 @@ class TradeDayResponse PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class CreditStockListRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.CreditStockListRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CreditStockListRequest) */ {
  public:
   inline CreditStockListRequest() : CreditStockListRequest(nullptr) {}
   virtual ~CreditStockListRequest();
@@ -1001,7 +998,7 @@ class CreditStockListRequest PROTOBUF_FINAL :
   void InternalSwap(CreditStockListRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.CreditStockListRequest";
+    return "CreditStockListRequest";
   }
   protected:
   explicit CreditStockListRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1023,7 +1020,7 @@ class CreditStockListRequest PROTOBUF_FINAL :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:pb.CreditStockListRequest)
+  // @@protoc_insertion_point(class_scope:CreditStockListRequest)
  private:
   class _Internal;
 
@@ -1036,7 +1033,7 @@ class CreditStockListRequest PROTOBUF_FINAL :
 // -------------------------------------------------------------------
 
 class CreditStockList PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.CreditStockList) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CreditStockList) */ {
  public:
   inline CreditStockList() : CreditStockList(nullptr) {}
   virtual ~CreditStockList();
@@ -1125,7 +1122,7 @@ class CreditStockList PROTOBUF_FINAL :
   void InternalSwap(CreditStockList* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "pb.CreditStockList";
+    return "CreditStockList";
   }
   protected:
   explicit CreditStockList(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1192,25 +1189,25 @@ class CreditStockList PROTOBUF_FINAL :
   std::string* _internal_mutable_date();
   public:
 
-  // .pb.ResultInfo result = 1;
+  // .ResultInfo result = 1;
   bool has_result() const;
   private:
   bool _internal_has_result() const;
   public:
   void clear_result();
-  const ::pb::ResultInfo& result() const;
-  ::pb::ResultInfo* release_result();
-  ::pb::ResultInfo* mutable_result();
-  void set_allocated_result(::pb::ResultInfo* result);
+  const ::ResultInfo& result() const;
+  ::ResultInfo* release_result();
+  ::ResultInfo* mutable_result();
+  void set_allocated_result(::ResultInfo* result);
   private:
-  const ::pb::ResultInfo& _internal_result() const;
-  ::pb::ResultInfo* _internal_mutable_result();
+  const ::ResultInfo& _internal_result() const;
+  ::ResultInfo* _internal_mutable_result();
   public:
   void unsafe_arena_set_allocated_result(
-      ::pb::ResultInfo* result);
-  ::pb::ResultInfo* unsafe_arena_release_result();
+      ::ResultInfo* result);
+  ::ResultInfo* unsafe_arena_release_result();
 
-  // @@protoc_insertion_point(class_scope:pb.CreditStockList)
+  // @@protoc_insertion_point(class_scope:CreditStockList)
  private:
   class _Internal;
 
@@ -1219,7 +1216,7 @@ class CreditStockList PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> code_list_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr date_;
-  ::pb::ResultInfo* result_;
+  ::ResultInfo* result_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pb_2fmonitor_2eproto;
 };
@@ -1234,24 +1231,24 @@ class CreditStockList PROTOBUF_FINAL :
 #endif  // __GNUC__
 // ServiceInfo
 
-// .pb.SERVICE_NAME name = 1;
+// .SERVICE_NAME name = 1;
 inline void ServiceInfo::clear_name() {
   name_ = 0;
 }
-inline ::pb::SERVICE_NAME ServiceInfo::_internal_name() const {
-  return static_cast< ::pb::SERVICE_NAME >(name_);
+inline ::SERVICE_NAME ServiceInfo::_internal_name() const {
+  return static_cast< ::SERVICE_NAME >(name_);
 }
-inline ::pb::SERVICE_NAME ServiceInfo::name() const {
-  // @@protoc_insertion_point(field_get:pb.ServiceInfo.name)
+inline ::SERVICE_NAME ServiceInfo::name() const {
+  // @@protoc_insertion_point(field_get:ServiceInfo.name)
   return _internal_name();
 }
-inline void ServiceInfo::_internal_set_name(::pb::SERVICE_NAME value) {
+inline void ServiceInfo::_internal_set_name(::SERVICE_NAME value) {
   
   name_ = value;
 }
-inline void ServiceInfo::set_name(::pb::SERVICE_NAME value) {
+inline void ServiceInfo::set_name(::SERVICE_NAME value) {
   _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:pb.ServiceInfo.name)
+  // @@protoc_insertion_point(field_set:ServiceInfo.name)
 }
 
 // string address = 2;
@@ -1259,15 +1256,15 @@ inline void ServiceInfo::clear_address() {
   address_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& ServiceInfo::address() const {
-  // @@protoc_insertion_point(field_get:pb.ServiceInfo.address)
+  // @@protoc_insertion_point(field_get:ServiceInfo.address)
   return _internal_address();
 }
 inline void ServiceInfo::set_address(const std::string& value) {
   _internal_set_address(value);
-  // @@protoc_insertion_point(field_set:pb.ServiceInfo.address)
+  // @@protoc_insertion_point(field_set:ServiceInfo.address)
 }
 inline std::string* ServiceInfo::mutable_address() {
-  // @@protoc_insertion_point(field_mutable:pb.ServiceInfo.address)
+  // @@protoc_insertion_point(field_mutable:ServiceInfo.address)
   return _internal_mutable_address();
 }
 inline const std::string& ServiceInfo::_internal_address() const {
@@ -1281,28 +1278,28 @@ inline void ServiceInfo::set_address(std::string&& value) {
   
   address_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.ServiceInfo.address)
+  // @@protoc_insertion_point(field_set_rvalue:ServiceInfo.address)
 }
 inline void ServiceInfo::set_address(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   address_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.ServiceInfo.address)
+  // @@protoc_insertion_point(field_set_char:ServiceInfo.address)
 }
 inline void ServiceInfo::set_address(const char* value,
     size_t size) {
   
   address_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.ServiceInfo.address)
+  // @@protoc_insertion_point(field_set_pointer:ServiceInfo.address)
 }
 inline std::string* ServiceInfo::_internal_mutable_address() {
   
   return address_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* ServiceInfo::release_address() {
-  // @@protoc_insertion_point(field_release:pb.ServiceInfo.address)
+  // @@protoc_insertion_point(field_release:ServiceInfo.address)
   return address_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void ServiceInfo::set_allocated_address(std::string* address) {
@@ -1313,27 +1310,27 @@ inline void ServiceInfo::set_allocated_address(std::string* address) {
   }
   address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), address,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.ServiceInfo.address)
+  // @@protoc_insertion_point(field_set_allocated:ServiceInfo.address)
 }
 
-// .pb.ALIVE_TIME alive_time = 3;
+// .ALIVE_TIME alive_time = 3;
 inline void ServiceInfo::clear_alive_time() {
   alive_time_ = 0;
 }
-inline ::pb::ALIVE_TIME ServiceInfo::_internal_alive_time() const {
-  return static_cast< ::pb::ALIVE_TIME >(alive_time_);
+inline ::ALIVE_TIME ServiceInfo::_internal_alive_time() const {
+  return static_cast< ::ALIVE_TIME >(alive_time_);
 }
-inline ::pb::ALIVE_TIME ServiceInfo::alive_time() const {
-  // @@protoc_insertion_point(field_get:pb.ServiceInfo.alive_time)
+inline ::ALIVE_TIME ServiceInfo::alive_time() const {
+  // @@protoc_insertion_point(field_get:ServiceInfo.alive_time)
   return _internal_alive_time();
 }
-inline void ServiceInfo::_internal_set_alive_time(::pb::ALIVE_TIME value) {
+inline void ServiceInfo::_internal_set_alive_time(::ALIVE_TIME value) {
   
   alive_time_ = value;
 }
-inline void ServiceInfo::set_alive_time(::pb::ALIVE_TIME value) {
+inline void ServiceInfo::set_alive_time(::ALIVE_TIME value) {
   _internal_set_alive_time(value);
-  // @@protoc_insertion_point(field_set:pb.ServiceInfo.alive_time)
+  // @@protoc_insertion_point(field_set:ServiceInfo.alive_time)
 }
 
 // -------------------------------------------------------------------
@@ -1348,7 +1345,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint64 HeardbeatRequest::_internal_timestamp() c
   return timestamp_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint64 HeardbeatRequest::timestamp() const {
-  // @@protoc_insertion_point(field_get:pb.HeardbeatRequest.timestamp)
+  // @@protoc_insertion_point(field_get:HeardbeatRequest.timestamp)
   return _internal_timestamp();
 }
 inline void HeardbeatRequest::_internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
@@ -1357,7 +1354,7 @@ inline void HeardbeatRequest::_internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::u
 }
 inline void HeardbeatRequest::set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:pb.HeardbeatRequest.timestamp)
+  // @@protoc_insertion_point(field_set:HeardbeatRequest.timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -1372,7 +1369,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint64 HeardbeatResponse::_internal_timestamp() 
   return timestamp_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint64 HeardbeatResponse::timestamp() const {
-  // @@protoc_insertion_point(field_get:pb.HeardbeatResponse.timestamp)
+  // @@protoc_insertion_point(field_get:HeardbeatResponse.timestamp)
   return _internal_timestamp();
 }
 inline void HeardbeatResponse::_internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
@@ -1381,7 +1378,7 @@ inline void HeardbeatResponse::_internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::
 }
 inline void HeardbeatResponse::set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_timestamp(value);
-  // @@protoc_insertion_point(field_set:pb.HeardbeatResponse.timestamp)
+  // @@protoc_insertion_point(field_set:HeardbeatResponse.timestamp)
 }
 
 // -------------------------------------------------------------------
@@ -1393,15 +1390,15 @@ inline void TradeDayRequest::clear_date() {
   date_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& TradeDayRequest::date() const {
-  // @@protoc_insertion_point(field_get:pb.TradeDayRequest.date)
+  // @@protoc_insertion_point(field_get:TradeDayRequest.date)
   return _internal_date();
 }
 inline void TradeDayRequest::set_date(const std::string& value) {
   _internal_set_date(value);
-  // @@protoc_insertion_point(field_set:pb.TradeDayRequest.date)
+  // @@protoc_insertion_point(field_set:TradeDayRequest.date)
 }
 inline std::string* TradeDayRequest::mutable_date() {
-  // @@protoc_insertion_point(field_mutable:pb.TradeDayRequest.date)
+  // @@protoc_insertion_point(field_mutable:TradeDayRequest.date)
   return _internal_mutable_date();
 }
 inline const std::string& TradeDayRequest::_internal_date() const {
@@ -1415,28 +1412,28 @@ inline void TradeDayRequest::set_date(std::string&& value) {
   
   date_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.TradeDayRequest.date)
+  // @@protoc_insertion_point(field_set_rvalue:TradeDayRequest.date)
 }
 inline void TradeDayRequest::set_date(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.TradeDayRequest.date)
+  // @@protoc_insertion_point(field_set_char:TradeDayRequest.date)
 }
 inline void TradeDayRequest::set_date(const char* value,
     size_t size) {
   
   date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.TradeDayRequest.date)
+  // @@protoc_insertion_point(field_set_pointer:TradeDayRequest.date)
 }
 inline std::string* TradeDayRequest::_internal_mutable_date() {
   
   return date_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* TradeDayRequest::release_date() {
-  // @@protoc_insertion_point(field_release:pb.TradeDayRequest.date)
+  // @@protoc_insertion_point(field_release:TradeDayRequest.date)
   return date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void TradeDayRequest::set_allocated_date(std::string* date) {
@@ -1447,51 +1444,51 @@ inline void TradeDayRequest::set_allocated_date(std::string* date) {
   }
   date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), date,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.TradeDayRequest.date)
+  // @@protoc_insertion_point(field_set_allocated:TradeDayRequest.date)
 }
 
-// .pb.MARKET_TYPE market_type = 2;
+// .MARKET_TYPE market_type = 2;
 inline void TradeDayRequest::clear_market_type() {
   market_type_ = 0;
 }
-inline ::pb::MARKET_TYPE TradeDayRequest::_internal_market_type() const {
-  return static_cast< ::pb::MARKET_TYPE >(market_type_);
+inline ::MARKET_TYPE TradeDayRequest::_internal_market_type() const {
+  return static_cast< ::MARKET_TYPE >(market_type_);
 }
-inline ::pb::MARKET_TYPE TradeDayRequest::market_type() const {
-  // @@protoc_insertion_point(field_get:pb.TradeDayRequest.market_type)
+inline ::MARKET_TYPE TradeDayRequest::market_type() const {
+  // @@protoc_insertion_point(field_get:TradeDayRequest.market_type)
   return _internal_market_type();
 }
-inline void TradeDayRequest::_internal_set_market_type(::pb::MARKET_TYPE value) {
+inline void TradeDayRequest::_internal_set_market_type(::MARKET_TYPE value) {
   
   market_type_ = value;
 }
-inline void TradeDayRequest::set_market_type(::pb::MARKET_TYPE value) {
+inline void TradeDayRequest::set_market_type(::MARKET_TYPE value) {
   _internal_set_market_type(value);
-  // @@protoc_insertion_point(field_set:pb.TradeDayRequest.market_type)
+  // @@protoc_insertion_point(field_set:TradeDayRequest.market_type)
 }
 
 // -------------------------------------------------------------------
 
 // TradeDayResponse
 
-// .pb.ResultInfo result = 1;
+// .ResultInfo result = 1;
 inline bool TradeDayResponse::_internal_has_result() const {
   return this != internal_default_instance() && result_ != nullptr;
 }
 inline bool TradeDayResponse::has_result() const {
   return _internal_has_result();
 }
-inline const ::pb::ResultInfo& TradeDayResponse::_internal_result() const {
-  const ::pb::ResultInfo* p = result_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::pb::ResultInfo*>(
-      &::pb::_ResultInfo_default_instance_);
+inline const ::ResultInfo& TradeDayResponse::_internal_result() const {
+  const ::ResultInfo* p = result_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::ResultInfo*>(
+      &::_ResultInfo_default_instance_);
 }
-inline const ::pb::ResultInfo& TradeDayResponse::result() const {
-  // @@protoc_insertion_point(field_get:pb.TradeDayResponse.result)
+inline const ::ResultInfo& TradeDayResponse::result() const {
+  // @@protoc_insertion_point(field_get:TradeDayResponse.result)
   return _internal_result();
 }
 inline void TradeDayResponse::unsafe_arena_set_allocated_result(
-    ::pb::ResultInfo* result) {
+    ::ResultInfo* result) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(result_);
   }
@@ -1501,37 +1498,37 @@ inline void TradeDayResponse::unsafe_arena_set_allocated_result(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.TradeDayResponse.result)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:TradeDayResponse.result)
 }
-inline ::pb::ResultInfo* TradeDayResponse::release_result() {
+inline ::ResultInfo* TradeDayResponse::release_result() {
   
-  ::pb::ResultInfo* temp = result_;
+  ::ResultInfo* temp = result_;
   result_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::pb::ResultInfo* TradeDayResponse::unsafe_arena_release_result() {
-  // @@protoc_insertion_point(field_release:pb.TradeDayResponse.result)
+inline ::ResultInfo* TradeDayResponse::unsafe_arena_release_result() {
+  // @@protoc_insertion_point(field_release:TradeDayResponse.result)
   
-  ::pb::ResultInfo* temp = result_;
+  ::ResultInfo* temp = result_;
   result_ = nullptr;
   return temp;
 }
-inline ::pb::ResultInfo* TradeDayResponse::_internal_mutable_result() {
+inline ::ResultInfo* TradeDayResponse::_internal_mutable_result() {
   
   if (result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pb::ResultInfo>(GetArena());
+    auto* p = CreateMaybeMessage<::ResultInfo>(GetArena());
     result_ = p;
   }
   return result_;
 }
-inline ::pb::ResultInfo* TradeDayResponse::mutable_result() {
-  // @@protoc_insertion_point(field_mutable:pb.TradeDayResponse.result)
+inline ::ResultInfo* TradeDayResponse::mutable_result() {
+  // @@protoc_insertion_point(field_mutable:TradeDayResponse.result)
   return _internal_mutable_result();
 }
-inline void TradeDayResponse::set_allocated_result(::pb::ResultInfo* result) {
+inline void TradeDayResponse::set_allocated_result(::ResultInfo* result) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(result_);
@@ -1548,7 +1545,7 @@ inline void TradeDayResponse::set_allocated_result(::pb::ResultInfo* result) {
     
   }
   result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:pb.TradeDayResponse.result)
+  // @@protoc_insertion_point(field_set_allocated:TradeDayResponse.result)
 }
 
 // bool is_trade_day = 2;
@@ -1559,7 +1556,7 @@ inline bool TradeDayResponse::_internal_is_trade_day() const {
   return is_trade_day_;
 }
 inline bool TradeDayResponse::is_trade_day() const {
-  // @@protoc_insertion_point(field_get:pb.TradeDayResponse.is_trade_day)
+  // @@protoc_insertion_point(field_get:TradeDayResponse.is_trade_day)
   return _internal_is_trade_day();
 }
 inline void TradeDayResponse::_internal_set_is_trade_day(bool value) {
@@ -1568,7 +1565,7 @@ inline void TradeDayResponse::_internal_set_is_trade_day(bool value) {
 }
 inline void TradeDayResponse::set_is_trade_day(bool value) {
   _internal_set_is_trade_day(value);
-  // @@protoc_insertion_point(field_set:pb.TradeDayResponse.is_trade_day)
+  // @@protoc_insertion_point(field_set:TradeDayResponse.is_trade_day)
 }
 
 // -------------------------------------------------------------------
@@ -1579,24 +1576,24 @@ inline void TradeDayResponse::set_is_trade_day(bool value) {
 
 // CreditStockList
 
-// .pb.ResultInfo result = 1;
+// .ResultInfo result = 1;
 inline bool CreditStockList::_internal_has_result() const {
   return this != internal_default_instance() && result_ != nullptr;
 }
 inline bool CreditStockList::has_result() const {
   return _internal_has_result();
 }
-inline const ::pb::ResultInfo& CreditStockList::_internal_result() const {
-  const ::pb::ResultInfo* p = result_;
-  return p != nullptr ? *p : *reinterpret_cast<const ::pb::ResultInfo*>(
-      &::pb::_ResultInfo_default_instance_);
+inline const ::ResultInfo& CreditStockList::_internal_result() const {
+  const ::ResultInfo* p = result_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::ResultInfo*>(
+      &::_ResultInfo_default_instance_);
 }
-inline const ::pb::ResultInfo& CreditStockList::result() const {
-  // @@protoc_insertion_point(field_get:pb.CreditStockList.result)
+inline const ::ResultInfo& CreditStockList::result() const {
+  // @@protoc_insertion_point(field_get:CreditStockList.result)
   return _internal_result();
 }
 inline void CreditStockList::unsafe_arena_set_allocated_result(
-    ::pb::ResultInfo* result) {
+    ::ResultInfo* result) {
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(result_);
   }
@@ -1606,37 +1603,37 @@ inline void CreditStockList::unsafe_arena_set_allocated_result(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.CreditStockList.result)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:CreditStockList.result)
 }
-inline ::pb::ResultInfo* CreditStockList::release_result() {
+inline ::ResultInfo* CreditStockList::release_result() {
   
-  ::pb::ResultInfo* temp = result_;
+  ::ResultInfo* temp = result_;
   result_ = nullptr;
   if (GetArena() != nullptr) {
     temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
   }
   return temp;
 }
-inline ::pb::ResultInfo* CreditStockList::unsafe_arena_release_result() {
-  // @@protoc_insertion_point(field_release:pb.CreditStockList.result)
+inline ::ResultInfo* CreditStockList::unsafe_arena_release_result() {
+  // @@protoc_insertion_point(field_release:CreditStockList.result)
   
-  ::pb::ResultInfo* temp = result_;
+  ::ResultInfo* temp = result_;
   result_ = nullptr;
   return temp;
 }
-inline ::pb::ResultInfo* CreditStockList::_internal_mutable_result() {
+inline ::ResultInfo* CreditStockList::_internal_mutable_result() {
   
   if (result_ == nullptr) {
-    auto* p = CreateMaybeMessage<::pb::ResultInfo>(GetArena());
+    auto* p = CreateMaybeMessage<::ResultInfo>(GetArena());
     result_ = p;
   }
   return result_;
 }
-inline ::pb::ResultInfo* CreditStockList::mutable_result() {
-  // @@protoc_insertion_point(field_mutable:pb.CreditStockList.result)
+inline ::ResultInfo* CreditStockList::mutable_result() {
+  // @@protoc_insertion_point(field_mutable:CreditStockList.result)
   return _internal_mutable_result();
 }
-inline void CreditStockList::set_allocated_result(::pb::ResultInfo* result) {
+inline void CreditStockList::set_allocated_result(::ResultInfo* result) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(result_);
@@ -1653,7 +1650,7 @@ inline void CreditStockList::set_allocated_result(::pb::ResultInfo* result) {
     
   }
   result_ = result;
-  // @@protoc_insertion_point(field_set_allocated:pb.CreditStockList.result)
+  // @@protoc_insertion_point(field_set_allocated:CreditStockList.result)
 }
 
 // string date = 2;
@@ -1661,15 +1658,15 @@ inline void CreditStockList::clear_date() {
   date_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline const std::string& CreditStockList::date() const {
-  // @@protoc_insertion_point(field_get:pb.CreditStockList.date)
+  // @@protoc_insertion_point(field_get:CreditStockList.date)
   return _internal_date();
 }
 inline void CreditStockList::set_date(const std::string& value) {
   _internal_set_date(value);
-  // @@protoc_insertion_point(field_set:pb.CreditStockList.date)
+  // @@protoc_insertion_point(field_set:CreditStockList.date)
 }
 inline std::string* CreditStockList::mutable_date() {
-  // @@protoc_insertion_point(field_mutable:pb.CreditStockList.date)
+  // @@protoc_insertion_point(field_mutable:CreditStockList.date)
   return _internal_mutable_date();
 }
 inline const std::string& CreditStockList::_internal_date() const {
@@ -1683,28 +1680,28 @@ inline void CreditStockList::set_date(std::string&& value) {
   
   date_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:pb.CreditStockList.date)
+  // @@protoc_insertion_point(field_set_rvalue:CreditStockList.date)
 }
 inline void CreditStockList::set_date(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:pb.CreditStockList.date)
+  // @@protoc_insertion_point(field_set_char:CreditStockList.date)
 }
 inline void CreditStockList::set_date(const char* value,
     size_t size) {
   
   date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:pb.CreditStockList.date)
+  // @@protoc_insertion_point(field_set_pointer:CreditStockList.date)
 }
 inline std::string* CreditStockList::_internal_mutable_date() {
   
   return date_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline std::string* CreditStockList::release_date() {
-  // @@protoc_insertion_point(field_release:pb.CreditStockList.date)
+  // @@protoc_insertion_point(field_release:CreditStockList.date)
   return date_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 inline void CreditStockList::set_allocated_date(std::string* date) {
@@ -1715,7 +1712,7 @@ inline void CreditStockList::set_allocated_date(std::string* date) {
   }
   date_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), date,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:pb.CreditStockList.date)
+  // @@protoc_insertion_point(field_set_allocated:CreditStockList.date)
 }
 
 // repeated string code_list = 3;
@@ -1729,66 +1726,66 @@ inline void CreditStockList::clear_code_list() {
   code_list_.Clear();
 }
 inline std::string* CreditStockList::add_code_list() {
-  // @@protoc_insertion_point(field_add_mutable:pb.CreditStockList.code_list)
+  // @@protoc_insertion_point(field_add_mutable:CreditStockList.code_list)
   return _internal_add_code_list();
 }
 inline const std::string& CreditStockList::_internal_code_list(int index) const {
   return code_list_.Get(index);
 }
 inline const std::string& CreditStockList::code_list(int index) const {
-  // @@protoc_insertion_point(field_get:pb.CreditStockList.code_list)
+  // @@protoc_insertion_point(field_get:CreditStockList.code_list)
   return _internal_code_list(index);
 }
 inline std::string* CreditStockList::mutable_code_list(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.CreditStockList.code_list)
+  // @@protoc_insertion_point(field_mutable:CreditStockList.code_list)
   return code_list_.Mutable(index);
 }
 inline void CreditStockList::set_code_list(int index, const std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.CreditStockList.code_list)
+  // @@protoc_insertion_point(field_set:CreditStockList.code_list)
   code_list_.Mutable(index)->assign(value);
 }
 inline void CreditStockList::set_code_list(int index, std::string&& value) {
-  // @@protoc_insertion_point(field_set:pb.CreditStockList.code_list)
+  // @@protoc_insertion_point(field_set:CreditStockList.code_list)
   code_list_.Mutable(index)->assign(std::move(value));
 }
 inline void CreditStockList::set_code_list(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   code_list_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.CreditStockList.code_list)
+  // @@protoc_insertion_point(field_set_char:CreditStockList.code_list)
 }
 inline void CreditStockList::set_code_list(int index, const char* value, size_t size) {
   code_list_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.CreditStockList.code_list)
+  // @@protoc_insertion_point(field_set_pointer:CreditStockList.code_list)
 }
 inline std::string* CreditStockList::_internal_add_code_list() {
   return code_list_.Add();
 }
 inline void CreditStockList::add_code_list(const std::string& value) {
   code_list_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.CreditStockList.code_list)
+  // @@protoc_insertion_point(field_add:CreditStockList.code_list)
 }
 inline void CreditStockList::add_code_list(std::string&& value) {
   code_list_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:pb.CreditStockList.code_list)
+  // @@protoc_insertion_point(field_add:CreditStockList.code_list)
 }
 inline void CreditStockList::add_code_list(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   code_list_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.CreditStockList.code_list)
+  // @@protoc_insertion_point(field_add_char:CreditStockList.code_list)
 }
 inline void CreditStockList::add_code_list(const char* value, size_t size) {
   code_list_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.CreditStockList.code_list)
+  // @@protoc_insertion_point(field_add_pointer:CreditStockList.code_list)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
 CreditStockList::code_list() const {
-  // @@protoc_insertion_point(field_list:pb.CreditStockList.code_list)
+  // @@protoc_insertion_point(field_list:CreditStockList.code_list)
   return code_list_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
 CreditStockList::mutable_code_list() {
-  // @@protoc_insertion_point(field_mutable_list:pb.CreditStockList.code_list)
+  // @@protoc_insertion_point(field_mutable_list:CreditStockList.code_list)
   return &code_list_;
 }
 
@@ -1810,19 +1807,18 @@ CreditStockList::mutable_code_list() {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace pb
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::pb::SERVICE_NAME> : ::std::true_type {};
+template <> struct is_proto_enum< ::SERVICE_NAME> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::pb::SERVICE_NAME>() {
-  return ::pb::SERVICE_NAME_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::SERVICE_NAME>() {
+  return ::SERVICE_NAME_descriptor();
 }
-template <> struct is_proto_enum< ::pb::ALIVE_TIME> : ::std::true_type {};
+template <> struct is_proto_enum< ::ALIVE_TIME> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::pb::ALIVE_TIME>() {
-  return ::pb::ALIVE_TIME_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::ALIVE_TIME>() {
+  return ::ALIVE_TIME_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

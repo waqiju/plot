@@ -120,9 +120,6 @@
     <ClCompile Include="src\plot\segment.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\testcase\test_protobuf.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\pb\common.pb.cc">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -139,6 +136,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\pb\xueqiu.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\plot\stock_glyph.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\testcase\test_stock_glyph.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -282,6 +285,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\pb\xueqiu.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plot\stock_glyph.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -14,7 +14,6 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-namespace pb {
 class BaseRespDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<BaseResp> _instance;
@@ -23,16 +22,15 @@ class ResultInfoDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ResultInfo> _instance;
 } _ResultInfo_default_instance_;
-}  // namespace pb
 static void InitDefaultsscc_info_BaseResp_pb_2fcommon_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_BaseResp_default_instance_;
-    new (ptr) ::pb::BaseResp();
+    void* ptr = &::_BaseResp_default_instance_;
+    new (ptr) ::BaseResp();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::BaseResp::InitAsDefaultInstance();
+  ::BaseResp::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_BaseResp_pb_2fcommon_2eproto =
@@ -42,11 +40,11 @@ static void InitDefaultsscc_info_ResultInfo_pb_2fcommon_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_ResultInfo_default_instance_;
-    new (ptr) ::pb::ResultInfo();
+    void* ptr = &::_ResultInfo_default_instance_;
+    new (ptr) ::ResultInfo();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::ResultInfo::InitAsDefaultInstance();
+  ::ResultInfo::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ResultInfo_pb_2fcommon_2eproto =
@@ -58,57 +56,57 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pb_2fcommon_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::BaseResp, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::BaseResp, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::BaseResp, success_),
-  PROTOBUF_FIELD_OFFSET(::pb::BaseResp, errorcode_),
-  PROTOBUF_FIELD_OFFSET(::pb::BaseResp, errormsg_),
+  PROTOBUF_FIELD_OFFSET(::BaseResp, success_),
+  PROTOBUF_FIELD_OFFSET(::BaseResp, errorcode_),
+  PROTOBUF_FIELD_OFFSET(::BaseResp, errormsg_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::ResultInfo, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::ResultInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::ResultInfo, error_code_),
-  PROTOBUF_FIELD_OFFSET(::pb::ResultInfo, error_message_),
+  PROTOBUF_FIELD_OFFSET(::ResultInfo, error_code_),
+  PROTOBUF_FIELD_OFFSET(::ResultInfo, error_message_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::pb::BaseResp)},
-  { 8, -1, sizeof(::pb::ResultInfo)},
+  { 0, -1, sizeof(::BaseResp)},
+  { 8, -1, sizeof(::ResultInfo)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_BaseResp_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_ResultInfo_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_BaseResp_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_ResultInfo_default_instance_),
 };
 
 const char descriptor_table_protodef_pb_2fcommon_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\017pb/common.proto\022\002pb\"@\n\010BaseResp\022\017\n\007suc"
-  "cess\030\001 \001(\010\022\021\n\terrorCode\030\002 \001(\003\022\020\n\010errorMs"
-  "g\030\003 \001(\t\"7\n\nResultInfo\022\022\n\nerror_code\030\001 \001("
-  "\003\022\025\n\rerror_message\030\002 \001(\t*k\n\nERROR_CODE\022\026"
-  "\n\022ERROR_CODE_SUCCESS\020\000\022 \n\034ERROR_CODE_PAR"
-  "AMETER_INVALID\020\001\022#\n\037ERROR_CODE_AUTHORIZA"
-  "TION_FAILED\020\002*\"\n\tErrorCode\022\025\n\021ErrorCode_"
-  "Unknown\020\000*\244\004\n\013PORT_DEFINE\022\023\n\017PORT_DEFINE"
-  "_NIL\020\000\022\030\n\022PORT_DEFINE_TRADER\020\351\201\002\022\031\n\023PORT"
-  "_DEFINE_WX_PUSH\020\352\201\002\022\027\n\021PORT_DEFINE_GUARD"
-  "\020\353\201\002\022\"\n\034PORT_DEFINE_MARKET_CH_POLICY\020\354\201\002"
-  "\022\031\n\023PORT_DEFINE_PROPHET\020\355\201\002\022\037\n\031PORT_DEFI"
-  "NE_MARKET_CH_TAG\020\356\201\002\022!\n\033PORT_DEFINE_PORT"
-  "FOLIO_STATS\020\357\201\002\022\030\n\022PORT_DEFINE_XUEQIU\020\360\201"
-  "\002\022\035\n\027PORT_DEFINE_TEMPORARY_1\020\315\202\002\022\035\n\027PORT"
-  "_DEFINE_TEMPORARY_2\020\316\202\002\022\035\n\027PORT_DEFINE_T"
-  "EMPORARY_3\020\317\202\002\022\035\n\027PORT_DEFINE_TEMPORARY_"
-  "4\020\320\202\002\022\035\n\027PORT_DEFINE_TEMPORARY_5\020\321\202\002\022\035\n\027"
-  "PORT_DEFINE_TEMPORARY_6\020\322\202\002\022\035\n\027PORT_DEFI"
-  "NE_TEMPORARY_7\020\323\202\002\022\035\n\027PORT_DEFINE_TEMPOR"
-  "ARY_8\020\324\202\002\022\035\n\027PORT_DEFINE_TEMPORARY_9\020\325\202\002"
-  "*_\n\013MARKET_TYPE\022\024\n\020MARKET_TYPE_NONE\020\000\022\022\n"
-  "\016MARKET_TYPE_CH\020\001\022\022\n\016MARKET_TYPE_HK\020\002\022\022\n"
-  "\016MARKET_TYPE_US\020\003B$\n\030com.tigerbrokers.co"
-  "ntactB\006CommonP\001b\006proto3"
+  "\n\017pb/common.proto\"@\n\010BaseResp\022\017\n\007success"
+  "\030\001 \001(\010\022\021\n\terrorCode\030\002 \001(\003\022\020\n\010errorMsg\030\003 "
+  "\001(\t\"7\n\nResultInfo\022\022\n\nerror_code\030\001 \001(\003\022\025\n"
+  "\rerror_message\030\002 \001(\t*k\n\nERROR_CODE\022\026\n\022ER"
+  "ROR_CODE_SUCCESS\020\000\022 \n\034ERROR_CODE_PARAMET"
+  "ER_INVALID\020\001\022#\n\037ERROR_CODE_AUTHORIZATION"
+  "_FAILED\020\002*\"\n\tErrorCode\022\025\n\021ErrorCode_Unkn"
+  "own\020\000*\244\004\n\013PORT_DEFINE\022\023\n\017PORT_DEFINE_NIL"
+  "\020\000\022\030\n\022PORT_DEFINE_TRADER\020\351\201\002\022\031\n\023PORT_DEF"
+  "INE_WX_PUSH\020\352\201\002\022\027\n\021PORT_DEFINE_GUARD\020\353\201\002"
+  "\022\"\n\034PORT_DEFINE_MARKET_CH_POLICY\020\354\201\002\022\031\n\023"
+  "PORT_DEFINE_PROPHET\020\355\201\002\022\037\n\031PORT_DEFINE_M"
+  "ARKET_CH_TAG\020\356\201\002\022!\n\033PORT_DEFINE_PORTFOLI"
+  "O_STATS\020\357\201\002\022\030\n\022PORT_DEFINE_XUEQIU\020\360\201\002\022\035\n"
+  "\027PORT_DEFINE_TEMPORARY_1\020\315\202\002\022\035\n\027PORT_DEF"
+  "INE_TEMPORARY_2\020\316\202\002\022\035\n\027PORT_DEFINE_TEMPO"
+  "RARY_3\020\317\202\002\022\035\n\027PORT_DEFINE_TEMPORARY_4\020\320\202"
+  "\002\022\035\n\027PORT_DEFINE_TEMPORARY_5\020\321\202\002\022\035\n\027PORT"
+  "_DEFINE_TEMPORARY_6\020\322\202\002\022\035\n\027PORT_DEFINE_T"
+  "EMPORARY_7\020\323\202\002\022\035\n\027PORT_DEFINE_TEMPORARY_"
+  "8\020\324\202\002\022\035\n\027PORT_DEFINE_TEMPORARY_9\020\325\202\002*_\n\013"
+  "MARKET_TYPE\022\024\n\020MARKET_TYPE_NONE\020\000\022\022\n\016MAR"
+  "KET_TYPE_CH\020\001\022\022\n\016MARKET_TYPE_HK\020\002\022\022\n\016MAR"
+  "KET_TYPE_US\020\003B$\n\030com.tigerbrokers.contac"
+  "tB\006CommonP\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pb_2fcommon_2eproto_deps[1] = {
 };
@@ -118,7 +116,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pb_
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pb_2fcommon_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fcommon_2eproto = {
-  false, false, descriptor_table_protodef_pb_2fcommon_2eproto, "pb/common.proto", 983,
+  false, false, descriptor_table_protodef_pb_2fcommon_2eproto, "pb/common.proto", 979,
   &descriptor_table_pb_2fcommon_2eproto_once, descriptor_table_pb_2fcommon_2eproto_sccs, descriptor_table_pb_2fcommon_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_pb_2fcommon_2eproto::offsets,
   file_level_metadata_pb_2fcommon_2eproto, 2, file_level_enum_descriptors_pb_2fcommon_2eproto, file_level_service_descriptors_pb_2fcommon_2eproto,
@@ -126,7 +124,6 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fc
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_pb_2fcommon_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_pb_2fcommon_2eproto)), true);
-namespace pb {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ERROR_CODE_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pb_2fcommon_2eproto);
   return file_level_enum_descriptors_pb_2fcommon_2eproto[0];
@@ -214,7 +211,7 @@ BaseResp::BaseResp(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:pb.BaseResp)
+  // @@protoc_insertion_point(arena_constructor:BaseResp)
 }
 BaseResp::BaseResp(const BaseResp& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -227,7 +224,7 @@ BaseResp::BaseResp(const BaseResp& from)
   ::memcpy(&errorcode_, &from.errorcode_,
     static_cast<size_t>(reinterpret_cast<char*>(&success_) -
     reinterpret_cast<char*>(&errorcode_)) + sizeof(success_));
-  // @@protoc_insertion_point(copy_constructor:pb.BaseResp)
+  // @@protoc_insertion_point(copy_constructor:BaseResp)
 }
 
 void BaseResp::SharedCtor() {
@@ -239,7 +236,7 @@ void BaseResp::SharedCtor() {
 }
 
 BaseResp::~BaseResp() {
-  // @@protoc_insertion_point(destructor:pb.BaseResp)
+  // @@protoc_insertion_point(destructor:BaseResp)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -265,7 +262,7 @@ const BaseResp& BaseResp::default_instance() {
 
 
 void BaseResp::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.BaseResp)
+// @@protoc_insertion_point(message_clear_start:BaseResp)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -304,7 +301,7 @@ const char* BaseResp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_errormsg();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.BaseResp.errorMsg"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "BaseResp.errorMsg"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -332,7 +329,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* BaseResp::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.BaseResp)
+  // @@protoc_insertion_point(serialize_to_array_start:BaseResp)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -353,7 +350,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_errormsg().data(), static_cast<int>(this->_internal_errormsg().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.BaseResp.errorMsg");
+      "BaseResp.errorMsg");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_errormsg(), target);
   }
@@ -362,12 +359,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.BaseResp)
+  // @@protoc_insertion_point(serialize_to_array_end:BaseResp)
   return target;
 }
 
 size_t BaseResp::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.BaseResp)
+// @@protoc_insertion_point(message_byte_size_start:BaseResp)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -403,22 +400,22 @@ size_t BaseResp::ByteSizeLong() const {
 }
 
 void BaseResp::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.BaseResp)
+// @@protoc_insertion_point(generalized_merge_from_start:BaseResp)
   GOOGLE_DCHECK_NE(&from, this);
   const BaseResp* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<BaseResp>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.BaseResp)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:BaseResp)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.BaseResp)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:BaseResp)
     MergeFrom(*source);
   }
 }
 
 void BaseResp::MergeFrom(const BaseResp& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.BaseResp)
+// @@protoc_insertion_point(class_specific_merge_from_start:BaseResp)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -436,14 +433,14 @@ void BaseResp::MergeFrom(const BaseResp& from) {
 }
 
 void BaseResp::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.BaseResp)
+// @@protoc_insertion_point(generalized_copy_from_start:BaseResp)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void BaseResp::CopyFrom(const BaseResp& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.BaseResp)
+// @@protoc_insertion_point(class_specific_copy_from_start:BaseResp)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -482,7 +479,7 @@ ResultInfo::ResultInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:pb.ResultInfo)
+  // @@protoc_insertion_point(arena_constructor:ResultInfo)
 }
 ResultInfo::ResultInfo(const ResultInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -493,7 +490,7 @@ ResultInfo::ResultInfo(const ResultInfo& from)
       GetArena());
   }
   error_code_ = from.error_code_;
-  // @@protoc_insertion_point(copy_constructor:pb.ResultInfo)
+  // @@protoc_insertion_point(copy_constructor:ResultInfo)
 }
 
 void ResultInfo::SharedCtor() {
@@ -503,7 +500,7 @@ void ResultInfo::SharedCtor() {
 }
 
 ResultInfo::~ResultInfo() {
-  // @@protoc_insertion_point(destructor:pb.ResultInfo)
+  // @@protoc_insertion_point(destructor:ResultInfo)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -529,7 +526,7 @@ const ResultInfo& ResultInfo::default_instance() {
 
 
 void ResultInfo::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.ResultInfo)
+// @@protoc_insertion_point(message_clear_start:ResultInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -559,7 +556,7 @@ const char* ResultInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_error_message();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.ResultInfo.error_message"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "ResultInfo.error_message"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -587,7 +584,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* ResultInfo::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.ResultInfo)
+  // @@protoc_insertion_point(serialize_to_array_start:ResultInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -602,7 +599,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_error_message().data(), static_cast<int>(this->_internal_error_message().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.ResultInfo.error_message");
+      "ResultInfo.error_message");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_error_message(), target);
   }
@@ -611,12 +608,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.ResultInfo)
+  // @@protoc_insertion_point(serialize_to_array_end:ResultInfo)
   return target;
 }
 
 size_t ResultInfo::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.ResultInfo)
+// @@protoc_insertion_point(message_byte_size_start:ResultInfo)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -647,22 +644,22 @@ size_t ResultInfo::ByteSizeLong() const {
 }
 
 void ResultInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.ResultInfo)
+// @@protoc_insertion_point(generalized_merge_from_start:ResultInfo)
   GOOGLE_DCHECK_NE(&from, this);
   const ResultInfo* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<ResultInfo>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.ResultInfo)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ResultInfo)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.ResultInfo)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:ResultInfo)
     MergeFrom(*source);
   }
 }
 
 void ResultInfo::MergeFrom(const ResultInfo& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.ResultInfo)
+// @@protoc_insertion_point(class_specific_merge_from_start:ResultInfo)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -677,14 +674,14 @@ void ResultInfo::MergeFrom(const ResultInfo& from) {
 }
 
 void ResultInfo::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.ResultInfo)
+// @@protoc_insertion_point(generalized_copy_from_start:ResultInfo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void ResultInfo::CopyFrom(const ResultInfo& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.ResultInfo)
+// @@protoc_insertion_point(class_specific_copy_from_start:ResultInfo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -707,13 +704,12 @@ void ResultInfo::InternalSwap(ResultInfo* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace pb
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::pb::BaseResp* Arena::CreateMaybeMessage< ::pb::BaseResp >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::BaseResp >(arena);
+template<> PROTOBUF_NOINLINE ::BaseResp* Arena::CreateMaybeMessage< ::BaseResp >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::BaseResp >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::ResultInfo* Arena::CreateMaybeMessage< ::pb::ResultInfo >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::ResultInfo >(arena);
+template<> PROTOBUF_NOINLINE ::ResultInfo* Arena::CreateMaybeMessage< ::ResultInfo >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::ResultInfo >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

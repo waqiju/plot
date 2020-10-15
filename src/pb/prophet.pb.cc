@@ -21,7 +21,6 @@ extern PROTOBUF_INTERNAL_EXPORT_pb_2fprophet_2eproto ::PROTOBUF_NAMESPACE_ID::in
 extern PROTOBUF_INTERNAL_EXPORT_pb_2fcommon_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ResultInfo_pb_2fcommon_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_pb_2fprophet_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Segment_pb_2fprophet_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_pb_2fprophet_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TrueRange_pb_2fprophet_2eproto;
-namespace pb {
 class StockDateIntervalDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<StockDateInterval> _instance;
@@ -58,16 +57,15 @@ class DailyMinuteDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<DailyMinute> _instance;
 } _DailyMinute_default_instance_;
-}  // namespace pb
 static void InitDefaultsscc_info_DailyMinute_pb_2fprophet_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_DailyMinute_default_instance_;
-    new (ptr) ::pb::DailyMinute();
+    void* ptr = &::_DailyMinute_default_instance_;
+    new (ptr) ::DailyMinute();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::DailyMinute::InitAsDefaultInstance();
+  ::DailyMinute::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_DailyMinute_pb_2fprophet_2eproto =
@@ -78,11 +76,11 @@ static void InitDefaultsscc_info_FetchIndicatorResponse_pb_2fprophet_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_FetchIndicatorResponse_default_instance_;
-    new (ptr) ::pb::FetchIndicatorResponse();
+    void* ptr = &::_FetchIndicatorResponse_default_instance_;
+    new (ptr) ::FetchIndicatorResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::FetchIndicatorResponse::InitAsDefaultInstance();
+  ::FetchIndicatorResponse::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_FetchIndicatorResponse_pb_2fprophet_2eproto =
@@ -94,11 +92,11 @@ static void InitDefaultsscc_info_IndicatorSet_pb_2fprophet_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_IndicatorSet_default_instance_;
-    new (ptr) ::pb::IndicatorSet();
+    void* ptr = &::_IndicatorSet_default_instance_;
+    new (ptr) ::IndicatorSet();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::IndicatorSet::InitAsDefaultInstance();
+  ::IndicatorSet::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<5> scc_info_IndicatorSet_pb_2fprophet_2eproto =
@@ -113,11 +111,11 @@ static void InitDefaultsscc_info_KChart_pb_2fprophet_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_KChart_default_instance_;
-    new (ptr) ::pb::KChart();
+    void* ptr = &::_KChart_default_instance_;
+    new (ptr) ::KChart();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::KChart::InitAsDefaultInstance();
+  ::KChart::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_KChart_pb_2fprophet_2eproto =
@@ -127,11 +125,11 @@ static void InitDefaultsscc_info_LiveSet_pb_2fprophet_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_LiveSet_default_instance_;
-    new (ptr) ::pb::LiveSet();
+    void* ptr = &::_LiveSet_default_instance_;
+    new (ptr) ::LiveSet();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::LiveSet::InitAsDefaultInstance();
+  ::LiveSet::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_LiveSet_pb_2fprophet_2eproto =
@@ -142,11 +140,11 @@ static void InitDefaultsscc_info_MA_pb_2fprophet_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_MA_default_instance_;
-    new (ptr) ::pb::MA();
+    void* ptr = &::_MA_default_instance_;
+    new (ptr) ::MA();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::MA::InitAsDefaultInstance();
+  ::MA::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_MA_pb_2fprophet_2eproto =
@@ -156,11 +154,11 @@ static void InitDefaultsscc_info_Segment_pb_2fprophet_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_Segment_default_instance_;
-    new (ptr) ::pb::Segment();
+    void* ptr = &::_Segment_default_instance_;
+    new (ptr) ::Segment();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::Segment::InitAsDefaultInstance();
+  ::Segment::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Segment_pb_2fprophet_2eproto =
@@ -170,11 +168,11 @@ static void InitDefaultsscc_info_StockDateInterval_pb_2fprophet_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_StockDateInterval_default_instance_;
-    new (ptr) ::pb::StockDateInterval();
+    void* ptr = &::_StockDateInterval_default_instance_;
+    new (ptr) ::StockDateInterval();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::StockDateInterval::InitAsDefaultInstance();
+  ::StockDateInterval::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_StockDateInterval_pb_2fprophet_2eproto =
@@ -184,11 +182,11 @@ static void InitDefaultsscc_info_TrueRange_pb_2fprophet_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_TrueRange_default_instance_;
-    new (ptr) ::pb::TrueRange();
+    void* ptr = &::_TrueRange_default_instance_;
+    new (ptr) ::TrueRange();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::TrueRange::InitAsDefaultInstance();
+  ::TrueRange::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_TrueRange_pb_2fprophet_2eproto =
@@ -200,172 +198,170 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pb_2fprophet_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::StockDateInterval, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::StockDateInterval, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::StockDateInterval, code_),
-  PROTOBUF_FIELD_OFFSET(::pb::StockDateInterval, start_),
-  PROTOBUF_FIELD_OFFSET(::pb::StockDateInterval, end_),
+  PROTOBUF_FIELD_OFFSET(::StockDateInterval, code_),
+  PROTOBUF_FIELD_OFFSET(::StockDateInterval, start_),
+  PROTOBUF_FIELD_OFFSET(::StockDateInterval, end_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::IndicatorSet, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::IndicatorSet, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::IndicatorSet, timestamp_),
-  PROTOBUF_FIELD_OFFSET(::pb::IndicatorSet, version_),
-  PROTOBUF_FIELD_OFFSET(::pb::IndicatorSet, date_list_),
-  PROTOBUF_FIELD_OFFSET(::pb::IndicatorSet, daily_list_),
-  PROTOBUF_FIELD_OFFSET(::pb::IndicatorSet, daily_ma_list_),
-  PROTOBUF_FIELD_OFFSET(::pb::IndicatorSet, weekly_list_),
-  PROTOBUF_FIELD_OFFSET(::pb::IndicatorSet, weekly_ma_list_),
-  PROTOBUF_FIELD_OFFSET(::pb::IndicatorSet, true_range_list_),
-  PROTOBUF_FIELD_OFFSET(::pb::IndicatorSet, segment_list_),
-  PROTOBUF_FIELD_OFFSET(::pb::IndicatorSet, daily_minute_list_),
+  PROTOBUF_FIELD_OFFSET(::IndicatorSet, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::IndicatorSet, version_),
+  PROTOBUF_FIELD_OFFSET(::IndicatorSet, date_list_),
+  PROTOBUF_FIELD_OFFSET(::IndicatorSet, daily_list_),
+  PROTOBUF_FIELD_OFFSET(::IndicatorSet, daily_ma_list_),
+  PROTOBUF_FIELD_OFFSET(::IndicatorSet, weekly_list_),
+  PROTOBUF_FIELD_OFFSET(::IndicatorSet, weekly_ma_list_),
+  PROTOBUF_FIELD_OFFSET(::IndicatorSet, true_range_list_),
+  PROTOBUF_FIELD_OFFSET(::IndicatorSet, segment_list_),
+  PROTOBUF_FIELD_OFFSET(::IndicatorSet, daily_minute_list_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::FetchIndicatorResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::FetchIndicatorResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::FetchIndicatorResponse, result_),
-  PROTOBUF_FIELD_OFFSET(::pb::FetchIndicatorResponse, indicator_set_),
+  PROTOBUF_FIELD_OFFSET(::FetchIndicatorResponse, result_),
+  PROTOBUF_FIELD_OFFSET(::FetchIndicatorResponse, indicator_set_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::LiveSet, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::LiveSet, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::LiveSet, timestamp_),
-  PROTOBUF_FIELD_OFFSET(::pb::LiveSet, version_),
-  PROTOBUF_FIELD_OFFSET(::pb::LiveSet, daily_),
+  PROTOBUF_FIELD_OFFSET(::LiveSet, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::LiveSet, version_),
+  PROTOBUF_FIELD_OFFSET(::LiveSet, daily_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::KChart, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, code_),
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, date_),
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, time_),
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, open_),
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, high_),
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, low_),
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, close_),
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, change_),
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, vol_),
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, amount_),
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, original_open_),
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, original_high_),
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, original_low_),
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, original_close_),
-  PROTOBUF_FIELD_OFFSET(::pb::KChart, adjust_factor_),
+  PROTOBUF_FIELD_OFFSET(::KChart, code_),
+  PROTOBUF_FIELD_OFFSET(::KChart, date_),
+  PROTOBUF_FIELD_OFFSET(::KChart, time_),
+  PROTOBUF_FIELD_OFFSET(::KChart, open_),
+  PROTOBUF_FIELD_OFFSET(::KChart, high_),
+  PROTOBUF_FIELD_OFFSET(::KChart, low_),
+  PROTOBUF_FIELD_OFFSET(::KChart, close_),
+  PROTOBUF_FIELD_OFFSET(::KChart, change_),
+  PROTOBUF_FIELD_OFFSET(::KChart, vol_),
+  PROTOBUF_FIELD_OFFSET(::KChart, amount_),
+  PROTOBUF_FIELD_OFFSET(::KChart, original_open_),
+  PROTOBUF_FIELD_OFFSET(::KChart, original_high_),
+  PROTOBUF_FIELD_OFFSET(::KChart, original_low_),
+  PROTOBUF_FIELD_OFFSET(::KChart, original_close_),
+  PROTOBUF_FIELD_OFFSET(::KChart, adjust_factor_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::MA, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::MA, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::MA, code_),
-  PROTOBUF_FIELD_OFFSET(::pb::MA, date_),
-  PROTOBUF_FIELD_OFFSET(::pb::MA, last_1_),
-  PROTOBUF_FIELD_OFFSET(::pb::MA, last_5_),
-  PROTOBUF_FIELD_OFFSET(::pb::MA, last_10_),
-  PROTOBUF_FIELD_OFFSET(::pb::MA, last_20_),
-  PROTOBUF_FIELD_OFFSET(::pb::MA, last_60_),
+  PROTOBUF_FIELD_OFFSET(::MA, code_),
+  PROTOBUF_FIELD_OFFSET(::MA, date_),
+  PROTOBUF_FIELD_OFFSET(::MA, last_1_),
+  PROTOBUF_FIELD_OFFSET(::MA, last_5_),
+  PROTOBUF_FIELD_OFFSET(::MA, last_10_),
+  PROTOBUF_FIELD_OFFSET(::MA, last_20_),
+  PROTOBUF_FIELD_OFFSET(::MA, last_60_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::TrueRange, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::TrueRange, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::TrueRange, code_),
-  PROTOBUF_FIELD_OFFSET(::pb::TrueRange, date_),
-  PROTOBUF_FIELD_OFFSET(::pb::TrueRange, range_),
-  PROTOBUF_FIELD_OFFSET(::pb::TrueRange, average_),
-  PROTOBUF_FIELD_OFFSET(::pb::TrueRange, gentle_),
-  PROTOBUF_FIELD_OFFSET(::pb::TrueRange, gentle_60_),
+  PROTOBUF_FIELD_OFFSET(::TrueRange, code_),
+  PROTOBUF_FIELD_OFFSET(::TrueRange, date_),
+  PROTOBUF_FIELD_OFFSET(::TrueRange, range_),
+  PROTOBUF_FIELD_OFFSET(::TrueRange, average_),
+  PROTOBUF_FIELD_OFFSET(::TrueRange, gentle_),
+  PROTOBUF_FIELD_OFFSET(::TrueRange, gentle_60_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::Segment, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::Segment, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::Segment, code_),
-  PROTOBUF_FIELD_OFFSET(::pb::Segment, date_),
-  PROTOBUF_FIELD_OFFSET(::pb::Segment, direction_),
-  PROTOBUF_FIELD_OFFSET(::pb::Segment, start_date_),
-  PROTOBUF_FIELD_OFFSET(::pb::Segment, gentle_range_),
-  PROTOBUF_FIELD_OFFSET(::pb::Segment, low_),
-  PROTOBUF_FIELD_OFFSET(::pb::Segment, low_date_),
-  PROTOBUF_FIELD_OFFSET(::pb::Segment, high_),
-  PROTOBUF_FIELD_OFFSET(::pb::Segment, high_date_),
+  PROTOBUF_FIELD_OFFSET(::Segment, code_),
+  PROTOBUF_FIELD_OFFSET(::Segment, date_),
+  PROTOBUF_FIELD_OFFSET(::Segment, direction_),
+  PROTOBUF_FIELD_OFFSET(::Segment, start_date_),
+  PROTOBUF_FIELD_OFFSET(::Segment, gentle_range_),
+  PROTOBUF_FIELD_OFFSET(::Segment, low_),
+  PROTOBUF_FIELD_OFFSET(::Segment, low_date_),
+  PROTOBUF_FIELD_OFFSET(::Segment, high_),
+  PROTOBUF_FIELD_OFFSET(::Segment, high_date_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::DailyMinute, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::DailyMinute, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::DailyMinute, code_),
-  PROTOBUF_FIELD_OFFSET(::pb::DailyMinute, date_),
-  PROTOBUF_FIELD_OFFSET(::pb::DailyMinute, minute_list_),
+  PROTOBUF_FIELD_OFFSET(::DailyMinute, code_),
+  PROTOBUF_FIELD_OFFSET(::DailyMinute, date_),
+  PROTOBUF_FIELD_OFFSET(::DailyMinute, minute_list_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::pb::StockDateInterval)},
-  { 8, -1, sizeof(::pb::IndicatorSet)},
-  { 23, -1, sizeof(::pb::FetchIndicatorResponse)},
-  { 30, -1, sizeof(::pb::LiveSet)},
-  { 38, -1, sizeof(::pb::KChart)},
-  { 58, -1, sizeof(::pb::MA)},
-  { 70, -1, sizeof(::pb::TrueRange)},
-  { 81, -1, sizeof(::pb::Segment)},
-  { 95, -1, sizeof(::pb::DailyMinute)},
+  { 0, -1, sizeof(::StockDateInterval)},
+  { 8, -1, sizeof(::IndicatorSet)},
+  { 23, -1, sizeof(::FetchIndicatorResponse)},
+  { 30, -1, sizeof(::LiveSet)},
+  { 38, -1, sizeof(::KChart)},
+  { 58, -1, sizeof(::MA)},
+  { 70, -1, sizeof(::TrueRange)},
+  { 81, -1, sizeof(::Segment)},
+  { 95, -1, sizeof(::DailyMinute)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_StockDateInterval_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_IndicatorSet_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_FetchIndicatorResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_LiveSet_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_KChart_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_MA_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_TrueRange_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_Segment_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_DailyMinute_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_StockDateInterval_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_IndicatorSet_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_FetchIndicatorResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_LiveSet_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_KChart_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_MA_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_TrueRange_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_Segment_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_DailyMinute_default_instance_),
 };
 
 const char descriptor_table_protodef_pb_2fprophet_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\020pb/prophet.proto\022\002pb\032\017pb/common.proto\""
-  "=\n\021StockDateInterval\022\014\n\004code\030\001 \001(\t\022\r\n\005st"
-  "art\030\002 \001(\r\022\013\n\003end\030\003 \001(\r\"\274\002\n\014IndicatorSet\022"
-  "\021\n\ttimestamp\030\001 \001(\004\022\017\n\007version\030\002 \001(\004\022\021\n\td"
-  "ate_list\030\003 \003(\r\022\036\n\ndaily_list\030\004 \003(\0132\n.pb."
-  "KChart\022\035\n\rdaily_ma_list\030\005 \003(\0132\006.pb.MA\022\037\n"
-  "\013weekly_list\030\006 \003(\0132\n.pb.KChart\022\036\n\016weekly"
-  "_ma_list\030\007 \003(\0132\006.pb.MA\022&\n\017true_range_lis"
-  "t\030\010 \003(\0132\r.pb.TrueRange\022!\n\014segment_list\030\t"
-  " \003(\0132\013.pb.Segment\022*\n\021daily_minute_list\030\n"
-  " \003(\0132\017.pb.DailyMinute\"a\n\026FetchIndicatorR"
-  "esponse\022\036\n\006result\030\001 \001(\0132\016.pb.ResultInfo\022"
-  "\'\n\rindicator_set\030\002 \001(\0132\020.pb.IndicatorSet"
-  "\"H\n\007LiveSet\022\021\n\ttimestamp\030\001 \001(\004\022\017\n\007versio"
-  "n\030\002 \001(\004\022\031\n\005daily\030\003 \001(\0132\n.pb.KChart\"\212\002\n\006K"
-  "Chart\022\014\n\004code\030\001 \001(\t\022\014\n\004date\030\002 \001(\t\022\014\n\004tim"
-  "e\030\003 \001(\t\022\014\n\004open\030\004 \001(\001\022\014\n\004high\030\005 \001(\001\022\013\n\003l"
-  "ow\030\006 \001(\001\022\r\n\005close\030\007 \001(\001\022\016\n\006change\030\010 \001(\001\022"
-  "\013\n\003vol\030\t \001(\001\022\016\n\006amount\030\n \001(\001\022\025\n\roriginal"
-  "_open\030\013 \001(\001\022\025\n\roriginal_high\030\014 \001(\001\022\024\n\014or"
-  "iginal_low\030\r \001(\001\022\026\n\016original_close\030\016 \001(\001"
-  "\022\025\n\radjust_factor\030\017 \001(\001\"s\n\002MA\022\014\n\004code\030\001 "
-  "\001(\t\022\014\n\004date\030\002 \001(\t\022\016\n\006last_1\030\003 \001(\001\022\016\n\006las"
-  "t_5\030\004 \001(\001\022\017\n\007last_10\030\005 \001(\001\022\017\n\007last_20\030\006 "
-  "\001(\001\022\017\n\007last_60\030\007 \001(\001\"j\n\tTrueRange\022\014\n\004cod"
-  "e\030\001 \001(\t\022\014\n\004date\030\002 \001(\t\022\r\n\005range\030\003 \001(\001\022\017\n\007"
-  "average\030\004 \001(\001\022\016\n\006gentle\030\005 \001(\001\022\021\n\tgentle_"
-  "60\030\006 \001(\001\"\242\001\n\007Segment\022\014\n\004code\030\001 \001(\t\022\014\n\004da"
-  "te\030\002 \001(\t\022\021\n\tdirection\030\003 \001(\001\022\022\n\nstart_dat"
-  "e\030\004 \001(\t\022\024\n\014gentle_range\030\005 \001(\001\022\013\n\003low\030\006 \001"
-  "(\001\022\020\n\010low_date\030\007 \001(\t\022\014\n\004high\030\010 \001(\001\022\021\n\thi"
-  "gh_date\030\t \001(\t\"J\n\013DailyMinute\022\014\n\004code\030\001 \001"
-  "(\t\022\014\n\004date\030\002 \001(\t\022\037\n\013minute_list\030\003 \003(\0132\n."
-  "pb.KChart2\222\001\n\007Prophet\022G\n\022FetchStockDateL"
-  "ist\022\025.pb.StockDateInterval\032\032.pb.FetchInd"
-  "icatorResponse\022>\n\016FetchIndicator\022\020.pb.In"
-  "dicatorSet\032\032.pb.FetchIndicatorResponseb\006"
-  "proto3"
+  "\n\020pb/prophet.proto\032\017pb/common.proto\"=\n\021S"
+  "tockDateInterval\022\014\n\004code\030\001 \001(\t\022\r\n\005start\030"
+  "\002 \001(\r\022\013\n\003end\030\003 \001(\r\"\247\002\n\014IndicatorSet\022\021\n\tt"
+  "imestamp\030\001 \001(\004\022\017\n\007version\030\002 \001(\004\022\021\n\tdate_"
+  "list\030\003 \003(\r\022\033\n\ndaily_list\030\004 \003(\0132\007.KChart\022"
+  "\032\n\rdaily_ma_list\030\005 \003(\0132\003.MA\022\034\n\013weekly_li"
+  "st\030\006 \003(\0132\007.KChart\022\033\n\016weekly_ma_list\030\007 \003("
+  "\0132\003.MA\022#\n\017true_range_list\030\010 \003(\0132\n.TrueRa"
+  "nge\022\036\n\014segment_list\030\t \003(\0132\010.Segment\022\'\n\021d"
+  "aily_minute_list\030\n \003(\0132\014.DailyMinute\"[\n\026"
+  "FetchIndicatorResponse\022\033\n\006result\030\001 \001(\0132\013"
+  ".ResultInfo\022$\n\rindicator_set\030\002 \001(\0132\r.Ind"
+  "icatorSet\"E\n\007LiveSet\022\021\n\ttimestamp\030\001 \001(\004\022"
+  "\017\n\007version\030\002 \001(\004\022\026\n\005daily\030\003 \001(\0132\007.KChart"
+  "\"\212\002\n\006KChart\022\014\n\004code\030\001 \001(\t\022\014\n\004date\030\002 \001(\t\022"
+  "\014\n\004time\030\003 \001(\t\022\014\n\004open\030\004 \001(\001\022\014\n\004high\030\005 \001("
+  "\001\022\013\n\003low\030\006 \001(\001\022\r\n\005close\030\007 \001(\001\022\016\n\006change\030"
+  "\010 \001(\001\022\013\n\003vol\030\t \001(\001\022\016\n\006amount\030\n \001(\001\022\025\n\ror"
+  "iginal_open\030\013 \001(\001\022\025\n\roriginal_high\030\014 \001(\001"
+  "\022\024\n\014original_low\030\r \001(\001\022\026\n\016original_close"
+  "\030\016 \001(\001\022\025\n\radjust_factor\030\017 \001(\001\"s\n\002MA\022\014\n\004c"
+  "ode\030\001 \001(\t\022\014\n\004date\030\002 \001(\t\022\016\n\006last_1\030\003 \001(\001\022"
+  "\016\n\006last_5\030\004 \001(\001\022\017\n\007last_10\030\005 \001(\001\022\017\n\007last"
+  "_20\030\006 \001(\001\022\017\n\007last_60\030\007 \001(\001\"j\n\tTrueRange\022"
+  "\014\n\004code\030\001 \001(\t\022\014\n\004date\030\002 \001(\t\022\r\n\005range\030\003 \001"
+  "(\001\022\017\n\007average\030\004 \001(\001\022\016\n\006gentle\030\005 \001(\001\022\021\n\tg"
+  "entle_60\030\006 \001(\001\"\242\001\n\007Segment\022\014\n\004code\030\001 \001(\t"
+  "\022\014\n\004date\030\002 \001(\t\022\021\n\tdirection\030\003 \001(\001\022\022\n\nsta"
+  "rt_date\030\004 \001(\t\022\024\n\014gentle_range\030\005 \001(\001\022\013\n\003l"
+  "ow\030\006 \001(\001\022\020\n\010low_date\030\007 \001(\t\022\014\n\004high\030\010 \001(\001"
+  "\022\021\n\thigh_date\030\t \001(\t\"G\n\013DailyMinute\022\014\n\004co"
+  "de\030\001 \001(\t\022\014\n\004date\030\002 \001(\t\022\034\n\013minute_list\030\003 "
+  "\003(\0132\007.KChart2\206\001\n\007Prophet\022A\n\022FetchStockDa"
+  "teList\022\022.StockDateInterval\032\027.FetchIndica"
+  "torResponse\0228\n\016FetchIndicator\022\r.Indicato"
+  "rSet\032\027.FetchIndicatorResponseb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pb_2fprophet_2eproto_deps[1] = {
   &::descriptor_table_pb_2fcommon_2eproto,
@@ -383,7 +379,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pb_
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pb_2fprophet_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fprophet_2eproto = {
-  false, false, descriptor_table_protodef_pb_2fprophet_2eproto, "pb/prophet.proto", 1486,
+  false, false, descriptor_table_protodef_pb_2fprophet_2eproto, "pb/prophet.proto", 1437,
   &descriptor_table_pb_2fprophet_2eproto_once, descriptor_table_pb_2fprophet_2eproto_sccs, descriptor_table_pb_2fprophet_2eproto_deps, 9, 1,
   schemas, file_default_instances, TableStruct_pb_2fprophet_2eproto::offsets,
   file_level_metadata_pb_2fprophet_2eproto, 9, file_level_enum_descriptors_pb_2fprophet_2eproto, file_level_service_descriptors_pb_2fprophet_2eproto,
@@ -391,7 +387,6 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fp
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_pb_2fprophet_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_pb_2fprophet_2eproto)), true);
-namespace pb {
 
 // ===================================================================
 
@@ -405,7 +400,7 @@ StockDateInterval::StockDateInterval(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:pb.StockDateInterval)
+  // @@protoc_insertion_point(arena_constructor:StockDateInterval)
 }
 StockDateInterval::StockDateInterval(const StockDateInterval& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -418,7 +413,7 @@ StockDateInterval::StockDateInterval(const StockDateInterval& from)
   ::memcpy(&start_, &from.start_,
     static_cast<size_t>(reinterpret_cast<char*>(&end_) -
     reinterpret_cast<char*>(&start_)) + sizeof(end_));
-  // @@protoc_insertion_point(copy_constructor:pb.StockDateInterval)
+  // @@protoc_insertion_point(copy_constructor:StockDateInterval)
 }
 
 void StockDateInterval::SharedCtor() {
@@ -430,7 +425,7 @@ void StockDateInterval::SharedCtor() {
 }
 
 StockDateInterval::~StockDateInterval() {
-  // @@protoc_insertion_point(destructor:pb.StockDateInterval)
+  // @@protoc_insertion_point(destructor:StockDateInterval)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -456,7 +451,7 @@ const StockDateInterval& StockDateInterval::default_instance() {
 
 
 void StockDateInterval::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.StockDateInterval)
+// @@protoc_insertion_point(message_clear_start:StockDateInterval)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -481,7 +476,7 @@ const char* StockDateInterval::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_code();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.StockDateInterval.code"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "StockDateInterval.code"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -523,7 +518,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* StockDateInterval::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.StockDateInterval)
+  // @@protoc_insertion_point(serialize_to_array_start:StockDateInterval)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -532,7 +527,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_code().data(), static_cast<int>(this->_internal_code().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.StockDateInterval.code");
+      "StockDateInterval.code");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_code(), target);
   }
@@ -553,12 +548,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.StockDateInterval)
+  // @@protoc_insertion_point(serialize_to_array_end:StockDateInterval)
   return target;
 }
 
 size_t StockDateInterval::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.StockDateInterval)
+// @@protoc_insertion_point(message_byte_size_start:StockDateInterval)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -596,22 +591,22 @@ size_t StockDateInterval::ByteSizeLong() const {
 }
 
 void StockDateInterval::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.StockDateInterval)
+// @@protoc_insertion_point(generalized_merge_from_start:StockDateInterval)
   GOOGLE_DCHECK_NE(&from, this);
   const StockDateInterval* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<StockDateInterval>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.StockDateInterval)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:StockDateInterval)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.StockDateInterval)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:StockDateInterval)
     MergeFrom(*source);
   }
 }
 
 void StockDateInterval::MergeFrom(const StockDateInterval& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.StockDateInterval)
+// @@protoc_insertion_point(class_specific_merge_from_start:StockDateInterval)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -629,14 +624,14 @@ void StockDateInterval::MergeFrom(const StockDateInterval& from) {
 }
 
 void StockDateInterval::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.StockDateInterval)
+// @@protoc_insertion_point(generalized_copy_from_start:StockDateInterval)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void StockDateInterval::CopyFrom(const StockDateInterval& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.StockDateInterval)
+// @@protoc_insertion_point(class_specific_copy_from_start:StockDateInterval)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -683,7 +678,7 @@ IndicatorSet::IndicatorSet(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   daily_minute_list_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:pb.IndicatorSet)
+  // @@protoc_insertion_point(arena_constructor:IndicatorSet)
 }
 IndicatorSet::IndicatorSet(const IndicatorSet& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -699,7 +694,7 @@ IndicatorSet::IndicatorSet(const IndicatorSet& from)
   ::memcpy(&timestamp_, &from.timestamp_,
     static_cast<size_t>(reinterpret_cast<char*>(&version_) -
     reinterpret_cast<char*>(&timestamp_)) + sizeof(version_));
-  // @@protoc_insertion_point(copy_constructor:pb.IndicatorSet)
+  // @@protoc_insertion_point(copy_constructor:IndicatorSet)
 }
 
 void IndicatorSet::SharedCtor() {
@@ -710,7 +705,7 @@ void IndicatorSet::SharedCtor() {
 }
 
 IndicatorSet::~IndicatorSet() {
-  // @@protoc_insertion_point(destructor:pb.IndicatorSet)
+  // @@protoc_insertion_point(destructor:IndicatorSet)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -735,7 +730,7 @@ const IndicatorSet& IndicatorSet::default_instance() {
 
 
 void IndicatorSet::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.IndicatorSet)
+// @@protoc_insertion_point(message_clear_start:IndicatorSet)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -786,7 +781,7 @@ const char* IndicatorSet::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .pb.KChart daily_list = 4;
+      // repeated .KChart daily_list = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr -= 1;
@@ -798,7 +793,7 @@ const char* IndicatorSet::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .pb.MA daily_ma_list = 5;
+      // repeated .MA daily_ma_list = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr -= 1;
@@ -810,7 +805,7 @@ const char* IndicatorSet::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .pb.KChart weekly_list = 6;
+      // repeated .KChart weekly_list = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           ptr -= 1;
@@ -822,7 +817,7 @@ const char* IndicatorSet::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .pb.MA weekly_ma_list = 7;
+      // repeated .MA weekly_ma_list = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           ptr -= 1;
@@ -834,7 +829,7 @@ const char* IndicatorSet::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .pb.TrueRange true_range_list = 8;
+      // repeated .TrueRange true_range_list = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           ptr -= 1;
@@ -846,7 +841,7 @@ const char* IndicatorSet::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .pb.Segment segment_list = 9;
+      // repeated .Segment segment_list = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           ptr -= 1;
@@ -858,7 +853,7 @@ const char* IndicatorSet::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .pb.DailyMinute daily_minute_list = 10;
+      // repeated .DailyMinute daily_minute_list = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
           ptr -= 1;
@@ -894,7 +889,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* IndicatorSet::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.IndicatorSet)
+  // @@protoc_insertion_point(serialize_to_array_start:IndicatorSet)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -919,7 +914,7 @@ failure:
     }
   }
 
-  // repeated .pb.KChart daily_list = 4;
+  // repeated .KChart daily_list = 4;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_daily_list_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -927,7 +922,7 @@ failure:
       InternalWriteMessage(4, this->_internal_daily_list(i), target, stream);
   }
 
-  // repeated .pb.MA daily_ma_list = 5;
+  // repeated .MA daily_ma_list = 5;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_daily_ma_list_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -935,7 +930,7 @@ failure:
       InternalWriteMessage(5, this->_internal_daily_ma_list(i), target, stream);
   }
 
-  // repeated .pb.KChart weekly_list = 6;
+  // repeated .KChart weekly_list = 6;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_weekly_list_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -943,7 +938,7 @@ failure:
       InternalWriteMessage(6, this->_internal_weekly_list(i), target, stream);
   }
 
-  // repeated .pb.MA weekly_ma_list = 7;
+  // repeated .MA weekly_ma_list = 7;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_weekly_ma_list_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -951,7 +946,7 @@ failure:
       InternalWriteMessage(7, this->_internal_weekly_ma_list(i), target, stream);
   }
 
-  // repeated .pb.TrueRange true_range_list = 8;
+  // repeated .TrueRange true_range_list = 8;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_true_range_list_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -959,7 +954,7 @@ failure:
       InternalWriteMessage(8, this->_internal_true_range_list(i), target, stream);
   }
 
-  // repeated .pb.Segment segment_list = 9;
+  // repeated .Segment segment_list = 9;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_segment_list_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -967,7 +962,7 @@ failure:
       InternalWriteMessage(9, this->_internal_segment_list(i), target, stream);
   }
 
-  // repeated .pb.DailyMinute daily_minute_list = 10;
+  // repeated .DailyMinute daily_minute_list = 10;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_daily_minute_list_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -979,12 +974,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.IndicatorSet)
+  // @@protoc_insertion_point(serialize_to_array_end:IndicatorSet)
   return target;
 }
 
 size_t IndicatorSet::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.IndicatorSet)
+// @@protoc_insertion_point(message_byte_size_start:IndicatorSet)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1006,49 +1001,49 @@ size_t IndicatorSet::ByteSizeLong() const {
     total_size += data_size;
   }
 
-  // repeated .pb.KChart daily_list = 4;
+  // repeated .KChart daily_list = 4;
   total_size += 1UL * this->_internal_daily_list_size();
   for (const auto& msg : this->daily_list_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .pb.MA daily_ma_list = 5;
+  // repeated .MA daily_ma_list = 5;
   total_size += 1UL * this->_internal_daily_ma_list_size();
   for (const auto& msg : this->daily_ma_list_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .pb.KChart weekly_list = 6;
+  // repeated .KChart weekly_list = 6;
   total_size += 1UL * this->_internal_weekly_list_size();
   for (const auto& msg : this->weekly_list_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .pb.MA weekly_ma_list = 7;
+  // repeated .MA weekly_ma_list = 7;
   total_size += 1UL * this->_internal_weekly_ma_list_size();
   for (const auto& msg : this->weekly_ma_list_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .pb.TrueRange true_range_list = 8;
+  // repeated .TrueRange true_range_list = 8;
   total_size += 1UL * this->_internal_true_range_list_size();
   for (const auto& msg : this->true_range_list_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .pb.Segment segment_list = 9;
+  // repeated .Segment segment_list = 9;
   total_size += 1UL * this->_internal_segment_list_size();
   for (const auto& msg : this->segment_list_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .pb.DailyMinute daily_minute_list = 10;
+  // repeated .DailyMinute daily_minute_list = 10;
   total_size += 1UL * this->_internal_daily_minute_list_size();
   for (const auto& msg : this->daily_minute_list_) {
     total_size +=
@@ -1079,22 +1074,22 @@ size_t IndicatorSet::ByteSizeLong() const {
 }
 
 void IndicatorSet::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.IndicatorSet)
+// @@protoc_insertion_point(generalized_merge_from_start:IndicatorSet)
   GOOGLE_DCHECK_NE(&from, this);
   const IndicatorSet* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<IndicatorSet>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.IndicatorSet)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:IndicatorSet)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.IndicatorSet)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:IndicatorSet)
     MergeFrom(*source);
   }
 }
 
 void IndicatorSet::MergeFrom(const IndicatorSet& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.IndicatorSet)
+// @@protoc_insertion_point(class_specific_merge_from_start:IndicatorSet)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1117,14 +1112,14 @@ void IndicatorSet::MergeFrom(const IndicatorSet& from) {
 }
 
 void IndicatorSet::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.IndicatorSet)
+// @@protoc_insertion_point(generalized_copy_from_start:IndicatorSet)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void IndicatorSet::CopyFrom(const IndicatorSet& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.IndicatorSet)
+// @@protoc_insertion_point(class_specific_copy_from_start:IndicatorSet)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1161,22 +1156,22 @@ void IndicatorSet::InternalSwap(IndicatorSet* other) {
 // ===================================================================
 
 void FetchIndicatorResponse::InitAsDefaultInstance() {
-  ::pb::_FetchIndicatorResponse_default_instance_._instance.get_mutable()->result_ = const_cast< ::pb::ResultInfo*>(
-      ::pb::ResultInfo::internal_default_instance());
-  ::pb::_FetchIndicatorResponse_default_instance_._instance.get_mutable()->indicator_set_ = const_cast< ::pb::IndicatorSet*>(
-      ::pb::IndicatorSet::internal_default_instance());
+  ::_FetchIndicatorResponse_default_instance_._instance.get_mutable()->result_ = const_cast< ::ResultInfo*>(
+      ::ResultInfo::internal_default_instance());
+  ::_FetchIndicatorResponse_default_instance_._instance.get_mutable()->indicator_set_ = const_cast< ::IndicatorSet*>(
+      ::IndicatorSet::internal_default_instance());
 }
 class FetchIndicatorResponse::_Internal {
  public:
-  static const ::pb::ResultInfo& result(const FetchIndicatorResponse* msg);
-  static const ::pb::IndicatorSet& indicator_set(const FetchIndicatorResponse* msg);
+  static const ::ResultInfo& result(const FetchIndicatorResponse* msg);
+  static const ::IndicatorSet& indicator_set(const FetchIndicatorResponse* msg);
 };
 
-const ::pb::ResultInfo&
+const ::ResultInfo&
 FetchIndicatorResponse::_Internal::result(const FetchIndicatorResponse* msg) {
   return *msg->result_;
 }
-const ::pb::IndicatorSet&
+const ::IndicatorSet&
 FetchIndicatorResponse::_Internal::indicator_set(const FetchIndicatorResponse* msg) {
   return *msg->indicator_set_;
 }
@@ -1190,22 +1185,22 @@ FetchIndicatorResponse::FetchIndicatorResponse(::PROTOBUF_NAMESPACE_ID::Arena* a
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:pb.FetchIndicatorResponse)
+  // @@protoc_insertion_point(arena_constructor:FetchIndicatorResponse)
 }
 FetchIndicatorResponse::FetchIndicatorResponse(const FetchIndicatorResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_result()) {
-    result_ = new ::pb::ResultInfo(*from.result_);
+    result_ = new ::ResultInfo(*from.result_);
   } else {
     result_ = nullptr;
   }
   if (from._internal_has_indicator_set()) {
-    indicator_set_ = new ::pb::IndicatorSet(*from.indicator_set_);
+    indicator_set_ = new ::IndicatorSet(*from.indicator_set_);
   } else {
     indicator_set_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:pb.FetchIndicatorResponse)
+  // @@protoc_insertion_point(copy_constructor:FetchIndicatorResponse)
 }
 
 void FetchIndicatorResponse::SharedCtor() {
@@ -1216,7 +1211,7 @@ void FetchIndicatorResponse::SharedCtor() {
 }
 
 FetchIndicatorResponse::~FetchIndicatorResponse() {
-  // @@protoc_insertion_point(destructor:pb.FetchIndicatorResponse)
+  // @@protoc_insertion_point(destructor:FetchIndicatorResponse)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1243,7 +1238,7 @@ const FetchIndicatorResponse& FetchIndicatorResponse::default_instance() {
 
 
 void FetchIndicatorResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.FetchIndicatorResponse)
+// @@protoc_insertion_point(message_clear_start:FetchIndicatorResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1267,14 +1262,14 @@ const char* FetchIndicatorResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .pb.ResultInfo result = 1;
+      // .ResultInfo result = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_result(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .pb.IndicatorSet indicator_set = 2;
+      // .IndicatorSet indicator_set = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_indicator_set(), ptr);
@@ -1305,11 +1300,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* FetchIndicatorResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.FetchIndicatorResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:FetchIndicatorResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .pb.ResultInfo result = 1;
+  // .ResultInfo result = 1;
   if (this->has_result()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1317,7 +1312,7 @@ failure:
         1, _Internal::result(this), target, stream);
   }
 
-  // .pb.IndicatorSet indicator_set = 2;
+  // .IndicatorSet indicator_set = 2;
   if (this->has_indicator_set()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1329,26 +1324,26 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.FetchIndicatorResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:FetchIndicatorResponse)
   return target;
 }
 
 size_t FetchIndicatorResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.FetchIndicatorResponse)
+// @@protoc_insertion_point(message_byte_size_start:FetchIndicatorResponse)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .pb.ResultInfo result = 1;
+  // .ResultInfo result = 1;
   if (this->has_result()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *result_);
   }
 
-  // .pb.IndicatorSet indicator_set = 2;
+  // .IndicatorSet indicator_set = 2;
   if (this->has_indicator_set()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1365,44 +1360,44 @@ size_t FetchIndicatorResponse::ByteSizeLong() const {
 }
 
 void FetchIndicatorResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.FetchIndicatorResponse)
+// @@protoc_insertion_point(generalized_merge_from_start:FetchIndicatorResponse)
   GOOGLE_DCHECK_NE(&from, this);
   const FetchIndicatorResponse* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FetchIndicatorResponse>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.FetchIndicatorResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:FetchIndicatorResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.FetchIndicatorResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:FetchIndicatorResponse)
     MergeFrom(*source);
   }
 }
 
 void FetchIndicatorResponse::MergeFrom(const FetchIndicatorResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.FetchIndicatorResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:FetchIndicatorResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_result()) {
-    _internal_mutable_result()->::pb::ResultInfo::MergeFrom(from._internal_result());
+    _internal_mutable_result()->::ResultInfo::MergeFrom(from._internal_result());
   }
   if (from.has_indicator_set()) {
-    _internal_mutable_indicator_set()->::pb::IndicatorSet::MergeFrom(from._internal_indicator_set());
+    _internal_mutable_indicator_set()->::IndicatorSet::MergeFrom(from._internal_indicator_set());
   }
 }
 
 void FetchIndicatorResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.FetchIndicatorResponse)
+// @@protoc_insertion_point(generalized_copy_from_start:FetchIndicatorResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void FetchIndicatorResponse::CopyFrom(const FetchIndicatorResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.FetchIndicatorResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:FetchIndicatorResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1431,15 +1426,15 @@ void FetchIndicatorResponse::InternalSwap(FetchIndicatorResponse* other) {
 // ===================================================================
 
 void LiveSet::InitAsDefaultInstance() {
-  ::pb::_LiveSet_default_instance_._instance.get_mutable()->daily_ = const_cast< ::pb::KChart*>(
-      ::pb::KChart::internal_default_instance());
+  ::_LiveSet_default_instance_._instance.get_mutable()->daily_ = const_cast< ::KChart*>(
+      ::KChart::internal_default_instance());
 }
 class LiveSet::_Internal {
  public:
-  static const ::pb::KChart& daily(const LiveSet* msg);
+  static const ::KChart& daily(const LiveSet* msg);
 };
 
-const ::pb::KChart&
+const ::KChart&
 LiveSet::_Internal::daily(const LiveSet* msg) {
   return *msg->daily_;
 }
@@ -1447,20 +1442,20 @@ LiveSet::LiveSet(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:pb.LiveSet)
+  // @@protoc_insertion_point(arena_constructor:LiveSet)
 }
 LiveSet::LiveSet(const LiveSet& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_daily()) {
-    daily_ = new ::pb::KChart(*from.daily_);
+    daily_ = new ::KChart(*from.daily_);
   } else {
     daily_ = nullptr;
   }
   ::memcpy(&timestamp_, &from.timestamp_,
     static_cast<size_t>(reinterpret_cast<char*>(&version_) -
     reinterpret_cast<char*>(&timestamp_)) + sizeof(version_));
-  // @@protoc_insertion_point(copy_constructor:pb.LiveSet)
+  // @@protoc_insertion_point(copy_constructor:LiveSet)
 }
 
 void LiveSet::SharedCtor() {
@@ -1471,7 +1466,7 @@ void LiveSet::SharedCtor() {
 }
 
 LiveSet::~LiveSet() {
-  // @@protoc_insertion_point(destructor:pb.LiveSet)
+  // @@protoc_insertion_point(destructor:LiveSet)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1497,7 +1492,7 @@ const LiveSet& LiveSet::default_instance() {
 
 
 void LiveSet::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.LiveSet)
+// @@protoc_insertion_point(message_clear_start:LiveSet)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1534,7 +1529,7 @@ const char* LiveSet::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .pb.KChart daily = 3;
+      // .KChart daily = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_daily(), ptr);
@@ -1565,7 +1560,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* LiveSet::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.LiveSet)
+  // @@protoc_insertion_point(serialize_to_array_start:LiveSet)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1581,7 +1576,7 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_version(), target);
   }
 
-  // .pb.KChart daily = 3;
+  // .KChart daily = 3;
   if (this->has_daily()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1593,19 +1588,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.LiveSet)
+  // @@protoc_insertion_point(serialize_to_array_end:LiveSet)
   return target;
 }
 
 size_t LiveSet::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.LiveSet)
+// @@protoc_insertion_point(message_byte_size_start:LiveSet)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .pb.KChart daily = 3;
+  // .KChart daily = 3;
   if (this->has_daily()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1636,29 +1631,29 @@ size_t LiveSet::ByteSizeLong() const {
 }
 
 void LiveSet::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.LiveSet)
+// @@protoc_insertion_point(generalized_merge_from_start:LiveSet)
   GOOGLE_DCHECK_NE(&from, this);
   const LiveSet* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<LiveSet>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.LiveSet)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:LiveSet)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.LiveSet)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:LiveSet)
     MergeFrom(*source);
   }
 }
 
 void LiveSet::MergeFrom(const LiveSet& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.LiveSet)
+// @@protoc_insertion_point(class_specific_merge_from_start:LiveSet)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.has_daily()) {
-    _internal_mutable_daily()->::pb::KChart::MergeFrom(from._internal_daily());
+    _internal_mutable_daily()->::KChart::MergeFrom(from._internal_daily());
   }
   if (from.timestamp() != 0) {
     _internal_set_timestamp(from._internal_timestamp());
@@ -1669,14 +1664,14 @@ void LiveSet::MergeFrom(const LiveSet& from) {
 }
 
 void LiveSet::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.LiveSet)
+// @@protoc_insertion_point(generalized_copy_from_start:LiveSet)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void LiveSet::CopyFrom(const LiveSet& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.LiveSet)
+// @@protoc_insertion_point(class_specific_copy_from_start:LiveSet)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1714,7 +1709,7 @@ KChart::KChart(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:pb.KChart)
+  // @@protoc_insertion_point(arena_constructor:KChart)
 }
 KChart::KChart(const KChart& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -1737,7 +1732,7 @@ KChart::KChart(const KChart& from)
   ::memcpy(&open_, &from.open_,
     static_cast<size_t>(reinterpret_cast<char*>(&adjust_factor_) -
     reinterpret_cast<char*>(&open_)) + sizeof(adjust_factor_));
-  // @@protoc_insertion_point(copy_constructor:pb.KChart)
+  // @@protoc_insertion_point(copy_constructor:KChart)
 }
 
 void KChart::SharedCtor() {
@@ -1751,7 +1746,7 @@ void KChart::SharedCtor() {
 }
 
 KChart::~KChart() {
-  // @@protoc_insertion_point(destructor:pb.KChart)
+  // @@protoc_insertion_point(destructor:KChart)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1779,7 +1774,7 @@ const KChart& KChart::default_instance() {
 
 
 void KChart::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.KChart)
+// @@protoc_insertion_point(message_clear_start:KChart)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1806,7 +1801,7 @@ const char* KChart::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_code();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.KChart.code"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "KChart.code"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1815,7 +1810,7 @@ const char* KChart::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_date();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.KChart.date"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "KChart.date"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1824,7 +1819,7 @@ const char* KChart::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_time();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.KChart.time"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "KChart.time"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1936,7 +1931,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* KChart::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.KChart)
+  // @@protoc_insertion_point(serialize_to_array_start:KChart)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1945,7 +1940,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_code().data(), static_cast<int>(this->_internal_code().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.KChart.code");
+      "KChart.code");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_code(), target);
   }
@@ -1955,7 +1950,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_date().data(), static_cast<int>(this->_internal_date().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.KChart.date");
+      "KChart.date");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_date(), target);
   }
@@ -1965,7 +1960,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_time().data(), static_cast<int>(this->_internal_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.KChart.time");
+      "KChart.time");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_time(), target);
   }
@@ -2046,12 +2041,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.KChart)
+  // @@protoc_insertion_point(serialize_to_array_end:KChart)
   return target;
 }
 
 size_t KChart::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.KChart)
+// @@protoc_insertion_point(message_byte_size_start:KChart)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2149,22 +2144,22 @@ size_t KChart::ByteSizeLong() const {
 }
 
 void KChart::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.KChart)
+// @@protoc_insertion_point(generalized_merge_from_start:KChart)
   GOOGLE_DCHECK_NE(&from, this);
   const KChart* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<KChart>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.KChart)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:KChart)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.KChart)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:KChart)
     MergeFrom(*source);
   }
 }
 
 void KChart::MergeFrom(const KChart& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.KChart)
+// @@protoc_insertion_point(class_specific_merge_from_start:KChart)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2218,14 +2213,14 @@ void KChart::MergeFrom(const KChart& from) {
 }
 
 void KChart::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.KChart)
+// @@protoc_insertion_point(generalized_copy_from_start:KChart)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void KChart::CopyFrom(const KChart& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.KChart)
+// @@protoc_insertion_point(class_specific_copy_from_start:KChart)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2266,7 +2261,7 @@ MA::MA(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:pb.MA)
+  // @@protoc_insertion_point(arena_constructor:MA)
 }
 MA::MA(const MA& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -2284,7 +2279,7 @@ MA::MA(const MA& from)
   ::memcpy(&last_1_, &from.last_1_,
     static_cast<size_t>(reinterpret_cast<char*>(&last_60_) -
     reinterpret_cast<char*>(&last_1_)) + sizeof(last_60_));
-  // @@protoc_insertion_point(copy_constructor:pb.MA)
+  // @@protoc_insertion_point(copy_constructor:MA)
 }
 
 void MA::SharedCtor() {
@@ -2297,7 +2292,7 @@ void MA::SharedCtor() {
 }
 
 MA::~MA() {
-  // @@protoc_insertion_point(destructor:pb.MA)
+  // @@protoc_insertion_point(destructor:MA)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2324,7 +2319,7 @@ const MA& MA::default_instance() {
 
 
 void MA::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.MA)
+// @@protoc_insertion_point(message_clear_start:MA)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2350,7 +2345,7 @@ const char* MA::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::interna
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_code();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.MA.code"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "MA.code"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2359,7 +2354,7 @@ const char* MA::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::interna
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_date();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.MA.date"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "MA.date"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2422,7 +2417,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* MA::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.MA)
+  // @@protoc_insertion_point(serialize_to_array_start:MA)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2431,7 +2426,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_code().data(), static_cast<int>(this->_internal_code().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.MA.code");
+      "MA.code");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_code(), target);
   }
@@ -2441,7 +2436,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_date().data(), static_cast<int>(this->_internal_date().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.MA.date");
+      "MA.date");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_date(), target);
   }
@@ -2480,12 +2475,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.MA)
+  // @@protoc_insertion_point(serialize_to_array_end:MA)
   return target;
 }
 
 size_t MA::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.MA)
+// @@protoc_insertion_point(message_byte_size_start:MA)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2541,22 +2536,22 @@ size_t MA::ByteSizeLong() const {
 }
 
 void MA::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.MA)
+// @@protoc_insertion_point(generalized_merge_from_start:MA)
   GOOGLE_DCHECK_NE(&from, this);
   const MA* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<MA>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.MA)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:MA)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.MA)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:MA)
     MergeFrom(*source);
   }
 }
 
 void MA::MergeFrom(const MA& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.MA)
+// @@protoc_insertion_point(class_specific_merge_from_start:MA)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2586,14 +2581,14 @@ void MA::MergeFrom(const MA& from) {
 }
 
 void MA::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.MA)
+// @@protoc_insertion_point(generalized_copy_from_start:MA)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void MA::CopyFrom(const MA& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.MA)
+// @@protoc_insertion_point(class_specific_copy_from_start:MA)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2633,7 +2628,7 @@ TrueRange::TrueRange(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:pb.TrueRange)
+  // @@protoc_insertion_point(arena_constructor:TrueRange)
 }
 TrueRange::TrueRange(const TrueRange& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -2651,7 +2646,7 @@ TrueRange::TrueRange(const TrueRange& from)
   ::memcpy(&range_, &from.range_,
     static_cast<size_t>(reinterpret_cast<char*>(&gentle_60_) -
     reinterpret_cast<char*>(&range_)) + sizeof(gentle_60_));
-  // @@protoc_insertion_point(copy_constructor:pb.TrueRange)
+  // @@protoc_insertion_point(copy_constructor:TrueRange)
 }
 
 void TrueRange::SharedCtor() {
@@ -2664,7 +2659,7 @@ void TrueRange::SharedCtor() {
 }
 
 TrueRange::~TrueRange() {
-  // @@protoc_insertion_point(destructor:pb.TrueRange)
+  // @@protoc_insertion_point(destructor:TrueRange)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2691,7 +2686,7 @@ const TrueRange& TrueRange::default_instance() {
 
 
 void TrueRange::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.TrueRange)
+// @@protoc_insertion_point(message_clear_start:TrueRange)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2717,7 +2712,7 @@ const char* TrueRange::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_code();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.TrueRange.code"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "TrueRange.code"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2726,7 +2721,7 @@ const char* TrueRange::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_date();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.TrueRange.date"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "TrueRange.date"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2782,7 +2777,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* TrueRange::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.TrueRange)
+  // @@protoc_insertion_point(serialize_to_array_start:TrueRange)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2791,7 +2786,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_code().data(), static_cast<int>(this->_internal_code().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.TrueRange.code");
+      "TrueRange.code");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_code(), target);
   }
@@ -2801,7 +2796,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_date().data(), static_cast<int>(this->_internal_date().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.TrueRange.date");
+      "TrueRange.date");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_date(), target);
   }
@@ -2834,12 +2829,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.TrueRange)
+  // @@protoc_insertion_point(serialize_to_array_end:TrueRange)
   return target;
 }
 
 size_t TrueRange::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.TrueRange)
+// @@protoc_insertion_point(message_byte_size_start:TrueRange)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2890,22 +2885,22 @@ size_t TrueRange::ByteSizeLong() const {
 }
 
 void TrueRange::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.TrueRange)
+// @@protoc_insertion_point(generalized_merge_from_start:TrueRange)
   GOOGLE_DCHECK_NE(&from, this);
   const TrueRange* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<TrueRange>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.TrueRange)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:TrueRange)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.TrueRange)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:TrueRange)
     MergeFrom(*source);
   }
 }
 
 void TrueRange::MergeFrom(const TrueRange& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.TrueRange)
+// @@protoc_insertion_point(class_specific_merge_from_start:TrueRange)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2932,14 +2927,14 @@ void TrueRange::MergeFrom(const TrueRange& from) {
 }
 
 void TrueRange::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.TrueRange)
+// @@protoc_insertion_point(generalized_copy_from_start:TrueRange)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void TrueRange::CopyFrom(const TrueRange& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.TrueRange)
+// @@protoc_insertion_point(class_specific_copy_from_start:TrueRange)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2979,7 +2974,7 @@ Segment::Segment(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:pb.Segment)
+  // @@protoc_insertion_point(arena_constructor:Segment)
 }
 Segment::Segment(const Segment& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -3012,7 +3007,7 @@ Segment::Segment(const Segment& from)
   ::memcpy(&direction_, &from.direction_,
     static_cast<size_t>(reinterpret_cast<char*>(&high_) -
     reinterpret_cast<char*>(&direction_)) + sizeof(high_));
-  // @@protoc_insertion_point(copy_constructor:pb.Segment)
+  // @@protoc_insertion_point(copy_constructor:Segment)
 }
 
 void Segment::SharedCtor() {
@@ -3028,7 +3023,7 @@ void Segment::SharedCtor() {
 }
 
 Segment::~Segment() {
-  // @@protoc_insertion_point(destructor:pb.Segment)
+  // @@protoc_insertion_point(destructor:Segment)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -3058,7 +3053,7 @@ const Segment& Segment::default_instance() {
 
 
 void Segment::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.Segment)
+// @@protoc_insertion_point(message_clear_start:Segment)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3087,7 +3082,7 @@ const char* Segment::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_code();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.Segment.code"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "Segment.code"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3096,7 +3091,7 @@ const char* Segment::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_date();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.Segment.date"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "Segment.date"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3112,7 +3107,7 @@ const char* Segment::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_start_date();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.Segment.start_date"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "Segment.start_date"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3135,7 +3130,7 @@ const char* Segment::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_low_date();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.Segment.low_date"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "Segment.low_date"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3151,7 +3146,7 @@ const char* Segment::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           auto str = _internal_mutable_high_date();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.Segment.high_date"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "Segment.high_date"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3179,7 +3174,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* Segment::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.Segment)
+  // @@protoc_insertion_point(serialize_to_array_start:Segment)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3188,7 +3183,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_code().data(), static_cast<int>(this->_internal_code().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.Segment.code");
+      "Segment.code");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_code(), target);
   }
@@ -3198,7 +3193,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_date().data(), static_cast<int>(this->_internal_date().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.Segment.date");
+      "Segment.date");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_date(), target);
   }
@@ -3214,7 +3209,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_start_date().data(), static_cast<int>(this->_internal_start_date().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.Segment.start_date");
+      "Segment.start_date");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_start_date(), target);
   }
@@ -3236,7 +3231,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_low_date().data(), static_cast<int>(this->_internal_low_date().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.Segment.low_date");
+      "Segment.low_date");
     target = stream->WriteStringMaybeAliased(
         7, this->_internal_low_date(), target);
   }
@@ -3252,7 +3247,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_high_date().data(), static_cast<int>(this->_internal_high_date().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.Segment.high_date");
+      "Segment.high_date");
     target = stream->WriteStringMaybeAliased(
         9, this->_internal_high_date(), target);
   }
@@ -3261,12 +3256,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.Segment)
+  // @@protoc_insertion_point(serialize_to_array_end:Segment)
   return target;
 }
 
 size_t Segment::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.Segment)
+// @@protoc_insertion_point(message_byte_size_start:Segment)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3338,22 +3333,22 @@ size_t Segment::ByteSizeLong() const {
 }
 
 void Segment::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.Segment)
+// @@protoc_insertion_point(generalized_merge_from_start:Segment)
   GOOGLE_DCHECK_NE(&from, this);
   const Segment* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Segment>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.Segment)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Segment)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.Segment)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:Segment)
     MergeFrom(*source);
   }
 }
 
 void Segment::MergeFrom(const Segment& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.Segment)
+// @@protoc_insertion_point(class_specific_merge_from_start:Segment)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3389,14 +3384,14 @@ void Segment::MergeFrom(const Segment& from) {
 }
 
 void Segment::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.Segment)
+// @@protoc_insertion_point(generalized_copy_from_start:Segment)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void Segment::CopyFrom(const Segment& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.Segment)
+// @@protoc_insertion_point(class_specific_copy_from_start:Segment)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3440,7 +3435,7 @@ DailyMinute::DailyMinute(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   minute_list_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:pb.DailyMinute)
+  // @@protoc_insertion_point(arena_constructor:DailyMinute)
 }
 DailyMinute::DailyMinute(const DailyMinute& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
@@ -3456,7 +3451,7 @@ DailyMinute::DailyMinute(const DailyMinute& from)
     date_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_date(),
       GetArena());
   }
-  // @@protoc_insertion_point(copy_constructor:pb.DailyMinute)
+  // @@protoc_insertion_point(copy_constructor:DailyMinute)
 }
 
 void DailyMinute::SharedCtor() {
@@ -3466,7 +3461,7 @@ void DailyMinute::SharedCtor() {
 }
 
 DailyMinute::~DailyMinute() {
-  // @@protoc_insertion_point(destructor:pb.DailyMinute)
+  // @@protoc_insertion_point(destructor:DailyMinute)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -3493,7 +3488,7 @@ const DailyMinute& DailyMinute::default_instance() {
 
 
 void DailyMinute::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.DailyMinute)
+// @@protoc_insertion_point(message_clear_start:DailyMinute)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3517,7 +3512,7 @@ const char* DailyMinute::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_code();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.DailyMinute.code"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "DailyMinute.code"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3526,11 +3521,11 @@ const char* DailyMinute::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_date();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.DailyMinute.date"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "DailyMinute.date"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .pb.KChart minute_list = 3;
+      // repeated .KChart minute_list = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           ptr -= 1;
@@ -3566,7 +3561,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* DailyMinute::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.DailyMinute)
+  // @@protoc_insertion_point(serialize_to_array_start:DailyMinute)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3575,7 +3570,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_code().data(), static_cast<int>(this->_internal_code().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.DailyMinute.code");
+      "DailyMinute.code");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_code(), target);
   }
@@ -3585,12 +3580,12 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_date().data(), static_cast<int>(this->_internal_date().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.DailyMinute.date");
+      "DailyMinute.date");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_date(), target);
   }
 
-  // repeated .pb.KChart minute_list = 3;
+  // repeated .KChart minute_list = 3;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_minute_list_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -3602,19 +3597,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.DailyMinute)
+  // @@protoc_insertion_point(serialize_to_array_end:DailyMinute)
   return target;
 }
 
 size_t DailyMinute::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.DailyMinute)
+// @@protoc_insertion_point(message_byte_size_start:DailyMinute)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .pb.KChart minute_list = 3;
+  // repeated .KChart minute_list = 3;
   total_size += 1UL * this->_internal_minute_list_size();
   for (const auto& msg : this->minute_list_) {
     total_size +=
@@ -3645,22 +3640,22 @@ size_t DailyMinute::ByteSizeLong() const {
 }
 
 void DailyMinute::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.DailyMinute)
+// @@protoc_insertion_point(generalized_merge_from_start:DailyMinute)
   GOOGLE_DCHECK_NE(&from, this);
   const DailyMinute* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<DailyMinute>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.DailyMinute)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:DailyMinute)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.DailyMinute)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:DailyMinute)
     MergeFrom(*source);
   }
 }
 
 void DailyMinute::MergeFrom(const DailyMinute& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.DailyMinute)
+// @@protoc_insertion_point(class_specific_merge_from_start:DailyMinute)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -3676,14 +3671,14 @@ void DailyMinute::MergeFrom(const DailyMinute& from) {
 }
 
 void DailyMinute::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.DailyMinute)
+// @@protoc_insertion_point(generalized_copy_from_start:DailyMinute)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void DailyMinute::CopyFrom(const DailyMinute& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.DailyMinute)
+// @@protoc_insertion_point(class_specific_copy_from_start:DailyMinute)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3707,34 +3702,33 @@ void DailyMinute::InternalSwap(DailyMinute* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace pb
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::pb::StockDateInterval* Arena::CreateMaybeMessage< ::pb::StockDateInterval >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::StockDateInterval >(arena);
+template<> PROTOBUF_NOINLINE ::StockDateInterval* Arena::CreateMaybeMessage< ::StockDateInterval >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::StockDateInterval >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::IndicatorSet* Arena::CreateMaybeMessage< ::pb::IndicatorSet >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::IndicatorSet >(arena);
+template<> PROTOBUF_NOINLINE ::IndicatorSet* Arena::CreateMaybeMessage< ::IndicatorSet >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::IndicatorSet >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::FetchIndicatorResponse* Arena::CreateMaybeMessage< ::pb::FetchIndicatorResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::FetchIndicatorResponse >(arena);
+template<> PROTOBUF_NOINLINE ::FetchIndicatorResponse* Arena::CreateMaybeMessage< ::FetchIndicatorResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::FetchIndicatorResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::LiveSet* Arena::CreateMaybeMessage< ::pb::LiveSet >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::LiveSet >(arena);
+template<> PROTOBUF_NOINLINE ::LiveSet* Arena::CreateMaybeMessage< ::LiveSet >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::LiveSet >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::KChart* Arena::CreateMaybeMessage< ::pb::KChart >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::KChart >(arena);
+template<> PROTOBUF_NOINLINE ::KChart* Arena::CreateMaybeMessage< ::KChart >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::KChart >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::MA* Arena::CreateMaybeMessage< ::pb::MA >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::MA >(arena);
+template<> PROTOBUF_NOINLINE ::MA* Arena::CreateMaybeMessage< ::MA >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::MA >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::TrueRange* Arena::CreateMaybeMessage< ::pb::TrueRange >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::TrueRange >(arena);
+template<> PROTOBUF_NOINLINE ::TrueRange* Arena::CreateMaybeMessage< ::TrueRange >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::TrueRange >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::Segment* Arena::CreateMaybeMessage< ::pb::Segment >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::Segment >(arena);
+template<> PROTOBUF_NOINLINE ::Segment* Arena::CreateMaybeMessage< ::Segment >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::Segment >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::DailyMinute* Arena::CreateMaybeMessage< ::pb::DailyMinute >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::DailyMinute >(arena);
+template<> PROTOBUF_NOINLINE ::DailyMinute* Arena::CreateMaybeMessage< ::DailyMinute >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::DailyMinute >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

@@ -60,4 +60,14 @@ public:
         else
             return ToFloorUnit(x, unit, maxULP);
     }
+
+    static float Max(float x, float y)
+    {
+        return std::max(x, y);
+    }
+
+    static float Min(float x, float y)
+    {
+        return std::min(x, y);
+    }
 };

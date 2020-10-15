@@ -5,6 +5,9 @@
 #include <vector>
 
 
+namespace chimera
+{
+
 class Segment : public Component
 {
 public:
@@ -19,3 +22,5 @@ public:
     void GenerateMesh(std::vector<Vector3>& vertices, std::vector<Color>& colors);
     void Render();
 };
+
+} // chimera

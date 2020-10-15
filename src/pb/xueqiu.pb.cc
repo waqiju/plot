@@ -15,7 +15,6 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_pb_2fxueqiu_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PortfolioInfo_pb_2fxueqiu_2eproto;
-namespace pb {
 class PortfolioInfoDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PortfolioInfo> _instance;
@@ -24,16 +23,15 @@ class PortfolioInfoListDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<PortfolioInfoList> _instance;
 } _PortfolioInfoList_default_instance_;
-}  // namespace pb
 static void InitDefaultsscc_info_PortfolioInfo_pb_2fxueqiu_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_PortfolioInfo_default_instance_;
-    new (ptr) ::pb::PortfolioInfo();
+    void* ptr = &::_PortfolioInfo_default_instance_;
+    new (ptr) ::PortfolioInfo();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::PortfolioInfo::InitAsDefaultInstance();
+  ::PortfolioInfo::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PortfolioInfo_pb_2fxueqiu_2eproto =
@@ -43,11 +41,11 @@ static void InitDefaultsscc_info_PortfolioInfoList_pb_2fxueqiu_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::pb::_PortfolioInfoList_default_instance_;
-    new (ptr) ::pb::PortfolioInfoList();
+    void* ptr = &::_PortfolioInfoList_default_instance_;
+    new (ptr) ::PortfolioInfoList();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::pb::PortfolioInfoList::InitAsDefaultInstance();
+  ::PortfolioInfoList::InitAsDefaultInstance();
 }
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_PortfolioInfoList_pb_2fxueqiu_2eproto =
@@ -60,62 +58,61 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pb_2fxueqiu_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, id_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, code_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, last_touch_date_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, tags_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, actived_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, in_blacklist_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, market_kind_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, name_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, author_name_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, last_rebalacing_date_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, times_of_404_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, net_value_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, created_date_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, max_draw_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, follower_count_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, turnover_90_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, turnover_360_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, monthly_gain_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, zipped_zh_html_),
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfo, zipped_nav_json_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, id_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, code_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, last_touch_date_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, tags_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, actived_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, in_blacklist_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, market_kind_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, name_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, author_name_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, last_rebalacing_date_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, times_of_404_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, net_value_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, created_date_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, max_draw_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, follower_count_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, turnover_90_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, turnover_360_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, monthly_gain_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, zipped_zh_html_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfo, zipped_nav_json_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfoList, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfoList, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::pb::PortfolioInfoList, portfolio_list_),
+  PROTOBUF_FIELD_OFFSET(::PortfolioInfoList, portfolio_list_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::pb::PortfolioInfo)},
-  { 25, -1, sizeof(::pb::PortfolioInfoList)},
+  { 0, -1, sizeof(::PortfolioInfo)},
+  { 25, -1, sizeof(::PortfolioInfoList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_PortfolioInfo_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_PortfolioInfoList_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_PortfolioInfo_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::_PortfolioInfoList_default_instance_),
 };
 
 const char descriptor_table_protodef_pb_2fxueqiu_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\017pb/xueqiu.proto\022\002pb\"\252\003\n\rPortfolioInfo\022"
-  "\n\n\002id\030\001 \001(\003\022\014\n\004code\030\002 \001(\t\022\027\n\017last_touch_"
-  "date\030\003 \001(\t\022\014\n\004tags\030\004 \001(\t\022\017\n\007actived\030\005 \001("
-  "\010\022\024\n\014in_blacklist\030\006 \001(\010\022\023\n\013market_kind\030\007"
-  " \001(\t\022\014\n\004name\030\010 \001(\t\022\023\n\013author_name\030\t \001(\t\022"
-  "\034\n\024last_rebalacing_date\030\n \001(\t\022\024\n\014times_o"
-  "f_404\030\013 \001(\005\022\021\n\tnet_value\030e \001(\002\022\024\n\014create"
-  "d_date\030f \001(\t\022\020\n\010max_draw\030g \001(\002\022\026\n\016follow"
-  "er_count\030h \001(\005\022\023\n\013turnover_90\030i \001(\002\022\024\n\014t"
-  "urnover_360\030j \001(\002\022\024\n\014monthly_gain\030k \001(\002\022"
-  "\027\n\016zipped_zh_html\030\351\007 \001(\014\022\030\n\017zipped_nav_j"
-  "son\030\352\007 \001(\014\">\n\021PortfolioInfoList\022)\n\016portf"
-  "olio_list\030\001 \003(\0132\021.pb.PortfolioInfob\006prot"
-  "o3"
+  "\n\017pb/xueqiu.proto\"\252\003\n\rPortfolioInfo\022\n\n\002i"
+  "d\030\001 \001(\003\022\014\n\004code\030\002 \001(\t\022\027\n\017last_touch_date"
+  "\030\003 \001(\t\022\014\n\004tags\030\004 \001(\t\022\017\n\007actived\030\005 \001(\010\022\024\n"
+  "\014in_blacklist\030\006 \001(\010\022\023\n\013market_kind\030\007 \001(\t"
+  "\022\014\n\004name\030\010 \001(\t\022\023\n\013author_name\030\t \001(\t\022\034\n\024l"
+  "ast_rebalacing_date\030\n \001(\t\022\024\n\014times_of_40"
+  "4\030\013 \001(\005\022\021\n\tnet_value\030e \001(\002\022\024\n\014created_da"
+  "te\030f \001(\t\022\020\n\010max_draw\030g \001(\002\022\026\n\016follower_c"
+  "ount\030h \001(\005\022\023\n\013turnover_90\030i \001(\002\022\024\n\014turno"
+  "ver_360\030j \001(\002\022\024\n\014monthly_gain\030k \001(\002\022\027\n\016z"
+  "ipped_zh_html\030\351\007 \001(\014\022\030\n\017zipped_nav_json\030"
+  "\352\007 \001(\014\";\n\021PortfolioInfoList\022&\n\016portfolio"
+  "_list\030\001 \003(\0132\016.PortfolioInfob\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pb_2fxueqiu_2eproto_deps[1] = {
 };
@@ -125,7 +122,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pb_
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pb_2fxueqiu_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fxueqiu_2eproto = {
-  false, false, descriptor_table_protodef_pb_2fxueqiu_2eproto, "pb/xueqiu.proto", 522,
+  false, false, descriptor_table_protodef_pb_2fxueqiu_2eproto, "pb/xueqiu.proto", 515,
   &descriptor_table_pb_2fxueqiu_2eproto_once, descriptor_table_pb_2fxueqiu_2eproto_sccs, descriptor_table_pb_2fxueqiu_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_pb_2fxueqiu_2eproto::offsets,
   file_level_metadata_pb_2fxueqiu_2eproto, 2, file_level_enum_descriptors_pb_2fxueqiu_2eproto, file_level_service_descriptors_pb_2fxueqiu_2eproto,
@@ -133,7 +130,6 @@ const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fx
 
 // Force running AddDescriptors() at dynamic initialization time.
 static bool dynamic_init_dummy_pb_2fxueqiu_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_pb_2fxueqiu_2eproto)), true);
-namespace pb {
 
 // ===================================================================
 
@@ -147,7 +143,7 @@ PortfolioInfo::PortfolioInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:pb.PortfolioInfo)
+  // @@protoc_insertion_point(arena_constructor:PortfolioInfo)
 }
 PortfolioInfo::PortfolioInfo(const PortfolioInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -205,7 +201,7 @@ PortfolioInfo::PortfolioInfo(const PortfolioInfo& from)
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&monthly_gain_) -
     reinterpret_cast<char*>(&id_)) + sizeof(monthly_gain_));
-  // @@protoc_insertion_point(copy_constructor:pb.PortfolioInfo)
+  // @@protoc_insertion_point(copy_constructor:PortfolioInfo)
 }
 
 void PortfolioInfo::SharedCtor() {
@@ -226,7 +222,7 @@ void PortfolioInfo::SharedCtor() {
 }
 
 PortfolioInfo::~PortfolioInfo() {
-  // @@protoc_insertion_point(destructor:pb.PortfolioInfo)
+  // @@protoc_insertion_point(destructor:PortfolioInfo)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -261,7 +257,7 @@ const PortfolioInfo& PortfolioInfo::default_instance() {
 
 
 void PortfolioInfo::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.PortfolioInfo)
+// @@protoc_insertion_point(message_clear_start:PortfolioInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -302,7 +298,7 @@ const char* PortfolioInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_code();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.PortfolioInfo.code"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "PortfolioInfo.code"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -311,7 +307,7 @@ const char* PortfolioInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_last_touch_date();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.PortfolioInfo.last_touch_date"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "PortfolioInfo.last_touch_date"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -320,7 +316,7 @@ const char* PortfolioInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_tags();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.PortfolioInfo.tags"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "PortfolioInfo.tags"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -343,7 +339,7 @@ const char* PortfolioInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           auto str = _internal_mutable_market_kind();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.PortfolioInfo.market_kind"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "PortfolioInfo.market_kind"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -352,7 +348,7 @@ const char* PortfolioInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           auto str = _internal_mutable_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.PortfolioInfo.name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "PortfolioInfo.name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -361,7 +357,7 @@ const char* PortfolioInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 74)) {
           auto str = _internal_mutable_author_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.PortfolioInfo.author_name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "PortfolioInfo.author_name"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -370,7 +366,7 @@ const char* PortfolioInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
           auto str = _internal_mutable_last_rebalacing_date();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.PortfolioInfo.last_rebalacing_date"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "PortfolioInfo.last_rebalacing_date"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -393,7 +389,7 @@ const char* PortfolioInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_created_date();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.PortfolioInfo.created_date"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "PortfolioInfo.created_date"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -472,7 +468,7 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* PortfolioInfo::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.PortfolioInfo)
+  // @@protoc_insertion_point(serialize_to_array_start:PortfolioInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -487,7 +483,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_code().data(), static_cast<int>(this->_internal_code().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.PortfolioInfo.code");
+      "PortfolioInfo.code");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_code(), target);
   }
@@ -497,7 +493,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_last_touch_date().data(), static_cast<int>(this->_internal_last_touch_date().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.PortfolioInfo.last_touch_date");
+      "PortfolioInfo.last_touch_date");
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_last_touch_date(), target);
   }
@@ -507,7 +503,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_tags().data(), static_cast<int>(this->_internal_tags().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.PortfolioInfo.tags");
+      "PortfolioInfo.tags");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_tags(), target);
   }
@@ -529,7 +525,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_market_kind().data(), static_cast<int>(this->_internal_market_kind().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.PortfolioInfo.market_kind");
+      "PortfolioInfo.market_kind");
     target = stream->WriteStringMaybeAliased(
         7, this->_internal_market_kind(), target);
   }
@@ -539,7 +535,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.PortfolioInfo.name");
+      "PortfolioInfo.name");
     target = stream->WriteStringMaybeAliased(
         8, this->_internal_name(), target);
   }
@@ -549,7 +545,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_author_name().data(), static_cast<int>(this->_internal_author_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.PortfolioInfo.author_name");
+      "PortfolioInfo.author_name");
     target = stream->WriteStringMaybeAliased(
         9, this->_internal_author_name(), target);
   }
@@ -559,7 +555,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_last_rebalacing_date().data(), static_cast<int>(this->_internal_last_rebalacing_date().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.PortfolioInfo.last_rebalacing_date");
+      "PortfolioInfo.last_rebalacing_date");
     target = stream->WriteStringMaybeAliased(
         10, this->_internal_last_rebalacing_date(), target);
   }
@@ -581,7 +577,7 @@ failure:
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_created_date().data(), static_cast<int>(this->_internal_created_date().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "pb.PortfolioInfo.created_date");
+      "PortfolioInfo.created_date");
     target = stream->WriteStringMaybeAliased(
         102, this->_internal_created_date(), target);
   }
@@ -632,12 +628,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.PortfolioInfo)
+  // @@protoc_insertion_point(serialize_to_array_end:PortfolioInfo)
   return target;
 }
 
 size_t PortfolioInfo::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.PortfolioInfo)
+// @@protoc_insertion_point(message_byte_size_start:PortfolioInfo)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -780,22 +776,22 @@ size_t PortfolioInfo::ByteSizeLong() const {
 }
 
 void PortfolioInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.PortfolioInfo)
+// @@protoc_insertion_point(generalized_merge_from_start:PortfolioInfo)
   GOOGLE_DCHECK_NE(&from, this);
   const PortfolioInfo* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PortfolioInfo>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PortfolioInfo)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:PortfolioInfo)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PortfolioInfo)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:PortfolioInfo)
     MergeFrom(*source);
   }
 }
 
 void PortfolioInfo::MergeFrom(const PortfolioInfo& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.PortfolioInfo)
+// @@protoc_insertion_point(class_specific_merge_from_start:PortfolioInfo)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -864,14 +860,14 @@ void PortfolioInfo::MergeFrom(const PortfolioInfo& from) {
 }
 
 void PortfolioInfo::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.PortfolioInfo)
+// @@protoc_insertion_point(generalized_copy_from_start:PortfolioInfo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PortfolioInfo::CopyFrom(const PortfolioInfo& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.PortfolioInfo)
+// @@protoc_insertion_point(class_specific_copy_from_start:PortfolioInfo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -920,13 +916,13 @@ PortfolioInfoList::PortfolioInfoList(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   portfolio_list_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:pb.PortfolioInfoList)
+  // @@protoc_insertion_point(arena_constructor:PortfolioInfoList)
 }
 PortfolioInfoList::PortfolioInfoList(const PortfolioInfoList& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       portfolio_list_(from.portfolio_list_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:pb.PortfolioInfoList)
+  // @@protoc_insertion_point(copy_constructor:PortfolioInfoList)
 }
 
 void PortfolioInfoList::SharedCtor() {
@@ -934,7 +930,7 @@ void PortfolioInfoList::SharedCtor() {
 }
 
 PortfolioInfoList::~PortfolioInfoList() {
-  // @@protoc_insertion_point(destructor:pb.PortfolioInfoList)
+  // @@protoc_insertion_point(destructor:PortfolioInfoList)
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -959,7 +955,7 @@ const PortfolioInfoList& PortfolioInfoList::default_instance() {
 
 
 void PortfolioInfoList::Clear() {
-// @@protoc_insertion_point(message_clear_start:pb.PortfolioInfoList)
+// @@protoc_insertion_point(message_clear_start:PortfolioInfoList)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -976,7 +972,7 @@ const char* PortfolioInfoList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // repeated .pb.PortfolioInfo portfolio_list = 1;
+      // repeated .PortfolioInfo portfolio_list = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -1012,11 +1008,11 @@ failure:
 
 ::PROTOBUF_NAMESPACE_ID::uint8* PortfolioInfoList::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.PortfolioInfoList)
+  // @@protoc_insertion_point(serialize_to_array_start:PortfolioInfoList)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .pb.PortfolioInfo portfolio_list = 1;
+  // repeated .PortfolioInfo portfolio_list = 1;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_portfolio_list_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
@@ -1028,19 +1024,19 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:pb.PortfolioInfoList)
+  // @@protoc_insertion_point(serialize_to_array_end:PortfolioInfoList)
   return target;
 }
 
 size_t PortfolioInfoList::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:pb.PortfolioInfoList)
+// @@protoc_insertion_point(message_byte_size_start:PortfolioInfoList)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .pb.PortfolioInfo portfolio_list = 1;
+  // repeated .PortfolioInfo portfolio_list = 1;
   total_size += 1UL * this->_internal_portfolio_list_size();
   for (const auto& msg : this->portfolio_list_) {
     total_size +=
@@ -1057,22 +1053,22 @@ size_t PortfolioInfoList::ByteSizeLong() const {
 }
 
 void PortfolioInfoList::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.PortfolioInfoList)
+// @@protoc_insertion_point(generalized_merge_from_start:PortfolioInfoList)
   GOOGLE_DCHECK_NE(&from, this);
   const PortfolioInfoList* source =
       ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<PortfolioInfoList>(
           &from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PortfolioInfoList)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:PortfolioInfoList)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PortfolioInfoList)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:PortfolioInfoList)
     MergeFrom(*source);
   }
 }
 
 void PortfolioInfoList::MergeFrom(const PortfolioInfoList& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:pb.PortfolioInfoList)
+// @@protoc_insertion_point(class_specific_merge_from_start:PortfolioInfoList)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -1082,14 +1078,14 @@ void PortfolioInfoList::MergeFrom(const PortfolioInfoList& from) {
 }
 
 void PortfolioInfoList::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.PortfolioInfoList)
+// @@protoc_insertion_point(generalized_copy_from_start:PortfolioInfoList)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 void PortfolioInfoList::CopyFrom(const PortfolioInfoList& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:pb.PortfolioInfoList)
+// @@protoc_insertion_point(class_specific_copy_from_start:PortfolioInfoList)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1111,13 +1107,12 @@ void PortfolioInfoList::InternalSwap(PortfolioInfoList* other) {
 
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace pb
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::pb::PortfolioInfo* Arena::CreateMaybeMessage< ::pb::PortfolioInfo >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::PortfolioInfo >(arena);
+template<> PROTOBUF_NOINLINE ::PortfolioInfo* Arena::CreateMaybeMessage< ::PortfolioInfo >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::PortfolioInfo >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::PortfolioInfoList* Arena::CreateMaybeMessage< ::pb::PortfolioInfoList >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::PortfolioInfoList >(arena);
+template<> PROTOBUF_NOINLINE ::PortfolioInfoList* Arena::CreateMaybeMessage< ::PortfolioInfoList >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::PortfolioInfoList >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
