@@ -144,6 +144,9 @@
     <ClCompile Include="src\testcase\test_stock_glyph.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\geometry\bounds.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\default_shader.h">
@@ -288,6 +291,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\plot\stock_glyph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\geometry\bounds.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

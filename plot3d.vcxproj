@@ -141,6 +141,7 @@
     <ClCompile Include="src\entity\transform.cpp" />
     <ClCompile Include="src\entity\world.cpp" />
     <ClCompile Include="src\entity\world_object.cpp" />
+    <ClCompile Include="src\geometry\bounds.cpp" />
     <ClCompile Include="src\geometry\matrix4x4.cpp" />
     <ClCompile Include="src\geometry\physics.cpp" />
     <ClCompile Include="src\geometry\plane.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="src\entity\transform.h" />
     <ClInclude Include="src\entity\world.h" />
     <ClInclude Include="src\entity\world_object.h" />
+    <ClInclude Include="src\geometry\bounds.h" />
     <ClInclude Include="src\geometry\geometry.h" />
     <ClInclude Include="src\geometry\mathf.h" />
     <ClInclude Include="src\geometry\matrix4x4.h" />
