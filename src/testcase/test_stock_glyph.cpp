@@ -30,6 +30,7 @@ int main()
     plotRootEntity->name = "PlotRoot";
     g_PlotRoot = plotRootEntity->GetComponent<Transform>();
     GenerateRandomStockGlyph();
+    CameraHelper::FocusToIntervalX(Application::MainCamera(), 160, 220);
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();

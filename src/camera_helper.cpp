@@ -75,7 +75,7 @@ namespace CameraHelper
         }
     }
 
-    void ZoomPlot2D(Camera* camera, float x)
+    void FocusToIntervalX(Camera* camera, float begin, float end)
     {
         Entity* plotEntity = FindPlotRootEntity();
         if (plotEntity == NULL)
@@ -84,19 +84,7 @@ namespace CameraHelper
             return;
         }
 
-        // position
-        Vector3 previousFrameCenter, previousFrameMin, previousFrameMax;
-        Ray ray = camera->ViewportPointToRay(Vector3::zero);
-        Physics::Raycast(ray, Plane::XyPlane, previousFrameCenter);
-        ray = camera->ViewportPointToRay(Vector3(-1, -1, 0));
-        Physics::Raycast(ray, Plane::XyPlane, previousFrameMin);
-        ray = camera->ViewportPointToRay(Vector3(1, 1, 0));
-        Physics::Raycast(ray, Plane::XyPlane, previousFrameMax);
-
-        // bounds
-        float left = previousFrameCenter.x + (previousFrameMin.x - previousFrameCenter.x) * x;
-        float right = previousFrameCenter.x + (previousFrameMax.x - previousFrameCenter.x) * x;
-        Bounds fullBounds(Vector3(left, 1e8f, 0), Vector3(right, -1e8f, 0));
+        Bounds fullBounds(Vector3(begin, 1e8f, 0), Vector3(end, -1e8f, 0));
         CollectPlotRootBounds(plotEntity, fullBounds);
         if (fullBounds.min.y > fullBounds.max.y)
         {
@@ -109,6 +97,10 @@ namespace CameraHelper
         }
         // std::cout << fullBounds.ToString() << std::endl;
         // move focus
+        Vector3 previousFrameCenter;
+        Ray ray = camera->ViewportPointToRay(Vector3::zero);
+        Physics::Raycast(ray, Plane::XyPlane, previousFrameCenter);
+
         Vector3 currentFrameCenter = fullBounds.Center();
         Vector3 move = currentFrameCenter - previousFrameCenter;
         Transform* cameraTr = camera->GetComponent<Transform>();
@@ -119,5 +111,22 @@ namespace CameraHelper
         Vector3 worldExtent = fullBounds.Extent();
         camera->fieldOfView = atan(worldExtent.y / (currentCameraPosition - currentFrameCenter).Magnitude()) * 2;
         camera->aspect = worldExtent.x / worldExtent.y;
+    }
+
+    void ZoomPlot2D(Camera* camera, float x)
+    {
+        // position
+        Vector3 previousFrameCenter, previousFrameMin, previousFrameMax;
+        Ray ray = camera->ViewportPointToRay(Vector3::zero);
+        Physics::Raycast(ray, Plane::XyPlane, previousFrameCenter);
+        ray = camera->ViewportPointToRay(Vector3(-1, -1, 0));
+        Physics::Raycast(ray, Plane::XyPlane, previousFrameMin);
+        ray = camera->ViewportPointToRay(Vector3(1, 1, 0));
+        Physics::Raycast(ray, Plane::XyPlane, previousFrameMax);
+
+        // bounds
+        float left = previousFrameCenter.x + (previousFrameMin.x - previousFrameCenter.x) * x;
+        float right = previousFrameCenter.x + (previousFrameMax.x - previousFrameCenter.x) * x;
+        FocusToIntervalX(camera, left, right);
     }
 }
