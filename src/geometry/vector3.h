@@ -35,5 +35,6 @@ Vector3 operator+(Vector3 lhs, Vector3 rhs);
 Vector3 operator-(Vector3 lhs, Vector3 rhs);
 Vector3 operator*(Vector3 v, float scalar);
 Vector3 operator/(Vector3 v, float scalar);
+Vector3 operator*(Vector3 v1, Vector3 v2);
 bool operator==(Vector3 lhs, Vector3 rhs);
 bool operator!=(Vector3 lhs, Vector3 rhs);

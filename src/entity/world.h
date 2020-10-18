@@ -10,6 +10,7 @@ public:
     static World* ActiveWorld();
     static Entity* OriginEntity();
     Entity* CreateEntity();
+    std::vector<Entity*> GetRootEntities() { return m_EntityList; }
     template<typename T> std::vector<T*> GetComponentsInRootEnities();
     template<typename T> std::vector<T*> GetComponentsInAllEnities();
 	void FlushTransform();

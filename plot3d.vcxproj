@@ -136,6 +136,7 @@
     <ClCompile Include="src\asset_importer.cpp" />
     <ClCompile Include="src\camera.cpp" />
     <ClCompile Include="src\camera_helper.cpp" />
+    <ClCompile Include="src\core_component\bounds_component.cpp" />
     <ClCompile Include="src\entity\component.cpp" />
     <ClCompile Include="src\entity\entity.cpp" />
     <ClCompile Include="src\entity\transform.cpp" />
@@ -182,6 +183,7 @@
     <ClInclude Include="src\asset_importer.h" />
     <ClInclude Include="src\camera.h" />
     <ClInclude Include="src\camera_helper.h" />
+    <ClInclude Include="src\core_component\bounds_component.h" />
     <ClInclude Include="src\default_shader.h" />
     <ClInclude Include="src\entity\component.h" />
     <ClInclude Include="src\entity\ec.h" />

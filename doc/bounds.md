@@ -22,3 +22,4 @@ Encapsulate()
     (point) -> void
     (bounds) -> void
 }
+Expand()  amount -> void

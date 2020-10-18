@@ -14,17 +14,12 @@ namespace UiHelper
         glViewport(0, 0, width, height);
         for (auto camera : World::ActiveWorld()->GetComponentsInRootEnities<Camera>())
         {
-            std::cout << "=========\n"; 
             float widthChangeRatio = static_cast<float>(width) / Application::screenWidth;
             float heightChangeRatio = static_cast<float>(height) / Application::screenHeight;
-
-            std::cout << camera->aspect << " " << widthChangeRatio << " " << heightChangeRatio << std::endl;
 
             Application::screenWidth = width;
             Application::screenHeight = height;
             camera->aspect = camera->aspect * widthChangeRatio / heightChangeRatio;
-
-            std::cout << camera->aspect << " " <<width<< " " << height << std::endl;
         }
     }
 
@@ -98,10 +93,15 @@ namespace MouseScrollHandlers
             float factorX = 1 + 0.1 * -yoffset;
             CameraHelper::ZoomViewportAxis(camera, factorX, 0);
         }
-        if (Input::GetKey(GLFW_KEY_LEFT_ALT))
+        else if (Input::GetKey(GLFW_KEY_LEFT_ALT))
         {
             float factorY = 1 + 0.1 * -yoffset;
             CameraHelper::ZoomViewportAxis(camera, 0, factorY);
+        }
+        else
+        {
+            float factorX = 1 + 0.1 * -yoffset;
+            CameraHelper::ZoomPlot2D(camera, factorX);
         }
     }
 

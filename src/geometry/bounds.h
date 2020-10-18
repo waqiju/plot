@@ -12,4 +12,7 @@ public:
     Vector3 Center() const;
     Vector3 Size() const;
     Vector3 Extent() const;
+    void Expand(Vector3 scaling);
+
+    std::string ToString() const;
 };

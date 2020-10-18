@@ -14,8 +14,8 @@ class Application
 public:
     static std::string ProjectPath;
     // 屏幕宽高
-    static const unsigned int kDefaultScreenWidth = 800;
-    static const unsigned int kDefaultScreenHeight = 600;
+    static const unsigned int kDefaultScreenWidth = 1200;
+    static const unsigned int kDefaultScreenHeight = 800;
     static unsigned int screenWidth;
     static unsigned int screenHeight;
     static Vector2 ScreenSize() { return Vector2( static_cast<float>(screenWidth), static_cast<float>(screenHeight)); }

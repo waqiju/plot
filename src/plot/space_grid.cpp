@@ -54,10 +54,10 @@ void SpaceGrid::Render()
         return;
     }
     // vertics colors
-    static Color gradeZeroColor = Color(1, 1, 1, 0.75);
-    static Color gradeOneColor = Color(1, 1, 1, 0.4);
-    static Color gradeTwoColor = Color(1, 1, 1, 0.15);
-    static Color gradeThreeColor = Color(1, 1, 1, 0.05);
+    static Color gradeZeroColor = Color(1, 1, 1, 0.75f);
+    static Color gradeOneColor = Color(1, 1, 1, 0.4f);
+    static Color gradeTwoColor = Color(1, 1, 1, 0.15f);
+    static Color gradeThreeColor = Color(1, 1, 1, 0.05f);
     // numberic
     float maxUlpX = intervalX * 0.01;
     float maxUlpY = intervalY * 0.01;

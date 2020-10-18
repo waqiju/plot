@@ -5,6 +5,7 @@
 #include "mesh_renderer.h"
 #include "application/application.h"
 #include "plot/plot.h"
+#include "core_component/core_component.h"
 
 
 StockGlyph* StockGlyph::Create(Transform* parent, float x, const KChart& chart)
@@ -14,6 +15,10 @@ StockGlyph* StockGlyph::Create(Transform* parent, float x, const KChart& chart)
     stockGlyph->Reset(x, chart);
 
     entity->GetComponent<Transform>()->SetParent(parent);
+    // bounds
+    auto bounds = entity->AddComponent<BoundsComponent>();
+    bounds->min = stockGlyph->leftBottom;
+    bounds->max = stockGlyph->rightTop;
     return stockGlyph;
 }
 
@@ -35,8 +40,8 @@ void StockGlyph::Reset(float inX, const KChart& inKChart)
         color = Color::green;
     }
     // leftBottom, rightTop
-    leftBottom = Vector3(x, chart.low(), 0);
-    rightTop = Vector3(x, chart.high(), 0);
+    leftBottom = Vector3(x - 0.45f, chart.low(), 0);
+    rightTop = Vector3(x + 0.45f, chart.high(), 0);
 }
 
 void StockGlyph::Render()

@@ -60,7 +60,7 @@ void GenerateRandomStockGlyph()
         }
         else
         {
-            close = chartList[x-1].close() + Random::Range(-2, 2.2);
+            close = chartList[x-1].close() + Random::Range(-2.f, 2.2f);
         }
         float open = close * Random::Range(0.97, 1.03) + Random::Range(-1, 1);
         float max = Mathf::Max(open, close);
