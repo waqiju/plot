@@ -22,7 +22,7 @@ int main()
 {
     Window* window = Window::CreateWindow("Chimera", Application::screenWidth, Application::screenHeight);
     window->onWindowSizeChanged = UiHelper::WindowSizeChangedHandler;
-    window->onMouseScrollChanged = UiHelper::MouseScrollHandler;
+    window->onMouseScrollChanged = MouseScrollHandlers::ChangeFovAndAspect;
     CameraHelper::CreateCamera();
 
     g_SpaceGrid = new SpaceGrid(Application::MainCamera());

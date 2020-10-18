@@ -4,6 +4,11 @@
 namespace UiHelper
 {
     void WindowSizeChangedHandler(Window* window, int width, int height);
-    void MouseScrollHandler(Window* window, double xoffset, double yoffset);
     void ProcessPan();
+}
+
+namespace MouseScrollHandlers
+{
+    void MoveCamera(Window* window, double xoffset, double yoffset);
+    void ChangeFovAndAspect(Window* window, double xoffset, double yoffset);
 }
