@@ -44,7 +44,7 @@ void OnFrameUpdate()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     g_SpaceGrid->Render();
-    auto sgList = World::ActiveWorld()->GetComponentsInRootEnities<StockGlyph>();
+    auto sgList = g_PlotRoot->GetComponentsInChildren<StockGlyph>();
     StockGlyph::BatchRender(sgList);
 }
 
