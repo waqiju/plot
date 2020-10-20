@@ -1,4 +1,5 @@
 #include "material_property_block.h"
+#include <algorithm>
 
 
 const unsigned int MaterialPropertyBlock::kGLTextureNumber[10] = {

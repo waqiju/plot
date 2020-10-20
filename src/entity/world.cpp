@@ -1,6 +1,7 @@
 #include "entity/world.h"
 #include "entity/entity.h"
 #include "entity/transform.h"
+#include <algorithm>
 
 World* World::s_ActiveWorld = NULL;
 Entity* World::s_OriginEntity = NULL;
@@ -33,6 +34,15 @@ Entity* World::CreateEntity()
     entity->AddComponent<Transform>();
     m_EntityList.push_back(entity);
 	return entity;
+}
+
+void World::RemoveFromEntities(Entity* toRemove)
+{
+	auto iterator = std::find(m_EntityList.begin(), m_EntityList.end(), toRemove);
+    if (iterator != m_EntityList.end())
+    {
+        m_EntityList.erase(iterator);
+    }
 }
 
 void World::FlushTransform()

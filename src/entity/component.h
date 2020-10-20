@@ -25,7 +25,7 @@ public:
 private:
     void Enable(bool status);
 
-private:
+protected:
     Entity* m_OwerEntity = NULL;
     bool m_Enabled = true;
 };

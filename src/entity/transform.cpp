@@ -1,5 +1,7 @@
-#include "transform.h"
+﻿#include "transform.h"
 #include <algorithm>
+#include "entity/entity.h"
+#include "entity/world.h"
 
 
 void Transform::SetTrsMatrix(const Matrix4x4& inMatrix)
@@ -18,6 +20,11 @@ void Transform::SetParent(Transform* parent)
 		{
 			list.erase(iterator);
 		}
+	}
+	else
+	{
+		// 从 World 的根节点中移除
+		m_OwerEntity->OnwerWorld()->RemoveFromEntities(m_OwerEntity);
 	}
 
 	m_Parent = parent;
