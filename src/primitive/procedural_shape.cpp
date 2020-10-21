@@ -10,11 +10,12 @@ std::vector<Vector3> kTriangleVertices = {
 int ProceduralShape::GenerateTriangle(const Vector3& v0, const Vector3& v1, std::vector<Vector3>& vertices)
 {
     Vector3 center = (v0 + v1) / 2;
-    float r = Mathf::Min(v1.x - v0.x, v1.y - v0.y);
+    // float r = Mathf::Min(v1.x - v0.x, v1.y - v0.y);
+	Vector3 scaler = Vector3(v1.x - v0.x, v1.y - v0.y, 0);
 
-    vertices.push_back(center + kTriangleVertices[0] * r);
-    vertices.push_back(center + kTriangleVertices[1] * r);
-    vertices.push_back(center + kTriangleVertices[2] * r);
+    vertices.push_back(center + kTriangleVertices[0] * scaler);
+    vertices.push_back(center + kTriangleVertices[1] * scaler);
+    vertices.push_back(center + kTriangleVertices[2] * scaler);
     return 3;
 }
 
