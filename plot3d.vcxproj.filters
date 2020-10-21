@@ -147,13 +147,16 @@
     <ClCompile Include="src\core_component\bounds_component.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\testcase\test_shape.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\primitive\flexible_triangle.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\primitive\procedural_shape.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\testcase\test_space_grid.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\plot\plot_helper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -318,6 +321,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\primitive\procedural_shape.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plot\plot_helper.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

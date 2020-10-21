@@ -12,16 +12,26 @@
 void OnFrameUpdate();
 
 SpaceGrid* g_SpaceGrid;
+Transform* g_PlotRoot;
 
 
 int main()
 {
     Window* window = Window::CreateWindow("Chimera", Application::screenWidth, Application::screenHeight);
     window->onWindowSizeChanged = UiHelper::WindowSizeChangedHandler;
-    window->onMouseScrollChanged = UiHelper::MouseScrollHandler;
+    // window->onMouseScrollChanged = MouseScrollHandlers::ChangeFovAndAspect;
+    window->onMouseScrollChanged = MouseScrollHandlers::ZoomPlotRoot;
     CameraHelper::CreateCamera();
 
-    g_SpaceGrid = new SpaceGrid(Application::MainCamera());
+
+    auto plotRootEntity = World::ActiveWorld()->CreateEntity();
+    plotRootEntity->name = "PlotRoot";
+    g_PlotRoot = plotRootEntity->GetComponent<Transform>();
+
+    auto entity = World::ActiveWorld()->CreateEntity();
+    entity->name = "SpaceGrid";
+    g_SpaceGrid = new SpaceGrid(Application::MainCamera(), entity->GetComponent<Transform>());
+    entity->GetComponent<Transform>()->SetParent(g_PlotRoot);
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();

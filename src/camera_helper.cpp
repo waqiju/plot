@@ -6,6 +6,7 @@
 #include "cmath"
 #include <iostream>
 #include "core_component/core_component.h"
+#include "plot/plot.h"
 
 
 namespace CameraHelper
@@ -45,20 +46,6 @@ namespace CameraHelper
         }
     }
 
-    Entity* FindPlotRootEntity()
-    {
-        auto rootEntities = World::ActiveWorld()->GetRootEntities();
-        for (auto entity : rootEntities)
-        {
-            if (entity->name == "PlotRoot")
-            {
-                return entity;
-            }
-        }
-
-        return NULL;
-    }
-
     void CollectPlotRootBounds(Entity* plotEntity, Bounds& fullBounds)
     {
         for (auto boundsComponent: plotEntity->GetComponentsInChildren<BoundsComponent>())
@@ -77,7 +64,7 @@ namespace CameraHelper
 
     void FocusToIntervalX(Camera* camera, float begin, float end)
     {
-        Entity* plotEntity = FindPlotRootEntity();
+        Entity* plotEntity = PlotHelper::FindPlotRootEntity();
         if (plotEntity == NULL)
         {
             std::cout << "Not found [PlotRoot] entity!" << std::endl;

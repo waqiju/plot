@@ -14,14 +14,14 @@ Matrix4x4 Matrix4x4::TRS(Vector3 position, Quaternion rotation, Vector3 scale)
     m[2][0] = m[2][0] * scale.x;
     m[3][0] = position.x;
 
-    m[0][1] = m[0][1] * scale.x;
-    m[1][1] = m[1][1] * scale.x;
-    m[2][1] = m[2][1] * scale.x;
+    m[0][1] = m[0][1] * scale.y;
+    m[1][1] = m[1][1] * scale.y;
+    m[2][1] = m[2][1] * scale.y;
     m[3][1] = position.y;
 
-    m[0][2] = m[0][2] * scale.x;
-    m[1][2] = m[1][2] * scale.x;
-    m[2][2] = m[2][2] * scale.x;
+    m[0][2] = m[0][2] * scale.z;
+    m[1][2] = m[1][2] * scale.z;
+    m[2][2] = m[2][2] * scale.z;
     m[3][2] = position.z;
 
     // m[3] is (0, 0, 0, 1), it set by Rotate. So skip it
@@ -362,6 +362,17 @@ Vector3 Matrix4x4::MultiplyPoint(Vector3 v) const
     Vector4 result = (*this) * Vector4(v.x, v.y, v.z, 1);
     return Vector3(result.x / result.w, result.y / result.w, result.z / result.w);
 }
+
+Vector3 Matrix4x4::MultiplyPoint3x4(Vector3 v) const
+{
+    Vector3 result;
+    const Vector4 (&m)[4] = m_Value;
+    result[0] = m[0][0] * v[0] + m[1][0] * v[1] + m[2][0] * v[2] + m[3][0];
+    result[1] = m[0][1] * v[0] + m[1][1] * v[1] + m[2][1] * v[2] + m[3][1];
+    result[2] = m[0][2] * v[0] + m[1][2] * v[1] + m[2][2] * v[2] + m[3][2];
+    return result;
+}
+
 
 std::string Matrix4x4::ToString() const
 {

@@ -9,7 +9,7 @@ class SpaceGrid
 {
 public:
 
-    SpaceGrid(Camera* camera);
+    SpaceGrid(Camera* camera, Transform* transform);
     void Render();
 
 private:
@@ -19,7 +19,7 @@ private:
     // 世界坐标下的相机左下角和右上角
     Vector3 m_LeftBottom;
     Vector3 m_RightTop;
-    Entity* m_Entity;
+    Transform* m_Transform;
     Mesh* m_Mesh;
 
     void CalculateInterval(int pixel, int& tickGradeX, int& tickGradeY);

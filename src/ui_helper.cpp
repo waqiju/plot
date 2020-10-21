@@ -5,10 +5,22 @@
 #include <iostream>
 #include "geometry/geometry.h"
 #include "camera_helper.h"
+#include "plot/plot.h"
 
 
 namespace UiHelper
 {
+    void WindowSizeChangedHandler(Window* window, int width, int height)
+    {
+        glViewport(0, 0, width, height);
+        for (auto camera : World::ActiveWorld()->GetComponentsInRootEnities<Camera>())
+        {
+            camera->aspect = static_cast<float>(Application::screenWidth) / static_cast<float>(Application::screenHeight);
+        }
+    }
+
+    // 允许像素扭曲
+    /*
     void WindowSizeChangedHandler(Window* window, int width, int height)
     {
         glViewport(0, 0, width, height);
@@ -22,6 +34,7 @@ namespace UiHelper
             camera->aspect = camera->aspect * widthChangeRatio / heightChangeRatio;
         }
     }
+    */
 
     void ProcessPan()
     {
@@ -103,6 +116,34 @@ namespace MouseScrollHandlers
             float factorX = 1 + 0.1 * -yoffset;
             CameraHelper::ZoomPlot2D(camera, factorX);
         }
+    }
+
+    void ZoomPlotRoot(Window* window, double xoffset, double yoffset)
+    {
+        Entity* plotEntity = PlotHelper::FindPlotRootEntity();
+        if (plotEntity == NULL)
+        {
+            std::cout << "Not found [PlotRoot] entity!" << std::endl;
+            return;
+        }
+        
+        Transform* tr = plotEntity->GetComponent<Transform>();
+        Vector3 factor = Vector3::one;
+        if (Input::GetKey(GLFW_KEY_LEFT_CONTROL))
+        {
+            factor.x = 1 + 0.1 * -yoffset;
+        }
+        else if (Input::GetKey(GLFW_KEY_LEFT_ALT))
+        {
+            factor.y = 1 + 0.1 * -yoffset;
+        }
+        else
+        {
+            factor.x = 1 + 0.1 * -yoffset;
+            // TODO focus
+        }
+        tr->SetLocalScale(tr->LocalScale() * factor);
+        std::cout << tr->LocalScale().ToString() << std::endl;
     }
 
 

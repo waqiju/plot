@@ -10,14 +10,13 @@
 const float SpaceGrid::s_Ticks[18] = { 1000, 500.0, 100.0, 50.0, 10.0, 5.0, 1.0, 0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001, 5e-05, 1e-05, 5e-06 };
 
 
-SpaceGrid::SpaceGrid(Camera* camera)
+SpaceGrid::SpaceGrid(Camera* camera, Transform* transform)
 {
     m_Camera = camera;
+    m_Transform = transform;
     m_LeftBottom = Vector3::zero;
     m_RightTop = Vector3::zero;
-    m_Entity = World::ActiveWorld()->CreateEntity();
-    m_Entity->name = "SpaceGrid";
-    auto renderer = m_Entity->AddComponent<MeshRenderer>();
+    auto renderer = m_Transform->AddComponent<MeshRenderer>();
     // mesh and material
     m_Mesh = new Mesh();
     m_Mesh->SetTopology(MeshTopology::Lines);
@@ -53,6 +52,8 @@ void SpaceGrid::Render()
     {
         return;
     }
+    m_LeftBottom = m_Transform->WorldToLocalMatrix().MultiplyPoint3x4(m_LeftBottom);
+    m_RightTop = m_Transform->WorldToLocalMatrix().MultiplyPoint3x4(m_RightTop);
     // vertics colors
     static Color gradeZeroColor = Color(1, 1, 1, 0.75f);
     static Color gradeOneColor = Color(1, 1, 1, 0.4f);
@@ -123,7 +124,7 @@ void SpaceGrid::Render()
     m_Mesh->SetVertices(vertices);
     m_Mesh->SetColors(colors);
 
-    auto renderer = m_Entity->GetComponent<MeshRenderer>();
+    auto renderer = m_Transform->GetComponent<MeshRenderer>();
     // 渲染
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -143,7 +144,8 @@ void SpaceGrid::Render()
         {
             stream.str("");
             stream << i;
-            Text2D::DrawInWorld(stream.str(), Vector3(i, m_LeftBottom.y, 0), 18);
+            Vector3 textWorldPosition = m_Transform->LocalToWorldMatrix().MultiplyPoint3x4(Vector3(i, m_LeftBottom.y, 0));
+            Text2D::DrawInWorld(stream.str(), textWorldPosition, 18);
         }
     }
     for (float i = y0; i <= y1; i+=intervalY)
@@ -154,7 +156,8 @@ void SpaceGrid::Render()
         {
             stream.str("");
             stream << i;
-            Text2D::DrawInWorld(stream.str(), Vector3(m_LeftBottom.x, i, 0), 18);
+            Vector3 textWorldPosition = m_Transform->LocalToWorldMatrix().MultiplyPoint3x4(Vector3(m_LeftBottom.x, i, 0));
+            Text2D::DrawInWorld(stream.str(), textWorldPosition, 18);
         }
     }
 }
@@ -163,7 +166,7 @@ void SpaceGrid::Render()
 void SpaceGrid::CalculateInterval(int pixel, int& tickGradeX, int& tickGradeY)
 {
     Vector3 v0;
-    auto matrix = m_Camera->ViewProjectMatrix();
+    auto matrix = m_Camera->ViewProjectMatrix() * m_Transform->LocalToWorldMatrix();
     Vector3 zeroInScreen = m_Camera->ViewportToScreenPoint(matrix.MultiplyPoint(Vector3::zero));
 
     tickGradeX = tickGradeY = 0;

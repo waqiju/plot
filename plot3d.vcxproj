@@ -164,6 +164,7 @@
     <ClCompile Include="src\pb\prophet.pb.cc" />
     <ClCompile Include="src\pb\trade.pb.cc" />
     <ClCompile Include="src\pb\xueqiu.pb.cc" />
+    <ClCompile Include="src\plot\plot_helper.cpp" />
     <ClCompile Include="src\plot\rectangle.cpp" />
     <ClCompile Include="src\plot\segment.cpp" />
     <ClCompile Include="src\plot\space_grid.cpp" />
@@ -172,7 +173,7 @@
     <ClCompile Include="src\primitive\procedural_shape.cpp" />
     <ClCompile Include="src\resource\resource_manager.cpp" />
     <ClCompile Include="src\shader.cpp" />
-    <ClCompile Include="src\testcase\test_shape.cpp" />
+    <ClCompile Include="src\testcase\test_space_grid.cpp" />
     <ClCompile Include="src\texture.cpp" />
     <ClCompile Include="src\text_2d.cpp" />
     <ClCompile Include="src\ui_helper.cpp" />
@@ -218,6 +219,7 @@
     <ClInclude Include="src\pb\prophet.pb.h" />
     <ClInclude Include="src\pb\trade.pb.h" />
     <ClInclude Include="src\pb\xueqiu.pb.h" />
+    <ClInclude Include="src\plot\plot_helper.h" />
     <ClInclude Include="src\plot\rectangle.h" />
     <ClInclude Include="src\plot\segment.h" />
     <ClInclude Include="src\plot\space_grid.h" />

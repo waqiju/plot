@@ -49,8 +49,8 @@ public:
 
     Matrix4x4 WorldToLocalMatrix() 
     {
-        // TODO 
-        return Matrix4x4();
+        // It's expensive
+        return m_LocalToWorld.Inverse();
     };
     Matrix4x4 LocalToWorldMatrix() 
     {

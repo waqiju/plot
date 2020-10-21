@@ -41,6 +41,7 @@ public:
     Vector3 DecomposePosition() const;
 
     Vector3 MultiplyPoint(Vector3 v) const;
+    Vector3 MultiplyPoint3x4(Vector3 v) const;
 
     std::string ToString() const;
 

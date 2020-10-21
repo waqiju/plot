@@ -2,3 +2,4 @@
 #include "rectangle.h"
 #include "segment.h"
 #include "stock_glyph.h"
+#include "plot_helper.h"
