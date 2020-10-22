@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+#include <string>
+
 
 class Entity;
 class Component;
@@ -10,6 +12,7 @@ public:
     static World* ActiveWorld();
     static Entity* OriginEntity();
     Entity* CreateEntity();
+    Entity* CreateEntity(std::string name);
     std::vector<Entity*> GetRootEntities() { return m_EntityList; }
     void RemoveFromEntities(Entity* toRemove);
     template<typename T> std::vector<T*> GetComponentsInRootEnities();

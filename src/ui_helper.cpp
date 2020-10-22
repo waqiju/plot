@@ -114,36 +114,38 @@ namespace MouseScrollHandlers
         else
         {
             float factorX = 1 + 0.1 * -yoffset;
-            CameraHelper::ZoomPlot2D(camera, factorX);
+            CameraHelper::ZoomViewportAndFocusPlot2D(camera, factorX);
         }
     }
 
     void ZoomPlotRoot(Window* window, double xoffset, double yoffset)
     {
+        Vector3 factor = Vector3::one;
+        bool keyControl = Input::GetKey(GLFW_KEY_LEFT_CONTROL);
+        bool keyAlt = Input::GetKey(GLFW_KEY_LEFT_ALT);
+        if (keyControl)
+        {
+            factor.x = 1 + 0.1 * yoffset;
+        }
+        if (keyAlt)
+        {
+            factor.y = 1 + 0.1 * yoffset;
+        }
+        if (!keyControl && !keyAlt)
+        {
+            factor.x = 1 + 0.1 * yoffset;
+            //auto bounds = PlotHelper::CollectPlotRootBounds(plotEntity, Bounds& fullBounds);
+            //std::cout<<bounds.ToString()<<std::endl;
+            // TODO focus
+        }
+
         Entity* plotEntity = PlotHelper::FindPlotRootEntity();
         if (plotEntity == NULL)
         {
             std::cout << "Not found [PlotRoot] entity!" << std::endl;
             return;
         }
-        
         Transform* tr = plotEntity->GetComponent<Transform>();
-        Vector3 factor = Vector3::one;
-        bool keyControl = Input::GetKey(GLFW_KEY_LEFT_CONTROL);
-        bool keyAlt = Input::GetKey(GLFW_KEY_LEFT_ALT);
-        if (keyControl)
-        {
-            factor.x = 1 + 0.1 * -yoffset;
-        }
-        if (keyAlt)
-        {
-            factor.y = 1 + 0.1 * -yoffset;
-        }
-        if (!keyControl && !keyAlt)
-        {
-            factor.x = 1 + 0.1 * -yoffset;
-            // TODO focus
-        }
         tr->SetLocalScale(tr->LocalScale() * factor);
         std::cout << tr->LocalScale().ToString() << std::endl;
     }

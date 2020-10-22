@@ -332,5 +332,8 @@
     <ClInclude Include="src\common\event.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\plot\space_grid_component.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

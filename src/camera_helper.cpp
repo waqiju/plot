@@ -46,23 +46,6 @@ namespace CameraHelper
         }
     }
 
-    void CollectPlotRootBounds(Entity* plotEntity, Bounds& fullBounds)
-    {
-        for (auto boundsComponent: plotEntity->GetComponentsInChildren<BoundsComponent>())
-        {
-            auto bounds = boundsComponent->WorldBounds();
-            auto& min = bounds.min;
-            auto& max = bounds.max;
-
-            if ((fullBounds.min.x <= min.x && min.x <= fullBounds.max.x)
-                || (fullBounds.min.x <= max.x && max.x <= fullBounds.max.x))
-            {
-                fullBounds.min.y = Mathf::Min(fullBounds.min.y, min.y);
-                fullBounds.max.y = Mathf::Max(fullBounds.max.y, max.y);
-            }
-        }
-    }
-
     void FocusToIntervalX(Camera* camera, float begin, float end)
     {
         Entity* plotEntity = PlotHelper::FindPlotRootEntity();
@@ -73,7 +56,7 @@ namespace CameraHelper
         }
 
         Bounds fullBounds(Vector3(begin, 1e8f, 0), Vector3(end, -1e8f, 0));
-        CollectPlotRootBounds(plotEntity, fullBounds);
+        PlotHelper::CollectPlotRootBounds(plotEntity, fullBounds);
         if (fullBounds.min.y > fullBounds.max.y)
         {
             std::cout << "There is no bounds." << std::endl;
@@ -101,7 +84,7 @@ namespace CameraHelper
         camera->aspect = worldExtent.x / worldExtent.y;
     }
 
-    void ZoomPlot2D(Camera* camera, float x)
+    void ZoomViewportAndFocusPlot2D(Camera* camera, float x)
     {
         // position
         Vector3 previousFrameCenter, previousFrameMin, previousFrameMax;

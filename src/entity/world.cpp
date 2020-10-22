@@ -36,6 +36,13 @@ Entity* World::CreateEntity()
 	return entity;
 }
 
+Entity* World::CreateEntity(std::string name)
+{
+    Entity* entity = CreateEntity();
+    entity->name = name;
+    return entity;
+}
+
 void World::RemoveFromEntities(Entity* toRemove)
 {
 	auto iterator = std::find(m_EntityList.begin(), m_EntityList.end(), toRemove);

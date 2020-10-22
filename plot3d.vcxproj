@@ -225,6 +225,7 @@
     <ClInclude Include="src\plot\rectangle.h" />
     <ClInclude Include="src\plot\segment.h" />
     <ClInclude Include="src\plot\space_grid.h" />
+    <ClInclude Include="src\plot\space_grid_component.h" />
     <ClInclude Include="src\plot\stock_glyph.h" />
     <ClInclude Include="src\primitive\flexible_shape_mode.h" />
     <ClInclude Include="src\primitive\flexible_triangle.h" />

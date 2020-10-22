@@ -4,14 +4,14 @@
 #include "entity/ec.h"
 #include "geometry/geometry.h"
 #include "application/application.h"
-#include "plot/space_grid.h"
+#include "plot/plot.h"
 #include "ui_helper.h"
 #include "camera_helper.h"
 
 
 void OnFrameUpdate();
 
-SpaceGrid* g_SpaceGrid;
+SpaceGridComponent* g_SpaceGrid;
 Transform* g_PlotRoot;
 
 
@@ -24,14 +24,12 @@ int main()
     CameraHelper::CreateCamera();
 
 
-    auto plotRootEntity = World::ActiveWorld()->CreateEntity();
-    plotRootEntity->name = "PlotRoot";
+    auto plotRootEntity = World::ActiveWorld()->CreateEntity("PlotRoot");
     g_PlotRoot = plotRootEntity->GetComponent<Transform>();
 
-    auto entity = World::ActiveWorld()->CreateEntity();
-    entity->name = "SpaceGrid";
-    g_SpaceGrid = new SpaceGrid(Application::MainCamera(), entity->GetComponent<Transform>());
+    auto entity = World::ActiveWorld()->CreateEntity("SpaceGrid");
     entity->GetComponent<Transform>()->SetParent(g_PlotRoot);
+    g_SpaceGrid = entity->AddComponent<SpaceGridComponent>();
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();
