@@ -129,15 +129,17 @@ namespace MouseScrollHandlers
         
         Transform* tr = plotEntity->GetComponent<Transform>();
         Vector3 factor = Vector3::one;
-        if (Input::GetKey(GLFW_KEY_LEFT_CONTROL))
+        bool keyControl = Input::GetKey(GLFW_KEY_LEFT_CONTROL);
+        bool keyAlt = Input::GetKey(GLFW_KEY_LEFT_ALT);
+        if (keyControl)
         {
             factor.x = 1 + 0.1 * -yoffset;
         }
-        else if (Input::GetKey(GLFW_KEY_LEFT_ALT))
+        if (keyAlt)
         {
             factor.y = 1 + 0.1 * -yoffset;
         }
-        else
+        if (!keyControl && !keyAlt)
         {
             factor.x = 1 + 0.1 * -yoffset;
             // TODO focus
