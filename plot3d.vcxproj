@@ -186,6 +186,8 @@
     <ClInclude Include="src\asset_importer.h" />
     <ClInclude Include="src\camera.h" />
     <ClInclude Include="src\camera_helper.h" />
+    <ClInclude Include="src\common\common.h" />
+    <ClInclude Include="src\common\event.h" />
     <ClInclude Include="src\core_component\bounds_component.h" />
     <ClInclude Include="src\default_shader.h" />
     <ClInclude Include="src\entity\component.h" />

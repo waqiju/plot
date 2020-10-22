@@ -326,5 +326,11 @@
     <ClInclude Include="src\plot\plot_helper.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\common\common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\event.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

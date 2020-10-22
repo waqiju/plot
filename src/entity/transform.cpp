@@ -51,6 +51,7 @@ void Transform::Flush(bool includeChildren, bool force)
 		for (auto child : m_Children)
 		{
 			child->Flush(includeChildren, force);
+			child->onChanged();
 		}
 	}
 }
@@ -59,4 +60,6 @@ void Transform::MarkAsDirty(bool flush)
 {
 	m_IsTrsDirty = true;
 	Flush(true, true);
+	// event
+	onChanged();
 }

@@ -5,6 +5,7 @@
 class Bounds
 {
 public:
+    Bounds() : Bounds(Vector3::zero, Vector3::zero) {};
     Bounds(Vector3 inMin, Vector3 inMax);
 
     Vector3 min, max;

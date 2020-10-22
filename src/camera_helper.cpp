@@ -50,8 +50,9 @@ namespace CameraHelper
     {
         for (auto boundsComponent: plotEntity->GetComponentsInChildren<BoundsComponent>())
         {
-            auto& min = boundsComponent->min;
-            auto& max = boundsComponent->max;
+            auto bounds = boundsComponent->WorldBounds();
+            auto& min = bounds.min;
+            auto& max = bounds.max;
 
             if ((fullBounds.min.x <= min.x && min.x <= fullBounds.max.x)
                 || (fullBounds.min.x <= max.x && max.x <= fullBounds.max.x))

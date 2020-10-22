@@ -2,11 +2,13 @@
 #include "geometry/geometry.h"
 #include "entity/component.h"
 #include <string>
+#include "common/event.h"
+
 
 class Transform : public Component
 {
 public:
-    Transform(Entity* owner) : Component(owner)
+    Transform(Entity* owner) : Component(owner), onChanged(this)
     {
         name = "Transform";
         m_LocalPosition = Vector3::zero;
@@ -44,6 +46,7 @@ public:
     size_t ChildCount() { return m_Children.size(); }
     Transform* GetChild(size_t index) { return m_Children[index]; }
 
+    event<Transform> onChanged;
     void Flush(bool includeChildren=true, bool force=false);
     void MarkAsDirty(bool flush=true);
 
@@ -52,7 +55,7 @@ public:
         // It's expensive
         return m_LocalToWorld.Inverse();
     };
-    Matrix4x4 LocalToWorldMatrix() 
+    const Matrix4x4& LocalToWorldMatrix() const 
     {
         return m_LocalToWorld;
     };
