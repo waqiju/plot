@@ -10,7 +10,7 @@
 
 
 void OnFrameUpdate();
-void GenerateThreeRectangle();
+void GenerateRectangle();
 void GenerateRandomRectangle();
 
 SpaceGridComponent* g_SpaceGrid;
@@ -32,8 +32,8 @@ int main()
     entity->GetComponent<Transform>()->SetParent(g_PlotRoot);
     g_SpaceGrid = entity->AddComponent<SpaceGridComponent>();
     // rectangle
-    GenerateThreeRectangle();
-    // GenerateRandomRectangle();
+    // GenerateRectangle();
+    GenerateRandomRectangle();
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();
@@ -48,20 +48,14 @@ void OnFrameUpdate()
 
     g_SpaceGrid->Render();
     auto rectangleList = World::ActiveWorld()->GetComponentsInAllEnities<Rectangle>();
-    for (auto rectangle:rectangleList)
-    {
-        rectangle->Render();
-    }
-    // Rectangle::BatchRender(rectangleList);
-    //auto segmentList = World::ActiveWorld()->GetComponentsInRootEnities<Segment>();
-    //Segment::BatchRender(segmentList);
+    Rectangle::BatchRender(rectangleList);
+    auto segmentList = World::ActiveWorld()->GetComponentsInAllEnities<chimera::Segment>();
+    chimera::Segment::BatchRender(segmentList);
 }
 
-void GenerateThreeRectangle()
+void GenerateRectangle()
 {
     Rectangle::Create(g_PlotRoot, Vector3(-1, -1, 0), Vector3(1, 1, 0), Color::white);
-    // Rectangle::Create(g_PlotRoot, Vector3(-2, -2, 0), Vector3(-1, -1, 0), Color::white);
-    // Rectangle::Create(g_PlotRoot, Vector3(-1, -1, 0), Vector3(1, 1, 0), Color::white);
 }
 
 void GenerateRandomRectangle()
@@ -85,9 +79,9 @@ void GenerateRandomRectangle()
         Vector3 right = Vector3(x + 0.45, y + height / 2, 0);
         Rectangle::Create(g_PlotRoot, left, right, Color::white);
         // segment
-        //if (x > 0)
-        //{
-        //    Segment::Create(g_PlotRoot, Vector3(x-1, yList[x-1], 0), Vector3(x, yList[x], 0), Color::red);
-        //}
+        if (x > 0)
+        {
+           chimera::Segment::Create(g_PlotRoot, Vector3(x-1, yList[x-1], 0), Vector3(x, yList[x], 0), Color::red);
+        }
     }
 }

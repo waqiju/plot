@@ -1,4 +1,6 @@
 #include "component.h"
+#include "entity/entity.h"
+
 
 Component::Component(Entity* owner)
 {
@@ -8,6 +10,11 @@ Component::Component(Entity* owner)
 Entity* Component::OnwerEntity()
 {
     return m_OwerEntity;
+}
+
+Transform* Component::GetTransform()
+{
+    return this->GetComponent<Transform>();
 }
 
 bool Component::Enabled()

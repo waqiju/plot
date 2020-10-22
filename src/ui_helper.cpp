@@ -125,15 +125,15 @@ namespace MouseScrollHandlers
         bool keyAlt = Input::GetKey(GLFW_KEY_LEFT_ALT);
         if (keyControl)
         {
-            factor.x = 1 + 0.1 * yoffset;
+            factor.x = 1 + 0.1f * yoffset;
         }
         if (keyAlt)
         {
-            factor.y = 1 + 0.1 * yoffset;
+            factor.y = 1 + 0.1f * yoffset;
         }
         if (!keyControl && !keyAlt)
         {
-            factor.x = 1 + 0.1 * yoffset;
+            factor.x = 1 + 0.1f * yoffset;
             //auto bounds = PlotHelper::CollectPlotRootBounds(plotEntity, Bounds& fullBounds);
             //std::cout<<bounds.ToString()<<std::endl;
             // TODO focus

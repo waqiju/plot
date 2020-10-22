@@ -6,29 +6,29 @@
 #include "application/application.h"
 
 
-Rectangle* Rectangle::Create(Transform* parent, const Vector3& v1, const Vector3& v2, const Color& color)
+Rectangle* Rectangle::Create(Transform* parent, const Vector3& v0, const Vector3& v1, const Color& color)
 {
     auto entity = World::ActiveWorld()->CreateEntity();
     auto rectangle = entity->AddComponent<Rectangle>();
-    rectangle->leftBottom = v1;
-    rectangle->rightTop = v2;
+    rectangle->bounds.min = v0;
+    rectangle->bounds.max = v1;
     rectangle->color = color;
 
     entity->GetComponent<Transform>()->SetParent(parent);
     return rectangle;
 }
 
-void Rectangle::GenerateMesh(const Vector3& inLeftBottom, const Vector3& inRightTop, const Color& inColor, std::vector<Vector3>& vertices, std::vector<Color>& colors)
+int Rectangle::GenerateMesh(const Bounds& inBounds, const Color& inColor, std::vector<Vector3>& vertices, std::vector<Color>& colors)
 {
     /*
         1 -- 3
         |    |
         0 -- 2
     */
-    const Vector3 v0 = inLeftBottom;
-    const Vector3 v1 = Vector3(inLeftBottom.x, inRightTop.y, inLeftBottom.z);
-    const Vector3 v2 = Vector3(inRightTop.x, inLeftBottom.y, inRightTop.z);
-    const Vector3 v3 = inRightTop;
+    const Vector3 v0 = inBounds.min;
+    const Vector3 v1 = Vector3(inBounds.min.x, inBounds.max.y, inBounds.min.z);
+    const Vector3 v2 = Vector3(inBounds.max.x, inBounds.min.y, inBounds.max.z);
+    const Vector3 v3 = inBounds.max;
     vertices.push_back(v0);
     vertices.push_back(v2);
     vertices.push_back(v1);
@@ -40,11 +40,12 @@ void Rectangle::GenerateMesh(const Vector3& inLeftBottom, const Vector3& inRight
         colors.push_back(inColor);
     }
 
+    return 6;
 }
 
-void Rectangle::GenerateMesh(std::vector<Vector3>& vertices, std::vector<Color>& colors)
+int Rectangle::GenerateMesh(std::vector<Vector3>& vertices, std::vector<Color>& colors)
 {
-    GenerateMesh(leftBottom, rightTop, color, vertices, colors);
+    return GenerateMesh(bounds, color, vertices, colors);
 }
 
 void Rectangle::Render()
@@ -75,7 +76,8 @@ void Rectangle::BatchRender(std::vector<Rectangle*> rectangleList)
     std::vector<Color> colors;
     for (Rectangle* item:rectangleList)
     {
-        item->GenerateMesh(vertices, colors);
+        int count = item->GenerateMesh(vertices, colors);
+        Matrix4x4Helper::ApplyMatrixForEach(item->GetTransform()->LocalToWorldMatrix(), vertices, vertices.size() - count, vertices.size());
     }
     Mesh mesh;
     mesh.SetVertices(vertices);

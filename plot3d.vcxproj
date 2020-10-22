@@ -144,6 +144,7 @@
     <ClCompile Include="src\entity\world_object.cpp" />
     <ClCompile Include="src\geometry\bounds.cpp" />
     <ClCompile Include="src\geometry\matrix4x4.cpp" />
+    <ClCompile Include="src\geometry\matrix4x4_helper.cpp" />
     <ClCompile Include="src\geometry\physics.cpp" />
     <ClCompile Include="src\geometry\plane.cpp" />
     <ClCompile Include="src\geometry\quaternion.cpp" />
@@ -200,6 +201,7 @@
     <ClInclude Include="src\geometry\geometry.h" />
     <ClInclude Include="src\geometry\mathf.h" />
     <ClInclude Include="src\geometry\matrix4x4.h" />
+    <ClInclude Include="src\geometry\matrix4x4_helper.h" />
     <ClInclude Include="src\geometry\physics.h" />
     <ClInclude Include="src\geometry\plane.h" />
     <ClInclude Include="src\geometry\quaternion.h" />
