@@ -156,10 +156,10 @@
     <ClCompile Include="src\plot\plot_helper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\testcase\test_rectangle.cpp">
+    <ClCompile Include="src\geometry\matrix4x4_helper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\geometry\matrix4x4_helper.cpp">
+    <ClCompile Include="src\testcase\test_rectangle.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

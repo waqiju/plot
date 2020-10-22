@@ -14,7 +14,7 @@ public:
 
     StockGlyph(Entity* owner): Component(owner) {}
 
-    Vector3 leftBottom = Vector3::zero, rightTop = Vector3::zero;
+    Bounds bounds;
     Color color = Color::white;
     float x;
     KChart chart;

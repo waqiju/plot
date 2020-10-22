@@ -32,8 +32,8 @@ int main()
     entity->GetComponent<Transform>()->SetParent(g_PlotRoot);
     g_SpaceGrid = entity->AddComponent<SpaceGridComponent>();
     // rectangle
-    // GenerateRectangle();
-    GenerateRandomRectangle();
+    GenerateRectangle();
+    // GenerateRandomRectangle();
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();

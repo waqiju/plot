@@ -14,7 +14,7 @@ using namespace chimera;
 void OnFrameUpdate();
 void GenerateRandomStockGlyph();
 
-SpaceGrid* g_SpaceGrid;
+SpaceGridComponent* g_SpaceGrid;
 Transform* g_PlotRoot;
 
 
@@ -22,15 +22,19 @@ int main()
 {
     Window* window = Window::CreateWindow("Chimera", Application::screenWidth, Application::screenHeight);
     window->onWindowSizeChanged = UiHelper::WindowSizeChangedHandler;
-    window->onMouseScrollChanged = MouseScrollHandlers::ChangeFovAndAspect;
+    window->onMouseScrollChanged = MouseScrollHandlers::ZoomPlotRoot;
     CameraHelper::CreateCamera();
 
-    g_SpaceGrid = new SpaceGrid(Application::MainCamera());
-    auto plotRootEntity = World::ActiveWorld()->CreateEntity();
-    plotRootEntity->name = "PlotRoot";
+    // PlotRoot
+    auto plotRootEntity = World::ActiveWorld()->CreateEntity("PlotRoot");
     g_PlotRoot = plotRootEntity->GetComponent<Transform>();
+    // SpaceGrid
+    auto entity = World::ActiveWorld()->CreateEntity("SpaceGrid");
+    entity->GetComponent<Transform>()->SetParent(g_PlotRoot);
+    g_SpaceGrid = entity->AddComponent<SpaceGridComponent>();
+
     GenerateRandomStockGlyph();
-    CameraHelper::FocusToIntervalX(Application::MainCamera(), 160, 220);
+    // CameraHelper::FocusToIntervalX(Application::MainCamera(), 160, 220);
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();

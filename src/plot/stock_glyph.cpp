@@ -15,10 +15,8 @@ StockGlyph* StockGlyph::Create(Transform* parent, float x, const KChart& chart)
     stockGlyph->Reset(x, chart);
 
     entity->GetComponent<Transform>()->SetParent(parent);
-    // bounds
-	auto bounds = entity->AddComponent<BoundsComponent>()->WorldBounds();
-    bounds.min = stockGlyph->leftBottom;
-    bounds.max = stockGlyph->rightTop;
+    // add bounds component
+	entity->AddComponent<BoundsComponent>()->SetLocalBounds(stockGlyph->bounds);
     return stockGlyph;
 }
 
@@ -39,9 +37,8 @@ void StockGlyph::Reset(float inX, const KChart& inKChart)
     {
         color = Color::green;
     }
-    // leftBottom, rightTop
-    leftBottom = Vector3(x - 0.45f, chart.low(), 0);
-    rightTop = Vector3(x + 0.45f, chart.high(), 0);
+    bounds.min = Vector3(x - 0.45f, chart.low(), 0);
+    bounds.max = Vector3(x + 0.45f, chart.high(), 0);
 }
 
 void StockGlyph::Render()
@@ -111,7 +108,8 @@ void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
             float min = Mathf::Min(chart.open(), chart.close());
             float max = Mathf::Max(chart.open(), chart.close());
             Bounds bounds = Bounds(Vector3(x - 0.45, min, 0), Vector3(x + 0.45, max, 0));
-            Rectangle::GenerateMesh(bounds, sg->color, vertices, colors);
+            int count = Rectangle::GenerateMesh(bounds, sg->color, vertices, colors);
+            Matrix4x4Helper::ApplyMatrixForEach(sg->GetTransform()->LocalToWorldMatrix(), vertices, vertices.size() - count, vertices.size());
         }
         Mesh mesh;
         mesh.SetVertices(vertices);
@@ -138,7 +136,8 @@ void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
             float x = sg->x;
             auto& chart = sg->chart;
             Bounds bounds(Vector3(x, chart.low(), 0), Vector3(x, chart.high(), 0));
-            chimera::Segment::GenerateMesh(bounds, sg->color, vertices, colors);
+            int count = chimera::Segment::GenerateMesh(bounds, sg->color, vertices, colors);
+            Matrix4x4Helper::ApplyMatrixForEach(sg->GetTransform()->LocalToWorldMatrix(), vertices, vertices.size() - count, vertices.size());
         }
         Mesh mesh;
         mesh.SetTopology(MeshTopology::Lines);
