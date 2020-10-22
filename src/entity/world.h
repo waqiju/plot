@@ -14,6 +14,7 @@ public:
     Entity* CreateEntity();
     Entity* CreateEntity(std::string name);
     std::vector<Entity*> GetRootEntities() { return m_EntityList; }
+    void AttachEntity(Entity* toAdd);
     void RemoveFromEntities(Entity* toRemove);
     template<typename T> std::vector<T*> GetComponentsInRootEnities();
     template<typename T> std::vector<T*> GetComponentsInAllEnities();

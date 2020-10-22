@@ -19,14 +19,13 @@ int main()
 {
     Window* window = Window::CreateWindow("Chimera", Application::screenWidth, Application::screenHeight);
     window->onWindowSizeChanged = UiHelper::WindowSizeChangedHandler;
-    // window->onMouseScrollChanged = MouseScrollHandlers::ChangeFovAndAspect;
     window->onMouseScrollChanged = MouseScrollHandlers::ZoomPlotRoot;
     CameraHelper::CreateCamera();
 
-
+    // PlotRoot
     auto plotRootEntity = World::ActiveWorld()->CreateEntity("PlotRoot");
     g_PlotRoot = plotRootEntity->GetComponent<Transform>();
-
+    // SpaceGrid
     auto entity = World::ActiveWorld()->CreateEntity("SpaceGrid");
     entity->GetComponent<Transform>()->SetParent(g_PlotRoot);
     g_SpaceGrid = entity->AddComponent<SpaceGridComponent>();

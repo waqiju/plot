@@ -52,6 +52,11 @@ void World::RemoveFromEntities(Entity* toRemove)
     }
 }
 
+void World::AttachEntity(Entity* toAdd)
+{
+    m_EntityList.push_back(toAdd);
+}
+
 void World::FlushTransform()
 {
     for (auto transform : GetComponentsInRootEnities<Transform>())
@@ -59,8 +64,3 @@ void World::FlushTransform()
         transform->Flush();
     }
 }
-
-// void World::AttachEntity(Entity* entity)
-// {
-//     m_EntityList.push_back(entity);
-// }

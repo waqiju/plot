@@ -15,11 +15,6 @@ bool Entity::Active()
     return m_Active;
 }
 
-World* Entity::OnwerWorld()
-{
-    return m_OnwerWorld;
-}
-
 void Entity::SetActive(bool status)
 {
     m_Active = status;

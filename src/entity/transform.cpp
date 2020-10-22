@@ -12,6 +12,9 @@ void Transform::SetTrsMatrix(const Matrix4x4& inMatrix)
 
 void Transform::SetParent(Transform* parent)
 {
+	if (parent == m_Parent)
+		return;
+
 	if (m_Parent != NULL)
 	{
 		std::vector<Transform*>& list = m_Parent->m_Children;
@@ -23,12 +26,20 @@ void Transform::SetParent(Transform* parent)
 	}
 	else
 	{
-		// 从 World 的根节点中移除
+		// 从 World 的根结点中移除
 		m_OwerEntity->OnwerWorld()->RemoveFromEntities(m_OwerEntity);
 	}
 
 	m_Parent = parent;
-	parent->m_Children.push_back(this);
+	if (parent != NULL)
+	{
+		parent->m_Children.push_back(this);
+	}
+	else
+	{
+		// 加入 World 根结点
+		m_OwerEntity->OnwerWorld()->AttachEntity(m_OwerEntity);
+	}
 }
 
 void Transform::Flush(bool includeChildren, bool force)

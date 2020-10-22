@@ -153,10 +153,10 @@
     <ClCompile Include="src\primitive\procedural_shape.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\testcase\test_space_grid.cpp">
+    <ClCompile Include="src\plot\plot_helper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\plot\plot_helper.cpp">
+    <ClCompile Include="src\testcase\test_rectangle.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

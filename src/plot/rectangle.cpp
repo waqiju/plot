@@ -61,7 +61,7 @@ void Rectangle::Render()
     Material material = Material(shader);
     material.SetColor("ColorTint", Color::white);
     // renderer
-    auto renderer = World::OriginEntity()->GetOrAddComponent<MeshRenderer>();
+    auto renderer = m_OwerEntity->GetOrAddComponent<MeshRenderer>();
     renderer->mesh = &mesh;
     renderer->material = &material;
     renderer->camera = Application::MainCamera();

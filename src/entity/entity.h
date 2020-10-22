@@ -18,7 +18,8 @@ public:
     Entity(World* onwerWorld);
 
     bool Active();
-    World* OnwerWorld();
+    inline World* OnwerWorld() { return m_OnwerWorld; }
+    inline Transform* GetTransform() { return this->GetComponent<Transform>(); }
 
     template<typename T> T* AddComponent();
     template<typename T> T* GetComponent();
