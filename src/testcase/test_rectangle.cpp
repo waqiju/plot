@@ -7,6 +7,7 @@
 #include "plot/plot.h"
 #include "ui_helper.h"
 #include "camera_helper.h"
+#include "core_component/core_component.h"
 
 
 void OnFrameUpdate();
@@ -55,7 +56,9 @@ void OnFrameUpdate()
 
 void GenerateRectangle()
 {
-    Rectangle::Create(g_PlotRoot, Vector3(-1, -1, 0), Vector3(1, 1, 0), Color::white);
+    auto rectangle = Rectangle::Create(g_PlotRoot, Vector3(-1, -1, 0), Vector3(1, 1, 0), Color::white);
+	auto boundsCp = rectangle->AddComponent<BoundsComponent>();
+	boundsCp->SetLocalBounds(rectangle->bounds);
 }
 
 void GenerateRandomRectangle()

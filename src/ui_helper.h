@@ -12,4 +12,5 @@ namespace MouseScrollHandlers
     void MoveCamera(Window* window, double xoffset, double yoffset);
     void ChangeFovAndAspect(Window* window, double xoffset, double yoffset);
     void ZoomPlotRoot(Window* window, double xoffset, double yoffset);
+    void FocusPlot(float beginX, float endX);
 }

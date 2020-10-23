@@ -129,11 +129,11 @@ namespace MouseScrollHandlers
         bool keyAlt = Input::GetKey(GLFW_KEY_LEFT_ALT);
         if (keyControl)
         {
-            scale.x = 1 + 0.1f * yoffset;
+            scale.x = 1 - 0.1f * yoffset;
         }
         if (keyAlt)
         {
-            scale.y = 1 + 0.1f * yoffset;
+            scale.y = 1 - 0.1f * yoffset;
         }
 
         if (keyControl || keyAlt)
@@ -142,7 +142,7 @@ namespace MouseScrollHandlers
         }
         else
         {
-            scale.x = 1 + 0.1f * yoffset;
+            scale.x = 1 - 0.1f * yoffset;
             ZoomPlotRootAndFitBounds(scale);
         }
 
@@ -163,7 +163,7 @@ namespace MouseScrollHandlers
         Physics::Raycast(ray, Plane::XyPlane, screenCenterInWorld);
         Vector3 screenCenterInLocal = plotRootTr->WorldToLocalMatrix().MultiplyPoint3x4(screenCenterInWorld);
         // plot scale
-        plotRootTr->SetLocalScale(plotRootTr->LocalScale() * scale);
+        plotRootTr->SetLocalScale(plotRootTr->LocalScale() / scale);
         // move camera
         Vector3 focusPositionInWorld = plotRootTr->LocalToWorldMatrix().MultiplyPoint3x4(screenCenterInLocal);
         Vector3 move = focusPositionInWorld - screenCenterInWorld;
@@ -182,32 +182,67 @@ namespace MouseScrollHandlers
             return;
         }
         Transform* plotRootTr = plotEntity->GetComponent<Transform>();
-        // plot scale
-        plotRootTr->SetLocalScale(plotRootTr->LocalScale() * scale);
         // bounds
         Camera* camera = Application::MainCamera();
-        Vector3 previousFrameMin, previousFrameMax;
+        Bounds screenBoundsInWorld;
         Ray ray = camera->ViewportPointToRay(Vector3(-1, -1, 0));
-        Physics::Raycast(ray, Plane::XyPlane, previousFrameMin);
-        previousFrameMin = plotRootTr->WorldToLocalMatrix().MultiplyPoint3x4(previousFrameMin);
+        Physics::Raycast(ray, Plane::XyPlane, screenBoundsInWorld.min);
         ray = camera->ViewportPointToRay(Vector3(1, 1, 0));
-        Physics::Raycast(ray, Plane::XyPlane, previousFrameMax);
-        previousFrameMax = plotRootTr->WorldToLocalMatrix().MultiplyPoint3x4(previousFrameMax);
-        Bounds fullBounds(Vector3(previousFrameMin.x, 0, 0), Vector3(previousFrameMax.x, 0, 0));
-        PlotHelper::CollectPlotRootBounds(plotEntity, fullBounds);
-        std::cout << fullBounds.ToString() << std::endl;
+        Physics::Raycast(ray, Plane::XyPlane, screenBoundsInWorld.max);
 
-        // Vector3 screenCenterInWorld;
-        // Ray ray = Application::MainCamera()->ViewportPointToRay(Vector3::zero);
-        // Physics::Raycast(ray, Plane::XyPlane, screenCenterInWorld);
-        // Vector3 screenCenterInLocal = plotRootTr->WorldToLocalMatrix().MultiplyPoint3x4(screenCenterInWorld);
-        // // move camera
-        // Vector3 focusPositionInWorld = plotRootTr->LocalToWorldMatrix().MultiplyPoint3x4(screenCenterInLocal);
-        // Vector3 move = focusPositionInWorld - screenCenterInWorld;
-        // Transform* cameraTr = Application::MainCamera()->GetTransform();
-        // cameraTr->SetLocalPosition(cameraTr->LocalPosition() + move);
+        Bounds screenBoundsInLocal;
+        screenBoundsInLocal.min = plotRootTr->WorldToLocalMatrix().MultiplyPoint3x4(screenBoundsInWorld.min);
+        screenBoundsInLocal.max = plotRootTr->WorldToLocalMatrix().MultiplyPoint3x4(screenBoundsInWorld.max);
+        screenBoundsInLocal.Expand(scale);
+        FocusPlot(screenBoundsInLocal.min.x, screenBoundsInLocal.max.x);
 
         std::cout << plotRootTr->LocalScale().ToString() << std::endl;
+    }
+
+    void FocusPlot(float beginX, float endX)
+    {
+		Entity* plotEntity = PlotHelper::FindPlotRootEntity();
+		if (plotEntity == NULL)
+		{
+			std::cout << "Not found [PlotRoot] entity!" << std::endl;
+			return;
+		}
+
+        Bounds plotBoundsInLocal(Vector3(beginX, 0, 0), Vector3(endX, 0, 0));
+        PlotHelper::CollectPlotRootBounds(plotEntity, plotBoundsInLocal);
+		if (Mathf::IsZero(plotBoundsInLocal.Size().y))
+		{
+			std::cout << "Not found bounds between beginX[" << beginX  << "] endX[" << endX << "]" << std::endl;
+			return;
+		}
+        std::cout << plotBoundsInLocal.ToString() << std::endl;
+
+        // viewport bounds in world
+        Camera* camera = Application::MainCamera();
+        Bounds screenBoundsInWorld;
+        Ray ray = camera->ViewportPointToRay(Vector3(-1, -1, 0));
+        Physics::Raycast(ray, Plane::XyPlane, screenBoundsInWorld.min);
+        ray = camera->ViewportPointToRay(Vector3(1, 1, 0));
+        Physics::Raycast(ray, Plane::XyPlane, screenBoundsInWorld.max);
+
+		Transform* plotRootTr = plotEntity->GetTransform();
+        // scale
+        Vector3 scale = screenBoundsInWorld.Size() / plotBoundsInLocal.Size();
+		scale.z = 1;
+        std::cout<< "Focus scale: " << scale.ToString() << std::endl;
+
+        // move
+        Vector3 screenCenterInWorld;
+        ray = camera->ViewportPointToRay(Vector3::zero);
+        Physics::Raycast(ray, Plane::XyPlane, screenCenterInWorld);
+        Vector3 focusPositionInWorld = plotRootTr->LocalToWorldMatrix().MultiplyPoint3x4(plotBoundsInLocal.Center());
+        Vector3 move = focusPositionInWorld - screenCenterInWorld;
+        std::cout<< "Focus center: " << focusPositionInWorld.ToString() << std::endl;
+
+        // apply
+		plotRootTr->SetLocalScale(/*plotRootTr->LocalScale() * */ scale);
+        Transform* cameraTr = Application::MainCamera()->GetTransform();
+        cameraTr->SetLocalPosition(cameraTr->LocalPosition() + move);
     }
 
 }

@@ -24,12 +24,12 @@ namespace PlotHelper
     {
         for (auto boundsComponent: plotEntity->GetComponentsInChildren<BoundsComponent>())
         {
-            auto bounds = boundsComponent->WorldBounds();
+            auto bounds = boundsComponent->LocalBounds();
             auto& min = bounds.min;
             auto& max = bounds.max;
 
-            if ((fullBounds.min.x <= min.x && min.x <= fullBounds.max.x)
-                || (fullBounds.min.x <= max.x && max.x <= fullBounds.max.x))
+			bool hasIntersection = !(max.x < fullBounds.min.x || min.x > fullBounds.max.x);
+            if (hasIntersection)
             {
                 fullBounds.min.y = Mathf::Min(fullBounds.min.y, min.y);
                 fullBounds.max.y = Mathf::Max(fullBounds.max.y, max.y);
