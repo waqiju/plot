@@ -39,6 +39,7 @@ public:
     float Determinant() const;
     void Decompose(Vector3& position, Quaternion& rotation, Vector3& scaling) const;
     Vector3 DecomposePosition() const;
+    Vector3 DecomposeScaling() const;
 
     Vector3 MultiplyPoint(Vector3 v) const;
     Vector3 MultiplyPoint3x4(Vector3 v) const;

@@ -1,6 +1,7 @@
 #pragma once
 #include "space_grid.h"
 #include "entity/ec.h"
+#include "application/application.h"
 
 
 class SpaceGridComponent : public Component

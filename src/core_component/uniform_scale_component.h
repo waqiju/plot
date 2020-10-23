@@ -19,4 +19,8 @@ public:
     UniformScaleMode mode;
 
     void ResizeBounds();
+
+private:
+    Bounds RetrieveBounds();
+    void AssignBounds(const Bounds& bounds);
 };

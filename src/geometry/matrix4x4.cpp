@@ -357,6 +357,31 @@ Vector3 Matrix4x4::DecomposePosition() const
     return Vector3(m_Value[3][0], m_Value[3][1], m_Value[3][2]);
 }
 
+Vector3 Matrix4x4::DecomposeScaling() const
+{
+    Vector3 scaling;
+    // columns
+    Vector3 columns[3] = {
+        Vector3(m_Value[0][0], m_Value[0][1], m_Value[0][2]),
+        Vector3(m_Value[1][0], m_Value[1][1], m_Value[1][2]),
+        Vector3(m_Value[2][0], m_Value[2][1], m_Value[2][2]),
+    };
+
+    // scaling
+    scaling.x = columns[0].Length();
+    scaling.y = columns[1].Length();
+    scaling.z = columns[2].Length();
+
+    if (Determinant() < 0)
+    {
+        scaling.x = -scaling.x;
+        scaling.y = -scaling.y;
+        scaling.z = -scaling.z;
+    }
+
+    return scaling;
+}
+
 Vector3 Matrix4x4::MultiplyPoint(Vector3 v) const
 {
     Vector4 result = (*this) * Vector4(v.x, v.y, v.z, 1);

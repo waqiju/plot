@@ -162,6 +162,9 @@
     <ClCompile Include="src\testcase\test_rectangle.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\core_component\uniform_scale_component.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\default_shader.h">
@@ -339,6 +342,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\geometry\matrix4x4_helper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core_component\uniform_scale_component.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
