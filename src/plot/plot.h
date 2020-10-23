@@ -1,6 +1,7 @@
 #include "space_grid.h"
 #include "space_grid_component.h"
 #include "rectangle.h"
+#include "triangle.h"
 #include "segment.h"
 #include "stock_glyph.h"
 #include "plot_helper.h"

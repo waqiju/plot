@@ -171,8 +171,7 @@
     <ClCompile Include="src\plot\segment.cpp" />
     <ClCompile Include="src\plot\space_grid.cpp" />
     <ClCompile Include="src\plot\stock_glyph.cpp" />
-    <ClCompile Include="src\primitive\flexible_triangle.cpp" />
-    <ClCompile Include="src\primitive\procedural_shape.cpp" />
+    <ClCompile Include="src\plot\triangle.cpp" />
     <ClCompile Include="src\resource\resource_manager.cpp" />
     <ClCompile Include="src\shader.cpp" />
     <ClCompile Include="src\testcase\test_rectangle.cpp" />
@@ -231,10 +230,7 @@
     <ClInclude Include="src\plot\space_grid.h" />
     <ClInclude Include="src\plot\space_grid_component.h" />
     <ClInclude Include="src\plot\stock_glyph.h" />
-    <ClInclude Include="src\primitive\flexible_shape_mode.h" />
-    <ClInclude Include="src\primitive\flexible_triangle.h" />
-    <ClInclude Include="src\primitive\primitive.h" />
-    <ClInclude Include="src\primitive\procedural_shape.h" />
+    <ClInclude Include="src\plot\triangle.h" />
     <ClInclude Include="src\resource\resource_manager.h" />
     <ClInclude Include="src\shader.h" />
     <ClInclude Include="src\texture.h" />

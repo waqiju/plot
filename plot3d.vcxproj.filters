@@ -147,12 +147,6 @@
     <ClCompile Include="src\core_component\bounds_component.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\primitive\flexible_triangle.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\primitive\procedural_shape.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\plot\plot_helper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -163,6 +157,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\core_component\uniform_scale_component.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\plot\triangle.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -317,18 +314,6 @@
     <ClInclude Include="src\core_component\bounds_component.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\primitive\flexible_shape_mode.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\primitive\flexible_triangle.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\primitive\primitive.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\primitive\procedural_shape.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="src\plot\plot_helper.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -345,6 +330,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\core_component\uniform_scale_component.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plot\triangle.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,11 +1,11 @@
 #include "procedural_shape.h"
 
 
-std::vector<Vector3> kTriangleVertices = {
-    Vector3(0, 0.4330127018922193f, 0),
-    Vector3(-0.5f, -0.4330127018922193f, 0),
-    Vector3(0.5f, -0.4330127018922193f, 0),
-};
+// std::vector<Vector3> kTriangleVertices = {
+//     Vector3(0, 0.4330127018922193f, 0),
+//     Vector3(-0.5f, -0.4330127018922193f, 0),
+//     Vector3(0.5f, -0.4330127018922193f, 0),
+// };
 
 int ProceduralShape::GenerateTriangle(const Vector3& v0, const Vector3& v1, std::vector<Vector3>& vertices)
 {
@@ -13,9 +13,9 @@ int ProceduralShape::GenerateTriangle(const Vector3& v0, const Vector3& v1, std:
     // float r = Mathf::Min(v1.x - v0.x, v1.y - v0.y);
 	Vector3 scaler = Vector3(v1.x - v0.x, v1.y - v0.y, 0);
 
-    vertices.push_back(center + kTriangleVertices[0] * scaler);
-    vertices.push_back(center + kTriangleVertices[1] * scaler);
-    vertices.push_back(center + kTriangleVertices[2] * scaler);
+    // vertices.push_back(center + kTriangleVertices[0] * scaler);
+    // vertices.push_back(center + kTriangleVertices[1] * scaler);
+    // vertices.push_back(center + kTriangleVertices[2] * scaler);
     return 3;
 }
 

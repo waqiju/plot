@@ -1,4 +1,4 @@
-#include "rectangle.h"
+#include "triangle.h"
 #include "mesh.h"
 #include "material.h"
 #include "resource/resource_manager.h"
@@ -6,49 +6,54 @@
 #include "application/application.h"
 
 
-Rectangle* Rectangle::Create(Transform* parent, const Vector3& v0, const Vector3& v1, const Color& color)
+Triangle* Triangle::Create(Transform* parent, const Vector3& v1, const Vector3& v2, const Color& color)
 {
     auto entity = World::ActiveWorld()->CreateEntity();
-    auto rectangle = entity->AddComponent<Rectangle>();
-    rectangle->bounds.min = v0;
-    rectangle->bounds.max = v1;
-    rectangle->color = color;
+    auto triangle = entity->AddComponent<Triangle>();
+    triangle->bounds.min = v1;
+    triangle->bounds.max = v2;
+    triangle->color = color;
 
     entity->GetComponent<Transform>()->SetParent(parent);
-    return rectangle;
+    return triangle;
 }
 
-int Rectangle::GenerateMesh(const Bounds& inBounds, const Color& inColor, std::vector<Vector3>& vertices, std::vector<Color>& colors)
+
+std::vector<Vector3> kTriangleVertices = {
+    Vector3(0, 0.4330127018922193f, 0),
+    Vector3(-0.5f, -0.4330127018922193f, 0),
+    Vector3(0.5f, -0.4330127018922193f, 0),
+};
+
+
+int Triangle::GenerateMesh(const Bounds& inBounds, const Color& inColor, std::vector<Vector3>& vertices, std::vector<Color>& colors)
 {
     /*
-        1 -- 3
-        |    |
-        0 -- 2
+        0
+       | |
+      1   2
     */
-    const Vector3 v0 = inBounds.min;
-    const Vector3 v1 = Vector3(inBounds.min.x, inBounds.max.y, inBounds.min.z);
-    const Vector3 v2 = Vector3(inBounds.max.x, inBounds.min.y, inBounds.max.z);
-    const Vector3 v3 = inBounds.max;
-    vertices.push_back(v0);
-    vertices.push_back(v2);
-    vertices.push_back(v1);
-    vertices.push_back(v3);
-    vertices.push_back(v1);
-    vertices.push_back(v2);
-    for (int i = 0; i < 6; ++i)
+    Vector3 center = inBounds.Center();
+    Vector3 scaling = inBounds.Size();
+
+    vertices.push_back(center + kTriangleVertices[0] * scaling);
+    vertices.push_back(center + kTriangleVertices[1] * scaling);
+    vertices.push_back(center + kTriangleVertices[2] * scaling);
+
+    for (int i = 0; i < 3; ++i)
     {
         colors.push_back(inColor);
     }
 
-    return 6;
+    return 3;
 }
 
-int Rectangle::GenerateMesh(std::vector<Vector3>& vertices, std::vector<Color>& colors)
+int Triangle::GenerateMesh(std::vector<Vector3>& vertices, std::vector<Color>& colors)
 {
     return GenerateMesh(bounds, color, vertices, colors);
 }
 
-void Rectangle::Render()
+void Triangle::Render()
 {
     // mesh
     std::vector<Vector3> vertices;
@@ -69,12 +74,12 @@ void Rectangle::Render()
     renderer->Render();
 }
 
-void Rectangle::BatchRender(std::vector<Rectangle*> rectangleList)
+void Triangle::BatchRender(std::vector<Triangle*> triangleList)
 {
     // mesh
     std::vector<Vector3> vertices;
     std::vector<Color> colors;
-    for (Rectangle* item:rectangleList)
+    for (Triangle* item:triangleList)
     {
         int count = item->GenerateMesh(vertices, colors);
         Matrix4x4Helper::ApplyMatrixForEach(item->GetTransform()->LocalToWorldMatrix(), vertices, vertices.size() - count, vertices.size());

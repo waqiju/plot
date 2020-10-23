@@ -11,7 +11,7 @@
 
 
 void OnFrameUpdate();
-void GenerateTwoRectangle();
+void GenerateShape();
 void GenerateRandomRectangle();
 
 SpaceGridComponent* g_SpaceGrid;
@@ -33,7 +33,7 @@ int main()
     entity->GetComponent<Transform>()->SetParent(g_PlotRoot);
     g_SpaceGrid = entity->AddComponent<SpaceGridComponent>();
     // rectangle
-    GenerateTwoRectangle();
+    GenerateShape();
     // GenerateRandomRectangle();
 
     window->FrameLoop(OnFrameUpdate);
@@ -59,11 +59,13 @@ void OnFrameUpdate()
     g_SpaceGrid->Render();
     auto rectangleList = World::ActiveWorld()->GetComponentsInAllEnities<Rectangle>();
     Rectangle::BatchRender(rectangleList);
+    auto triangleList = World::ActiveWorld()->GetComponentsInAllEnities<Triangle>();
+    Triangle::BatchRender(triangleList);
     auto segmentList = World::ActiveWorld()->GetComponentsInAllEnities<chimera::Segment>();
     chimera::Segment::BatchRender(segmentList);
 }
 
-void GenerateTwoRectangle()
+void GenerateShape()
 {
     // one
     auto rectangle = Rectangle::Create(g_PlotRoot, Vector3(-1, -1, 0), Vector3(1, 1, 0), Color::white);
@@ -77,6 +79,8 @@ void GenerateTwoRectangle()
     usCp->mode = UniformScaleMode::FixedWidthInWorldSpace;
     usCp->target = rectangle;
     boundsCp->SetLocalBounds(rectangle->bounds);
+    // three
+    auto triangle = Triangle::Create(g_PlotRoot, Vector3(-4, -1, 0), Vector3(-2, 1, 0), Color::white);
 }
 
 void GenerateRandomRectangle()
