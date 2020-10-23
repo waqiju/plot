@@ -1,4 +1,5 @@
 #include "core_component/uniform_scale_component.h"
+#include "core_component/bounds_component.h"
 #include "plot/plot.h"
 #include "geometry/geometry.h"
 
@@ -13,7 +14,7 @@ void UniformScaleComponent::ResizeBounds()
     if (target == NULL || mode == UniformScaleMode::None)
         return;
 
-    Bounds bounds = RetrieveBounds();
+    Bounds& bounds = BoundsComponent::RetrieveBounds(target);
 
     Vector3 scaling = this->GetTransform()->LocalToWorldMatrix().DecomposeScaling();
     switch (mode)
@@ -29,25 +30,5 @@ void UniformScaleComponent::ResizeBounds()
             bounds.Expand(Vector3(1, expandY, 1));
             break;
         }
-    }
-
-    AssignBounds(bounds);
-}
-
-Bounds UniformScaleComponent::RetrieveBounds()
-{
-    if (typeid(target) == typeid(Rectangle*))
-    {
-        return static_cast<Rectangle*>(target)->bounds;
-    }
-
-    return Bounds();
-}
-
-void UniformScaleComponent::AssignBounds(const Bounds& bounds)
-{
-    if (typeid(target) == typeid(Rectangle))
-    {
-		static_cast<Rectangle*>(target)->bounds = bounds;
     }
 }

@@ -11,7 +11,7 @@
 
 
 void OnFrameUpdate();
-void GenerateRectangle();
+void GenerateTwoRectangle();
 void GenerateRandomRectangle();
 
 SpaceGridComponent* g_SpaceGrid;
@@ -33,7 +33,7 @@ int main()
     entity->GetComponent<Transform>()->SetParent(g_PlotRoot);
     g_SpaceGrid = entity->AddComponent<SpaceGridComponent>();
     // rectangle
-    GenerateRectangle();
+    GenerateTwoRectangle();
     // GenerateRandomRectangle();
 
     window->FrameLoop(OnFrameUpdate);
@@ -47,6 +47,15 @@ void OnFrameUpdate()
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+    for (auto usCp : World::ActiveWorld()->GetComponentsInAllEnities<UniformScaleComponent>())
+    {
+        usCp->ResizeBounds();
+    }
+    for (auto boundsCp : World::ActiveWorld()->GetComponentsInAllEnities<BoundsComponent>())
+    {
+        boundsCp->AlignBounds();
+    }
+
     g_SpaceGrid->Render();
     auto rectangleList = World::ActiveWorld()->GetComponentsInAllEnities<Rectangle>();
     Rectangle::BatchRender(rectangleList);
@@ -54,11 +63,20 @@ void OnFrameUpdate()
     chimera::Segment::BatchRender(segmentList);
 }
 
-void GenerateRectangle()
+void GenerateTwoRectangle()
 {
+    // one
     auto rectangle = Rectangle::Create(g_PlotRoot, Vector3(-1, -1, 0), Vector3(1, 1, 0), Color::white);
 	auto boundsCp = rectangle->AddComponent<BoundsComponent>();
 	boundsCp->SetLocalBounds(rectangle->bounds);
+    // two
+    rectangle = Rectangle::Create(g_PlotRoot, Vector3(2, -1, 0), Vector3(4, 1, 0), Color::white);
+    boundsCp = rectangle->AddComponent<BoundsComponent>();
+    boundsCp->target = rectangle;
+    auto usCp = rectangle->AddComponent<UniformScaleComponent>();
+    usCp->mode = UniformScaleMode::FixedWidthInWorldSpace;
+    usCp->target = rectangle;
+    boundsCp->SetLocalBounds(rectangle->bounds);
 }
 
 void GenerateRandomRectangle()

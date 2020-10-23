@@ -196,7 +196,7 @@ namespace MouseScrollHandlers
         screenBoundsInLocal.Expand(scale);
         FocusPlot(screenBoundsInLocal.min.x, screenBoundsInLocal.max.x);
 
-        std::cout << plotRootTr->LocalScale().ToString() << std::endl;
+        // std::cout << plotRootTr->LocalScale().ToString() << std::endl;
     }
 
     void FocusPlot(float beginX, float endX)
@@ -215,7 +215,7 @@ namespace MouseScrollHandlers
 			std::cout << "Not found bounds between beginX[" << beginX  << "] endX[" << endX << "]" << std::endl;
 			return;
 		}
-        std::cout << plotBoundsInLocal.ToString() << std::endl;
+        // std::cout << plotBoundsInLocal.ToString() << std::endl;
 
         // viewport bounds in world
         Camera* camera = Application::MainCamera();
@@ -229,7 +229,6 @@ namespace MouseScrollHandlers
         // scale
         Vector3 scale = screenBoundsInWorld.Size() / plotBoundsInLocal.Size();
 		scale.z = 1;
-        std::cout<< "Focus scale: " << scale.ToString() << std::endl;
 
         // move
         Vector3 screenCenterInWorld;
@@ -237,10 +236,9 @@ namespace MouseScrollHandlers
         Physics::Raycast(ray, Plane::XyPlane, screenCenterInWorld);
         Vector3 focusPositionInWorld = plotRootTr->LocalToWorldMatrix().MultiplyPoint3x4(plotBoundsInLocal.Center());
         Vector3 move = focusPositionInWorld - screenCenterInWorld;
-        std::cout<< "Focus center: " << focusPositionInWorld.ToString() << std::endl;
 
         // apply
-		plotRootTr->SetLocalScale(/*plotRootTr->LocalScale() * */ scale);
+		plotRootTr->SetLocalScale(scale);
         Transform* cameraTr = Application::MainCamera()->GetTransform();
         cameraTr->SetLocalPosition(cameraTr->LocalPosition() + move);
     }
