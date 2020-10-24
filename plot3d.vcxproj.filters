@@ -162,6 +162,9 @@
     <ClCompile Include="src\plot\triangle.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\plot\pentagram.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\default_shader.h">
@@ -333,6 +336,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\plot\triangle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plot\pentagram.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

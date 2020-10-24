@@ -61,6 +61,8 @@ void OnFrameUpdate()
     Rectangle::BatchRender(rectangleList);
     auto triangleList = World::ActiveWorld()->GetComponentsInAllEnities<Triangle>();
     Triangle::BatchRender(triangleList);
+    auto pentagramList = World::ActiveWorld()->GetComponentsInAllEnities<Pentagram>();
+    Pentagram::BatchRender(pentagramList);
     auto segmentList = World::ActiveWorld()->GetComponentsInAllEnities<chimera::Segment>();
     chimera::Segment::BatchRender(segmentList);
 }
@@ -79,8 +81,10 @@ void GenerateShape()
     usCp->mode = UniformScaleMode::FixedWidthInWorldSpace;
     usCp->target = rectangle;
     boundsCp->SetLocalBounds(rectangle->bounds);
-    // three
+    // 三角形
     auto triangle = Triangle::Create(g_PlotRoot, Vector3(-4, -1, 0), Vector3(-2, 1, 0), Color::white);
+    // 五角星
+    auto pentagram = Pentagram::Create(g_PlotRoot, Vector3(-4, 2, 0), Vector3(-2, 4, 0), Color::white);
 }
 
 void GenerateRandomRectangle()

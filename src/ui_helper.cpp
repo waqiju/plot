@@ -216,6 +216,8 @@ namespace MouseScrollHandlers
 			return;
 		}
         // std::cout << plotBoundsInLocal.ToString() << std::endl;
+        // 上下预留空白
+        plotBoundsInLocal.Expand(Vector3(1, 1.05f, 1));
 
         // viewport bounds in world
         Camera* camera = Application::MainCamera();
