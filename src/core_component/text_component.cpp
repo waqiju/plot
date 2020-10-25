@@ -23,9 +23,9 @@ TextComponent* TextComponent::Create(Transform* parent, std::string text, float 
 
 int TextComponent::GenerateMesh(const Bounds& bounds, const std::string& text, const Color& inColor, std::vector<Vector3>& vertices, std::vector<Color>& colors, std::vector<Vector2>& uvs)
 {
-    int verticesCount = text.length() * 4;
+    int verticesCount = text.length() * 6;
 
-    float characterSpacing = bounds.max.x - bounds.min.x;
+    float characterSpacing = (bounds.max.x - bounds.min.x) / text.length();
     float fontWidthInLocal = characterSpacing / 0.6f;
     float fontHeightInLocal = bounds.max.y - bounds.min.y;
     // 起点
@@ -91,7 +91,8 @@ void TextComponent::AlignBounds()
     float characterSpacing = fontWidthInLocal * 0.6f;
     float fontHeightInLocal = onePixelSizeInLocal.y * fontSize;
     // 起点和 bounds
-    const Vector3& position = transform->LocalPosition();
+    // const Vector3& position = transform->LocalPosition();
+    const Vector3& position = Vector3::zero;
     float totalWidth = characterSpacing * text.length();
     switch (alignment)
     {
@@ -122,6 +123,7 @@ void TextComponent::Render()
     std::vector<Vector3> vertices;
     std::vector<Color> colors;
     std::vector<Vector2> uvs;
+    AlignBounds();
     GenerateMesh(vertices, colors, uvs);
     Mesh mesh;
     mesh.SetVertices(vertices);
@@ -152,6 +154,7 @@ void TextComponent::BatchRender(std::vector<TextComponent*> textList)
 
     for (TextComponent* item:textList)
     {
+        item->AlignBounds();
         int count = item->GenerateMesh(vertices, colors, uvs);
         Matrix4x4Helper::ApplyMatrixForEach(item->GetTransform()->LocalToWorldMatrix(), vertices, vertices.size() - count, vertices.size());
     }

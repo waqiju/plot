@@ -14,5 +14,5 @@ uniform vec4 ColorTint;
 void main(){
 
 	finalColor = texture( FontTextureSampler, UV ) * color * ColorTint;
-	
+
 }

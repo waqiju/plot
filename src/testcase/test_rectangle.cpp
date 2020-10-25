@@ -66,35 +66,30 @@ void OnFrameUpdate()
     auto segmentList = World::ActiveWorld()->GetComponentsInAllEnities<chimera::Segment>();
     chimera::Segment::BatchRender(segmentList);
     auto textCpList = World::ActiveWorld()->GetComponentsInAllEnities<TextComponent>();
-    // TextComponent::BatchRender(textCpList);
-    for (auto textCp:textCpList)
-    {
-        textCp->AlignBounds();
-        textCp->Render();
-    }
+    TextComponent::BatchRender(textCpList);
 }
 
 void GenerateShape()
 {
     // one
- //    auto rectangle = Rectangle::Create(g_PlotRoot, Vector3(-1, -1, 0), Vector3(1, 1, 0), Color::white);
-	// auto boundsCp = rectangle->AddComponent<BoundsComponent>();
-	// boundsCp->SetLocalBounds(rectangle->bounds);
- //    // two
- //    rectangle = Rectangle::Create(g_PlotRoot, Vector3(2, -1, 0), Vector3(4, 1, 0), Color::white);
- //    boundsCp = rectangle->AddComponent<BoundsComponent>();
- //    boundsCp->target = rectangle;
- //    auto usCp = rectangle->AddComponent<UniformScaleComponent>();
- //    usCp->mode = UniformScaleMode::FixedWidthInWorldSpace;
- //    usCp->target = rectangle;
- //    boundsCp->SetLocalBounds(rectangle->bounds);
- //    // 三角形
- //    auto triangle = Triangle::Create(g_PlotRoot, Vector3(-4, -1, 0), Vector3(-2, 1, 0), Color::white);
- //    // 五角星
- //    auto pentagram = Pentagram::Create(g_PlotRoot, Vector3(-4, 2, 0), Vector3(-2, 4, 0), Color::white);
+    auto rectangle = Rectangle::Create(g_PlotRoot, Vector3(-1, -1, 0), Vector3(1, 1, 0), Color::white);
+	auto boundsCp = rectangle->AddComponent<BoundsComponent>();
+	boundsCp->SetLocalBounds(rectangle->bounds);
+    // two
+    rectangle = Rectangle::Create(g_PlotRoot, Vector3(2, -1, 0), Vector3(4, 1, 0), Color::white);
+    boundsCp = rectangle->AddComponent<BoundsComponent>();
+    boundsCp->target = rectangle;
+    auto usCp = rectangle->AddComponent<UniformScaleComponent>();
+    usCp->mode = UniformScaleMode::FixedWidthInWorldSpace;
+    usCp->target = rectangle;
+    boundsCp->SetLocalBounds(rectangle->bounds);
+    // 三角形
+    auto triangle = Triangle::Create(g_PlotRoot, Vector3(-4, -1, 0), Vector3(-2, 1, 0), Color::white);
+    // 五角星
+    auto pentagram = Pentagram::Create(g_PlotRoot, Vector3(-4, 2, 0), Vector3(-2, 4, 0), Color::white);
     // 文本
-    auto textCp = TextComponent::Create(g_PlotRoot, "1", 100, LayoutAlignment::Center);
-    textCp->GetTransform()->SetLocalPosition(Vector3(0, 0, 0));
+    auto textCp = TextComponent::Create(g_PlotRoot, "123456", 100, LayoutAlignment::Center);
+    textCp->GetTransform()->SetLocalPosition(Vector3(0, -4, 0));
 }
 
 void GenerateRandomRectangle()

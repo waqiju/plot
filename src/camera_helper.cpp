@@ -105,7 +105,7 @@ namespace CameraHelper
     {
         float d = camera->GetTransform()->Position().Length();
         float h = tan(camera->fieldOfView * 0.5f) * d;
-        return h / screenHeight;
+        return h / screenHeight * 2;
     }
 
     Vector3 OnePixelSizeInLocal(Camera* camera, float screenHeight, const Matrix4x4& localToWorldMatrix)
