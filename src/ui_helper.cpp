@@ -15,6 +15,8 @@ namespace UiHelper
         glViewport(0, 0, width, height);
         for (auto camera : World::ActiveWorld()->GetComponentsInRootEnities<Camera>())
         {
+            Application::screenWidth = width;
+            Application::screenHeight = height;
             camera->aspect = static_cast<float>(Application::screenWidth) / static_cast<float>(Application::screenHeight);
         }
     }

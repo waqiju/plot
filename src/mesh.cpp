@@ -1,4 +1,4 @@
-#include <assert.h>
+ï»¿#include <assert.h>
 #include <glad/glad.h>
 #include "mesh.h"
 
@@ -21,6 +21,10 @@ Mesh::~Mesh()
 	if (m_VboColor)
 	{
 		glDeleteBuffers(1, &m_VboColor);
+	}
+	if (m_VboUV)
+	{
+		glDeleteBuffers(1, &m_VboUV);
 	}
 	if (m_EBO)
 	{
@@ -60,6 +64,12 @@ void Mesh::SetColors(const std::vector<Color>& colors)
 	m_HasChanged = true;
 }
 
+void Mesh::SetUVs(const std::vector<Vector2>& uvs)
+{
+	m_UVs = uvs;
+	m_HasChanged = true;
+}
+
 void Mesh::CheckOrUpload()
 {
 	if (m_HasChanged)
@@ -72,7 +82,7 @@ void Mesh::CheckOrUpload()
 
 void Mesh::UploadMeshData()
 {
-	// ·Ç·¨Êý¾Ý±£»¤
+	// éžæ³•æ•°æ®ä¿æŠ¤
 	if (m_Vertices.size() == 0)
 		return;
 
@@ -92,6 +102,18 @@ void Mesh::UploadMeshData()
 		glBufferData(GL_ARRAY_BUFFER, m_Colors.size() * sizeof(Color), &m_Colors[0], GL_STATIC_DRAW);
 		glEnableVertexAttribArray(1);
 		glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Color), (void*)0);
+	}
+	// uvs
+	if (m_UVs.size() > 0)
+	{
+		if (m_VboUV == 0)
+		{
+			glGenBuffers(1, &m_VboUV);
+		}
+		glBindBuffer(GL_ARRAY_BUFFER, m_VboUV);
+		glBufferData(GL_ARRAY_BUFFER, m_UVs.size() * sizeof(Vector2), &m_UVs[0], GL_STATIC_DRAW);
+		glEnableVertexAttribArray(2);
+		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vector2), (void*)0);
 	}
 	// indices
 	if (m_Indices.size() > 0)

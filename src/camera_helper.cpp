@@ -100,4 +100,18 @@ namespace CameraHelper
         float right = previousFrameCenter.x + (previousFrameMax.x - previousFrameCenter.x) * x;
         FocusToIntervalX(camera, left, right);
     }
+
+    float OnePixelSizeInWorld(Camera* camera, float screenHeight)
+    {
+        float d = camera->GetTransform()->Position().Length();
+        float h = tan(camera->fieldOfView * 0.5f) * d;
+        return h / screenHeight;
+    }
+
+    Vector3 OnePixelSizeInLocal(Camera* camera, float screenHeight, const Matrix4x4& localToWorldMatrix)
+    {
+        float sizeInWorld = OnePixelSizeInWorld(camera, screenHeight);
+        Vector3 scaling = localToWorldMatrix.DecomposeScaling();
+        return Vector3(sizeInWorld / scaling.x, sizeInWorld / scaling.y, sizeInWorld / scaling.z);
+    }
 }

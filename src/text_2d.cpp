@@ -59,9 +59,9 @@ void Text2D::DrawInViewport(std::string text, float x, float y, int fontSize)
         Vector2 vertexDownRight = Vector2(x + i * characterSpacing + fontWidthInViewport, y);
         Vector2 vertexDownLeft = Vector2(x + i * characterSpacing, y);
 
-        vertices.push_back(vertexUpLeft);
-        vertices.push_back(vertexUpRight);
         vertices.push_back(vertexDownLeft);
+        vertices.push_back(vertexUpRight);
+        vertices.push_back(vertexUpLeft);
 
         vertices.push_back(vertexDownRight);
         vertices.push_back(vertexUpRight);
@@ -77,9 +77,9 @@ void Text2D::DrawInViewport(std::string text, float x, float y, int fontSize)
         Vector2 uvDownRight = Vector2(uvX + uvOffset, uvY+uvOffset);
         Vector2 uvDownLeft = Vector2(uvX, uvY+uvOffset);
 
-        uvs.push_back(uvUpLeft);
-        uvs.push_back(uvUpRight);
         uvs.push_back(uvDownLeft);
+        uvs.push_back(uvUpRight);
+        uvs.push_back(uvUpLeft);
 
         uvs.push_back(uvDownRight);
         uvs.push_back(uvUpRight);

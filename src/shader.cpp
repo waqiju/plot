@@ -38,20 +38,28 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
     unsigned int vertexID, fragmentID;
     const char* vertexCodeCStr = vertexCode.c_str();
     const char* fragmentCodeCStr = fragmentCode.c_str();
+    // vertex
+    std::stringstream errorHintStream;
+    errorHintStream << "Compile vertex shader[" << vertexPath << "] failed:";
     vertexID = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexID, 1, &vertexCodeCStr, NULL);
     glCompileShader(vertexID);
-    CheckCompileErrors(vertexID, "Compile vertex shader failed:");
+    CheckCompileErrors(vertexID, errorHintStream.str());
+    // fragment
+    errorHintStream.str("");
+    errorHintStream << "Compile fragment shader[" << fragmentPath << "] failed:";
     fragmentID = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentID, 1, &fragmentCodeCStr, NULL);
     glCompileShader(fragmentID);
-    CheckCompileErrors(fragmentID, "Compile fragment shader failed:");
+    CheckCompileErrors(fragmentID, errorHintStream.str());
     // link
+    errorHintStream.str("");
+    errorHintStream << "Link program[" << vertexPath << ", " << fragmentPath << "] failed:";
     ID = glCreateProgram();
     glAttachShader(ID, vertexID);
     glAttachShader(ID, fragmentID);
     glLinkProgram(ID);
-    CheckLinkErrors(ID, "Link program failed:");
+    CheckLinkErrors(ID, errorHintStream.str());
     // clean
     glDeleteShader(vertexID);
     glDeleteShader(fragmentID);

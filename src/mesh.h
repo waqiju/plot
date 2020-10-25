@@ -33,6 +33,7 @@ public:
         SetIndices(std::vector<unsigned int>(indices, indices + length), topology);
     }
     void SetColors(const std::vector<Color>& colors);
+    void SetUVs(const std::vector<Vector2>& uvs);
     void SetTopology(MeshTopology topology) { m_Topology = topology; }
     void CheckOrUpload();
 
@@ -77,10 +78,12 @@ private:
     unsigned int m_VAO = 0;
     unsigned int m_VboPosition = 0;
     unsigned int m_VboColor = 0;
+    unsigned int m_VboUV = 0;
     unsigned int m_EBO = 0;
     MeshTopology m_Topology = MeshTopology::Triangles;
 
     std::vector<float> m_Vertices;
     std::vector<Color> m_Colors;
+    std::vector<Vector2> m_UVs;
     std::vector<unsigned int> m_Indices;
 };

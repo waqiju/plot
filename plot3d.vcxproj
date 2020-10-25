@@ -137,6 +137,7 @@
     <ClCompile Include="src\camera.cpp" />
     <ClCompile Include="src\camera_helper.cpp" />
     <ClCompile Include="src\core_component\bounds_component.cpp" />
+    <ClCompile Include="src\core_component\text_component.cpp" />
     <ClCompile Include="src\core_component\uniform_scale_component.cpp" />
     <ClCompile Include="src\entity\component.cpp" />
     <ClCompile Include="src\entity\entity.cpp" />
@@ -191,6 +192,9 @@
     <ClInclude Include="src\common\common.h" />
     <ClInclude Include="src\common\event.h" />
     <ClInclude Include="src\core_component\bounds_component.h" />
+    <ClInclude Include="src\core_component\core_component.h" />
+    <ClInclude Include="src\core_component\layout_define.h" />
+    <ClInclude Include="src\core_component\text_component.h" />
     <ClInclude Include="src\core_component\uniform_scale_component.h" />
     <ClInclude Include="src\default_shader.h" />
     <ClInclude Include="src\entity\component.h" />

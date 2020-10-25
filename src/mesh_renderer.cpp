@@ -1,4 +1,4 @@
-#include <assert.h>
+ï»¿#include <assert.h>
 #include <glad/glad.h>
 #include "entity/ec.h"
 #include "mesh_renderer.h"
@@ -14,7 +14,7 @@ void MeshRenderer::Render()
 	assert(mesh != NULL);
 
 	mesh->CheckOrUpload();
-    // ÉèÖÃ MVP ¾ØÕó
+    // è®¾ç½® MVP çŸ©é˜µ
     if (camera != NULL)
     {
         Matrix4x4 mvp = camera->ViewProjectMatrix() * this->GetComponent<Transform>()->LocalToWorldMatrix();
