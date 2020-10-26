@@ -101,9 +101,15 @@ namespace CameraHelper
         FocusToIntervalX(camera, left, right);
     }
 
+    // 以相机中心的射线与 xy 平面的交点位置，计算出一像素对应的宽高
+    // 用作基准像素宽高
     float OnePixelSizeInWorld(Camera* camera, float screenHeight)
     {
-        float d = camera->GetTransform()->Position().Length();
+        float d;
+        Ray ray = camera->ViewportPointToRay(Vector3::zero);
+        Physics::Raycast(ray, Plane::XyPlane, d);
+        d = Mathf::Abs(d);
+
         float h = tan(camera->fieldOfView * 0.5f) * d;
         return h / screenHeight * 2;
     }

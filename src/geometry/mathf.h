@@ -30,6 +30,10 @@ public:
     {
         return ::std::min(std::max(x, minValue), maxValue);
     }
+    static float Abs(float x)
+    {
+        return ::std::abs(x);
+    }
     static int Ceil(float x)
     {
         return static_cast<int>(std::ceil(x));
