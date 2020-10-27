@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "mesh.h"
 #include "material.h"
 #include "entity/component.h"

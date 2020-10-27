@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "entity/ec.h"
 #include "geometry/bounds.h"
 #include "core_component/layout_define.h"
