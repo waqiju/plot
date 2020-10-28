@@ -18,4 +18,4 @@ https://zhidao.baidu.com/question/489102691.html
 
 ## Mesh vertices 构造
 
-<img src="doc/image/shape_mesh_vertices.jpg" />
+<img src="image/shape_mesh_vertices.jpg" />
