@@ -32,3 +32,15 @@ protobuf
 
 entity & component, geometry。2020-09-27
 
+## TODO
+
+stock glyph 相关的 layout component 实现
+
+grpc 接入
+
+cpp 反射实现
+
+Prefab 机制的实现，Entity 和 Component 结构的序列化和反序列化。
+
+前端和后端的交互接口
+
