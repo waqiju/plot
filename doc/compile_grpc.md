@@ -30,6 +30,14 @@ choco install ninja
 git clone -b v1.33.0 https://github.com/grpc/grpc
 
 
+4. 编译源码
+
+```
+cmake .. -G "Visual Studio 14 2015"
+=>
+cmake .. -G "Visual Studio 16 2019" -DBUILD_SHARED_LIBS=ON
+```
+
 ## 本地拉取 github 仓库代码速度过慢
 
 整个 grpc + submodule 大小有 200 M

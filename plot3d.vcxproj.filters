@@ -153,9 +153,6 @@
     <ClCompile Include="src\geometry\matrix4x4_helper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\testcase\test_rectangle.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\core_component\uniform_scale_component.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -166,6 +163,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\core_component\text_component.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\plot\stock_layout_item.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\plot\stock_vertical_layout.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\testcase\test_layout.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -351,6 +357,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\core_component\text_component.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plot\plot.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plot\stock_layout_item.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plot\stock_vertical_layout.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

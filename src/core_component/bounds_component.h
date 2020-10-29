@@ -12,14 +12,8 @@ public:
     BoundsComponent(Entity* owner);
 
     Component* target;
+    Bounds localBounds;
 
-    const Bounds& LocalBounds() const { return m_LocalBounds; };
-    void SetLocalBounds(const Bounds& bounds);
-    void SetLocalBounds(const Vector3& min, const Vector3& max);
     Bounds WorldBounds();
-
-    void AlignBounds();
-
-private:
-    Bounds m_LocalBounds;
+    void SyncTargetBounds();
 };

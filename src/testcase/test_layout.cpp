@@ -12,7 +12,6 @@
 
 void OnFrameUpdate();
 void GenerateShape();
-void GenerateRandomRectangle();
 
 SpaceGridComponent* g_SpaceGrid;
 Transform* g_PlotRoot;
@@ -32,9 +31,8 @@ int main()
     auto entity = World::ActiveWorld()->CreateEntity("SpaceGrid");
     entity->GetComponent<Transform>()->SetParent(g_PlotRoot);
     g_SpaceGrid = entity->AddComponent<SpaceGridComponent>();
-    // rectangle
+    // shape
     GenerateShape();
-    // GenerateRandomRectangle();
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();
@@ -53,8 +51,12 @@ void OnFrameUpdate()
     }
     for (auto boundsCp : World::ActiveWorld()->GetComponentsInAllEnities<BoundsComponent>())
     {
-        boundsCp->AlignBounds();
+        boundsCp->SyncTargetBounds();
     }
+	for (auto layoutCp : World::ActiveWorld()->GetComponentsInAllEnities<StockVerticalLayout>())
+	{
+		layoutCp->ApplyLayout();
+	}
 
     g_SpaceGrid->Render();
     auto rectangleList = World::ActiveWorld()->GetComponentsInAllEnities<Rectangle>();
@@ -67,55 +69,46 @@ void OnFrameUpdate()
     chimera::Segment::BatchRender(segmentList);
     auto textCpList = World::ActiveWorld()->GetComponentsInAllEnities<TextComponent>();
     TextComponent::BatchRender(textCpList);
+	auto sgList = g_PlotRoot->GetComponentsInChildren<StockGlyph>();
+	StockGlyph::BatchRender(sgList);
 }
 
 void GenerateShape()
 {
-    // one
-    auto rectangle = Rectangle::Create(g_PlotRoot, Vector3(-1, -1, 0), Vector3(1, 1, 0), Color::white);
-	auto boundsCp = rectangle->AddComponent<BoundsComponent>();
-	boundsCp->localBounds = rectangle->bounds;
-    // two
-    rectangle = Rectangle::Create(g_PlotRoot, Vector3(2, -1, 0), Vector3(4, 1, 0), Color::white);
-    boundsCp = rectangle->AddComponent<BoundsComponent>();
-    boundsCp->target = rectangle;
-    auto usCp = rectangle->AddComponent<UniformScaleComponent>();
+	// stock glyph
+	KChart chart;
+	chart.set_open(0);
+	chart.set_close(2);
+	chart.set_high(2);
+	chart.set_low(0);
+	auto stockGlyph = StockGlyph::Create(g_PlotRoot, 0, chart);
+	stockGlyph->AddComponent<StockVerticalLayout>();
+    // triangle
+	auto triangle = Triangle::Create(stockGlyph->GetTransform(), Vector3(-1, -1, 0), Vector3(1, 1, 0), Color::white);
+    auto boundsCp = triangle->AddComponent<BoundsComponent>();
+    boundsCp->localBounds = triangle->bounds;
+    boundsCp->target = triangle;
+    auto usCp = triangle->AddComponent<UniformScaleComponent>();
     usCp->mode = UniformScaleMode::FixedWidthInWorldSpace;
-    usCp->target = rectangle;
-    boundsCp->localBounds = rectangle->bounds;
-    // 三角形
-    auto triangle = Triangle::Create(g_PlotRoot, Vector3(-4, -1, 0), Vector3(-2, 1, 0), Color::white);
-    // 五角星
-    auto pentagram = Pentagram::Create(g_PlotRoot, Vector3(-4, 2, 0), Vector3(-2, 4, 0), Color::white);
-    // 文本
-    auto textCp = TextComponent::Create(g_PlotRoot, "123456", 100, LayoutAlignment::Center);
-    textCp->GetTransform()->SetLocalPosition(Vector3(0, -4, 0));
-}
-
-void GenerateRandomRectangle()
-{
-    std::vector<float> yList;
-    for (int x = 0; x <= 20; ++x)
-    {
-        float y;
-        if (x == 0)
-        {
-            y = Random::Range(10, 15);
-        }
-        else
-        {
-            y = yList[x-1] + Random::Range(-3, 3);
-        }
-        yList.push_back(y);
-        float height = Random::Range(0.1, 5);
-
-        Vector3 left = Vector3(x - 0.45, y - height / 2, 0);
-        Vector3 right = Vector3(x + 0.45, y + height / 2, 0);
-        Rectangle::Create(g_PlotRoot, left, right, Color::white);
-        // segment
-        if (x > 0)
-        {
-           chimera::Segment::Create(g_PlotRoot, Vector3(x-1, yList[x-1], 0), Vector3(x, yList[x], 0), Color::red);
-        }
-    }
+    usCp->target = triangle;
+	triangle->AddComponent<StockLayoutItem>();
+ //    // one
+ //    auto rectangle = Rectangle::Create(g_PlotRoot, Vector3(-1, -1, 0), Vector3(1, 1, 0), Color::white);
+	// auto boundsCp = rectangle->AddComponent<BoundsComponent>();
+	// boundsCp->localBounds = rectangle->bounds;
+ //    // two
+ //    rectangle = Rectangle::Create(g_PlotRoot, Vector3(2, -1, 0), Vector3(4, 1, 0), Color::white);
+ //    boundsCp = rectangle->AddComponent<BoundsComponent>();
+ //    boundsCp->target = rectangle;
+ //    auto usCp = rectangle->AddComponent<UniformScaleComponent>();
+ //    usCp->mode = UniformScaleMode::FixedWidthInWorldSpace;
+ //    usCp->target = rectangle;
+ //    boundsCp->localBounds = rectangle->bounds;
+ //    // 三角形
+ //    auto triangle = Triangle::Create(g_PlotRoot, Vector3(-4, -1, 0), Vector3(-2, 1, 0), Color::white);
+ //    // 五角星
+ //    auto pentagram = Pentagram::Create(g_PlotRoot, Vector3(-4, 2, 0), Vector3(-2, 4, 0), Color::white);
+ //    // 文本
+ //    auto textCp = TextComponent::Create(g_PlotRoot, "123456", 100, LayoutAlignment::Center);
+ //    textCp->GetTransform()->SetLocalPosition(Vector3(0, -4, 0));
 }

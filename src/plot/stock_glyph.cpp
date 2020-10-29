@@ -16,7 +16,7 @@ StockGlyph* StockGlyph::Create(Transform* parent, float x, const KChart& chart)
 
     entity->GetComponent<Transform>()->SetParent(parent);
     // add bounds component
-	entity->AddComponent<BoundsComponent>()->SetLocalBounds(stockGlyph->bounds);
+	entity->AddComponent<BoundsComponent>()->localBounds = stockGlyph->bounds;
     return stockGlyph;
 }
 

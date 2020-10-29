@@ -6,3 +6,5 @@
 #include "segment.h"
 #include "stock_glyph.h"
 #include "plot_helper.h"
+#include "stock_layout_item.h"
+#include "stock_vertical_layout.h"

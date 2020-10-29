@@ -1,4 +1,5 @@
 #pragma once
+#include "entity/ec.h"
 
 
 class StockLayoutItem: public Component

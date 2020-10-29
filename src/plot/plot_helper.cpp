@@ -24,7 +24,7 @@ namespace PlotHelper
     {
         for (auto boundsComponent: plotEntity->GetComponentsInChildren<BoundsComponent>())
         {
-            auto bounds = boundsComponent->LocalBounds();
+            auto bounds = boundsComponent->localBounds;
             auto& min = bounds.min;
             auto& max = bounds.max;
 
