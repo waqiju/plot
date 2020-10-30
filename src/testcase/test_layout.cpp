@@ -84,7 +84,8 @@ void GenerateShape()
 	auto stockGlyph = StockGlyph::Create(g_PlotRoot, 0, chart);
 	stockGlyph->AddComponent<StockVerticalLayout>();
     // triangle
-	auto triangle = Triangle::Create(stockGlyph->GetTransform(), Vector3(-1, -1, 0), Vector3(1, 1, 0), Color::white);
+	auto vertexPairX = StockGlyph::MeshVertexPairX(0);
+	auto triangle = Triangle::Create(stockGlyph->GetTransform(), Vector3(vertexPairX.first, -1, 0), Vector3(vertexPairX.second, 1, 0), Color::white);
     auto boundsCp = triangle->AddComponent<BoundsComponent>();
     boundsCp->localBounds = triangle->bounds;
     boundsCp->target = triangle;

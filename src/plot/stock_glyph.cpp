@@ -37,8 +37,9 @@ void StockGlyph::Reset(float inX, const KChart& inKChart)
     {
         color = Color::green;
     }
-    bounds.min = Vector3(x - 0.45f, chart.low(), 0);
-    bounds.max = Vector3(x + 0.45f, chart.high(), 0);
+	auto vertexPairX = MeshVertexPairX(x);
+    bounds.min = Vector3(vertexPairX.first, chart.low(), 0);
+    bounds.max = Vector3(vertexPairX.second, chart.high(), 0);
 }
 
 void StockGlyph::Render()
@@ -154,4 +155,9 @@ void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
         renderer->camera = Application::MainCamera();
         renderer->Render();
     }
+}
+
+std::pair<float, float> StockGlyph::MeshVertexPairX(float x)
+{
+	return std::pair<float, float>(x - 0.45f, x + 0.45f);
 }
