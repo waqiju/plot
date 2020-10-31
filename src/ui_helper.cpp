@@ -210,7 +210,7 @@ namespace MouseScrollHandlers
 			return;
 		}
 
-        Bounds plotBoundsInLocal(Vector3(beginX, 0, 0), Vector3(endX, 0, 0));
+        Bounds plotBoundsInLocal(Vector3(beginX, 1e8f, 0), Vector3(endX, -1e8f, 0));
         PlotHelper::CollectPlotRootBounds(plotEntity, plotBoundsInLocal);
 		if (Mathf::IsZero(plotBoundsInLocal.Size().y))
 		{

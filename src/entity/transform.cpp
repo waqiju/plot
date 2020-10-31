@@ -10,6 +10,19 @@ void Transform::SetTrsMatrix(const Matrix4x4& inMatrix)
 	MarkAsDirty();
 }
 
+void Transform::SetPosition(const Vector3& position)
+{
+	if (m_Parent == NULL)
+	{
+		m_LocalPosition = position;
+	}
+	else
+	{
+		m_LocalPosition = m_Parent->WorldToLocalMatrix().MultiplyPoint3x4(position);
+	}
+	MarkAsDirty();
+}
+
 void Transform::SetParent(Transform* parent)
 {
 	if (parent == m_Parent)

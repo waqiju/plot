@@ -1,4 +1,5 @@
 #include "core_component/bounds_component.h"
+#include "core_component/text_component.h"
 #include "plot/plot.h"
 
 
@@ -19,8 +20,27 @@ Bounds& BoundsComponent::RetrieveBounds(Component* target)
     {
         return dynamic_cast<Pentagram*>(target)->bounds;
     }
+    // text
+    if (typeid(*target) == typeid(TextComponent))
+    {
+        return dynamic_cast<TextComponent*>(target)->bounds;
+    }
+    // stock glyph
+    if (typeid(*target) == typeid(StockGlyph))
+    {
+        return dynamic_cast<StockGlyph*>(target)->bounds;
+    }
 
     return kUndefineBounds;
+}
+
+
+void BoundsComponent::McakeBoundsSymmertric(Transform* transform, Bounds& bounds)
+{
+    transform->SetLocalPosition(bounds.Center());
+    Vector3 size = bounds.Size();
+    bounds.min = - size * 0.5f;
+    bounds.max = size * 0.5f;
 }
 
 

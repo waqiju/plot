@@ -3,6 +3,7 @@
 #include "stock_glyph.h"
 #include "core_component/core_component.h"
 #include <vector>
+#include <algorithm>
 
 
 StockVerticalLayout::StockVerticalLayout(Entity* owner) : Component(owner)
@@ -28,34 +29,40 @@ void StockVerticalLayout::ApplyLayout()
 			downList.push_back(item);
 		}
 	}
-    StockGlyph* stockGlyph = this->GetComponent<StockGlyph>();
-    if (stockGlyph == NULL)
+    BoundsComponent* rootBoundsCp = this->GetComponent<BoundsComponent>();
+    if (rootBoundsCp == NULL)
         return;
 	// up
-    float startY = stockGlyph->bounds.max.y;
+    std::sort(upList.begin(), upList.end()
+        , [&](StockLayoutItem* lhs, StockLayoutItem* rhs) {return lhs->priority <= rhs->priority; });
+    float startY = rootBoundsCp->WorldBounds().max.y;
     float layoutSpacing = CameraHelper::CalculateLength(this->spacing, this->unit);
 	for (auto item : upList)
 	{
         startY += layoutSpacing;
 
         BoundsComponent* boundsCp = item->GetComponent<BoundsComponent>();
-        float boundsHeight = boundsCp->localBounds.Size().y;
-        Vector3 position = item->GetTransform()->LocalPosition();
+        Bounds worldBounds = boundsCp->WorldBounds();
+        float boundsHeight = worldBounds.Size().y;
+        Vector3 position = item->GetTransform()->Position();
         position.y = startY + boundsHeight / 2 - boundsCp->localBounds.Center().y;
-        item->GetTransform()->SetLocalPosition(position);
+        item->GetTransform()->SetPosition(position);
         startY += boundsHeight;
 	}
 	// down
-    startY = stockGlyph->bounds.min.y;
+    std::sort(downList.begin(), downList.end()
+        , [&](StockLayoutItem* lhs, StockLayoutItem* rhs) {return lhs->priority >= rhs->priority; });
+    startY = rootBoundsCp->WorldBounds().min.y;
     for (auto item : downList)
     {
         startY -= layoutSpacing;
 
         BoundsComponent* boundsCp = item->GetComponent<BoundsComponent>();
-        float boundsHeight = boundsCp->localBounds.Size().y;
-        Vector3 position = item->GetTransform()->LocalPosition();
-        position.y = startY - boundsCp->localBounds.Size().y / 2 - boundsCp->localBounds.Center().y;
-        item->GetTransform()->SetLocalPosition(position);
+        Bounds worldBounds = boundsCp->WorldBounds();
+        float boundsHeight = worldBounds.Size().y;
+        Vector3 position = item->GetTransform()->Position();
+        position.y = startY - boundsHeight / 2 - boundsCp->localBounds.Center().y;
+        item->GetTransform()->SetPosition(position);
         startY -= boundsHeight;
     }
 }

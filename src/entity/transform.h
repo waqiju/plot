@@ -41,6 +41,7 @@ public:
         MarkAsDirty();
     };
     void SetTrsMatrix(const Matrix4x4& inMatrix);
+    void SetPosition(const Vector3& position);
 
     void SetParent(Transform* parent);
     size_t ChildCount() { return m_Children.size(); }
@@ -50,7 +51,7 @@ public:
     void Flush(bool includeChildren=true, bool force=false);
     void MarkAsDirty(bool flush=true);
 
-    Matrix4x4 WorldToLocalMatrix() 
+    Matrix4x4 WorldToLocalMatrix() const
     {
         // It's expensive
         return m_LocalToWorld.Inverse();

@@ -8,6 +8,7 @@ class BoundsComponent: public Component
 public:
     static Bounds kUndefineBounds;
     static Bounds& RetrieveBounds(Component* target);
+    static void McakeBoundsSymmertric(Transform* transform, Bounds& bounds);
 
     BoundsComponent(Entity* owner);
 

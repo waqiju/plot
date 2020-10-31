@@ -4,17 +4,20 @@
 #include "resource/resource_manager.h"
 #include "mesh_renderer.h"
 #include "application/application.h"
+#include "core_component/core_component.h"
 
 
 Pentagram* Pentagram::Create(Transform* parent, const Vector3& v1, const Vector3& v2, const Color& color)
 {
     auto entity = World::ActiveWorld()->CreateEntity();
     auto pentagram = entity->AddComponent<Pentagram>();
+    auto tr = entity->GetComponent<Transform>();
     pentagram->bounds.min = v1;
     pentagram->bounds.max = v2;
     pentagram->color = color;
 
-    entity->GetComponent<Transform>()->SetParent(parent);
+    BoundsComponent::McakeBoundsSymmertric(tr, pentagram->bounds);
+    tr->SetParent(parent);
     return pentagram;
 }
 

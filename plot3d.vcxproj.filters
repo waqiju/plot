@@ -171,7 +171,7 @@
     <ClCompile Include="src\plot\stock_vertical_layout.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\testcase\test_layout.cpp">
+    <ClCompile Include="src\testcase\test_stock_glyph.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

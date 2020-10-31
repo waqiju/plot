@@ -6,13 +6,14 @@
 #include "application/application.h"
 
 
-Triangle* Triangle::Create(Transform* parent, const Vector3& v1, const Vector3& v2, const Color& color)
+Triangle* Triangle::Create(Transform* parent, const Vector3& v1, const Vector3& v2, const Color& color, bool isFlipY)
 {
     auto entity = World::ActiveWorld()->CreateEntity();
     auto triangle = entity->AddComponent<Triangle>();
     triangle->bounds.min = v1;
     triangle->bounds.max = v2;
     triangle->color = color;
+    triangle->isFlipY = isFlipY;
 
     entity->GetComponent<Transform>()->SetParent(parent);
     return triangle;
@@ -26,7 +27,7 @@ std::vector<Vector3> kTriangleVertices = {
 };
 
 
-int Triangle::GenerateMesh(const Bounds& inBounds, const Color& inColor, std::vector<Vector3>& vertices, std::vector<Color>& colors)
+int Triangle::GenerateMesh(const Bounds& inBounds, const Color& inColor, std::vector<Vector3>& vertices, std::vector<Color>& colors, bool isFlipY)
 {
     /*
         0
@@ -36,9 +37,18 @@ int Triangle::GenerateMesh(const Bounds& inBounds, const Color& inColor, std::ve
     Vector3 center = inBounds.Center();
     Vector3 scaling = inBounds.Size();
 
-    vertices.push_back(center + kTriangleVertices[0] * scaling);
-    vertices.push_back(center + kTriangleVertices[1] * scaling);
-    vertices.push_back(center + kTriangleVertices[2] * scaling);
+    if (!isFlipY)
+    {
+        vertices.push_back(center + kTriangleVertices[0] * scaling);
+        vertices.push_back(center + kTriangleVertices[1] * scaling);
+        vertices.push_back(center + kTriangleVertices[2] * scaling);
+    }
+    else
+    {
+        vertices.push_back(center + kTriangleVertices[0] * Vector3(1, -1, 1) * scaling);
+        vertices.push_back(center + kTriangleVertices[1] * Vector3(1, -1, 1) * scaling);
+        vertices.push_back(center + kTriangleVertices[2] * Vector3(1, -1, 1) * scaling);
+    }
 
     for (int i = 0; i < 3; ++i)
     {
@@ -50,7 +60,7 @@ int Triangle::GenerateMesh(const Bounds& inBounds, const Color& inColor, std::ve
 
 int Triangle::GenerateMesh(std::vector<Vector3>& vertices, std::vector<Color>& colors)
 {
-    return GenerateMesh(bounds, color, vertices, colors);
+    return GenerateMesh(bounds, color, vertices, colors, isFlipY);
 }
 
 void Triangle::Render()
