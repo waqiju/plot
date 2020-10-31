@@ -120,4 +120,20 @@ namespace CameraHelper
         Vector3 scaling = localToWorldMatrix.DecomposeScaling();
         return Vector3(sizeInWorld / scaling.x, sizeInWorld / scaling.y, sizeInWorld / scaling.z);
     }
+
+    float CalculateLength(float length, UnitOfLength unit)
+    {
+        switch (unit)
+        {
+            case UnitOfLength::World:
+                return length;
+            case UnitOfLength::StandardPixelSize:
+            {
+                float size = OnePixelSizeInWorld(Application::MainCamera(), static_cast<float>(Application::screenHeight));
+                return length * size;
+            }
+            default:
+                return length;
+        }
+    }
 }

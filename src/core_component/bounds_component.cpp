@@ -7,9 +7,17 @@ Bounds BoundsComponent::kUndefineBounds;
 
 Bounds& BoundsComponent::RetrieveBounds(Component* target)
 {
+    if (typeid(*target) == typeid(Triangle))
+    {
+        return dynamic_cast<Triangle*>(target)->bounds;
+    }
     if (typeid(*target) == typeid(Rectangle))
     {
         return dynamic_cast<Rectangle*>(target)->bounds;
+    }
+    if (typeid(*target) == typeid(Pentagram))
+    {
+        return dynamic_cast<Pentagram*>(target)->bounds;
     }
 
     return kUndefineBounds;

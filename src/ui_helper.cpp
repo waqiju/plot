@@ -233,6 +233,9 @@ namespace MouseScrollHandlers
         // scale
         Vector3 scale = screenBoundsInWorld.Size() / plotBoundsInLocal.Size();
 		scale.z = 1;
+        // apply scale
+        plotRootTr->SetLocalScale(scale);
+        Transform* cameraTr = Application::MainCamera()->GetTransform();
 
         // move
         Vector3 screenCenterInWorld;
@@ -240,10 +243,7 @@ namespace MouseScrollHandlers
         Physics::Raycast(ray, Plane::XyPlane, screenCenterInWorld);
         Vector3 focusPositionInWorld = plotRootTr->LocalToWorldMatrix().MultiplyPoint3x4(plotBoundsInLocal.Center());
         Vector3 move = focusPositionInWorld - screenCenterInWorld;
-
-        // apply
-		plotRootTr->SetLocalScale(scale);
-        Transform* cameraTr = Application::MainCamera()->GetTransform();
+        // apply move
         cameraTr->SetLocalPosition(cameraTr->LocalPosition() + move);
     }
 

@@ -33,23 +33,29 @@ void StockVerticalLayout::ApplyLayout()
         return;
 	// up
     float startY = stockGlyph->bounds.max.y;
+    float layoutSpacing = CameraHelper::CalculateLength(this->spacing, this->unit);
 	for (auto item : upList)
 	{
-		BoundsComponent* boundsCp = item->GetComponent<BoundsComponent>();
-        // TODO spacing in pixel
-        startY += this->spacing;
+        startY += layoutSpacing;
+
+        BoundsComponent* boundsCp = item->GetComponent<BoundsComponent>();
+        float boundsHeight = boundsCp->localBounds.Size().y;
         Vector3 position = item->GetTransform()->LocalPosition();
-        position.y = startY + boundsCp->localBounds.Size().y / 2 - boundsCp->localBounds.Center().y;
+        position.y = startY + boundsHeight / 2 - boundsCp->localBounds.Center().y;
         item->GetTransform()->SetLocalPosition(position);
+        startY += boundsHeight;
 	}
 	// down
     startY = stockGlyph->bounds.min.y;
     for (auto item : downList)
     {
+        startY -= layoutSpacing;
+
         BoundsComponent* boundsCp = item->GetComponent<BoundsComponent>();
-        startY -= this->spacing;
+        float boundsHeight = boundsCp->localBounds.Size().y;
         Vector3 position = item->GetTransform()->LocalPosition();
         position.y = startY - boundsCp->localBounds.Size().y / 2 - boundsCp->localBounds.Center().y;
         item->GetTransform()->SetLocalPosition(position);
+        startY -= boundsHeight;
     }
 }
