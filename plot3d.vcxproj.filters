@@ -120,24 +120,6 @@
     <ClCompile Include="src\plot\segment.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\pb\common.pb.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pb\message.pb.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pb\monitor.pb.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pb\prophet.pb.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pb\trade.pb.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pb\xueqiu.pb.cc">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\plot\stock_glyph.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -171,7 +153,55 @@
     <ClCompile Include="src\plot\stock_vertical_layout.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\testcase\test_stock_glyph.cpp">
+    <ClCompile Include="src\testcase\test_grpc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\chimera.grpc.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\chimera.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\common.grpc.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\common.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\helloworld.grpc.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\helloworld.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\message.grpc.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\message.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\monitor.grpc.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\monitor.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\prophet.grpc.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\prophet.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\trade.grpc.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\trade.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\xueqiu.grpc.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\xueqiu.pb.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -299,24 +329,6 @@
     <ClInclude Include="src\plot\segment.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\pb\common.pb.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\pb\message.pb.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\pb\monitor.pb.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\pb\prophet.pb.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\pb\trade.pb.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\pb\xueqiu.pb.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="src\plot\stock_glyph.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -366,6 +378,54 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\plot\stock_vertical_layout.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\chimera.grpc.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\chimera.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\common.grpc.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\common.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\helloworld.grpc.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\helloworld.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\message.grpc.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\message.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\monitor.grpc.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\monitor.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\prophet.grpc.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\prophet.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\trade.grpc.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\trade.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\xueqiu.grpc.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\xueqiu.pb.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
