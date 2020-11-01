@@ -66,3 +66,30 @@ vcpkg install grpc
 
 问题，vcpkg 下载 strawberry-perl-5.30.0.1-32bit.zip 会一直失败。
 在浏览器中下载好，然后放置到 vcpkg/downloads 目录下。
+
+
+## visual studio proejct 配置 grpc
+
+1. 头文件
+
+C++ -> 常规 -> 附加包含目录
+
+D:\1_Workspace\vcpkg\installed\x86-windows\include
+
+2. lib
+
+链接器 -> 常规 -> 附加库目录
+
+D:\1_Workspace\vcpkg\installed\x86-windows\debug\lib
+
+
+链接器 -> 输入 -> 附加库依赖项
+
+grpc.lib
+grpc++.lib
+gpr.lib
+libprotobufd.lib
+Ws2_32.lib
+zlibd.lib
+cares.lib
+address_sorting.lib
