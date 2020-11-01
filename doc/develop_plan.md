@@ -44,3 +44,9 @@ Prefab 机制的实现，Entity 和 Component 结构的序列化和反序列化�
 
 前端和后端的交互接口
 
+
+## Pratice
+
+手动编译 grpc，不借助 vcpkg
+
+编译出可以直接交付给非开发者的，portable 的可执行程序。

@@ -45,3 +45,24 @@ cmake .. -G "Visual Studio 16 2019" -DBUILD_SHARED_LIBS=ON
 使用香港的服务器拉取了代码，压缩为 tar.gz 传回本地。本地解压使用 7zip。
 
 注意，仓库里有使用软链接。windows 需要管理员权限，从开始菜单找到 7zip，右键管理员权限，接着找到目录解压等。
+
+TODO 自行编译 grpc ...
+
+
+## 使用 vcpkg 安装 grpc
+
+这是最简便的方法了，除了需要网络梯子外。
+
+```
+# install vcpkg package manager on your system using the official instructions
+git clone https://github.com/Microsoft/vcpkg.git
+cd vcpkg
+./bootstrap-vcpkg.bat
+./vcpkg integrate install
+
+# install gRPC using vcpkg package manager
+vcpkg install grpc
+```
+
+问题，vcpkg 下载 strawberry-perl-5.30.0.1-32bit.zip 会一直失败。
+在浏览器中下载好，然后放置到 vcpkg/downloads 目录下。
