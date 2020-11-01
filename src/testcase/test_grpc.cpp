@@ -2,6 +2,7 @@
 #include <grpcpp/grpcpp.h>
 #include <grpcpp/health_check_service_interface.h>
 #include <grpcpp/ext/proto_server_reflection_plugin.h>
+#pragma warning(disable: 4251)
 #include "pb/chimera.grpc.pb.h"
 
 using grpc::Server;
