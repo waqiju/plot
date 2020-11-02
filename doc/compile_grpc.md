@@ -93,3 +93,14 @@ Ws2_32.lib
 zlibd.lib
 cares.lib
 address_sorting.lib
+
+
+## visual studio proejct 配置 grpc, 通过 grpc install grpc
+
+链接器 -> 输入 -> 附加库依赖项
+Ws2_32.lib
+
+vcpkg 管理的包，在 visual studio 中使用，直接在代码里 include <头文件> 即可。
+** 不用额外配置头文件包含目录、链接包含目录和链接依赖项 **
+
+这里需要额外配置下 Ws2_32.lib, 原因未知。
