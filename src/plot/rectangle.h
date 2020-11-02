@@ -5,6 +5,9 @@
 #include <vector>
 
 
+namespace chimera
+{
+
 class Rectangle : public Component
 {
 public:
@@ -20,3 +23,5 @@ public:
     int GenerateMesh(std::vector<Vector3>& vertices, std::vector<Color>& colors);
     void Render();
 };
+
+} // chimera

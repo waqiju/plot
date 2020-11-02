@@ -6,6 +6,9 @@
 #include "application/application.h"
 
 
+namespace chimera
+{
+
 Rectangle* Rectangle::Create(Transform* parent, const Vector3& v0, const Vector3& v1, const Color& color)
 {
     auto entity = World::ActiveWorld()->CreateEntity();
@@ -93,3 +96,5 @@ void Rectangle::BatchRender(std::vector<Rectangle*> rectangleList)
     renderer->camera = Application::MainCamera();
     renderer->Render();
 }
+
+} // chimera

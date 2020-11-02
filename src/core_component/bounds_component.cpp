@@ -12,9 +12,9 @@ Bounds& BoundsComponent::RetrieveBounds(Component* target)
     {
         return dynamic_cast<Triangle*>(target)->bounds;
     }
-    if (typeid(*target) == typeid(Rectangle))
+    if (typeid(*target) == typeid(chimera::Rectangle))
     {
-        return dynamic_cast<Rectangle*>(target)->bounds;
+        return dynamic_cast<chimera::Rectangle*>(target)->bounds;
     }
     if (typeid(*target) == typeid(Pentagram))
     {

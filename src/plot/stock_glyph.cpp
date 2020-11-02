@@ -59,7 +59,7 @@ void StockGlyph::RenderRectangle()
     float min = Mathf::Min(chart.open(), chart.close());
     float max = Mathf::Max(chart.open(), chart.close());
     Bounds bounds = Bounds(Vector3(x - 0.45, min, 0), Vector3(x + 0.45, max, 0));
-    Rectangle::GenerateMesh(bounds, color, vertices, colors);
+    chimera::Rectangle::GenerateMesh(bounds, color, vertices, colors);
     Mesh mesh;
     mesh.SetVertices(vertices);
     mesh.SetColors(colors);
@@ -112,7 +112,7 @@ void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
             float min = Mathf::Min(chart.open(), chart.close());
             float max = Mathf::Max(chart.open(), chart.close());
             Bounds bounds = Bounds(Vector3(x - 0.45, min, 0), Vector3(x + 0.45, max, 0));
-            int count = Rectangle::GenerateMesh(bounds, sg->color, vertices, colors);
+            int count = chimera::Rectangle::GenerateMesh(bounds, sg->color, vertices, colors);
             Matrix4x4Helper::ApplyMatrixForEach(sg->GetTransform()->LocalToWorldMatrix(), vertices, vertices.size() - count, vertices.size());
         }
         Mesh mesh;
