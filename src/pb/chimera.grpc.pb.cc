@@ -23,6 +23,7 @@ namespace pb {
 
 static const char* ChimeraRoost_method_names[] = {
   "/pb.ChimeraRoost/Echo",
+  "/pb.ChimeraRoost/Call",
 };
 
 std::unique_ptr< ChimeraRoost::Stub> ChimeraRoost::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -33,27 +34,51 @@ std::unique_ptr< ChimeraRoost::Stub> ChimeraRoost::NewStub(const std::shared_ptr
 
 ChimeraRoost::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_Echo_(ChimeraRoost_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_Call_(ChimeraRoost_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status ChimeraRoost::Stub::Echo(::grpc::ClientContext* context, const ::pb::EchoRequest& request, ::pb::EchoResponse* response) {
+::grpc::Status ChimeraRoost::Stub::Echo(::grpc::ClientContext* context, const ::pb::EchoRequest& request, ::pb::EchoReply* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_Echo_, context, request, response);
 }
 
-void ChimeraRoost::Stub::experimental_async::Echo(::grpc::ClientContext* context, const ::pb::EchoRequest* request, ::pb::EchoResponse* response, std::function<void(::grpc::Status)> f) {
+void ChimeraRoost::Stub::experimental_async::Echo(::grpc::ClientContext* context, const ::pb::EchoRequest* request, ::pb::EchoReply* response, std::function<void(::grpc::Status)> f) {
   ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Echo_, context, request, response, std::move(f));
 }
 
-void ChimeraRoost::Stub::experimental_async::Echo(::grpc::ClientContext* context, const ::pb::EchoRequest* request, ::pb::EchoResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+void ChimeraRoost::Stub::experimental_async::Echo(::grpc::ClientContext* context, const ::pb::EchoRequest* request, ::pb::EchoReply* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
   ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Echo_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::pb::EchoResponse>* ChimeraRoost::Stub::PrepareAsyncEchoRaw(::grpc::ClientContext* context, const ::pb::EchoRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pb::EchoResponse>::Create(channel_.get(), cq, rpcmethod_Echo_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::pb::EchoReply>* ChimeraRoost::Stub::PrepareAsyncEchoRaw(::grpc::ClientContext* context, const ::pb::EchoRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pb::EchoReply>::Create(channel_.get(), cq, rpcmethod_Echo_, context, request, false);
 }
 
-::grpc::ClientAsyncResponseReader< ::pb::EchoResponse>* ChimeraRoost::Stub::AsyncEchoRaw(::grpc::ClientContext* context, const ::pb::EchoRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::pb::EchoReply>* ChimeraRoost::Stub::AsyncEchoRaw(::grpc::ClientContext* context, const ::pb::EchoRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncEchoRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status ChimeraRoost::Stub::Call(::grpc::ClientContext* context, const ::pb::CommandRequest& request, ::pb::CommandReply* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_Call_, context, request, response);
+}
+
+void ChimeraRoost::Stub::experimental_async::Call(::grpc::ClientContext* context, const ::pb::CommandRequest* request, ::pb::CommandReply* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_Call_, context, request, response, std::move(f));
+}
+
+void ChimeraRoost::Stub::experimental_async::Call(::grpc::ClientContext* context, const ::pb::CommandRequest* request, ::pb::CommandReply* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_Call_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::pb::CommandReply>* ChimeraRoost::Stub::PrepareAsyncCallRaw(::grpc::ClientContext* context, const ::pb::CommandRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pb::CommandReply>::Create(channel_.get(), cq, rpcmethod_Call_, context, request, false);
+}
+
+::grpc::ClientAsyncResponseReader< ::pb::CommandReply>* ChimeraRoost::Stub::AsyncCallRaw(::grpc::ClientContext* context, const ::pb::CommandRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCallRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -62,19 +87,36 @@ ChimeraRoost::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       ChimeraRoost_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< ChimeraRoost::Service, ::pb::EchoRequest, ::pb::EchoResponse>(
+      new ::grpc::internal::RpcMethodHandler< ChimeraRoost::Service, ::pb::EchoRequest, ::pb::EchoReply>(
           [](ChimeraRoost::Service* service,
              ::grpc::ServerContext* ctx,
              const ::pb::EchoRequest* req,
-             ::pb::EchoResponse* resp) {
+             ::pb::EchoReply* resp) {
                return service->Echo(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      ChimeraRoost_method_names[1],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< ChimeraRoost::Service, ::pb::CommandRequest, ::pb::CommandReply>(
+          [](ChimeraRoost::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::pb::CommandRequest* req,
+             ::pb::CommandReply* resp) {
+               return service->Call(ctx, req, resp);
              }, this)));
 }
 
 ChimeraRoost::Service::~Service() {
 }
 
-::grpc::Status ChimeraRoost::Service::Echo(::grpc::ServerContext* context, const ::pb::EchoRequest* request, ::pb::EchoResponse* response) {
+::grpc::Status ChimeraRoost::Service::Echo(::grpc::ServerContext* context, const ::pb::EchoRequest* request, ::pb::EchoReply* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status ChimeraRoost::Service::Call(::grpc::ServerContext* context, const ::pb::CommandRequest* request, ::pb::CommandReply* response) {
   (void) context;
   (void) request;
   (void) response;

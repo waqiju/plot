@@ -9,14 +9,23 @@ using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
 using pb::EchoRequest;
-using pb::EchoResponse;
+using pb::EchoReply;
+using pb::CommandRequest;
+using pb::CommandReply;
 using pb::ChimeraRoost;
 
 
 class ChimeraServerImpl final : public ChimeraRoost::Service {
-    Status Echo(ServerContext* context, const EchoRequest* request, EchoResponse* response) override
+    Status Echo(ServerContext* context, const EchoRequest* request, EchoReply* reply) override
     {
-        response->set_text(request->text());
+        request->PrintDebugString();
+        reply->set_text(request->text());
+        return Status::OK;
+    }
+
+    Status Call(ServerContext* context, const CommandRequest* request, CommandReply* reply) override
+    {
+        request->PrintDebugString();
         return Status::OK;
     }
 };

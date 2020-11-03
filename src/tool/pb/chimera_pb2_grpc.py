@@ -17,7 +17,12 @@ class ChimeraRoostStub(object):
         self.Echo = channel.unary_unary(
                 '/pb.ChimeraRoost/Echo',
                 request_serializer=pb_dot_chimera__pb2.EchoRequest.SerializeToString,
-                response_deserializer=pb_dot_chimera__pb2.EchoResponse.FromString,
+                response_deserializer=pb_dot_chimera__pb2.EchoReply.FromString,
+                )
+        self.Call = channel.unary_unary(
+                '/pb.ChimeraRoost/Call',
+                request_serializer=pb_dot_chimera__pb2.CommandRequest.SerializeToString,
+                response_deserializer=pb_dot_chimera__pb2.CommandReply.FromString,
                 )
 
 
@@ -30,13 +35,24 @@ class ChimeraRoostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Call(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ChimeraRoostServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Echo': grpc.unary_unary_rpc_method_handler(
                     servicer.Echo,
                     request_deserializer=pb_dot_chimera__pb2.EchoRequest.FromString,
-                    response_serializer=pb_dot_chimera__pb2.EchoResponse.SerializeToString,
+                    response_serializer=pb_dot_chimera__pb2.EchoReply.SerializeToString,
+            ),
+            'Call': grpc.unary_unary_rpc_method_handler(
+                    servicer.Call,
+                    request_deserializer=pb_dot_chimera__pb2.CommandRequest.FromString,
+                    response_serializer=pb_dot_chimera__pb2.CommandReply.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -61,6 +77,23 @@ class ChimeraRoost(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/pb.ChimeraRoost/Echo',
             pb_dot_chimera__pb2.EchoRequest.SerializeToString,
-            pb_dot_chimera__pb2.EchoResponse.FromString,
+            pb_dot_chimera__pb2.EchoReply.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Call(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/pb.ChimeraRoost/Call',
+            pb_dot_chimera__pb2.CommandRequest.SerializeToString,
+            pb_dot_chimera__pb2.CommandReply.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

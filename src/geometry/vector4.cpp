@@ -1,6 +1,7 @@
 #include "vector4.h"
 #include <cmath>
 #include <cassert>
+#include <stdexcept>
 
 
 Vector4 Vector4::zero = Vector4(0, 0, 0, 0);
@@ -42,6 +43,8 @@ float& Vector4::operator[](size_t i)
 		return z;
 	case 3:
 		return w;
+	default:
+		throw std::runtime_error("should not go here!");
 	}
 }
 
@@ -58,6 +61,8 @@ float const& Vector4::operator[](size_t i) const
 		return z;
 	case 3:
 		return w;
+	default:
+		throw std::runtime_error("should not go here!");
 	}
 }
 

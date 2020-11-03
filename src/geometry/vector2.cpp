@@ -2,6 +2,7 @@
 #include <cmath>
 #include <cassert>
 #include <sstream>
+#include <stdexcept>
 
 
 Vector2 Vector2::zero = Vector2(0, 0);
@@ -59,6 +60,8 @@ float& Vector2::operator[](size_t i)
         return x;
     case 1:
         return y;
+    default:
+        throw std::runtime_error("should not go here!");
     }
 }
 
@@ -71,6 +74,8 @@ const float& Vector2::operator[](size_t i) const
         return x;
     case 1:
         return y;
+    default:
+        throw std::runtime_error("should not go here!");
     }
 }
 
