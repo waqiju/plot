@@ -13,6 +13,9 @@ public:
     // 系统号段
     static const int SystemSectionBegin;
     static const int SystemSectionEnd;
+    static const int WorldRoot;
+    static const int PlotRoot;
+
 
     int NextAutoID()
     {
