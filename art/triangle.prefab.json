@@ -1,0 +1,81 @@
+{
+  "worldObjectPool": [
+    {
+      "id": 1000000,
+      "name": "triangle",
+      "type": "Entity",
+      "members": [
+        {
+          "key": "components",
+          "value": 1000001
+        }
+      ]
+    },
+    {
+      "id": 1000001,
+      "name": "List",
+      "type": "List",
+      "members": [
+        {
+          "value": 1000002
+        },
+        {
+          "value": 1000003
+        }
+      ]
+    },
+    {
+      "id": 1000002,
+      "name": "Transform",
+      "type": "Transform",
+      "members": [
+        {
+          "key": "parent",
+          "value": 1001
+        }
+      ]
+    },
+    {
+      "id": 1000003,
+      "name": "Triangle",
+      "type": "Triangle",
+      "members": [
+        {
+          "key": "bounds",
+          "value": 1000004
+        }
+      ]
+    },
+    {
+      "id": 1000004,
+      "name": "Bounds",
+      "type": "Bounds",
+      "members": [
+        {},
+        {
+          "value": 1
+        },
+        {
+          "value": 2
+        },
+        {
+          "value": 3
+        },
+        {
+          "value": 4
+        },
+        {
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "floatPool": [
+    -1.0,
+    -1.0,
+    0.0,
+    1.0,
+    1.0,
+    0.0
+  ]
+}

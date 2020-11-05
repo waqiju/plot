@@ -153,9 +153,6 @@
     <ClCompile Include="src\plot\stock_vertical_layout.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\testcase\test_grpc.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\pb\chimera.grpc.pb.cc">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -202,6 +199,15 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\pb\xueqiu.pb.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\testcase\test_prefab.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\file_helper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pb\prefab.pb.cc">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -426,6 +432,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\pb\xueqiu.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\file_helper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pb\prefab.pb.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

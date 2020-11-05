@@ -139,6 +139,7 @@
     <ClCompile Include="src\asset_importer.cpp" />
     <ClCompile Include="src\camera.cpp" />
     <ClCompile Include="src\camera_helper.cpp" />
+    <ClCompile Include="src\common\file_helper.cpp" />
     <ClCompile Include="src\core_component\bounds_component.cpp" />
     <ClCompile Include="src\core_component\text_component.cpp" />
     <ClCompile Include="src\core_component\uniform_scale_component.cpp" />
@@ -174,6 +175,7 @@
     <ClCompile Include="src\pb\message.pb.cc" />
     <ClCompile Include="src\pb\monitor.grpc.pb.cc" />
     <ClCompile Include="src\pb\monitor.pb.cc" />
+    <ClCompile Include="src\pb\prefab.pb.cc" />
     <ClCompile Include="src\pb\prophet.grpc.pb.cc" />
     <ClCompile Include="src\pb\prophet.pb.cc" />
     <ClCompile Include="src\pb\trade.grpc.pb.cc" />
@@ -191,7 +193,7 @@
     <ClCompile Include="src\plot\triangle.cpp" />
     <ClCompile Include="src\resource\resource_manager.cpp" />
     <ClCompile Include="src\shader.cpp" />
-    <ClCompile Include="src\testcase\test_grpc.cpp" />
+    <ClCompile Include="src\testcase\test_prefab.cpp" />
     <ClCompile Include="src\texture.cpp" />
     <ClCompile Include="src\text_2d.cpp" />
     <ClCompile Include="src\ui_helper.cpp" />
@@ -206,6 +208,7 @@
     <ClInclude Include="src\camera_helper.h" />
     <ClInclude Include="src\common\common.h" />
     <ClInclude Include="src\common\event.h" />
+    <ClInclude Include="src\common\file_helper.h" />
     <ClInclude Include="src\core_component\bounds_component.h" />
     <ClInclude Include="src\core_component\core_component.h" />
     <ClInclude Include="src\core_component\layout_define.h" />
@@ -248,6 +251,7 @@
     <ClInclude Include="src\pb\message.pb.h" />
     <ClInclude Include="src\pb\monitor.grpc.pb.h" />
     <ClInclude Include="src\pb\monitor.pb.h" />
+    <ClInclude Include="src\pb\prefab.pb.h" />
     <ClInclude Include="src\pb\prophet.grpc.pb.h" />
     <ClInclude Include="src\pb\prophet.pb.h" />
     <ClInclude Include="src\pb\trade.grpc.pb.h" />
