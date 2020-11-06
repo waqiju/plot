@@ -8,6 +8,7 @@
 class WorldObject
 {
 public:
+    int id = 0;
     std::string name = "Unnamed";
     int GetInstanceID();
     int GetHashCode();

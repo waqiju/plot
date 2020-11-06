@@ -20,7 +20,6 @@ void BuildObjectIdMap(pb::Prefab prefab);
 
 SpaceGridComponent* g_SpaceGrid;
 Transform* g_PlotRoot;
-std::map<int, const pb::WorldObject*> g_ObjectIdMap;
 
 
 int main()
@@ -98,15 +97,5 @@ void LoadPrefab(std::string path)
 
             }
         }
-    }
-}
-
-void BuildObjectIdMap(pb::Prefab prefab)
-{
-    g_ObjectIdMap.clear();
-
-    for (auto& object : prefab.world_object_pool())
-    {
-        g_ObjectIdMap[object.id()] = &object;
     }
 }

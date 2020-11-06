@@ -210,6 +210,9 @@
     <ClCompile Include="src\pb\prefab.pb.cc">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\asset_loader\prefab_loader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\default_shader.h">
@@ -438,6 +441,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\pb\prefab.pb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\asset_loader\asset_loader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\asset_loader\prefab_loader.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

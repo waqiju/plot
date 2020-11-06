@@ -2,7 +2,7 @@
 
 int WorldObject::GetInstanceID()
 {
-    return 0;
+    return id;
 }
 
 int WorldObject::GetHashCode()

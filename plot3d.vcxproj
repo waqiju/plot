@@ -137,6 +137,7 @@
     <ClCompile Include="src\application\input.cpp" />
     <ClCompile Include="src\application\time.cpp" />
     <ClCompile Include="src\asset_importer.cpp" />
+    <ClCompile Include="src\asset_loader\prefab_loader.cpp" />
     <ClCompile Include="src\camera.cpp" />
     <ClCompile Include="src\camera_helper.cpp" />
     <ClCompile Include="src\common\file_helper.cpp" />
@@ -204,6 +205,8 @@
     <ClInclude Include="src\application\input.h" />
     <ClInclude Include="src\application\time.h" />
     <ClInclude Include="src\asset_importer.h" />
+    <ClInclude Include="src\asset_loader\asset_loader.h" />
+    <ClInclude Include="src\asset_loader\prefab_loader.h" />
     <ClInclude Include="src\camera.h" />
     <ClInclude Include="src\camera_helper.h" />
     <ClInclude Include="src\common\common.h" />
