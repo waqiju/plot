@@ -449,5 +449,8 @@
     <ClInclude Include="src\asset_loader\prefab_loader.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\asset_loader\object_convertor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

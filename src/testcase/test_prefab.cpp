@@ -11,11 +11,11 @@
 #include "common/common.h"
 #include "pb/prefab.pb.h"
 #include <map>
+#include <asset_loader/asset_loader.h>
 
 
 void OnFrameUpdate();
 void LoadPrefab(std::string path);
-void BuildObjectIdMap(pb::Prefab prefab);
 // void LoadEntity(pb::WorldObject object);
 
 SpaceGridComponent* g_SpaceGrid;
@@ -84,18 +84,7 @@ void LoadPrefab(std::string path)
     pb::Prefab prefab;
     prefab.ParseFromString(content);
 
-    BuildObjectIdMap(prefab);
     // load
-    pb::WorldObject prefabRoot = prefab.world_object_pool()[0];
-    if (prefabRoot.type() == "Entity")
-    {
-        World::ActiveWorld()->CreateEntity(prefabRoot.name());
-        for (const pb::Member& member : prefabRoot.members())
-        {
-            if (member.key() == "components")
-            {
-
-            }
-        }
-    }
+    auto loader = PrefabLoader(&prefab);
+    loader.Load();
 }

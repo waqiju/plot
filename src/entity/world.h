@@ -19,6 +19,8 @@ public:
     template<typename T> std::vector<T*> GetComponentsInRootEnities();
     template<typename T> std::vector<T*> GetComponentsInAllEnities();
 	void FlushTransform();
+    // Find
+    Entity* Find(int id);
 
 private:
     static World* s_ActiveWorld;

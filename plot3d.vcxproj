@@ -206,6 +206,7 @@
     <ClInclude Include="src\application\time.h" />
     <ClInclude Include="src\asset_importer.h" />
     <ClInclude Include="src\asset_loader\asset_loader.h" />
+    <ClInclude Include="src\asset_loader\object_convertor.h" />
     <ClInclude Include="src\asset_loader\prefab_loader.h" />
     <ClInclude Include="src\camera.h" />
     <ClInclude Include="src\camera_helper.h" />
