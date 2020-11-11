@@ -201,9 +201,6 @@
     <ClCompile Include="src\pb\xueqiu.pb.cc">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\testcase\test_prefab.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\common\file_helper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -214,6 +211,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\entity\object_id.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\testcase\test_stock_glyph.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

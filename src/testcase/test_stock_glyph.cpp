@@ -7,7 +7,6 @@
 #include "plot/plot.h"
 #include "ui_helper.h"
 #include "camera_helper.h"
-#include "pb/prophet.pb.h"
 using namespace chimera;
 
 
@@ -54,10 +53,10 @@ void OnFrameUpdate()
 
 void GenerateRandomStockGlyph()
 {
-    std::vector<KChart> chartList;
+    std::vector<StockMetadata> metadataList;
     for (int x = 0; x <= 200; ++x)
     {
-        KChart chart;
+        StockMetadata metadata;
         float close;
         if (x == 0)
         {
@@ -65,19 +64,19 @@ void GenerateRandomStockGlyph()
         }
         else
         {
-            close = chartList[x-1].close() + Random::Range(-2.f, 2.2f);
+            close = metadataList[x-1].close + Random::Range(-2.f, 2.2f);
         }
         float open = close * Random::Range(0.97, 1.03) + Random::Range(-1, 1);
         float max = Mathf::Max(open, close);
         float min = Mathf::Min(open, close);
         float high = max * Random::Range(1.001, 1.02);
         float low = min * Random::Range(0.999, 0.98);
-        chart.set_open(open);
-        chart.set_close(close);
-        chart.set_high(high);
-        chart.set_low(low);
-        chartList.push_back(chart);
+        metadata.open = open;
+        metadata.close = close;
+        metadata.high = high;
+        metadata.low = low;
+        metadataList.push_back(metadata);
 
-        StockGlyph::Create(g_PlotRoot, x, chart);
+        StockGlyph::Create(g_PlotRoot, x, metadata);
     }
 }

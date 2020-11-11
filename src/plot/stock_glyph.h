@@ -4,13 +4,13 @@
 #include "entity/ec.h"
 #include <vector>
 #include <utility>
-#include "pb/prophet.pb.h"
+#include "stock_metadata.h"
 
 
 class StockGlyph : public Component
 {
 public:
-    static StockGlyph* Create(Transform* parent, float x, const KChart& chart);
+    static StockGlyph* Create(Transform* parent, float x, const StockMetadata& metadata);
     static void BatchRender(std::vector<StockGlyph*>& stockGlyph);
 	static std::pair<float, float> MeshVertexPairX(float x);
 
@@ -19,10 +19,10 @@ public:
     Bounds bounds;
     Color color = Color::white;
     float x;
-    KChart chart;
+    StockMetadata metadata;
 
 
-    void Reset(float inX, const KChart& inKChart);
+    void Reset(float inX, const StockMetadata& inMetadata);
     void Render();
 private:
     void RenderRectangle();

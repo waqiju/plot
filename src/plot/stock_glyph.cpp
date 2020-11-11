@@ -8,11 +8,11 @@
 #include "core_component/core_component.h"
 
 
-StockGlyph* StockGlyph::Create(Transform* parent, float x, const KChart& chart)
+StockGlyph* StockGlyph::Create(Transform* parent, float x, const StockMetadata& metadata)
 {
     auto entity = World::ActiveWorld()->CreateEntity();
     auto stockGlyph = entity->AddComponent<StockGlyph>();
-    stockGlyph->Reset(x, chart);
+    stockGlyph->Reset(x, metadata);
 
     entity->GetComponent<Transform>()->SetParent(parent);
     // add bounds component
@@ -23,16 +23,16 @@ StockGlyph* StockGlyph::Create(Transform* parent, float x, const KChart& chart)
     return stockGlyph;
 }
 
-void StockGlyph::Reset(float inX, const KChart& inKChart)
+void StockGlyph::Reset(float inX, const StockMetadata& inMetadata)
 {
     x = inX;
-    chart = inKChart;
+    metadata = inMetadata;
     // color
-    if (chart.open() == chart.close())
+    if (metadata.open == metadata.close)
     {
         color = Color::grey;
     }
-    else if (chart.open() < chart.close())
+    else if (metadata.open < metadata.close)
     {
         color = Color::red;
     }
@@ -41,8 +41,8 @@ void StockGlyph::Reset(float inX, const KChart& inKChart)
         color = Color::green;
     }
 	auto vertexPairX = MeshVertexPairX(x);
-    bounds.min = Vector3(vertexPairX.first, chart.low(), 0);
-    bounds.max = Vector3(vertexPairX.second, chart.high(), 0);
+    bounds.min = Vector3(vertexPairX.first, metadata.low, 0);
+    bounds.max = Vector3(vertexPairX.second, metadata.high, 0);
 }
 
 void StockGlyph::Render()
@@ -56,8 +56,8 @@ void StockGlyph::RenderRectangle()
     // mesh
     std::vector<Vector3> vertices;
     std::vector<Color> colors;
-    float min = Mathf::Min(chart.open(), chart.close());
-    float max = Mathf::Max(chart.open(), chart.close());
+    float min = Mathf::Min(metadata.open, metadata.close);
+    float max = Mathf::Max(metadata.open, metadata.close);
     Bounds bounds = Bounds(Vector3(x - 0.45, min, 0), Vector3(x + 0.45, max, 0));
     chimera::Rectangle::GenerateMesh(bounds, color, vertices, colors);
     Mesh mesh;
@@ -80,7 +80,7 @@ void StockGlyph::RenderSegment()
     // mesh
     std::vector<Vector3> vertices;
     std::vector<Color> colors;
-    Bounds bounds(Vector3(x, chart.low(), 0), Vector3(x, chart.high(), 0));
+    Bounds bounds(Vector3(x, metadata.low, 0), Vector3(x, metadata.high, 0));
     chimera::Segment::GenerateMesh(bounds, color, vertices, colors);
     Mesh mesh;
     mesh.SetTopology(MeshTopology::Lines);
@@ -108,9 +108,9 @@ void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
         for (auto sg:stockGlyphList)
         {
             float x = sg->x;
-            auto& chart = sg->chart;
-            float min = Mathf::Min(chart.open(), chart.close());
-            float max = Mathf::Max(chart.open(), chart.close());
+            auto& metadata = sg->metadata;
+            float min = Mathf::Min(metadata.open, metadata.close);
+            float max = Mathf::Max(metadata.open, metadata.close);
             Bounds bounds = Bounds(Vector3(x - 0.45, min, 0), Vector3(x + 0.45, max, 0));
             int count = chimera::Rectangle::GenerateMesh(bounds, sg->color, vertices, colors);
             Matrix4x4Helper::ApplyMatrixForEach(sg->GetTransform()->LocalToWorldMatrix(), vertices, vertices.size() - count, vertices.size());
@@ -138,8 +138,8 @@ void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
         for (auto sg:stockGlyphList)
         {
             float x = sg->x;
-            auto& chart = sg->chart;
-            Bounds bounds(Vector3(x, chart.low(), 0), Vector3(x, chart.high(), 0));
+            auto& metadata = sg->metadata;
+            Bounds bounds(Vector3(x, metadata.low, 0), Vector3(x, metadata.high, 0));
             int count = chimera::Segment::GenerateMesh(bounds, sg->color, vertices, colors);
             Matrix4x4Helper::ApplyMatrixForEach(sg->GetTransform()->LocalToWorldMatrix(), vertices, vertices.size() - count, vertices.size());
         }
