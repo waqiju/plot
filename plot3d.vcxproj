@@ -146,6 +146,7 @@
     <ClCompile Include="src\core_component\uniform_scale_component.cpp" />
     <ClCompile Include="src\entity\component.cpp" />
     <ClCompile Include="src\entity\entity.cpp" />
+    <ClCompile Include="src\entity\object_id.cpp" />
     <ClCompile Include="src\entity\transform.cpp" />
     <ClCompile Include="src\entity\world.cpp" />
     <ClCompile Include="src\entity\world_object.cpp" />
@@ -222,6 +223,7 @@
     <ClInclude Include="src\entity\component.h" />
     <ClInclude Include="src\entity\ec.h" />
     <ClInclude Include="src\entity\entity.h" />
+    <ClInclude Include="src\entity\object_id.h" />
     <ClInclude Include="src\entity\transform.h" />
     <ClInclude Include="src\entity\world.h" />
     <ClInclude Include="src\entity\world_object.h" />

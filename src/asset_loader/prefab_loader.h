@@ -1,7 +1,9 @@
 #pragma once
 #include <vector>
 #include <map>
+#include <string>
 #include "pb/prefab.pb.h"
+#include "entity/ec.h"
 using PbObjectIdMap = std::map<int, const pb::WorldObject*>;
 
 
@@ -13,6 +15,9 @@ public:
     static float GetFloatElement(const pb::WorldObject& object, int index, const pb::Prefab& prefab);
 	static std::vector<int> GetListMember(const pb::WorldObject& object, const std::string& key, PbObjectIdMap& objectIdMap);
 
+    // load
+    static void LoadFromFile(std::string path);
+
     PrefabLoader(const pb::Prefab* prefab);
     void Load();
 
@@ -22,5 +27,7 @@ private:
 
     void BuildObjectIdMap();
     void LoadEntity(const pb::WorldObject& object);
-    const pb::WorldObject& GetObject(int id);
+	const pb::WorldObject& GetObject(int id);
+
+    Transform* FindTransform(int id);
 };

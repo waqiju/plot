@@ -6,6 +6,7 @@ namespace PlotHelper
 {
     extern std::string kPlotRootName;
 
+    Entity* CreatePlotRootEntity();
     Entity* FindPlotRootEntity(); 
     void CollectPlotRootBounds(Entity* plotEntity, Bounds& fullBounds);
 }

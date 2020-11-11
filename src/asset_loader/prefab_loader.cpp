@@ -1,8 +1,9 @@
 #include "prefab_loader.h"
-#include "object_convertor.h"
+#include "geometry_convertor.h"
 #include <assert.h>
 #include "entity/ec.h"
 #include "plot/plot.h"
+#include "common/common.h"
 
 
 int PrefabLoader::GetIntMember(const pb::WorldObject& object, const std::string& key)
@@ -51,6 +52,17 @@ std::vector<int> PrefabLoader::GetListMember(const pb::WorldObject& object, cons
     return list;
 }
 
+void PrefabLoader::LoadFromFile(std::string path)
+{
+    std::string content;
+    FileHelper::Read(path, content);
+    pb::Prefab prefab;
+    prefab.ParseFromString(content);
+
+    auto loader = PrefabLoader(&prefab);
+    loader.Load();
+}
+
 PrefabLoader::PrefabLoader(const pb::Prefab* prefab)
 {
     m_Prefab = prefab;
@@ -91,16 +103,16 @@ void PrefabLoader::LoadEntity(const pb::WorldObject& object)
 		{
 			auto transform = entity->GetTransform();
 			auto parentId = GetIntMember(componentObj, "parent");
-			if (parentId != 0 && World::ActiveWorld()->Find(parentId) != NULL)
-			{
-				transform->SetParent(World::ActiveWorld()->Find(parentId)->GetTransform());
-			}
+            transform->SetParent(FindTransform(parentId));
 		}
 		else if (componentObj.type() == "Triangle")
 		{
 			auto triangle = entity->GetOrAddComponent<Triangle>();
-            //ConvertBounds(, triangle->bounds);
-			triangle->bounds = Bounds(Vector3::zero, Vector3::one);
+            int boundsObjectID = GetIntMember(componentObj, "bounds");
+            if (boundsObjectID)
+            {
+                ConvertBounds(GetObject(boundsObjectID), triangle->bounds, *m_Prefab);
+            }
 		}
 	}
 }
@@ -110,4 +122,18 @@ const pb::WorldObject& PrefabLoader::GetObject(int id)
     auto objectPtr = m_ObjectIdMap[id];
     assert(objectPtr != NULL);
     return *objectPtr;
+}
+
+Transform* PrefabLoader::FindTransform(int id)
+{
+    if (id == 0)
+        return NULL;
+
+    Entity* entity = World::ActiveWorld()->Find(id);
+    if (entity != NULL)
+    {
+        return entity->GetTransform();
+    }
+
+    return NULL;
 }

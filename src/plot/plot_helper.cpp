@@ -1,10 +1,24 @@
 #include "plot_helper.h"
+#include "space_grid_component.h"
 #include "core_component/core_component.h"
 
 
 namespace PlotHelper
 {
     std::string kPlotRootName = "PlotRoot";
+
+    Entity* CreatePlotRootEntity()
+    {
+        auto plotRootEntity = World::ActiveWorld()->CreateEntity("PlotRoot");
+        plotRootEntity->id = ObjectID::PlotRoot;
+        auto plotRootTransform = plotRootEntity->GetComponent<Transform>();
+        // SpaceGrid
+        auto spaceGridEntity = World::ActiveWorld()->CreateEntity("SpaceGrid");
+        spaceGridEntity->GetComponent<Transform>()->SetParent(plotRootTransform);
+        spaceGridEntity->AddComponent<SpaceGridComponent>();
+
+        return plotRootEntity;
+    }
 
     Entity* FindPlotRootEntity()
     {
