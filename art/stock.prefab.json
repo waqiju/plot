@@ -1,0 +1,119 @@
+{
+  "worldObjectPool": [
+    {
+      "id": 1000000,
+      "name": "stock",
+      "type": "Entity",
+      "members": [
+        {
+          "key": "components",
+          "value": 1000001
+        }
+      ]
+    },
+    {
+      "id": 1000001,
+      "name": "List",
+      "type": "List",
+      "members": [
+        {
+          "value": 1000002
+        },
+        {
+          "value": 1000003
+        },
+        {
+          "value": 1000005
+        }
+      ]
+    },
+    {
+      "id": 1000002,
+      "name": "Transform",
+      "type": "Transform",
+      "members": [
+        {
+          "key": "parent",
+          "value": 1001
+        }
+      ]
+    },
+    {
+      "id": 1000003,
+      "name": "StockGlyph",
+      "type": "StockGlyph",
+      "members": [
+        {
+          "key": "x"
+        },
+        {
+          "key": "metadata",
+          "value": 1000004
+        }
+      ]
+    },
+    {
+      "id": 1000004,
+      "name": "StockMetadata",
+      "type": "StockMetadata",
+      "members": [
+        {
+          "key": "code"
+        },
+        {
+          "key": "data",
+          "value": 1
+        },
+        {
+          "key": "open"
+        },
+        {
+          "key": "high",
+          "value": 1
+        },
+        {
+          "key": "low",
+          "value": 2
+        },
+        {
+          "key": "close",
+          "value": 3
+        },
+        {
+          "key": "vol",
+          "value": 4
+        },
+        {
+          "key": "amount",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "id": 1000005,
+      "name": "BoundsComponent",
+      "type": "BoundsComponent",
+      "members": [
+        {
+          "key": "target",
+          "value": 1000003
+        }
+      ]
+    }
+  ],
+  "floatPool": [
+    0.0
+  ],
+  "doublePool": [
+    1.0,
+    3.0,
+    1.0,
+    3.0,
+    100.0,
+    100.0
+  ],
+  "stringPool": [
+    "600036.SH",
+    "20201112"
+  ]
+}

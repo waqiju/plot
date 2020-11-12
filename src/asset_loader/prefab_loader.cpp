@@ -1,5 +1,6 @@
 #include "prefab_loader.h"
-#include "geometry_convertor.h"
+#include "object_convertor.h"
+#include "component_convertor.h"
 #include <assert.h>
 #include "entity/ec.h"
 #include "plot/plot.h"
@@ -29,6 +30,32 @@ float PrefabLoader::GetFloatMember(const pb::WorldObject& object, const std::str
     }
 
     return 0;
+}
+
+double PrefabLoader::GetDoubleMember(const pb::WorldObject& object, const std::string& key, const pb::Prefab& prefab)
+{
+    for (const pb::Member& member : object.members())
+    {
+        if (member.key() == key)
+        {
+            return prefab.double_pool()[member.value()];
+        }
+    }
+
+    return 0;
+}
+
+std::string PrefabLoader::GetStringMember(const pb::WorldObject& object, const std::string& key, const pb::Prefab& prefab)
+{
+    for (const pb::Member& member : object.members())
+    {
+        if (member.key() == key)
+        {
+            return prefab.string_pool()[member.value()];
+        }
+    }
+
+    return "";
 }
 
 float PrefabLoader::GetFloatElement(const pb::WorldObject& object, int index, const pb::Prefab& prefab)
@@ -99,21 +126,7 @@ void PrefabLoader::LoadEntity(const pb::WorldObject& object)
 	for (int component : components)
 	{
 		auto componentObj = GetObject(component);
-		if (componentObj.type() == "Transform")
-		{
-			auto transform = entity->GetTransform();
-			auto parentId = GetIntMember(componentObj, "parent");
-            transform->SetParent(FindTransform(parentId));
-		}
-		else if (componentObj.type() == "Triangle")
-		{
-			auto triangle = entity->GetOrAddComponent<Triangle>();
-            int boundsObjectID = GetIntMember(componentObj, "bounds");
-            if (boundsObjectID)
-            {
-                ConvertBounds(GetObject(boundsObjectID), triangle->bounds, *m_Prefab);
-            }
-		}
+        AddComponentToEntity(*entity, componentObj, *this);
 	}
 }
 

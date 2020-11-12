@@ -26,8 +26,9 @@ int main()
 
     // PlotRoot
     auto plotRootEntity = PlotHelper::CreatePlotRootEntity();
-    // triangle.prefab
-    PrefabLoader::LoadFromFile("art/triangle.prefab");
+    // Prefab
+    // PrefabLoader::LoadFromFile("art/triangle.prefab");
+    PrefabLoader::LoadFromFile("art/stock.prefab");
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();
@@ -63,4 +64,6 @@ void OnFrameUpdate()
     chimera::Segment::BatchRender(segmentList);
     auto textCpList = World::ActiveWorld()->GetComponentsInAllEnities<TextComponent>();
     TextComponent::BatchRender(textCpList);
+    auto stockGlyphList = World::ActiveWorld()->GetComponentsInAllEnities<StockGlyph>();
+    StockGlyph::BatchRender(stockGlyphList);
 }
