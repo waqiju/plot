@@ -213,7 +213,13 @@
     <ClCompile Include="src\entity\object_id.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\testcase\test_prefab.cpp">
+    <ClCompile Include="src\command\clear_children_command.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chimera_server.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -456,6 +462,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\entity\object_id.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\command\clear_children_command.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\command\command.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chimera_server.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

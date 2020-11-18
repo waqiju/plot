@@ -19,3 +19,12 @@ void Entity::SetActive(bool status)
 {
     m_Active = status;
 }
+
+Entity::~Entity()
+{
+    for (auto pair : m_ComponentMap)
+    {
+        auto component = pair.second;
+        delete component;
+    }
+}

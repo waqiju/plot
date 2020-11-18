@@ -140,6 +140,8 @@
     <ClCompile Include="src\asset_loader\prefab_loader.cpp" />
     <ClCompile Include="src\camera.cpp" />
     <ClCompile Include="src\camera_helper.cpp" />
+    <ClCompile Include="src\chimera_server.cpp" />
+    <ClCompile Include="src\command\clear_children_command.cpp" />
     <ClCompile Include="src\common\file_helper.cpp" />
     <ClCompile Include="src\core_component\bounds_component.cpp" />
     <ClCompile Include="src\core_component\text_component.cpp" />
@@ -163,6 +165,7 @@
     <ClCompile Include="src\geometry\vector4.cpp" />
     <ClCompile Include="src\glad.c" />
     <ClCompile Include="src\graphic\color.cpp" />
+    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\material.cpp" />
     <ClCompile Include="src\material_property_block.cpp" />
     <ClCompile Include="src\mesh.cpp" />
@@ -195,7 +198,6 @@
     <ClCompile Include="src\plot\triangle.cpp" />
     <ClCompile Include="src\resource\resource_manager.cpp" />
     <ClCompile Include="src\shader.cpp" />
-    <ClCompile Include="src\testcase\test_prefab.cpp" />
     <ClCompile Include="src\texture.cpp" />
     <ClCompile Include="src\text_2d.cpp" />
     <ClCompile Include="src\ui_helper.cpp" />
@@ -211,6 +213,9 @@
     <ClInclude Include="src\asset_loader\prefab_loader.h" />
     <ClInclude Include="src\camera.h" />
     <ClInclude Include="src\camera_helper.h" />
+    <ClInclude Include="src\chimera_server.h" />
+    <ClInclude Include="src\command\clear_children_command.h" />
+    <ClInclude Include="src\command\command.h" />
     <ClInclude Include="src\common\common.h" />
     <ClInclude Include="src\common\event.h" />
     <ClInclude Include="src\common\file_helper.h" />

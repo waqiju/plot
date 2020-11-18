@@ -33,6 +33,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "pb/prefab.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_pb_2fchimera_2eproto
@@ -676,6 +677,7 @@ class CommandParameter PROTOBUF_FINAL :
   enum : int {
     kPStringFieldNumber = 5,
     kPBytesFieldNumber = 6,
+    kPrefabFieldNumber = 7,
     kPBoolFieldNumber = 1,
     kPIntFieldNumber = 2,
     kPDoubleFieldNumber = 4,
@@ -712,6 +714,24 @@ class CommandParameter PROTOBUF_FINAL :
   void _internal_set_p_bytes(const std::string& value);
   std::string* _internal_mutable_p_bytes();
   public:
+
+  // .pb.Prefab prefab = 7;
+  bool has_prefab() const;
+  private:
+  bool _internal_has_prefab() const;
+  public:
+  void clear_prefab();
+  const ::pb::Prefab& prefab() const;
+  ::pb::Prefab* release_prefab();
+  ::pb::Prefab* mutable_prefab();
+  void set_allocated_prefab(::pb::Prefab* prefab);
+  private:
+  const ::pb::Prefab& _internal_prefab() const;
+  ::pb::Prefab* _internal_mutable_prefab();
+  public:
+  void unsafe_arena_set_allocated_prefab(
+      ::pb::Prefab* prefab);
+  ::pb::Prefab* unsafe_arena_release_prefab();
 
   // bool p_bool = 1;
   void clear_p_bool();
@@ -758,6 +778,7 @@ class CommandParameter PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr p_string_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr p_bytes_;
+  ::pb::Prefab* prefab_;
   bool p_bool_;
   ::PROTOBUF_NAMESPACE_ID::int32 p_int_;
   double p_double_;
@@ -1370,6 +1391,83 @@ inline void CommandParameter::set_allocated_p_bytes(std::string* p_bytes) {
   p_bytes_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), p_bytes,
       GetArena());
   // @@protoc_insertion_point(field_set_allocated:pb.CommandParameter.p_bytes)
+}
+
+// .pb.Prefab prefab = 7;
+inline bool CommandParameter::_internal_has_prefab() const {
+  return this != internal_default_instance() && prefab_ != nullptr;
+}
+inline bool CommandParameter::has_prefab() const {
+  return _internal_has_prefab();
+}
+inline const ::pb::Prefab& CommandParameter::_internal_prefab() const {
+  const ::pb::Prefab* p = prefab_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::pb::Prefab*>(
+      &::pb::_Prefab_default_instance_);
+}
+inline const ::pb::Prefab& CommandParameter::prefab() const {
+  // @@protoc_insertion_point(field_get:pb.CommandParameter.prefab)
+  return _internal_prefab();
+}
+inline void CommandParameter::unsafe_arena_set_allocated_prefab(
+    ::pb::Prefab* prefab) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(prefab_);
+  }
+  prefab_ = prefab;
+  if (prefab) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:pb.CommandParameter.prefab)
+}
+inline ::pb::Prefab* CommandParameter::release_prefab() {
+  
+  ::pb::Prefab* temp = prefab_;
+  prefab_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::pb::Prefab* CommandParameter::unsafe_arena_release_prefab() {
+  // @@protoc_insertion_point(field_release:pb.CommandParameter.prefab)
+  
+  ::pb::Prefab* temp = prefab_;
+  prefab_ = nullptr;
+  return temp;
+}
+inline ::pb::Prefab* CommandParameter::_internal_mutable_prefab() {
+  
+  if (prefab_ == nullptr) {
+    auto* p = CreateMaybeMessage<::pb::Prefab>(GetArena());
+    prefab_ = p;
+  }
+  return prefab_;
+}
+inline ::pb::Prefab* CommandParameter::mutable_prefab() {
+  // @@protoc_insertion_point(field_mutable:pb.CommandParameter.prefab)
+  return _internal_mutable_prefab();
+}
+inline void CommandParameter::set_allocated_prefab(::pb::Prefab* prefab) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(prefab_);
+  }
+  if (prefab) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(prefab)->GetArena();
+    if (message_arena != submessage_arena) {
+      prefab = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, prefab, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  prefab_ = prefab;
+  // @@protoc_insertion_point(field_set_allocated:pb.CommandParameter.prefab)
 }
 
 // -------------------------------------------------------------------

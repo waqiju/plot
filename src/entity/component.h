@@ -9,7 +9,6 @@ class Component: public WorldObject
 {
 public:
     Component(Entity* owner);
-    virtual ~Component() {};
     Entity* OnwerEntity();
     Transform* GetTransform();
     bool Enabled();

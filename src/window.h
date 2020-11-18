@@ -8,7 +8,7 @@
 class Window
 {
 public:
-    static Window* CreateWindow(std::string title, unsigned int width = 800, unsigned int height = 600);
+    static Window* Create(std::string title, unsigned int width = 800, unsigned int height = 600);
     static void FramebufferSizeCallback(GLFWwindow* glfwWindow, int width, int height);
     static void MouseScrollCallback(GLFWwindow* glfwWindow, double xoffset, double yoffset);
     static void InitializeGlfw();

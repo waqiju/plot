@@ -13,6 +13,9 @@ public:
     int GetInstanceID();
     int GetHashCode();
 	virtual std::string ToString();
+    // 析构
+    virtual ~WorldObject() { Destroy(); };
+    virtual void Destroy() {};
 
 private:
     static int s_InstanceCount;

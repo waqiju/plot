@@ -14,7 +14,8 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_pb_2fchimera_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CommandParameter_pb_2fchimera_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_pb_2fchimera_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_CommandParameter_pb_2fchimera_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_pb_2fprefab_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_Prefab_pb_2fprefab_2eproto;
 namespace pb {
 class EchoRequestDefaultTypeInternal {
  public:
@@ -48,8 +49,9 @@ static void InitDefaultsscc_info_CommandParameter_pb_2fchimera_2eproto() {
   ::pb::CommandParameter::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CommandParameter_pb_2fchimera_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CommandParameter_pb_2fchimera_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_CommandParameter_pb_2fchimera_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_CommandParameter_pb_2fchimera_2eproto}, {
+      &scc_info_Prefab_pb_2fprefab_2eproto.base,}};
 
 static void InitDefaultsscc_info_CommandReply_pb_2fchimera_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -143,6 +145,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pb_2fchimera_2eproto::offsets[
   PROTOBUF_FIELD_OFFSET(::pb::CommandParameter, p_double_),
   PROTOBUF_FIELD_OFFSET(::pb::CommandParameter, p_string_),
   PROTOBUF_FIELD_OFFSET(::pb::CommandParameter, p_bytes_),
+  PROTOBUF_FIELD_OFFSET(::pb::CommandParameter, prefab_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pb::CommandReply, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -156,7 +159,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 6, -1, sizeof(::pb::EchoReply)},
   { 12, -1, sizeof(::pb::CommandRequest)},
   { 19, -1, sizeof(::pb::CommandParameter)},
-  { 30, -1, sizeof(::pb::CommandReply)},
+  { 31, -1, sizeof(::pb::CommandReply)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -168,22 +171,25 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_pb_2fchimera_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\020pb/chimera.proto\022\002pb\"\033\n\013EchoRequest\022\014\n"
-  "\004text\030\001 \001(\t\"\031\n\tEchoReply\022\014\n\004text\030\001 \001(\t\"H"
-  "\n\016CommandRequest\022\014\n\004name\030\001 \001(\t\022(\n\nparame"
-  "ters\030\002 \003(\0132\024.pb.CommandParameter\"w\n\020Comm"
-  "andParameter\022\016\n\006p_bool\030\001 \001(\010\022\r\n\005p_int\030\002 "
-  "\001(\005\022\017\n\007p_float\030\003 \001(\002\022\020\n\010p_double\030\004 \001(\001\022\020"
-  "\n\010p_string\030\005 \001(\t\022\017\n\007p_bytes\030\006 \001(\014\"9\n\014Com"
-  "mandReply\022\022\n\nerror_code\030\001 \001(\005\022\025\n\rerror_m"
-  "essage\030\002 \001(\t*k\n\nERROR_CODE\022\026\n\022ERROR_CODE"
-  "_SUCCESS\020\000\022 \n\034ERROR_CODE_PARAMETER_INVAL"
-  "ID\020\001\022#\n\037ERROR_CODE_AUTHORIZATION_FAILED\020"
-  "\0022h\n\014ChimeraRoost\022(\n\004Echo\022\017.pb.EchoReque"
-  "st\032\r.pb.EchoReply\"\000\022.\n\004Call\022\022.pb.Command"
-  "Request\032\020.pb.CommandReply\"\000b\006proto3"
+  "\n\020pb/chimera.proto\022\002pb\032\017pb/prefab.proto\""
+  "\033\n\013EchoRequest\022\014\n\004text\030\001 \001(\t\"\031\n\tEchoRepl"
+  "y\022\014\n\004text\030\001 \001(\t\"H\n\016CommandRequest\022\014\n\004nam"
+  "e\030\001 \001(\t\022(\n\nparameters\030\002 \003(\0132\024.pb.Command"
+  "Parameter\"\223\001\n\020CommandParameter\022\016\n\006p_bool"
+  "\030\001 \001(\010\022\r\n\005p_int\030\002 \001(\005\022\017\n\007p_float\030\003 \001(\002\022\020"
+  "\n\010p_double\030\004 \001(\001\022\020\n\010p_string\030\005 \001(\t\022\017\n\007p_"
+  "bytes\030\006 \001(\014\022\032\n\006prefab\030\007 \001(\0132\n.pb.Prefab\""
+  "9\n\014CommandReply\022\022\n\nerror_code\030\001 \001(\005\022\025\n\re"
+  "rror_message\030\002 \001(\t*k\n\nERROR_CODE\022\026\n\022ERRO"
+  "R_CODE_SUCCESS\020\000\022 \n\034ERROR_CODE_PARAMETER"
+  "_INVALID\020\001\022#\n\037ERROR_CODE_AUTHORIZATION_F"
+  "AILED\020\0022h\n\014ChimeraRoost\022(\n\004Echo\022\017.pb.Ech"
+  "oRequest\032\r.pb.EchoReply\"\000\022.\n\004Call\022\022.pb.C"
+  "ommandRequest\032\020.pb.CommandReply\"\000b\006proto"
+  "3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pb_2fchimera_2eproto_deps[1] = {
+  &::descriptor_table_pb_2fprefab_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pb_2fchimera_2eproto_sccs[5] = {
   &scc_info_CommandParameter_pb_2fchimera_2eproto.base,
@@ -194,8 +200,8 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pb_
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pb_2fchimera_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fchimera_2eproto = {
-  false, false, descriptor_table_protodef_pb_2fchimera_2eproto, "pb/chimera.proto", 555,
-  &descriptor_table_pb_2fchimera_2eproto_once, descriptor_table_pb_2fchimera_2eproto_sccs, descriptor_table_pb_2fchimera_2eproto_deps, 5, 0,
+  false, false, descriptor_table_protodef_pb_2fchimera_2eproto, "pb/chimera.proto", 601,
+  &descriptor_table_pb_2fchimera_2eproto_once, descriptor_table_pb_2fchimera_2eproto_sccs, descriptor_table_pb_2fchimera_2eproto_deps, 5, 1,
   schemas, file_default_instances, TableStruct_pb_2fchimera_2eproto::offsets,
   file_level_metadata_pb_2fchimera_2eproto, 5, file_level_enum_descriptors_pb_2fchimera_2eproto, file_level_service_descriptors_pb_2fchimera_2eproto,
 };
@@ -881,11 +887,24 @@ void CommandRequest::InternalSwap(CommandRequest* other) {
 // ===================================================================
 
 void CommandParameter::InitAsDefaultInstance() {
+  ::pb::_CommandParameter_default_instance_._instance.get_mutable()->prefab_ = const_cast< ::pb::Prefab*>(
+      ::pb::Prefab::internal_default_instance());
 }
 class CommandParameter::_Internal {
  public:
+  static const ::pb::Prefab& prefab(const CommandParameter* msg);
 };
 
+const ::pb::Prefab&
+CommandParameter::_Internal::prefab(const CommandParameter* msg) {
+  return *msg->prefab_;
+}
+void CommandParameter::clear_prefab() {
+  if (GetArena() == nullptr && prefab_ != nullptr) {
+    delete prefab_;
+  }
+  prefab_ = nullptr;
+}
 CommandParameter::CommandParameter(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
@@ -905,6 +924,11 @@ CommandParameter::CommandParameter(const CommandParameter& from)
     p_bytes_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_p_bytes(),
       GetArena());
   }
+  if (from._internal_has_prefab()) {
+    prefab_ = new ::pb::Prefab(*from.prefab_);
+  } else {
+    prefab_ = nullptr;
+  }
   ::memcpy(&p_bool_, &from.p_bool_,
     static_cast<size_t>(reinterpret_cast<char*>(&p_float_) -
     reinterpret_cast<char*>(&p_bool_)) + sizeof(p_float_));
@@ -915,9 +939,9 @@ void CommandParameter::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_CommandParameter_pb_2fchimera_2eproto.base);
   p_string_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   p_bytes_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&p_bool_, 0, static_cast<size_t>(
+  ::memset(&prefab_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&p_float_) -
-      reinterpret_cast<char*>(&p_bool_)) + sizeof(p_float_));
+      reinterpret_cast<char*>(&prefab_)) + sizeof(p_float_));
 }
 
 CommandParameter::~CommandParameter() {
@@ -930,6 +954,7 @@ void CommandParameter::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
   p_string_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   p_bytes_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete prefab_;
 }
 
 void CommandParameter::ArenaDtor(void* object) {
@@ -955,6 +980,10 @@ void CommandParameter::Clear() {
 
   p_string_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   p_bytes_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && prefab_ != nullptr) {
+    delete prefab_;
+  }
+  prefab_ = nullptr;
   ::memset(&p_bool_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&p_float_) -
       reinterpret_cast<char*>(&p_bool_)) + sizeof(p_float_));
@@ -1011,6 +1040,13 @@ const char* CommandParameter::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_p_bytes();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .pb.Prefab prefab = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          ptr = ctx->ParseMessage(_internal_mutable_prefab(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1082,6 +1118,14 @@ failure:
         6, this->_internal_p_bytes(), target);
   }
 
+  // .pb.Prefab prefab = 7;
+  if (this->has_prefab()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        7, _Internal::prefab(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1110,6 +1154,13 @@ size_t CommandParameter::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_p_bytes());
+  }
+
+  // .pb.Prefab prefab = 7;
+  if (this->has_prefab()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *prefab_);
   }
 
   // bool p_bool = 1;
@@ -1171,6 +1222,9 @@ void CommandParameter::MergeFrom(const CommandParameter& from) {
   if (from.p_bytes().size() > 0) {
     _internal_set_p_bytes(from._internal_p_bytes());
   }
+  if (from.has_prefab()) {
+    _internal_mutable_prefab()->::pb::Prefab::MergeFrom(from._internal_prefab());
+  }
   if (from.p_bool() != 0) {
     _internal_set_p_bool(from._internal_p_bool());
   }
@@ -1211,9 +1265,9 @@ void CommandParameter::InternalSwap(CommandParameter* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(CommandParameter, p_float_)
       + sizeof(CommandParameter::p_float_)
-      - PROTOBUF_FIELD_OFFSET(CommandParameter, p_bool_)>(
-          reinterpret_cast<char*>(&p_bool_),
-          reinterpret_cast<char*>(&other->p_bool_));
+      - PROTOBUF_FIELD_OFFSET(CommandParameter, prefab_)>(
+          reinterpret_cast<char*>(&prefab_),
+          reinterpret_cast<char*>(&other->prefab_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CommandParameter::GetMetadata() const {

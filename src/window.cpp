@@ -8,7 +8,7 @@ std::map<GLFWwindow*, Window*> Window::s_GLFWwindowToWindow;
 
 // TODO: 当前实现只支持创建一个窗口
 // 支持多个窗口需要处理 glfw 和 glad 的依赖，后面有空在看了
-Window* Window::CreateWindow(std::string title, unsigned int width, unsigned int height)
+Window* Window::Create(std::string title, unsigned int width, unsigned int height)
 {
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);

@@ -84,6 +84,8 @@ public:
         return m_Children;
     }
 
+    void Destroy() override;
+
 private:
     // TRS
 	Vector3 m_LocalPosition;

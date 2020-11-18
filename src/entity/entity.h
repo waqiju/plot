@@ -28,6 +28,8 @@ public:
     template<typename T> void GetComponentsInChildren(std::vector<T*>& componentList);
     const std::map<size_t, Component*>& GetComponentMap() { return m_ComponentMap; }
 
+    ~Entity() override;
+
 private:
     void SetActive(bool status);
 

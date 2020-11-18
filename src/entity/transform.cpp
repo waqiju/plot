@@ -87,3 +87,21 @@ void Transform::MarkAsDirty(bool flush)
 	// event
 	onChanged();
 }
+
+void Transform::Destroy()
+{
+	if (m_Parent != NULL)
+	{
+		std::vector<Transform*>& list = m_Parent->m_Children;
+		auto iterator = std::find(list.begin(), list.end(), this);
+		if (iterator != list.end())
+		{
+			list.erase(iterator);
+		}
+	}
+	else
+	{
+		// 从 World 的根结点中移除
+		m_OwerEntity->OnwerWorld()->RemoveFromEntities(m_OwerEntity);
+	}
+}
