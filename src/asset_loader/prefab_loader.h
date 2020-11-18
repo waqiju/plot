@@ -19,7 +19,8 @@ public:
     // element
     static float GetFloatElement(const pb::WorldObject& object, int index, const pb::Prefab& prefab);
     // world
-    static Transform* FindTransform(int id);
+    static WorldObject* FindObject(int id);
+    template<typename T> static T* FindObject(int id);
     // load
     static void LoadFromFile(std::string path);
 
@@ -37,3 +38,25 @@ private:
     void LoadEntity(const pb::WorldObject& object);
 
 };
+
+
+template<typename T>
+static T* PrefabLoader::FindObject(int id)
+{
+    WorldObject* object = FindObject(id);
+    if (object == NULL)
+    {
+        std::cout<<"Object[" << id << "] not find!\n";
+        return NULL;
+    }
+
+    T* targetObject = dynamic_cast<T*>(object);
+    if (targetObject == NULL)
+    {
+        std::cout<<"Object[" << id << "] type convert wrong, "
+			"from[" << typeid((*object)).name() << "] -> to[" << typeid(T).name() << "]!\n";
+        return NULL;
+    }
+
+    return targetObject;
+}

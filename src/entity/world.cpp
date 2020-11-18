@@ -76,3 +76,23 @@ Entity* World::Find(int id)
 
 	return NULL;
 }
+
+WorldObject* World::FindObject(int id)
+{
+    std::vector<Transform*>&& transforms = GetComponentsInAllEnities<Transform>();
+    for (Transform* transform : transforms)
+    {
+        auto entity = transform->OnwerEntity();
+        if (entity->id == id)
+            return entity;
+		
+		for (auto pair : entity->GetComponentMap())
+		{
+			auto component = pair.second;
+			if (component->id == id)
+				return component;
+		}
+    }
+
+    return NULL;
+}

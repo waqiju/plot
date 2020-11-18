@@ -26,6 +26,7 @@ public:
     template<typename T> T* GetOrAddComponent();
     template<typename T> std::vector<T*> GetComponentsInChildren();
     template<typename T> void GetComponentsInChildren(std::vector<T*>& componentList);
+    const std::map<size_t, Component*>& GetComponentMap() { return m_ComponentMap; }
 
 private:
     void SetActive(bool status);

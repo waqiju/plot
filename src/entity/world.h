@@ -5,6 +5,7 @@
 
 class Entity;
 class Component;
+class WorldObject;
 
 class World
 {
@@ -21,6 +22,7 @@ public:
 	void FlushTransform();
     // Find
     Entity* Find(int id);
+    WorldObject* FindObject(int id);
 
 private:
     static World* s_ActiveWorld;

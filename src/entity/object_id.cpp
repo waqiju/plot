@@ -11,6 +11,8 @@ const int ObjectID::SystemSectionBegin = 1000;
 const int ObjectID::SystemSectionEnd = 9999;
 const int ObjectID::WorldRoot = 1000;
 const int ObjectID::PlotRoot = 1001;
+const int ObjectID::WorldRootTransform = 2000;
+const int ObjectID::PlotRootTransform = 2001;
 
 
 int ObjectID::s_NextAutoID  = ObjectID::AutoSectionBegin;

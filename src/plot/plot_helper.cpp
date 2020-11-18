@@ -12,6 +12,7 @@ namespace PlotHelper
         auto plotRootEntity = World::ActiveWorld()->CreateEntity("PlotRoot");
         plotRootEntity->id = ObjectID::PlotRoot;
         auto plotRootTransform = plotRootEntity->GetComponent<Transform>();
+        plotRootTransform->id = ObjectID::PlotRootTransform;
         // SpaceGrid
         auto spaceGridEntity = World::ActiveWorld()->CreateEntity("SpaceGrid");
         spaceGridEntity->GetComponent<Transform>()->SetParent(plotRootTransform);

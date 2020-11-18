@@ -137,16 +137,10 @@ const pb::WorldObject& PrefabLoader::GetObject(int id)
     return *objectPtr;
 }
 
-Transform* PrefabLoader::FindTransform(int id)
+WorldObject* PrefabLoader::FindObject(int id)
 {
     if (id == 0)
         return NULL;
 
-    Entity* entity = World::ActiveWorld()->Find(id);
-    if (entity != NULL)
-    {
-        return entity->GetTransform();
-    }
-
-    return NULL;
+    return World::ActiveWorld()->FindObject(id);
 }

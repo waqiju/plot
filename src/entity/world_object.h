@@ -12,7 +12,7 @@ public:
     std::string name = "Unnamed";
     int GetInstanceID();
     int GetHashCode();
-    std::string ToString();
+	virtual std::string ToString();
 
 private:
     static int s_InstanceCount;

@@ -15,6 +15,8 @@ public:
     static const int SystemSectionEnd;
     static const int WorldRoot;
     static const int PlotRoot;
+	static const int WorldRootTransform;
+	static const int PlotRootTransform;
 
 
     int NextAutoID()
