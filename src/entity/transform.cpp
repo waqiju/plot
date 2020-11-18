@@ -88,15 +88,32 @@ void Transform::MarkAsDirty(bool flush)
 	onChanged();
 }
 
+Transform::~Transform() 
+{ 
+	for (auto child : m_Children)
+	{
+		delete child->m_OwerEntity;
+	}
+
+	Destroy();
+}
+
 void Transform::Destroy()
 {
+	if (InDestroy())
+		return;
+	SetFlagDestroyStart();
+
 	if (m_Parent != NULL)
 	{
-		std::vector<Transform*>& list = m_Parent->m_Children;
-		auto iterator = std::find(list.begin(), list.end(), this);
-		if (iterator != list.end())
+		if (!m_Parent->InDestroy())
 		{
-			list.erase(iterator);
+			std::vector<Transform*>& list = m_Parent->m_Children;
+			auto iterator = std::find(list.begin(), list.end(), this);
+			if (iterator != list.end())
+			{
+				list.erase(iterator);
+			}
 		}
 	}
 	else
@@ -104,4 +121,6 @@ void Transform::Destroy()
 		// 从 World 的根结点中移除
 		m_OwerEntity->OnwerWorld()->RemoveFromEntities(m_OwerEntity);
 	}
+
+	SetFlagDestroyEnd();
 }

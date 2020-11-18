@@ -213,13 +213,13 @@
     <ClCompile Include="src\entity\object_id.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\command\clear_children_command.cpp">
+    <ClCompile Include="src\chimera_server.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\chimera_server.cpp">
+    <ClCompile Include="src\command\destroy_entity_command.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -464,13 +464,13 @@
     <ClInclude Include="src\entity\object_id.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\command\clear_children_command.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="src\command\command.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\chimera_server.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\command\destroy_entity_command.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

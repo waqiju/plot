@@ -1,23 +1,29 @@
-#include "clear_children_command.h"
+#include "destroy_entity_command.h"
 #include "entity/ec.h"
 #include <iostream>
 
 
-ClearChildrenCommand::ClearChildrenCommand(int objectID)
+DestroyEntityCommand::DestroyEntityCommand(int objectID)
 {
     m_ObjectID = objectID;
 }
 
 
-void ClearChildrenCommand::Execute()
+void DestroyEntityCommand::Execute()
 {
     auto object = World::ActiveWorld()->FindObject(m_ObjectID);
+	if (object == NULL)
+	{
+		std::cout << "Object[" << m_ObjectID << "] not found!\n";
+		return;
+	}
+
 	Transform* transform = NULL;
-	if (typeid(object) == (typeid(Transform*)))
+	if (typeid(*object) == (typeid(Transform)))
 	{
 		transform = dynamic_cast<Transform*>(object);
 	}
-	else if (typeid(object) == typeid(Entity*))
+	else if (typeid(*object) == typeid(Entity))
 	{
 		transform = dynamic_cast<Entity*>(object)->GetComponent<Transform>();
 	}

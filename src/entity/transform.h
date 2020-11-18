@@ -84,6 +84,7 @@ public:
         return m_Children;
     }
 
+    ~Transform() override;
     void Destroy() override;
 
 private:

@@ -1,10 +1,10 @@
 #pragma once
 
 
-class ClearChildrenCommand
+class DestroyEntityCommand
 {
 public:
-    ClearChildrenCommand(int objectID);
+    DestroyEntityCommand(int objectID);
     void Execute();
 
 private:
