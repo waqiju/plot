@@ -139,6 +139,10 @@ void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
         // mesh
         std::vector<Vector3> vertices;
         std::vector<Color> colors;
+        int capcity = chimera::Segment::VerticesCount() * stockGlyphList.size();
+        vertices.reserve(capcity);
+        colors.reserve(capcity);
+
         for (auto sg:stockGlyphList)
         {
             float x = sg->x;

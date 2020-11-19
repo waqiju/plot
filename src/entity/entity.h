@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include <map>
+#include <unordered_map>
 #include <typeinfo>
 #include <cassert>
 #include "entity/world_object.h"
@@ -33,7 +33,7 @@ public:
     template<typename T> T* GetOrAddComponent();
     template<typename T> std::vector<T*> GetComponentsInChildren();
     template<typename T> void GetComponentsInChildren(std::vector<T*>& componentList);
-    const std::map<size_t, Component*>& GetComponentMap() { return m_ComponentMap; }
+    const std::unordered_map<size_t, Component*>& GetComponentMap() { return m_ComponentMap; }
 
     ~Entity() override;
     void Destroy() override;
@@ -45,7 +45,7 @@ private:
     bool m_Active = true;
     World* m_OnwerWorld = NULL;
     Transform* m_Transform = NULL;
-    std::map<size_t, Component*> m_ComponentMap;
+    std::unordered_map<size_t, Component*> m_ComponentMap;
 };
 
 

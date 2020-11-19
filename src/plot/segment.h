@@ -11,6 +11,7 @@ namespace chimera
 class Segment : public Component
 {
 public:
+    static constexpr int VerticesCount() { return 2; } 
     static Segment* Create(Transform* parent, const Vector3& v0, const Vector3& v1, const Color& color);
     static int GenerateMesh(const Bounds& inBounds, const Color& inColor, std::vector<Vector3>& vertices, std::vector<Color>& colors);
     static void BatchRender(std::vector<Segment*> segmentList);
