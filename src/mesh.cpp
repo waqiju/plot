@@ -32,13 +32,13 @@ Mesh::~Mesh()
 	}
 }
 
-void Mesh::SetVertices(std::vector<float> vertices)
+void Mesh::SetVertices(const std::vector<float>& vertices)
 {
 	m_Vertices = vertices;
 	m_HasChanged = true;
 }
 
-void Mesh::SetVertices(std::vector<Vector3> vertices)
+void Mesh::SetVertices(const std::vector<Vector3>& vertices)
 {
 	m_Vertices.clear();
 	for (const Vector3& v : vertices)
@@ -47,6 +47,12 @@ void Mesh::SetVertices(std::vector<Vector3> vertices)
 		m_Vertices.push_back(v.y);
 		m_Vertices.push_back(v.z);
 	}
+
+	//int targetCapcity = vertices.size() * 3;
+	//if (m_Vertices.capacity < targetCapcity)
+	//{
+	//	m_Vertices.resize(targetCapcity);
+	//}
 
 	m_HasChanged = true;
 }
