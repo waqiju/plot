@@ -16,6 +16,14 @@ public:
     {
         m_SpaceGrid->Render();
     }
+    void RenderLine()
+    {
+        m_SpaceGrid->RenderLine();
+    }
+    void RenderLabel()
+    {
+        m_SpaceGrid->RenderLabel();
+    }
 
 private:
     SpaceGrid* m_SpaceGrid;

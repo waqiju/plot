@@ -11,6 +11,8 @@ public:
 
     SpaceGrid(Camera* camera, Transform* transform);
     void Render();
+    void RenderLine();
+    void RenderLabel();
 
 private:
     static const float s_Ticks[18];

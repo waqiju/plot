@@ -30,6 +30,12 @@ SpaceGrid::SpaceGrid(Camera* camera, Transform* transform)
 
 void SpaceGrid::Render()
 {
+    RenderLine();
+    RenderLabel();
+}
+
+void SpaceGrid::RenderLine()
+{
     // interval
     int tickGradeX, tickGradeY;
     CalculateInterval(10, tickGradeX, tickGradeY);
@@ -131,6 +137,41 @@ void SpaceGrid::Render()
     renderer->camera = m_Camera;
     renderer->Render();
     glDisable(GL_BLEND);
+}
+
+void SpaceGrid::RenderLabel()
+{
+	// interval
+	int tickGradeX, tickGradeY;
+	CalculateInterval(10, tickGradeX, tickGradeY);
+	float intervalX = GetTick(tickGradeX);
+	float intervalY = GetTick(tickGradeY);
+	float intervalXMinus1 = GetTick(tickGradeX - 1);
+	float intervalXMinus2 = GetTick(tickGradeX - 2);
+	float intervalYMinus1 = GetTick(tickGradeY - 1);
+	float intervalYMinus2 = GetTick(tickGradeY - 2);
+
+	// grid plane, normal(0, 0, -1)
+	Plane plane = Plane(Vector3::zero, Vector3(0, 0, -1));
+	Ray ray = m_Camera->ViewportPointToRay(Vector3(-1, -1, 1));
+	if (!Physics::Raycast(ray, plane, m_LeftBottom))
+	{
+		return;
+	}
+	ray = m_Camera->ViewportPointToRay(Vector3(1, 1, 1));
+	if (!Physics::Raycast(ray, plane, m_RightTop))
+	{
+		return;
+	}
+	m_LeftBottom = m_Transform->WorldToLocalMatrix().MultiplyPoint3x4(m_LeftBottom);
+	m_RightTop = m_Transform->WorldToLocalMatrix().MultiplyPoint3x4(m_RightTop);
+	// numberic
+	float maxUlpX = intervalX * 0.01;
+	float maxUlpY = intervalY * 0.01;
+	float x0 = Mathf::ToFloorUnit(m_LeftBottom.x, intervalX, maxUlpX);
+	float x1 = Mathf::ToCeilUnit(m_RightTop.x, intervalX, maxUlpX);
+	float y0 = Mathf::ToFloorUnit(m_LeftBottom.y, intervalY, maxUlpY);
+	float y1 = Mathf::ToCeilUnit(m_RightTop.y, intervalY, maxUlpY);
 
     // label
     std::stringstream stream;
@@ -161,7 +202,6 @@ void SpaceGrid::Render()
         }
     }
 }
-
 
 void SpaceGrid::CalculateInterval(int pixel, int& tickGradeX, int& tickGradeY)
 {

@@ -54,10 +54,11 @@ void OnFrameUpdate()
         boundsCp->SyncTargetBounds();
     }
 
+    // 网格先绘制线条
     auto spaceGridList = World::ActiveWorld()->GetComponentsInAllEnities<SpaceGridComponent>();
     for (auto spaceGrid : spaceGridList)
-        spaceGrid->Render();
-
+        spaceGrid->RenderLine();
+    // 基本图形
     auto rectangleList = World::ActiveWorld()->GetComponentsInAllEnities<chimera::Rectangle>();
     chimera::Rectangle::BatchRender(rectangleList);
     auto triangleList = World::ActiveWorld()->GetComponentsInAllEnities<Triangle>();
@@ -70,4 +71,7 @@ void OnFrameUpdate()
     TextComponent::BatchRender(textCpList);
     auto stockGlyphList = World::ActiveWorld()->GetComponentsInAllEnities<StockGlyph>();
     StockGlyph::BatchRender(stockGlyphList);
+    // 网格最后绘制 Label
+    for (auto spaceGrid : spaceGridList)
+        spaceGrid->RenderLabel();
 }
