@@ -212,7 +212,7 @@ namespace MouseScrollHandlers
 
         Bounds plotBoundsInLocal(Vector3(beginX, 1e8f, 0), Vector3(endX, -1e8f, 0));
         PlotHelper::CollectPlotRootBounds(plotEntity, plotBoundsInLocal);
-		if (Mathf::IsZero(plotBoundsInLocal.Size().y))
+		if (plotBoundsInLocal.Size().y <= 0)
 		{
 			std::cout << "Not found bounds between beginX[" << beginX  << "] endX[" << endX << "]" << std::endl;
 			return;

@@ -94,9 +94,16 @@ void ChimeraServerImpl::ExecuteCommand(const CommandRequest& request)
 		auto command = DestroyEntityCommand(parameter.p_int());
 		command.Execute();
 	}
-	else if (request.name() == "reset_plot")
+    else if (request.name() == "reset_plot")
+    {
+        auto command = ResetPlotCommand();
+        command.Execute();
+    }
+	else if (request.name() == "focus_plot")
 	{
-		auto command = ResetPlotCommand();
+        auto parameter0 = request.parameters(0);
+        auto parameter1 = request.parameters(1);
+		auto command = FocusPlotCommand(parameter0.p_float(), parameter1.p_float());
 		command.Execute();
 	}
 	else
