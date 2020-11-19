@@ -21,6 +21,9 @@ using pb::ChimeraRoost;
 class ChimeraServerImpl final : public ChimeraRoost::Service {
 public:
 	static void RunServer();
+    static void ExecuteCommand(const CommandRequest& request);
+    static void ExecuteFile(std::string path);
+
     static ChimeraServerImpl service;
     static std::mutex CallLock;
 
@@ -30,7 +33,5 @@ public:
 	void ConsumeCommand();
 
 private:
-	void ExecuteCommand(const CommandRequest& request);
-
 	std::vector<CommandRequest> m_CommandList;
 };

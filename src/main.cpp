@@ -27,9 +27,10 @@ int main()
 
     // PlotRoot
     auto plotRootEntity = PlotHelper::CreatePlotRootEntity();
+    // Command
+    ChimeraServerImpl::ExecuteFile("art/600036.cmd");
     // Prefab
     // PrefabLoader::LoadFromFile("art/triangle.prefab");
-    PrefabLoader::LoadFromFile("art/stock.prefab");
     ChimeraServerImpl::RunServer();
 
     window->FrameLoop(OnFrameUpdate);
@@ -42,7 +43,7 @@ void OnFrameUpdate()
 	ChimeraServerImpl::service.ConsumeCommand();
 
     UiHelper::ProcessPan();
-    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+    glClearColor(71.0f/256.0f, 71.0f/256.0f, 71.0f/256.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     for (auto usCp : World::ActiveWorld()->GetComponentsInAllEnities<UniformScaleComponent>())
@@ -54,7 +55,7 @@ void OnFrameUpdate()
         boundsCp->SyncTargetBounds();
     }
 
-    // 网格先绘制线条
+    // 网格部分，先绘制线条
     auto spaceGridList = World::ActiveWorld()->GetComponentsInAllEnities<SpaceGridComponent>();
     for (auto spaceGrid : spaceGridList)
         spaceGrid->RenderLine();
@@ -71,7 +72,7 @@ void OnFrameUpdate()
     TextComponent::BatchRender(textCpList);
     auto stockGlyphList = World::ActiveWorld()->GetComponentsInAllEnities<StockGlyph>();
     StockGlyph::BatchRender(stockGlyphList);
-    // 网格最后绘制 Label
+    // 网格部分，最后绘制 Label
     for (auto spaceGrid : spaceGridList)
         spaceGrid->RenderLabel();
 }

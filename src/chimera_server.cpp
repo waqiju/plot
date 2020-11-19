@@ -3,6 +3,7 @@
 #include "chimera_server.h"
 #include "asset_loader/asset_loader.h"
 #include "command/command.h"
+#include "common/common.h"
 
 using grpc::Server;
 using grpc::ServerBuilder;
@@ -76,6 +77,16 @@ void ChimeraServerImpl::ConsumeCommand()
 		}
 	}
 	m_CommandList.clear();
+}
+
+void ChimeraServerImpl::ExecuteFile(std::string path)
+{
+    std::string content;
+    FileHelper::Read(path, content);
+    pb::CommandRequest request;
+    request.ParseFromString(content);
+
+    ExecuteCommand(request);
 }
 
 void ChimeraServerImpl::ExecuteCommand(const CommandRequest& request)
