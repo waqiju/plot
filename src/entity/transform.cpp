@@ -90,12 +90,12 @@ void Transform::MarkAsDirty(bool flush)
 
 Transform::~Transform() 
 { 
+	Destroy();
+
 	for (auto child : m_Children)
 	{
 		delete child->m_OwerEntity;
 	}
-
-	Destroy();
 }
 
 void Transform::Destroy()
@@ -104,6 +104,7 @@ void Transform::Destroy()
 		return;
 	SetFlagDestroyStart();
 
+	// self
 	if (m_Parent != NULL)
 	{
 		if (!m_Parent->InDestroy())
@@ -121,6 +122,12 @@ void Transform::Destroy()
 		// 从 World 的根结点中移除
 		m_OwerEntity->OnwerWorld()->RemoveFromEntities(m_OwerEntity);
 	}
+	Component::Destroy();
 
+	// children
+	for (auto child : m_Children)
+	{
+		child->m_OwerEntity->Destroy();
+	}
 	SetFlagDestroyEnd();
 }

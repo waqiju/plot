@@ -28,3 +28,19 @@ Entity::~Entity()
         delete component;
     }
 }
+
+void Entity::Destroy()
+{
+    if (InDestroy())
+        return;
+    SetFlagDestroyStart();
+
+    for (auto pair : m_ComponentMap)
+    {
+        auto component = pair.second;
+        component->Destroy();
+    }
+
+    WorldObject::Destroy();
+    SetFlagDestroyEnd();
+}

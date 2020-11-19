@@ -29,6 +29,7 @@ public:
     const std::map<size_t, Component*>& GetComponentMap() { return m_ComponentMap; }
 
     ~Entity() override;
+    void Destroy() override;
 
 private:
     void SetActive(bool status);
