@@ -14,7 +14,7 @@ using pb::CommandRequest;
 using pb::CommandReply;
 using pb::ChimeraRoost;
 
-ChimeraServerImpl service;
+ChimeraServerImpl ChimeraServerImpl::service;
 std::unique_ptr<Server> server;
 ServerBuilder builder;
 
@@ -53,25 +53,54 @@ Status ChimeraServerImpl::Call(ServerContext* context, const CommandRequest* req
 {
 	request->PrintDebugString();
 	std::lock_guard<std::mutex> scopedLock(CallLock);
-
-    if (request->name() == "load_prefab")
-    {
-        for (auto parameter : request->parameters())
-        {
-             auto loader = PrefabLoader(&parameter.prefab());
-             loader.Load();
-        }
-    }
-    else if (request->name() == "destroy_entity")
-    {
-        auto parameter = request->parameters(0);
-        auto command = DestroyEntityCommand(parameter.p_int());
-        command.Execute();
-    }
-	else
-	{
-		std::cout << "Unsupported cammand[" << request->name() << "]\n";
-	}
+	m_CommandList.push_back(*request);
 
     return Status::OK;
+}
+
+void ChimeraServerImpl::ConsumeCommand()
+{
+    std::lock_guard<std::mutex> scopedLock(CallLock);
+	if (m_CommandList.size() <= 0)
+		return;
+
+	for (CommandRequest& request : m_CommandList)
+	{
+		try
+		{
+			ExecuteCommand(request);
+		}
+		catch (std::exception& e)
+		{
+			std::cout << "Execute command["<< request.name() <<"] exception!\n" << e.what() << std::endl;
+		}
+	}
+	m_CommandList.clear();
+}
+
+void ChimeraServerImpl::ExecuteCommand(const CommandRequest& request)
+{
+	if (request.name() == "load_prefab")
+	{
+		for (auto parameter : request.parameters())
+		{
+			auto loader = PrefabLoader(&parameter.prefab());
+			loader.Load();
+		}
+	}
+	else if (request.name() == "destroy_entity")
+	{
+		auto parameter = request.parameters(0);
+		auto command = DestroyEntityCommand(parameter.p_int());
+		command.Execute();
+	}
+	else if (request.name() == "reset_plot")
+	{
+		auto command = ResetPlotCommand();
+		command.Execute();
+	}
+	else
+	{
+		std::cout << "Unsupported cammand[" << request.name() << "]\n";
+	}
 }

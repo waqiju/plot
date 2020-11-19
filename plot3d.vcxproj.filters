@@ -222,6 +222,9 @@
     <ClCompile Include="src\command\destroy_entity_command.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\command\reset_plot_command.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\default_shader.h">
@@ -471,6 +474,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\command\destroy_entity_command.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\command\reset_plot_command.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

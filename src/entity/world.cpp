@@ -22,7 +22,7 @@ Entity* World::OriginEntity()
     if (s_OriginEntity == NULL)
     {
         // 位于原点
-        s_OriginEntity = ActiveWorld()->CreateEntity();
+        s_OriginEntity = ActiveWorld()->CreateEntity("Origin");
     }
 
     return s_OriginEntity;

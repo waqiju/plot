@@ -13,7 +13,7 @@ namespace CameraHelper
 {
     Camera* CreateCamera()
     {
-        Entity* entity = World::ActiveWorld()->CreateEntity();
+        Entity* entity = World::ActiveWorld()->CreateEntity("Camera");
         Transform* transform = entity->GetComponent<Transform>();
         transform->SetLocalPosition(Vector3(0, 0, -10));
         Camera* camera = entity->AddComponent<Camera>();
