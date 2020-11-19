@@ -21,7 +21,6 @@ public:
     template<typename T> std::vector<T*> GetComponentsInAllEnities();
 	void FlushTransform();
     // Find
-    Entity* Find(int id);
     WorldObject* FindObject(int id);
 
 private:

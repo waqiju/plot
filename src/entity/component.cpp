@@ -14,7 +14,7 @@ Entity* Component::OnwerEntity()
 
 Transform* Component::GetTransform()
 {
-    return this->GetComponent<Transform>();
+    return m_OwerEntity->GetTransform();
 }
 
 bool Component::Enabled()

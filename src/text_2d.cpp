@@ -52,6 +52,10 @@ void Text2D::DrawInViewport(std::string text, float x, float y, int fontSize)
     float fontHeightInViewport = 2.0f / Application::screenHeight * fontSize;
     std::vector<Vector2> vertices;
     std::vector<Vector2> uvs;
+    int capcity = text.length() * 6;
+    vertices.reserve(capcity);
+    uvs.reserve(capcity);
+
     for (size_t i = 0; i < text.length(); ++i)
     {
         Vector2 vertexUpLeft = Vector2(x + i * characterSpacing, y + fontHeightInViewport);

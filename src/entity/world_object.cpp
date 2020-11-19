@@ -1,4 +1,15 @@
-#include "world_object.h"
+﻿#include "world_object.h"
+
+
+WorldObject::WorldObject()
+{
+    id = ObjectID::NextAutoID(this);
+}
+
+// WorldObject::~WorldObject()
+// {
+//     id.Unregister();
+// }
 
 int WorldObject::GetInstanceID()
 {

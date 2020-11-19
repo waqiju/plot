@@ -20,8 +20,8 @@ public:
     Mesh();
     ~Mesh();
 
-    void SetVertices(std::vector<float> vertices);
-    void SetVertices(std::vector<Vector3> vertices);
+    void SetVertices(const std::vector<float>& vertices);
+    void SetVertices(const std::vector<Vector3>& vertices);
     void SetVertices(float vertices[], size_t length)
     {
         SetVertices(std::vector<float>(vertices, vertices + length));

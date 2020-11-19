@@ -65,18 +65,6 @@ void World::FlushTransform()
     }
 }
 
-Entity* World::Find(int id)
-{
-	std::vector<Transform*>&& transforms = GetComponentsInAllEnities<Transform>();
-	for (Transform* transform : transforms)
-	{
-		if (transform->OnwerEntity()->id == id)
-			return transform->OnwerEntity();
-	}
-
-	return NULL;
-}
-
 WorldObject* World::FindObject(int id)
 {
     std::vector<Transform*>&& transforms = GetComponentsInAllEnities<Transform>();

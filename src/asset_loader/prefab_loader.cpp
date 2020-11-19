@@ -142,5 +142,6 @@ WorldObject* PrefabLoader::FindObject(int id)
     if (id == 0)
         return NULL;
 
-    return World::ActiveWorld()->FindObject(id);
+    // return World::ActiveWorld()->FindObject(id);
+    return ObjectID::Find(id);
 }

@@ -19,7 +19,14 @@ public:
 
     bool Active();
     inline World* OnwerWorld() { return m_OnwerWorld; }
-    inline Transform* GetTransform() { return this->GetComponent<Transform>(); }
+    inline Transform* GetTransform() 
+    {
+        if (m_Transform == NULL)
+        {
+            m_Transform = this->GetComponent<Transform>(); 
+        }
+        return m_Transform;
+    }
 
     template<typename T> T* AddComponent();
     template<typename T> T* GetComponent();
@@ -37,6 +44,7 @@ private:
 private:
     bool m_Active = true;
     World* m_OnwerWorld = NULL;
+    Transform* m_Transform = NULL;
     std::map<size_t, Component*> m_ComponentMap;
 };
 
@@ -60,9 +68,10 @@ template<typename T>
 T* Entity::GetComponent()
 {
     size_t typeCode = typeid(T).hash_code();
-    if (m_ComponentMap.find(typeCode) != m_ComponentMap.end())
+    auto it = m_ComponentMap.find(typeCode);
+    if (it != m_ComponentMap.end())
     {
-        return (T*)m_ComponentMap[typeCode];
+        return (T*)it->second;
     }
 
     return NULL;
@@ -96,7 +105,7 @@ void Entity::GetComponentsInChildren(std::vector<T*>& componentList)
         componentList.push_back(component);
     }
 
-    Transform* thisTransform = this->template GetComponent<Transform>();
+    Transform* thisTransform = this->GetTransform();
     if (thisTransform == NULL)
         return;
     for (Transform* child: thisTransform->Children())

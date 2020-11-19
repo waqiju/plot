@@ -1,4 +1,4 @@
-#include "gl_headers.h"
+﻿#include "gl_headers.h"
 #include <iostream>
 #include "window.h"
 #include "entity/ec.h"
@@ -31,7 +31,7 @@ int main()
     ChimeraServerImpl::ExecuteFile("art/600036.cmd");
     // Prefab
     // PrefabLoader::LoadFromFile("art/triangle.prefab");
-    ChimeraServerImpl::RunServer();
+    // ChimeraServerImpl::RunServer();
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();

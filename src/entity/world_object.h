@@ -1,8 +1,9 @@
-/*
+﻿/*
  * World中对象的公共基类
  */
 #pragma once
 #include <string>
+#include "object_id.h"
 
 
 enum class LifecycleFlag: int
@@ -22,13 +23,15 @@ inline LifecycleFlag& operator&=(LifecycleFlag& f1, const LifecycleFlag f2)
 class WorldObject
 {
 public:
-    int id = 0;
+    ObjectID id;
     std::string name = "Unnamed";
     int GetInstanceID();
     int GetHashCode();
 	virtual std::string ToString();
+    // 构建
+    WorldObject();
     // 析构
-    virtual ~WorldObject() {};
+    virtual ~WorldObject() {id.Unregister();}
     virtual void Destroy() {};
 
 protected:

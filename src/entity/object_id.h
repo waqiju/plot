@@ -1,5 +1,8 @@
-#pragma once
+﻿#pragma once
+#include <map>
 
+
+class WorldObject;
 
 class ObjectID 
 {
@@ -18,12 +21,26 @@ public:
 	static const int WorldRootTransform;
 	static const int PlotRootTransform;
 
-
-    int NextAutoID()
-    {
-        return s_NextAutoID++;
-    }
+    static ObjectID NextAutoID(WorldObject* object);
+    static WorldObject* Find(int id);
 
 private:
     static int s_NextAutoID;
+    static std::map<int, WorldObject*> s_IdToObject;
+
+// non static
+public:
+    ObjectID() {}
+    // ObjectID(int id);
+    // ObjectID(ObjectID& other);
+    void Unregister();
+    // 转int
+    operator int() { return m_ID; }
+    void operator=(int id);
+    void operator=(ObjectID& other);
+
+private:
+    int m_ID = 0;
 };
+
+
