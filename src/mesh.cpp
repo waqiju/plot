@@ -40,19 +40,16 @@ void Mesh::SetVertices(const std::vector<float>& vertices)
 
 void Mesh::SetVertices(const std::vector<Vector3>& vertices)
 {
-	m_Vertices.clear();
-	for (const Vector3& v : vertices)
-	{
-		m_Vertices.push_back(v.x);
-		m_Vertices.push_back(v.y);
-		m_Vertices.push_back(v.z);
-	}
+	// m_Vertices.clear();
+	// for (const Vector3& v : vertices)
+	// {
+	// 	m_Vertices.push_back(v.x);
+	// 	m_Vertices.push_back(v.y);
+	// 	m_Vertices.push_back(v.z);
+	// }
 
-	//int targetCapcity = vertices.size() * 3;
-	//if (m_Vertices.capacity < targetCapcity)
-	//{
-	//	m_Vertices.resize(targetCapcity);
-	//}
+	m_Vertices.resize(vertices.size() * 3);
+	memcpy(m_Vertices.data(), vertices.data(), m_Vertices.size() * 4);
 
 	m_HasChanged = true;
 }
