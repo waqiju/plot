@@ -1,4 +1,5 @@
 # ignores following folders
 .vs/
 Debug/
+Release/
 

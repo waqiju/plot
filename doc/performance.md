@@ -40,3 +40,15 @@
 
 用 memcpy 代替了 push_back，耗时大幅减少。
 没有截图，之前采样是 10%，修改后，从耗时排行前面消失找不到了。
+
+
+## 切换到 Release 版本
+
+Release 版本相对于 Debug 版本，计算密集型的函数调用耗时下降非常多。
+
+<img src="image/performance_10.png" />
+
+<img src="image/performance_11.png" />
+
+<img src="image/performance_12.png" />
+
