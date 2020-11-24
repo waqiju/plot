@@ -20,7 +20,7 @@ namespace FileHelper
         }
         catch (std::ifstream::failure& e)
         {
-            std::cout << "Read shader file failed!\n" << e.what() << std::endl;
+            std::cout << "Read file ["<< path <<"] failed!\n" << e.what() << std::endl;
             return false;
         }
 

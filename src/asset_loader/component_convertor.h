@@ -5,6 +5,7 @@
 #include "plot/plot.h"
 #include "core_component/core_component.h"
 #include <iostream>
+#include "camera_helper.h"
 
 
 void AddComponentToEntity(Entity& entity, const pb::WorldObject& pbComponentObj, PrefabLoader& loader)
@@ -32,8 +33,25 @@ void AddComponentToEntity(Entity& entity, const pb::WorldObject& pbComponentObj,
         {
 			ConvertColor(loader.GetObject(colorID), triangle->color, loader.Prefab());
         }
+        triangle->isFlipY = PrefabLoader::GetIntMember(pbComponentObj, "isFlipY");
 
         worldObject = triangle;
+    }
+    else if (pbComponentObj.type() == "Pentagram")
+    {
+        auto pentagram = entity.GetOrAddComponent<Pentagram>();
+        int boundsObjectID = PrefabLoader::GetIntMember(pbComponentObj, "bounds");
+        if (boundsObjectID)
+        {
+            ConvertBounds(loader.GetObject(boundsObjectID), pentagram->bounds, loader.Prefab());
+        }
+        int colorID = PrefabLoader::GetIntMember(pbComponentObj, "color");
+        if (colorID)
+        {
+            ConvertColor(loader.GetObject(colorID), pentagram->color, loader.Prefab());
+        }
+
+        worldObject = pentagram;
     }
 	else if (pbComponentObj.type() == "StockGlyph")
 	{
@@ -67,6 +85,12 @@ void AddComponentToEntity(Entity& entity, const pb::WorldObject& pbComponentObj,
     {
         auto layoutItem = entity.GetOrAddComponent<StockLayoutItem>();
         layoutItem->priority = PrefabLoader::GetIntMember(pbComponentObj, "priority");
+    }
+    else if (pbComponentObj.type() == "StockVerticalLayout")
+    {
+        auto layout = entity.GetOrAddComponent<StockVerticalLayout>();
+        layout->spacing = PrefabLoader::GetIntMember(pbComponentObj, "spacing");
+        layout->unit = static_cast<CameraHelper::UnitOfLength>(PrefabLoader::GetIntMember(pbComponentObj, "unit"));
     }
     else
     {

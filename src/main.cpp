@@ -30,7 +30,7 @@ int main()
     // Command
     // ChimeraServerImpl::ExecuteFile("art/600036.cmd");
     // Prefab
-    PrefabLoader::LoadFromFile("D:/1_Workspace/aladdin_prophet/data/prefab/plot.prefab");
+    PrefabLoader::LoadFromFile("D:/1_Workspace/aladdin_prophet_dev/data/prefab/plot.prefab");
     // Server
     // ChimeraServerImpl::RunServer();
 
@@ -54,6 +54,10 @@ void OnFrameUpdate()
     for (auto boundsCp : World::ActiveWorld()->GetComponentsInAllEnities<BoundsComponent>())
     {
         boundsCp->SyncTargetBounds();
+    }
+    for (auto layoutCp : World::ActiveWorld()->GetComponentsInAllEnities<StockVerticalLayout>())
+    {
+        layoutCp->ApplyLayout();
     }
 
     // 网格部分，先绘制线条
