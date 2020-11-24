@@ -1,4 +1,4 @@
-#include "prefab_loader.h"
+﻿#include "prefab_loader.h"
 #include "object_convertor.h"
 #include "component_convertor.h"
 #include <assert.h>
@@ -112,8 +112,18 @@ void PrefabLoader::Load()
 	if (m_Prefab->world_object_pool().size() <= 0)
 		return;
 
-    const pb::WorldObject& root = m_Prefab->world_object_pool()[0];
-    LoadEntity(root);
+    // 只加载第一个 Entity
+    // const pb::WorldObject& root = m_Prefab->world_object_pool()[0];
+    // LoadEntity(root);
+
+    // 遍历依次加载所有的 Entity
+    for (const pb::WorldObject& object: m_Prefab->world_object_pool())
+    {
+       if (object.type() == "Entity" && ObjectID::Find(object.id()) == NULL)
+       {
+           LoadEntity(object);
+       }
+    }
 }
 
 void PrefabLoader::LoadEntity(const pb::WorldObject& object)
@@ -128,6 +138,9 @@ void PrefabLoader::LoadEntity(const pb::WorldObject& object)
 		auto componentObj = GetObject(component);
         AddComponentToEntity(*entity, componentObj, *this);
 	}
+    // children, 这里是用 child 的 parent 字段来构建 hierarchy，
+    // 而非利用 parent 的 children，出于实现简单的原因了
+    // 实现在 Load() 中
 }
 
 const pb::WorldObject& PrefabLoader::GetObject(int id)

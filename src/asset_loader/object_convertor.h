@@ -3,6 +3,8 @@
 #include "pb/prefab.pb.h"
 #include "geometry/bounds.h"
 #include "plot/stock_metadata.h"
+#include "graphic/graphic.h"
+
 
 void ConvertBounds(const pb::WorldObject& object, Bounds& bounds, const pb::Prefab& prefab)
 {
@@ -14,6 +16,14 @@ void ConvertBounds(const pb::WorldObject& object, Bounds& bounds, const pb::Pref
         PrefabLoader::GetFloatElement(object, 3, prefab), 
         PrefabLoader::GetFloatElement(object, 4, prefab),
         PrefabLoader::GetFloatElement(object, 5, prefab));
+}
+
+void ConvertColor(const pb::WorldObject& object, Color& color, const pb::Prefab& prefab)
+{
+    color.r = PrefabLoader::GetFloatElement(object, 0, prefab);
+    color.g = PrefabLoader::GetFloatElement(object, 1, prefab);
+    color.b = PrefabLoader::GetFloatElement(object, 2, prefab);
+    color.a = PrefabLoader::GetFloatElement(object, 3, prefab);
 }
 
 void ConvertStockMetadata(const pb::WorldObject& object, StockMetadata& metadata, const pb::Prefab& prefab)

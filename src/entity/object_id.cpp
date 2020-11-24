@@ -34,7 +34,11 @@ ObjectID ObjectID::NextAutoID(WorldObject* object)
 
 WorldObject* ObjectID::Find(int id)
 {
-    return s_IdToObject[id];
+	auto it = s_IdToObject.find(id);
+	if (it == s_IdToObject.end())
+		return NULL;
+	else
+		return it->second;
 }
 
 

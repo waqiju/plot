@@ -27,6 +27,11 @@ void AddComponentToEntity(Entity& entity, const pb::WorldObject& pbComponentObj,
         {
             ConvertBounds(loader.GetObject(boundsObjectID), triangle->bounds, loader.Prefab());
         }
+        int colorID = PrefabLoader::GetIntMember(pbComponentObj, "color");
+        if (colorID)
+        {
+			ConvertColor(loader.GetObject(colorID), triangle->color, loader.Prefab());
+        }
 
         worldObject = triangle;
     }
@@ -50,6 +55,18 @@ void AddComponentToEntity(Entity& entity, const pb::WorldObject& pbComponentObj,
         boundsCp->target = PrefabLoader::FindObject<Component>(targetID);
 
         worldObject = boundsCp;
+    }
+    else if (pbComponentObj.type() == "UniformScaleComponent")
+    {
+        auto usCp = entity.GetOrAddComponent<UniformScaleComponent>();
+        usCp->mode = static_cast<UniformScaleMode>(PrefabLoader::GetIntMember(pbComponentObj, "mode"));
+		int targetID = PrefabLoader::GetIntMember(pbComponentObj, "target");
+        usCp->target = PrefabLoader::FindObject<Component>(targetID);
+    }
+    else if (pbComponentObj.type() == "StockLayoutItem")
+    {
+        auto layoutItem = entity.GetOrAddComponent<StockLayoutItem>();
+        layoutItem->priority = PrefabLoader::GetIntMember(pbComponentObj, "priority");
     }
     else
     {

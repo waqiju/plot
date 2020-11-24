@@ -28,9 +28,10 @@ int main()
     // PlotRoot
     auto plotRootEntity = PlotHelper::CreatePlotRootEntity();
     // Command
-    ChimeraServerImpl::ExecuteFile("art/600036.cmd");
+    // ChimeraServerImpl::ExecuteFile("art/600036.cmd");
     // Prefab
-    // PrefabLoader::LoadFromFile("art/triangle.prefab");
+    PrefabLoader::LoadFromFile("D:/1_Workspace/aladdin_prophet/data/prefab/plot.prefab");
+    // Server
     // ChimeraServerImpl::RunServer();
 
     window->FrameLoop(OnFrameUpdate);
