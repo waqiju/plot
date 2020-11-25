@@ -53,6 +53,22 @@ void AddComponentToEntity(Entity& entity, const pb::WorldObject& pbComponentObj,
 
         worldObject = pentagram;
     }
+    else if (pbComponentObj.type() == "Segment")
+    {
+        auto segment = entity.GetOrAddComponent<chimera::Segment>();
+        int boundsObjectID = PrefabLoader::GetIntMember(pbComponentObj, "bounds");
+        if (boundsObjectID)
+        {
+            ConvertBounds(loader.GetObject(boundsObjectID), segment->bounds, loader.Prefab());
+        }
+        int colorID = PrefabLoader::GetIntMember(pbComponentObj, "color");
+        if (colorID)
+        {
+            ConvertColor(loader.GetObject(colorID), segment->color, loader.Prefab());
+        }
+
+        worldObject = segment;
+    }
 	else if (pbComponentObj.type() == "StockGlyph")
 	{
 		auto stockGlyph = entity.GetOrAddComponent<StockGlyph>();

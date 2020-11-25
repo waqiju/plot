@@ -1,5 +1,6 @@
-#include "core_component/bounds_component.h"
-#include "core_component/text_component.h"
+#include "bounds_component.h"
+#include "text_component.h"
+#include "bounds_getter.h"
 #include "plot/plot.h"
 
 
@@ -8,6 +9,11 @@ Bounds BoundsComponent::kUndefineBounds;
 
 Bounds& BoundsComponent::RetrieveBounds(Component* target)
 {
+    IBoundsGetter* boundsGetter = dynamic_cast<IBoundsGetter*>(target);
+    if (boundsGetter != NULL)
+    {
+        return boundsGetter->GetBounds();
+    }
     if (typeid(*target) == typeid(Triangle))
     {
         return dynamic_cast<Triangle*>(target)->bounds;
@@ -35,7 +41,7 @@ Bounds& BoundsComponent::RetrieveBounds(Component* target)
 }
 
 
-void BoundsComponent::McakeBoundsSymmertric(Transform* transform, Bounds& bounds)
+void BoundsComponent::MakeBoundsSymmertric(Transform* transform, Bounds& bounds)
 {
     transform->SetLocalPosition(bounds.Center());
     Vector3 size = bounds.Size();

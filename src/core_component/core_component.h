@@ -2,3 +2,4 @@
 #include "core_component/bounds_component.h"
 #include "core_component/uniform_scale_component.h"
 #include "core_component/text_component.h"
+#include "core_component/bounds_getter.h"

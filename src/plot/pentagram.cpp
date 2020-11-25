@@ -16,7 +16,7 @@ Pentagram* Pentagram::Create(Transform* parent, const Vector3& v1, const Vector3
     pentagram->bounds.max = v2;
     pentagram->color = color;
 
-    BoundsComponent::McakeBoundsSymmertric(tr, pentagram->bounds);
+    BoundsComponent::MakeBoundsSymmertric(tr, pentagram->bounds);
     tr->SetParent(parent);
     return pentagram;
 }

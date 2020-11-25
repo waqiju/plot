@@ -47,3 +47,8 @@ python 的 boken
 ## C++ 命名风格
 
 https://zh-google-styleguide.readthedocs.io/en/latest/google-cpp-styleguide/contents/
+
+
+## 用 cpp 模版简化部分代码
+
+IBoundsGetter 能否用模块来实现
