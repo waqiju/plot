@@ -178,3 +178,17 @@ void TextComponent::BatchRender(std::vector<TextComponent*> textList)
     renderer->Render();
     glDisable(GL_BLEND);
 }
+
+void TextComponent::Deserialize(Entity& entity, const pb::WorldObject& pbComponentObj, PrefabLoader& loader)
+{
+    assert(pbComponentObj.type() == "TextComponent");
+
+	this->text = PrefabLoader::GetStringMember(pbComponentObj, "text", loader.Prefab());
+    this->fontSize = PrefabLoader::GetFloatMember(pbComponentObj, "fontSize", loader.Prefab());
+    this->alignment = static_cast<LayoutAlignment>(PrefabLoader::GetIntMember(pbComponentObj, "alignment"));
+    int colorID = PrefabLoader::GetIntMember(pbComponentObj, "color");
+    if (colorID)
+    {
+        ConvertColor(loader.GetObject(colorID), this->color, loader.Prefab());
+    }
+}

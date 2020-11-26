@@ -6,6 +6,7 @@
 #include "core_component/core_component.h"
 #include <iostream>
 #include "camera_helper.h"
+#include "prefab_convertor.h"
 
 
 void AddComponentToEntity(Entity& entity, const pb::WorldObject& pbComponentObj, PrefabLoader& loader)
@@ -108,6 +109,11 @@ void AddComponentToEntity(Entity& entity, const pb::WorldObject& pbComponentObj,
         layout->spacing = PrefabLoader::GetIntMember(pbComponentObj, "spacing");
         layout->unit = static_cast<CameraHelper::UnitOfLength>(PrefabLoader::GetIntMember(pbComponentObj, "unit"));
     }
+	else if (pbComponentObj.type() == "TextComponent")
+	{
+		auto textCp = entity.GetOrAddComponent<TextComponent>();
+		textCp->Deserialize(entity, pbComponentObj, loader);
+	}
     else
     {
         std::cout<<"Unsupported component[" << pbComponentObj.type() << "]\n";

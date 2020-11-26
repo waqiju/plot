@@ -4,9 +4,11 @@
 #include "core_component/layout_define.h"
 #include "graphic/graphic.h"
 #include <string>
+#include "asset_loader/prefab_convertor.h"
 
 
-class TextComponent: public Component
+
+class TextComponent: public Component, public IPrefabConvertor
 {
 public:
     static TextComponent* Create(Transform* parent, std::string text, float fontSize, LayoutAlignment alignment);
@@ -24,4 +26,7 @@ public:
     void AlignBounds();
     int GenerateMesh(std::vector<Vector3>& vertices, std::vector<Color>& colors, std::vector<Vector2>& uvs);
     void Render();
+
+    // Prefab
+    void Deserialize(Entity& entity, const pb::WorldObject& pbComponentObj, PrefabLoader& loader) override;
 };

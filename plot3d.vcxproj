@@ -143,6 +143,7 @@
     <ClCompile Include="src\application\input.cpp" />
     <ClCompile Include="src\application\time.cpp" />
     <ClCompile Include="src\asset_importer.cpp" />
+    <ClCompile Include="src\asset_loader\object_convertor.cpp" />
     <ClCompile Include="src\asset_loader\prefab_loader.cpp" />
     <ClCompile Include="src\camera.cpp" />
     <ClCompile Include="src\camera_helper.cpp" />
