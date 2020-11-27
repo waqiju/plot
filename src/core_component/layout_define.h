@@ -9,4 +9,6 @@ enum class LayoutAlignment
     Top = 4,
     Middle = 8,
     Bottom = 16,
+    // 复合
+    CenterMiddle = Center | Middle,  // 9
 };

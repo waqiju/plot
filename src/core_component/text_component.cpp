@@ -99,22 +99,30 @@ void TextComponent::AlignBounds()
         case LayoutAlignment::Left:
         {
             bounds.min = position;
-            bounds.max = position + Vector3(totalWidth, fontHeightInLocal, 0);
             break;
         }
         case LayoutAlignment::Center:
         {
             bounds.min = Vector3(position.x - totalWidth * 0.5f, position.y, position.z);
-            bounds.max = bounds.min + Vector3(totalWidth, fontHeightInLocal, 0);
             break;
         }
         case LayoutAlignment::Right:
         {
             bounds.min = Vector3(position.x - totalWidth, position.y, position.z);
-            bounds.max = bounds.min + Vector3(totalWidth, fontHeightInLocal, 0);
+            break;
+        }
+        case LayoutAlignment::CenterMiddle:
+        {
+            bounds.min = Vector3(position.x - totalWidth * 0.5f, position.y - fontHeightInLocal * 0.5f, position.z);
+            break;
+        }
+        default:
+        {
+            bounds.min = position;
             break;
         }
     }
+    bounds.max = bounds.min + Vector3(totalWidth, fontHeightInLocal, 0);
 }
 
 void TextComponent::Render()
