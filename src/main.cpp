@@ -30,9 +30,9 @@ int main()
     // Command
     // ChimeraServerImpl::ExecuteFile("art/600036.cmd");
     // Prefab
-    PrefabLoader::LoadFromFile("D:/1_Workspace/aladdin_prophet/data/prefab/plot.prefab");
+    // PrefabLoader::LoadFromFile("D:/1_Workspace/aladdin_prophet/data/prefab/plot.prefab");
     // Server
-    // ChimeraServerImpl::RunServer();
+    ChimeraServerImpl::RunServer();
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();

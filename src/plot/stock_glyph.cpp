@@ -115,7 +115,8 @@ void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
             auto& metadata = sg->metadata;
             float min = Mathf::Min(metadata.open, metadata.close);
             float max = Mathf::Max(metadata.open, metadata.close);
-            Bounds bounds = Bounds(Vector3(x - 0.45, min, 0), Vector3(x + 0.45, max, 0));
+            auto pairX = MeshVertexPairX(x);
+            Bounds bounds = Bounds(Vector3(pairX.first, min, 0), Vector3(pairX.second, max, 0));
             int count = chimera::Rectangle::GenerateMesh(bounds, sg->color, vertices, colors);
             Matrix4x4Helper::ApplyMatrixForEach(sg->GetTransform()->LocalToWorldMatrix(), vertices, vertices.size() - count, vertices.size());
         }
@@ -170,5 +171,5 @@ void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
 
 std::pair<float, float> StockGlyph::MeshVertexPairX(float x)
 {
-	return std::pair<float, float>(x - 0.45f, x + 0.45f);
+	return std::pair<float, float>(x - 0.4f, x + 0.4f);
 }

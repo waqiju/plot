@@ -3,9 +3,10 @@
 #include "entity/component.h"
 #include <string>
 #include "common/event.h"
+#include "asset_loader/prefab_convertor.h"
 
 
-class Transform : public Component
+class Transform : public Component, public IPrefabConvertor
 {
 public:
     Transform(Entity* owner) : Component(owner), onChanged(this)
@@ -86,6 +87,9 @@ public:
 
     ~Transform() override;
     void Destroy() override;
+
+    // Prefab
+    void Deserialize(Entity& entity, const pb::WorldObject& pbComponentObj, PrefabLoader& loader) override;
 
 private:
     // TRS

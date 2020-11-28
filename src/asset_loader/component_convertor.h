@@ -16,9 +16,7 @@ void AddComponentToEntity(Entity& entity, const pb::WorldObject& pbComponentObj,
     if (pbComponentObj.type() == "Transform")
     {
         auto transform = entity.GetTransform();
-        auto parentId = PrefabLoader::GetIntMember(pbComponentObj, "parent");
-        transform->SetParent(PrefabLoader::FindObject<Transform>(parentId));
-
+        transform->Deserialize(entity, pbComponentObj, loader);
         worldObject = transform;
     }
     else if (pbComponentObj.type() == "Triangle")
@@ -113,6 +111,7 @@ void AddComponentToEntity(Entity& entity, const pb::WorldObject& pbComponentObj,
 	{
 		auto textCp = entity.GetOrAddComponent<TextComponent>();
 		textCp->Deserialize(entity, pbComponentObj, loader);
+        worldObject = textCp;
 	}
     else
     {

@@ -131,3 +131,15 @@ void Transform::Destroy()
 	}
 	SetFlagDestroyEnd();
 }
+
+void Transform::Deserialize(Entity& entity, const pb::WorldObject& pbComponentObj, PrefabLoader& loader)
+{
+    auto parentId = PrefabLoader::GetIntMember(pbComponentObj, "parent");
+    this->SetParent(PrefabLoader::FindObject<Transform>(parentId));
+    int vectorID = PrefabLoader::GetIntMember(pbComponentObj, "localPosition");
+    if (vectorID)
+    {
+        ConvertVector3(loader.GetObject(vectorID), m_LocalPosition, loader.Prefab());
+        this->MarkAsDirty();
+    }
+}

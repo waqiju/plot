@@ -3,7 +3,8 @@
 #include <map>
 #include <string>
 #include "pb/prefab.pb.h"
-#include "entity/ec.h"
+
+class WorldObject;
 using PbObjectIdMap = std::map<int, const pb::WorldObject*>;
 
 
