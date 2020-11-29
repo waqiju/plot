@@ -17,7 +17,7 @@ Transform* g_PlotRoot;
 
 int main()
 {
-    Window* window = Window::CreateWindow("Chimera", Application::screenWidth, Application::screenHeight);
+    Window* window = Window::Create("Chimera", Application::screenWidth, Application::screenHeight);
     window->onWindowSizeChanged = UiHelper::WindowSizeChangedHandler;
     window->onMouseScrollChanged = MouseScrollHandlers::ZoomPlotRoot;
     CameraHelper::CreateCamera();
