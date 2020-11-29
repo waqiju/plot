@@ -1,4 +1,4 @@
-#include "stock_glyph.h"
+﻿#include "stock_glyph.h"
 #include "mesh.h"
 #include "material.h"
 #include "resource/resource_manager.h"
@@ -40,6 +40,7 @@ void StockGlyph::Reset(float inX, const StockMetadata& inMetadata)
     {
         color = Color::green;
     }
+    color.a = 0.75f;
 	auto vertexPairX = MeshVertexPairX(x);
     bounds.min = Vector3(vertexPairX.first, metadata.low, 0);
     bounds.max = Vector3(vertexPairX.second, metadata.high, 0);
@@ -132,6 +133,8 @@ void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
         renderer->mesh = &mesh;
         renderer->material = &material;
         renderer->camera = Application::MainCamera();
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         renderer->Render();
     }
 
@@ -148,8 +151,16 @@ void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
         {
             float x = sg->x;
             auto& metadata = sg->metadata;
-            Bounds bounds(Vector3(x, metadata.low, 0), Vector3(x, metadata.high, 0));
+            // 防止和 Rectangle 的透明叠加，所以拆为两个 Segment
+            float low2 = std::min(metadata.open, metadata.close);
+            float high2 = std::max(metadata.open, metadata.close);
+
+            Bounds bounds = Bounds(Vector3(x, metadata.low, 0), Vector3(x, low2, 0));
             int count = chimera::Segment::GenerateMesh(bounds, sg->color, vertices, colors);
+            Matrix4x4Helper::ApplyMatrixForEach(sg->GetTransform()->LocalToWorldMatrix(), vertices, vertices.size() - count, vertices.size());
+
+            bounds = Bounds(Vector3(x, high2, 0), Vector3(x, metadata.high, 0));
+            count = chimera::Segment::GenerateMesh(bounds, sg->color, vertices, colors);
             Matrix4x4Helper::ApplyMatrixForEach(sg->GetTransform()->LocalToWorldMatrix(), vertices, vertices.size() - count, vertices.size());
         }
         Mesh mesh;
@@ -165,6 +176,8 @@ void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
         renderer->mesh = &mesh;
         renderer->material = &material;
         renderer->camera = Application::MainCamera();
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         renderer->Render();
     }
 }
