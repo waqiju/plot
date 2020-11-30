@@ -30,7 +30,8 @@ void ResetPlotCommand::Execute()
 		return;
 	}
 
-	for (auto child : transform->Children())
+	std::vector<Transform*> childrenCopy = transform->Children();
+	for (auto child : childrenCopy)
 	{
 		auto entity = child->OwnerEntity();
 		if (entity->tag != PlotHelper::kPlotEssentialTag)
