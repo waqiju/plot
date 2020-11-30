@@ -33,6 +33,6 @@ void DestroyEntityCommand::Execute()
 		return;
 	}
 
-	Entity* entity = transform->OnwerEntity();
+	Entity* entity = transform->OwnerEntity();
 	delete entity;
 }

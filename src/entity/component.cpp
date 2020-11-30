@@ -7,7 +7,7 @@ Component::Component(Entity* owner)
     m_OwerEntity = owner;
 }
 
-Entity* Component::OnwerEntity()
+Entity* Component::OwnerEntity()
 {
     return m_OwerEntity;
 }

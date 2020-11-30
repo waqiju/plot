@@ -53,6 +53,7 @@ void Transform::SetParent(Transform* parent)
 		// 加入 World 根结点
 		m_OwerEntity->OnwerWorld()->AttachEntity(m_OwerEntity);
 	}
+	MarkAsDirty();
 }
 
 void Transform::Flush(bool includeChildren, bool force)

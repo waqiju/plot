@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include <typeinfo>
 #include <cassert>
+#include <string>
 #include "entity/world_object.h"
 #include "entity/transform.h"
 
@@ -37,6 +38,8 @@ public:
 
     ~Entity() override;
     void Destroy() override;
+
+    std::string tag;
 
 private:
     void SetActive(bool status);

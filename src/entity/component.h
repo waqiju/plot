@@ -9,19 +9,19 @@ class Component: public WorldObject
 {
 public:
     Component(Entity* owner);
-    Entity* OnwerEntity();
+    Entity* OwnerEntity();
     Transform* GetTransform();
     bool Enabled();
 
-    template<typename T> T* AddComponent() { return OnwerEntity()->template AddComponent<T>(); }
-    template<typename T> T* GetComponent() { return OnwerEntity()->template GetComponent<T>(); }
+    template<typename T> T* AddComponent() { return OwnerEntity()->template AddComponent<T>(); }
+    template<typename T> T* GetComponent() { return OwnerEntity()->template GetComponent<T>(); }
     template<typename T> std::vector<T*> GetComponentsInChildren()
     {
-        return OnwerEntity()->template GetComponentsInChildren<T>();
+        return OwnerEntity()->template GetComponentsInChildren<T>();
     }
     template<typename T> void GetComponentsInChildren(std::vector<T*>& componentList)
     {
-        OnwerEntity()->template GetComponentsInChildren<T>(componentList);
+        OwnerEntity()->template GetComponentsInChildren<T>(componentList);
     }
 
 private:

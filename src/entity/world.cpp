@@ -70,7 +70,7 @@ WorldObject* World::FindObject(int id)
     std::vector<Transform*>&& transforms = GetComponentsInAllEnities<Transform>();
     for (Transform* transform : transforms)
     {
-        auto entity = transform->OnwerEntity();
+        auto entity = transform->OwnerEntity();
         if (entity->id == id)
             return entity;
 		

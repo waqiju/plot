@@ -6,15 +6,18 @@
 namespace PlotHelper
 {
     std::string kPlotRootName = "PlotRoot";
+    std::string kPlotEssentialTag = "PlotEssential";
 
     Entity* CreatePlotRootEntity()
     {
         auto plotRootEntity = World::ActiveWorld()->CreateEntity("PlotRoot");
         plotRootEntity->id = ObjectID::PlotRoot;
+        plotRootEntity->tag = kPlotEssentialTag;
         auto plotRootTransform = plotRootEntity->GetComponent<Transform>();
         plotRootTransform->id = ObjectID::PlotRootTransform;
         // SpaceGrid
         auto spaceGridEntity = World::ActiveWorld()->CreateEntity("SpaceGrid");
+        spaceGridEntity->tag = kPlotEssentialTag;
         spaceGridEntity->GetComponent<Transform>()->SetParent(plotRootTransform);
         spaceGridEntity->AddComponent<SpaceGridComponent>();
 
