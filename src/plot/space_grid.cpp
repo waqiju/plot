@@ -240,7 +240,12 @@ void SpaceGrid::RenderLabel()
     // x
     float displayInteralX;
     Vector3 onePixelSizeInLocal = CameraHelper::OnePixelSizeInLocal(m_Camera, static_cast<float>(Application::screenHeight), m_Transform->LocalToWorldMatrix());
-    float maxDisplayLength = TickNumberToString(x1).size() * 18 * 0.6 + 18 * 2;
+	int maxLabelXDigitCount = 0;
+	for (float i = x0; i <= x1; i += intervalX)
+	{
+		maxLabelXDigitCount = std::max(maxLabelXDigitCount, static_cast<int>(TickNumberToString(i).size()));
+	}
+	float maxDisplayLength = maxLabelXDigitCount * 18 * 0.6 + 18;
     if (intervalXMinus1 / onePixelSizeInLocal.x >= maxDisplayLength)
     {
         displayInteralX = intervalXMinus1;
