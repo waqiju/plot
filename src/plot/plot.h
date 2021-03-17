@@ -4,7 +4,7 @@
 #include "triangle.h"
 #include "pentagram.h"
 #include "segment.h"
-#include "stock_glyph.h"
+#include "price_digest_glyph.h"
 #include "plot_helper.h"
 #include "stock_metadata.h"
 #include "stock_layout_item.h"

@@ -32,9 +32,9 @@ Bounds& BoundsComponent::RetrieveBounds(Component* target)
         return dynamic_cast<TextComponent*>(target)->bounds;
     }
     // stock glyph
-    if (typeid(*target) == typeid(StockGlyph))
+    if (typeid(*target) == typeid(PriceDigestGlyph))
     {
-        return dynamic_cast<StockGlyph*>(target)->bounds;
+        return dynamic_cast<PriceDigestGlyph*>(target)->bounds;
     }
 
     return kUndefineBounds;

@@ -201,7 +201,7 @@
     <ClCompile Include="src\plot\rectangle.cpp" />
     <ClCompile Include="src\plot\segment.cpp" />
     <ClCompile Include="src\plot\space_grid.cpp" />
-    <ClCompile Include="src\plot\stock_glyph.cpp" />
+    <ClCompile Include="src\plot\price_digest_glyph.cpp" />
     <ClCompile Include="src\plot\stock_layout_item.cpp" />
     <ClCompile Include="src\plot\stock_vertical_layout.cpp" />
     <ClCompile Include="src\plot\triangle.cpp" />
@@ -288,7 +288,7 @@
     <ClInclude Include="src\plot\segment.h" />
     <ClInclude Include="src\plot\space_grid.h" />
     <ClInclude Include="src\plot\space_grid_component.h" />
-    <ClInclude Include="src\plot\stock_glyph.h" />
+    <ClInclude Include="src\plot\price_digest_glyph.h" />
     <ClInclude Include="src\plot\stock_layout_item.h" />
     <ClInclude Include="src\plot\stock_vertical_layout.h" />
     <ClInclude Include="src\plot\triangle.h" />

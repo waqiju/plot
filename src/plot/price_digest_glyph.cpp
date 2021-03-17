@@ -1,4 +1,4 @@
-﻿#include "stock_glyph.h"
+﻿#include "price_digest_glyph.h"
 #include "mesh.h"
 #include "material.h"
 #include "resource/resource_manager.h"
@@ -8,10 +8,10 @@
 #include "core_component/core_component.h"
 
 
-StockGlyph* StockGlyph::Create(Transform* parent, float x, const StockMetadata& metadata)
+PriceDigestGlyph* PriceDigestGlyph::Create(Transform* parent, float x, const StockMetadata& metadata)
 {
     auto entity = World::ActiveWorld()->CreateEntity();
-    auto stockGlyph = entity->AddComponent<StockGlyph>();
+    auto stockGlyph = entity->AddComponent<PriceDigestGlyph>();
     stockGlyph->Reset(x, metadata);
 
     entity->GetComponent<Transform>()->SetParent(parent);
@@ -23,7 +23,7 @@ StockGlyph* StockGlyph::Create(Transform* parent, float x, const StockMetadata& 
     return stockGlyph;
 }
 
-void StockGlyph::Reset(float inX, const StockMetadata& inMetadata)
+void PriceDigestGlyph::Reset(float inX, const StockMetadata& inMetadata)
 {
     x = inX;
     metadata = inMetadata;
@@ -46,13 +46,13 @@ void StockGlyph::Reset(float inX, const StockMetadata& inMetadata)
     bounds.max = Vector3(vertexPairX.second, metadata.high, 0);
 }
 
-void StockGlyph::Render()
+void PriceDigestGlyph::Render()
 {
     RenderRectangle();
     RenderSegment();
 }
 
-void StockGlyph::RenderRectangle()
+void PriceDigestGlyph::RenderRectangle()
 {
     // mesh
     std::vector<Vector3> vertices;
@@ -76,7 +76,7 @@ void StockGlyph::RenderRectangle()
     renderer->Render();
 }
 
-void StockGlyph::RenderSegment()
+void PriceDigestGlyph::RenderSegment()
 {
     // mesh
     std::vector<Vector3> vertices;
@@ -99,7 +99,7 @@ void StockGlyph::RenderSegment()
     renderer->Render();
 }
 
-void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
+void PriceDigestGlyph::BatchRender(std::vector<PriceDigestGlyph*>& stockGlyphList)
 {
     // rectangle
     {
@@ -182,7 +182,7 @@ void StockGlyph::BatchRender(std::vector<StockGlyph*>& stockGlyphList)
     }
 }
 
-std::pair<float, float> StockGlyph::MeshVertexPairX(float x)
+std::pair<float, float> PriceDigestGlyph::MeshVertexPairX(float x)
 {
 	return std::pair<float, float>(x - 0.4f, x + 0.4f);
 }

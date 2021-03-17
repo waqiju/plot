@@ -1,6 +1,6 @@
 #include "stock_vertical_layout.h"
 #include "stock_layout_item.h"
-#include "stock_glyph.h"
+#include "price_digest_glyph.h"
 #include "core_component/core_component.h"
 #include <vector>
 #include <algorithm>

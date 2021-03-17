@@ -75,8 +75,8 @@ void OnFrameUpdate()
     chimera::Segment::BatchRender(segmentList);
     auto textCpList = World::ActiveWorld()->GetComponentsInAllEnities<TextComponent>();
     TextComponent::BatchRender(textCpList);
-    auto stockGlyphList = World::ActiveWorld()->GetComponentsInAllEnities<StockGlyph>();
-    StockGlyph::BatchRender(stockGlyphList);
+    auto stockGlyphList = World::ActiveWorld()->GetComponentsInAllEnities<PriceDigestGlyph>();
+    PriceDigestGlyph::BatchRender(stockGlyphList);
     // 网格部分，最后绘制 Label
     for (auto spaceGrid : spaceGridList)
         spaceGrid->RenderLabel();

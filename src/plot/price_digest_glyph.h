@@ -7,14 +7,14 @@
 #include "stock_metadata.h"
 
 
-class StockGlyph : public Component
+class PriceDigestGlyph : public Component
 {
 public:
-    static StockGlyph* Create(Transform* parent, float x, const StockMetadata& metadata);
-    static void BatchRender(std::vector<StockGlyph*>& stockGlyph);
+    static PriceDigestGlyph* Create(Transform* parent, float x, const StockMetadata& metadata);
+    static void BatchRender(std::vector<PriceDigestGlyph*>& stockGlyph);
 	static std::pair<float, float> MeshVertexPairX(float x);
 
-    StockGlyph(Entity* owner): Component(owner) {}
+    PriceDigestGlyph(Entity* owner): Component(owner) {}
 
     Bounds bounds;
     Color color = Color::white;
