@@ -290,6 +290,7 @@
     <ClInclude Include="src\plot\space_grid_component.h" />
     <ClInclude Include="src\plot\price_digest_glyph.h" />
     <ClInclude Include="src\plot\stock_layout_item.h" />
+    <ClInclude Include="src\plot\stock_price_digest.h" />
     <ClInclude Include="src\plot\stock_vertical_layout.h" />
     <ClInclude Include="src\plot\triangle.h" />
     <ClInclude Include="src\resource\resource_manager.h" />

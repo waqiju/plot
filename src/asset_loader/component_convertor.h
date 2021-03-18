@@ -73,7 +73,7 @@ void AddComponentToEntity(Entity& entity, const pb::WorldObject& pbComponentObj,
 		auto stockGlyph = entity.GetOrAddComponent<PriceDigestGlyph>();
 		float x = PrefabLoader::GetFloatMember(pbComponentObj, "x", loader.Prefab());
         //
-        StockMetadata metadata;
+        StockPriceDigest metadata;
 		int metadataID = PrefabLoader::GetIntMember(pbComponentObj, "metadata");
 		ConvertStockMetadata(loader.GetObject(metadataID), metadata, loader.Prefab());
         //

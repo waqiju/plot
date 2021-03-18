@@ -491,5 +491,8 @@
     <ClInclude Include="src\plot\price_digest_glyph.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\plot\stock_price_digest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

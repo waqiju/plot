@@ -4,13 +4,13 @@
 #include "entity/ec.h"
 #include <vector>
 #include <utility>
-#include "stock_metadata.h"
+#include "stock_price_digest.h"
 
 
 class PriceDigestGlyph : public Component
 {
 public:
-    static PriceDigestGlyph* Create(Transform* parent, float x, const StockMetadata& metadata);
+    static PriceDigestGlyph* Create(Transform* parent, float x, const StockPriceDigest& metadata);
     static void BatchRender(std::vector<PriceDigestGlyph*>& stockGlyph);
 	static std::pair<float, float> MeshVertexPairX(float x);
 
@@ -19,10 +19,10 @@ public:
     Bounds bounds;
     Color color = Color::white;
     float x;
-    StockMetadata metadata;
+    StockPriceDigest metadata;
 
 
-    void Reset(float inX, const StockMetadata& inMetadata);
+    void Reset(float inX, const StockPriceDigest& inMetadata);
     void Render();
 private:
     void RenderRectangle();

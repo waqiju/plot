@@ -1,7 +1,7 @@
 #pragma once
 #include "object_convertor.h"
 #include "geometry/geometry.h"
-#include "plot/stock_metadata.h"
+#include "plot/stock_price_digest.h"
 #include "graphic/graphic.h"
 
 
@@ -32,7 +32,7 @@ void ConvertBounds(const pb::WorldObject& object, Bounds& bounds, const pb::Pref
         PrefabLoader::GetFloatElement(object, 5, prefab));
 }
 
-void ConvertStockMetadata(const pb::WorldObject& object, StockMetadata& metadata, const pb::Prefab& prefab)
+void ConvertStockMetadata(const pb::WorldObject& object, StockPriceDigest& metadata, const pb::Prefab& prefab)
 {
     metadata.code = PrefabLoader::GetStringMember(object, "code", prefab);
     metadata.data = PrefabLoader::GetStringMember(object, "data", prefab);
@@ -40,6 +40,7 @@ void ConvertStockMetadata(const pb::WorldObject& object, StockMetadata& metadata
 
     metadata.open = PrefabLoader::GetDoubleMember(object, "open", prefab);
     metadata.close = PrefabLoader::GetDoubleMember(object, "close", prefab);
+    metadata.previous_close = PrefabLoader::GetDoubleMember(object, "previous_close", prefab);
     metadata.low = PrefabLoader::GetDoubleMember(object, "low", prefab);
     metadata.high = PrefabLoader::GetDoubleMember(object, "high", prefab);
     metadata.vol = PrefabLoader::GetDoubleMember(object, "vol", prefab);

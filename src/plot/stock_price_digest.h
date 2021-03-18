@@ -2,7 +2,7 @@
 #include <string>
 
 
-class StockMetadata
+class StockPriceDigest
 {
 public:
     std::string code;
@@ -13,6 +13,7 @@ public:
     double high;
     double low;
     double close;
+    double previous_close;
     double vol;
     double amount;
 };

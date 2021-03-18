@@ -8,7 +8,7 @@
 #include "core_component/core_component.h"
 
 
-PriceDigestGlyph* PriceDigestGlyph::Create(Transform* parent, float x, const StockMetadata& metadata)
+PriceDigestGlyph* PriceDigestGlyph::Create(Transform* parent, float x, const StockPriceDigest& metadata)
 {
     auto entity = World::ActiveWorld()->CreateEntity();
     auto stockGlyph = entity->AddComponent<PriceDigestGlyph>();
@@ -23,14 +23,25 @@ PriceDigestGlyph* PriceDigestGlyph::Create(Transform* parent, float x, const Sto
     return stockGlyph;
 }
 
-void PriceDigestGlyph::Reset(float inX, const StockMetadata& inMetadata)
+void PriceDigestGlyph::Reset(float inX, const StockPriceDigest& inMetadata)
 {
     x = inX;
     metadata = inMetadata;
     // color
     if (metadata.open == metadata.close)
     {
-        color = Color::grey;
+        if (metadata.close > metadata.previous_close)
+        {
+            color = Color::red;
+        }
+        else if (metadata.close < metadata.previous_close)
+        {
+            color = Color::green;
+        }
+        else
+        {
+            color = Color::grey;
+        }
     }
     else if (metadata.open < metadata.close)
     {
@@ -138,6 +149,7 @@ void PriceDigestGlyph::BatchRender(std::vector<PriceDigestGlyph*>& stockGlyphLis
         renderer->Render();
     }
 
+    float pixelSize = CameraHelper::OnePixelSizeInWorld(Application::MainCamera(), Application::screenHeight);
     // segment
     {
         // mesh
@@ -162,6 +174,15 @@ void PriceDigestGlyph::BatchRender(std::vector<PriceDigestGlyph*>& stockGlyphLis
             bounds = Bounds(Vector3(x, high2, 0), Vector3(x, metadata.high, 0));
             count = chimera::Segment::GenerateMesh(bounds, sg->color, vertices, colors);
             Matrix4x4Helper::ApplyMatrixForEach(sg->GetTransform()->LocalToWorldMatrix(), vertices, vertices.size() - count, vertices.size());
+            // 特殊情景，如果 open 和 close 非常接近，绘制出来的矩形因为高度为0，
+            // 实际没有被像素化。改变 Bounds 的大小，使得可以显示大小为 1-2 像素
+            if (std::abs(metadata.open - metadata.close)  < pixelSize)
+            {
+				auto pairX = MeshVertexPairX(x);
+				bounds = Bounds(Vector3(pairX.first, metadata.close, 0), Vector3(pairX.second, metadata.close, 0));
+				count = chimera::Segment::GenerateMesh(bounds, sg->color, vertices, colors);
+				Matrix4x4Helper::ApplyMatrixForEach(sg->GetTransform()->LocalToWorldMatrix(), vertices, vertices.size() - count, vertices.size());
+            }
         }
         Mesh mesh;
         mesh.SetTopology(MeshTopology::Lines);
