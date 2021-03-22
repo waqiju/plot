@@ -5,6 +5,8 @@
 namespace PlotHelper
 {
     extern std::string kPlotRootName;
+    extern std::string kPlotMainPanelName;
+    extern std::string kPlotFloatingPanelNamePrefix;
     extern std::string kPlotEssentialTag;
 
     Entity* CreatePlotRootEntity();

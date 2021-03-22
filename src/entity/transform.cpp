@@ -136,7 +136,19 @@ void Transform::Destroy()
 void Transform::Deserialize(Entity& entity, const pb::WorldObject& pbComponentObj, PrefabLoader& loader)
 {
     auto parentId = PrefabLoader::GetIntMember(pbComponentObj, "parent");
-    this->SetParent(PrefabLoader::FindObject<Transform>(parentId));
+    // parent, 可以是 transform id 或者 entity id
+    WorldObject* parentObj = PrefabLoader::FindObject(parentId);
+	Transform* parentTr = dynamic_cast<Transform*>(parentObj);
+	if (parentTr == nullptr)
+	{
+		Entity* parentEntity = dynamic_cast<Entity*>(parentObj);
+		if (parentEntity != nullptr)
+		{
+			parentTr = parentEntity->GetTransform();
+		}
+	}
+	this->SetParent(dynamic_cast<Transform*>(parentTr));
+	// position
     int vectorID = PrefabLoader::GetIntMember(pbComponentObj, "localPosition");
     if (vectorID)
     {
