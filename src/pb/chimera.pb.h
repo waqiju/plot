@@ -49,7 +49,7 @@ struct TableStruct_pb_2fchimera_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[5]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -57,6 +57,9 @@ struct TableStruct_pb_2fchimera_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fchimera_2eproto;
 namespace pb {
+class CommandList;
+class CommandListDefaultTypeInternal;
+extern CommandListDefaultTypeInternal _CommandList_default_instance_;
 class CommandParameter;
 class CommandParameterDefaultTypeInternal;
 extern CommandParameterDefaultTypeInternal _CommandParameter_default_instance_;
@@ -74,6 +77,7 @@ class EchoRequestDefaultTypeInternal;
 extern EchoRequestDefaultTypeInternal _EchoRequest_default_instance_;
 }  // namespace pb
 PROTOBUF_NAMESPACE_OPEN
+template<> ::pb::CommandList* Arena::CreateMaybeMessage<::pb::CommandList>(Arena*);
 template<> ::pb::CommandParameter* Arena::CreateMaybeMessage<::pb::CommandParameter>(Arena*);
 template<> ::pb::CommandReply* Arena::CreateMaybeMessage<::pb::CommandReply>(Arena*);
 template<> ::pb::CommandRequest* Arena::CreateMaybeMessage<::pb::CommandRequest>(Arena*);
@@ -941,6 +945,152 @@ class CommandReply PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_pb_2fchimera_2eproto;
 };
+// -------------------------------------------------------------------
+
+class CommandList PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.CommandList) */ {
+ public:
+  inline CommandList() : CommandList(nullptr) {}
+  virtual ~CommandList();
+
+  CommandList(const CommandList& from);
+  CommandList(CommandList&& from) noexcept
+    : CommandList() {
+    *this = ::std::move(from);
+  }
+
+  inline CommandList& operator=(const CommandList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CommandList& operator=(CommandList&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const CommandList& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CommandList* internal_default_instance() {
+    return reinterpret_cast<const CommandList*>(
+               &_CommandList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(CommandList& a, CommandList& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CommandList* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CommandList* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CommandList* New() const final {
+    return CreateMaybeMessage<CommandList>(nullptr);
+  }
+
+  CommandList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<CommandList>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const CommandList& from);
+  void MergeFrom(const CommandList& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CommandList* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pb.CommandList";
+  }
+  protected:
+  explicit CommandList(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_pb_2fchimera_2eproto);
+    return ::descriptor_table_pb_2fchimera_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCommandListFieldNumber = 1,
+  };
+  // repeated .pb.CommandRequest command_list = 1;
+  int command_list_size() const;
+  private:
+  int _internal_command_list_size() const;
+  public:
+  void clear_command_list();
+  ::pb::CommandRequest* mutable_command_list(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::CommandRequest >*
+      mutable_command_list();
+  private:
+  const ::pb::CommandRequest& _internal_command_list(int index) const;
+  ::pb::CommandRequest* _internal_add_command_list();
+  public:
+  const ::pb::CommandRequest& command_list(int index) const;
+  ::pb::CommandRequest* add_command_list();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::CommandRequest >&
+      command_list() const;
+
+  // @@protoc_insertion_point(class_scope:pb.CommandList)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::CommandRequest > command_list_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_pb_2fchimera_2eproto;
+};
 // ===================================================================
 
 
@@ -1556,9 +1706,54 @@ inline void CommandReply::set_allocated_error_message(std::string* error_message
   // @@protoc_insertion_point(field_set_allocated:pb.CommandReply.error_message)
 }
 
+// -------------------------------------------------------------------
+
+// CommandList
+
+// repeated .pb.CommandRequest command_list = 1;
+inline int CommandList::_internal_command_list_size() const {
+  return command_list_.size();
+}
+inline int CommandList::command_list_size() const {
+  return _internal_command_list_size();
+}
+inline void CommandList::clear_command_list() {
+  command_list_.Clear();
+}
+inline ::pb::CommandRequest* CommandList::mutable_command_list(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.CommandList.command_list)
+  return command_list_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::CommandRequest >*
+CommandList::mutable_command_list() {
+  // @@protoc_insertion_point(field_mutable_list:pb.CommandList.command_list)
+  return &command_list_;
+}
+inline const ::pb::CommandRequest& CommandList::_internal_command_list(int index) const {
+  return command_list_.Get(index);
+}
+inline const ::pb::CommandRequest& CommandList::command_list(int index) const {
+  // @@protoc_insertion_point(field_get:pb.CommandList.command_list)
+  return _internal_command_list(index);
+}
+inline ::pb::CommandRequest* CommandList::_internal_add_command_list() {
+  return command_list_.Add();
+}
+inline ::pb::CommandRequest* CommandList::add_command_list() {
+  // @@protoc_insertion_point(field_add:pb.CommandList.command_list)
+  return _internal_add_command_list();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::CommandRequest >&
+CommandList::command_list() const {
+  // @@protoc_insertion_point(field_list:pb.CommandList.command_list)
+  return command_list_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

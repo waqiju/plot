@@ -83,10 +83,12 @@ void ChimeraServerImpl::ExecuteFile(std::string path)
 {
     std::string content;
     FileHelper::Read(path, content);
-    pb::CommandRequest request;
-    request.ParseFromString(content);
-
-    ExecuteCommand(request);
+    pb::CommandList commandList;
+	commandList.ParseFromString(content);
+	for (auto& request : commandList.command_list())
+	{
+		ExecuteCommand(request);
+	}
 }
 
 void ChimeraServerImpl::ExecuteCommand(const CommandRequest& request)

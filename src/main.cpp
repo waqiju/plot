@@ -28,7 +28,7 @@ int main()
     // PlotRoot
     auto plotRootEntity = PlotHelper::CreatePlotRootEntity();
     // Command
-    ChimeraServerImpl::ExecuteFile("art/600036_pd.cmd");
+    ChimeraServerImpl::ExecuteFile("art/test_floating_panel.cmd");
     // Prefab
     // PrefabLoader::LoadFromFile("D:/1_Workspace/aladdin_prophet/data/prefab/plot.prefab");
     // Server
