@@ -6,6 +6,10 @@
 #include "object_id.h"
 
 
+class Entity;
+class Transform;
+
+
 enum class LifecycleFlag: int
 {
     Default = 0,
@@ -31,6 +35,7 @@ class WorldObject
 public:
     ObjectID id;
     std::string name = "Unnamed";
+
     int GetInstanceID();
     int GetHashCode();
 	virtual std::string ToString();
@@ -39,6 +44,9 @@ public:
     // 析构
     virtual ~WorldObject() {id.Unregister();}
     virtual void Destroy() {};
+	// Utility
+	Entity* ToEntity();
+	Transform* ToTransform();
 
 protected:
     void SetFlagDestroyStart() { m_Lifecycle |= LifecycleFlag::DestroyStart; }

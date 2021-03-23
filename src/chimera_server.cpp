@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <string>
 #include "chimera_server.h"
 #include "asset_loader/asset_loader.h"
@@ -119,6 +119,18 @@ void ChimeraServerImpl::ExecuteCommand(const CommandRequest& request)
 		auto command = FocusPlotCommand(parameter0.p_float(), parameter1.p_float());
 		command.Execute();
 	}
+    else if (request.name() == "tree")
+    {
+		int id = 0;
+		if (request.parameters_size() > 0)
+		{
+			id = request.parameters(0).p_int();
+		}
+		auto command = TreeCommand(id);
+		std::string content = command.Execute();
+		// TODO 返回结果
+		std::cout << content << std::endl;
+    }
 	else
 	{
 		std::cout << "Unsupported cammand[" << request.name() << "]\n";

@@ -231,6 +231,9 @@
     <ClCompile Include="src\plot\price_digest_glyph.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\command\tree_command.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\default_shader.h">
@@ -492,6 +495,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\plot\stock_price_digest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\command\tree_command.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

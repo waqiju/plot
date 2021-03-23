@@ -151,6 +151,7 @@
     <ClCompile Include="src\command\destroy_entity_command.cpp" />
     <ClCompile Include="src\command\focus_plot_command.cpp" />
     <ClCompile Include="src\command\reset_plot_command.cpp" />
+    <ClCompile Include="src\command\tree_command.cpp" />
     <ClCompile Include="src\common\file_helper.cpp" />
     <ClCompile Include="src\core_component\bounds_component.cpp" />
     <ClCompile Include="src\core_component\text_component.cpp" />
@@ -227,6 +228,7 @@
     <ClInclude Include="src\command\command.h" />
     <ClInclude Include="src\command\focus_plot_command.h" />
     <ClInclude Include="src\command\reset_plot_command.h" />
+    <ClInclude Include="src\command\tree_command.h" />
     <ClInclude Include="src\common\common.h" />
     <ClInclude Include="src\common\event.h" />
     <ClInclude Include="src\common\file_helper.h" />

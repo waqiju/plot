@@ -84,8 +84,9 @@ static void InitDefaultsscc_info_CommandReply_pb_2fchimera_2eproto() {
   ::pb::CommandReply::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CommandReply_pb_2fchimera_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_CommandReply_pb_2fchimera_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_CommandReply_pb_2fchimera_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_CommandReply_pb_2fchimera_2eproto}, {
+      &scc_info_CommandParameter_pb_2fchimera_2eproto.base,}};
 
 static void InitDefaultsscc_info_CommandRequest_pb_2fchimera_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -173,6 +174,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_pb_2fchimera_2eproto::offsets[
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::pb::CommandReply, error_code_),
   PROTOBUF_FIELD_OFFSET(::pb::CommandReply, error_message_),
+  PROTOBUF_FIELD_OFFSET(::pb::CommandReply, results_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pb::CommandList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -186,7 +188,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 12, -1, sizeof(::pb::CommandRequest)},
   { 19, -1, sizeof(::pb::CommandParameter)},
   { 31, -1, sizeof(::pb::CommandReply)},
-  { 38, -1, sizeof(::pb::CommandList)},
+  { 39, -1, sizeof(::pb::CommandList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -207,15 +209,16 @@ const char descriptor_table_protodef_pb_2fchimera_2eproto[] PROTOBUF_SECTION_VAR
   "\030\001 \001(\010\022\r\n\005p_int\030\002 \001(\005\022\017\n\007p_float\030\003 \001(\002\022\020"
   "\n\010p_double\030\004 \001(\001\022\020\n\010p_string\030\005 \001(\t\022\017\n\007p_"
   "bytes\030\006 \001(\014\022\032\n\006prefab\030\007 \001(\0132\n.pb.Prefab\""
-  "9\n\014CommandReply\022\022\n\nerror_code\030\001 \001(\005\022\025\n\re"
-  "rror_message\030\002 \001(\t\"7\n\013CommandList\022(\n\014com"
-  "mand_list\030\001 \003(\0132\022.pb.CommandRequest*k\n\nE"
-  "RROR_CODE\022\026\n\022ERROR_CODE_SUCCESS\020\000\022 \n\034ERR"
-  "OR_CODE_PARAMETER_INVALID\020\001\022#\n\037ERROR_COD"
-  "E_AUTHORIZATION_FAILED\020\0022h\n\014ChimeraRoost"
-  "\022(\n\004Echo\022\017.pb.EchoRequest\032\r.pb.EchoReply"
-  "\"\000\022.\n\004Call\022\022.pb.CommandRequest\032\020.pb.Comm"
-  "andReply\"\000b\006proto3"
+  "`\n\014CommandReply\022\022\n\nerror_code\030\001 \001(\005\022\025\n\re"
+  "rror_message\030\002 \001(\t\022%\n\007results\030\003 \003(\0132\024.pb"
+  ".CommandParameter\"7\n\013CommandList\022(\n\014comm"
+  "and_list\030\001 \003(\0132\022.pb.CommandRequest*k\n\nER"
+  "ROR_CODE\022\026\n\022ERROR_CODE_SUCCESS\020\000\022 \n\034ERRO"
+  "R_CODE_PARAMETER_INVALID\020\001\022#\n\037ERROR_CODE"
+  "_AUTHORIZATION_FAILED\020\0022h\n\014ChimeraRoost\022"
+  "(\n\004Echo\022\017.pb.EchoRequest\032\r.pb.EchoReply\""
+  "\000\022.\n\004Call\022\022.pb.CommandRequest\032\020.pb.Comma"
+  "ndReply\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_pb_2fchimera_2eproto_deps[1] = {
   &::descriptor_table_pb_2fprefab_2eproto,
@@ -230,7 +233,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_pb_
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_pb_2fchimera_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_pb_2fchimera_2eproto = {
-  false, false, descriptor_table_protodef_pb_2fchimera_2eproto, "pb/chimera.proto", 658,
+  false, false, descriptor_table_protodef_pb_2fchimera_2eproto, "pb/chimera.proto", 697,
   &descriptor_table_pb_2fchimera_2eproto_once, descriptor_table_pb_2fchimera_2eproto_sccs, descriptor_table_pb_2fchimera_2eproto_deps, 6, 1,
   schemas, file_default_instances, TableStruct_pb_2fchimera_2eproto::offsets,
   file_level_metadata_pb_2fchimera_2eproto, 6, file_level_enum_descriptors_pb_2fchimera_2eproto, file_level_service_descriptors_pb_2fchimera_2eproto,
@@ -1314,13 +1317,15 @@ class CommandReply::_Internal {
 };
 
 CommandReply::CommandReply(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  results_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:pb.CommandReply)
 }
 CommandReply::CommandReply(const CommandReply& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      results_(from.results_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   error_message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_error_message().empty()) {
@@ -1369,6 +1374,7 @@ void CommandReply::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  results_.Clear();
   error_message_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   error_code_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1396,6 +1402,18 @@ const char* CommandReply::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.CommandReply.error_message"));
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .pb.CommandParameter results = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_results(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -1442,6 +1460,14 @@ failure:
         2, this->_internal_error_message(), target);
   }
 
+  // repeated .pb.CommandParameter results = 3;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_results_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, this->_internal_results(i), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1457,6 +1483,13 @@ size_t CommandReply::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated .pb.CommandParameter results = 3;
+  total_size += 1UL * this->_internal_results_size();
+  for (const auto& msg : this->results_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
 
   // string error_message = 2;
   if (this->error_message().size() > 0) {
@@ -1503,6 +1536,7 @@ void CommandReply::MergeFrom(const CommandReply& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  results_.MergeFrom(from.results_);
   if (from.error_message().size() > 0) {
     _internal_set_error_message(from._internal_error_message());
   }
@@ -1532,6 +1566,7 @@ bool CommandReply::IsInitialized() const {
 void CommandReply::InternalSwap(CommandReply* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  results_.InternalSwap(&other->results_);
   error_message_.Swap(&other->error_message_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(error_code_, other->error_code_);
 }

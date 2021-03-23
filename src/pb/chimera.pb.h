@@ -905,9 +905,28 @@ class CommandReply PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kResultsFieldNumber = 3,
     kErrorMessageFieldNumber = 2,
     kErrorCodeFieldNumber = 1,
   };
+  // repeated .pb.CommandParameter results = 3;
+  int results_size() const;
+  private:
+  int _internal_results_size() const;
+  public:
+  void clear_results();
+  ::pb::CommandParameter* mutable_results(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::CommandParameter >*
+      mutable_results();
+  private:
+  const ::pb::CommandParameter& _internal_results(int index) const;
+  ::pb::CommandParameter* _internal_add_results();
+  public:
+  const ::pb::CommandParameter& results(int index) const;
+  ::pb::CommandParameter* add_results();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::CommandParameter >&
+      results() const;
+
   // string error_message = 2;
   void clear_error_message();
   const std::string& error_message() const;
@@ -940,6 +959,7 @@ class CommandReply PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::CommandParameter > results_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr error_message_;
   ::PROTOBUF_NAMESPACE_ID::int32 error_code_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1704,6 +1724,45 @@ inline void CommandReply::set_allocated_error_message(std::string* error_message
   error_message_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), error_message,
       GetArena());
   // @@protoc_insertion_point(field_set_allocated:pb.CommandReply.error_message)
+}
+
+// repeated .pb.CommandParameter results = 3;
+inline int CommandReply::_internal_results_size() const {
+  return results_.size();
+}
+inline int CommandReply::results_size() const {
+  return _internal_results_size();
+}
+inline void CommandReply::clear_results() {
+  results_.Clear();
+}
+inline ::pb::CommandParameter* CommandReply::mutable_results(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.CommandReply.results)
+  return results_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::CommandParameter >*
+CommandReply::mutable_results() {
+  // @@protoc_insertion_point(field_mutable_list:pb.CommandReply.results)
+  return &results_;
+}
+inline const ::pb::CommandParameter& CommandReply::_internal_results(int index) const {
+  return results_.Get(index);
+}
+inline const ::pb::CommandParameter& CommandReply::results(int index) const {
+  // @@protoc_insertion_point(field_get:pb.CommandReply.results)
+  return _internal_results(index);
+}
+inline ::pb::CommandParameter* CommandReply::_internal_add_results() {
+  return results_.Add();
+}
+inline ::pb::CommandParameter* CommandReply::add_results() {
+  // @@protoc_insertion_point(field_add:pb.CommandReply.results)
+  return _internal_add_results();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::CommandParameter >&
+CommandReply::results() const {
+  // @@protoc_insertion_point(field_list:pb.CommandReply.results)
+  return results_;
 }
 
 // -------------------------------------------------------------------
