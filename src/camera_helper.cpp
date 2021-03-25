@@ -136,4 +136,12 @@ namespace CameraHelper
                 return length;
         }
     }
+
+    Vector3 ViewportToXyPlane(Camera* camera, Vector3 position)
+    {
+        Vector3 hit;
+        Ray ray = camera->ViewportPointToRay(position);
+        Physics::Raycast(ray, Plane::XyPlane, hit);
+        return hit;
+    }
 }

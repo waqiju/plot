@@ -9,3 +9,4 @@
 #include "stock_price_digest.h"
 #include "stock_layout_item.h"
 #include "stock_vertical_layout.h"
+#include "floating_panel.h"

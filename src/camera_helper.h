@@ -17,4 +17,6 @@ namespace CameraHelper
     float OnePixelSizeInWorld(Camera* camera, float screenHeight);
     Vector3 OnePixelSizeInLocal(Camera* camera, float screenHeight, const Matrix4x4& localToWorldMatrix);
     float CalculateLength(float length, UnitOfLength unit);
+
+    Vector3 ViewportToXyPlane(Camera* camera, Vector3 position);
 }

@@ -1,6 +1,7 @@
 #include "plot_helper.h"
 #include "space_grid_component.h"
 #include "core_component/core_component.h"
+#include "floating_panel.h"
 
 
 namespace PlotHelper
@@ -30,6 +31,22 @@ namespace PlotHelper
         spaceGridEntity->AddComponent<SpaceGridComponent>();
 
         return plotRootEntity;
+    }
+
+    Entity* CreateFloatingPanelRootEntity(int index)
+    {
+        auto plotRootTransform = ObjectID::Find(ObjectID::PlotRootTransform)->ToTransform();
+        // Entity
+        std::string panelName = kPlotFloatingPanelNamePrefix + "_" + std::to_string(index);
+        int panelId = ObjectID::PlotFloatingPanelRootStart + index;
+        auto panelEntity = World::ActiveWorld()->CreateEntity(panelName);
+        panelEntity->id = panelId;
+        panelEntity->GetTransform()->SetParent(plotRootTransform);
+        // Component
+        panelEntity->AddComponent<FloatingPanel>();
+        panelEntity->name = panelName;
+
+        return panelEntity;
     }
 
     Entity* FindPlotRootEntity()

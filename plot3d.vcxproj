@@ -197,6 +197,7 @@
     <ClCompile Include="src\pb\trade.pb.cc" />
     <ClCompile Include="src\pb\xueqiu.grpc.pb.cc" />
     <ClCompile Include="src\pb\xueqiu.pb.cc" />
+    <ClCompile Include="src\plot\floating_panel.cpp" />
     <ClCompile Include="src\plot\pentagram.cpp" />
     <ClCompile Include="src\plot\plot_helper.cpp" />
     <ClCompile Include="src\plot\rectangle.cpp" />
@@ -208,6 +209,8 @@
     <ClCompile Include="src\plot\triangle.cpp" />
     <ClCompile Include="src\resource\resource_manager.cpp" />
     <ClCompile Include="src\shader.cpp" />
+    <ClCompile Include="src\testcase\test_floating_panel.cpp" />
+    <ClCompile Include="src\testcase\test_floating_panel.h" />
     <ClCompile Include="src\texture.cpp" />
     <ClCompile Include="src\text_2d.cpp" />
     <ClCompile Include="src\ui_helper.cpp" />
@@ -283,6 +286,7 @@
     <ClInclude Include="src\pb\trade.pb.h" />
     <ClInclude Include="src\pb\xueqiu.grpc.pb.h" />
     <ClInclude Include="src\pb\xueqiu.pb.h" />
+    <ClInclude Include="src\plot\floating_panel.h" />
     <ClInclude Include="src\plot\pentagram.h" />
     <ClInclude Include="src\plot\plot.h" />
     <ClInclude Include="src\plot\plot_helper.h" />

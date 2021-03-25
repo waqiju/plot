@@ -11,6 +11,8 @@ public:
     static void DrawInViewport(std::string text, float x, float y, int fontSize);
     static void DrawInScreen(std::string text, int x, int y, int fontSize);
 
+    static Bounds CalculateBounds(std::string text, Vector3 position, int fontSize);
+
 private:
     static unsigned int m_VAO;
     static unsigned int m_TextureID;

@@ -10,6 +10,7 @@ namespace PlotHelper
     extern std::string kPlotEssentialTag;
 
     Entity* CreatePlotRootEntity();
+    Entity* CreateFloatingPanelRootEntity(int index);
     Entity* FindPlotRootEntity(); 
     void CollectPlotRootBounds(Entity* plotEntity, Bounds& fullBounds);
 }

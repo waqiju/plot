@@ -13,6 +13,7 @@
 #include <map>
 #include <asset_loader/asset_loader.h>
 #include "chimera_server.h"
+#include "testcase/test_floating_panel.h"
 
 
 void OnFrameUpdate();
@@ -28,11 +29,11 @@ int main()
     // PlotRoot
     auto plotRootEntity = PlotHelper::CreatePlotRootEntity();
     // Command
-    ChimeraServerImpl::ExecuteFile("art/test_floating_panel.cmd");
-    // Prefab
-    // PrefabLoader::LoadFromFile("D:/1_Workspace/aladdin_prophet/data/prefab/plot.prefab");
+    // ChimeraServerImpl::ExecuteFile("art/test_floating_panel.cmd");
     // Server
-    ChimeraServerImpl::RunServer();
+    // ChimeraServerImpl::RunServer();
+    // Test
+    TestFloatingPanel();
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();
@@ -47,6 +48,10 @@ void OnFrameUpdate()
     glClearColor(71.0f/256.0f, 71.0f/256.0f, 71.0f/256.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+    for (auto panelCp : World::ActiveWorld()->GetComponentsInAllEnities<FloatingPanel>())
+    {
+        panelCp->Update();
+    }
     for (auto usCp : World::ActiveWorld()->GetComponentsInAllEnities<UniformScaleComponent>())
     {
         usCp->ResizeBounds();
@@ -64,6 +69,11 @@ void OnFrameUpdate()
     auto spaceGridList = World::ActiveWorld()->GetComponentsInAllEnities<SpaceGridComponent>();
     for (auto spaceGrid : spaceGridList)
         spaceGrid->RenderLine();
+    // Panel
+    for (auto panelCp : World::ActiveWorld()->GetComponentsInAllEnities<FloatingPanel>())
+    {
+        panelCp->Render();
+    }
     // 基本图形
     auto rectangleList = World::ActiveWorld()->GetComponentsInAllEnities<chimera::Rectangle>();
     chimera::Rectangle::BatchRender(rectangleList);

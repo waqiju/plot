@@ -4,6 +4,7 @@
 #include "application/application.h"
 #include <vector>
 #include "camera.h"
+#include "camera_helper.h"
 
 
 unsigned int Text2D::m_VAO = 0;
@@ -42,6 +43,11 @@ void Text2D::DrawInWorld(std::string text, Vector3 position, int fontSize)
 
 void Text2D::DrawInViewport(std::string text, float x, float y, int fontSize)
 {
+    if (text.empty())
+    {
+        return;
+    }
+
     if (m_VAO == 0)
     {
         Initialize();
@@ -117,4 +123,17 @@ void Text2D::DrawInViewport(std::string text, float x, float y, int fontSize)
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
     glBindVertexArray(0);
+}
+
+Bounds Text2D::CalculateBounds(std::string text, Vector3 position, int fontSize)
+{
+    Bounds bounds;
+    bounds.min = position;
+    // max
+    float height = CameraHelper::OnePixelSizeInWorld(Application::MainCamera(), Application::screenHeight) * fontSize;
+    float x = position.x + height * text.size() * 0.6f;
+    float y = position.y + height;
+    bounds.max = Vector3(x, y, position.z);
+
+    return bounds;
 }

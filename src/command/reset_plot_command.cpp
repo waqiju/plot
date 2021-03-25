@@ -9,34 +9,35 @@
 void ResetPlotCommand::Execute()
 {
     auto object = World::ActiveWorld()->FindObject(ObjectID::PlotRoot);
-    if (object == NULL)
+    if (object == nullptr)
     {
         std::cout << "Object[" << ObjectID::PlotRoot << "] not found!\n";
         return;
     }
 
-	Transform* transform = NULL;
-	if (typeid(*object) == (typeid(Transform)))
-	{
-		transform = dynamic_cast<Transform*>(object);
-	}
-	else if (typeid(*object) == typeid(Entity))
-	{
-		transform = dynamic_cast<Entity*>(object)->GetComponent<Transform>();
-	}
-	else
+	//Transform* transform = object->ToTransform();
+	//if (transform == nullptr)
+	//{
+	//	std::cout << "Should not go here!\n";
+	//	return;
+	//}
+
+	//std::vector<Transform*> childrenCopy = transform->Children();
+	//for (auto child : childrenCopy)
+	//{
+	//	auto entity = child->OwnerEntity();
+	//	if (entity->tag != PlotHelper::kPlotEssentialTag)
+	//	{
+	//		delete entity;
+	//	}
+	//}
+
+	Entity* entity = object->ToEntity();
+	if (entity == nullptr)
 	{
 		std::cout << "Should not go here!\n";
 		return;
 	}
-
-	std::vector<Transform*> childrenCopy = transform->Children();
-	for (auto child : childrenCopy)
-	{
-		auto entity = child->OwnerEntity();
-		if (entity->tag != PlotHelper::kPlotEssentialTag)
-		{
-			delete entity;
-		}
-	}
+	delete entity;
+	PlotHelper::CreatePlotRootEntity();
 }
