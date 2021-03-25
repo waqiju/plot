@@ -10,11 +10,69 @@
 #include <application\application.h>
 
 
-const float SpaceGrid::s_Ticks[18] = { 1000, 500.0, 100.0, 50.0, 10.0, 5.0, 1.0, 0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001, 5e-05, 1e-05, 5e-06 };
-const int SpaceGrid::s_TicksLength = sizeof(SpaceGrid::s_Ticks) / sizeof(SpaceGrid::s_Ticks[0]);
+const float SpaceGrid::kTicks[18] = { 1000, 500.0, 100.0, 50.0, 10.0, 5.0, 1.0, 0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001, 5e-05, 1e-05, 5e-06 };
+const int SpaceGrid::kTicksLength = sizeof(SpaceGrid::kTicks) / sizeof(SpaceGrid::kTicks[0]);
 
 
 std::string TickNumberToString(float number)
+{
+    if (number >= 1e9)
+    {
+        return std::string("NaN");
+    }
+
+    char a[50];
+    int tail_a = 0;
+    // 负号
+    if (number < 0)
+    {
+        a[tail_a++] = '-';
+        number = -number;
+    }
+    // 整数部分
+    int tail_part_1 = tail_a;
+    int duplicate = number + number * 1e-9;
+    for (int i = 1e9; i >= 1; i /= 10)
+    {
+        if (duplicate < i && tail_a == tail_part_1)
+        {
+            continue;
+        }
+
+        int digit = static_cast<int>(duplicate) / i;
+        a[tail_a++] = '0' + digit;
+        duplicate -= digit * i;
+    }
+    if (tail_a == tail_part_1)
+    {
+        a[tail_a++] = '0';
+    }
+    // 小数部分
+    int tail_part_2 = tail_a;
+    duplicate = (number - static_cast<int>(number)) * 1e9 + (number - static_cast<int>(number)) * 1e4;
+    for (int i = 1e8; i >= 1; i /= 10)
+    {
+        if (duplicate <= number * 1e5 || duplicate >= 1e9)
+        {
+            break;
+        }
+        if (tail_a == tail_part_2)
+        {
+            a[tail_a++] = '.';
+        }
+
+        int digit = static_cast<int>(duplicate) / i;
+        a[tail_a++] = '0' + digit;
+        duplicate -= digit * i;
+    }
+    // 尾巴
+    a[tail_a] = 0;
+
+    std::string result = std::string(a);
+    return result;
+}
+
+std::string TickNumberToString_Obsolete(float number)
 {
     if (number >= 1e9)
     {
@@ -278,10 +336,11 @@ void SpaceGrid::RenderLabel()
     {
         if (Mathf::Equal(i, 0, maxUlpY))
             i = 0;
-        if (Mathf::Equal(i, Mathf::ToNearUnit(i, displayInteralY, maxUlpY), maxUlpY))
+        float near = Mathf::ToNearUnit(i, displayInteralY, maxUlpY);
+        if (Mathf::Equal(i, near, maxUlpY))
         {
             Vector3 textWorldPosition = m_Transform->LocalToWorldMatrix().MultiplyPoint3x4(Vector3(m_LeftBottom.x, i, 0));
-            Text2D::DrawInWorld(TickNumberToString(i), textWorldPosition, 18);
+            Text2D::DrawInWorld(TickNumberToString(near), textWorldPosition, 18);
         }
     }
 }
@@ -293,9 +352,9 @@ void SpaceGrid::CalculateInterval(int pixel, int& tickGradeX, int& tickGradeY)
     Vector3 zeroInScreen = m_Camera->ViewportToScreenPoint(matrix.MultiplyPoint(Vector3::zero));
 
     tickGradeX = tickGradeY = 0;
-    for (size_t i = 0; i < sizeof(s_Ticks); ++i)
+    for (size_t i = 0; i < sizeof(kTicks); ++i)
     {
-        v0.x = v0.y = s_Ticks[i];
+        v0.x = v0.y = kTicks[i];
 
         Vector3 v1 = m_Camera->ViewportToScreenPoint(matrix.MultiplyPoint(v0));
         Vector3 distance = Vector3::Abs(v1 - zeroInScreen);
@@ -313,8 +372,8 @@ float SpaceGrid::GetTick(int index)
 {
     if (index < 0)
         index = 0;
-    if (index > s_TicksLength)
-        index = s_TicksLength - 1;
+    if (index > kTicksLength)
+        index = kTicksLength - 1;
 
-    return s_Ticks[index];
+    return kTicks[index];
 }

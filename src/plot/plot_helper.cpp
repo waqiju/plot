@@ -63,7 +63,7 @@ namespace PlotHelper
         return NULL;
     }
 
-    void CollectPlotRootBounds(Entity* plotEntity, Bounds& fullBounds)
+    void CollectBoundsInChildren(Entity* plotEntity, Bounds& fullBounds)
     {
         auto rootLocalToWorld = plotEntity->GetTransform()->LocalToWorldMatrix();
         Bounds fullBoundsInWorld = Bounds(rootLocalToWorld.MultiplyPoint3x4(fullBounds.min)

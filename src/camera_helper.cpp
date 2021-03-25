@@ -56,7 +56,7 @@ namespace CameraHelper
         }
 
         Bounds fullBounds(Vector3(begin, 1e8f, 0), Vector3(end, -1e8f, 0));
-        PlotHelper::CollectPlotRootBounds(plotEntity, fullBounds);
+        PlotHelper::CollectBoundsInChildren(plotEntity, fullBounds);
         if (fullBounds.min.y > fullBounds.max.y)
         {
             std::cout << "There is no bounds." << std::endl;
@@ -143,5 +143,16 @@ namespace CameraHelper
         Ray ray = camera->ViewportPointToRay(position);
         Physics::Raycast(ray, Plane::XyPlane, hit);
         return hit;
+    }
+
+    Bounds VisibleAreaInXyPlane(Camera* camera)
+    {
+        Bounds screenBoundsInWorld;
+        Ray ray = camera->ViewportPointToRay(Vector3(-1, -1, 0));
+        Physics::Raycast(ray, Plane::XyPlane, screenBoundsInWorld.min);
+        ray = camera->ViewportPointToRay(Vector3(1, 1, 0));
+        Physics::Raycast(ray, Plane::XyPlane, screenBoundsInWorld.max);
+
+        return screenBoundsInWorld;
     }
 }

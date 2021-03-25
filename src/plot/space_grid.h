@@ -8,6 +8,8 @@
 class SpaceGrid
 {
 public:
+    static const float kTicks[18];
+    static const int kTicksLength;
 
     SpaceGrid(Camera* camera, Transform* transform);
     void Render();
@@ -15,8 +17,6 @@ public:
     void RenderLabel();
 
 private:
-    static const float s_Ticks[18];
-    static const int s_TicksLength;
 
     Camera* m_Camera;
     // 世界坐标下的相机左下角和右上角

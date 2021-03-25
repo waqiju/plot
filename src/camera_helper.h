@@ -19,4 +19,6 @@ namespace CameraHelper
     float CalculateLength(float length, UnitOfLength unit);
 
     Vector3 ViewportToXyPlane(Camera* camera, Vector3 position);
+    // 当前相机的可视区域在 xy_plane 上的投影
+    Bounds VisibleAreaInXyPlane(Camera* camera);
 }

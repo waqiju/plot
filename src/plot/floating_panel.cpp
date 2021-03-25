@@ -8,6 +8,8 @@
 #include "application/application.h"
 #include "floating_panel.h"
 #include "entity/ec.h"
+#include "camera_helper.h"
+#include "plot_helper.h"
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -20,18 +22,22 @@ Color FloatingPanel::kBackgroundColor = Color(1,1,1,0.15f);
 
 void FloatingPanel::Update()
 {
+    // follow scale.x with main panel
+    Transform* mainPanelTr = ObjectID::Find(ObjectID::PlotMainPanelRoot)->ToTransform();
+    Transform* thisTransform = this->GetTransform();
+    Vector3 scale = thisTransform->LocalScale();
+    scale.x = mainPanelTr->LocalScale().x;
+    thisTransform->SetLocalScale(scale);
+    // update bounds
     Camera* camera = Application::MainCamera();
     Vector3 min = CameraHelper::ViewportToXyPlane(camera, Vector3(-1, -1, 0));
     Vector3 max = CameraHelper::ViewportToXyPlane(camera, Vector3(1, 1, 0));
-
     switch (kind)
     {
         case Kind::Full:
         {
             bounds = Bounds(min, max);
             // std::cout << min.ToString() << " " << max.ToString() << std::endl;
-            Matrix4x4 matrix = this->GetComponent<Transform>()->WorldToLocalMatrix();
-            localBounds = Bounds(matrix.MultiplyPoint3x4(bounds.min), matrix.MultiplyPoint3x4(bounds.max));
             break;
         }
         case Kind::Region:
@@ -45,6 +51,24 @@ void FloatingPanel::Update()
             break;
         }
     }
+    // algin y
+    Bounds screenBoundsInWorld = CameraHelper::VisibleAreaInXyPlane(Application::MainCamera());
+    Bounds screenBoundsInLocal;
+    screenBoundsInLocal.min = thisTransform->WorldToLocalMatrix().MultiplyPoint3x4(screenBoundsInWorld.min);
+    screenBoundsInLocal.max = thisTransform->WorldToLocalMatrix().MultiplyPoint3x4(screenBoundsInWorld.max);
+    Bounds plotBoundsInLocal(Vector3(screenBoundsInWorld.min.x, 1e8f, 0), Vector3(screenBoundsInWorld.max.x, -1e8f, 0));
+    PlotHelper::CollectBoundsInChildren(this->OwnerEntity(), plotBoundsInLocal);
+    // set scale.y
+    scale.y = bounds.Size().y * 0.9f / plotBoundsInLocal.Size().y;
+    thisTransform->SetLocalScale(scale);
+    // set position.y
+    Vector3 position = thisTransform->LocalPosition();
+    position.y = bounds.Center().y - plotBoundsInLocal.Center().y * scale.y;
+    thisTransform->SetLocalPosition(position);
+
+    // update local bounds
+    Matrix4x4 matrix = this->GetComponent<Transform>()->WorldToLocalMatrix();
+    localBounds = Bounds(matrix.MultiplyPoint3x4(bounds.min), matrix.MultiplyPoint3x4(bounds.max));
 }
 
 
