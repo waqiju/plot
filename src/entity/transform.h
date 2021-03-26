@@ -85,6 +85,8 @@ public:
         return m_Children;
     }
 
+    std::string ToString();
+
     ~Transform() override;
     void Destroy() override;
 

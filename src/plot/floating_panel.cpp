@@ -51,6 +51,13 @@ void FloatingPanel::Update()
     screenBoundsInLocal.max = thisTransform->WorldToLocalMatrix().MultiplyPoint3x4(screenBoundsInWorld.max);
     Bounds itemBoundsInLocal(Vector3(screenBoundsInLocal.min.x, 1e8f, 0), Vector3(screenBoundsInLocal.max.x, -1e8f, 0));
     PlotHelper::CollectBoundsInChildren(this->OwnerEntity(), itemBoundsInLocal);
+    // Fix bug. 表现为如果把浮动面板内的 item 全部移出屏幕，再移动会来 item 全部消失了。
+    // 如果为空，调整 itemBoundsInLocal 到合理值。猜测到问题出在这里，形成原因还没有想明白。
+    if (std::abs(itemBoundsInLocal.Size().y) > 1e8f)
+    {
+        itemBoundsInLocal.min.y = 0;
+        itemBoundsInLocal.max.y = 1;
+    }
     // set scale.y
     if (kind == Kind::Full)
     {

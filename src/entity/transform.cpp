@@ -1,7 +1,8 @@
 ﻿#include "transform.h"
-#include <algorithm>
 #include "entity/entity.h"
 #include "entity/world.h"
+#include <algorithm>
+#include <sstream>
 
 
 void Transform::SetTrsMatrix(const Matrix4x4& inMatrix)
@@ -147,4 +148,15 @@ void Transform::Deserialize(Entity& entity, const pb::WorldObject& pbComponentOb
         ConvertVector3(loader.GetObject(vectorID), m_LocalPosition, loader.Prefab());
         this->MarkAsDirty();
     }
+}
+
+std::string Transform::ToString()
+{
+	std::stringstream ss;
+	ss << "Transform {\n"
+		"    Position[" << m_LocalPosition.ToString() << "]\n"
+		"    Rotation[" << m_LocalRotation.ToString() << "]\n"
+		"    Scale[" << m_LocalScale.ToString() << "]\n"
+		"}\n";
+	return ss.str();
 }
