@@ -6,7 +6,7 @@
 #include "mesh.h"
 
 
-class FloatingPanel : public Component, public IBoundsGetter
+class FloatingPanel : public Component, public IBoundsGetter, public IPrefabConvertor
 {
 public:
     enum class Kind
@@ -28,6 +28,9 @@ public:
     Bounds bounds;
     Bounds localBounds;
     Bounds& GetBounds() { return bounds; }
+
+    // Prefab
+    void Deserialize(Entity& entity, const pb::WorldObject& pbComponentObj, PrefabLoader& loader) override;
 
 private:
     void RenderTitle();

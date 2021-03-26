@@ -29,11 +29,11 @@ int main()
     // PlotRoot
     auto plotRootEntity = PlotHelper::CreatePlotRootEntity();
     // Command
-    // ChimeraServerImpl::ExecuteFile("art/test_floating_panel.cmd");
+    ChimeraServerImpl::ExecuteFile("art/test_floating_panel.cmd");
     // Server
-    // ChimeraServerImpl::RunServer();
+    ChimeraServerImpl::RunServer();
     // Test
-    TestFloatingPanel_Full();
+    // TestFloatingPanel_Full();
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();

@@ -140,7 +140,11 @@ void Transform::Deserialize(Entity& entity, const pb::WorldObject& pbComponentOb
     // parent, 可以是 transform id 或者 entity id
     WorldObject* parentObj = PrefabLoader::FindObject(parentId);
 	Transform* parentTr = parentObj->ToTransform();
-	this->SetParent(dynamic_cast<Transform*>(parentTr));
+	if (parentTr == nullptr && parentId != ObjectID::WorldRoot && parentId != ObjectID::WorldRootTransform)
+	{
+		std::cout << "Parent Id [" << parentId << "] not found!\n";
+	}
+	this->SetParent(parentTr);
 	// position
     int vectorID = PrefabLoader::GetIntMember(pbComponentObj, "localPosition");
     if (vectorID)

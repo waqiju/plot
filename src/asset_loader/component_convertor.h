@@ -113,6 +113,18 @@ void AddComponentToEntity(Entity& entity, const pb::WorldObject& pbComponentObj,
 		textCp->Deserialize(entity, pbComponentObj, loader);
         worldObject = textCp;
 	}
+    else if (pbComponentObj.type() == "Rectangle")
+    {
+        auto cp = entity.GetOrAddComponent<chimera::Rectangle>();
+        cp->Deserialize(entity, pbComponentObj, loader);
+        worldObject = cp;
+    }
+    else if (pbComponentObj.type() == "FloatingPanel")
+    {
+        auto cp = entity.GetOrAddComponent<FloatingPanel>();
+        cp->Deserialize(entity, pbComponentObj, loader);
+        worldObject = cp;
+    }
     else
     {
         std::cout<<"Unsupported component[" << pbComponentObj.type() << "]\n";

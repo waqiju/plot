@@ -8,7 +8,7 @@
 namespace chimera
 {
 
-class Rectangle : public Component
+class Rectangle : public Component, public IPrefabConvertor
 {
 public:
     static constexpr int VerticesCount() { return 6; } 
@@ -23,6 +23,9 @@ public:
 
     int GenerateMesh(std::vector<Vector3>& vertices, std::vector<Color>& colors);
     void Render();
+
+    // Prefab
+    void Deserialize(Entity& entity, const pb::WorldObject& pbComponentObj, PrefabLoader& loader) override;
 };
 
 } // chimera

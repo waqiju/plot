@@ -19,7 +19,6 @@ public:
     static const int WorldRoot;
     static const int PlotRoot;
     static const int PlotMainPanelRoot;
-    static const int PlotFloatingPanelRootStart;
 	static const int WorldRootTransform;
 	static const int PlotRootTransform;
 

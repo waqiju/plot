@@ -97,4 +97,19 @@ void Rectangle::BatchRender(std::vector<Rectangle*> rectangleList)
     renderer->Render();
 }
 
+void Rectangle::Deserialize(Entity& entity, const pb::WorldObject& pbComponentObj, PrefabLoader& loader)
+{
+    assert(pbComponentObj.type() == "Rectangle");
+    int boundsObjectID = PrefabLoader::GetIntMember(pbComponentObj, "bounds");
+    if (boundsObjectID)
+    {
+        ConvertBounds(loader.GetObject(boundsObjectID), this->bounds, loader.Prefab());
+    }
+    int colorID = PrefabLoader::GetIntMember(pbComponentObj, "color");
+    if (colorID)
+    {
+        ConvertColor(loader.GetObject(colorID), this->color, loader.Prefab());
+    }
+}
+
 } // chimera

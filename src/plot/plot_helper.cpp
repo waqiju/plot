@@ -38,7 +38,7 @@ namespace PlotHelper
         auto plotRootTransform = ObjectID::Find(ObjectID::PlotRootTransform)->ToTransform();
         // Entity
         std::string panelName = kPlotFloatingPanelNamePrefix + "_" + std::to_string(index);
-        int panelId = ObjectID::PlotFloatingPanelRootStart + index;
+        int panelId = ObjectID::PlotMainPanelRoot + index;
         auto panelEntity = World::ActiveWorld()->CreateEntity(panelName);
         panelEntity->id = panelId;
         panelEntity->GetTransform()->SetParent(plotRootTransform);
