@@ -316,10 +316,11 @@ void SpaceGrid::RenderLabel()
     {
         if (Mathf::Equal(i, 0, maxUlpX))
             i = 0;
-        if (Mathf::Equal(i, Mathf::ToNearUnit(i, displayInteralX, maxUlpX), maxUlpX))
+        float near = Mathf::ToNearUnit(i, displayInteralX, maxUlpY);
+        if (Mathf::Equal(i, near, maxUlpX))
         {
             Vector3 textWorldPosition = m_Transform->LocalToWorldMatrix().MultiplyPoint3x4(Vector3(i, m_LeftBottom.y, 0));
-            Text2D::DrawInWorld(TickNumberToString(i), textWorldPosition, 18);
+            Text2D::DrawInWorld(TickNumberToString(near), textWorldPosition, 18);
         }
     }
     // y

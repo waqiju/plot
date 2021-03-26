@@ -29,41 +29,42 @@ void FloatingPanel::Update()
     scale.x = mainPanelTr->LocalScale().x;
     thisTransform->SetLocalScale(scale);
     // update bounds
-    Camera* camera = Application::MainCamera();
-    Vector3 min = CameraHelper::ViewportToXyPlane(camera, Vector3(-1, -1, 0));
-    Vector3 max = CameraHelper::ViewportToXyPlane(camera, Vector3(1, 1, 0));
-    switch (kind)
+    Bounds screenBoundsInWorld = CameraHelper::VisibleAreaInXyPlane(Application::MainCamera());
+    // Full 通过取 MaxEnd 转换为 Region 处理
+    if (kind == Kind::Full)
     {
-        case Kind::Full:
-        {
-            bounds = Bounds(min, max);
-            // std::cout << min.ToString() << " " << max.ToString() << std::endl;
-            break;
-        }
-        case Kind::Region:
-        {
-            float height = max.y - min.y;
-            Vector3 start = Vector3(min.x, min.y + height * verticalStart, min.z);
-            Vector3 end = Vector3(max.x, min.y + height * verticalEnd, max.z);
-            bounds = Bounds(start, end);
-            Matrix4x4 matrix = this->GetComponent<Transform>()->WorldToLocalMatrix();
-            localBounds = Bounds(matrix.MultiplyPoint3x4(bounds.min), matrix.MultiplyPoint3x4(bounds.max));
-            break;
-        }
+        verticalStart = PlotHelper::GetFloatingPanelMaxEnd() + 0.05f;
+        verticalEnd = 1 - 0.05f;
+    }
+    {
+        Vector3 min = screenBoundsInWorld.min;
+        Vector3 max = screenBoundsInWorld.max;
+        float height = max.y - min.y;
+        // bounds
+        Vector3 start = Vector3(min.x, min.y + height * verticalStart, min.z);
+        Vector3 end = Vector3(max.x, min.y + height * verticalEnd, max.z);
+        bounds = Bounds(start, end);
     }
     // algin y
-    Bounds screenBoundsInWorld = CameraHelper::VisibleAreaInXyPlane(Application::MainCamera());
     Bounds screenBoundsInLocal;
     screenBoundsInLocal.min = thisTransform->WorldToLocalMatrix().MultiplyPoint3x4(screenBoundsInWorld.min);
     screenBoundsInLocal.max = thisTransform->WorldToLocalMatrix().MultiplyPoint3x4(screenBoundsInWorld.max);
-    Bounds plotBoundsInLocal(Vector3(screenBoundsInWorld.min.x, 1e8f, 0), Vector3(screenBoundsInWorld.max.x, -1e8f, 0));
-    PlotHelper::CollectBoundsInChildren(this->OwnerEntity(), plotBoundsInLocal);
+    Bounds itemBoundsInLocal(Vector3(screenBoundsInLocal.min.x, 1e8f, 0), Vector3(screenBoundsInLocal.max.x, -1e8f, 0));
+    PlotHelper::CollectBoundsInChildren(this->OwnerEntity(), itemBoundsInLocal);
     // set scale.y
-    scale.y = bounds.Size().y * 0.9f / plotBoundsInLocal.Size().y;
+    if (kind == Kind::Full)
+    {
+        // Full 不需要内部留白了
+        scale.y = bounds.Size().y / itemBoundsInLocal.Size().y;
+    }
+    else if (kind == Kind::Region)
+    {
+        scale.y = bounds.Size().y * 0.9f / itemBoundsInLocal.Size().y;
+    }
     thisTransform->SetLocalScale(scale);
     // set position.y
     Vector3 position = thisTransform->LocalPosition();
-    position.y = bounds.Center().y - plotBoundsInLocal.Center().y * scale.y;
+    position.y = bounds.Center().y - itemBoundsInLocal.Center().y * scale.y;
     thisTransform->SetLocalPosition(position);
 
     // update local bounds
@@ -74,6 +75,12 @@ void FloatingPanel::Update()
 
 void FloatingPanel::Render()
 {
+    // Full 是叠加到主面板，不需要渲染 Title 和 Background 了
+    // Full 这个名字取的不够贴切
+    if (kind == Kind::Full)
+    {
+        return;
+    }
     RenderTitle();
     RenderBackground();
 }

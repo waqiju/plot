@@ -33,7 +33,7 @@ int main()
     // Server
     // ChimeraServerImpl::RunServer();
     // Test
-    TestFloatingPanel_TwoRegion();
+    TestFloatingPanel_Full();
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();

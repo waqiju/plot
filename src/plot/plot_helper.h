@@ -13,4 +13,5 @@ namespace PlotHelper
     Entity* CreateFloatingPanelRootEntity(int index);
     Entity* FindPlotRootEntity(); 
     void CollectBoundsInChildren(Entity* plotEntity, Bounds& fullBounds);
+    float GetFloatingPanelMaxEnd();
 }

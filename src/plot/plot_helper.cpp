@@ -88,4 +88,17 @@ namespace PlotHelper
         fullBounds.max = rootWorldToLocal.MultiplyPoint3x4(fullBoundsInWorld.max);
     }
 
+    float GetFloatingPanelMaxEnd()
+    {
+        float maxVerticalEnd = 0;
+        Entity* plotRootEntity = ObjectID::Find(ObjectID::PlotRoot)->ToEntity();
+        for (auto& panelCp : plotRootEntity->GetComponentsInChildren<FloatingPanel>())
+        {
+            if (panelCp->kind == FloatingPanel::Kind::Region)
+            {
+                maxVerticalEnd = std::max(maxVerticalEnd, panelCp->verticalEnd);
+            }
+        }
+        return maxVerticalEnd;
+    }
 }

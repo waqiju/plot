@@ -8,6 +8,7 @@ using namespace chimera;
 void CreateItemInMainPanel();
 void CreateItemInFloatingPanel1();
 void CreateItemInFloatingPanel2();
+void CreateItemInFloatingPanel3();
 
 
 void TestFloatingPanel_TwoRegion()
@@ -16,6 +17,18 @@ void TestFloatingPanel_TwoRegion()
     CreateItemInMainPanel();
     CreateItemInFloatingPanel1();
     CreateItemInFloatingPanel2();
+    // tree
+    auto content = TreeCommand().Execute();
+    std::cout << content << std::endl;
+}
+
+
+void TestFloatingPanel_Full()
+{
+    // create item
+    CreateItemInMainPanel();
+    CreateItemInFloatingPanel1();
+    CreateItemInFloatingPanel3();
     // tree
     auto content = TreeCommand().Execute();
     std::cout << content << std::endl;
@@ -39,6 +52,7 @@ void CreateItemInMainPanel()
     boundsCp->localBounds = rectangle->bounds;
 }
 
+
 void CreateItemInFloatingPanel1()
 {
     // create panel
@@ -59,6 +73,7 @@ void CreateItemInFloatingPanel1()
     boundsCp->localBounds = rectangle->bounds;
 }
 
+
 void CreateItemInFloatingPanel2()
 {
     // create panel
@@ -75,6 +90,25 @@ void CreateItemInFloatingPanel2()
     boundsCp->localBounds = rectangle->bounds;
     // 2
     rectangle = Rectangle::Create(panelTr, Vector3(3, 0, 0), Vector3(4, 2, 0), Color(0, 1, 0, 1));
+    boundsCp = rectangle->AddComponent<BoundsComponent>();
+    boundsCp->localBounds = rectangle->bounds;
+}
+
+
+void CreateItemInFloatingPanel3()
+{
+    // create panel
+    auto panelEntity = PlotHelper::CreateFloatingPanelRootEntity(2);
+    auto panelCp = panelEntity->GetComponent<FloatingPanel>();
+    panelCp->kind = FloatingPanel::Kind::Full;
+    // create item
+    auto panelTr = panelEntity->GetTransform();
+    // 1
+    auto rectangle = Rectangle::Create(panelTr, Vector3(6, 0, 0), Vector3(7, 3, 0), Color(0, 1, 0, 1));
+    auto boundsCp = rectangle->AddComponent<BoundsComponent>();
+    boundsCp->localBounds = rectangle->bounds;
+    // 2
+    rectangle = Rectangle::Create(panelTr, Vector3(8, 0, 0), Vector3(9, 2, 0), Color(0, 1, 0, 1));
     boundsCp = rectangle->AddComponent<BoundsComponent>();
     boundsCp->localBounds = rectangle->bounds;
 }

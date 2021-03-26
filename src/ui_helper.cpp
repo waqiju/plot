@@ -213,15 +213,7 @@ namespace MouseScrollHandlers
         // std::cout << plotBoundsInLocal.ToString() << std::endl;
         // 底部预留 FloatingPanel 的空白
         Bounds finalBoundsInLocal = plotBoundsInLocal;
-        float maxVerticalEnd = 0;
-        Entity* plotRootEntity = ObjectID::Find(ObjectID::PlotRoot)->ToEntity();
-        for (auto& panelCp : plotRootEntity->GetComponentsInChildren<FloatingPanel>())
-        {
-            if (panelCp->kind == FloatingPanel::Kind::Region)
-            {
-                maxVerticalEnd = std::max(maxVerticalEnd, panelCp->verticalEnd);
-            }
-        }
+        float maxVerticalEnd = PlotHelper::GetFloatingPanelMaxEnd();
         // 上下预留空白
         {
             Vector3 size = plotBoundsInLocal.Size();
