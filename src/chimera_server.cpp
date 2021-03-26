@@ -35,6 +35,7 @@ void ChimeraServerImpl::RunServer()
     // clients. In this case it corresponds to an *synchronous* service.
     builder.RegisterService(&service);
     // Finally assemble the server.
+    builder.SetMaxMessageSize(100 * 1024 * 1024);
 	server = builder.BuildAndStart();
     std::cout << "Server listening on " << serverAddress << std::endl;
 
@@ -52,7 +53,21 @@ Status ChimeraServerImpl::Echo(ServerContext* context, const EchoRequest* reques
 
 Status ChimeraServerImpl::Call(ServerContext* context, const CommandRequest* request, CommandReply* reply)
 {
-	request->PrintDebugString();
+	if (request->name() == "load_prefab")
+	{
+		// load prefab 参数过长，不全部打印
+		int prefabCount = 0, objectCount = 0;
+		for (auto p : request->parameters())
+		{
+			++prefabCount;
+			objectCount += p.prefab().world_object_pool_size();
+		}
+		std::cout << "Receive command[load_prefab], Prefab[" << prefabCount << "], Object[" << objectCount << "]\n";
+	}
+	else
+	{
+		request->PrintDebugString();
+	}
 	std::lock_guard<std::mutex> scopedLock(CallLock);
 	m_CommandList.push_back(*request);
 

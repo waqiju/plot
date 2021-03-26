@@ -147,7 +147,7 @@ void FloatingPanel::Deserialize(Entity& entity, const pb::WorldObject& pbCompone
 {
     assert(pbComponentObj.type() == "FloatingPanel");
 
-    this->name = PrefabLoader::GetStringMember(pbComponentObj, "name", loader.Prefab());
+    this->panelName = PrefabLoader::GetStringMember(pbComponentObj, "panelName", loader.Prefab());
     this->kind = static_cast<Kind>(PrefabLoader::GetIntMember(pbComponentObj, "kind"));
     this->verticalStart = PrefabLoader::GetFloatMember(pbComponentObj, "verticalStart", loader.Prefab());
     this->verticalEnd = PrefabLoader::GetFloatMember(pbComponentObj, "verticalEnd", loader.Prefab());
