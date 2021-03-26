@@ -31,7 +31,7 @@ void FloatingPanel::Update()
     // update bounds
     Bounds screenBoundsInWorld = CameraHelper::VisibleAreaInXyPlane(Application::MainCamera());
     // Full 通过取 MaxEnd 转换为 Region 处理
-    if (kind == Kind::Full)
+    if (kind == Kind::OverlayMainPanel)
     {
         verticalStart = PlotHelper::GetFloatingPanelMaxEnd() + 0.05f;
         verticalEnd = 1 - 0.05f;
@@ -59,7 +59,7 @@ void FloatingPanel::Update()
         itemBoundsInLocal.max.y = 1;
     }
     // set scale.y
-    if (kind == Kind::Full)
+    if (kind == Kind::OverlayMainPanel)
     {
         // Full 不需要内部留白了
         scale.y = bounds.Size().y / itemBoundsInLocal.Size().y;
@@ -84,7 +84,7 @@ void FloatingPanel::Render()
 {
     // Full 是叠加到主面板，不需要渲染 Title 和 Background 了
     // Full 这个名字取的不够贴切
-    if (kind == Kind::Full)
+    if (kind == Kind::OverlayMainPanel)
     {
         return;
     }

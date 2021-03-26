@@ -11,7 +11,7 @@ class FloatingPanel : public Component, public IBoundsGetter
 public:
     enum class Kind
     {
-        Full,
+        OverlayMainPanel,
         Region,
     };
 
@@ -20,7 +20,7 @@ public:
     void Render();
 
     std::string panelName = "Untitled";
-    Kind kind = Kind::Full;
+    Kind kind = Kind::OverlayMainPanel;
     float verticalStart = 0;
     float verticalEnd = 1;
 

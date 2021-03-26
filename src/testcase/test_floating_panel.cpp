@@ -100,7 +100,7 @@ void CreateItemInFloatingPanel3()
     // create panel
     auto panelEntity = PlotHelper::CreateFloatingPanelRootEntity(2);
     auto panelCp = panelEntity->GetComponent<FloatingPanel>();
-    panelCp->kind = FloatingPanel::Kind::Full;
+    panelCp->kind = FloatingPanel::Kind::OverlayMainPanel;
     // create item
     auto panelTr = panelEntity->GetTransform();
     // 1
