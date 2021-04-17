@@ -43,6 +43,10 @@ int main()
 void OnFrameUpdate()
 {
 	ChimeraServerImpl::service.ConsumeCommand();
+    if (Application::MainWindow()->IsWindowIconic())
+    {
+        return;
+    }
 
     UiHelper::ProcessPan();
     glClearColor(71.0f/256.0f, 71.0f/256.0f, 71.0f/256.0f, 1.0f);

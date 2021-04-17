@@ -1,6 +1,9 @@
 ﻿#include "window.h"
 #include "application/application.h"
 #include <iostream>
+#define GLFW_EXPOSE_NATIVE_WIN32
+#include <GLFW/glfw3native.h>
+
 
 bool Window::s_GlfwInitialized = false;
 std::map<GLFWwindow*, Window*> Window::s_GLFWwindowToWindow;
@@ -86,4 +89,10 @@ void Window::FrameLoop(std::function<void()> onUpdated)
 void Window::Close()
 {
     glfwTerminate();
+}
+
+bool Window::IsWindowIconic()
+{
+    HWND handle = glfwGetWin32Window(m_GLFWwindow);
+    return IsIconic(handle);
 }

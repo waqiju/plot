@@ -17,6 +17,7 @@ public:
     void FrameLoop(std::function<void()> onUpdated);
     void Close();
     GLFWwindow* RawGLFWwindow() { return m_GLFWwindow; }
+    bool IsWindowIconic();
 
     // window, width, height
     std::function<void(Window*, int, int)> onWindowSizeChanged = NULL;
