@@ -13,7 +13,7 @@
 #include <map>
 #include <asset_loader/asset_loader.h>
 #include "chimera_server.h"
-#include "testcase/test_floating_panel.h"
+#include "testcase/test_line_stipple.h"
 
 
 void OnFrameUpdate();
@@ -33,7 +33,7 @@ int main()
     // Server
     ChimeraServerImpl::RunServer();
     // Test
-    // TestFloatingPanel_Full();
+    // TestLineStipple();
 
     window->FrameLoop(OnFrameUpdate);
     window->Close();

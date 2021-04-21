@@ -1,4 +1,5 @@
 #include "vector3.h"
+#include "geometry/mathf.h"
 #include <cmath>
 #include <cassert>
 #include <sstream>
@@ -44,6 +45,15 @@ Vector3 Vector3::Cross(Vector3 lhs, Vector3 rhs)
     result.z = lhs.x * rhs.y - lhs.y * rhs.x;
 
     return result;
+}
+
+Vector3 Vector3::Lerp(Vector3 start, Vector3 end, float factor)
+{
+    return Vector3(
+            Mathf::Lerp(start.x, end.x, factor),
+            Mathf::Lerp(start.y, end.y, factor),
+            Mathf::Lerp(start.z, end.z, factor)
+        );
 }
 
 float Vector3::Length()

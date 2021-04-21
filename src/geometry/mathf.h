@@ -1,4 +1,5 @@
 #pragma once
+#include <cmath>
 #include <utility>
 #include <algorithm>
 
@@ -74,5 +75,10 @@ public:
     static float Min(float x, float y)
     {
         return std::min(x, y);
+    }
+
+    static float Lerp(float start, float end, float factor)
+    {
+        return start + (end - start) * factor;
     }
 };

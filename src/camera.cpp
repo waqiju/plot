@@ -81,6 +81,11 @@ Vector3 Camera::ViewportToWorldPoint(Vector3 position)
     return result;
 }
 
+Vector3 Camera::WorldToViewportPoint(Vector3 position)
+{
+    return ViewProjectMatrix().MultiplyPoint(position);
+}
+
 // 返回的是近截面的点
 Vector3 Camera::ScreenToWorldPoint(Vector3 position)
 {

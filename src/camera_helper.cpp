@@ -155,4 +155,22 @@ namespace CameraHelper
 
         return screenBoundsInWorld;
     }
+
+    bool IsPositionVisible(Camera* camera, Vector3 position)
+    {
+        Vector3 viewportPosition = camera->WorldToViewportPoint(position);
+        
+        if (viewportPosition.x < -1 || viewportPosition.x > 1 || viewportPosition.y < -1 || viewportPosition.y > 1)
+        {
+            return false;
+        }
+        Transform* cameraTr = camera->GetTransform();
+        Vector3 direction = position - cameraTr->Position();
+        if (Vector3::Dot(cameraTr->Forward(), direction) <= 0)
+        {
+            return false;
+        }
+
+        return true;
+    }
 }

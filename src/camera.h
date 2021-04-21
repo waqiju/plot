@@ -18,6 +18,7 @@ public:
     Vector3 ScreenToWorldPoint(Vector3 position);
     Vector3 ScreenToViewportPoint(Vector3 position);
     Vector3 ViewportToScreenPoint(Vector3 position);
+    Vector3 WorldToViewportPoint(Vector3 position);
     // ray
     Ray ViewportPointToRay(Vector3 pos);
     Ray ScreenPointToRay(Vector3 pos);

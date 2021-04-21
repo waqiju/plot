@@ -13,6 +13,7 @@ public:
     static Vector3 Abs(Vector3 value);
 	static float Dot(Vector3 lhs, Vector3 rhs);
     static Vector3 Cross(Vector3 lhs, Vector3 rhs);
+	static Vector3 Lerp(Vector3 start, Vector3 end, float factor);
 
 	float x, y, z;
 	Vector3() :Vector3(0, 0, 0) {}

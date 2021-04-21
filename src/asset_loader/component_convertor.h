@@ -54,19 +54,9 @@ void AddComponentToEntity(Entity& entity, const pb::WorldObject& pbComponentObj,
     }
     else if (pbComponentObj.type() == "Segment")
     {
-        auto segment = entity.GetOrAddComponent<chimera::Segment>();
-        int boundsObjectID = PrefabLoader::GetIntMember(pbComponentObj, "bounds");
-        if (boundsObjectID)
-        {
-            ConvertBounds(loader.GetObject(boundsObjectID), segment->bounds, loader.Prefab());
-        }
-        int colorID = PrefabLoader::GetIntMember(pbComponentObj, "color");
-        if (colorID)
-        {
-            ConvertColor(loader.GetObject(colorID), segment->color, loader.Prefab());
-        }
-
-        worldObject = segment;
+        auto cp = entity.GetOrAddComponent<chimera::Segment>();
+        cp->Deserialize(entity, pbComponentObj, loader);
+        worldObject = cp;
     }
 	else if (pbComponentObj.type() == "StockGlyph")
 	{
