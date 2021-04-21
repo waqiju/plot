@@ -37,6 +37,10 @@ void ApplyLineStipple(const std::vector<Vector3>& source, const std::vector<Colo
     float currentLineLength = 0;
     destination.clear();
     destinationColor.clear();
+    // 性能优化，内存分配
+    auto targetCapcity = source.size() * 2;
+    destination.reserve(targetCapcity);
+    destinationColor.reserve(targetCapcity);
 
     float pixelSize = CameraHelper::OnePixelSizeInWorld(Application::MainCamera(), Application::screenHeight);
     float currentPixelResidual = pixelSize;
