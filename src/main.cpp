@@ -28,6 +28,8 @@ int main()
 
     // PlotRoot
     auto plotRootEntity = PlotHelper::CreatePlotRootEntity();
+    // Cursor Sight
+    CursorSight::GetInstance().style = CursorSight::SightStyle::Cross;
     // Command
     ChimeraServerImpl::ExecuteFile("art/test_floating_panel.cmd");
     // Server
@@ -94,4 +96,6 @@ void OnFrameUpdate()
     // 网格部分，最后绘制 Label
     for (auto spaceGrid : spaceGridList)
         spaceGrid->RenderLabel();
+    // Cursor Sight
+    CursorSight::GetInstance().Render();
 }

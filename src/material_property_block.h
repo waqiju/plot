@@ -40,7 +40,7 @@ public:
     {
         Property& p = FindOrAdd(name);
         p.name = name;
-        p.kind = PropertyKind::Vector3;
+        p.kind = PropertyKind::Float;
         p.floatValue = value;
     }
     void SetColor(const std::string& name, Color value)

@@ -10,3 +10,4 @@
 #include "stock_layout_item.h"
 #include "stock_vertical_layout.h"
 #include "floating_panel.h"
+#include "cursor_sight.h"

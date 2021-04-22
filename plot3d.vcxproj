@@ -197,6 +197,7 @@
     <ClCompile Include="src\pb\trade.pb.cc" />
     <ClCompile Include="src\pb\xueqiu.grpc.pb.cc" />
     <ClCompile Include="src\pb\xueqiu.pb.cc" />
+    <ClCompile Include="src\plot\cursor_sight.cpp" />
     <ClCompile Include="src\plot\floating_panel.cpp" />
     <ClCompile Include="src\plot\line_stipple.cpp" />
     <ClCompile Include="src\plot\pentagram.cpp" />
@@ -288,6 +289,7 @@
     <ClInclude Include="src\pb\trade.pb.h" />
     <ClInclude Include="src\pb\xueqiu.grpc.pb.h" />
     <ClInclude Include="src\pb\xueqiu.pb.h" />
+    <ClInclude Include="src\plot\cursor_sight.h" />
     <ClInclude Include="src\plot\floating_panel.h" />
     <ClInclude Include="src\plot\line_stipple.h" />
     <ClInclude Include="src\plot\pentagram.h" />

@@ -16,8 +16,8 @@ public:
     // point coordicate convert
     Vector3 ViewportToWorldPoint(Vector3 position);
     Vector3 ScreenToWorldPoint(Vector3 position);
-    Vector3 ScreenToViewportPoint(Vector3 position);
-    Vector3 ViewportToScreenPoint(Vector3 position);
+    static Vector3 ScreenToViewportPoint(Vector3 position);
+    static Vector3 ViewportToScreenPoint(Vector3 position);
     Vector3 WorldToViewportPoint(Vector3 position);
     // ray
     Ray ViewportPointToRay(Vector3 pos);

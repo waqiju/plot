@@ -33,17 +33,22 @@ void MaterialPropertyBlock::ApplyOneProperty(unsigned int programID, const Prope
     {
     case PropertyKind::Float:
         glUniform1f(location, property.floatValue);
+        break;
     case PropertyKind::Color:
         glUniform4fv(location, 1, &property.colorValue.r);
+        break;
     case PropertyKind::Vector3:
         glUniform3fv(location, 1, &property.vector3Value[0]);
+        break;
     case PropertyKind::Matrix4x4:
         glUniformMatrix4fv(location, 1, GL_FALSE, &property.matrix4x4Value[0][0]);
+        break;
     case PropertyKind::Texture:
         glActiveTexture(kGLTextureNumber[m_TextureOrder]);
         glBindTexture(GL_TEXTURE_2D, property.uintValue);
         glUniform1i(location, m_TextureOrder);
         ++m_TextureOrder;
+        break;
     }
 }
 
