@@ -11,3 +11,4 @@
 #include "stock_vertical_layout.h"
 #include "floating_panel.h"
 #include "cursor_sight.h"
+#include "floating_panel_item_tips.h"

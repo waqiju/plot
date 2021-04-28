@@ -199,6 +199,7 @@
     <ClCompile Include="src\pb\xueqiu.pb.cc" />
     <ClCompile Include="src\plot\cursor_sight.cpp" />
     <ClCompile Include="src\plot\floating_panel.cpp" />
+    <ClCompile Include="src\plot\floating_panel_item_tips.cpp" />
     <ClCompile Include="src\plot\line_stipple.cpp" />
     <ClCompile Include="src\plot\pentagram.cpp" />
     <ClCompile Include="src\plot\plot_helper.cpp" />
@@ -291,6 +292,7 @@
     <ClInclude Include="src\pb\xueqiu.pb.h" />
     <ClInclude Include="src\plot\cursor_sight.h" />
     <ClInclude Include="src\plot\floating_panel.h" />
+    <ClInclude Include="src\plot\floating_panel_item_tips.h" />
     <ClInclude Include="src\plot\line_stipple.h" />
     <ClInclude Include="src\plot\pentagram.h" />
     <ClInclude Include="src\plot\plot.h" />

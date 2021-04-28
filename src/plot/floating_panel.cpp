@@ -7,6 +7,7 @@
 #include "camera_helper.h"
 #include "application/application.h"
 #include "floating_panel.h"
+#include "floating_panel_item_tips.h"
 #include "entity/ec.h"
 #include "camera_helper.h"
 #include "plot_helper.h"
@@ -77,6 +78,38 @@ void FloatingPanel::Update()
     // update local bounds
     Matrix4x4 matrix = this->GetComponent<Transform>()->WorldToLocalMatrix();
     localBounds = Bounds(matrix.MultiplyPoint3x4(bounds.min), matrix.MultiplyPoint3x4(bounds.max));
+    // update title
+    UpdateTitle();
+}
+
+void FloatingPanel::UpdateTitle()
+{
+    // mouse position in local    
+    Vector3 mousePosition = Input::MousePosition();
+    Ray ray = Application::MainCamera()->ScreenPointToRay(mousePosition);
+    Vector3 mouseWorldPosition;
+    Physics::Raycast(ray, Plane::XyPlane, mouseWorldPosition);
+    Vector3 mouseLocalPosition = this->GetTransform()->WorldToLocalMatrix().MultiplyPoint3x4(mouseWorldPosition);
+    // find tips
+    std::string tips;
+    float bestDistance = 0.55f;
+    for (auto tipsCp : this->GetComponentsInChildren<FloatingPanelItemTips>())
+    {
+        float distance = Mathf::Abs(tipsCp->x - mouseLocalPosition.x);
+        if (distance < bestDistance)
+        {
+            tips = tipsCp->tips;
+        }
+    }
+
+    if (tips.size() > 0)
+    {
+        m_Title = panelName + "  " + tips;
+    }
+    else
+    {
+        m_Title = panelName;
+    }
 }
 
 
@@ -95,7 +128,7 @@ void FloatingPanel::Render()
 void FloatingPanel::RenderTitle()
 {
     Vector3 textPosition = GetTitlePosition();
-    Text2D::DrawInWorld(panelName, textPosition, 18);
+    Text2D::DrawInWorld(m_Title, textPosition, 18);
 }
 
 
@@ -115,8 +148,11 @@ void FloatingPanel::RenderBackground()
     Matrix4x4Helper::ApplyMatrixForEach(this->GetTransform()->LocalToWorldMatrix(), vertices, 0, vertices.size());
     // Title Background
     Vector3 textPosition = GetTitlePosition();
-    Bounds textBackgroundBounds = Text2D::CalculateBounds(panelName, textPosition, 18);
-    textBackgroundBounds.Expand(Vector3(1.2f, 1, 1));
+    Bounds textBackgroundBounds = Text2D::CalculateBounds(m_Title, textPosition, 18);
+    Bounds spaceBounds = Text2D::CalculateBounds(" ", textPosition, 18);
+    textBackgroundBounds.min.x -= spaceBounds.Size().x;
+    textBackgroundBounds.max.x += spaceBounds.Size().x;
+    //textBackgroundBounds.Expand(Vector3(1.2f, 1, 1));
     Rectangle::GenerateMesh(textBackgroundBounds, kBackgroundColor, vertices, colors);
 
     Mesh mesh;

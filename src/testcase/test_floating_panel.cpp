@@ -88,10 +88,16 @@ void CreateItemInFloatingPanel2()
     auto rectangle = Rectangle::Create(panelTr, Vector3(1, 0, 0), Vector3(2, 3, 0), Color(0, 1, 0, 1));
     auto boundsCp = rectangle->AddComponent<BoundsComponent>();
     boundsCp->localBounds = rectangle->bounds;
+    auto tipsCp = rectangle->AddComponent<FloatingPanelItemTips>();
+    tipsCp->x = 1.5f;
+    tipsCp->tips = "3";
     // 2
     rectangle = Rectangle::Create(panelTr, Vector3(3, 0, 0), Vector3(4, 2, 0), Color(0, 1, 0, 1));
     boundsCp = rectangle->AddComponent<BoundsComponent>();
     boundsCp->localBounds = rectangle->bounds;
+    tipsCp = rectangle->AddComponent<FloatingPanelItemTips>();
+    tipsCp->x = 3.5f;
+    tipsCp->tips = "2";
 }
 
 

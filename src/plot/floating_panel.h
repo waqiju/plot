@@ -33,9 +33,12 @@ public:
     void Deserialize(Entity& entity, const pb::WorldObject& pbComponentObj, PrefabLoader& loader) override;
 
 private:
+    std::string m_Title;
+
     void RenderTitle();
     void RenderBackground();
     Vector3 GetTitlePosition();
+    void UpdateTitle();
 
     static Color kBackgroundColor;
 };

@@ -252,6 +252,9 @@
     <ClCompile Include="src\plot\cursor_sight.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\plot\floating_panel_item_tips.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\default_shader.h">
@@ -528,6 +531,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\plot\cursor_sight.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plot\floating_panel_item_tips.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
