@@ -2,13 +2,14 @@
 #include "geometry/geometry.h"
 #include "graphic/graphic.h"
 #include "entity/ec.h"
+#include "core_component/core_component.h"
 #include <vector>
 
 
 namespace chimera
 {
 
-class Rectangle : public Component, public IPrefabConvertor
+class Rectangle : public Component, public IBoundsGetter, public IPrefabConvertor
 {
 public:
     static constexpr int VerticesCount() { return 6; } 
@@ -23,6 +24,7 @@ public:
 
     int GenerateMesh(std::vector<Vector3>& vertices, std::vector<Color>& colors);
     void Render();
+    Bounds& GetBounds() { return bounds; }
 
     // Prefab
     void Deserialize(Entity& entity, const pb::WorldObject& pbComponentObj, PrefabLoader& loader) override;

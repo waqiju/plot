@@ -1,5 +1,6 @@
 #include "input.h"
 #include "gl_headers.h"
+#include "imgui_headers.h"
 #include "window.h"
 #include "application/application.h"
 #include "geometry/geometry.h"
@@ -42,6 +43,11 @@ bool Input::GetKeyUp(int key)
 
 bool Input::GetMouseButton(int button)
 {
+    ImGuiIO& io = ImGui::GetIO();
+    if (io.WantCaptureMouse)
+    {
+        return false;
+    }
     return glfwGetMouseButton(Application::MainWindow()->RawGLFWwindow(), button) == GLFW_PRESS;
 }
 

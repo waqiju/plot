@@ -2,6 +2,7 @@
 #include <string>
 #include <application/input.h>
 #include <application/time.h>
+#include <application/imgui_facade.h>
 #include "geometry/geometry.h"
 
 
@@ -25,7 +26,11 @@ public:
     static Camera* MainCamera() { return m_MainCamera; }
     static void SetMainCamera(Camera* camera) { m_MainCamera = camera; }
 
+    static void OnApplicationBegin();
+    static void OnApplicationEnd();
+
     static void OnFrameBegin();
+    static void OnFrameSwapBuffersBefore();
     static void OnFrameEnd();
 
 private:

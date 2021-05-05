@@ -24,6 +24,8 @@ int main()
     Window* window = Window::Create("Chimera", Application::screenWidth, Application::screenHeight);
     window->onWindowSizeChanged = UiHelper::WindowSizeChangedHandler;
     window->onMouseScrollChanged = MouseScrollHandlers::ZoomPlotRoot;
+    Application::OnApplicationBegin();
+    // Camera
     CameraHelper::CreateCamera();
 
     // PlotRoot
@@ -36,8 +38,11 @@ int main()
     ChimeraServerImpl::RunServer();
     // Test
     // TestFloatingPanel_TwoRegion();
-
+    // Loop
     window->FrameLoop(OnFrameUpdate);
+
+    // Shut Down
+    Application::OnApplicationEnd();
     window->Close();
     return 0;
 }

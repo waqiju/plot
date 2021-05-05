@@ -26,6 +26,7 @@ Window* Window::Create(std::string title, unsigned int width, unsigned int heigh
         return NULL;
     }
     glfwMakeContextCurrent(glfwWindow);
+    glfwSwapInterval(1); // Enable vsync
     // glad
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
@@ -81,6 +82,7 @@ void Window::FrameLoop(std::function<void()> onUpdated)
         Application::OnFrameBegin();
         onUpdated();
 
+        Application::OnFrameSwapBuffersBefore();
         glfwSwapBuffers(m_GLFWwindow);
         Application::OnFrameEnd();
     }

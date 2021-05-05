@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <vector>
 #include "geometry/vector3.h";
 #include "graphic/color.h";

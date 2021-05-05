@@ -14,28 +14,6 @@ Bounds& BoundsComponent::RetrieveBounds(Component* target)
     {
         return boundsGetter->GetBounds();
     }
-    if (typeid(*target) == typeid(Triangle))
-    {
-        return dynamic_cast<Triangle*>(target)->bounds;
-    }
-    if (typeid(*target) == typeid(chimera::Rectangle))
-    {
-        return dynamic_cast<chimera::Rectangle*>(target)->bounds;
-    }
-    if (typeid(*target) == typeid(Pentagram))
-    {
-        return dynamic_cast<Pentagram*>(target)->bounds;
-    }
-    // text
-    if (typeid(*target) == typeid(TextComponent))
-    {
-        return dynamic_cast<TextComponent*>(target)->bounds;
-    }
-    // stock glyph
-    if (typeid(*target) == typeid(PriceDigestGlyph))
-    {
-        return dynamic_cast<PriceDigestGlyph*>(target)->bounds;
-    }
 
     return kUndefineBounds;
 }
