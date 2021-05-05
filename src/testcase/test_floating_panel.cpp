@@ -42,14 +42,23 @@ void CreateItemInMainPanel()
     auto rectangle = Rectangle::Create(mainPanelTr, Vector3(0, 0, 0), Vector3(1, 1, 0), Color(1, 0, 0, 1));
     auto boundsCp = rectangle->AddComponent<BoundsComponent>();
     boundsCp->localBounds = rectangle->bounds;
+    auto tipsCp = rectangle->AddComponent<HoverTips>();
+    tipsCp->x = 0.5f;
+    tipsCp->tips = "HoverTips-1";
     // 2
     rectangle = Rectangle::Create(mainPanelTr, Vector3(2, 0, 0), Vector3(3, 2, 0), Color(1, 0, 0, 1));
     boundsCp = rectangle->AddComponent<BoundsComponent>();
     boundsCp->localBounds = rectangle->bounds;
+    tipsCp = rectangle->AddComponent<HoverTips>();
+    tipsCp->x = 2.5f;
+    tipsCp->tips = "HoverTips-2";
     // 3
     rectangle = Rectangle::Create(mainPanelTr, Vector3(4, 0, 0), Vector3(5, 3, 0), Color(1, 0, 0, 1));
     boundsCp = rectangle->AddComponent<BoundsComponent>();
     boundsCp->localBounds = rectangle->bounds;
+    tipsCp = rectangle->AddComponent<HoverTips>();
+    tipsCp->x = 4.5f;
+    tipsCp->tips = "HoverTips:\nI am No.3 tips.";
 }
 
 

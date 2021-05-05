@@ -35,7 +35,7 @@ void ConvertBounds(const pb::WorldObject& object, Bounds& bounds, const pb::Pref
 void ConvertStockMetadata(const pb::WorldObject& object, StockPriceDigest& metadata, const pb::Prefab& prefab)
 {
     metadata.code = PrefabLoader::GetStringMember(object, "code", prefab);
-    metadata.data = PrefabLoader::GetStringMember(object, "data", prefab);
+    metadata.date = PrefabLoader::GetStringMember(object, "date", prefab);
     metadata.time = PrefabLoader::GetStringMember(object, "time", prefab);
 
     metadata.open = PrefabLoader::GetDoubleMember(object, "open", prefab);

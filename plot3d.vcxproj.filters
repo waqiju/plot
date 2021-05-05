@@ -282,6 +282,12 @@
     <ClCompile Include="src\application\imgui_facade.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\gui\hover_tips_window.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\plot\hover_tips.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\default_shader.h">
@@ -591,6 +597,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\application\imgui_facade.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\hover_tips_window.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\imgui_headers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\plot\hover_tips.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

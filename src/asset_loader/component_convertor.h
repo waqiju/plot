@@ -121,6 +121,12 @@ void AddComponentToEntity(Entity& entity, const pb::WorldObject& pbComponentObj,
         cp->Deserialize(entity, pbComponentObj, loader);
         worldObject = cp;
     }
+    else if (pbComponentObj.type() == "HoverTips")
+    {
+        auto cp = entity.GetOrAddComponent<HoverTips>();
+        cp->Deserialize(entity, pbComponentObj, loader);
+        worldObject = cp;
+    }
     else
     {
         std::cout<<"Unsupported component[" << pbComponentObj.type() << "]\n";

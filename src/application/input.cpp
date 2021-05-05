@@ -1,6 +1,6 @@
 #include "input.h"
 #include "gl_headers.h"
-#include "imgui_headers.h"
+#include "gui/imgui_headers.h"
 #include "window.h"
 #include "application/application.h"
 #include "geometry/geometry.h"

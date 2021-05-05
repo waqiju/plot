@@ -6,7 +6,7 @@ class StockPriceDigest
 {
 public:
     std::string code;
-    std::string data;
+    std::string date;
     std::string time;
     // ohlc
     double open;

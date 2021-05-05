@@ -1,6 +1,7 @@
 ﻿#include <application/imgui_facade.h>
+#include "gui/hover_tips_window.h"
 #include "gl_headers.h"
-#include "imgui_headers.h"
+#include "gui/imgui_headers.h"
 
 
 static bool show_demo_window = false;
@@ -18,7 +19,6 @@ static bool show_ma89 = false;
 
 
 void ShowTopMenu();
-void ShowHoverTipsWindow(bool* p_open);
 
 
 void ImGuiFacade::Initialize(GLFWwindow* window)
@@ -69,7 +69,7 @@ void ShowTopMenu()
     // FPS Window
     if (show_demo_window)       { ImGui::ShowDemoWindow(&show_demo_window); }
     if (show_app_metrics)       { ImGui::ShowMetricsWindow(&show_app_metrics); }
-    if (show_hover_tips_window)       { ShowHoverTipsWindow(&show_hover_tips_window); }
+    if (show_hover_tips_window)       { GUI::ShowHoverTipsWindow(&show_hover_tips_window); }
 
     // Menu Window
     ImGuiWindowFlags window_flags = 0;
@@ -103,25 +103,5 @@ void ShowTopMenu()
         }
         ImGui::EndMenuBar();
     }
-    ImGui::End();
-}
-
-
-void ShowHoverTipsWindow(bool* p_open)
-{
-    const ImGuiViewport* main_viewport = ImGui::GetMainViewport();
-    ImGui::SetNextWindowPos(ImVec2(main_viewport->Size.x-340, 50), ImGuiCond_Always);
-    ImGui::SetNextWindowSize(ImVec2(300, -1), ImGuiCond_Always);
-
-    ImGuiWindowFlags window_flags = 0;
-    ImGui::Begin("Hover Tips", NULL, window_flags);
-    ImGui::TextWrapped("Hello World!");
-    ImGui::TextWrapped("Hello World!");
-    ImGui::TextWrapped("Hello World!");
-    ImGui::TextWrapped("Hello World!");
-    ImGui::TextWrapped("Hello World!");
-    ImGui::TextWrapped("Hello World!");
-    ImGui::TextWrapped("Hello World!");
-
     ImGui::End();
 }

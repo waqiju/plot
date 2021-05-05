@@ -84,7 +84,7 @@ void FloatingPanel::Update()
 
 void FloatingPanel::UpdateTitle()
 {
-    // mouse position in local    
+    // mouse position in local
     Vector3 mousePosition = Input::MousePosition();
     Ray ray = Application::MainCamera()->ScreenPointToRay(mousePosition);
     Vector3 mouseWorldPosition;
