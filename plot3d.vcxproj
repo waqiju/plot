@@ -179,6 +179,7 @@
     <ClCompile Include="src\glad.c" />
     <ClCompile Include="src\graphic\color.cpp" />
     <ClCompile Include="src\gui\hover_tips_window.cpp" />
+    <ClCompile Include="src\gui\top_menu_window.cpp" />
     <ClCompile Include="src\imgui\backends\imgui_impl_glfw.cpp" />
     <ClCompile Include="src\imgui\backends\imgui_impl_opengl3.cpp" />
     <ClCompile Include="src\imgui\backends\imgui_impl_win32.cpp" />
@@ -285,6 +286,7 @@
     <ClInclude Include="src\graphic\graphic.h" />
     <ClInclude Include="src\gui\hover_tips_window.h" />
     <ClInclude Include="src\gui\imgui_headers.h" />
+    <ClInclude Include="src\gui\top_menu_window.h" />
     <ClInclude Include="src\imgui\backends\imgui_impl_glfw.h" />
     <ClInclude Include="src\imgui\backends\imgui_impl_opengl3.h" />
     <ClInclude Include="src\imgui\backends\imgui_impl_win32.h" />

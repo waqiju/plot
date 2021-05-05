@@ -1,3 +1,4 @@
+#include "hover_tips_window.h"
 #include "gui/imgui_headers.h"
 #include "plot/hover_tips.h"
 #include <vector>
