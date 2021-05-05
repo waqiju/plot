@@ -43,8 +43,7 @@ bool Input::GetKeyUp(int key)
 
 bool Input::GetMouseButton(int button)
 {
-    ImGuiIO& io = ImGui::GetIO();
-    if (io.WantCaptureMouse)
+    if (IsMouseInGui())
     {
         return false;
     }
@@ -82,6 +81,12 @@ Vector3 Input::MousePosition()
     double x, y;
     glfwGetCursorPos(Application::MainWindow()->RawGLFWwindow(), &x, &y);
     return Vector3((float)(x), (float)(y), 0);
+}
+
+bool Input::IsMouseInGui()
+{
+    ImGuiIO& io = ImGui::GetIO();
+    return io.WantCaptureMouse;
 }
 
 void Input::OnFrameEnd()

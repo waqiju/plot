@@ -13,6 +13,7 @@ public:
     static bool GetMouseButtonDown(int button);
     static bool GetMouseButtonUp(int button);
     static Vector3 MousePosition();
+    static bool IsMouseInGui();
 
     // 更新所有 Key 的上一帧 IsDown 状态
     static void OnFrameEnd();

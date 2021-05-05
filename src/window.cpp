@@ -57,6 +57,11 @@ void Window::FramebufferSizeCallback(GLFWwindow* glfwWindow, int width, int heig
 
 void Window::MouseScrollCallback(GLFWwindow* glfwWindow, double xoffset, double yoffset)
 {
+    if (Input::IsMouseInGui())
+    {
+        return;
+    }
+
     Window* window = s_GLFWwindowToWindow[glfwWindow];
     if (window == NULL || !window->onMouseScrollChanged)
         return;

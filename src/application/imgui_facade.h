@@ -9,7 +9,4 @@ public:
     static void Shutdown();
     static void OnFrameBegin();
     static void OnFrameSwapBuffersBefore();
-
-private:
-    static bool s_ShowDemoWindow;
 };
