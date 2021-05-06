@@ -2,6 +2,8 @@
 #include "gl_headers.h"
 #include "gui/top_menu_window.h"
 #include "gui/imgui_headers.h"
+#include "application/application.h"
+#include "window.h"
 
 
 void ImGuiFacade::Initialize(GLFWwindow* window)
@@ -32,6 +34,11 @@ void ImGuiFacade::Shutdown()
 
 void ImGuiFacade::OnFrameBegin()
 {
+    // 窗口最小化时，跳过渲染 GUI
+    if (Application::MainWindow()->IsWindowIconic())
+    {
+        return;
+    }
     // Start the Dear ImGui frame
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
@@ -42,6 +49,10 @@ void ImGuiFacade::OnFrameBegin()
 
 void ImGuiFacade::OnFrameSwapBuffersBefore()
 {
+    if (Application::MainWindow()->IsWindowIconic())
+    {
+        return;
+    }
     // ImGUI Render
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
