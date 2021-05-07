@@ -13,6 +13,7 @@
 #include <map>
 #include <asset_loader/asset_loader.h>
 #include "chimera_server.h"
+#include "chimera_client.h"
 #include "testcase/test_floating_panel.h"
 
 
@@ -33,6 +34,7 @@ int main()
     // Cursor Sight
     CursorSight::GetInstance().style = CursorSight::SightStyle::Cross;
     // Command
+    ChimeraClient::InitializeClient();
     ChimeraServerImpl::ExecuteFile("art/test_floating_panel.cmd");
     // Server
     ChimeraServerImpl::RunServer();

@@ -150,6 +150,7 @@
     <ClCompile Include="src\asset_loader\prefab_loader.cpp" />
     <ClCompile Include="src\camera.cpp" />
     <ClCompile Include="src\camera_helper.cpp" />
+    <ClCompile Include="src\chimera_client.cpp" />
     <ClCompile Include="src\chimera_server.cpp" />
     <ClCompile Include="src\command\destroy_entity_command.cpp" />
     <ClCompile Include="src\command\focus_plot_command.cpp" />
@@ -245,6 +246,7 @@
     <ClInclude Include="src\asset_loader\prefab_loader.h" />
     <ClInclude Include="src\camera.h" />
     <ClInclude Include="src\camera_helper.h" />
+    <ClInclude Include="src\chimera_client.h" />
     <ClInclude Include="src\chimera_server.h" />
     <ClInclude Include="src\command\destroy_entity_command.h" />
     <ClInclude Include="src\command\command.h" />

@@ -291,6 +291,9 @@
     <ClCompile Include="src\gui\top_menu_window.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\chimera_client.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\default_shader.h">
@@ -612,6 +615,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\gui\top_menu_window.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chimera_client.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
