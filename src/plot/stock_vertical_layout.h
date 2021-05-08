@@ -6,6 +6,9 @@
 class StockVerticalLayout: public Component
 {
 public:
+    static float OnePixelSize;
+    static void UpdateOnePixelSize();
+
     StockVerticalLayout(Entity* owner);
     void ApplyLayout();
 

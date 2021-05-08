@@ -10,6 +10,7 @@
 namespace chimera
 {
 
+const int kSingleRenderVerticesCount = 50000;
 
 void RenderVertices(std::vector<Vector3>& vertices, std::vector<Color>& colors, int stipplePattern);
 
@@ -69,6 +70,8 @@ void Segment::BatchRender(std::vector<Segment*> segmentList)
     // mesh
     std::vector<Vector3> vertices;
     std::vector<Color> colors;
+    vertices.reserve(kSingleRenderVerticesCount * 2);
+    colors.reserve(kSingleRenderVerticesCount * 2);
     Segment* previous = nullptr;
     if (segmentList.size() > 0)
     {
@@ -77,7 +80,8 @@ void Segment::BatchRender(std::vector<Segment*> segmentList)
 
     for (Segment* item:segmentList)
     {
-        if (item->stipplePattern != previous->stipplePattern && vertices.size() > 0)
+        if (item->stipplePattern != previous->stipplePattern && vertices.size() > 0
+            || vertices.size() > kSingleRenderVerticesCount)
         {
             RenderVertices(vertices, colors, previous->stipplePattern);
             vertices.clear();

@@ -37,7 +37,7 @@ BoundsComponent::BoundsComponent(Entity* owner): Component(owner)
 
 Bounds BoundsComponent::WorldBounds()
 {
-    Matrix4x4 matrix = this->GetComponent<Transform>()->LocalToWorldMatrix();
+    Matrix4x4 matrix = this->OwnerEntity()->GetTransform()->LocalToWorldMatrix();
 	return Bounds(matrix.MultiplyPoint3x4(localBounds.min), matrix.MultiplyPoint3x4(localBounds.max));
 }
 

@@ -137,6 +137,21 @@ namespace CameraHelper
         }
     }
 
+    float CalculateLength(float length, UnitOfLength unit, float onePixelSize)
+    {
+        switch (unit)
+        {
+            case UnitOfLength::World:
+                return length;
+            case UnitOfLength::StandardPixelSize:
+            {
+                return length * onePixelSize;
+            }
+            default:
+                return length;
+        }
+    }
+
     Vector3 ViewportToXyPlane(Camera* camera, Vector3 position)
     {
         Vector3 hit;

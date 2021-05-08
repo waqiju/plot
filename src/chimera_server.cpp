@@ -4,6 +4,8 @@
 #include "asset_loader/asset_loader.h"
 #include "command/command.h"
 #include "common/common.h"
+#include "entity/ec.h"
+
 
 using grpc::Server;
 using grpc::ServerBuilder;
@@ -115,17 +117,23 @@ void ChimeraServerImpl::ExecuteCommand(const CommandRequest& request)
 			auto loader = PrefabLoader(&parameter.prefab());
 			loader.Load();
 		}
+
+        World::ActiveWorld()->ClearCache();
 	}
 	else if (request.name() == "destroy_entity")
 	{
 		auto parameter = request.parameters(0);
 		auto command = DestroyEntityCommand(parameter.p_int());
 		command.Execute();
+
+        World::ActiveWorld()->ClearCache();
 	}
     else if (request.name() == "reset_plot")
     {
         auto command = ResetPlotCommand();
         command.Execute();
+
+        World::ActiveWorld()->ClearCache();
     }
 	else if (request.name() == "focus_plot")
 	{

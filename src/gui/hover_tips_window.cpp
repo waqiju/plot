@@ -49,7 +49,8 @@ std::vector<HoverTips*> LocateHoverTipsComponentList()
     Vector3 mouseLocalPosition = mainPanelTr->WorldToLocalMatrix().MultiplyPoint3x4(mouseWorldPosition);
 
     // find tips
-    auto tipsCpList = mainPanelTr->GetComponentsInChildren<HoverTips>();
+    // auto tipsCpList = mainPanelTr->GetComponentsInChildren<HoverTips>();
+    auto tipsCpList = World::ActiveWorld()->GetComponentsInAllEnities<HoverTips>();
     float bestDistance = 0.55f;
     for (auto tipsCp : tipsCpList)
     {

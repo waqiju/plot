@@ -161,6 +161,7 @@
     <ClCompile Include="src\core_component\text_component.cpp" />
     <ClCompile Include="src\core_component\uniform_scale_component.cpp" />
     <ClCompile Include="src\entity\component.cpp" />
+    <ClCompile Include="src\entity\components_cache.cpp" />
     <ClCompile Include="src\entity\entity.cpp" />
     <ClCompile Include="src\entity\object_id.cpp" />
     <ClCompile Include="src\entity\transform.cpp" />
@@ -264,6 +265,7 @@
     <ClInclude Include="src\core_component\uniform_scale_component.h" />
     <ClInclude Include="src\default_shader.h" />
     <ClInclude Include="src\entity\component.h" />
+    <ClInclude Include="src\entity\components_cache.h" />
     <ClInclude Include="src\entity\ec.h" />
     <ClInclude Include="src\entity\entity.h" />
     <ClInclude Include="src\entity\object_id.h" />

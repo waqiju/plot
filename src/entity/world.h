@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
+#include "components_cache.h"
 
 
 class Entity;
@@ -22,11 +23,14 @@ public:
 	void FlushTransform();
     // Find
     WorldObject* FindObject(int id);
+    // Cache
+    void ClearCache();
 
 private:
     static World* s_ActiveWorld;
     static Entity* s_OriginEntity;
     std::vector<Entity*> m_EntityList;
+    ComponentsCache m_Cache;
 };
 
 
@@ -49,9 +53,16 @@ template<typename T>
 std::vector<T*> World::GetComponentsInAllEnities()
 {
     std::vector<T*> componentList;
+    size_t typeCode = typeid(T).hash_code();
+    if (m_Cache.Query(typeCode, ComponentsCache::kDefaultExpireTime, componentList))
+    {
+        return componentList;
+    }
+
     for (Entity* entity : m_EntityList)
     {
         entity->template GetComponentsInChildren<T>(componentList);
     }
+    m_Cache.Update(typeCode, componentList);
     return componentList;
 }

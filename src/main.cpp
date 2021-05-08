@@ -36,6 +36,7 @@ int main()
     // Command
     ChimeraClient::InitializeClient();
     ChimeraServerImpl::ExecuteFile("art/test_floating_panel.cmd");
+    // ChimeraServerImpl::ExecuteFile("art/profiling.cmd");
     // Server
     ChimeraServerImpl::RunServer();
     // Test
@@ -73,6 +74,7 @@ void OnFrameUpdate()
     {
         boundsCp->SyncTargetBounds();
     }
+    StockVerticalLayout::UpdateOnePixelSize();
     for (auto layoutCp : World::ActiveWorld()->GetComponentsInAllEnities<StockVerticalLayout>())
     {
         layoutCp->ApplyLayout();

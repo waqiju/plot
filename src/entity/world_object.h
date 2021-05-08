@@ -13,8 +13,9 @@ class Transform;
 enum class LifecycleFlag: int
 {
     Default = 0,
-    DestroyStart = 1,
-    DestroyEnd = 1 << 1,
+    Created = 1,
+    DestroyStart = 1 << 1,
+    DestroyEnd = 1 << 2,
 
 };
 
@@ -48,14 +49,17 @@ public:
 	Entity* ToEntity();
 	Transform* ToTransform();
 
+public:
+    LifecycleFlag Lifecycle() { return m_Lifecycle; }
+	bool InDestroy() { return (static_cast<int>(m_Lifecycle) & static_cast<int>(LifecycleFlag::DestroyStart)) || (static_cast<int>(m_Lifecycle) & static_cast<int>(LifecycleFlag::DestroyEnd)); }
+    bool HasCreated() { return (static_cast<int>(m_Lifecycle) & static_cast<int>(LifecycleFlag::Created)); }
+
 protected:
     void SetFlagDestroyStart() { m_Lifecycle |= LifecycleFlag::DestroyStart; }
     void SetFlagDestroyEnd() { m_Lifecycle |= LifecycleFlag::DestroyEnd; }
-	bool InDestroy() { return (static_cast<int>(m_Lifecycle) & static_cast<int>(LifecycleFlag::DestroyStart)) || (static_cast<int>(m_Lifecycle) & static_cast<int>(LifecycleFlag::DestroyEnd)); }
-
 
 private:
     static int s_InstanceCount;
-	LifecycleFlag m_Lifecycle = LifecycleFlag::Default;
+	LifecycleFlag m_Lifecycle = LifecycleFlag::Created;
 
 };

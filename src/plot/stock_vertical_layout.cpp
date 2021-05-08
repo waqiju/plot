@@ -2,8 +2,18 @@
 #include "stock_layout_item.h"
 #include "price_digest_glyph.h"
 #include "core_component/core_component.h"
+#include "application/application.h"
 #include <vector>
 #include <algorithm>
+
+
+float StockVerticalLayout::OnePixelSize = 1;
+
+
+void StockVerticalLayout::UpdateOnePixelSize()
+{
+    OnePixelSize = CameraHelper::OnePixelSizeInWorld(Application::MainCamera(), static_cast<float>(Application::screenHeight));
+}
 
 
 StockVerticalLayout::StockVerticalLayout(Entity* owner) : Component(owner)
@@ -36,7 +46,7 @@ void StockVerticalLayout::ApplyLayout()
     std::sort(upList.begin(), upList.end()
         , [&](StockLayoutItem* lhs, StockLayoutItem* rhs) {return lhs->priority <= rhs->priority; });
     float startY = rootBoundsCp->WorldBounds().max.y;
-    float layoutSpacing = CameraHelper::CalculateLength(this->spacing, this->unit);
+    float layoutSpacing = CameraHelper::CalculateLength(this->spacing, this->unit, OnePixelSize);
 	for (auto item : upList)
 	{
         startY += layoutSpacing;

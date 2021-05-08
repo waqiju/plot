@@ -84,3 +84,8 @@ WorldObject* World::FindObject(int id)
 
     return NULL;
 }
+
+void World::ClearCache()
+{
+    m_Cache.Clear();
+}
