@@ -64,5 +64,5 @@ std::vector<T*> World::GetComponentsInAllEnities()
         entity->template GetComponentsInChildren<T>(componentList);
     }
     m_Cache.Update(typeCode, componentList);
-    return componentList;
+    return std::move(componentList);
 }

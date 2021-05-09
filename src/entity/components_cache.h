@@ -1,7 +1,8 @@
-#pragma once
+﻿#pragma once
 #include <vector>
 #include <unordered_map>
 #include <ctime>
+#include <iostream>
 #include "geometry/random.h"
 #include "world_object.h"
 
@@ -82,7 +83,10 @@ inline void ComponentsCache::Update(size_t typeCode, std::vector<typename T*>& c
     }
 
     ComponentsCacheRecord& record = m_RecordMap[typeCode];
-    record.createTime = time(NULL) - Random::Range(0, ComponentsCache::kDefaultExpireTime* 0.5f);
+    // Trick 随机增加有效期，错峰
+    time_t nowTimeInMs = time(NULL) * 1000;
+    float disturbance = Random::Range(0, ComponentsCache::kDefaultExpireTime* 1000 * 0.5f);
+    record.createTime = nowTimeInMs - static_cast<time_t>(disturbance);
     record.list.clear();
     // for
     // record.list.reserve(componentList.size());

@@ -96,7 +96,7 @@ std::vector<T*> Entity::GetComponentsInChildren()
 {
     std::vector<T*> componentList;
     this->template GetComponentsInChildren<T>(componentList);
-    return componentList;
+    return std::move(componentList);
 }
 
 template<typename T> 

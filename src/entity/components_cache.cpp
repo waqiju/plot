@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <vector>
 #include <string>
 #include <cmath>
@@ -19,10 +19,11 @@ ComponentsCacheRecord::ComponentsCacheRecord()
 
 bool ComponentsCacheRecord::IsExpired(float expireTime)
 {
-    time_t nowTime = time(NULL);
-    float elapsed = time(NULL) - createTime;
+    time_t nowTimeInMs = time(NULL) * 1000;
+    float elapsed = (nowTimeInMs - createTime) / 1000;
     if (elapsed >= expireTime)
     {
+        // std::cout <<"Expire, " << elapsed << " " << nowTimeInMs << " " << createTime << std::endl;
         return false;
     }
     int checkCount = std::min(static_cast<int>(list.size()), 5);
