@@ -300,6 +300,9 @@
     <ClCompile Include="src\gui\menu_item_ma.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\gui\menu_item_endpoint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\default_shader.h">
@@ -630,6 +633,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\gui\menu_item_ma.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\menu_item_endpoint.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

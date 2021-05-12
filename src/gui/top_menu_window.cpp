@@ -2,6 +2,7 @@
 #include "imgui_headers.h"
 #include "hover_tips_window.h"
 #include "menu_item_ma.h"
+#include "menu_item_endpoint.h"
 #include "application/application.h"
 #include "chimera_client.h"
 
@@ -34,6 +35,7 @@ void ShowTopMenu()
     if (ImGui::BeginMenuBar())
     {
         ShowMenuItemMa();
+        ShowMenuItemEndpoint();
         if (ImGui::BeginMenu("Tools"))
         {
             ImGui::MenuItem("ImGui Demo", NULL, &show_demo_window);
