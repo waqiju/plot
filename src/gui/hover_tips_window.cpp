@@ -1,6 +1,7 @@
 #include "hover_tips_window.h"
 #include "gui/imgui_headers.h"
 #include "plot/hover_tips.h"
+#include "camera_helper.h"
 #include <vector>
 #include <application/application.h>
 #include <algorithm>
@@ -15,6 +16,12 @@ std::vector<HoverTips*>  LocateHoverTipsComponentList();
 
 void ShowHoverTipsWindow(bool* p_open)
 {
+    // 鼠标在窗口外
+    if (CameraHelper::IsMousePositionOutOfScreen())
+    {
+        return;
+    }
+    
     const ImGuiViewport* main_viewport = ImGui::GetMainViewport();
     ImGui::SetNextWindowPos(ImVec2(main_viewport->Size.x-340, 50), ImGuiCond_Always);
     ImGui::SetNextWindowSize(ImVec2(300, -1), ImGuiCond_Always);

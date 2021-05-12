@@ -188,4 +188,15 @@ namespace CameraHelper
 
         return true;
     }
+
+    bool IsMousePositionOutOfScreen()
+    {
+        Vector3 mousePosition = Input::MousePosition();
+        Vector3 mousePositionInViewport = Camera::ScreenToViewportPoint(mousePosition);
+        if (mousePositionInViewport.x < -1 || mousePositionInViewport.y < -1 || mousePositionInViewport.x > 1 || mousePositionInViewport.y > 1)
+        {
+            return true;
+        }
+        return false;
+    }
 }

@@ -23,4 +23,6 @@ namespace CameraHelper
     // 当前相机的可视区域在 xy_plane 上的投影
     Bounds VisibleAreaInXyPlane(Camera* camera);
     bool IsPositionVisible(Camera* camera, Vector3 position);
+    // 用于判断鼠标位置是否在屏幕外
+    bool IsMousePositionOutOfScreen();
 }

@@ -1,5 +1,6 @@
 ﻿#include "cursor_sight.h"
 #include "camera.h"
+#include "camera_helper.h"
 #include "application/application.h"
 #include "resource/resource_manager.h"
 #include <iostream>
@@ -41,12 +42,12 @@ void CursorSight::Render()
         return;
     }
     // 鼠标在窗口外
-    Vector3 mousePosition = Input::MousePosition();
-    Vector3 mousePositionInViewport = Camera::ScreenToViewportPoint(mousePosition);
-    if (mousePositionInViewport.x < -1 || mousePositionInViewport.y < -1 || mousePositionInViewport.x > 1 || mousePositionInViewport.y > 1)
+    if (CameraHelper::IsMousePositionOutOfScreen())
     {
         return;
     }
+     Vector3 mousePosition = Input::MousePosition();
+     Vector3 mousePositionInViewport = Camera::ScreenToViewportPoint(mousePosition);
     // 构建顶点
     std::vector<Vector2> vertices;
     std::vector<float> clipDirection;
