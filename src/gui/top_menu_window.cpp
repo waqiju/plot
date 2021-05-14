@@ -3,6 +3,8 @@
 #include "hover_tips_window.h"
 #include "menu_item_ma.h"
 #include "menu_item_endpoint.h"
+#include "menu_item_cycle.h"
+#include "menu_item_floating_panel.h"
 #include "application/application.h"
 #include "chimera_client.h"
 
@@ -14,6 +16,8 @@ namespace GUI
 static bool show_demo_window = false;
 static bool show_app_metrics = false;
 static bool show_hover_tips_window = true;
+static MenuItemFloatingPanel panel_1 = MenuItemFloatingPanel(1);
+static MenuItemFloatingPanel panel_2 = MenuItemFloatingPanel(2);
 
 
 void ShowTopMenu()
@@ -34,8 +38,11 @@ void ShowTopMenu()
     ImGui::Begin("Menu", NULL, window_flags);
     if (ImGui::BeginMenuBar())
     {
+        panel_1.Show();
+        panel_2.Show();
         ShowMenuItemMa();
         ShowMenuItemEndpoint();
+        ShowMenuItemCycle();
         if (ImGui::BeginMenu("Tools"))
         {
             ImGui::MenuItem("ImGui Demo", NULL, &show_demo_window);

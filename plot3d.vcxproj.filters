@@ -303,6 +303,12 @@
     <ClCompile Include="src\gui\menu_item_endpoint.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\gui\menu_item_cycle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\menu_item_floating_panel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\default_shader.h">
@@ -636,6 +642,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\gui\menu_item_endpoint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\menu_item_cycle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\menu_item_floating_panel.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
