@@ -5,6 +5,7 @@
 #include "menu_item_endpoint.h"
 #include "menu_item_cycle.h"
 #include "menu_item_floating_panel.h"
+#include "menu_item_time_scale.h"
 #include "application/application.h"
 #include "chimera_client.h"
 
@@ -38,6 +39,7 @@ void ShowTopMenu()
     ImGui::Begin("Menu", NULL, window_flags);
     if (ImGui::BeginMenuBar())
     {
+        ShowMenuItemTimeScale();
         panel_1.Show();
         panel_2.Show();
         ShowMenuItemMa();

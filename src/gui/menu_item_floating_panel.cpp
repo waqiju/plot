@@ -34,6 +34,36 @@ void MenuItemFloatingPanel::Show()
             parameter->set_p_int(1);
             ChimeraClient::client->SubmitCommand(request);
         }
+        if (ImGui::MenuItem("Volume 5"))
+        {
+            CommandRequest request;
+            request.set_name("draw_volume");
+            auto parameter = request.add_parameters();
+            parameter->set_p_int(m_PanelIndex);
+            parameter = request.add_parameters();
+            parameter->set_p_int(5);
+            ChimeraClient::client->SubmitCommand(request);
+        }
+        if (ImGui::MenuItem("Volume 20"))
+        {
+            CommandRequest request;
+            request.set_name("draw_volume");
+            auto parameter = request.add_parameters();
+            parameter->set_p_int(m_PanelIndex);
+            parameter = request.add_parameters();
+            parameter->set_p_int(20);
+            ChimeraClient::client->SubmitCommand(request);
+        }
+        if (ImGui::MenuItem("Range"))
+        {
+            CommandRequest request;
+            request.set_name("draw_true_range");
+            auto parameter = request.add_parameters();
+            parameter->set_p_int(m_PanelIndex);
+            parameter = request.add_parameters();
+            parameter->set_p_int(1);
+            ChimeraClient::client->SubmitCommand(request);
+        }
         if (ImGui::MenuItem("Range 5"))
         {
             CommandRequest request;
