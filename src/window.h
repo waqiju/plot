@@ -18,6 +18,7 @@ public:
     void Close();
     GLFWwindow* RawGLFWwindow() { return m_GLFWwindow; }
     bool IsWindowIconic();
+    void SetWindowTitle(std::string title);
 
     // window, width, height
     std::function<void(Window*, int, int)> onWindowSizeChanged = NULL;

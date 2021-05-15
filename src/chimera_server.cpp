@@ -5,6 +5,8 @@
 #include "command/command.h"
 #include "common/common.h"
 #include "entity/ec.h"
+#include "application/application.h"
+#include "window.h"
 
 
 using grpc::Server;
@@ -153,6 +155,11 @@ void ChimeraServerImpl::ExecuteCommand(const CommandRequest& request)
 		std::string content = command.Execute();
 		// TODO 返回结果
 		std::cout << content << std::endl;
+    }
+    else if (request.name() == "set_window_title")
+    {
+        auto parameter0 = request.parameters(0);
+		Application::MainWindow()->SetWindowTitle(parameter0.p_string());
     }
 	else
 	{

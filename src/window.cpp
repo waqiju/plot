@@ -103,3 +103,17 @@ bool Window::IsWindowIconic()
     HWND handle = glfwGetWin32Window(m_GLFWwindow);
     return IsIconic(handle);
 }
+
+void Window::SetWindowTitle(std::string title)
+{
+    std::string fullTitle;
+    if (title.size() > 0)
+    {
+        fullTitle = std::string("Chimera - ") + title;
+    }
+    else
+    {
+        fullTitle = "Chimera";
+    }
+    glfwSetWindowTitle(m_GLFWwindow, fullTitle.c_str());
+}
