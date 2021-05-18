@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <string>
 #include "chimera_server.h"
+#include "chimera_client.h"
 #include "asset_loader/asset_loader.h"
 #include "command/command.h"
 #include "common/common.h"
@@ -160,6 +161,11 @@ void ChimeraServerImpl::ExecuteCommand(const CommandRequest& request)
     {
         auto parameter0 = request.parameters(0);
 		Application::MainWindow()->SetWindowTitle(parameter0.p_string());
+    }
+    else if (request.name() == "reset_backend_port")
+    {
+        auto parameter0 = request.parameters(0);
+        ChimeraClient::InitializeClient(parameter0.p_int());
     }
 	else
 	{

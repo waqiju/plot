@@ -10,10 +10,14 @@ ChimeraClient* ChimeraClient::client = nullptr;
 std::thread* ChimeraClient::PollThread = nullptr;
 
 
-void ChimeraClient::InitializeClient()
+void ChimeraClient::InitializeClient(int port)
 {
+    if (client != nullptr)
+    {
+        delete client;
+    }
     client = new ChimeraClient(grpc::CreateChannel(
-        "localhost:2201", grpc::InsecureChannelCredentials()));
+        "localhost:" + std::to_string(port), grpc::InsecureChannelCredentials()));
     PollThread = new std::thread(ChimeraClient::Poll);
 }
 

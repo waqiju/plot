@@ -20,7 +20,7 @@ using pb::ChimeraRoost;
 
 class ChimeraClient {
 public:
-    static void InitializeClient();
+    static void InitializeClient(int port=2201);
     static void Poll();
     static std::thread* PollThread;
 
