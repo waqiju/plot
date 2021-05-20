@@ -94,6 +94,16 @@ void MenuItemFloatingPanel::Show()
             parameter->set_p_int(6);
             ChimeraClient::client->SubmitCommand(request);
         }
+        if (ImGui::MenuItem("RSI HCLC"))
+        {
+            CommandRequest request;
+            request.set_name("draw_rsi_hclc");
+            auto parameter = request.add_parameters();
+            parameter->set_p_int(m_PanelIndex);
+            parameter = request.add_parameters();
+            parameter->set_p_int(6);
+            ChimeraClient::client->SubmitCommand(request);
+        }
         if (ImGui::MenuItem("High Velocity"))
         {
             CommandRequest request;
