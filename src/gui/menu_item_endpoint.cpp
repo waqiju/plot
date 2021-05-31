@@ -11,6 +11,8 @@ namespace GUI
 
 
 void DrawRatingEndpoint(int level);
+void DrawSegmentEndpoint();
+void ClearSegmentEndpoint();
 
 
 void ShowMenuItemEndpoint()
@@ -33,9 +35,16 @@ void ShowMenuItemEndpoint()
         {
             DrawRatingEndpoint(3);
         }
+        ImGui::Separator();
+        if (ImGui::MenuItem("Segment"))
+        {
+            DrawSegmentEndpoint();
+        }
+        ImGui::Separator();
         if (ImGui::MenuItem("Clear"))
         {
             DrawRatingEndpoint(4);
+            ClearSegmentEndpoint();
         }
         ImGui::EndMenu();
     }
@@ -48,6 +57,22 @@ void DrawRatingEndpoint(int level)
     request.set_name("draw_rating_endpoint");
     auto parameter = request.add_parameters();
     parameter->set_p_int(level);
+    ChimeraClient::client->SubmitCommand(request);
+}
+
+
+void DrawSegmentEndpoint()
+{
+    CommandRequest request;
+    request.set_name("draw_segment_endpoint");
+    ChimeraClient::client->SubmitCommand(request);
+}
+
+
+void ClearSegmentEndpoint()
+{
+    CommandRequest request;
+    request.set_name("clear_segment_endpoint");
     ChimeraClient::client->SubmitCommand(request);
 }
 
