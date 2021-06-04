@@ -24,6 +24,7 @@ void MenuItemFloatingPanel::Show()
             parameter->set_p_int(GetCycleLevel());
             ChimeraClient::client->SubmitCommand(request);
         }
+        ImGui::Separator();
         if (ImGui::MenuItem("Volume"))
         {
             CommandRequest request;
@@ -54,6 +55,7 @@ void MenuItemFloatingPanel::Show()
             parameter->set_p_int(20);
             ChimeraClient::client->SubmitCommand(request);
         }
+        ImGui::Separator();
         if (ImGui::MenuItem("Range"))
         {
             CommandRequest request;
@@ -84,6 +86,7 @@ void MenuItemFloatingPanel::Show()
             parameter->set_p_int(20);
             ChimeraClient::client->SubmitCommand(request);
         }
+        ImGui::Separator();
         if (ImGui::MenuItem("RSI"))
         {
             CommandRequest request;
@@ -104,6 +107,7 @@ void MenuItemFloatingPanel::Show()
             parameter->set_p_int(6);
             ChimeraClient::client->SubmitCommand(request);
         }
+        ImGui::Separator();
         if (ImGui::MenuItem("High Velocity"))
         {
             CommandRequest request;
@@ -116,6 +120,23 @@ void MenuItemFloatingPanel::Show()
         {
             CommandRequest request;
             request.set_name("draw_low_velocity");
+            auto parameter = request.add_parameters();
+            parameter->set_p_int(m_PanelIndex);
+            ChimeraClient::client->SubmitCommand(request);
+        }
+        ImGui::Separator();
+        if (ImGui::MenuItem("Angular Cycle MA Up"))
+        {
+            CommandRequest request;
+            request.set_name("draw_angular_cycle_ma_up");
+            auto parameter = request.add_parameters();
+            parameter->set_p_int(m_PanelIndex);
+            ChimeraClient::client->SubmitCommand(request);
+        }
+        if (ImGui::MenuItem("Angular Cycle MA Down"))
+        {
+            CommandRequest request;
+            request.set_name("draw_angular_cycle_ma_down");
             auto parameter = request.add_parameters();
             parameter->set_p_int(m_PanelIndex);
             ChimeraClient::client->SubmitCommand(request);
