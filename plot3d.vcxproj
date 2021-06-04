@@ -184,6 +184,7 @@
     <ClCompile Include="src\gui\menu_item_cycle.cpp" />
     <ClCompile Include="src\gui\menu_item_endpoint.cpp" />
     <ClCompile Include="src\gui\menu_item_floating_panel.cpp" />
+    <ClCompile Include="src\gui\menu_item_layout.cpp" />
     <ClCompile Include="src\gui\menu_item_ma.cpp" />
     <ClCompile Include="src\gui\menu_item_time_scale.cpp" />
     <ClCompile Include="src\gui\top_menu_window.cpp" />
@@ -298,6 +299,7 @@
     <ClInclude Include="src\gui\menu_item_cycle.h" />
     <ClInclude Include="src\gui\menu_item_endpoint.h" />
     <ClInclude Include="src\gui\menu_item_floating_panel.h" />
+    <ClInclude Include="src\gui\menu_item_layout.h" />
     <ClInclude Include="src\gui\menu_item_ma.h" />
     <ClInclude Include="src\gui\menu_item_time_scale.h" />
     <ClInclude Include="src\gui\top_menu_window.h" />

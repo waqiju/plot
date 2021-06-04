@@ -6,6 +6,7 @@
 #include "menu_item_cycle.h"
 #include "menu_item_floating_panel.h"
 #include "menu_item_time_scale.h"
+#include "menu_item_layout.h"
 #include "application/application.h"
 #include "chimera_client.h"
 
@@ -19,6 +20,8 @@ static bool show_app_metrics = false;
 static bool show_hover_tips_window = true;
 static MenuItemFloatingPanel panel_1 = MenuItemFloatingPanel(1);
 static MenuItemFloatingPanel panel_2 = MenuItemFloatingPanel(2);
+static MenuItemFloatingPanel panel_3 = MenuItemFloatingPanel(3);
+static MenuItemFloatingPanel panel_4 = MenuItemFloatingPanel(4);
 
 
 void ShowTopMenu()
@@ -39,9 +42,12 @@ void ShowTopMenu()
     ImGui::Begin("Menu", NULL, window_flags);
     if (ImGui::BeginMenuBar())
     {
+        ShowMenuItemLayout();
         ShowMenuItemTimeScale();
         panel_1.Show();
         panel_2.Show();
+        panel_3.Show();
+        panel_4.Show();
         ShowMenuItemMa();
         ShowMenuItemEndpoint();
         ShowMenuItemCycle();

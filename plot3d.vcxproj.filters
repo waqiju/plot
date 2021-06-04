@@ -312,6 +312,9 @@
     <ClCompile Include="src\gui\menu_item_time_scale.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\gui\menu_item_layout.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\default_shader.h">
@@ -654,6 +657,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\gui\menu_item_time_scale.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\menu_item_layout.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
