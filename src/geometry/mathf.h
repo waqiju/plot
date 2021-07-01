@@ -2,6 +2,7 @@
 #include <cmath>
 #include <utility>
 #include <algorithm>
+#include <string>
 
 
 class Mathf
@@ -81,4 +82,6 @@ public:
     {
         return start + (end - start) * factor;
     }
+
+    static std::string TickNumberToString(float number, int decimal=0);
 };

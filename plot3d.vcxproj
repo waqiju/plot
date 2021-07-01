@@ -168,6 +168,7 @@
     <ClCompile Include="src\entity\world.cpp" />
     <ClCompile Include="src\entity\world_object.cpp" />
     <ClCompile Include="src\geometry\bounds.cpp" />
+    <ClCompile Include="src\geometry\mathf.cpp" />
     <ClCompile Include="src\geometry\matrix4x4.cpp" />
     <ClCompile Include="src\geometry\matrix4x4_helper.cpp" />
     <ClCompile Include="src\geometry\physics.cpp" />

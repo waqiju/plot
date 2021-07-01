@@ -20,6 +20,10 @@ void MeshRenderer::Render()
         Matrix4x4 mvp = camera->ViewProjectMatrix() * this->GetComponent<Transform>()->LocalToWorldMatrix();
         material->SetMatrix("MVP", mvp);
     }
+    else
+    {
+        material->SetMatrix("MVP", Matrix4x4::identity);
+    }
 	material->Use();
 	glBindVertexArray(mesh->VAO());
     if (mesh->EBO() != 0)

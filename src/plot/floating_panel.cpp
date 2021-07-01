@@ -18,9 +18,6 @@
 using namespace chimera;
 
 
-Color FloatingPanel::kBackgroundColor = Color(1,1,1,0.15f);
-
-
 void FloatingPanel::Update()
 {
     // follow scale.x with main panel
@@ -144,7 +141,7 @@ void FloatingPanel::RenderBackground()
     // Main Background
     // 可以直接用 bounds 的，计算量更小。这里用 localBounds 是为了验证下 localBounds 的值是否正确
     //Rectangle::GenerateMesh(bounds, kBackgroundColor, vertices, colors);
-    Rectangle::GenerateMesh(localBounds, kBackgroundColor, vertices, colors);
+    Rectangle::GenerateMesh(localBounds, Color::kBackgroundWhite, vertices, colors);
     Matrix4x4Helper::ApplyMatrixForEach(this->GetTransform()->LocalToWorldMatrix(), vertices, 0, vertices.size());
     // Title Background
     Vector3 textPosition = GetTitlePosition();
@@ -153,7 +150,7 @@ void FloatingPanel::RenderBackground()
     textBackgroundBounds.min.x -= spaceBounds.Size().x;
     textBackgroundBounds.max.x += spaceBounds.Size().x;
     //textBackgroundBounds.Expand(Vector3(1.2f, 1, 1));
-    Rectangle::GenerateMesh(textBackgroundBounds, kBackgroundColor, vertices, colors);
+    Rectangle::GenerateMesh(textBackgroundBounds, Color::kBackgroundWhite, vertices, colors);
 
     Mesh mesh;
     mesh.SetVertices(vertices);

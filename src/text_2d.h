@@ -12,6 +12,7 @@ public:
     static void DrawInScreen(std::string text, int x, int y, int fontSize);
 
     static Bounds CalculateBounds(std::string text, Vector3 position, int fontSize);
+    static Bounds CalculateBoundsInViewport(std::string text, Vector3 position, int fontSize);
 
 private:
     static unsigned int m_VAO;

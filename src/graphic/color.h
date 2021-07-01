@@ -12,6 +12,8 @@ public:
     static const Color green;
     static const Color blue;
     static const Color grey;
+
+    static const Color kBackgroundWhite;
     // static method
     static Color Lerp(Color start, Color end, float factor);
 

@@ -137,3 +137,19 @@ Bounds Text2D::CalculateBounds(std::string text, Vector3 position, int fontSize)
 
     return bounds;
 }
+
+Bounds Text2D::CalculateBoundsInViewport(std::string text, Vector3 position, int fontSize)
+{
+    Bounds bounds;
+    bounds.min = position;
+    // max
+    float fontWidthInViewport = 2.0f / Application::screenWidth * fontSize;
+    float characterSpacing = fontWidthInViewport * 0.6f;
+    float fontHeightInViewport = 2.0f / Application::screenHeight * fontSize;
+
+    float x = position.x + characterSpacing * text.size();
+    float y = position.y + fontHeightInViewport;
+    bounds.max = Vector3(x, y, position.z);
+
+    return bounds;
+}

@@ -9,6 +9,7 @@ const Color Color::red = Color(1, 0, 0);
 const Color Color::green = Color(0, 1, 0);
 const Color Color::blue = Color(0, 0, 1);
 const Color Color::grey = Color(0.5, 0.5, 0.5);
+const Color Color::kBackgroundWhite = Color(1, 1, 1, 0.15f);
 
 
 std::string Color::ToString() const

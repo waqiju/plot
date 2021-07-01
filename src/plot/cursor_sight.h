@@ -22,6 +22,7 @@ public:
     CursorSight();
     ~CursorSight();
     void Render();
+    void RenderAsixReadout();
 
     // fields
     SightStyle style = SightStyle::None;
