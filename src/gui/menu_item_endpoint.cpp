@@ -12,7 +12,9 @@ namespace GUI
 
 void DrawRatingEndpoint(int level);
 void DrawSegmentEndpoint();
+void DrawVolumeEndpoint(bool includeC);
 void ClearSegmentEndpoint();
+void ClearVolumeEndpoint();
 
 
 void ShowMenuItemEndpoint()
@@ -41,10 +43,20 @@ void ShowMenuItemEndpoint()
             DrawSegmentEndpoint();
         }
         ImGui::Separator();
+        if (ImGui::MenuItem("Volume"))
+        {
+            DrawVolumeEndpoint(false);
+        }
+        if (ImGui::MenuItem("Volume Include C"))
+        {
+            DrawVolumeEndpoint(true);
+        }
+        ImGui::Separator();
         if (ImGui::MenuItem("Clear"))
         {
             DrawRatingEndpoint(4);
             ClearSegmentEndpoint();
+            ClearVolumeEndpoint();
         }
         ImGui::EndMenu();
     }
@@ -69,10 +81,30 @@ void DrawSegmentEndpoint()
 }
 
 
+void DrawVolumeEndpoint(bool includeC)
+{
+    CommandRequest request;
+    request.set_name("draw_volume_endpoint");
+    auto parameter = request.add_parameters();
+    parameter->set_p_int(4);
+    parameter = request.add_parameters();
+    parameter->set_p_bool(includeC);
+    ChimeraClient::client->SubmitCommand(request);
+}
+
+
 void ClearSegmentEndpoint()
 {
     CommandRequest request;
     request.set_name("clear_segment_endpoint");
+    ChimeraClient::client->SubmitCommand(request);
+}
+
+
+void ClearVolumeEndpoint()
+{
+    CommandRequest request;
+    request.set_name("clear_volume_endpoint");
     ChimeraClient::client->SubmitCommand(request);
 }
 
