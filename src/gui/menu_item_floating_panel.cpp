@@ -24,6 +24,16 @@ void MenuItemFloatingPanel::Show()
             parameter->set_p_int(GetCycleLevel());
             ChimeraClient::client->SubmitCommand(request);
         }
+        if (ImGui::MenuItem("Volume Cycle Trend"))
+        {
+            CommandRequest request;
+            request.set_name("draw_volume_cycle");
+            auto parameter = request.add_parameters();
+            parameter->set_p_int(m_PanelIndex);
+            parameter = request.add_parameters();
+            parameter->set_p_int(GetCycleLevel());
+            ChimeraClient::client->SubmitCommand(request);
+        }
         ImGui::Separator();
         if (ImGui::MenuItem("Volume"))
         {
