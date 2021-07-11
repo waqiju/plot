@@ -14,10 +14,10 @@ void MenuItemFloatingPanel::Show()
 {
     if (ImGui::BeginMenu(m_PanelMenuName.c_str()))
     {
-        if (ImGui::MenuItem("Cycle Trend"))
+        if (ImGui::MenuItem("MA Cycle Trend"))
         {
             CommandRequest request;
-            request.set_name("draw_rating_cycle");
+            request.set_name("draw_ma_cycle");
             auto parameter = request.add_parameters();
             parameter->set_p_int(m_PanelIndex);
             parameter = request.add_parameters();

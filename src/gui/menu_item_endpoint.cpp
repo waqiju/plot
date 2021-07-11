@@ -10,7 +10,7 @@ namespace GUI
 {
 
 
-void DrawRatingEndpoint(int level);
+void DrawMaEndpoint(int level);
 void DrawSegmentEndpoint();
 void DrawVolumeEndpoint(bool includeC);
 void ClearSegmentEndpoint();
@@ -23,19 +23,19 @@ void ShowMenuItemEndpoint()
     {
         if (ImGui::MenuItem("Level 0"))
         {
-            DrawRatingEndpoint(0);
+            DrawMaEndpoint(0);
         }
         if (ImGui::MenuItem("Level 1"))
         {
-            DrawRatingEndpoint(1);
+            DrawMaEndpoint(1);
         }
         if (ImGui::MenuItem("Level 2"))
         {
-            DrawRatingEndpoint(2);
+            DrawMaEndpoint(2);
         }
         if (ImGui::MenuItem("Level 3"))
         {
-            DrawRatingEndpoint(3);
+            DrawMaEndpoint(3);
         }
         ImGui::Separator();
         if (ImGui::MenuItem("Segment"))
@@ -54,7 +54,7 @@ void ShowMenuItemEndpoint()
         ImGui::Separator();
         if (ImGui::MenuItem("Clear"))
         {
-            DrawRatingEndpoint(4);
+            DrawMaEndpoint(4);
             ClearSegmentEndpoint();
             ClearVolumeEndpoint();
         }
@@ -63,10 +63,10 @@ void ShowMenuItemEndpoint()
 }
 
 
-void DrawRatingEndpoint(int level)
+void DrawMaEndpoint(int level)
 {
     CommandRequest request;
-    request.set_name("draw_rating_endpoint");
+    request.set_name("draw_ma_endpoint");
     auto parameter = request.add_parameters();
     parameter->set_p_int(level);
     ChimeraClient::client->SubmitCommand(request);
