@@ -8,7 +8,7 @@
 class SpaceGrid
 {
 public:
-    static const float kTicks[18];
+    static const float kTicks[22];
     static const int kTicksLength;
 
     SpaceGrid(Camera* camera, Transform* transform);

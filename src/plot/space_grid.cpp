@@ -10,7 +10,7 @@
 #include <application\application.h>
 
 
-const float SpaceGrid::kTicks[18] = { 1000, 500.0, 100.0, 50.0, 10.0, 5.0, 1.0, 0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001, 5e-05, 1e-05, 5e-06 };
+const float SpaceGrid::kTicks[22] = { 1e7, 1e6, 1e5, 1e4, 1000, 500.0, 100.0, 50.0, 10.0, 5.0, 1.0, 0.5, 0.1, 0.05, 0.01, 0.005, 0.001, 0.0005, 0.0001, 5e-05, 1e-05, 5e-06 };
 const int SpaceGrid::kTicksLength = sizeof(SpaceGrid::kTicks) / sizeof(SpaceGrid::kTicks[0]);
 
 
