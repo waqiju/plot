@@ -17,15 +17,23 @@ Interactive data visualization tool, still in developing.
 
 考虑到，使用构建 Mesh 或者 Instancing 的方式，绘制大数组并不是件困难的事情。相对于熟悉第三方库的花费，自行实现的花费并不会太大，且可控性更高。
 
-提炼需求： 1. 支持大于1万数组；2. 可交互；3. 多图层叠加；4. 悬停鼠标可以显示数据细节。
+提炼需求： 
+
+1. 支持至少1万大小的数组
+2. 可交互
+3. 多图层叠加
+4. 悬停鼠标可以显示数据细节
 
 
 ## 设计
 
 数据可视化端
 
+![design_1](doc/image/preview/design_1.png)
 
-整个前后端。
+整个前后端关系
+
+![design_2](doc/image/preview/design_2.png)
 
 
 ## 功能预览
