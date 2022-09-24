@@ -53,3 +53,15 @@ Interactive data visualization tool, still in developing.
 4. 通过网页交互，即网页选择数据集 => 后端加载数据集 => 可视化工具显示。
 
 ![preview_4](doc/image/preview/preview_4_web_ui.png)
+
+5. 其他网页端功能，模型状态监测。
+
+![preview_5_1](doc/image/preview/preview_5_1_policy_status.png)
+
+模型编辑，保存，复制
+
+![preview_5_2](doc/image/preview/preview_5_2_policy_edit.png)
+
+6. 其他网页端功能，新闻热点爬虫
+
+![preview_6](doc/image/preview/preview_6_news_spider.png)
