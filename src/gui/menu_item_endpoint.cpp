@@ -12,8 +12,10 @@ namespace GUI
 
 void DrawMaEndpoint(int level);
 void DrawSegmentEndpoint();
+void DrawTigerEndpoint(int windowSize);
 void DrawVolumeEndpoint(bool includeC);
 void ClearSegmentEndpoint();
+void ClearTigerEndpoint();
 void ClearVolumeEndpoint();
 
 
@@ -43,6 +45,27 @@ void ShowMenuItemEndpoint()
             DrawSegmentEndpoint();
         }
         ImGui::Separator();
+        if (ImGui::MenuItem("Tiger 5"))
+        {
+            DrawTigerEndpoint(5);
+        }
+        if (ImGui::MenuItem("Tiger 20"))
+        {
+            DrawTigerEndpoint(20);
+        }
+        if (ImGui::MenuItem("Tiger 60"))
+        {
+            DrawTigerEndpoint(60);
+        }
+        if (ImGui::MenuItem("Tiger 100"))
+        {
+            DrawTigerEndpoint(100);
+        }
+        if (ImGui::MenuItem("Tiger 200"))
+        {
+            DrawTigerEndpoint(200);
+        }
+        ImGui::Separator();
         if (ImGui::MenuItem("Volume"))
         {
             DrawVolumeEndpoint(false);
@@ -56,6 +79,7 @@ void ShowMenuItemEndpoint()
         {
             DrawMaEndpoint(4);
             ClearSegmentEndpoint();
+            ClearTigerEndpoint();
             ClearVolumeEndpoint();
         }
         ImGui::EndMenu();
@@ -81,6 +105,16 @@ void DrawSegmentEndpoint()
 }
 
 
+void DrawTigerEndpoint(int windowSize)
+{
+    CommandRequest request;
+    request.set_name("draw_tiger_endpoint");
+    auto parameter = request.add_parameters();
+    parameter->set_p_int(windowSize);
+    ChimeraClient::client->SubmitCommand(request);
+}
+
+
 void DrawVolumeEndpoint(bool includeC)
 {
     CommandRequest request;
@@ -97,6 +131,14 @@ void ClearSegmentEndpoint()
 {
     CommandRequest request;
     request.set_name("clear_segment_endpoint");
+    ChimeraClient::client->SubmitCommand(request);
+}
+
+
+void ClearTigerEndpoint()
+{
+    CommandRequest request;
+    request.set_name("clear_tiger_endpoint");
     ChimeraClient::client->SubmitCommand(request);
 }
 
