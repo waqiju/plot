@@ -164,8 +164,9 @@ void ChimeraServerImpl::ExecuteCommand(const CommandRequest& request)
     }
     else if (request.name() == "reset_backend_port")
     {
-        auto parameter0 = request.parameters(0);
-        ChimeraClient::InitializeClient(parameter0.p_int());
+        auto parameter0 = request.parameters(0); // IP address
+        auto parameter1 = request.parameters(1); // Port
+        ChimeraClient::InitializeClient(parameter0.p_string(), parameter1.p_int());
     }
 	else
 	{
